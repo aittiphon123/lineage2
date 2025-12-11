@@ -7231,7 +7231,7 @@
 			<height normal="31.5" />
 		</collision>
 	</npc>
-	<npc id="22389" level="83" type="Folk" name="Foundry Spirit Guard">
+	<npc id="22389" level="83" type="Monster" name="Foundry Spirit Guard">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
