@@ -20,11 +20,18 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.StringUtil;
+import org.l2jmobius.gameserver.config.BalthusKnightsConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.ServerConfig;
+import org.l2jmobius.gameserver.config.custom.AllowedPlayerRacesConfig;
+import org.l2jmobius.gameserver.config.custom.FactionSystemConfig;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
+import org.l2jmobius.gameserver.config.custom.StartingLocationConfig;
+import org.l2jmobius.gameserver.config.custom.StartingTitleConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.data.xml.FakePlayerData;
@@ -46,8 +53,8 @@ import org.l2jmobius.gameserver.model.events.Containers;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerCreate;
-import org.l2jmobius.gameserver.model.item.PlayerItemTemplate;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.item.holders.InitialEquipment;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
@@ -69,7 +76,7 @@ public class CharacterCreate extends ClientPacket
 	private String _name;
 	private int _race;
 	private boolean _isFemale;
-	private int _classId;
+	private int _playerClass;
 	private byte _hairStyle;
 	private byte _hairColor;
 	private byte _face;
@@ -80,7 +87,7 @@ public class CharacterCreate extends ClientPacket
 		_name = readString();
 		_race = readInt();
 		_isFemale = readInt() != 0;
-		_classId = readInt();
+		_playerClass = readInt();
 		readInt(); // _int
 		readInt(); // _str
 		readInt(); // _con
@@ -104,9 +111,9 @@ public class CharacterCreate extends ClientPacket
 			return;
 		}
 		
-		if (Config.FORBIDDEN_NAMES.length > 0)
+		if (PlayerConfig.FORBIDDEN_NAMES.length > 0)
 		{
-			for (String st : Config.FORBIDDEN_NAMES)
+			for (String st : PlayerConfig.FORBIDDEN_NAMES)
 			{
 				if (_name.toLowerCase().contains(st.toLowerCase()))
 				{
@@ -159,7 +166,7 @@ public class CharacterCreate extends ClientPacket
 		 */
 		synchronized (CharInfoTable.getInstance())
 		{
-			if ((CharInfoTable.getInstance().getAccountCharacterCount(client.getAccountName()) >= Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT) && (Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT != 0))
+			if ((CharInfoTable.getInstance().getAccountCharacterCount(client.getAccountName()) >= ServerConfig.MAX_CHARACTERS_NUMBER_PER_ACCOUNT) && (ServerConfig.MAX_CHARACTERS_NUMBER_PER_ACCOUNT != 0))
 			{
 				client.sendPacket(new CharCreateFail(CharCreateFail.REASON_TOO_MANY_CHARACTERS));
 				return;
@@ -171,31 +178,31 @@ public class CharacterCreate extends ClientPacket
 			}
 			
 			// Balthus Knights.
-			if (Config.BALTHUS_KNIGHTS_ENABLED && (!Config.BALTHUS_KNIGHTS_PREMIUM || (Config.PREMIUM_SYSTEM_ENABLED && (PremiumManager.getInstance().getPremiumExpiration(client.getAccountName()) > 0))))
+			if (BalthusKnightsConfig.BALTHUS_KNIGHTS_ENABLED && (!BalthusKnightsConfig.BALTHUS_KNIGHTS_PREMIUM || (PremiumSystemConfig.PREMIUM_SYSTEM_ENABLED && (PremiumManager.getInstance().getPremiumExpiration(client.getAccountName()) > 0))))
 			{
-				if (_classId == 190)
+				if (_playerClass == 190)
 				{
-					_classId = 188; // Eviscerator
+					_playerClass = 188; // Eviscerator
 					balthusKnights = true;
 				}
-				else if (_classId == 191)
+				else if (_playerClass == 191)
 				{
-					_classId = 189; // Sayha Seer
+					_playerClass = 189; // Sayha Seer
 					balthusKnights = true;
 				}
-				else if ((_classId > 138) && (_classId < 147))
+				else if ((_playerClass > 138) && (_playerClass < 147))
 				{
-					final String properClass = PlayerClass.getPlayerClass(_classId).toString().split("_")[0];
-					for (PlayerClass classId : PlayerClass.values())
+					final String properClass = PlayerClass.getPlayerClass(_playerClass).toString().split("_")[0];
+					for (PlayerClass playerClass : PlayerClass.values())
 					{
-						if (classId.getRace() == null)
+						if (playerClass.getRace() == null)
 						{
 							continue;
 						}
 						
-						if ((classId.getRace().ordinal() == _race) && classId.toString().startsWith(properClass))
+						if ((playerClass.getRace().ordinal() == _race) && playerClass.toString().startsWith(properClass))
 						{
-							_classId = classId.getId();
+							_playerClass = playerClass.getId();
 							balthusKnights = true;
 							break;
 						}
@@ -203,13 +210,13 @@ public class CharacterCreate extends ClientPacket
 				}
 			}
 			
-			if (!balthusKnights && (PlayerClass.getPlayerClass(_classId).level() > 0))
+			if (!balthusKnights && (PlayerClass.getPlayerClass(_playerClass).level() > 0))
 			{
 				client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 				return;
 			}
 			
-			template = PlayerTemplateData.getInstance().getTemplate(_classId);
+			template = PlayerTemplateData.getInstance().getTemplate(_playerClass);
 			if (template == null)
 			{
 				client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
@@ -222,7 +229,7 @@ public class CharacterCreate extends ClientPacket
 			{
 				case HUMAN:
 				{
-					if (!Config.ALLOW_HUMAN)
+					if (!AllowedPlayerRacesConfig.ALLOW_HUMAN)
 					{
 						client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 						return;
@@ -231,7 +238,7 @@ public class CharacterCreate extends ClientPacket
 				}
 				case ELF:
 				{
-					if (!Config.ALLOW_ELF)
+					if (!AllowedPlayerRacesConfig.ALLOW_ELF)
 					{
 						client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 						return;
@@ -240,7 +247,7 @@ public class CharacterCreate extends ClientPacket
 				}
 				case DARK_ELF:
 				{
-					if (!Config.ALLOW_DARKELF)
+					if (!AllowedPlayerRacesConfig.ALLOW_DARKELF)
 					{
 						client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 						return;
@@ -249,7 +256,7 @@ public class CharacterCreate extends ClientPacket
 				}
 				case ORC:
 				{
-					if (!Config.ALLOW_ORC)
+					if (!AllowedPlayerRacesConfig.ALLOW_ORC)
 					{
 						client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 						return;
@@ -258,7 +265,7 @@ public class CharacterCreate extends ClientPacket
 				}
 				case DWARF:
 				{
-					if (!Config.ALLOW_DWARF)
+					if (!AllowedPlayerRacesConfig.ALLOW_DWARF)
 					{
 						client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 						return;
@@ -267,7 +274,7 @@ public class CharacterCreate extends ClientPacket
 				}
 				case KAMAEL:
 				{
-					if (!Config.ALLOW_KAMAEL)
+					if (!AllowedPlayerRacesConfig.ALLOW_KAMAEL)
 					{
 						client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 						return;
@@ -276,7 +283,7 @@ public class CharacterCreate extends ClientPacket
 				}
 				case ERTHEIA:
 				{
-					if (!Config.ALLOW_ERTHEIA)
+					if (!AllowedPlayerRacesConfig.ALLOW_ERTHEIA)
 					{
 						client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 						return;
@@ -296,11 +303,11 @@ public class CharacterCreate extends ClientPacket
 		
 		if (balthusKnights)
 		{
-			newChar.setExp(ExperienceData.getInstance().getExpForLevel(Config.BALTHUS_KNIGHTS_LEVEL));
-			newChar.getStat().setLevel((byte) Config.BALTHUS_KNIGHTS_LEVEL);
-			if (Config.BALTHUS_KNIGHTS_REWARD_SKILLS)
+			newChar.setExp(ExperienceData.getInstance().getExpForLevel(BalthusKnightsConfig.BALTHUS_KNIGHTS_LEVEL));
+			newChar.getStat().setLevel((byte) BalthusKnightsConfig.BALTHUS_KNIGHTS_LEVEL);
+			if (BalthusKnightsConfig.BALTHUS_KNIGHTS_REWARD_SKILLS)
 			{
-				newChar.giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, Config.AUTO_LEARN_FP_SKILLS, true, Config.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
+				newChar.giveAvailableSkills(PlayerConfig.AUTO_LEARN_FS_SKILLS, PlayerConfig.AUTO_LEARN_FP_SKILLS, true, PlayerConfig.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
 			}
 		}
 		
@@ -317,31 +324,31 @@ public class CharacterCreate extends ClientPacket
 	
 	private static boolean isValidName(String text)
 	{
-		return Config.CHARNAME_TEMPLATE_PATTERN.matcher(text).matches();
+		return ServerConfig.CHARNAME_TEMPLATE_PATTERN.matcher(text).matches();
 	}
 	
 	private void initNewChar(GameClient client, Player newChar, boolean balthusKnights)
 	{
 		World.getInstance().addObject(newChar);
 		
-		if (Config.STARTING_ADENA > 0)
+		if (PlayerConfig.STARTING_ADENA > 0)
 		{
-			newChar.addAdena(ItemProcessType.REWARD, Config.STARTING_ADENA, null, false);
+			newChar.addAdena(ItemProcessType.REWARD, PlayerConfig.STARTING_ADENA, null, false);
 		}
 		
 		final PlayerTemplate template = newChar.getTemplate();
-		if (Config.CUSTOM_STARTING_LOC)
+		if (StartingLocationConfig.CUSTOM_STARTING_LOC)
 		{
-			final Location createLoc = new Location(Config.CUSTOM_STARTING_LOC_X, Config.CUSTOM_STARTING_LOC_Y, Config.CUSTOM_STARTING_LOC_Z);
+			final Location createLoc = new Location(StartingLocationConfig.CUSTOM_STARTING_LOC_X, StartingLocationConfig.CUSTOM_STARTING_LOC_Y, StartingLocationConfig.CUSTOM_STARTING_LOC_Z);
 			newChar.setXYZInvisible(createLoc.getX(), createLoc.getY(), createLoc.getZ());
 		}
-		else if (Config.FACTION_SYSTEM_ENABLED)
+		else if (FactionSystemConfig.FACTION_SYSTEM_ENABLED)
 		{
-			newChar.setXYZInvisible(Config.FACTION_STARTING_LOCATION.getX(), Config.FACTION_STARTING_LOCATION.getY(), Config.FACTION_STARTING_LOCATION.getZ());
+			newChar.setXYZInvisible(FactionSystemConfig.FACTION_STARTING_LOCATION.getX(), FactionSystemConfig.FACTION_STARTING_LOCATION.getY(), FactionSystemConfig.FACTION_STARTING_LOCATION.getZ());
 		}
 		else if (balthusKnights)
 		{
-			newChar.setXYZInvisible(Config.BALTHUS_KNIGHTS_LOCATION.getX(), Config.BALTHUS_KNIGHTS_LOCATION.getY(), Config.BALTHUS_KNIGHTS_LOCATION.getZ());
+			newChar.setXYZInvisible(BalthusKnightsConfig.BALTHUS_KNIGHTS_LOCATION.getX(), BalthusKnightsConfig.BALTHUS_KNIGHTS_LOCATION.getY(), BalthusKnightsConfig.BALTHUS_KNIGHTS_LOCATION.getZ());
 		}
 		else
 		{
@@ -349,36 +356,36 @@ public class CharacterCreate extends ClientPacket
 			newChar.setXYZInvisible(createLoc.getX(), createLoc.getY(), createLoc.getZ());
 		}
 		
-		newChar.setTitle(Config.ENABLE_CUSTOM_STARTING_TITLE ? Config.CUSTOM_STARTING_TITLE : "");
+		newChar.setTitle(StartingTitleConfig.ENABLE_CUSTOM_STARTING_TITLE ? StartingTitleConfig.CUSTOM_STARTING_TITLE : "");
 		
-		if (Config.ENABLE_VITALITY)
+		if (PlayerConfig.ENABLE_VITALITY)
 		{
-			newChar.setVitalityPoints(Math.min(Config.STARTING_VITALITY_POINTS, PlayerStat.MAX_VITALITY_POINTS), true);
+			newChar.setVitalityPoints(Math.min(PlayerConfig.STARTING_VITALITY_POINTS, PlayerStat.MAX_VITALITY_POINTS), true);
 		}
 		
-		if (Config.STARTING_LEVEL > 1)
+		if (PlayerConfig.STARTING_LEVEL > 1)
 		{
-			newChar.getStat().addLevel((byte) (Config.STARTING_LEVEL - 1));
+			newChar.getStat().addLevel((byte) (PlayerConfig.STARTING_LEVEL - 1));
 		}
 		
-		if (Config.STARTING_SP > 0)
+		if (PlayerConfig.STARTING_SP > 0)
 		{
-			newChar.getStat().addSp(Config.STARTING_SP);
+			newChar.getStat().addSp(PlayerConfig.STARTING_SP);
 		}
 		
-		final List<PlayerItemTemplate> initialItems = InitialEquipmentData.getInstance().getEquipmentList(newChar.getPlayerClass());
-		if (initialItems != null)
+		final Collection<InitialEquipment> classEquipment = InitialEquipmentData.getInstance().getClassEquipment(newChar.getPlayerClass());
+		if (classEquipment != null)
 		{
-			for (PlayerItemTemplate ie : initialItems)
+			for (InitialEquipment equipment : classEquipment)
 			{
-				final Item item = newChar.getInventory().addItem(ItemProcessType.REWARD, ie.getId(), ie.getCount(), newChar, null);
+				final Item item = newChar.getInventory().addItem(ItemProcessType.REWARD, equipment.getId(), equipment.getCount(), newChar, null);
 				if (item == null)
 				{
-					PacketLogger.warning("Could not create item during char creation: itemId " + ie.getId() + ", amount " + ie.getCount() + ".");
+					PacketLogger.warning("Could not create item during player creation: itemId " + equipment.getId() + ", amount " + equipment.getCount() + ".");
 					continue;
 				}
 				
-				if (item.isEquipable() && ie.isEquipped())
+				if (item.isEquipable() && equipment.isEquipped())
 				{
 					newChar.getInventory().equipItem(item);
 				}
@@ -387,7 +394,7 @@ public class CharacterCreate extends ClientPacket
 		
 		if (balthusKnights)
 		{
-			for (ItemHolder reward : Config.BALTHUS_KNIGHTS_REWARDS)
+			for (ItemHolder reward : BalthusKnightsConfig.BALTHUS_KNIGHTS_REWARDS)
 			{
 				final Item item = newChar.getInventory().addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), newChar, null);
 				if (item == null)
@@ -417,7 +424,7 @@ public class CharacterCreate extends ClientPacket
 		}
 		
 		newChar.setOnlineStatus(true, false);
-		if (Config.SHOW_INTRO_VIDEO)
+		if (PlayerConfig.SHOW_INTRO_VIDEO)
 		{
 			newChar.getVariables().set(PlayerVariables.INTRO_VIDEO, true);
 		}

@@ -18,8 +18,9 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
@@ -40,7 +41,7 @@ import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerSkillLearn;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.AcquireSkillType;
@@ -116,7 +117,7 @@ public class RequestAcquireSkill extends ClientPacket
 		
 		if ((_level < 1) || (_level > 1000) || (_id < 1))
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, "Wrong Packet Data in Aquired Skill", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, "Wrong Packet Data in Aquired Skill", GeneralConfig.DEFAULT_PUNISH);
 			PacketLogger.warning("Recived Wrong Packet Data in Aquired Skill - id: " + _id + " level: " + _level + " for " + player);
 			return;
 		}
@@ -204,7 +205,7 @@ public class RequestAcquireSkill extends ClientPacket
 				final int repCost = (int) s.getLevelUpSp(); // Hopefully not greater that max int.
 				if (clan.getReputationScore() >= repCost)
 				{
-					if (Config.LIFE_CRYSTAL_NEEDED)
+					if (PlayerConfig.LIFE_CRYSTAL_NEEDED)
 					{
 						for (ItemHolder item : s.getRequiredItems())
 						{
@@ -611,7 +612,7 @@ public class RequestAcquireSkill extends ClientPacket
 				return false;
 			}
 			
-			if (!Config.DIVINE_SP_BOOK_NEEDED && (_id == CommonSkill.DIVINE_INSPIRATION.getId()))
+			if (!PlayerConfig.DIVINE_SP_BOOK_NEEDED && (_id == CommonSkill.DIVINE_INSPIRATION.getId()))
 			{
 				return true;
 			}
@@ -772,7 +773,7 @@ public class RequestAcquireSkill extends ClientPacket
 	 */
 	public static boolean canTransform(Player player)
 	{
-		if (Config.ALLOW_TRANSFORM_WITHOUT_QUEST)
+		if (PlayerConfig.ALLOW_TRANSFORM_WITHOUT_QUEST)
 		{
 			return true;
 		}

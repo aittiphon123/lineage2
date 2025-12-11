@@ -25,10 +25,10 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.commons.enums.ServerMode;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.cache.HtmCache;
+import org.l2jmobius.gameserver.config.ConfigLoader;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.data.sql.CrestTable;
 import org.l2jmobius.gameserver.data.xml.AdminData;
 import org.l2jmobius.gameserver.data.xml.AppearanceItemData;
@@ -57,7 +57,7 @@ import org.l2jmobius.gameserver.data.xml.OptionData;
 import org.l2jmobius.gameserver.data.xml.PetDataTable;
 import org.l2jmobius.gameserver.data.xml.PetSkillData;
 import org.l2jmobius.gameserver.data.xml.PlayerTemplateData;
-import org.l2jmobius.gameserver.data.xml.PlayerXpPercentLostData;
+import org.l2jmobius.gameserver.data.xml.ExperienceLossData;
 import org.l2jmobius.gameserver.data.xml.PrimeShopData;
 import org.l2jmobius.gameserver.data.xml.RecipeData;
 import org.l2jmobius.gameserver.data.xml.SayuneData;
@@ -74,13 +74,13 @@ import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.managers.FakePlayerChatManager;
 import org.l2jmobius.gameserver.managers.InstanceManager;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.managers.WalkingManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.scripting.ScriptManager;
+import org.l2jmobius.gameserver.scripting.ScriptEngine;
 
 /**
  * @author NosBit, Mobius
@@ -115,7 +115,7 @@ public class AdminReload implements IAdminCommandHandler
 			{
 				case "config":
 				{
-					Config.load(ServerMode.GAME);
+					ConfigLoader.init();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Configs.");
 					break;
 				}
@@ -138,19 +138,19 @@ public class AdminReload implements IAdminCommandHandler
 						final String value = st.nextToken();
 						if (!StringUtil.isNumeric(value))
 						{
-							QuestManager.getInstance().reload(value);
+							ScriptManager.getInstance().reload(value);
 							AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Quest Name:" + value + ".");
 						}
 						else
 						{
 							final int questId = Integer.parseInt(value);
-							QuestManager.getInstance().reload(questId);
+							ScriptManager.getInstance().reload(questId);
 							AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Quest ID:" + questId + ".");
 						}
 					}
 					else
 					{
-						QuestManager.getInstance().reloadAllScripts();
+						ScriptManager.getInstance().reloadAllScripts();
 						activeChar.sendSysMessage("All scripts have been reloaded.");
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Quests.");
 					}
@@ -169,7 +169,7 @@ public class AdminReload implements IAdminCommandHandler
 					if (st.hasMoreElements())
 					{
 						final String path = st.nextToken();
-						final File file = new File(Config.DATAPACK_ROOT, "data/html/" + path);
+						final File file = new File(ServerConfig.DATAPACK_ROOT, "data/html/" + path);
 						if (file.exists())
 						{
 							HtmCache.getInstance().reload(file);
@@ -247,7 +247,7 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					try
 					{
-						ScriptManager.getInstance().executeScript(ScriptManager.EFFECT_MASTER_HANDLER_FILE);
+						ScriptEngine.getInstance().executeScript(ScriptEngine.EFFECT_MASTER_HANDLER_FILE);
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded effect master handler.");
 					}
 					catch (Exception e)
@@ -261,7 +261,7 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					try
 					{
-						ScriptManager.getInstance().executeScript(ScriptManager.MASTER_HANDLER_FILE);
+						ScriptEngine.getInstance().executeScript(ScriptEngine.MASTER_HANDLER_FILE);
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded master handler.");
 					}
 					catch (Exception e)
@@ -387,7 +387,7 @@ public class AdminReload implements IAdminCommandHandler
 				case "exp":
 				{
 					ExperienceData.getInstance().load();
-					PlayerXpPercentLostData.getInstance().load();
+					ExperienceLossData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Experience data.");
 					break;
 				}

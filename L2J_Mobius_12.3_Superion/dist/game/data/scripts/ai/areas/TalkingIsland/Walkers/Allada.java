@@ -22,13 +22,11 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 
-import ai.AbstractNpcAI;
-
 /**
  * Allada AI.
  * @author Gladicek
  */
-public class Allada extends AbstractNpcAI
+public class Allada extends WalkerAI
 {
 	// NPC
 	private static final int RINNE = 33234;

@@ -23,18 +23,17 @@ package ai.bosses.Fafurion;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class EliteWizard extends AbstractNpcAI
+public class EliteWizard extends Script
 {
 	// Npc
 	private static final int ELITE_WIZARD = 29373;
@@ -45,7 +44,8 @@ public class EliteWizard extends AbstractNpcAI
 	
 	private EliteWizard()
 	{
-		registerMobs(ELITE_WIZARD);
+		addAttackId(ELITE_WIZARD);
+		addSpellFinishedId(ELITE_WIZARD);
 	}
 	
 	@Override

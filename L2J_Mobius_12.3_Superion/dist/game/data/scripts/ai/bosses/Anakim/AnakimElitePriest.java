@@ -23,18 +23,17 @@ package ai.bosses.Anakim;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class AnakimElitePriest extends AbstractNpcAI
+public class AnakimElitePriest extends Script
 {
 	// Npc
 	private static final int ANAKIM_ELITE_PRIEST = 29351;
@@ -47,7 +46,8 @@ public class AnakimElitePriest extends AbstractNpcAI
 	
 	private AnakimElitePriest()
 	{
-		registerMobs(ANAKIM_ELITE_PRIEST);
+		addAttackId(ANAKIM_ELITE_PRIEST);
+		addSpellFinishedId(ANAKIM_ELITE_PRIEST);
 	}
 	
 	@Override

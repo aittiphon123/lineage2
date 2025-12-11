@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets.virtualItem;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.IllusoryEquipmentConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.GameClient;
@@ -53,6 +53,6 @@ public class ExVirtualItemSystemPointInfo extends ServerPacket
 		buffer.writeInt(_illusoryPointsDiff); // var int nDiffPoint;
 		buffer.writeInt(_illusoryPointsAcquired); // var int nTotalGetVISPoint; Total Illusory Points acquired
 		buffer.writeInt(_illusoryPointsUsed); // var int nTotalUsedVISPoint; Total Illusory Points used
-		buffer.writeInt(Config.ILLUSORY_EQUIPMENT_EVENT_POINTS_LIMIT); // // var int nVISMaxPoint; max available points default 600
+		buffer.writeInt(IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_EVENT_POINTS_LIMIT); // // var int nVISMaxPoint; max available points default 600
 	}
 }

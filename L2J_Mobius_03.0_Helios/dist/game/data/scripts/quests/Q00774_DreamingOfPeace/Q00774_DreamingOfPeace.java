@@ -23,15 +23,15 @@ package quests.Q00774_DreamingOfPeace;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 
 /**
@@ -165,7 +165,7 @@ public class Q00774_DreamingOfPeace extends Quest
 	public void onKill(Npc npc, Player killer, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && killer.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+		if ((qs != null) && qs.isCond(1) && killer.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 		{
 			int count = qs.getInt(KILL_COUNT_VAR);
 			qs.set(KILL_COUNT_VAR, ++count);

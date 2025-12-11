@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.autoplay;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.xml.ActionData;
 import org.l2jmobius.gameserver.handler.IPlayerActionHandler;
 import org.l2jmobius.gameserver.handler.PlayerActionHandler;
@@ -186,7 +186,7 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 		if ((item != null) && !item.isPotion())
 		{
 			// auto supply
-			if (Config.ENABLE_AUTO_ITEM)
+			if (GeneralConfig.ENABLE_AUTO_ITEM)
 			{
 				AutoUseTaskManager.getInstance().addAutoSupplyItem(player, item.getId());
 			}
@@ -196,7 +196,7 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 			// auto potion
 			if ((_page == 23) && (_slot == 1))
 			{
-				if (Config.ENABLE_AUTO_POTION && (item != null) && item.isPotion())
+				if (GeneralConfig.ENABLE_AUTO_POTION && (item != null) && item.isPotion())
 				{
 					AutoUseTaskManager.getInstance().setAutoPotionItem(player, item.getId());
 					return;
@@ -204,7 +204,7 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 			}
 			
 			// auto skill
-			if (Config.ENABLE_AUTO_SKILL && (skill != null))
+			if (GeneralConfig.ENABLE_AUTO_SKILL && (skill != null))
 			{
 				if (skill.hasNegativeEffect())
 				{

@@ -20,8 +20,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.custom.DualboxCheckConfig;
 import org.l2jmobius.gameserver.managers.AntiFeedManager;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.FortManager;
@@ -36,9 +37,9 @@ import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.Fort;
 import org.l2jmobius.gameserver.model.skill.Skill;
@@ -418,7 +419,7 @@ public abstract class AbstractOlympiadGame
 			player.setCurrentMp(player.getMaxMp());
 			player.getStatus().startHpMpRegeneration();
 			
-			if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
+			if (DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 			{
 				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, player);
 			}
@@ -452,18 +453,18 @@ public abstract class AbstractOlympiadGame
 		final QuestState qs1 = player.getQuestState("Q10819_ForHonor");
 		if ((qs != null) && !qs.isCompleted() && qs.isCond(1))
 		{
-			Quest.giveItems(player, Config.EXALTED_FOR_GLORY_ITEM_MAX.getId(), 1);
+			Quest.giveItems(player, GeneralConfig.EXALTED_FOR_GLORY_ITEM_MAX.getId(), 1);
 			Quest.playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			if (Quest.getQuestItemsCount(player, Config.EXALTED_FOR_GLORY_ITEM_MAX.getId()) >= Config.EXALTED_FOR_GLORY_ITEM_MAX.getCount())
+			if (Quest.getQuestItemsCount(player, GeneralConfig.EXALTED_FOR_GLORY_ITEM_MAX.getId()) >= GeneralConfig.EXALTED_FOR_GLORY_ITEM_MAX.getCount())
 			{
 				qs.setCond(2, true);
 			}
 		}
 		else if ((qs1 != null) && !qs1.isCompleted() && qs1.isCond(1))
 		{
-			Quest.giveItems(player, Config.EXALTED_FOR_HONOR_ITEM_MAX.getId(), 1);
+			Quest.giveItems(player, GeneralConfig.EXALTED_FOR_HONOR_ITEM_MAX.getId(), 1);
 			Quest.playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			if (Quest.getQuestItemsCount(player, Config.EXALTED_FOR_HONOR_ITEM_MAX.getId()) >= Config.EXALTED_FOR_HONOR_ITEM_MAX.getCount())
+			if (Quest.getQuestItemsCount(player, GeneralConfig.EXALTED_FOR_HONOR_ITEM_MAX.getId()) >= GeneralConfig.EXALTED_FOR_HONOR_ITEM_MAX.getCount())
 			{
 				qs1.setCond(2, true);
 			}

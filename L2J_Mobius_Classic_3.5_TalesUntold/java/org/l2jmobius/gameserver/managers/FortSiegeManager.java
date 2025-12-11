@@ -36,7 +36,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.data.xml.SpawnData;
 import org.l2jmobius.gameserver.model.CombatFlag;
@@ -46,6 +45,7 @@ import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.siege.Fort;
@@ -59,6 +59,8 @@ import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 public class FortSiegeManager
 {
 	private static final Logger LOGGER = Logger.getLogger(FortSiegeManager.class.getName());
+	
+	private static final String FORTSIEGE_CONFIG_FILE = "./config/FortSiege.ini";
 	
 	private int _attackerMaxClans = 500; // Max number of clans
 	
@@ -249,7 +251,7 @@ public class FortSiegeManager
 	private void load()
 	{
 		final Properties siegeSettings = new Properties();
-		final File file = new File(Config.FORTSIEGE_CONFIG_FILE);
+		final File file = new File(FORTSIEGE_CONFIG_FILE);
 		try (InputStream is = new FileInputStream(file))
 		{
 			siegeSettings.load(is);
@@ -474,8 +476,8 @@ public class FortSiegeManager
 		if (player != null)
 		{
 			removeCombatFlagSkills(player);
-			final long slot = player.getInventory().getSlotFromItem(player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG));
-			player.getInventory().unEquipItemInBodySlot(slot);
+			final BodyPart bodyPart = BodyPart.fromItem(player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG));
+			player.getInventory().unEquipItemInBodySlot(bodyPart);
 			Item flag = player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG);
 			player.destroyItem(ItemProcessType.DESTROY, flag, null, true);
 			player.setCombatFlagEquipped(false);

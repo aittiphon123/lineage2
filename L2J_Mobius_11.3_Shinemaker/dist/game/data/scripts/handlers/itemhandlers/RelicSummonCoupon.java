@@ -20,7 +20,7 @@
  */
 package handlers.itemhandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.RelicSystemConfig;
 import org.l2jmobius.gameserver.handler.IItemHandler;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -70,7 +70,7 @@ public class RelicSummonCoupon implements IItemHandler
 		
 		player.addRequest(new RelicSummonRequest(player));
 		
-		final int relicSummonCount = Config.ELEVEN_SUMMON_COUNT_COUPONS.contains(item.getId()) ? 11 : 1;
+		final int relicSummonCount = RelicSystemConfig.ELEVEN_SUMMON_COUNT_COUPONS.contains(item.getId()) ? 11 : 1;
 		player.sendPacket(new ExRelicsSummonResult(player, item.getId(), relicSummonCount));
 		return true;
 	}

@@ -22,7 +22,7 @@ package ai.others.TrainingCamp;
 
 import java.util.concurrent.TimeUnit;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.TrainingCampConfig;
 import org.l2jmobius.gameserver.data.holders.TrainingHolder;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.model.Location;
@@ -35,19 +35,18 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogout;
 import org.l2jmobius.gameserver.model.olympiad.OlympiadManager;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.training.ExTrainingZone_Admission;
 import org.l2jmobius.gameserver.network.serverpackets.training.ExTrainingZone_Leaving;
 
-import ai.AbstractNpcAI;
-
 /**
  * TrainingCamp AI.
  * @author Gladicek, Mobius
  */
-public class TrainingCamp extends AbstractNpcAI
+public class TrainingCamp extends Script
 {
 	// NPC
 	private static final int RECRUITER = 4378;
@@ -66,7 +65,7 @@ public class TrainingCamp extends AbstractNpcAI
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		String htmltext = null;
-		if (!Config.TRAINING_CAMP_ENABLE || !checkConditions(player))
+		if (!TrainingCampConfig.TRAINING_CAMP_ENABLE || !checkConditions(player))
 		{
 			return htmltext;
 		}
@@ -81,7 +80,7 @@ public class TrainingCamp extends AbstractNpcAI
 			}
 			case "info":
 			{
-				if (player.hasPremiumStatus() || !Config.TRAINING_CAMP_PREMIUM_ONLY)
+				if (player.hasPremiumStatus() || !TrainingCampConfig.TRAINING_CAMP_PREMIUM_ONLY)
 				{
 					htmltext = "4378-02.htm";
 				}
@@ -94,11 +93,11 @@ public class TrainingCamp extends AbstractNpcAI
 			case "enter":
 			{
 				final long trainingCampDuration = player.getTraingCampDuration();
-				if (trainingCampDuration >= Config.TRAINING_CAMP_MAX_DURATION)
+				if (trainingCampDuration >= TrainingCampConfig.TRAINING_CAMP_MAX_DURATION)
 				{
 					player.sendPacket(SystemMessageId.YOU_HAVE_COMPLETED_THE_DAY_S_TRAINING);
 				}
-				else if (player.hasPremiumStatus() || !Config.TRAINING_CAMP_PREMIUM_ONLY)
+				else if (player.hasPremiumStatus() || !TrainingCampConfig.TRAINING_CAMP_PREMIUM_ONLY)
 				{
 					TrainingHolder holder = player.getTraingCampInfo();
 					if ((holder != null) && (holder.getTrainingTime(TimeUnit.MINUTES) < 1))
@@ -118,7 +117,7 @@ public class TrainingCamp extends AbstractNpcAI
 						
 						// @Sdw: Here we are supposed to send ExUserInfoEquipSlot with a fake equip of a SLS, feels ugly to me, not doing it.
 						player.setTraingCampInfo(new TrainingHolder(player.getObjectId(), player.getClassIndex(), player.getLevel(), System.currentTimeMillis(), -1));
-						final long timeRemaining = Config.TRAINING_CAMP_MAX_DURATION - trainingCampDuration;
+						final long timeRemaining = TrainingCampConfig.TRAINING_CAMP_MAX_DURATION - trainingCampDuration;
 						player.sendPacket(new ExTrainingZone_Admission(player.getLevel(), 0, timeRemaining));
 						startQuestTimer("finish", TimeUnit.SECONDS.toMillis(timeRemaining), npc, player);
 					}
@@ -144,8 +143,8 @@ public class TrainingCamp extends AbstractNpcAI
 						final long trainingTime = Math.max(0, holder.getTrainingTime(TimeUnit.MINUTES));
 						if (trainingTime > 0)
 						{
-							final long expGained = (long) ((Config.TRAINING_CAMP_EXP_MULTIPLIER * ((trainingTime * (ExperienceData.getInstance().getExpForLevel(holder.getLevel()) * ExperienceData.getInstance().getTrainingRate(holder.getLevel()))) / TrainingHolder.getTrainingDivider())) / 60);
-							final long spGained = (long) (Config.TRAINING_CAMP_SP_MULTIPLIER * (expGained / 250L));
+							final long expGained = (long) ((TrainingCampConfig.TRAINING_CAMP_EXP_MULTIPLIER * ((trainingTime * (ExperienceData.getInstance().getExpForLevel(holder.getLevel()) * ExperienceData.getInstance().getTrainingRate(holder.getLevel()))) / TrainingHolder.getTrainingDivider())) / 60);
+							final long spGained = (long) (TrainingCampConfig.TRAINING_CAMP_SP_MULTIPLIER * (expGained / 250L));
 							String html = getHtm(player, "4378-04.htm");
 							html = html.replace("%training_level%", String.valueOf(holder.getLevel()));
 							html = html.replace("%training_time%", String.valueOf(trainingTime));
@@ -181,8 +180,8 @@ public class TrainingCamp extends AbstractNpcAI
 						{
 							player.sendPacket(SystemMessageId.CALCULATING_XP_AND_SP_OBTAINED_FROM_TRAINING);
 							
-							final long expGained = (long) ((Config.TRAINING_CAMP_EXP_MULTIPLIER * ((trainingTime * (ExperienceData.getInstance().getExpForLevel(holder.getLevel()) * ExperienceData.getInstance().getTrainingRate(holder.getLevel()))) / TrainingHolder.getTrainingDivider())) / 60);
-							final long spGained = (long) (Config.TRAINING_CAMP_SP_MULTIPLIER * (expGained / 250L));
+							final long expGained = (long) ((TrainingCampConfig.TRAINING_CAMP_EXP_MULTIPLIER * ((trainingTime * (ExperienceData.getInstance().getExpForLevel(holder.getLevel()) * ExperienceData.getInstance().getTrainingRate(holder.getLevel()))) / TrainingHolder.getTrainingDivider())) / 60);
+							final long spGained = (long) (TrainingCampConfig.TRAINING_CAMP_SP_MULTIPLIER * (expGained / 250L));
 							player.addExpAndSp(expGained, spGained);
 							
 							final SystemMessage sysMsg = new SystemMessage(SystemMessageId.YOU_HAVE_COMPLETED_TRAINING_IN_THE_ROYAL_TRAINING_CAMP_AND_OBTAINED_S1_XP_AND_S2_SP);
@@ -235,14 +234,14 @@ public class TrainingCamp extends AbstractNpcAI
 	
 	private boolean checkConditions(Player player)
 	{
-		if (player.getLevel() <= Config.TRAINING_CAMP_MIN_LEVEL)
+		if (player.getLevel() <= TrainingCampConfig.TRAINING_CAMP_MIN_LEVEL)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.LV_S1_OR_ABOVE).addInt(Config.TRAINING_CAMP_MIN_LEVEL));
+			player.sendPacket(new SystemMessage(SystemMessageId.LV_S1_OR_ABOVE).addInt(TrainingCampConfig.TRAINING_CAMP_MIN_LEVEL));
 			return false;
 		}
-		else if (player.getLevel() >= Config.TRAINING_CAMP_MAX_LEVEL)
+		else if (player.getLevel() >= TrainingCampConfig.TRAINING_CAMP_MAX_LEVEL)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.LV_S1_OR_BELOW).addInt(Config.TRAINING_CAMP_MAX_LEVEL));
+			player.sendPacket(new SystemMessage(SystemMessageId.LV_S1_OR_BELOW).addInt(TrainingCampConfig.TRAINING_CAMP_MAX_LEVEL));
 			return false;
 		}
 		else if (player.isFlyingMounted() || player.isTransformed())
@@ -316,7 +315,7 @@ public class TrainingCamp extends AbstractNpcAI
 		if (holder.isValid(player) && holder.isTraining())
 		{
 			final long elapsedTime = holder.getElapsedTime();
-			final long remainingPlayerTime = Config.TRAINING_CAMP_MAX_DURATION - player.getTraingCampDuration();
+			final long remainingPlayerTime = TrainingCampConfig.TRAINING_CAMP_MAX_DURATION - player.getTraingCampDuration();
 			if (elapsedTime < remainingPlayerTime)
 			{
 				player.setLastLocation();

@@ -22,7 +22,9 @@ package org.l2jmobius.gameserver.network.clientpackets.attendance;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.AttendanceRewardsConfig;
+import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
+import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.data.holders.AttendanceItemHolder;
 import org.l2jmobius.gameserver.data.xml.AttendanceRewardData;
 import org.l2jmobius.gameserver.model.World;
@@ -57,13 +59,13 @@ public class RequestVipAttendanceItemReward extends ClientPacket
 			return;
 		}
 		
-		if (!Config.ENABLE_ATTENDANCE_REWARDS)
+		if (!AttendanceRewardsConfig.ENABLE_ATTENDANCE_REWARDS)
 		{
 			player.sendPacket(SystemMessageId.DUE_TO_A_SYSTEM_ERROR_THE_ATTENDANCE_REWARD_CANNOT_BE_RECEIVED_PLEASE_TRY_AGAIN_LATER_BY_GOING_TO_MENU_ATTENDANCE_CHECK);
 			return;
 		}
 		
-		if (Config.PREMIUM_ONLY_ATTENDANCE_REWARDS && !player.hasPremiumStatus())
+		if (AttendanceRewardsConfig.PREMIUM_ONLY_ATTENDANCE_REWARDS && !player.hasPremiumStatus())
 		{
 			player.sendPacket(SystemMessageId.YOUR_VIP_RANK_IS_TOO_LOW_TO_RECEIVE_THE_REWARD);
 			return;
@@ -96,7 +98,7 @@ public class RequestVipAttendanceItemReward extends ClientPacket
 			player.sendPacket(new ExVipAttendanceReward());
 			
 			// Update other players.
-			if (Config.ATTENDANCE_REWARDS_SHARE_ACCOUNT && (!Config.OFFLINE_DISCONNECT_SAME_ACCOUNT || !Config.OFFLINE_PLAY_DISCONNECT_SAME_ACCOUNT))
+			if (AttendanceRewardsConfig.ATTENDANCE_REWARDS_SHARE_ACCOUNT && (!OfflineTradeConfig.OFFLINE_DISCONNECT_SAME_ACCOUNT || !OfflinePlayConfig.OFFLINE_PLAY_DISCONNECT_SAME_ACCOUNT))
 			{
 				for (Player worldPlayer : World.getInstance().getPlayers())
 				{

@@ -29,15 +29,17 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.ai.Action;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.custom.ClassBalanceConfig;
+import org.l2jmobius.gameserver.config.custom.FakePlayersConfig;
 import org.l2jmobius.gameserver.data.xml.ActionData;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -53,8 +55,8 @@ import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureSk
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureSkillUse;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcSkillSee;
 import org.l2jmobius.gameserver.model.events.returns.TerminateReturn;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.Weapon;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.enums.ItemSkillType;
 import org.l2jmobius.gameserver.model.item.holders.ItemSkillHolder;
@@ -264,6 +266,11 @@ public class SkillCaster implements Runnable
 		
 		// Disable the skill during the re-use delay and create a task EnableSkill with Medium priority to enable it at the end of the re-use delay
 		int reuseDelay = caster.getStat().getReuseTime(_skill);
+		if (caster.isPlayable())
+		{
+			reuseDelay = (int) (reuseDelay * ClassBalanceConfig.SKILL_REUSE_MULTIPLIERS[caster.asPlayer().getPlayerClass().getId()]);
+		}
+		
 		if (reuseDelay > 10)
 		{
 			// Skill mastery doesn't affect static skills / A2 and item skills on reuse.
@@ -296,7 +303,7 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Reduce talisman mana on skill use
-		if ((_skill.getReferenceItemId() > 0) && (ItemData.getInstance().getTemplate(_skill.getReferenceItemId()).getBodyPart() == ItemTemplate.SLOT_DECO))
+		if ((_skill.getReferenceItemId() > 0) && (ItemData.getInstance().getTemplate(_skill.getReferenceItemId()).getBodyPart() == BodyPart.DECO))
 		{
 			for (Item item : caster.getInventory().getItems())
 			{
@@ -598,7 +605,7 @@ public class SkillCaster implements Runnable
 				final Creature creature = obj.asCreature();
 				
 				// Check raid monster/minion attack and check buffing characters who attack raid monsters. Raid is still affected by skills.
-				if (!Config.RAID_DISABLE_CURSE && creature.isRaid() && creature.giveRaidCurse() && (caster.getLevel() >= (creature.getLevel() + 9)) && (skill.hasNegativeEffect() || ((creature.getTarget() == caster) && creature.asAttackable().getAggroList().containsKey(caster))))
+				if (!NpcConfig.RAID_DISABLE_CURSE && creature.isRaid() && creature.giveRaidCurse() && (caster.getLevel() >= (creature.getLevel() + 9)) && (skill.hasNegativeEffect() || ((creature.getTarget() == caster) && creature.asAttackable().getAggroList().containsKey(caster))))
 				{
 					// Skills such as Summon Battle Scar too can trigger magic silence.
 					final CommonSkill curse = skill.hasNegativeEffect() ? CommonSkill.RAID_CURSE2 : CommonSkill.RAID_CURSE;
@@ -665,7 +672,7 @@ public class SkillCaster implements Runnable
 							obj.asCreature().addAttackerToAttackByList(caster);
 							
 							// Summoning a servitor should not renew your own PvP flag time.
-							if (obj.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE && (!obj.isServitor() || (obj.getObjectId() != player.getFirstServitor().getObjectId())))
+							if (obj.isFakePlayer() && !FakePlayersConfig.FAKE_PLAYER_AUTO_ATTACKABLE && (!obj.isServitor() || (obj.getObjectId() != player.getFirstServitor().getObjectId())))
 							{
 								player.updatePvPStatus();
 							}
@@ -688,7 +695,7 @@ public class SkillCaster implements Runnable
 						{
 							// Consider fake player PvP status.
 							if (!obj.isFakePlayer() //
-								|| (obj.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE && (!obj.asNpc().isScriptValue(0) || (obj.asNpc().getReputation() < 0))))
+								|| (obj.isFakePlayer() && !FakePlayersConfig.FAKE_PLAYER_AUTO_ATTACKABLE && (!obj.asNpc().isScriptValue(0) || (obj.asNpc().getReputation() < 0))))
 							{
 								player.updatePvPStatus();
 							}
@@ -723,7 +730,7 @@ public class SkillCaster implements Runnable
 					}
 				});
 			}
-			else if (caster.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE) // fake player attacks player
+			else if (caster.isFakePlayer() && !FakePlayersConfig.FAKE_PLAYER_AUTO_ATTACKABLE) // fake player attacks player
 			{
 				if (target.isPlayable() || target.isFakePlayer())
 				{
@@ -732,7 +739,7 @@ public class SkillCaster implements Runnable
 					{
 						npc.setScriptValue(1); // in combat
 						npc.broadcastInfo(); // update flag status
-						QuestManager.getInstance().getQuest("PvpFlaggingStopTask").notifyEvent("FLAG_CHECK", npc, null);
+						ScriptManager.getInstance().getScript("PvpFlaggingStopTask").notifyEvent("FLAG_CHECK", npc, null);
 					}
 				}
 			}

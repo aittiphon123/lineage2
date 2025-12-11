@@ -154,7 +154,7 @@ public class TriggerSkillByDamageReceived extends AbstractEffect
 			
 			if ((buffInfo == null) || (buffInfo.getSkill().getLevel() < triggerSkill.getLevel()))
 			{
-				SkillCaster.triggerCast(event.getAttacker(), target.asCreature(), triggerSkill);
+				SkillCaster.triggerCast((triggerSkill.getTargetType() == TargetType.SELF) ? target.asCreature() : event.getAttacker(), target.asCreature(), triggerSkill);
 			}
 		}
 		else // Multiple trigger skills.
@@ -182,7 +182,7 @@ public class TriggerSkillByDamageReceived extends AbstractEffect
 				triggerSkill = _triggerSkills.get(0).getSkill();
 			}
 			
-			SkillCaster.triggerCast(event.getAttacker(), target.asCreature(), triggerSkill);
+			SkillCaster.triggerCast((triggerSkill.getTargetType() == TargetType.SELF) ? target.asCreature() : event.getAttacker(), target.asCreature(), triggerSkill);
 		}
 	}
 	

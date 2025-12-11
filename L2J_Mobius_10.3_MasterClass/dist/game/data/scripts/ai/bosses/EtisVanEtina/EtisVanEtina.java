@@ -24,8 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.holders.SpawnHolder;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.MapRegionManager;
@@ -39,7 +39,8 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
-import org.l2jmobius.gameserver.model.quest.QuestTimer;
+import org.l2jmobius.gameserver.model.script.QuestTimer;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.model.zone.type.NoRestartZone;
@@ -49,12 +50,10 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class EtisVanEtina extends AbstractNpcAI
+public class EtisVanEtina extends Script
 {
 	// Status
 	private static final int ALIVE = 0;
@@ -831,8 +830,8 @@ public class EtisVanEtina extends AbstractNpcAI
 			
 			GrandBossManager.getInstance().setStatus(ETIS_VAN_ETINA1, DEAD);
 			
-			final long baseIntervalMillis = Config.ETINA_SPAWN_INTERVAL * 3600000;
-			final long randomRangeMillis = Config.ETINA_SPAWN_RANDOM * 3600000;
+			final long baseIntervalMillis = GrandBossConfig.ETINA_SPAWN_INTERVAL * 3600000;
+			final long randomRangeMillis = GrandBossConfig.ETINA_SPAWN_RANDOM * 3600000;
 			final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 			final StatSet info = GrandBossManager.getInstance().getStatSet(ETIS_VAN_ETINA1);
 			info.set("respawn_time", System.currentTimeMillis() + respawnTime);

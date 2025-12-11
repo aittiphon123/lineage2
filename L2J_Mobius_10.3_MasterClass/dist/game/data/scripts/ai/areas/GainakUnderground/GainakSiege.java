@@ -20,8 +20,8 @@
  */
 package ai.areas.GainakUnderground;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.PvpConfig;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -32,6 +32,7 @@ import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.model.zone.type.PeaceZone;
 import org.l2jmobius.gameserver.model.zone.type.SiegeZone;
@@ -42,13 +43,11 @@ import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.util.Broadcast;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author LasTravel, Gigi
  * @URL http://l2wiki.com/Gainak
  */
-public class GainakSiege extends AbstractNpcAI
+public class GainakSiege extends Script
 {
 	private static final int SIEGE_EFFECT = 20140700;
 	private static final int SIEGE_DURATION = 30;
@@ -103,7 +102,7 @@ public class GainakSiege extends AbstractNpcAI
 				GAINAK_SIEGE_ZONE.setActive(false);
 				GAINAK_SIEGE_ZONE.updateZoneStatusForCharactersInside();
 				startQuestTimer("GAINAK_WAR", getTimeBetweenSieges() * 60000, null, null);
-				if (Config.ANNOUNCE_GAINAK_SIEGE)
+				if (PvpConfig.ANNOUNCE_GAINAK_SIEGE)
 				{
 					final SystemMessage s = new SystemMessage(SystemMessageId.PROGRESS_EVENT_STAGE_S1);
 					s.addString("Gainak is now in peace.");
@@ -124,7 +123,7 @@ public class GainakSiege extends AbstractNpcAI
 				GAINAK_SIEGE_ZONE.setActive(true);
 				GAINAK_SIEGE_ZONE.updateZoneStatusForCharactersInside();
 				startQuestTimer("GAINAK_WAR", SIEGE_DURATION * 60000, null, null);
-				if (Config.ANNOUNCE_GAINAK_SIEGE)
+				if (PvpConfig.ANNOUNCE_GAINAK_SIEGE)
 				{
 					final SystemMessage s = new SystemMessage(SystemMessageId.PROGRESS_EVENT_STAGE_S1);
 					s.addString("Gainak is now under siege.");

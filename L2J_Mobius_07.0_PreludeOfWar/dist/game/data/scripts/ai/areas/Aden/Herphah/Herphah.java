@@ -22,15 +22,14 @@ package ai.areas.Aden.Herphah;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Aden Faction Npc AI
  * @author NightBR
  * @date 2019-03-27
  */
-public class Herphah extends AbstractNpcAI
+public class Herphah extends Script
 {
 	// NPC
 	private static final int HERPHAH = 34362;

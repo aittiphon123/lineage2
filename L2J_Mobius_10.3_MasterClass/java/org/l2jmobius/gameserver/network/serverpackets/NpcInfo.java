@@ -22,14 +22,17 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import java.util.Set;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.NpcNameLocalisationData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Team;
+import org.l2jmobius.gameserver.model.actor.instance.Doppelganger;
 import org.l2jmobius.gameserver.model.actor.instance.Guard;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
@@ -90,7 +93,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		
 		if (npc.getTeam() != Team.NONE)
 		{
-			if ((Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+			if ((GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null))
 			{
 				addComponentType(NpcInfoType.ABNORMALS);
 			}
@@ -145,7 +148,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 			addComponentType(NpcInfoType.NAME);
 		}
 		
-		if (npc.getTemplate().isUsingServerSideTitle() || (npc.isMonster() && (Config.SHOW_NPC_LEVEL || Config.SHOW_NPC_AGGRESSION)) || npc.isChampion() || npc.isTrap())
+		if (npc.getTemplate().isUsingServerSideTitle() || (npc.isMonster() && (NpcConfig.SHOW_NPC_LEVEL || NpcConfig.SHOW_NPC_AGGRESSION)) || npc.isChampion() || npc.isTrap())
 		{
 			addComponentType(NpcInfoType.TITLE);
 		}
@@ -188,7 +191,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		if (npc.getClanId() > 0)
 		{
 			final Clan clan = ClanTable.getInstance().getClan(npc.getClanId());
-			if ((clan != null) && !npc.isMonster() && npc.isInsideZone(ZoneId.PEACE))
+			if ((clan != null) && ((npc instanceof Doppelganger) || (!npc.isMonster() && npc.isInsideZone(ZoneId.PEACE))))
 			{
 				_clanId = clan.getId();
 				_clanCrest = clan.getCrestId();
@@ -282,7 +285,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		
 		// Localisation related.
 		String[] localisation = null;
-		if (Config.MULTILANG_ENABLE)
+		if (MultilingualSupportConfig.MULTILANG_ENABLE)
 		{
 			final Player player = client.getPlayer();
 			if (player != null)
@@ -528,7 +531,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		
 		if (containsMask(NpcInfoType.ABNORMALS))
 		{
-			final Team team = (Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null) ? _npc.getTeam() : Team.NONE;
+			final Team team = (GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null) ? _npc.getTeam() : Team.NONE;
 			buffer.writeShort(_abnormalVisualEffects.size() + (_npc.isInvisible() ? 1 : 0) + (team != Team.NONE ? 1 : 0));
 			for (AbnormalVisualEffect abnormalVisualEffect : _abnormalVisualEffects)
 			{
@@ -542,14 +545,14 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 			
 			if (team == Team.BLUE)
 			{
-				if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)
+				if (GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null)
 				{
-					buffer.writeShort(Config.BLUE_TEAM_ABNORMAL_EFFECT.getClientId());
+					buffer.writeShort(GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT.getClientId());
 				}
 			}
-			else if ((team == Team.RED) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+			else if ((team == Team.RED) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null))
 			{
-				buffer.writeShort(Config.RED_TEAM_ABNORMAL_EFFECT.getClientId());
+				buffer.writeShort(GeneralConfig.RED_TEAM_ABNORMAL_EFFECT.getClientId());
 			}
 		}
 	}

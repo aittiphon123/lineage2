@@ -20,14 +20,14 @@
  */
 package quests.Q00835_PitiableMelisa;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.enums.Movie;
 
 /**
@@ -153,7 +153,7 @@ public class Q00835_PitiableMelisa extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(2) && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE) && giveItemRandomly(player, npc, ICE_CRYSTAL_SHARD, 1, 10, 1, true))
+		if ((qs != null) && qs.isCond(2) && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE) && giveItemRandomly(player, npc, ICE_CRYSTAL_SHARD, 1, 10, 1, true))
 		{
 			qs.setCond(3, true);
 		}

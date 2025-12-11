@@ -18,14 +18,13 @@ package ai.areas.DragonValley.DragonVortex;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Dragon Vortex AI.
  * @author Adry_85
  */
-public class DragonVortex extends AbstractNpcAI
+public class DragonVortex extends Script
 {
 	// NPC
 	private static final int VORTEX = 32871;
@@ -110,6 +109,12 @@ public class DragonVortex extends AbstractNpcAI
 		}
 		
 		return super.onEvent(event, npc, player);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

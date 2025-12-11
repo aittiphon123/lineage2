@@ -24,7 +24,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.l2jmobius.commons.util.Rnd;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -34,13 +34,13 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
-import org.l2jmobius.gameserver.model.quest.Faction;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 
 import quests.Q10851_ElvenBotany.Q10851_ElvenBotany;
@@ -298,7 +298,7 @@ public final class Q00841_ContaminationContainment extends Quest
 					{
 						qs.exitQuest(QuestType.DAILY, true);
 						
-						final Quest qs838 = QuestManager.getInstance().getQuest(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
+						final Quest qs838 = ScriptManager.getInstance().getScript(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
 						if (qs838 != null)
 						{
 							qs838.notifyEvent("NOTIFY_QUEST_DONE", npc, player);
@@ -334,7 +334,7 @@ public final class Q00841_ContaminationContainment extends Quest
 						{
 							qs.exitQuest(QuestType.DAILY, true);
 							
-							final Quest qs838 = QuestManager.getInstance().getQuest(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
+							final Quest qs838 = ScriptManager.getInstance().getScript(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
 							if (qs838 != null)
 							{
 								qs838.notifyEvent("NOTIFY_QUEST_DONE", npc, player);
@@ -373,7 +373,7 @@ public final class Q00841_ContaminationContainment extends Quest
 					{
 						qs.exitQuest(QuestType.DAILY, true);
 						
-						final Quest qs838 = QuestManager.getInstance().getQuest(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
+						final Quest qs838 = ScriptManager.getInstance().getScript(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
 						if (qs838 != null)
 						{
 							qs838.notifyEvent("NOTIFY_QUEST_DONE", npc, player);
@@ -409,7 +409,7 @@ public final class Q00841_ContaminationContainment extends Quest
 						{
 							qs.exitQuest(QuestType.DAILY, true);
 							
-							final Quest qs838 = QuestManager.getInstance().getQuest(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
+							final Quest qs838 = ScriptManager.getInstance().getScript(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
 							if (qs838 != null)
 							{
 								qs838.notifyEvent("NOTIFY_QUEST_DONE", npc, player);
@@ -448,7 +448,7 @@ public final class Q00841_ContaminationContainment extends Quest
 					{
 						qs.exitQuest(QuestType.DAILY, true);
 						
-						final Quest qs838 = QuestManager.getInstance().getQuest(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
+						final Quest qs838 = ScriptManager.getInstance().getScript(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
 						if (qs838 != null)
 						{
 							qs838.notifyEvent("NOTIFY_QUEST_DONE", npc, player);
@@ -484,7 +484,7 @@ public final class Q00841_ContaminationContainment extends Quest
 						{
 							qs.exitQuest(QuestType.DAILY, true);
 							
-							final Quest qs838 = QuestManager.getInstance().getQuest(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
+							final Quest qs838 = ScriptManager.getInstance().getScript(Q00838_RequestFromTheMotherTreeGuardians.class.getSimpleName());
 							if (qs838 != null)
 							{
 								qs838.notifyEvent("NOTIFY_QUEST_DONE", npc, player);

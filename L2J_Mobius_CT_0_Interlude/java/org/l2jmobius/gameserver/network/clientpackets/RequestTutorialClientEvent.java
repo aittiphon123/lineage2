@@ -21,16 +21,16 @@
 package org.l2jmobius.gameserver.network.clientpackets;
 
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
 
 public class RequestTutorialClientEvent extends ClientPacket
 {
-	int eventId = 0;
+	private int _eventId = 0;
 	
 	@Override
 	protected void readImpl()
 	{
-		eventId = readInt();
+		_eventId = readInt();
 	}
 	
 	@Override
@@ -45,7 +45,7 @@ public class RequestTutorialClientEvent extends ClientPacket
 		final QuestState qs = player.getQuestState("Q00255_Tutorial");
 		if (qs != null)
 		{
-			qs.getQuest().notifyEvent("CE" + eventId + "", null, player);
+			qs.getQuest().notifyEvent("CE" + _eventId, null, player);
 		}
 	}
 }

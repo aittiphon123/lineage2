@@ -23,11 +23,16 @@ package org.l2jmobius.gameserver.model.stats;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.RatesConfig;
+import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
+import org.l2jmobius.gameserver.config.custom.ClassBalanceConfig;
 import org.l2jmobius.gameserver.data.sql.ClanHallTable;
 import org.l2jmobius.gameserver.data.xml.HitConditionBonusData;
-import org.l2jmobius.gameserver.data.xml.KarmaData;
+import org.l2jmobius.gameserver.data.xml.KarmaLossData;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.SiegeManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -36,6 +41,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Cubic;
 import org.l2jmobius.gameserver.model.actor.instance.SiegeFlag;
 import org.l2jmobius.gameserver.model.actor.instance.StaticObject;
+import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.effects.EffectType;
 import org.l2jmobius.gameserver.model.item.Armor;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
@@ -249,12 +255,12 @@ public class Formulas
 	public static double calcHpRegen(Creature creature)
 	{
 		double init = creature.isPlayer() ? creature.asPlayer().getTemplate().getBaseHpRegen(creature.getLevel()) : creature.getTemplate().getBaseHpReg();
-		double hpRegenMultiplier = creature.isRaid() ? Config.RAID_HP_REGEN_MULTIPLIER : Config.HP_REGEN_MULTIPLIER;
+		double hpRegenMultiplier = creature.isRaid() ? NpcConfig.RAID_HP_REGEN_MULTIPLIER : PlayerConfig.HP_REGEN_MULTIPLIER;
 		double hpRegenBonus = 0;
 		
-		if (Config.CHAMPION_ENABLE && creature.isChampion())
+		if (ChampionMonstersConfig.CHAMPION_ENABLE && creature.isChampion())
 		{
-			hpRegenMultiplier *= Config.CHAMPION_HP_REGEN;
+			hpRegenMultiplier *= ChampionMonstersConfig.CHAMPION_HP_REGEN;
 		}
 		
 		if (creature.isPlayer())
@@ -275,11 +281,12 @@ public class Formulas
 				}
 			}
 			
-			if (player.isInsideZone(ZoneId.CLAN_HALL) && (player.getClan() != null) && (player.getClan().getHideoutId() > 0))
+			final Clan clan = player.getClan();
+			if (player.isInsideZone(ZoneId.CLAN_HALL) && (clan != null) && (clan.getHideoutId() > 0))
 			{
 				final ClanHallZone zone = ZoneManager.getInstance().getZone(player, ClanHallZone.class);
 				final int posChIndex = zone == null ? -1 : zone.getResidenceId();
-				final int clanHallIndex = player.getClan().getHideoutId();
+				final int clanHallIndex = clan.getHideoutId();
 				if ((clanHallIndex > 0) && (clanHallIndex == posChIndex))
 				{
 					final ClanHall clansHall = ClanHallTable.getInstance().getClanHallById(clanHallIndex);
@@ -290,11 +297,11 @@ public class Formulas
 				}
 			}
 			
-			if (player.isInsideZone(ZoneId.CASTLE) && (player.getClan() != null) && (player.getClan().getCastleId() > 0))
+			if (player.isInsideZone(ZoneId.CASTLE) && (clan != null) && (clan.getCastleId() > 0))
 			{
 				final CastleZone zone = ZoneManager.getInstance().getZone(player, CastleZone.class);
 				final int posCastleIndex = zone == null ? -1 : zone.getResidenceId();
-				final int castleIndex = player.getClan().getCastleId();
+				final int castleIndex = clan.getCastleId();
 				if ((castleIndex > 0) && (castleIndex == posCastleIndex))
 				{
 					final Castle castle = CastleManager.getInstance().getCastleById(castleIndex);
@@ -332,7 +339,7 @@ public class Formulas
 		}
 		else if (creature.isPet())
 		{
-			init = creature.asPet().getPetLevelData().getPetRegenHP() * Config.PET_HP_REGEN_MULTIPLIER;
+			init = creature.asPet().getPetLevelData().getPetRegenHP() * NpcConfig.PET_HP_REGEN_MULTIPLIER;
 		}
 		
 		return (creature.calcStat(Stat.REGENERATE_HP_RATE, Math.max(1, init), null, null) * hpRegenMultiplier) + hpRegenBonus;
@@ -346,7 +353,7 @@ public class Formulas
 	public static double calcMpRegen(Creature creature)
 	{
 		double init = creature.isPlayer() ? creature.asPlayer().getTemplate().getBaseMpRegen(creature.getLevel()) : creature.getTemplate().getBaseMpReg();
-		double mpRegenMultiplier = creature.isRaid() ? Config.RAID_MP_REGEN_MULTIPLIER : Config.MP_REGEN_MULTIPLIER;
+		double mpRegenMultiplier = creature.isRaid() ? NpcConfig.RAID_MP_REGEN_MULTIPLIER : PlayerConfig.MP_REGEN_MULTIPLIER;
 		double mpRegenBonus = 0;
 		
 		if (creature.isPlayer())
@@ -367,11 +374,12 @@ public class Formulas
 				mpRegenBonus += mpBonus;
 			}
 			
-			if (player.isInsideZone(ZoneId.CLAN_HALL) && (player.getClan() != null) && (player.getClan().getHideoutId() > 0))
+			final Clan clan = player.getClan();
+			if (player.isInsideZone(ZoneId.CLAN_HALL) && (clan != null) && (clan.getHideoutId() > 0))
 			{
 				final ClanHallZone zone = ZoneManager.getInstance().getZone(player, ClanHallZone.class);
 				final int posChIndex = zone == null ? -1 : zone.getResidenceId();
-				final int clanHallIndex = player.getClan().getHideoutId();
+				final int clanHallIndex = clan.getHideoutId();
 				if ((clanHallIndex > 0) && (clanHallIndex == posChIndex))
 				{
 					final ClanHall clansHall = ClanHallTable.getInstance().getClanHallById(clanHallIndex);
@@ -382,11 +390,11 @@ public class Formulas
 				}
 			}
 			
-			if (player.isInsideZone(ZoneId.CASTLE) && (player.getClan() != null) && (player.getClan().getCastleId() > 0))
+			if (player.isInsideZone(ZoneId.CASTLE) && (clan != null) && (clan.getCastleId() > 0))
 			{
 				final CastleZone zone = ZoneManager.getInstance().getZone(player, CastleZone.class);
 				final int posCastleIndex = zone == null ? -1 : zone.getResidenceId();
-				final int castleIndex = player.getClan().getCastleId();
+				final int castleIndex = clan.getCastleId();
 				if ((castleIndex > 0) && (castleIndex == posCastleIndex))
 				{
 					final Castle castle = CastleManager.getInstance().getCastleById(castleIndex);
@@ -416,7 +424,7 @@ public class Formulas
 		}
 		else if (creature.isPet())
 		{
-			init = creature.asPet().getPetLevelData().getPetRegenMP() * Config.PET_MP_REGEN_MULTIPLIER;
+			init = creature.asPet().getPetLevelData().getPetRegenMP() * NpcConfig.PET_MP_REGEN_MULTIPLIER;
 		}
 		
 		return (creature.calcStat(Stat.REGENERATE_MP_RATE, Math.max(1, init), null, null) * mpRegenMultiplier) + mpRegenBonus;
@@ -431,7 +439,7 @@ public class Formulas
 	{
 		// With CON bonus
 		final double init = player.asPlayer().getTemplate().getBaseCpRegen(player.getLevel()) * player.getLevelMod() * BaseStat.CON.calcBonus(player);
-		double cpRegenMultiplier = Config.CP_REGEN_MULTIPLIER;
+		double cpRegenMultiplier = PlayerConfig.CP_REGEN_MULTIPLIER;
 		if (player.isSitting())
 		{
 			cpRegenMultiplier *= 1.5; // Sitting
@@ -479,7 +487,13 @@ public class Formulas
 	
 	public static double calcSiegeRegenModifier(Player player)
 	{
-		if ((player == null) || (player.getClan() == null))
+		if (player == null)
+		{
+			return 0;
+		}
+		
+		final Clan clan = player.getClan();
+		if (clan == null)
 		{
 			return 0;
 		}
@@ -490,7 +504,7 @@ public class Formulas
 			return 0;
 		}
 		
-		final SiegeClan siegeClan = siege.getAttackerClan(player.getClan().getId());
+		final SiegeClan siegeClan = siege.getAttackerClan(clan.getId());
 		if ((siegeClan == null) || siegeClan.getFlag().isEmpty() || !LocationUtil.checkIfInRange(200, player, siegeClan.getFlag().stream().findFirst().get(), true))
 		{
 			return 0;
@@ -528,9 +542,21 @@ public class Formulas
 		{
 			// Damage bonuses in PvP fight
 			pvpBonus = attacker.calcStat(Stat.PVP_PHYS_SKILL_DMG, 1, null, null);
+			pvpBonus *= ClassBalanceConfig.PVP_BLOW_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
 			
 			// Defense bonuses in PvP fight
 			defence *= target.calcStat(Stat.PVP_PHYS_SKILL_DEF, 1, null, null);
+			defence *= ClassBalanceConfig.PVP_BLOW_SKILL_DEFENCE_MULTIPLIERS[target.asPlayer().getPlayerClass().getId()];
+		}
+		
+		if (isPvE)
+		{
+			pvpBonus *= ClassBalanceConfig.PVE_BLOW_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+		}
+		
+		if (attacker.isAttackable() && target.isPlayable())
+		{
+			defence *= ClassBalanceConfig.PVE_BLOW_SKILL_DEFENCE_MULTIPLIERS[target.asPlayer().getPlayerClass().getId()];
 		}
 		
 		// Initial damage
@@ -586,9 +612,11 @@ public class Formulas
 		{
 			// Damage bonuses in PvP fight
 			pvpBonus = attacker.calcStat(Stat.PVP_PHYS_SKILL_DMG, 1, null, null);
+			pvpBonus *= ClassBalanceConfig.PVP_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
 			
 			// Defense bonuses in PvP fight
 			defence *= target.calcStat(Stat.PVP_PHYS_SKILL_DEF, 1, null, null);
+			defence *= ClassBalanceConfig.PVP_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS[target.asPlayer().getPlayerClass().getId()];
 		}
 		
 		// Initial damage
@@ -636,13 +664,14 @@ public class Formulas
 		if (isPvP)
 		{
 			defence *= (skill == null) ? target.calcStat(Stat.PVP_PHYSICAL_DEF, 1, null, null) : target.calcStat(Stat.PVP_PHYS_SKILL_DEF, 1, null, null);
+			defence *= ClassBalanceConfig.PVP_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS[target.asPlayer().getPlayerClass().getId()];
 		}
 		
 		switch (shld)
 		{
 			case SHIELD_DEFENSE_SUCCEED:
 			{
-				if (!Config.ALT_GAME_SHIELD_BLOCKS)
+				if (!PlayerConfig.ALT_GAME_SHIELD_BLOCKS)
 				{
 					defence += target.getShldDef();
 				}
@@ -663,6 +692,29 @@ public class Formulas
 			damage = 2 * attacker.calcStat(Stat.CRITICAL_DAMAGE, 1, target, skill) * attacker.calcStat(Stat.CRITICAL_DAMAGE_POS, 1, target, skill) * target.calcStat(Stat.DEFENCE_CRITICAL_DAMAGE, 1, target, null) * ((76 * damage * proximityBonus) / defence);
 			damage += ((attacker.calcStat(Stat.CRITICAL_DAMAGE_ADD, 0, target, skill) * 77) / defence);
 			damage += target.calcStat(Stat.DEFENCE_CRITICAL_DAMAGE_ADD, 0, target, skill);
+			
+			if (skill == null)
+			{
+				if (isPvP)
+				{
+					damage *= ClassBalanceConfig.PVP_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+				}
+				else if (isPvE)
+				{
+					damage *= ClassBalanceConfig.PVE_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+				}
+			}
+			else
+			{
+				if (isPvP)
+				{
+					damage *= ClassBalanceConfig.PVP_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+				}
+				else if (isPvE)
+				{
+					damage *= ClassBalanceConfig.PVE_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+				}
+			}
 		}
 		else
 		{
@@ -673,7 +725,7 @@ public class Formulas
 		
 		// Weapon random damage
 		damage *= attacker.getRandomDamageMultiplier();
-		if ((shld > 0) && Config.ALT_GAME_SHIELD_BLOCKS)
+		if ((shld > 0) && PlayerConfig.ALT_GAME_SHIELD_BLOCKS)
 		{
 			damage -= target.getShldDef();
 			if (damage < 0)
@@ -697,10 +749,12 @@ public class Formulas
 			if (skill == null)
 			{
 				damage *= attacker.calcStat(Stat.PVP_PHYSICAL_DMG, 1, null, null);
+				damage *= ClassBalanceConfig.PVP_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
 			}
 			else
 			{
 				damage *= attacker.calcStat(Stat.PVP_PHYS_SKILL_DMG, 1, null, null);
+				damage *= ClassBalanceConfig.PVP_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
 			}
 		}
 		
@@ -728,6 +782,18 @@ public class Formulas
 			else
 			{
 				damage *= attacker.calcStat(Stat.PVE_PHYSICAL_DMG, 1, null, null);
+				
+				if (attacker.isPlayable())
+				{
+					if (skill == null)
+					{
+						damage *= ClassBalanceConfig.PVE_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+					}
+					else
+					{
+						damage *= ClassBalanceConfig.PVE_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+					}
+				}
 			}
 		}
 		
@@ -760,10 +826,12 @@ public class Formulas
 			if (skill.isMagic())
 			{
 				mDef *= target.calcStat(Stat.PVP_MAGICAL_DEF, 1, null, null);
+				mDef *= ClassBalanceConfig.PVP_MAGICAL_SKILL_DEFENCE_MULTIPLIERS[target.asPlayer().getPlayerClass().getId()];
 			}
 			else
 			{
 				mDef *= target.calcStat(Stat.PVP_PHYS_SKILL_DEF, 1, null, null);
+				mDef *= ClassBalanceConfig.PVP_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS[target.asPlayer().getPlayerClass().getId()];
 			}
 		}
 		
@@ -774,7 +842,7 @@ public class Formulas
 		double damage = ((91 * Math.sqrt(mAtk)) / mDef) * skill.getPower(attacker, target, isPvP, isPvE);
 		
 		// Failure calculation
-		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
+		if (PlayerConfig.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
 		{
 			if (attacker.isPlayer())
 			{
@@ -812,6 +880,11 @@ public class Formulas
 		{
 			damage *= attacker.isPlayer() && target.isPlayer() ? 2.5 : 3;
 			damage *= attacker.calcStat(Stat.MAGIC_CRIT_DMG, 1, null, null);
+			
+			if (attacker.isPlayable())
+			{
+				damage *= target.isPlayable() ? ClassBalanceConfig.PVP_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()] : ClassBalanceConfig.PVE_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+			}
 		}
 		
 		// Weapon random damage
@@ -820,7 +893,17 @@ public class Formulas
 		// PvP bonuses for damage
 		if (isPvP)
 		{
-			final Stat stat = skill.isMagic() ? Stat.PVP_MAGICAL_DMG : Stat.PVP_PHYS_SKILL_DMG;
+			final Stat stat;
+			if (skill.isMagic())
+			{
+				stat = Stat.PVP_MAGICAL_DMG;
+				damage *= ClassBalanceConfig.PVP_MAGICAL_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+			}
+			else
+			{
+				stat = Stat.PVP_PHYS_SKILL_DMG;
+				damage *= ClassBalanceConfig.PVP_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+			}
 			damage *= attacker.calcStat(stat, 1, null, null);
 		}
 		
@@ -829,6 +912,12 @@ public class Formulas
 		if (target.isAttackable())
 		{
 			damage *= attacker.calcStat(Stat.PVE_MAGICAL_DMG, 1, null, null);
+			
+			final Player attackerPlayer = attacker.asPlayer();
+			if (attackerPlayer != null)
+			{
+				damage *= ClassBalanceConfig.PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getPlayerClass().getId()];
+			}
 		}
 		
 		return damage;
@@ -859,7 +948,7 @@ public class Formulas
 		
 		// Failure calculation
 		final Player owner = attacker.getOwner();
-		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(owner, target, skill))
+		if (PlayerConfig.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(owner, target, skill))
 		{
 			if (calcMagicSuccess(owner, target, skill) && ((target.getLevel() - skill.getMagicLevel()) <= 9))
 			{
@@ -907,7 +996,8 @@ public class Formulas
 		damage *= calcAttributeBonus(owner, target, skill);
 		if (target.isAttackable())
 		{
-			damage *= attacker.getOwner().calcStat(Stat.PVE_MAGICAL_DMG, 1, null, null);
+			damage *= owner.calcStat(Stat.PVE_MAGICAL_DMG, 1, null, null);
+			damage *= ClassBalanceConfig.PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS[owner.getPlayerClass().getId()];
 		}
 		
 		return damage;
@@ -930,7 +1020,7 @@ public class Formulas
 		double rate;
 		if (skill != null)
 		{
-			if (!Config.PHYSICAL_SKILL_CRIT && skill.isPhysical())
+			if (!PlayerConfig.PHYSICAL_SKILL_CRIT && skill.isPhysical())
 			{
 				return false;
 			}
@@ -940,6 +1030,30 @@ public class Formulas
 		else
 		{
 			rate = attacker.getStat().calcStat(Stat.CRITICAL_RATE_POS, attacker.getStat().getCriticalHit(target, null), target, skill);
+		}
+		
+		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
+		if (skill == null)
+		{
+			if (isPvP)
+			{
+				rate *= ClassBalanceConfig.PVP_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+			}
+			else if (attacker.isPlayable() && target.isAttackable()) // isPvE
+			{
+				rate *= ClassBalanceConfig.PVE_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+			}
+		}
+		else
+		{
+			if (isPvP)
+			{
+				rate *= ClassBalanceConfig.PVP_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+			}
+			else if (attacker.isPlayable() && target.isAttackable()) // isPvE
+			{
+				rate *= ClassBalanceConfig.PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+			}
 		}
 		
 		return (target.getStat().calcStat(Stat.DEFENCE_CRITICAL_RATE, rate, null, null) + target.getStat().calcStat(Stat.DEFENCE_CRITICAL_RATE_ADD, 0, null, null)) > Rnd.get(1000);
@@ -964,12 +1078,12 @@ public class Formulas
 		
 		double init = 0;
 		
-		if (Config.ALT_GAME_CANCEL_CAST && target.isCastingNow())
+		if (PlayerConfig.ALT_GAME_CANCEL_CAST && target.isCastingNow())
 		{
 			init = 15;
 		}
 		
-		if (Config.ALT_GAME_CANCEL_BOW && target.isAttackingNow())
+		if (PlayerConfig.ALT_GAME_CANCEL_BOW && target.isAttackingNow())
 		{
 			final Weapon wpn = target.getActiveWeaponItem();
 			if ((wpn != null) && (wpn.getItemType() == WeaponType.BOW))
@@ -1098,7 +1212,7 @@ public class Formulas
 			shldRate *= 1.3;
 		}
 		
-		if ((shldRate > 0) && ((100 - Config.ALT_PERFECT_SHLD_BLOCK) < Rnd.get(100)))
+		if ((shldRate > 0) && ((100 - PlayerConfig.ALT_PERFECT_SHLD_BLOCK) < Rnd.get(100)))
 		{
 			shldSuccess = SHIELD_DEFENSE_PERFECT_BLOCK;
 		}
@@ -1335,7 +1449,7 @@ public class Formulas
 			return true;
 		}
 		
-		final double lvlModifier = Math.pow(1.3, target.getLevel() - (Config.CALCULATE_MAGIC_SUCCESS_BY_SKILL_MAGIC_LEVEL && (skill.getMagicLevel() > 0) ? skill.getMagicLevel() : attacker.getLevel()));
+		final double lvlModifier = Math.pow(1.3, target.getLevel() - (PlayerConfig.CALCULATE_MAGIC_SUCCESS_BY_SKILL_MAGIC_LEVEL && (skill.getMagicLevel() > 0) ? skill.getMagicLevel() : attacker.getLevel()));
 		
 		// general magic resist
 		final double resModifier = target.calcStat(Stat.MAGIC_SUCCESS_RES, 1, null, skill);
@@ -1375,10 +1489,16 @@ public class Formulas
 		if (target.isAttackable())
 		{
 			damage *= attacker.calcStat(Stat.PVE_MAGICAL_DMG, 1, null, null);
+			
+			final Player attackerPlayer = attacker.asPlayer();
+			if (attackerPlayer != null)
+			{
+				damage *= ClassBalanceConfig.PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getPlayerClass().getId()];
+			}
 		}
 		
 		// Failure calculation
-		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
+		if (PlayerConfig.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
 		{
 			if (attacker.isPlayer())
 			{
@@ -1447,6 +1567,12 @@ public class Formulas
 	
 	public static boolean calcSkillMastery(Creature actor, Skill sk)
 	{
+		// Non players are not affected by Skill Mastery.
+		if (!actor.isPlayer())
+		{
+			return false;
+		}
+		
 		// Static Skills are not affected by Skill Mastery.
 		if (sk.isStatic())
 		{
@@ -1459,32 +1585,32 @@ public class Formulas
 			return false;
 		}
 		
-		if (actor.isPlayer())
+		double chance = 0;
+		switch (val)
 		{
-			double initVal = 0;
-			switch (val)
+			case 1:
 			{
-				case 1:
-				{
-					initVal = (BaseStat.STR).calcBonus(actor);
-					break;
-				}
-				case 4:
-				{
-					initVal = (BaseStat.INT).calcBonus(actor);
-					break;
-				}
+				chance = (BaseStat.STR).calcBonus(actor);
+				break;
 			}
-			
-			initVal *= actor.getStat().calcStat(Stat.SKILL_CRITICAL_PROBABILITY, 1, null, null);
-			return (Rnd.get(100) < initVal);
+			case 4:
+			{
+				chance = (BaseStat.INT).calcBonus(actor);
+				break;
+			}
 		}
 		
-		return false;
+		chance *= actor.getStat().calcStat(Stat.SKILL_CRITICAL_PROBABILITY, 1, null, null);
+		return (Rnd.get(100) < (chance * ClassBalanceConfig.SKILL_MASTERY_CHANCE_MULTIPLIERS[actor.asPlayer().getPlayerClass().getId()]));
 	}
 	
 	/**
-	 * Calculates the Attribute Bonus
+	 * Calculates the attribute bonus with the following formula:<br>
+	 * diff > 0, so AttBonus = 1,025 + sqrt[(diff^3) / 2] * 0,0001, cannot be above 1,25!<br>
+	 * diff < 0, so AttBonus = 0,975 - sqrt[(diff^3) / 2] * 0,0001, cannot be below 0,75!<br>
+	 * diff == 0, so AttBonus = 1<br>
+	 * It has been tested that physical skills do get affected by attack attribute even<br>
+	 * if they don't have any attribute. In that case only the biggest attack attribute is taken.
 	 * @param attacker
 	 * @param target
 	 * @param skill Can be {@code null} if there is no skill used for the attack.
@@ -1493,163 +1619,30 @@ public class Formulas
 	public static double calcAttributeBonus(Creature attacker, Creature target, Skill skill)
 	{
 		int attackAttribute;
-		if (skill != null)
+		int defenceAttribute;
+		
+		if ((skill != null) && (skill.getElement() != -1))
 		{
-			if ((skill.getElement() == -1) || (attacker.getAttackElement() != skill.getElement()))
-			{
-				return 1;
-			}
-			
-			attackAttribute = attacker.getAttackElementValue(attacker.getAttackElement()) + skill.getElementPower();
+			attackAttribute = attacker.getAttackElementValue(skill.getElement()) + skill.getElementPower();
+			defenceAttribute = target.getDefenseElementValue(skill.getElement());
 		}
 		else
 		{
 			attackAttribute = attacker.getAttackElementValue(attacker.getAttackElement());
-			if (attackAttribute == 0)
-			{
-				return 1;
-			}
+			defenceAttribute = target.getDefenseElementValue(attacker.getAttackElement());
 		}
 		
-		int defenceAttribute = target.getDefenseElementValue(attacker.getAttackElement());
-		if (attackAttribute <= defenceAttribute)
+		final int diff = attackAttribute - defenceAttribute;
+		if (diff > 0)
 		{
-			return 1;
+			return Math.min(1.025 + (Math.sqrt(Math.pow(diff, 3) / 2) * 0.0001), 1.25);
+		}
+		else if (diff < 0)
+		{
+			return Math.max(0.975 - (Math.sqrt(Math.pow(-diff, 3) / 2) * 0.0001), 0.75);
 		}
 		
-		double attackAttributeMod = 0;
-		double defenceAttributeMod = 0;
-		if (attackAttribute >= 450)
-		{
-			if (defenceAttribute >= 450)
-			{
-				attackAttributeMod = 0.06909;
-				defenceAttributeMod = 0.078;
-			}
-			// On retail else if (attack_attribute >= 350), can be considered a typo
-			else if (defenceAttribute >= 350)
-			{
-				attackAttributeMod = 0.0887;
-				defenceAttributeMod = 0.1007;
-			}
-			else
-			{
-				attackAttributeMod = 0.129;
-				defenceAttributeMod = 0.1473;
-			}
-		}
-		else if (attackAttribute >= 300)
-		{
-			if (defenceAttribute >= 300)
-			{
-				attackAttributeMod = 0.0887;
-				defenceAttributeMod = 0.1007;
-			}
-			else if (defenceAttribute >= 150)
-			{
-				attackAttributeMod = 0.129;
-				defenceAttributeMod = 0.1473;
-			}
-			else
-			{
-				attackAttributeMod = 0.25;
-				defenceAttributeMod = 0.2894;
-			}
-		}
-		else if (attackAttribute >= 150)
-		{
-			if (defenceAttribute >= 150)
-			{
-				attackAttributeMod = 0.129;
-				defenceAttributeMod = 0.1473;
-			}
-			else if (defenceAttribute >= 0)
-			{
-				attackAttributeMod = 0.25;
-				defenceAttributeMod = 0.2894;
-			}
-			else
-			{
-				attackAttributeMod = 0.4;
-				defenceAttributeMod = 0.55;
-			}
-		}
-		else if (attackAttribute >= -99)
-		{
-			if (defenceAttribute >= 0)
-			{
-				attackAttributeMod = 0.25;
-				defenceAttributeMod = 0.2894;
-			}
-			else
-			{
-				attackAttributeMod = 0.4;
-				defenceAttributeMod = 0.55;
-			}
-		}
-		else
-		{
-			if (defenceAttribute >= 450)
-			{
-				attackAttributeMod = 0.06909;
-				defenceAttributeMod = 0.078;
-			}
-			else if (defenceAttribute >= 350)
-			{
-				attackAttributeMod = 0.0887;
-				defenceAttributeMod = 0.1007;
-			}
-			else
-			{
-				attackAttributeMod = 0.129;
-				defenceAttributeMod = 0.1473;
-			}
-		}
-		
-		final int attributeDiff = attackAttribute - defenceAttribute;
-		double min;
-		double max;
-		if (attributeDiff >= 300)
-		{
-			max = 100.0;
-			min = -50;
-		}
-		else if (attributeDiff >= 150)
-		{
-			max = 70.0;
-			min = -50;
-		}
-		else if (attributeDiff >= -150)
-		{
-			max = 40.0;
-			min = -50;
-		}
-		else if (attributeDiff >= -300)
-		{
-			max = 40.0;
-			min = -60;
-		}
-		else
-		{
-			max = 40.0;
-			min = -80;
-		}
-		
-		attackAttribute += 100;
-		attackAttribute *= attackAttribute;
-		attackAttributeMod *= (attackAttribute / 144.0);
-		defenceAttribute += 100;
-		defenceAttribute *= defenceAttribute;
-		defenceAttributeMod *= (defenceAttribute / 169.0);
-		double attributeModDiff = attackAttributeMod - defenceAttributeMod;
-		attributeModDiff = MathUtil.clamp(attributeModDiff, min, max);
-		double result = (attributeModDiff / 100.0) + 1;
-		if (attacker.isPlayable() && target.isPlayable() && (result < 1.0))
-		{
-			result = 1.0;
-		}
-		
-		return result;
+		return 1;
 	}
 	
 	public static void calcDamageReflected(Creature attacker, Creature target, Skill skill, boolean crit)
@@ -1710,7 +1703,7 @@ public class Formulas
 	 */
 	public static double calcFallDam(Creature creature, int fallHeight)
 	{
-		if (!Config.ENABLE_FALLING_DAMAGE || (fallHeight < 0))
+		if (!GeneralConfig.ENABLE_FALLING_DAMAGE || (fallHeight < 0))
 		{
 			return 0;
 		}
@@ -1891,18 +1884,18 @@ public class Formulas
 	/**
 	 * Calculates karma lost upon death.
 	 * @param player
-	 * @param exp
-	 * @return the amount of karma player has loosed.
+	 * @param finalExp
+	 * @return the amount of karma player has lost.
 	 */
-	public static int calculateKarmaLost(Player player, long exp)
+	public static int calculateKarmaLost(Player player, long finalExp)
 	{
-		final double karmaLooseMul = KarmaData.getInstance().getMultiplier(player.getLevel());
-		if (exp > 0) // Received exp
+		final double karmaLossMod = KarmaLossData.getInstance().getModifier(player.getLevel());
+		if (finalExp > 0) // Received experience.
 		{
-			return (int) ((Math.abs(exp / Config.RATE_KARMA_LOST) / karmaLooseMul) / 30);
+			return (int) ((Math.abs(finalExp / RatesConfig.RATE_KARMA_LOST) / karmaLossMod) / 30);
 		}
 		
-		return (int) ((Math.abs(exp) / karmaLooseMul) / 30);
+		return (int) ((Math.abs(finalExp) / karmaLossMod) / 30);
 	}
 	
 	/**

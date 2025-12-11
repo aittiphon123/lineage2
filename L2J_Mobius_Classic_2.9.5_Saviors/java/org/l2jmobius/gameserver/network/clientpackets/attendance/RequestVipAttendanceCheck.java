@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.attendance;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.AttendanceRewardsConfig;
 import org.l2jmobius.gameserver.data.xml.AttendanceRewardData;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -52,29 +52,29 @@ public class RequestVipAttendanceCheck extends ClientPacket
 			return;
 		}
 		
-		if (!Config.ENABLE_ATTENDANCE_REWARDS)
+		if (!AttendanceRewardsConfig.ENABLE_ATTENDANCE_REWARDS)
 		{
 			player.sendPacket(SystemMessageId.DUE_TO_A_SYSTEM_ERROR_THE_ATTENDANCE_REWARD_CANNOT_BE_RECEIVED_PLEASE_TRY_AGAIN_LATER_BY_GOING_TO_MENU_ATTENDANCE_CHECK);
 			return;
 		}
 		
-		if (Config.PREMIUM_ONLY_ATTENDANCE_REWARDS && !player.hasPremiumStatus())
+		if (AttendanceRewardsConfig.PREMIUM_ONLY_ATTENDANCE_REWARDS && !player.hasPremiumStatus())
 		{
 			player.sendPacket(SystemMessageId.YOUR_VIP_LEVEL_IS_TOO_LOW_TO_RECEIVE_THE_REWARD);
 			return;
 		}
-		else if (Config.VIP_ONLY_ATTENDANCE_REWARDS && (player.getVipTier() <= 0))
+		else if (AttendanceRewardsConfig.VIP_ONLY_ATTENDANCE_REWARDS && (player.getVipTier() <= 0))
 		{
 			player.sendPacket(SystemMessageId.YOUR_VIP_LEVEL_IS_TOO_LOW_TO_RECEIVE_THE_REWARD);
 			return;
 		}
 		
 		// Check login delay.
-		if (player.getUptime() < (Config.ATTENDANCE_REWARD_DELAY * 60 * 1000))
+		if (player.getUptime() < (AttendanceRewardsConfig.ATTENDANCE_REWARD_DELAY * 60 * 1000))
 		{
 			final SystemMessage msg = new SystemMessage(SystemMessageId.YOU_CAN_REDEEM_YOUR_REWARD_S1_MINUTES_AFTER_LOGGING_IN_S2_MINUTES_LEFT);
-			msg.addInt(Config.ATTENDANCE_REWARD_DELAY);
-			msg.addInt(Config.ATTENDANCE_REWARD_DELAY - Math.toIntExact(player.getUptime() / 1000 / 60));
+			msg.addInt(AttendanceRewardsConfig.ATTENDANCE_REWARD_DELAY);
+			msg.addInt(AttendanceRewardsConfig.ATTENDANCE_REWARD_DELAY - Math.toIntExact(player.getUptime() / 1000 / 60));
 			player.sendPacket(msg);
 			return;
 		}

@@ -32,6 +32,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.InstanceType;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -39,13 +40,11 @@ import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import instances.AbstractInstance;
-
 /**
  * Kartia Labyrinth instance zone.
  * @author flanagak
  */
-public class KartiasLabyrinth extends AbstractInstance
+public class KartiasLabyrinth extends InstanceScript
 {
 	// NPCs
 	private static final int KARTIA_RESEARCHER = 33647;

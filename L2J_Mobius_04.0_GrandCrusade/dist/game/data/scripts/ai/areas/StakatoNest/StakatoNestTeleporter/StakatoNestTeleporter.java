@@ -19,16 +19,16 @@ package ai.areas.StakatoNest.StakatoNestTeleporter;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 
-import ai.AbstractNpcAI;
 import quests.Q00240_ImTheOnlyOneYouCanTrust.Q00240_ImTheOnlyOneYouCanTrust;
 
 /**
  * Stakato Nest Teleport AI.
  * @author Charus
  */
-public class StakatoNestTeleporter extends AbstractNpcAI
+public class StakatoNestTeleporter extends Script
 {
 	// Locations
 	private static final Location[] LOCS =

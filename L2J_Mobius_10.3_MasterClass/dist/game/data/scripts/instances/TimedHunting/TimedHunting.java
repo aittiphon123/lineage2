@@ -30,13 +30,12 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import instances.AbstractInstance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 
 /**
  * @author Mobius
  */
-public class TimedHunting extends AbstractInstance
+public class TimedHunting extends InstanceScript
 {
 	// NPCs
 	private static final int PATROL_TELEPORTER = 34568;

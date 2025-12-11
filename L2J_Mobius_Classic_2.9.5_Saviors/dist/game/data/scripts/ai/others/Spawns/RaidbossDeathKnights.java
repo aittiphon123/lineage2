@@ -27,13 +27,12 @@ import org.l2jmobius.gameserver.model.events.annotations.NpcLevelRange;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Mobius
  */
-public class RaidbossDeathKnights extends AbstractNpcAI
+public class RaidbossDeathKnights extends Script
 {
 	private static final int CHANCE = 10;
 	

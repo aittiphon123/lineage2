@@ -20,7 +20,7 @@
  */
 package handlers.usercommandhandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.handler.IUserCommandHandler;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
@@ -45,14 +45,14 @@ public class BloodyCoinCommand implements IUserCommandHandler
 			return false;
 		}
 		
-		if (player.getLevel() < Config.CONQUEST_TELEPORT_REQUIRED_LEVEL) // Retail level is 110.
+		if (player.getLevel() < ConquestConfig.CONQUEST_TELEPORT_REQUIRED_LEVEL) // Retail level is 110.
 		{
 			player.sendPacket(SystemMessageId.THE_BLOODY_COIN_SYSTEM_IS_AVAILABLE_FOR_CHARACTERS_OF_LV_110);
 		}
 		else
 		{
-			final int attackPoints = player.getVariables().getInt(PlayerVariables.CONQUEST_ATTACK_POINTS, Config.CONQUEST_ATTACK_POINTS);
-			final int lifePoints = player.getVariables().getInt(PlayerVariables.CONQUEST_LIFE_POINTS, Config.CONQUEST_LIFE_POINTS);
+			final int attackPoints = player.getVariables().getInt(PlayerVariables.CONQUEST_ATTACK_POINTS, ConquestConfig.CONQUEST_ATTACK_POINTS);
+			final int lifePoints = player.getVariables().getInt(PlayerVariables.CONQUEST_LIFE_POINTS, ConquestConfig.CONQUEST_LIFE_POINTS);
 			
 			player.sendPacket(SystemMessageId.BLOODY_COINS_INFO);
 			

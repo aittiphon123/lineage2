@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="29900" name="Heir's Radiance Lv. 6" additionalName="PvE" type="Armor">
 		<!-- When equipped, Attribute Attack +50, Attribute Resistance +50, Debuff Resistance +10%, Max HP +6000, P./ M. Skill Power +4%, all Critical Damage +4%, all stats +5, PvE damage +9%, received damage from Dragon's weapons -10%. Enables the Heir's Radiance - PvE Lv. 3 skill. <When used with Wizard's/ Knight's/ Warrior's Circlet>. Knight's Circlet: P./ M. Def. +12%. Warrior's Circlet: P. Atk. +12%. Wizard's Circlet: M. Atk. +12%. Cannot be enchanted. -->

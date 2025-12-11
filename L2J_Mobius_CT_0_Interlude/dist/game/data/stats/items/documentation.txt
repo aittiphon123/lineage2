@@ -60,7 +60,7 @@
 		Default value    : 0 - not present in xml
 		
 	crystal_type
-		Possible values  : d, s84, c, b, a, s, s80
+		Possible values  : d, c, b, a, s
 		Default value    : none - not present in xml
 		Important        : Some items have crystal type, but doesn't have crystal_count
 		
@@ -130,10 +130,6 @@
 		Possible values : x1;x2;x3;x4
 		Not used 
 		
-	change_weaponId
-		Information      : ID of weapon for kamael's weapon change.
-		Default value    : 0 - not present in xml
-	
 	immediate_effect
 		Possible values  : 0 or 1
 		Not used

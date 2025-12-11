@@ -31,14 +31,35 @@ import org.l2jmobius.gameserver.model.stats.Stat;
  */
 public class ExpModify extends AbstractStatAddEffect
 {
+	private final int _minLevel;
+	private final int _maxLevel;
+	
 	public ExpModify(StatSet params)
 	{
 		super(params, Stat.BONUS_EXP);
+		_minLevel = params.getInt("minLevel", -1);
+		_maxLevel = params.getInt("maxLevel", -1);
 	}
 	
 	@Override
 	public void pump(Creature effected, Skill skill)
 	{
+		final Player player = effected.asPlayer();
+		if (player == null)
+		{
+			return;
+		}
+		
+		// Check level restriction.
+		if ((_minLevel > 0) && (_maxLevel > 0))
+		{
+			final int level = player.getLevel();
+			if ((level < _minLevel) || (level > _maxLevel))
+			{
+				return;
+			}
+		}
+		
 		effected.getStat().mergeAdd(Stat.BONUS_EXP, _amount);
 		if ((skill != null) && skill.isActive())
 		{
@@ -48,12 +69,6 @@ public class ExpModify extends AbstractStatAddEffect
 		else
 		{
 			effected.getStat().mergeAdd(Stat.BONUS_EXP_PASSIVES, 1d);
-		}
-		
-		final Player player = effected.asPlayer();
-		if (player == null)
-		{
-			return;
 		}
 		
 		player.sendUserBoostStat();

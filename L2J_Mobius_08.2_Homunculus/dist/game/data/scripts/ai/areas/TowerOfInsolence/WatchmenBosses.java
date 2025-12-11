@@ -23,13 +23,12 @@ package ai.areas.TowerOfInsolence;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Mobius
  */
-public class WatchmenBosses extends AbstractNpcAI
+public class WatchmenBosses extends Script
 {
 	// NPCs
 	private static final int WATCHMAN_OF_THE_FORGOTTEN = 24555;

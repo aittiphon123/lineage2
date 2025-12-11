@@ -22,16 +22,15 @@ package ai.bosses.Lindvior;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import ai.AbstractNpcAI;
 
 /**
  * LindviorBoss AI
  * @author Gigi
  * @date 2017-08-02 - [11:05:21]
  */
-public class LindviorBoss extends AbstractNpcAI
+public class LindviorBoss extends Script
 {
 	// Boss
 	private static final int LINDVIOR_GROUND = 25899;

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="5703" name="Lucky Charm (No-grade)" type="EtcItem">
 		<!-- Bestows blessing on its owner such that when the owner dies during a boss/raid war, his/her abilities will not be diminished. This item can only be used on self by a character whose level is 19 or below. -->

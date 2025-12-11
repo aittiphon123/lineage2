@@ -22,7 +22,7 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.sql.OfflineTraderTable;
 import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.Location;
@@ -75,7 +75,7 @@ public class RequestRestart extends ClientPacket
 		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
-			if (Config.RESTORE_PLAYER_INSTANCE)
+			if (GeneralConfig.RESTORE_PLAYER_INSTANCE)
 			{
 				player.getVariables().set(PlayerVariables.INSTANCE_RESTORE, world.getId());
 			}

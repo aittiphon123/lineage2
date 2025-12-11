@@ -26,6 +26,7 @@ import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.spawns.SpawnTemplate;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
@@ -33,15 +34,13 @@ import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.Earthquake;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
-import ai.AbstractNpcAI;
-
 /**
  * Beleths Magic Circle
  * @URL https://l2wiki.com/Beleths_Magic_Circle
  * @author Screw, Gigi, Mobius
  * @date 2017-10-26 - [16:06:10]
  */
-public class EnchantedMegaliths extends AbstractNpcAI
+public class EnchantedMegaliths extends Script
 {
 	// NPCs
 	private static final int[] MONSTERS =

@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.network.serverpackets.dethrone;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -79,7 +79,7 @@ public class ExDethroneGetReward extends ServerPacket
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_ALREADY_RECEIVED_THE_REWARD);
 		}
-		else if (personalPoints > Config.CONQUEST_PERSONAL_REWARD_MIN_POINTS) // Personal Reward.
+		else if (personalPoints > ConquestConfig.CONQUEST_PERSONAL_REWARD_MIN_POINTS) // Personal Reward.
 		{
 			// Rank percent formula.
 			int rewardRank = 0;
@@ -130,7 +130,7 @@ public class ExDethroneGetReward extends ServerPacket
 			{
 				case 1:
 				{
-					for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_1)
+					for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_1)
 					{
 						player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 					}
@@ -138,7 +138,7 @@ public class ExDethroneGetReward extends ServerPacket
 				}
 				case 2:
 				{
-					for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_2)
+					for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_2)
 					{
 						player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 					}
@@ -146,7 +146,7 @@ public class ExDethroneGetReward extends ServerPacket
 				}
 				case 3:
 				{
-					for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_3)
+					for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_3)
 					{
 						player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 					}
@@ -154,7 +154,7 @@ public class ExDethroneGetReward extends ServerPacket
 				}
 				case 4:
 				{
-					for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_4)
+					for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_4)
 					{
 						player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 					}
@@ -162,7 +162,7 @@ public class ExDethroneGetReward extends ServerPacket
 				}
 				case 5:
 				{
-					for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_5)
+					for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_5)
 					{
 						player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 					}
@@ -170,7 +170,7 @@ public class ExDethroneGetReward extends ServerPacket
 				}
 				case 6:
 				{
-					for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_6)
+					for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_6)
 					{
 						player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 					}
@@ -178,7 +178,7 @@ public class ExDethroneGetReward extends ServerPacket
 				}
 				case 7:
 				{
-					for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_7)
+					for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_7)
 					{
 						player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 					}
@@ -186,7 +186,7 @@ public class ExDethroneGetReward extends ServerPacket
 				}
 				case 8:
 				{
-					for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_8)
+					for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_8)
 					{
 						player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 					}
@@ -194,7 +194,7 @@ public class ExDethroneGetReward extends ServerPacket
 				}
 				case 9:
 				{
-					for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_9)
+					for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_9)
 					{
 						player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 					}
@@ -202,7 +202,7 @@ public class ExDethroneGetReward extends ServerPacket
 				}
 				case 10:
 				{
-					for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_10)
+					for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_10)
 					{
 						player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 					}
@@ -211,9 +211,9 @@ public class ExDethroneGetReward extends ServerPacket
 			}
 			
 			// Conqueror Server Reward.
-			if (personalPoints > Config.CONQUEST_SERVER_REWARD_MIN_POINTS)
+			if (personalPoints > ConquestConfig.CONQUEST_SERVER_REWARD_MIN_POINTS)
 			{
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_PARTICIPANT)
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_PARTICIPANT)
 				{
 					player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 				}

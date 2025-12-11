@@ -20,21 +20,20 @@
  */
 package ai.others.NewbieGuide;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Mobius
  */
-public class NewbieGuide extends AbstractNpcAI
+public class NewbieGuide extends Script
 {
 	// NPCs
 	private static final int[] NEWBIE_GUIDES =
@@ -67,7 +66,7 @@ public class NewbieGuide extends AbstractNpcAI
 		String htmltext = null;
 		if (event.equals("0"))
 		{
-			if (Config.MAX_NEWBIE_BUFF_LEVEL > 0)
+			if (PlayerConfig.MAX_NEWBIE_BUFF_LEVEL > 0)
 			{
 				htmltext = npc.getId() + ".htm";
 			}
@@ -97,7 +96,7 @@ public class NewbieGuide extends AbstractNpcAI
 		}
 		
 		final QuestState qs = player.getQuestState(TUTORIAL_QUEST);
-		if ((qs != null) && !Config.DISABLE_TUTORIAL && qs.isMemoState(5))
+		if ((qs != null) && !PlayerConfig.DISABLE_TUTORIAL && qs.isMemoState(5))
 		{
 			qs.setMemoState(6);
 			if (player.isMageClass() && (player.getRace() != Race.ORC))
@@ -112,7 +111,7 @@ public class NewbieGuide extends AbstractNpcAI
 			}
 		}
 		
-		if (Config.MAX_NEWBIE_BUFF_LEVEL > 0)
+		if (PlayerConfig.MAX_NEWBIE_BUFF_LEVEL > 0)
 		{
 			return npc.getId() + ".htm";
 		}

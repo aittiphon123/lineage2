@@ -3,7 +3,6 @@
 	<item id="82500" name="Skill Points" type="EtcItem">
 		<!-- Skill points (SP) can be obtained through monster hunting and from certain items. -->
 		<set name="icon" val="icon.dethrone_sp" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
@@ -15,7 +14,6 @@
 	<item id="82501" name="Fire Letter F" additionalName="Event" type="EtcItem">
 		<!-- A fiery letter sent to Aden from the Conquest world. Combine several of such letters into a word to get valuable rewards in the special UI. -->
 		<set name="icon" val="icon.etc_alphabet_f_fire" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -24,7 +22,6 @@
 	<item id="82502" name="Fire Letter I" additionalName="Event" type="EtcItem">
 		<!-- A fiery letter sent to Aden from the Conquest world. Combine several of such letters into a word to get valuable rewards in the special UI. -->
 		<set name="icon" val="icon.etc_alphabet_i_fire" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -33,7 +30,6 @@
 	<item id="82503" name="Fire Letter R" additionalName="Event" type="EtcItem">
 		<!-- A fiery letter sent to Aden from the Conquest world. Combine several of such letters into a word to get valuable rewards in the special UI. -->
 		<set name="icon" val="icon.etc_alphabet_r_fire" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -42,7 +38,6 @@
 	<item id="82504" name="Fire Letter E" additionalName="Event" type="EtcItem">
 		<!-- A fiery letter sent to Aden from the Conquest world. Combine several of such letters into a word to get valuable rewards in the special UI. -->
 		<set name="icon" val="icon.etc_alphabet_e_fire" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />

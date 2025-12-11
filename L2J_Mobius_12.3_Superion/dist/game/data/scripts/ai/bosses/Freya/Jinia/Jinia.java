@@ -18,14 +18,13 @@ package ai.bosses.Freya.Jinia;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Jinia AI.
  * @author Adry_85
  */
-public class Jinia extends AbstractNpcAI
+public class Jinia extends Script
 {
 	// NPC
 	private static final int JINIA = 32781;

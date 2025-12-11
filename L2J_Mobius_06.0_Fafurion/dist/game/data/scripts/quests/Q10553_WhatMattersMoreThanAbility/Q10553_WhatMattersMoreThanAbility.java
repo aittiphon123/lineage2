@@ -23,7 +23,7 @@ package quests.Q10553_WhatMattersMoreThanAbility;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -33,11 +33,11 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -186,7 +186,7 @@ public final class Q10553_WhatMattersMoreThanAbility extends Quest
 				}
 				case 3:
 				{
-					final Quest instance = QuestManager.getInstance().getQuest(HatchlingCage.class.getSimpleName());
+					final Quest instance = ScriptManager.getInstance().getScript(HatchlingCage.class.getSimpleName());
 					if (instance != null)
 					{
 						instance.onEvent("enterInstance", npc, player);

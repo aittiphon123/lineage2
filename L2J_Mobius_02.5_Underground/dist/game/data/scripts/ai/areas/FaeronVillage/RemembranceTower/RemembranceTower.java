@@ -18,15 +18,14 @@ package ai.areas.FaeronVillage.RemembranceTower;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
-
-import ai.AbstractNpcAI;
 
 /**
  * Remembrance Tower AI.
  * @author St3eT
  */
-public class RemembranceTower extends AbstractNpcAI
+public class RemembranceTower extends Script
 {
 	// NPCs
 	private static final int REMEMBRANCE_TOWER = 33989;
@@ -57,6 +56,12 @@ public class RemembranceTower extends AbstractNpcAI
 		}
 		
 		return super.onEvent(event, npc, player);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

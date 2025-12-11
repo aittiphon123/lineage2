@@ -23,13 +23,13 @@ package quests.Q00827_EinhasadsOrder;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 
 /**
  * Einhasad's Order (827)
@@ -196,7 +196,7 @@ public class Q00827_EinhasadsOrder extends Quest
 		for (Player member : members)
 		{
 			final QuestState qs = getQuestState(member, false);
-			if ((qs != null) && qs.isCond(1) && member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE) && giveItemRandomly(member, npc, REVOLUTIONARIES_MARK_PIECE, 1, 30, 1, true))
+			if ((qs != null) && qs.isCond(1) && member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE) && giveItemRandomly(member, npc, REVOLUTIONARIES_MARK_PIECE, 1, 30, 1, true))
 			{
 				qs.setCond(2, true);
 			}

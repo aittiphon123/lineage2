@@ -26,14 +26,13 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Mobius
  */
-public class ClanFlag extends AbstractNpcAI
+public class ClanFlag extends Script
 {
 	// NPC
 	private static final int CLAN_FLAG = 19269;

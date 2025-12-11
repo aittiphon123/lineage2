@@ -23,16 +23,16 @@ package instances.BalthusKnights.FaeronVillage;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 
-import instances.AbstractInstance;
 import quests.Q10557_NewPowerWindsOfFate.Q10557_NewPowerWindsOfFate;
 
 /**
  * Faeron Village instance zone.
  * @author Kazumi
  */
-public final class FaeronVillage extends AbstractInstance
+public final class FaeronVillage extends InstanceScript
 {
 	// NPCs
 	private static final int SERENIA = 34394;

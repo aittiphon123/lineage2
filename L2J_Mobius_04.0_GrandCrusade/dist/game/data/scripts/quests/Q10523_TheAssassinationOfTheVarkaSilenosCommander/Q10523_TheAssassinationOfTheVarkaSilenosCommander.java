@@ -24,10 +24,10 @@ import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 
 import quests.Q10522_TheDarkSecretOfVarkaSilenos.Q10522_TheDarkSecretOfVarkaSilenos;
 

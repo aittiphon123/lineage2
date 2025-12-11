@@ -20,12 +20,12 @@
  */
 package quests.Q10447_TimingIsEverything;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.util.LocationUtil;
@@ -155,7 +155,7 @@ public class Q10447_TimingIsEverything extends Quest
 	public void onKill(Npc npc, Player killer, boolean isSummon)
 	{
 		final QuestState qs = getRandomPartyMemberState(killer, 1, 3, npc);
-		if (!LocationUtil.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
+		if (!LocationUtil.checkIfInRange(PlayerConfig.ALT_PARTY_RANGE, npc, killer, true))
 		{
 			return;
 		}

@@ -23,7 +23,7 @@ package quests.Q00846_BuildingUpStrength;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -33,13 +33,13 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
-import org.l2jmobius.gameserver.model.quest.Faction;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 
 import quests.Q10845_BloodyBattleRescueTheSmiths.Q10845_BloodyBattleRescueTheSmiths;
 import quests.not_done.Q00840_RequestFromTheKingdomsRoyalGuard;
@@ -534,7 +534,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 				{
 					if (qs.getCond() == 5)
 					{
-						final Quest qs840 = QuestManager.getInstance().getQuest(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
+						final Quest qs840 = ScriptManager.getInstance().getScript(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
 						if (qs840 != null)
 						{
 							qs840.notifyEvent("NOTIFY_QUEST_DONE", npc, player);
@@ -553,7 +553,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 					{
 						if (hasQuestItems(player, FACTION_AMITY_TOKEN))
 						{
-							final Quest qs840 = QuestManager.getInstance().getQuest(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
+							final Quest qs840 = ScriptManager.getInstance().getScript(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
 							if (qs840 != null)
 							{
 								qs840.notifyEvent("NOTIFY_QUEST_DONE", npc, player);
@@ -575,7 +575,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 				{
 					if (qs.getCond() == 6)
 					{
-						final Quest qs840 = QuestManager.getInstance().getQuest(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
+						final Quest qs840 = ScriptManager.getInstance().getScript(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
 						if (qs840 != null)
 						{
 							qs840.notifyEvent("NOTIFY_QUEST_DONE", npc, player);
@@ -594,7 +594,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 					{
 						if (hasQuestItems(player, FACTION_AMITY_TOKEN))
 						{
-							final Quest qs840 = QuestManager.getInstance().getQuest(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
+							final Quest qs840 = ScriptManager.getInstance().getScript(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
 							if (qs840 != null)
 							{
 								qs840.notifyEvent("NOTIFY_QUEST_DONE", npc, player);
@@ -616,7 +616,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 				{
 					if (qs.getCond() == 7)
 					{
-						final Quest qs840 = QuestManager.getInstance().getQuest(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
+						final Quest qs840 = ScriptManager.getInstance().getScript(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
 						if (qs840 != null)
 						{
 							qs840.notifyEvent("NOTIFY_QUEST_DONE", npc, player);
@@ -635,7 +635,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 					{
 						if (hasQuestItems(player, FACTION_AMITY_TOKEN))
 						{
-							final Quest qs840 = QuestManager.getInstance().getQuest(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
+							final Quest qs840 = ScriptManager.getInstance().getScript(Q00840_RequestFromTheKingdomsRoyalGuard.class.getSimpleName());
 							if (qs840 != null)
 							{
 								qs840.notifyEvent("NOTIFY_QUEST_DONE", npc, player);

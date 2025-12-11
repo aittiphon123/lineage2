@@ -23,8 +23,8 @@ package ai.bosses.Trasken;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.SpawnTable;
 import org.l2jmobius.gameserver.data.xml.DoorData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
@@ -36,6 +36,7 @@ import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -47,14 +48,12 @@ import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
-import ai.AbstractNpcAI;
-
 /**
  * Trasken RB
  * @author Gigi
  * @date 2017-07-27 - [10:11:22]
  */
-public class Trasken extends AbstractNpcAI
+public class Trasken extends Script
 {
 	// NPCs
 	private static final int TRASKEN = 29197;
@@ -303,7 +302,7 @@ public class Trasken extends AbstractNpcAI
 		super();
 		_zoneLair = ZoneManager.getInstance().getZoneById(ZONE_ID, NoSummonFriendZone.class);
 		_zoneLair2 = ZoneManager.getInstance().getZoneById(ZONE_ID_HEART, NoSummonFriendZone.class);
-		final int[] creature =
+		final int[] mobs =
 		{
 			TRASKEN,
 			TIE,
@@ -318,7 +317,9 @@ public class Trasken extends AbstractNpcAI
 			TRADJAN,
 			HEART_ERTHWYRM
 		};
-		registerMobs(creature);
+		addAttackId(mobs);
+		addSpawnId(mobs);
+		addKillId(mobs);
 		addEnterZoneId(ZONE_ID);
 		addExitZoneId(ZONE_ID);
 		addEnterZoneId(ZONE_ID_HEART);
@@ -618,8 +619,8 @@ public class Trasken extends AbstractNpcAI
 				
 				GrandBossManager.getInstance().setStatus(TRASKEN, DEAD);
 				
-				final long baseIntervalMillis = Config.TRASKEN_SPAWN_INTERVAL * 3600000;
-				final long randomRangeMillis = Config.TRASKEN_SPAWN_RANDOM * 3600000;
+				final long baseIntervalMillis = GrandBossConfig.TRASKEN_SPAWN_INTERVAL * 3600000;
+				final long randomRangeMillis = GrandBossConfig.TRASKEN_SPAWN_RANDOM * 3600000;
 				final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 				final StatSet info = GrandBossManager.getInstance().getStatSet(TRASKEN);
 				info.set("respawn_time", System.currentTimeMillis() + respawnTime);

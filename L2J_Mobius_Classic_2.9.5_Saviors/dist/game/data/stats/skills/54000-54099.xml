@@ -710,6 +710,66 @@
 		<!-- Level 10: MP Recovery Bonus +90 and M. Atk. Power +15% and 600 MP Recovery upon using a skill or hitting when receiving MP recovery from Recharge. -->
 		<icon>icon.etc_water_rune_i00</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="ManaCharge">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+					<value level="5">25</value>
+					<value level="6">35</value>
+					<value level="7">45</value>
+					<value level="8">55</value>
+					<value level="9">70</value>
+					<value level="10">90</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">2</value>
+					<value level="7">5</value>
+					<value level="8">8</value>
+					<value level="9">11</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt" fromLevel="6" toLevel="10">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>54036</skillId> <!-- Anakim Recovery -->
+				<skillLevel>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByMagicType" fromLevel="6" toLevel="10">
+				<magicTypes>1;2;3</magicTypes>
+				<skillId>54036</skillId> <!-- Anakim Recovery -->
+				<skillLevel>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+				</skillLevel>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="54035" toLevel="10" name="Lilith Power">
 		<!-- Level 1: The amount of Heal received +1%, , P. Atk. +1%. -->
@@ -724,6 +784,53 @@
 		<!-- Level 10: HP Recovery +15%, Attack +15%, Hit activates HP Recovery 900 -->
 		<icon>icon.etc_fire_rune_i00</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">5</value>
+					<value level="7">7</value>
+					<value level="8">9</value>
+					<value level="9">12</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">2</value>
+					<value level="7">5</value>
+					<value level="8">8</value>
+					<value level="9">11</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt" fromLevel="6" toLevel="10">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>54036</skillId> <!-- Lilith Recovery -->
+				<skillLevel>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+				</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="54036" toLevel="5" name="Anakim's Recovery">
 		<!-- Level 1: Hit or skill Activates 75 MP Recovery -->
@@ -735,6 +842,19 @@
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 		<reuseDelay>60000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="Mp">
+				<amount>
+					<value level="1">75</value>
+					<value level="2">150</value>
+					<value level="3">225</value>
+					<value level="4">300</value>
+					<value level="5">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="54037" toLevel="5" name="Lilith's Recovery">
 		<!-- Level 1: Hit activates 100 HP Recovery -->
@@ -746,6 +866,19 @@
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 		<reuseDelay>60000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="Hp">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">300</value>
+					<value level="4">400</value>
+					<value level="5">900</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="54038" toLevel="1" name="Sayha's Cloak">
 		<!-- Increases Max HP/MP +3%. -->
@@ -840,6 +973,24 @@
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">2</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="DamageShieldResist">
 				<amount>
 					<value level="1">2</value>
@@ -848,12 +999,23 @@
 					<value level="4">10</value>
 				</amount>
 			</effect>
-			<effect name="ResistDispelByCategory">
+			<effect name="PhysicalSkillPower">
 				<amount>
-					<value level="3">-10</value>
-					<value level="4">-20</value>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
 				</amount>
-				<slot>BUFF</slot>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1183,22 +1345,16 @@
 	<skill id="54070" toLevel="1" name="Sayha's Buff Scroll - Event">
 		<!-- A mysterious scroll that triggers various buffs -->
 		<icon>icon.etc_ssq_i00</icon>
-		<operateType>A2</operateType>
+		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>-1</abnormalTime> <!-- 60000 TODO:aaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
-		<abnormalTime>1200</abnormalTime>
-		<abnormalType>MULTI_BUFF</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
-		<canBeDispelled>false</canBeDispelled>
 		<hitTime>0</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>91781</itemConsumeId>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
-		<stayAfterDeath>true</stayAfterDeath>
 		<selfEffects>
 			<effect name="CallSkill">
 				<skillId>54100</skillId> <!-- Sayha's Shield -->
@@ -1288,6 +1444,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<reuseDelay>60000</reuseDelay>
+		<reuseDelayGroup>54071</reuseDelayGroup>
 		<stayAfterDeath>true</stayAfterDeath>
 		<effects>
 			<effect name="PhysicalAttack">

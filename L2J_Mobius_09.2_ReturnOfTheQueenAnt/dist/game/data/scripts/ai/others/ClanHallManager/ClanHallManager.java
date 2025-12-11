@@ -34,19 +34,18 @@ import org.l2jmobius.gameserver.model.residences.ClanHall;
 import org.l2jmobius.gameserver.model.residences.ResidenceFunction;
 import org.l2jmobius.gameserver.model.residences.ResidenceFunctionTemplate;
 import org.l2jmobius.gameserver.model.residences.ResidenceFunctionType;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.teleporter.TeleportHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.AgitDecoInfo;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * Clan Hall Manager AI.
  * @author St3eT
  */
-public class ClanHallManager extends AbstractNpcAI
+public class ClanHallManager extends Script
 {
 	// NPCs
 	// @formatter:off

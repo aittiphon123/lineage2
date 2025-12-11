@@ -23,6 +23,7 @@ import org.l2jmobius.gameserver.data.xml.SkillTreeData;
 import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.AcquireSkillType;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -30,14 +31,12 @@ import org.l2jmobius.gameserver.network.clientpackets.RequestAcquireSkill;
 import org.l2jmobius.gameserver.network.serverpackets.ExAcquirableSkillListByClass;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import ai.AbstractNpcAI;
-
 /**
  * Avant-Garde AI.<br>
  * Transformation skill learning and transformation scroll sell.
  * @author Zoey76
  */
-public class AvantGarde extends AbstractNpcAI
+public class AvantGarde extends Script
 {
 	// NPC
 	private static final int AVANT_GARDE = 32323;

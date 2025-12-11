@@ -30,18 +30,17 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import instances.AbstractInstance;
-
 /**
  * @author NasSeKa, Mobius
  */
-public class CommandPost extends AbstractInstance
+public class CommandPost extends InstanceScript
 {
 	// NPCs
 	private static final int DEVIANNE = 34089;

@@ -319,6 +319,42 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="36489" min="1" max="1" chance="3.23" /> <!-- Antharas Shaper - Lv. 3 -->
+			<item id="36490" min="1" max="1" chance="3.23" /> <!-- Antharas Slasher - Lv. 3 -->
+			<item id="36491" min="1" max="1" chance="3.23" /> <!-- Antharas Thrower - Lv. 3 -->
+			<item id="36492" min="1" max="1" chance="3.23" /> <!-- Antharas Buster - Lv. 3 -->
+			<item id="36493" min="1" max="1" chance="3.23" /> <!-- Antharas Cutter - Lv. 3 -->
+			<item id="36494" min="1" max="1" chance="3.23" /> <!-- Antharas Stormer - Lv. 3 -->
+			<item id="36495" min="1" max="1" chance="3.23" /> <!-- Antharas Fighter - Lv. 3 -->
+			<item id="36496" min="1" max="1" chance="3.23" /> <!-- Antharas Avenger - Lv. 3 -->
+			<item id="36497" min="1" max="1" chance="3.23" /> <!-- Antharas Dual Blunt Weapons - Lv. 3 -->
+			<item id="36498" min="1" max="1" chance="3.23" /> <!-- Antharas Dual Swords - Lv. 3 -->
+			<item id="36499" min="1" max="1" chance="3.23" /> <!-- Valakas Shaper - Lv. 3 -->
+			<item id="36500" min="1" max="1" chance="3.23" /> <!-- Valakas Cutter - Lv. 3 -->
+			<item id="36501" min="1" max="1" chance="3.23" /> <!-- Valakas Slasher - Lv. 3 -->
+			<item id="36502" min="1" max="1" chance="3.23" /> <!-- Valakas Thrower - Lv. 3 -->
+			<item id="36503" min="1" max="1" chance="3.23" /> <!-- Valakas Buster - Lv. 3 -->
+			<item id="36504" min="1" max="1" chance="3.23" /> <!-- Valakas Caster - Lv. 3 -->
+			<item id="36505" min="1" max="1" chance="3.23" /> <!-- Valakas Retributer - Lv. 3 -->
+			<item id="36506" min="1" max="1" chance="3.23" /> <!-- Lindvior Shaper - Lv. 3 -->
+			<item id="36507" min="1" max="1" chance="3.22" /> <!-- Lindvior Thrower - Lv. 3 -->
+			<item id="36508" min="1" max="1" chance="3.22" /> <!-- Lindvior Slasher - Lv. 3 -->
+			<item id="36509" min="1" max="1" chance="3.22" /> <!-- Lindvior Caster - Lv. 3 -->
+			<item id="36510" min="1" max="1" chance="3.22" /> <!-- Lindvior Cutter - Lv. 3 -->
+			<item id="36511" min="1" max="1" chance="3.22" /> <!-- Lindvior Guardian - Lv. 3 -->
+			<item id="36512" min="1" max="1" chance="3.22" /> <!-- Lindvior Dual Daggers - Lv. 3 -->
+			<item id="80084" min="1" max="1" chance="3.22" /> <!-- Fafurion Avenger - Lv. 3 -->
+			<item id="80085" min="1" max="1" chance="3.22" /> <!-- Fafurion Fighter - Lv. 3 -->
+			<item id="80086" min="1" max="1" chance="3.22" /> <!-- Fafurion Stormer - Lv. 3 -->
+			<item id="80087" min="1" max="1" chance="3.22" /> <!-- Fafurion Retributer - Lv. 3 -->
+			<item id="80088" min="1" max="1" chance="3.22" /> <!-- Fafurion Dual Blunt Weapons - Lv. 3 -->
+			<item id="80089" min="1" max="1" chance="3.22" /> <!-- Fafurion Dual Swords - Lv. 3 -->
+			<item id="80318" min="1" max="1" chance="3.22" /> <!-- Fafurion Dual Daggers - Lv. 3 -->
+		</capsuled_items>
 	</item>
 	<item id="82915" name="Green Sprout Energy" additionalName="Event" type="EtcItem">
 		<!-- For 30 min., damage +10%, acquired XP/ SP +10%, received damage -10%. -->
@@ -355,6 +391,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="82918" min="1" max="1" chance="100" /> <!-- Shining Aether Pack - Event -->
+			<item id="81215" min="1" max="1" chance="100" /> <!-- Aether -->
+		</capsuled_items>
 	</item>
 	<item id="82918" name="Shining Aether Pack" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain some Aether. <Surprise Secret Shop>. Can be used as a ticket in the Surprise Secret Shop. -->
@@ -365,6 +406,10 @@
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="81215" min="2" max="20" chance="100" /> <!-- Aether -->
+		</capsuled_items>
 	</item>
 	<item id="82919" name="Is that Dragon Weapon?" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain Dragon Weapon Pack (1 pc.) or Aether (1000 pcs.). Chance to obtain Dragon Weapon Pack: 9%. Chance to obtain Aether (1000 pcs.): 91%. -->
@@ -443,6 +488,10 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="19463" min="1" max="1" chance="100" /> <!-- Antharas' Blessed Earring -->
+		</capsuled_items>
 	</item>
 	<item id="82923" name="Blessed Valakas' Necklace Pack" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain Blessed Valakas' Necklace (1 pc.). -->
@@ -455,6 +504,10 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="19464" min="1" max="1" chance="100" /> <!-- Valakas' Blessed Necklace -->
+		</capsuled_items>
 	</item>
 	<item id="82924" name="Lindvior's Earring Pack" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain 1 Lindvior's Earring. -->
@@ -467,6 +520,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="36946" min="1" max="1" chance="100" /> <!-- Lindvior's Earring -->
+		</capsuled_items>
 	</item>
 	<item id="82925" name="Benusta's Reward Box" additionalName="Lv. 4" type="EtcItem">
 		<!-- Double-click to obtain one of the available rewards: a superior jewel Lv. 1, various items or adena. -->
@@ -531,6 +590,9 @@
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
 		<set name="handler" val="EnchantScrolls" />
 		<skills>
 			<skill id="39848" level="1" /> <!-- Gran Kain's Scroll: Enchant L-grade Weapon -->
@@ -545,6 +607,9 @@
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
 		<set name="handler" val="EnchantScrolls" />
 		<skills>
 			<skill id="39849" level="1" /> <!-- Gran Kain's Scroll: Enchant L-grade Armor -->
@@ -581,7 +646,6 @@
 	<item id="82931" name="C-grade Relic Summon Coupon - 1-time" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain a C-grade relic. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv3" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -593,7 +657,6 @@
 	<item id="82932" name="B-grade Relic Summon Coupon - 1-time" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain a B-grade relic. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv4" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -605,7 +668,6 @@
 	<item id="82933" name="A-grade Relic Summon Coupon - 1-time" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain a A-grade relic. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv5" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -873,7 +935,6 @@
 	<item id="82940" name="Level" type="EtcItem">
 		<!-- Level up as a reward. -->
 		<set name="icon" val="icon.lv_point" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
@@ -1209,7 +1270,6 @@
 	<item id="82966" name="+5 Circlet Box Coupon" type="EtcItem">
 		<!-- Can be exchanged for +5 Knight's/ Wizard's/ Warrior's Circlet Box (of your choice). -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
@@ -1264,6 +1324,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="36942" level="1" /> <!-- Silvery Artifact Book -->
+		</skills>
 	</item>
 	<item id="82970" name="Dwarven Magic-imbued Cloak" additionalName="L-grade" type="Armor">
 		<!-- An L-grade cloak imbued with Dwarven magic. -->
@@ -1292,6 +1355,10 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="36940" level="1" /> <!-- Silvery Bracelet -->
+			<skill id="36941" level="1" /> <!-- Kaliel's Divine Protection -->
+		</skills>
 	</item>
 	<item id="82972" name="Dwarven Magic-imbued Cloak of Light Dragon" type="Armor">
 		<!-- Light Dragon's Cloak imbued with Dwarven magic. -->
@@ -1319,6 +1386,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="81869" min="1" max="1" chance="100" /> <!-- Superior Ruby Lv. 10 - Event -->
+			<item id="81871" min="1" max="1" chance="100" /> <!-- Superior Red Cat's Eye Lv. 10 - Event -->
+		</capsuled_items>
 	</item>
 	<item id="82974" name="Superior Sapphire/ Blue Cat's Eye Pack Lv. 10" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain Superior Sapphire Lv. 10 - Event and Superior Blue Cat's Eye Lv. 10 - Event. -->
@@ -1330,6 +1402,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="81870" min="1" max="1" chance="100" /> <!-- Superior Sapphire Lv. 10 - Event -->
+			<item id="81872" min="1" max="1" chance="100" /> <!-- Superior Blue Cat's Eye Lv. 10 - Event -->
+		</capsuled_items>
 	</item>
 	<item id="82975" name="Maker Symbol Cloak" type="Armor">
 		<!-- When equipped, changes your cloak appearance to that of the cloak that unleashes Maker's abilities. Only for Shine Makers. -->
@@ -1475,6 +1552,42 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="82871" min="1" max="1" chance="3.23" /> <!-- Antharas Shaper - Lv. 4 -->
+			<item id="82872" min="1" max="1" chance="3.23" /> <!-- Antharas Slasher - Lv. 4 -->
+			<item id="82873" min="1" max="1" chance="3.23" /> <!-- Antharas Thrower - Lv. 4 -->
+			<item id="82874" min="1" max="1" chance="3.23" /> <!-- Antharas Buster - Lv. 4 -->
+			<item id="82875" min="1" max="1" chance="3.23" /> <!-- Antharas Cutter - Lv. 4 -->
+			<item id="82876" min="1" max="1" chance="3.23" /> <!-- Antharas Stormer - Lv. 4 -->
+			<item id="82877" min="1" max="1" chance="3.23" /> <!-- Antharas Fighter - Lv. 4 -->
+			<item id="82878" min="1" max="1" chance="3.23" /> <!-- Antharas Avenger - Lv. 4 -->
+			<item id="82879" min="1" max="1" chance="3.23" /> <!-- Antharas Dual Blunt Weapons - Lv. 4 -->
+			<item id="82880" min="1" max="1" chance="3.23" /> <!-- Antharas Dual Swords - Lv. 4 -->
+			<item id="82881" min="1" max="1" chance="3.23" /> <!-- Valakas Shaper - Lv. 4 -->
+			<item id="82882" min="1" max="1" chance="3.23" /> <!-- Valakas Cutter - Lv. 4 -->
+			<item id="82883" min="1" max="1" chance="3.23" /> <!-- Valakas Slasher - Lv. 4 -->
+			<item id="82884" min="1" max="1" chance="3.23" /> <!-- Valakas Thrower - Lv. 4 -->
+			<item id="82885" min="1" max="1" chance="3.23" /> <!-- Valakas Buster - Lv. 4 -->
+			<item id="82886" min="1" max="1" chance="3.23" /> <!-- Valakas Caster - Lv. 4 -->
+			<item id="82887" min="1" max="1" chance="3.23" /> <!-- Valakas Retributer - Lv. 4 -->
+			<item id="82888" min="1" max="1" chance="3.23" /> <!-- Lindvior Shaper - Lv. 4 -->
+			<item id="82889" min="1" max="1" chance="3.22" /> <!-- Lindvior Thrower - Lv. 4 -->
+			<item id="82890" min="1" max="1" chance="3.22" /> <!-- Lindvior Slasher - Lv. 4 -->
+			<item id="82891" min="1" max="1" chance="3.22" /> <!-- Lindvior Caster - Lv. 4 -->
+			<item id="82892" min="1" max="1" chance="3.22" /> <!-- Lindvior Cutter - Lv. 4 -->
+			<item id="82893" min="1" max="1" chance="3.22" /> <!-- Lindvior Guardian - Lv. 4 -->
+			<item id="82894" min="1" max="1" chance="3.22" /> <!-- Lindvior Dual Daggers - Lv. 4 -->
+			<item id="82895" min="1" max="1" chance="3.22" /> <!-- Fafurion Avenger - Lv. 4 -->
+			<item id="82896" min="1" max="1" chance="3.22" /> <!-- Fafurion Fighter - Lv. 4 -->
+			<item id="82897" min="1" max="1" chance="3.22" /> <!-- Fafurion Stormer - Lv. 4 -->
+			<item id="82898" min="1" max="1" chance="3.22" /> <!-- Fafurion Retributer - Lv. 4 -->
+			<item id="82899" min="1" max="1" chance="3.22" /> <!-- Fafurion Dual Blunt Weapons - Lv. 4 -->
+			<item id="82900" min="1" max="1" chance="3.22" /> <!-- Fafurion Dual Swords - Lv. 4 -->
+			<item id="82901" min="1" max="1" chance="3.22" /> <!-- Fafurion Dual Daggers - Lv. 4 -->
+		</capsuled_items>
 	</item>
 	<item id="82982" name="Einhasad's Red Pack" additionalName="Lv. 1" type="EtcItem">
 		<!-- Double-click to obtain 1 useful item. -->
@@ -1600,7 +1713,6 @@
 	<item id="82985" name="Shiny Golden Craft Coupon" type="EtcItem">
 		<!-- A golden coupon blessed by Einhasad. Required for crafting rare items. -->
 		<set name="icon" val="icon.ev_2021_thanksgiving_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
 		<set name="is_sellable" val="false" />
@@ -1681,6 +1793,9 @@
 		<stats>
 			<stat type="mDef">144</stat>
 		</stats>
+		<skills>
+			<skill id="36872" level="1" /> <!-- Silvery Brooch -->
+		</skills>
 	</item>
 	<item id="82990" name="Silvery Bracelet" additionalName="Test" type="Armor">
 		<!-- Test. Can be augmented. -->
@@ -1692,6 +1807,10 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="36940" level="1" /> <!-- Silvery Bracelet -->
+			<skill id="36941" level="1" /> <!-- Kaliel's Divine Protection -->
+		</skills>
 	</item>
 	<item id="82991" name="Silvery Seed Bracelet" additionalName="Test" type="Armor">
 		<!-- Test. Can be augmented. -->
@@ -1703,6 +1822,15 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="35083" level="1" /> <!-- Seed Teleport: Aden -->
+			<skill id="35084" level="1" /> <!-- Seed Teleport: Rune -->
+			<skill id="35085" level="1" /> <!-- Seed Teleport: Giran -->
+			<skill id="35086" level="1" /> <!-- Seed Teleport: Heine -->
+			<skill id="37061" level="1" /> <!-- Silvery Seed Bracelet -->
+			<skill id="37062" level="1" /> <!-- Silvery Seed Bracelet: Enchant Effect -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
 	</item>
 	<item id="82992" name="Silvery Artifact Book" additionalName="Test" type="Armor">
 		<!-- Test. Can be augmented. -->
@@ -1714,11 +1842,13 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="36942" level="1" /> <!-- Silvery Artifact Book -->
+		</skills>
 	</item>
 	<item id="82993" name="Contest Certificate" type="EtcItem">
 		<!-- A certificate that grants you the right to gather Crystals of Purity during the preparations to the Clan Hall War. -->
 		<set name="icon" val="icon.etc_paper_white_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1731,7 +1861,6 @@
 	<item id="82994" name="Main/ Dual Class Switch Certificate" type="EtcItem">
 		<!-- Given to an adventurer who has made a main/ dual class switch and has found a new destiny. Opens up a special mission. -->
 		<set name="icon" val="icon.etc_royal_membership_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1744,7 +1873,6 @@
 	<item id="82995" name="Royal Coupon" additionalName="Event" type="EtcItem">
 		<!-- Can be <font color=EEAA22>exchanged for various items</font>. <font color=ff6666><Items for exchange></font>. Blessed Valakas' Necklace - Spirit (1 pc.). Blessed Antharas' Earring - Shield (1 pc.). Lindvior's Earring - Shield (1 pc.). Ring of Truth-seeker - INT (1 pc.). Ruler's Ring of Authority - STR (1 pc.). Vitality Sustaining Rune (30-day) (1 pc.). Tales of Dimensions (1000 pcs.). Golden Orb (1 pc.). Top-grade Homunculus' Hourglass (1 pc.). Aether (1200 pcs.). Augmenting Stone Pack (100 pcs.) -->
 		<set name="icon" val="icon.ev_2021_thanksgiving_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1755,7 +1883,6 @@
 	<item id="82996" name="Acorus" additionalName="Event" type="EtcItem">
 		<!-- Acorus grows in humid soil on the shores of lakes and ponds. <Event craft>. Collect Acorus to create Clear Acorus Water, Wheel Rice Cake and Red Bean Rice Cake. If you are lucky, you will get Golden Acorus. -->
 		<set name="icon" val="icon.ev_2023_dano_flora1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1764,7 +1891,6 @@
 	<item id="82997" name="Golden Acorus" additionalName="Event" type="EtcItem">
 		<!-- A gold-colored acorus. <Event craft>. Can be used to create Golden Acorus Hairpin through the event craft. -->
 		<set name="icon" val="icon.ev_2023_dano_flora2" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1773,7 +1899,6 @@
 	<item id="82998" name="Golden Acorus Hairpin" additionalName="Event" type="EtcItem">
 		<!-- A hairpin decorated with Golden Acorus. It is used for decorating hair on special occasions. <Event craft>. Can be used as a material for the event craft and exchanged for various items. -->
 		<set name="icon" val="icon.ev_2023_dano_binyeo" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1782,7 +1907,6 @@
 	<item id="82999" name="Clear Acorus Water" additionalName="Event" type="EtcItem">
 		<!-- Pure water received from boiling acorus. It is used for washing hair on special occasions. <How to use>. If you wash your hair with this water by the well near the event stage, something good happens. -->
 		<set name="icon" val="icon.ev_2023_dano_florawater" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />

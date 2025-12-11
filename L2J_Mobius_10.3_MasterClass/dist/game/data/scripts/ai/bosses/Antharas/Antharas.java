@@ -31,18 +31,17 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.NpcInfo;
 
-import instances.AbstractInstance;
-
 /**
  * @author Notorion
  */
-public class Antharas extends AbstractInstance
+public class Antharas extends InstanceScript
 {
 	// NPCs
 	private static final int FIGHT_ANTHARAS = 29387;

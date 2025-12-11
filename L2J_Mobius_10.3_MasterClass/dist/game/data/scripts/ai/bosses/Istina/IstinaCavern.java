@@ -20,7 +20,7 @@ import java.util.Comparator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.AggroInfo;
 import org.l2jmobius.gameserver.model.DamageDoneInfo;
@@ -32,6 +32,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -41,13 +42,11 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
-import instances.AbstractInstance;
-
 /**
  * Istina Cavern instance zone.
  * @author St3eT
  */
-public class IstinaCavern extends AbstractInstance
+public class IstinaCavern extends InstanceScript
 {
 	// NPCs
 	private static final int RUMIESE = 33151;
@@ -681,7 +680,7 @@ public class IstinaCavern extends AbstractInstance
 				final long damage = info.getDamage();
 				if (damage > 1)
 				{
-					if (!LocationUtil.checkIfInRange(Config.ALT_PARTY_RANGE, npc, attacker, true))
+					if (!LocationUtil.checkIfInRange(PlayerConfig.ALT_PARTY_RANGE, npc, attacker, true))
 					{
 						continue;
 					}

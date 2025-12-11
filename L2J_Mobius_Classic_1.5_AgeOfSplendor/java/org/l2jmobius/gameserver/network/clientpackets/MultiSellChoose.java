@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.holders.MultisellEntryHolder;
 import org.l2jmobius.gameserver.data.holders.PreparedMultisellListHolder;
 import org.l2jmobius.gameserver.data.xml.ItemData;
@@ -102,7 +102,7 @@ public class MultiSellChoose extends ClientPacket
 			return;
 		}
 		
-		if ((_amount < 1) || (_amount > Config.MULTISELL_AMOUNT_LIMIT)) // 999 999 is client max.
+		if ((_amount < 1) || (_amount > GeneralConfig.MULTISELL_AMOUNT_LIMIT)) // 999 999 is client max.
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
 			return;

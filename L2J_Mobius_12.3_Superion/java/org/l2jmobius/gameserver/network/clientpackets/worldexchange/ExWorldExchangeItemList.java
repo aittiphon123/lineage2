@@ -23,7 +23,8 @@ package org.l2jmobius.gameserver.network.clientpackets.worldexchange;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.WorldExchangeConfig;
+import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
 import org.l2jmobius.gameserver.managers.WorldExchangeManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.WorldExchangeItemSubType;
@@ -58,7 +59,7 @@ public class ExWorldExchangeItemList extends ClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -69,7 +70,7 @@ public class ExWorldExchangeItemList extends ClientPacket
 			return;
 		}
 		
-		final String lang = Config.MULTILANG_ENABLE ? player.getLang() != null ? player.getLang() : Config.WORLD_EXCHANGE_DEFAULT_LANG : Config.WORLD_EXCHANGE_DEFAULT_LANG;
+		final String lang = MultilingualSupportConfig.MULTILANG_ENABLE ? player.getLang() != null ? player.getLang() : WorldExchangeConfig.WORLD_EXCHANGE_DEFAULT_LANG : WorldExchangeConfig.WORLD_EXCHANGE_DEFAULT_LANG;
 		if (_itemIdList.isEmpty())
 		{
 			final List<WorldExchangeHolder> holders = WorldExchangeManager.getInstance().getItemBids(player.getObjectId(), WorldExchangeItemSubType.getWorldExchangeItemSubType(_category), WorldExchangeSortType.getWorldExchangeSortType(_sortType), lang);

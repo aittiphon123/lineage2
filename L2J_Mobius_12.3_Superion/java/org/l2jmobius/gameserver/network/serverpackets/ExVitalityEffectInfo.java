@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.stat.PlayerStat;
 import org.l2jmobius.gameserver.model.stats.Stat;
@@ -42,9 +42,9 @@ public class ExVitalityEffectInfo extends ServerPacket
 	{
 		_points = player.getVitalityPoints();
 		final PlayerStat stat = player.getStat();
-		_vitalityBonus = (int) ((stat.getMul(Stat.VITALITY_EXP_RATE, 1) - 1) + (player.hasPremiumStatus() ? Config.RATE_VITALITY_EXP_PREMIUM_MULTIPLIER : Config.RATE_VITALITY_EXP_MULTIPLIER)) * 100;
+		_vitalityBonus = (int) ((stat.getMul(Stat.VITALITY_EXP_RATE, 1) - 1) + (player.hasPremiumStatus() ? RatesConfig.RATE_VITALITY_EXP_PREMIUM_MULTIPLIER : RatesConfig.RATE_VITALITY_EXP_MULTIPLIER)) * 100;
 		_vitalityAddBonus = (int) ((stat.getMul(Stat.VITALITY_EXP_RATE, 1) - 1) * 100);
-		_vitalityItemsRemaining = Config.VITALITY_MAX_ITEMS_ALLOWED - player.getVitalityItemsUsed();
+		_vitalityItemsRemaining = RatesConfig.VITALITY_MAX_ITEMS_ALLOWED - player.getVitalityItemsUsed();
 	}
 	
 	@Override
@@ -55,6 +55,6 @@ public class ExVitalityEffectInfo extends ServerPacket
 		buffer.writeInt(_vitalityBonus); // Vitality Bonus
 		buffer.writeShort(_vitalityAddBonus); // Vitality additional bonus in %
 		buffer.writeShort(_vitalityItemsRemaining); // How much vitality items remaining for use
-		buffer.writeShort(Config.VITALITY_MAX_ITEMS_ALLOWED); // Max number of items for use
+		buffer.writeShort(RatesConfig.VITALITY_MAX_ITEMS_ALLOWED); // Max number of items for use
 	}
 }

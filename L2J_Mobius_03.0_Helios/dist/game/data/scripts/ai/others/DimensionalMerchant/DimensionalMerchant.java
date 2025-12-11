@@ -23,16 +23,15 @@ import org.l2jmobius.gameserver.handler.ItemHandler;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExGetPremiumItemList;
-
-import ai.AbstractNpcAI;
 
 /**
  * Dimensional Merchant AI.
  * @author St3eT
  */
-public class DimensionalMerchant extends AbstractNpcAI
+public class DimensionalMerchant extends Script
 {
 	// NPC
 	private static final int MERCHANT = 32478; // Dimensional Merchant
@@ -168,6 +167,12 @@ public class DimensionalMerchant extends AbstractNpcAI
 		}
 		
 		return "32478-07.html";
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

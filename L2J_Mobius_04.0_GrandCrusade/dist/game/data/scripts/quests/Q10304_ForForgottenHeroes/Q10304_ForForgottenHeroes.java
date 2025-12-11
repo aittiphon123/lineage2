@@ -20,7 +20,7 @@
  */
 package quests.Q10304_ForForgottenHeroes;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -31,10 +31,10 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelC
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPressTutorialMark;
 import org.l2jmobius.gameserver.model.item.instance.Item;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExQuestNpcLogList;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -196,7 +196,7 @@ public class Q10304_ForForgottenHeroes extends Quest
 		{
 			final int cond = qs.getCond();
 			final int npcId = npc.getId();
-			if (player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+			if (player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 			{
 				if ((npcId == YUI) && (cond == 2))
 				{

@@ -27,18 +27,17 @@ import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
 
-import ai.AbstractNpcAI;
-
 /**
  * Leopard Dragon Hachling AI.
  * @author Mobius
  */
-public class LeopardDragonHachling extends AbstractNpcAI
+public class LeopardDragonHachling extends Script
 {
 	// NPCs
 	private static final int DRAGON_HACHLING = 23434;

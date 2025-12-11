@@ -22,15 +22,14 @@ package ai.areas.GardenOfSpirits;
 
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Creature;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Garden of Spirits teleport zones.
  * @author Mobius
  */
-public class GardenOfSpirits extends AbstractNpcAI
+public class GardenOfSpirits extends Script
 {
 	// Zones
 	private static final int ZONE_ID_1 = 200213;

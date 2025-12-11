@@ -19,6 +19,7 @@ package ai.others.LaVieEnRose;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.olympiad.OlympiadManager;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -26,13 +27,11 @@ import org.l2jmobius.gameserver.network.serverpackets.ExResponseBeautyList;
 import org.l2jmobius.gameserver.network.serverpackets.ExResponseResetList;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowBeautyMenu;
 
-import ai.AbstractNpcAI;
-
 /**
  * La Vie En Rose AI.
  * @author Sdw
  */
-public class LaVieEnRose extends AbstractNpcAI
+public class LaVieEnRose extends Script
 {
 	// NPCs
 	private static final int LA_VIE_EN_ROSE = 33825;
@@ -143,6 +142,12 @@ public class LaVieEnRose extends AbstractNpcAI
 	public void onSpawn(Npc npc)
 	{
 		startQuestTimer("SPAM_TEXT", (5 * 60 * 1000), npc, null, true);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

@@ -20,12 +20,12 @@
  */
 package quests.Q10457_KefensisIllusion;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 
 import quests.Q10455_ElikiasLetter.Q10455_ElikiasLetter;
@@ -152,7 +152,7 @@ public class Q10457_KefensisIllusion extends Quest
 	public void onKill(Npc npc, Player killer, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && (qs.getCond() >= 1) && killer.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+		if ((qs != null) && (qs.getCond() >= 1) && killer.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 		{
 			switch (qs.getCond())
 			{

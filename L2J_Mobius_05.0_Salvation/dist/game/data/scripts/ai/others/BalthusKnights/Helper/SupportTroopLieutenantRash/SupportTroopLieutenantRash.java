@@ -23,14 +23,13 @@ package ai.others.BalthusKnights.Helper.SupportTroopLieutenantRash;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Support Troop Lieutenant Rash AI
  * @author Kazumi
  */
-public final class SupportTroopLieutenantRash extends AbstractNpcAI
+public final class SupportTroopLieutenantRash extends Script
 {
 	// NPCs
 	private static final int RASH = 34371;

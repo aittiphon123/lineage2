@@ -23,17 +23,17 @@ package ai.areas.Heine;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.enums.Movie;
 
-import ai.AbstractNpcAI;
 import quests.Q10455_ElikiasLetter.Q10455_ElikiasLetter;
 
 /**
  * Warp Gate AI.
  * @author Gigi
  */
-public class WrapGate extends AbstractNpcAI
+public class WrapGate extends Script
 {
 	// NPC
 	private static final int WRAP_GATE = 33900;

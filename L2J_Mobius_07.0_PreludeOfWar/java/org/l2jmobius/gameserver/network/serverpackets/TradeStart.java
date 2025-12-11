@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import java.util.Collection;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.managers.MentorManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
@@ -46,7 +46,7 @@ public class TradeStart extends AbstractItemPacket
 		_sendType = sendType;
 		_player = player;
 		_partner = player.getActiveTradeList().getPartner();
-		_itemList = _player.getInventory().getAvailableItems(true, (_player.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS), false);
+		_itemList = _player.getInventory().getAvailableItems(true, (_player.isGM() && GeneralConfig.GM_TRADE_RESTRICTED_ITEMS), false);
 		if (_partner != null)
 		{
 			if (player.getFriendList().contains(_partner.getObjectId()))

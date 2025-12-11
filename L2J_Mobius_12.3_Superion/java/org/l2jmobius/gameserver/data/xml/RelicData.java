@@ -30,8 +30,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.RelicSystemConfig;
 import org.l2jmobius.gameserver.data.holders.RelicDataHolder;
 import org.l2jmobius.gameserver.model.StatSet;
 
@@ -46,7 +46,7 @@ public class RelicData implements IXmlReader
 	
 	protected RelicData()
 	{
-		if (Config.RELIC_SYSTEM_ENABLED)
+		if (RelicSystemConfig.RELIC_SYSTEM_ENABLED)
 		{
 			load();
 		}
@@ -57,7 +57,7 @@ public class RelicData implements IXmlReader
 	{
 		RELICS.clear();
 		
-		if (Config.RELIC_SYSTEM_ENABLED)
+		if (RelicSystemConfig.RELIC_SYSTEM_ENABLED)
 		{
 			parseDatapackFile("data/RelicData.xml");
 		}

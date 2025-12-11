@@ -20,12 +20,12 @@
  */
 package quests.Q10316_UndecayingMemoryOfThePast;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 import quests.Q10315_ToThePrisonOfDarkness.Q10315_ToThePrisonOfDarkness;
 
@@ -163,7 +163,7 @@ public class Q10316_UndecayingMemoryOfThePast extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isStarted() && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+		if ((qs != null) && qs.isStarted() && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 		{
 			qs.setCond(2, true);
 		}

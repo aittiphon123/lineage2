@@ -23,7 +23,7 @@ package org.l2jmobius.gameserver.network.clientpackets.huntingzones;
 import org.l2jmobius.gameserver.data.holders.TimedHuntingZoneHolder;
 import org.l2jmobius.gameserver.data.xml.TimedHuntingZoneData;
 import org.l2jmobius.gameserver.managers.InstanceManager;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
@@ -165,7 +165,7 @@ public class ExTimedHuntingZoneEnter extends ClientPacket
 			}
 			else // Instanced zones.
 			{
-				QuestManager.getInstance().getQuest("TimedHunting").notifyEvent("ENTER " + _zoneId, null, player);
+				ScriptManager.getInstance().getScript("TimedHunting").notifyEvent("ENTER " + _zoneId, null, player);
 			}
 			
 			// Send time icon.

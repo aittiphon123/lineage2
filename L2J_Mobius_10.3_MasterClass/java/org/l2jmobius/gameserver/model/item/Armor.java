@@ -21,6 +21,7 @@
 package org.l2jmobius.gameserver.model.item;
 
 import org.l2jmobius.gameserver.model.StatSet;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.type.ArmorType;
 
 /**
@@ -45,20 +46,29 @@ public class Armor extends ItemTemplate
 		super.set(set);
 		_type = set.getEnum("armor_type", ArmorType.class, ArmorType.NONE);
 		
-		final long bodyPart = getBodyPart();
-		if ((bodyPart == ItemTemplate.SLOT_ARTIFACT) || (bodyPart == ItemTemplate.SLOT_AGATHION))
+		final BodyPart bodyPart = getBodyPart();
+		if ((bodyPart == BodyPart.ARTIFACT) || (bodyPart == BodyPart.AGATHION))
 		{
 			_type1 = ItemTemplate.TYPE1_SHIELD_ARMOR;
 			_type2 = ItemTemplate.TYPE2_ACCESSORY;
 		}
-		else if ((bodyPart == ItemTemplate.SLOT_NECK) || ((bodyPart & ItemTemplate.SLOT_L_EAR) != 0) || ((bodyPart & ItemTemplate.SLOT_L_FINGER) != 0) || ((bodyPart & ItemTemplate.SLOT_R_BRACELET) != 0) || ((bodyPart & ItemTemplate.SLOT_L_BRACELET) != 0) || ((bodyPart & ItemTemplate.SLOT_ARTIFACT_BOOK) != 0))
+		else if ((bodyPart == BodyPart.NECK) //
+			|| (bodyPart == BodyPart.L_EAR) //
+			|| (bodyPart == BodyPart.R_EAR) //
+			|| (bodyPart == BodyPart.LR_EAR) //
+			|| (bodyPart == BodyPart.L_FINGER) //
+			|| (bodyPart == BodyPart.R_FINGER) //
+			|| (bodyPart == BodyPart.LR_FINGER) //
+			|| (bodyPart == BodyPart.R_BRACELET) //
+			|| (bodyPart == BodyPart.L_BRACELET) //
+			|| (bodyPart == BodyPart.ARTIFACT_BOOK))
 		{
 			_type1 = ItemTemplate.TYPE1_WEAPON_RING_EARRING_NECKLACE;
 			_type2 = ItemTemplate.TYPE2_ACCESSORY;
 		}
 		else
 		{
-			if ((_type == ArmorType.NONE) && (getBodyPart() == ItemTemplate.SLOT_L_HAND))
+			if ((_type == ArmorType.NONE) && (bodyPart == BodyPart.L_HAND))
 			{
 				_type = ArmorType.SHIELD;
 			}

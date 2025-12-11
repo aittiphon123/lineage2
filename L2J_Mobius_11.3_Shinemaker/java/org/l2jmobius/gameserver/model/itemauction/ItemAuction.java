@@ -25,9 +25,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.ItemInfo;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -364,10 +364,10 @@ public class ItemAuction
 				}
 				case EXTEND_BY_3_MIN:
 				{
-					if ((Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID > 0) && (getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId()))
+					if ((GeneralConfig.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID > 0) && (getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId()))
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
-						_endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
+						_endingTime += GeneralConfig.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
 					}
 					break;
 				}
@@ -376,7 +376,7 @@ public class ItemAuction
 					if ((getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId()) && (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B))
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B;
-						_endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
+						_endingTime += GeneralConfig.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
 					}
 					break;
 				}
@@ -384,7 +384,7 @@ public class ItemAuction
 				{
 					if ((getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId()) && (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A))
 					{
-						_endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
+						_endingTime += GeneralConfig.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
 					}
 				}
@@ -428,7 +428,7 @@ public class ItemAuction
 			}
 			case FINISHED:
 			{
-				if (_startingTime < (System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS)))
+				if (_startingTime < (System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(GeneralConfig.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS)))
 				{
 					return false;
 				}

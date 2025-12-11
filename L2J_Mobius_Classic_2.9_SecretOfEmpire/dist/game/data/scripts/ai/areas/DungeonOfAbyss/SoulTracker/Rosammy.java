@@ -26,14 +26,13 @@ import java.util.Map;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author QuangNguyen
  */
-public class Rosammy extends AbstractNpcAI
+public class Rosammy extends Script
 {
 	// NPC
 	private static final int SOUL_TRACKER_ROSAMMY = 31777;

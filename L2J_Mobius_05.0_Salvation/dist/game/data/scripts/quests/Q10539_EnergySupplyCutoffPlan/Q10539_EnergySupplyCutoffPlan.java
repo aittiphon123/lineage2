@@ -23,14 +23,14 @@ package quests.Q10539_EnergySupplyCutoffPlan;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Faction;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
 import quests.Q10537_KamaelDisarray.Q10537_KamaelDisarray;
@@ -142,7 +142,7 @@ public class Q10539_EnergySupplyCutoffPlan extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && LocationUtil.checkIfInRange(Config.ALT_PARTY_RANGE, npc, player, false))
+		if ((qs != null) && LocationUtil.checkIfInRange(PlayerConfig.ALT_PARTY_RANGE, npc, player, false))
 		{
 			int killedCount = qs.getInt(Integer.toString(npc.getId()));
 			final int Marka = qs.getInt(Integer.toString(MARKA));

@@ -20,13 +20,13 @@
  */
 package quests.Q10881_ForThePride;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 import quests.Q10879_ExaltedGuideToPower.Q10879_ExaltedGuideToPower;
 
@@ -111,7 +111,7 @@ public class Q10881_ForThePride extends Quest
 						giveItems(player, SPELLBOOK_VITALITY_OF_THE_EXALTED, 1);
 						qs.exitQuest(false, true);
 						
-						final Quest mainQ = QuestManager.getInstance().getQuest(Q10879_ExaltedGuideToPower.class.getSimpleName());
+						final Quest mainQ = ScriptManager.getInstance().getScript(Q10879_ExaltedGuideToPower.class.getSimpleName());
 						if (mainQ != null)
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);

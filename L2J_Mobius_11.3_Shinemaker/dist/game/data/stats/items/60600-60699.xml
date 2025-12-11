@@ -380,7 +380,6 @@
 	<item id="60614" name="Flame of Fate" type="EtcItem">
 		<!-- The undying flame from the Conquest's new territories. It is too hot to carry with you, but maybe you can find a place for it in your collections. -->
 		<set name="icon" val="icon.etc_torch_on_i09" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -445,7 +444,6 @@
 	<item id="60616" name="+8 Artifact Coupon (Balance)" type="EtcItem">
 		<!-- Can be exchanged for a +8 balance artifact through the Game Assistant. -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -454,7 +452,6 @@
 	<item id="60617" name="+8 Artifact Coupon (Attack)" type="EtcItem">
 		<!-- Can be exchanged for a +8 attack artifact through the Game Assistant. -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -463,7 +460,6 @@
 	<item id="60618" name="+8 Artifact Coupon (Defense)" type="EtcItem">
 		<!-- Can be exchanged for a +8 defense artifact through the Game Assistant. -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -472,7 +468,6 @@
 	<item id="60619" name="+8 Artifact Coupon (Support)" type="EtcItem">
 		<!-- Can be exchanged for a +8 support artifact through the Game Assistant. -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -535,7 +530,6 @@
 	<item id="60623" name="Kit: Einhasad's Golden Coin (90 pcs.)" type="EtcItem">
 		<!-- Double-click to obtain various items. -->
 		<set name="icon" val="BranchIcon.Icon.bm_coin_pack_90" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -550,7 +544,6 @@
 	<item id="60624" name="Kit: Einhasad's Golden Coin (400 pcs.)" type="EtcItem">
 		<!-- Double-click to obtain various items. -->
 		<set name="icon" val="BranchIcon.Icon.bm_coin_pack_400" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -730,7 +723,6 @@
 	<item id="60634" name="+10 Radiant Circlet Coupon" type="EtcItem">
 		<!-- Can be exchanged for any circlet. -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -786,7 +778,6 @@
 	<item id="60638" name="Spring Festival Crystal" type="EtcItem">
 		<!-- Bonuses will be available after adding to a collection. -->
 		<set name="icon" val="icon.ev_green_energy" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -851,7 +842,6 @@
 	<item id="60642" name="Jewel Craft Coupon" type="EtcItem">
 		<!-- Can be used as a material for crafting Greater Jewels Lv. 5. -->
 		<set name="icon" val="icon.bm_boss_doll_ticket_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -860,7 +850,6 @@
 	<item id="60643" name="Jewel Craft Coupon Fragment" type="EtcItem">
 		<!-- Can be used as a material for crafting Jewel Craft Coupon. -->
 		<set name="icon" val="icon.prophets_paper_piece_i01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -871,7 +860,6 @@
 	<item id="60644" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for any Superior La Vie En Rose's jewel Lv. 10 through the Game Assistant. -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -883,7 +871,6 @@
 	<item id="60645" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for a Dragon weapon Lv. 3 (of your choice). -->
 		<set name="icon" val="icon.frozen_weapon_ticket_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -896,7 +883,6 @@
 	<item id="60646" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for a Dragon weapon Lv. 2 (of your choice). -->
 		<set name="icon" val="icon.boss_weapon_ticket_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -909,7 +895,6 @@
 	<item id="60647" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for a Heavenly accessory Lv. 6 (of your choice). -->
 		<set name="icon" val="icon.bm_boss_accessory_ticket_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -922,7 +907,6 @@
 	<item id="60648" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for a Lv. 10 Greater Jewel (at choice). -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -935,7 +919,6 @@
 	<item id="60649" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for a soul crystal Lv. 10 (at choice). -->
 		<set name="icon" val="icon.bm_talisman_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -948,7 +931,6 @@
 	<item id="60650" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for +10 Radiant Circlet (of your choice). -->
 		<set name="icon" val="icon.bm_agathion_ticket_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -961,7 +943,6 @@
 	<item id="60651" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for a Bloodstained Zariche weapon (of your choice). -->
 		<set name="icon" val="icon.bm_weapon_ticket_b" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -974,7 +955,6 @@
 	<item id="60652" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for a Bloodstained Akamanah weapon (of your choice). -->
 		<set name="icon" val="icon.bm_weapon_ticket_c" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -987,7 +967,6 @@
 	<item id="60653" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for a Supreme Krishna weapon enchanted to +32 (at choice). -->
 		<set name="icon" val="icon.bm_weapon_ticket_a" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1000,7 +979,6 @@
 	<item id="60654" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for items from the collections added after the 2023 March update (at choice). -->
 		<set name="icon" val="icon.bm_payback_ticket_01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1013,7 +991,6 @@
 	<item id="60655" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for a Legendary dye Lv. 10 (at choice). -->
 		<set name="icon" val="icon.ench_challnege_point_tallisman_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1026,7 +1003,6 @@
 	<item id="60656" name="NoItemName" type="EtcItem">
 		<!-- Can be exchanged for items from the collections added before the 2023 March update (at choice). -->
 		<set name="icon" val="icon.bm_challenger_wp_trade_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1039,7 +1015,6 @@
 	<item id="60657" name="NoItemName" type="EtcItem">
 		<!-- For 30 min., acquired XP/ SP +50%, Vitality bonus +50%, P. Atk./ P. Def./ M. Atk./ M. Def. +15%, Critical Damage for basic attacks +15%, P./ M. Skill Power +15%. The effect does not stack with that of Peeves' Purple/ Red Potion. -->
 		<set name="icon" val="BranchIcon.Icon.bm_unique_gacha_potion_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1056,7 +1031,6 @@
 	<item id="60658" name="NoItemName" type="EtcItem">
 		<!-- For 30 min., Weapon P./ M. Atk. +150, P./ M. Def. +10%, STR/ INT/ CON +3, acquired XP/ SP +10%. -->
 		<set name="icon" val="BranchIcon.Icon.bm_unique_gacha_potion_i01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -2000,7 +1974,6 @@
 	<item id="60691" name="Dragon Seal" type="EtcItem">
 		<!-- Special bonuses will be available after adding to a collection. -->
 		<set name="icon" val="icon.tiat_seal_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -2026,7 +1999,6 @@
 	<item id="60693" name="Messiah's Shining Seal" type="EtcItem">
 		<!-- Can be exchanged for various items. -->
 		<set name="icon" val="icon.etc_jewel_green_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="L" />
 		<set name="material" val="PAPER" />

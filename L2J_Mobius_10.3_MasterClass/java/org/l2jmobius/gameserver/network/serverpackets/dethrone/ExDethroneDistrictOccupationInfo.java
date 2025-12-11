@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets.dethrone;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -40,11 +40,11 @@ public class ExDethroneDistrictOccupationInfo extends ServerPacket
 		
 		// Zone 1 ASA
 		buffer.writeInt(1); // zone name id for ASA
-		buffer.writeInt(Config.SERVER_ID); // server id for ASA ZONE CONQUERER
+		buffer.writeInt(ServerConfig.SERVER_ID); // server id for ASA ZONE CONQUERER
 		buffer.writeInt(1); // array size for ASA servers (only one server atm)
 		
 		buffer.writeInt(1); // server rank 1
-		buffer.writeInt(Config.SERVER_ID); // rank 1 server id
+		buffer.writeInt(ServerConfig.SERVER_ID); // rank 1 server id
 		buffer.writeInt(GlobalVariablesManager.getInstance().getInt("CONQUEST_ZONE_ASA_POINTS", 0)); // rank 1 server points
 		buffer.writeInt(0);
 		
@@ -55,11 +55,11 @@ public class ExDethroneDistrictOccupationInfo extends ServerPacket
 		
 		// Zone 2 ANIMA
 		buffer.writeInt(2); // zone name id for ANIMA
-		buffer.writeInt(Config.SERVER_ID); // server id for ANIMA ZONE CONQUERER
+		buffer.writeInt(ServerConfig.SERVER_ID); // server id for ANIMA ZONE CONQUERER
 		buffer.writeInt(1); // array size for ANIMA servers (only one server atm)
 		
 		buffer.writeInt(1); // server rank 1
-		buffer.writeInt(Config.SERVER_ID); // rank 1 server id
+		buffer.writeInt(ServerConfig.SERVER_ID); // rank 1 server id
 		buffer.writeInt(GlobalVariablesManager.getInstance().getInt("CONQUEST_ZONE_ANIMA_POINTS", 0)); // rank 1 server points
 		buffer.writeInt(0);
 		
@@ -70,11 +70,11 @@ public class ExDethroneDistrictOccupationInfo extends ServerPacket
 		
 		// Zone 3 NOX
 		buffer.writeInt(3); // zone name id for NOX
-		buffer.writeInt(Config.SERVER_ID); // server id for NOX ZONE CONQUERER
+		buffer.writeInt(ServerConfig.SERVER_ID); // server id for NOX ZONE CONQUERER
 		buffer.writeInt(1); // array size for NOX servers (only one server atm)
 		
 		buffer.writeInt(1); // server rank 1
-		buffer.writeInt(Config.SERVER_ID); // rank 1 server id
+		buffer.writeInt(ServerConfig.SERVER_ID); // rank 1 server id
 		buffer.writeInt(GlobalVariablesManager.getInstance().getInt("CONQUEST_ZONE_NOX_POINTS", 0)); // rank 1 server points
 		buffer.writeInt(0);
 		

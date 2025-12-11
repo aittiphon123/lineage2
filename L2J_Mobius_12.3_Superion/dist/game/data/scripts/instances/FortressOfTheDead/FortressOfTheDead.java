@@ -20,19 +20,19 @@
  */
 package instances.FortressOfTheDead;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.QuestCondType;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.QuestCondType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.classchange.ExClassChangeSetAlarm;
 
-import instances.AbstractInstance;
 import quests.Q10023_ProphesiedOne.Q10023_ProphesiedOne;
 import quests.Q10123_ProphesiedOne.Q10123_ProphesiedOne;
 import quests.Q10223_ProphesiedOne.Q10223_ProphesiedOne;
@@ -42,7 +42,7 @@ import quests.Q10323_ProphesiedOne.Q10323_ProphesiedOne;
  * Fortress of the Dead instance zone.
  * @author Gladicek, Mobius
  */
-public class FortressOfTheDead extends AbstractInstance
+public class FortressOfTheDead extends InstanceScript
 {
 	// NPCs
 	private static final int VAMPIRIC_SOLDIER = 19567;
@@ -136,7 +136,7 @@ public class FortressOfTheDead extends AbstractInstance
 						if (questState != null)
 						{
 							questState.setCond(QuestCondType.DONE);
-							QuestManager.getInstance().getQuest(questState.getQuestName()).notifyEvent("COMPLETE", null, player);
+							ScriptManager.getInstance().getScript(questState.getQuestName()).notifyEvent("COMPLETE", null, player);
 							player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 						}
 						

@@ -1762,7 +1762,7 @@
 		</abnormalLevel>
 		<abnormalTime>
 			<value fromLevel="1" toLevel="4">1800</value>
-			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1030">{base + subIndex * 90}</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="2001" toSubLevel="2010">{base + subIndex * 180}</value>
 		</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_ATTACK</abnormalType>
 		<affectLimit>
@@ -1796,6 +1796,16 @@
 			<value level="2">151</value>
 			<value level="3">170</value>
 			<value level="4">181</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1001">173</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1002" toSubLevel="1002">166</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1003" toSubLevel="1003">158</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1004" toSubLevel="1004">151</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1005" toSubLevel="1005">144</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1006" toSubLevel="1006">137</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1007" toSubLevel="1007">129</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1008" toSubLevel="1008">122</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1009" toSubLevel="1009">115</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1010" toSubLevel="1010">108</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">28</value>
@@ -1837,6 +1847,46 @@
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9001" toSubLevel="9001">
+				<skillId>11517</skillId>
+				<amount>100</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9002" toSubLevel="9002">
+				<skillId>11517</skillId>
+				<amount>200</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9003" toSubLevel="9003">
+				<skillId>11517</skillId>
+				<amount>300</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9004" toSubLevel="9004">
+				<skillId>11517</skillId>
+				<amount>400</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9005" toSubLevel="9005">
+				<skillId>11517</skillId>
+				<amount>500</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9006" toSubLevel="9006">
+				<skillId>11517</skillId>
+				<amount>600</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9007" toSubLevel="9007">
+				<skillId>11517</skillId>
+				<amount>700</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9008" toSubLevel="9008">
+				<skillId>11517</skillId>
+				<amount>800</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9009" toSubLevel="9009">
+				<skillId>11517</skillId>
+				<amount>900</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9010" toSubLevel="9010">
+				<skillId>11517</skillId>
+				<amount>1000</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -1886,9 +1936,9 @@
 		</abnormalLevel>
 		<abnormalTime>
 			<value fromLevel="1" toLevel="4">1800</value>
-			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1030">{base + subIndex * 90}</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="2001" toSubLevel="2010">{base + subIndex * 180}</value>
 		</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectLimit>
 			<value level="1">0-0</value>
 			<value level="2">0-0</value>
@@ -1920,6 +1970,16 @@
 			<value level="2">151</value>
 			<value level="3">170</value>
 			<value level="4">181</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1001">173</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1002" toSubLevel="1002">166</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1003" toSubLevel="1003">158</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1004" toSubLevel="1004">151</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1005" toSubLevel="1005">144</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1006" toSubLevel="1006">137</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1007" toSubLevel="1007">129</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1008" toSubLevel="1008">122</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1009" toSubLevel="1009">115</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1010" toSubLevel="1010">108</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">28</value>
@@ -2001,6 +2061,46 @@
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9001" toSubLevel="9001">
+				<skillId>11518</skillId>
+				<amount>100</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9002" toSubLevel="9002">
+				<skillId>11518</skillId>
+				<amount>200</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9003" toSubLevel="9003">
+				<skillId>11518</skillId>
+				<amount>300</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9004" toSubLevel="9004">
+				<skillId>11518</skillId>
+				<amount>400</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9005" toSubLevel="9005">
+				<skillId>11518</skillId>
+				<amount>500</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9006" toSubLevel="9006">
+				<skillId>11518</skillId>
+				<amount>600</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9007" toSubLevel="9007">
+				<skillId>11518</skillId>
+				<amount>700</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9008" toSubLevel="9008">
+				<skillId>11518</skillId>
+				<amount>800</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9009" toSubLevel="9009">
+				<skillId>11518</skillId>
+				<amount>900</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9010" toSubLevel="9010">
+				<skillId>11518</skillId>
+				<amount>1000</amount>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="11519" toLevel="4" name="Pipe Organ Melody">
@@ -2049,7 +2149,7 @@
 		</abnormalLevel>
 		<abnormalTime>
 			<value fromLevel="1" toLevel="4">1800</value>
-			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1030">{base + subIndex * 90}</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="2001" toSubLevel="2010">{base + subIndex * 180}</value>
 		</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
 		<affectLimit>
@@ -2083,6 +2183,16 @@
 			<value level="2">151</value>
 			<value level="3">170</value>
 			<value level="4">181</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1001">173</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1002" toSubLevel="1002">166</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1003" toSubLevel="1003">158</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1004" toSubLevel="1004">151</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1005" toSubLevel="1005">144</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1006" toSubLevel="1006">137</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1007" toSubLevel="1007">129</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1008" toSubLevel="1008">122</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1009" toSubLevel="1009">115</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1010" toSubLevel="1010">108</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">28</value>
@@ -2129,6 +2239,46 @@
 					<value level="4">43</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9001" toSubLevel="9001">
+				<skillId>11519</skillId>
+				<amount>100</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9002" toSubLevel="9002">
+				<skillId>11519</skillId>
+				<amount>200</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9003" toSubLevel="9003">
+				<skillId>11519</skillId>
+				<amount>300</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9004" toSubLevel="9004">
+				<skillId>11519</skillId>
+				<amount>400</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9005" toSubLevel="9005">
+				<skillId>11519</skillId>
+				<amount>500</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9006" toSubLevel="9006">
+				<skillId>11519</skillId>
+				<amount>600</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9007" toSubLevel="9007">
+				<skillId>11519</skillId>
+				<amount>700</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9008" toSubLevel="9008">
+				<skillId>11519</skillId>
+				<amount>800</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9009" toSubLevel="9009">
+				<skillId>11519</skillId>
+				<amount>900</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9010" toSubLevel="9010">
+				<skillId>11519</skillId>
+				<amount>1000</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -2178,7 +2328,7 @@
 		</abnormalLevel>
 		<abnormalTime>
 			<value fromLevel="1" toLevel="4">1800</value>
-			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1030">{base + subIndex * 90}</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="2001" toSubLevel="2010">{base + subIndex * 180}</value>
 		</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectLimit>
@@ -2207,6 +2357,16 @@
 			<value level="2">151</value>
 			<value level="3">170</value>
 			<value level="4">181</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1001">173</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1002" toSubLevel="1002">166</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1003" toSubLevel="1003">158</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1004" toSubLevel="1004">151</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1005" toSubLevel="1005">144</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1006" toSubLevel="1006">137</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1007" toSubLevel="1007">129</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1008" toSubLevel="1008">122</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1009" toSubLevel="1009">115</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1010" toSubLevel="1010">108</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">28</value>
@@ -2260,6 +2420,46 @@
 				<mode>PER</mode>
 				<magicType>22</magicType>
 			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9001" toSubLevel="9001">
+				<skillId>11520</skillId>
+				<amount>100</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9002" toSubLevel="9002">
+				<skillId>11520</skillId>
+				<amount>200</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9003" toSubLevel="9003">
+				<skillId>11520</skillId>
+				<amount>300</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9004" toSubLevel="9004">
+				<skillId>11520</skillId>
+				<amount>400</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9005" toSubLevel="9005">
+				<skillId>11520</skillId>
+				<amount>500</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9006" toSubLevel="9006">
+				<skillId>11520</skillId>
+				<amount>600</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9007" toSubLevel="9007">
+				<skillId>11520</skillId>
+				<amount>700</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9008" toSubLevel="9008">
+				<skillId>11520</skillId>
+				<amount>800</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9009" toSubLevel="9009">
+				<skillId>11520</skillId>
+				<amount>900</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9010" toSubLevel="9010">
+				<skillId>11520</skillId>
+				<amount>1000</amount>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="11521" toLevel="4" name="Harp Melody">
@@ -2308,7 +2508,7 @@
 		</abnormalLevel>
 		<abnormalTime>
 			<value fromLevel="1" toLevel="4">1800</value>
-			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1030">{base + subIndex * 90}</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="2001" toSubLevel="2010">{base + subIndex * 180}</value>
 		</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
 		<affectLimit>
@@ -2337,6 +2537,16 @@
 			<value level="2">151</value>
 			<value level="3">170</value>
 			<value level="4">181</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1001">173</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1002" toSubLevel="1002">166</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1003" toSubLevel="1003">158</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1004" toSubLevel="1004">151</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1005" toSubLevel="1005">144</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1006" toSubLevel="1006">137</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1007" toSubLevel="1007">129</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1008" toSubLevel="1008">122</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1009" toSubLevel="1009">115</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1010" toSubLevel="1010">108</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">28</value>
@@ -2393,6 +2603,46 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9001" toSubLevel="9001">
+				<skillId>11521</skillId>
+				<amount>100</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9002" toSubLevel="9002">
+				<skillId>11521</skillId>
+				<amount>200</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9003" toSubLevel="9003">
+				<skillId>11521</skillId>
+				<amount>300</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9004" toSubLevel="9004">
+				<skillId>11521</skillId>
+				<amount>400</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9005" toSubLevel="9005">
+				<skillId>11521</skillId>
+				<amount>500</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9006" toSubLevel="9006">
+				<skillId>11521</skillId>
+				<amount>600</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9007" toSubLevel="9007">
+				<skillId>11521</skillId>
+				<amount>700</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9008" toSubLevel="9008">
+				<skillId>11521</skillId>
+				<amount>800</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9009" toSubLevel="9009">
+				<skillId>11521</skillId>
+				<amount>900</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9010" toSubLevel="9010">
+				<skillId>11521</skillId>
+				<amount>1000</amount>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="11522" toLevel="4" name="Lute Melody">
@@ -2441,7 +2691,7 @@
 		</abnormalLevel>
 		<abnormalTime>
 			<value fromLevel="1" toLevel="4">1800</value>
-			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1030">{base + subIndex * 90}</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="2001" toSubLevel="2010">{base + subIndex * 180}</value>
 		</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
 		<affectLimit>
@@ -2470,6 +2720,16 @@
 			<value level="2">151</value>
 			<value level="3">170</value>
 			<value level="4">181</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1001">173</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1002" toSubLevel="1002">166</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1003" toSubLevel="1003">158</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1004" toSubLevel="1004">151</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1005" toSubLevel="1005">144</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1006" toSubLevel="1006">137</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1007" toSubLevel="1007">129</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1008" toSubLevel="1008">122</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1009" toSubLevel="1009">115</value>
+			<value fromLevel="3" toLevel="4" fromSubLevel="1010" toSubLevel="1010">108</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">28</value>
@@ -2507,6 +2767,46 @@
 					<value level="4">34</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9001" toSubLevel="9001">
+				<skillId>11522</skillId>
+				<amount>100</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9002" toSubLevel="9002">
+				<skillId>11522</skillId>
+				<amount>200</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9003" toSubLevel="9003">
+				<skillId>11522</skillId>
+				<amount>300</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9004" toSubLevel="9004">
+				<skillId>11522</skillId>
+				<amount>400</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9005" toSubLevel="9005">
+				<skillId>11522</skillId>
+				<amount>500</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9006" toSubLevel="9006">
+				<skillId>11522</skillId>
+				<amount>600</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9007" toSubLevel="9007">
+				<skillId>11522</skillId>
+				<amount>700</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9008" toSubLevel="9008">
+				<skillId>11522</skillId>
+				<amount>800</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9009" toSubLevel="9009">
+				<skillId>11522</skillId>
+				<amount>900</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="3" toLevel="4" fromSubLevel="9010" toSubLevel="9010">
+				<skillId>11522</skillId>
+				<amount>1000</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -2558,7 +2858,7 @@
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>
 			<value fromLevel="1" toLevel="1">1800</value>
-			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1030">{base + subIndex * 90}</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="2001" toSubLevel="2010">{base + subIndex * 180}</value>
 		</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<affectScope>SINGLE</affectScope>
@@ -2571,7 +2871,19 @@
 		<isMagic>22</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
-		<mpConsume>140</mpConsume>
+		<mpConsume>
+			<value level="1">140</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">133</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">128</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">122</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1004" toSubLevel="1004">117</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1005" toSubLevel="1005">111</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1006" toSubLevel="1006">106</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1007" toSubLevel="1007">100</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1008" toSubLevel="1008">95</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1009" toSubLevel="1009">88</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1010" toSubLevel="1010">83</value>
+		</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<reuseDelay>2000</reuseDelay>
 		<conditions>
@@ -2610,6 +2922,76 @@
 			<effect name="CriticalRate">
 				<amount>100</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3001" toSubLevel="3001">
+				<SHOCK>1</SHOCK>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3002" toSubLevel="3002">
+				<SHOCK>2</SHOCK>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3003" toSubLevel="3003">
+				<SHOCK>3</SHOCK>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3004" toSubLevel="3004">
+				<SHOCK>4</SHOCK>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3005" toSubLevel="3005">
+				<SHOCK>5</SHOCK>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3006" toSubLevel="3006">
+				<SHOCK>6</SHOCK>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3007" toSubLevel="3007">
+				<SHOCK>7</SHOCK>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3008" toSubLevel="3008">
+				<SHOCK>8</SHOCK>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3009" toSubLevel="3009">
+				<SHOCK>9</SHOCK>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3010" toSubLevel="3010">
+				<SHOCK>10</SHOCK>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9001" toSubLevel="9001">
+				<skillId>11523</skillId>
+				<amount>100</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9002" toSubLevel="9002">
+				<skillId>11523</skillId>
+				<amount>200</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9003" toSubLevel="9003">
+				<skillId>11523</skillId>
+				<amount>300</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9004" toSubLevel="9004">
+				<skillId>11523</skillId>
+				<amount>400</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9005" toSubLevel="9005">
+				<skillId>11523</skillId>
+				<amount>500</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9006" toSubLevel="9006">
+				<skillId>11523</skillId>
+				<amount>600</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9007" toSubLevel="9007">
+				<skillId>11523</skillId>
+				<amount>700</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9008" toSubLevel="9008">
+				<skillId>11523</skillId>
+				<amount>800</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9009" toSubLevel="9009">
+				<skillId>11523</skillId>
+				<amount>900</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9010" toSubLevel="9010">
+				<skillId>11523</skillId>
+				<amount>1000</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -2681,7 +3063,7 @@
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>
 			<value fromLevel="1" toLevel="1">1800</value>
-			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1030">{base + subIndex * 90}</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="2001" toSubLevel="2010">{base + subIndex * 180}</value>
 		</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<affectScope>SINGLE</affectScope>
@@ -2694,7 +3076,19 @@
 		<isMagic>22</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
-		<mpConsume>140</mpConsume>
+		<mpConsume>
+			<value level="1">140</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">133</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">128</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">122</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1004" toSubLevel="1004">117</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1005" toSubLevel="1005">111</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1006" toSubLevel="1006">106</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1007" toSubLevel="1007">100</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1008" toSubLevel="1008">95</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1009" toSubLevel="1009">88</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1010" toSubLevel="1010">83</value>
+		</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<reuseDelay>2000</reuseDelay>
 		<conditions>
@@ -2737,6 +3131,136 @@
 			<effect name="CriticalRate">
 				<amount>100</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3001" toSubLevel="3001">
+				<KNOCKDOWN>1</KNOCKDOWN>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3002" toSubLevel="3002">
+				<KNOCKDOWN>2</KNOCKDOWN>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3003" toSubLevel="3003">
+				<KNOCKDOWN>3</KNOCKDOWN>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3004" toSubLevel="3004">
+				<KNOCKDOWN>4</KNOCKDOWN>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3005" toSubLevel="3005">
+				<KNOCKDOWN>5</KNOCKDOWN>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3006" toSubLevel="3006">
+				<KNOCKDOWN>6</KNOCKDOWN>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3007" toSubLevel="3007">
+				<KNOCKDOWN>7</KNOCKDOWN>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3008" toSubLevel="3008">
+				<KNOCKDOWN>8</KNOCKDOWN>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3009" toSubLevel="3009">
+				<KNOCKDOWN>9</KNOCKDOWN>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3010" toSubLevel="3010">
+				<KNOCKDOWN>10</KNOCKDOWN>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4001" toSubLevel="4001">
+				<POISON>1</POISON>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4002" toSubLevel="4002">
+				<POISON>2</POISON>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4003" toSubLevel="4003">
+				<POISON>3</POISON>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4004" toSubLevel="4004">
+				<POISON>4</POISON>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4005" toSubLevel="4005">
+				<POISON>5</POISON>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4006" toSubLevel="4006">
+				<POISON>6</POISON>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4007" toSubLevel="4007">
+				<POISON>7</POISON>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4008" toSubLevel="4008">
+				<POISON>8</POISON>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4009" toSubLevel="4009">
+				<POISON>9</POISON>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4010" toSubLevel="4010">
+				<POISON>10</POISON>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="5001" toSubLevel="5001">
+				<BLEED>1</BLEED>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="5002" toSubLevel="5002">
+				<BLEED>2</BLEED>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="5003" toSubLevel="5003">
+				<BLEED>3</BLEED>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="5004" toSubLevel="5004">
+				<BLEED>4</BLEED>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="5005" toSubLevel="5005">
+				<BLEED>5</BLEED>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="5006" toSubLevel="5006">
+				<BLEED>6</BLEED>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="5007" toSubLevel="5007">
+				<BLEED>7</BLEED>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="5008" toSubLevel="5008">
+				<BLEED>8</BLEED>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="5009" toSubLevel="5009">
+				<BLEED>9</BLEED>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="5010" toSubLevel="5010">
+				<BLEED>10</BLEED>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9001" toSubLevel="9001">
+				<skillId>11524</skillId>
+				<amount>100</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9002" toSubLevel="9002">
+				<skillId>11524</skillId>
+				<amount>200</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9003" toSubLevel="9003">
+				<skillId>11524</skillId>
+				<amount>300</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9004" toSubLevel="9004">
+				<skillId>11524</skillId>
+				<amount>400</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9005" toSubLevel="9005">
+				<skillId>11524</skillId>
+				<amount>500</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9006" toSubLevel="9006">
+				<skillId>11524</skillId>
+				<amount>600</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9007" toSubLevel="9007">
+				<skillId>11524</skillId>
+				<amount>700</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9008" toSubLevel="9008">
+				<skillId>11524</skillId>
+				<amount>800</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9009" toSubLevel="9009">
+				<skillId>11524</skillId>
+				<amount>900</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9010" toSubLevel="9010">
+				<skillId>11524</skillId>
+				<amount>1000</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -2798,7 +3322,7 @@
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>
 			<value fromLevel="1" toLevel="1">1800</value>
-			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1030">{base + subIndex * 90}</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="2001" toSubLevel="2010">{base + subIndex * 180}</value>
 		</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<affectScope>SINGLE</affectScope>
@@ -2811,7 +3335,19 @@
 		<isMagic>22</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
-		<mpConsume>140</mpConsume>
+		<mpConsume>
+			<value level="1">140</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">133</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">128</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">122</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1004" toSubLevel="1004">117</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1005" toSubLevel="1005">111</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1006" toSubLevel="1006">106</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1007" toSubLevel="1007">100</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1008" toSubLevel="1008">95</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1009" toSubLevel="1009">88</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1010" toSubLevel="1010">83</value>
+		</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<reuseDelay>2000</reuseDelay>
 		<conditions>
@@ -2883,6 +3419,106 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3001" toSubLevel="3001">
+				<SLEEP>1</SLEEP>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3002" toSubLevel="3002">
+				<SLEEP>2</SLEEP>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3003" toSubLevel="3003">
+				<SLEEP>3</SLEEP>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3004" toSubLevel="3004">
+				<SLEEP>4</SLEEP>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3005" toSubLevel="3005">
+				<SLEEP>5</SLEEP>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3006" toSubLevel="3006">
+				<SLEEP>6</SLEEP>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3007" toSubLevel="3007">
+				<SLEEP>7</SLEEP>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3008" toSubLevel="3008">
+				<SLEEP>8</SLEEP>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3009" toSubLevel="3009">
+				<SLEEP>9</SLEEP>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="3010" toSubLevel="3010">
+				<SLEEP>10</SLEEP>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4001" toSubLevel="4001">
+				<DERANGEMENT>1</DERANGEMENT>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4002" toSubLevel="4002">
+				<DERANGEMENT>2</DERANGEMENT>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4003" toSubLevel="4003">
+				<DERANGEMENT>3</DERANGEMENT>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4004" toSubLevel="4004">
+				<DERANGEMENT>4</DERANGEMENT>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4005" toSubLevel="4005">
+				<DERANGEMENT>5</DERANGEMENT>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4006" toSubLevel="4006">
+				<DERANGEMENT>6</DERANGEMENT>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4007" toSubLevel="4007">
+				<DERANGEMENT>7</DERANGEMENT>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4008" toSubLevel="4008">
+				<DERANGEMENT>8</DERANGEMENT>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4009" toSubLevel="4009">
+				<DERANGEMENT>9</DERANGEMENT>
+			</effect>
+			<effect name="AttackTrait" fromLevel="1" toLevel="1" fromSubLevel="4010" toSubLevel="4010">
+				<DERANGEMENT>10</DERANGEMENT>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9001" toSubLevel="9001">
+				<skillId>11525</skillId>
+				<amount>100</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9002" toSubLevel="9002">
+				<skillId>11525</skillId>
+				<amount>200</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9003" toSubLevel="9003">
+				<skillId>11525</skillId>
+				<amount>300</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9004" toSubLevel="9004">
+				<skillId>11525</skillId>
+				<amount>400</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9005" toSubLevel="9005">
+				<skillId>11525</skillId>
+				<amount>500</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9006" toSubLevel="9006">
+				<skillId>11525</skillId>
+				<amount>600</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9007" toSubLevel="9007">
+				<skillId>11525</skillId>
+				<amount>700</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9008" toSubLevel="9008">
+				<skillId>11525</skillId>
+				<amount>800</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9009" toSubLevel="9009">
+				<skillId>11525</skillId>
+				<amount>900</amount>
+			</effect>
+			<effect name="ReuseSkillById" fromLevel="1" toLevel="1" fromSubLevel="9010" toSubLevel="9010">
+				<skillId>11525</skillId>
+				<amount>1000</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -6304,7 +6940,7 @@
 			<value fromLevel="1" toLevel="4">1800</value>
 			<value fromLevel="3" toLevel="4" fromSubLevel="1001" toSubLevel="1030">{base + subIndex * 90}</value>
 		</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectLimit>50-50</affectLimit> <!-- Custom -->
 		<affectObject>FRIEND_PC</affectObject>
 		<affectRange>1000</affectRange> <!-- Custom -->

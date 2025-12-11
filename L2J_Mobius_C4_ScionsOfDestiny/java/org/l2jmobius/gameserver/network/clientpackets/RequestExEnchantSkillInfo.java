@@ -16,8 +16,8 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.data.sql.EnchantSkillTreesTable;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.data.xml.EnchantSkillTreeData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.EnchantSkillLearn;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -84,7 +84,7 @@ public class RequestExEnchantSkillInfo extends ClientPacket
 		}
 		
 		boolean canTeach = false;
-		for (EnchantSkillLearn s : EnchantSkillTreesTable.getInstance().getAvailableEnchantSkills(player))
+		for (EnchantSkillLearn s : EnchantSkillTreeData.getInstance().getAvailableEnchantSkills(player))
 		{
 			if ((s.getId() == _skillId) && (s.getLevel() == _skillLevel))
 			{
@@ -98,11 +98,11 @@ public class RequestExEnchantSkillInfo extends ClientPacket
 			return; // cheater
 		}
 		
-		final int requiredSp = EnchantSkillTreesTable.getInstance().getSkillSpCost(player, skill);
-		final int requiredExp = EnchantSkillTreesTable.getInstance().getSkillExpCost(player, skill);
-		final byte rate = EnchantSkillTreesTable.getInstance().getSkillRate(player, skill);
+		final int requiredSp = EnchantSkillTreeData.getInstance().getSkillSpCost(player, skill);
+		final int requiredExp = EnchantSkillTreeData.getInstance().getSkillExpCost(player, skill);
+		final byte rate = EnchantSkillTreeData.getInstance().getSkillRate(player, skill);
 		final ExEnchantSkillInfo asi = new ExEnchantSkillInfo(_skillId, _skillLevel, requiredSp, requiredExp, rate);
-		if (Config.ES_SP_BOOK_NEEDED && ((_skillLevel == 101) || (_skillLevel == 141))) // only first level requires book
+		if (PlayerConfig.ES_SP_BOOK_NEEDED && ((_skillLevel == 101) || (_skillLevel == 141))) // only first level requires book
 		{
 			asi.addRequirement(4, 6622, 1, 0);
 		}

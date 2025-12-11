@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="70500" name="NoItemName" type="EtcItem">
 		<!-- Double-click to obtain Lv. 5 Garnet. Cannot be dropped. -->
@@ -480,7 +480,6 @@
 		<!-- 14-day. Occupies 2 Hair Accessory slots. Cannot be exchanged, dropped, sold or shared within account. Can be stored in a private warehouse. -->
 		<set name="icon" val="icon.accessory_carnival_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -493,7 +492,6 @@
 		<!-- 14-day. Occupies 2 Hair Accessory slots. Cannot be exchanged, dropped, sold or shared within account. Can be stored in a private warehouse. -->
 		<set name="icon" val="icon.accessory_carnival_circlet2_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -506,7 +504,6 @@
 		<!-- 14-day. Occupies 2 Hair Accessory slots. Cannot be exchanged, dropped, sold or shared within account. Can be stored in a private warehouse. -->
 		<set name="icon" val="icon.accessory_horn01_hat_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -519,7 +516,6 @@
 		<!-- 14-day. Occupies 2 Hair Accessory slots. Cannot be exchanged, dropped, sold or shared within account. Can be stored in a private warehouse. -->
 		<set name="icon" val="icon.accessory_horn01_hat_i01" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -600,7 +596,6 @@
 		<!-- Can mount an Elk when equipped. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. -->
 		<set name="icon" val="BranchIcon.icon.tf_elk_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -613,7 +608,6 @@
 		<!-- Can mount an Elk when equipped. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. -->
 		<set name="icon" val="BranchIcon.icon.tf_elk_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -627,7 +621,6 @@
 		<!-- Can mount an Elk when equipped. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. -->
 		<set name="icon" val="BranchIcon.icon.tf_elk_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -641,7 +634,6 @@
 		<!-- Can mount an Elk when equipped. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. <Active Skill>. 1. Elk Blessing: For 1 hour XP / SP +30% (Cooldown: 12 hours). 2. Elk Invisibility: for 1 minute makes a character invisible and invincible to enemy attacks. Speed -40%. Disappears if your character attacks (Cooldown: 10 minutes). -->
 		<set name="icon" val="BranchIcon.icon.tf_elk_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -691,7 +683,6 @@
 		<!-- Summons Agathion - Minion Eye. Can mount an Elk when equipped. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. -->
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -705,7 +696,6 @@
 		<!-- Summons Agathion - Minion Eye. CON / MEN +1, weight limit +5000, Max. HP/MP/CP +100, when used. MP Consumption for skill use -3%. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. <Active Skill>. 1. Minion Eye's Blessed Resurrection: Resurrects a corpse and restores lost XP. Requires 2 Spirit Ore. -->
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -720,7 +710,6 @@
 		<!-- Summons Agathion - Minion Eye. CON / MEN +1, weight limit +5000, Max. HP/MP/CP +100, when used. MP Consumption for skill use -3%. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. <Active Skill>. 1. Minion Eye's Blessed Resurrection: Resurrects a corpse and restores lost XP. Requires 2 Spirit Ore. -->
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -735,7 +724,6 @@
 		<!-- Summons Agathion - Matryoshka. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. -->
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -749,7 +737,6 @@
 		<!-- Summons Agathion - Matryoshka. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. <Active Skill>. 1. Matryoshka's Gift: allows to receive 1 Strawberry Juice / Mango Juice / Cherry Juice (Cooldown: 12 hours). 2. Matryoshka's Blessing: for 20 min XP / SP +30% (Cooldown: 2 hours). 3. Agathion Teleport: grants the ability to teleport to Aden / Giran / Dion / Gludio (Cooldown: 1 hour). -->
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -764,7 +751,6 @@
 		<!-- Summons Agathion - Matryoshka. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. <Active Skill>. 1. Matryoshka's Gift: allows to receive 1 Strawberry Juice / Mango Juice / Cherry Juice (Cooldown: 12 hours). 2. Matryoshka's Blessing: for 20 min XP / SP +30% (Cooldown: 2 hours). 3. Agathion Teleport: grants the ability to teleport to Aden / Giran / Dion / Gludio (Cooldown: 1 hour). -->
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -779,7 +765,6 @@
 		<!-- Summons Agathion - Babayaga. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. -->
 		<set name="icon" val="BranchIcon.icon.br_babayaga_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -792,7 +777,6 @@
 		<!-- Summons Agathion - Babayaga. Damage dealt in PvE +3% received PvE damage -3%. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. <Active Skill>. 1. Agathion Teleport: grants the ability to teleport to Aden / Giran / Dion / Gludio (Cooldown: 30 minutes). 2. Babayaga's Serenade: Soothes surrounding enemies, eliminating their desire to attack (Cooldown: 20 minutes). -->
 		<set name="icon" val="BranchIcon.icon.br_babayaga_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -806,7 +790,6 @@
 		<!-- Summons Agathion - Babayaga. Damage dealt in PvE +3% received PvE damage -3%. Cannot be exchanged, dropped or sold in a store, shared within account. Can store in a warehouse. <Active Skill>. 1. Agathion Teleport: grants the ability to teleport to Aden / Giran / Dion / Gludio (Cooldown: 30 minutes). 2. Babayaga's Serenade: Soothes surrounding enemies, eliminating their desire to attack (Cooldown: 20 minutes). -->
 		<set name="icon" val="BranchIcon.icon.br_babayaga_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -1263,7 +1246,6 @@
 	<item id="70597" name="Expertise Rune (A-grade)" additionalName="10-day" type="EtcItem">
 		<!-- 10-day. When possessed, gives Expertise B Skill. -->
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1285,7 +1267,6 @@
 	<item id="70599" name="Mysterious Blessed Soulshot (No-grade)" type="EtcItem">
 		<!-- The power of a Soulshot is bestowed upon a weapon, temporarily increasing the power of attack. For No-grade weapons. -->
 		<set name="icon" val="icon.etc_bless_spirit_bullet_white_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />

@@ -19,13 +19,13 @@ package quests.Q10811_ExaltedOneWhoFacesTheLimit;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 
@@ -382,7 +382,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(2) && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+		if ((qs != null) && qs.isCond(2) && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 		{
 			if (getQuestItemsCount(player, SLAYERS_PROOF) < SLAYERS_PROOF_NEEDED)
 			{

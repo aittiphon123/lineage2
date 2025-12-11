@@ -135,6 +135,7 @@ import org.l2jmobius.gameserver.model.conditions.ConditionUsingSkill;
 import org.l2jmobius.gameserver.model.conditions.ConditionUsingSlotType;
 import org.l2jmobius.gameserver.model.conditions.ConditionWithSkill;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.type.ArmorType;
 import org.l2jmobius.gameserver.model.item.type.WeaponType;
 import org.l2jmobius.gameserver.model.siege.CastleSide;
@@ -1189,9 +1190,10 @@ public abstract class DocumentBase
 					{
 						final int old = mask;
 						final String item = st.nextToken().trim();
-						if (ItemTemplate.SLOTS.containsKey(item))
+						final BodyPart bodyPart = BodyPart.fromName(item);
+						if (bodyPart != null)
 						{
-							mask |= ItemTemplate.SLOTS.get(item);
+							mask |= bodyPart.getMask();
 						}
 						
 						if (old == mask)

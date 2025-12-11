@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="37200" name="option_id_37200">
+		<!-- Attribute Attack +30 -->
+	</option>
+	<option id="37201" name="option_id_37201">
+		<!-- Attribute Attack +40 -->
+	</option>
+	<option id="37202" name="option_id_37202">
+		<!-- Attribute Attack +50 -->
+	</option>
+	<option id="37203" name="option_id_37203">
+		<!-- Attribute Resistance +10 -->
+	</option>
+	<option id="37204" name="option_id_37204">
+		<!-- Attribute Resistance +20 -->
+	</option>
+	<option id="37205" name="option_id_37205">
+		<!-- Attribute Resistance +30 -->
+	</option>
+	<option id="37206" name="option_id_37206">
+		<!-- Attribute Resistance +40 -->
+	</option>
+	<option id="37207" name="option_id_37207">
+		<!-- Attribute Resistance +50 -->
+	</option>
+	<option id="37208" name="option_id_37208">
+		<!-- Critical Damage for basic attacks +2% -->
+	</option>
+	<option id="37209" name="option_id_37209">
+		<!-- Critical Damage for basic attacks +4% -->
+	</option>
+	<option id="37210" name="option_id_37210">
+		<!-- Critical Damage for basic attacks +6% -->
+	</option>
+	<option id="37211" name="option_id_37211">
+		<!-- Critical Damage for basic attacks +8% -->
+	</option>
+	<option id="37212" name="option_id_37212">
+		<!-- Critical Damage for basic attacks +10% -->
+	</option>
+	<option id="37213" name="option_id_37213">
+		<!-- P. Skill Critical Damage +2% -->
+	</option>
+	<option id="37214" name="option_id_37214">
+		<!-- P. Skill Critical Damage +4% -->
+	</option>
+	<option id="37215" name="option_id_37215">
+		<!-- P. Skill Critical Damage +6% -->
+	</option>
+	<option id="37216" name="option_id_37216">
+		<!-- P. Skill Critical Damage +8% -->
+	</option>
+	<option id="37217" name="option_id_37217">
+		<!-- P. Skill Critical Damage +10% -->
+	</option>
+	<option id="37218" name="option_id_37218">
+		<!-- M. Skill Critical Damage +2% -->
+	</option>
+	<option id="37219" name="option_id_37219">
+		<!-- M. Skill Critical Damage +4% -->
+	</option>
+	<option id="37220" name="option_id_37220">
+		<!-- M. Skill Critical Damage +6% -->
+	</option>
+	<option id="37221" name="option_id_37221">
+		<!-- M. Skill Critical Damage +8% -->
+	</option>
+	<option id="37222" name="option_id_37222">
+		<!-- M. Skill Critical Damage +10% -->
+	</option>
+	<option id="37223" name="option_id_37223">
+		<!-- P. Def. +2% -->
+	</option>
+	<option id="37224" name="option_id_37224">
+		<!-- P. Def. +4% -->
+	</option>
+	<option id="37225" name="option_id_37225">
+		<!-- P. Def. +6% -->
+	</option>
+	<option id="37226" name="option_id_37226">
+		<!-- P. Def. +8% -->
+	</option>
+	<option id="37227" name="option_id_37227">
+		<!-- P. Def. +10% -->
+	</option>
+	<option id="37228" name="option_id_37228">
+		<!-- M. Def. +2% -->
+	</option>
+	<option id="37229" name="option_id_37229">
+		<!-- M. Def. +4% -->
+	</option>
+	<option id="37230" name="option_id_37230">
+		<!-- M. Def. +6% -->
+	</option>
+	<option id="37231" name="option_id_37231">
+		<!-- M. Def. +8% -->
+	</option>
+	<option id="37232" name="option_id_37232">
+		<!-- M. Def. +10% -->
+	</option>
+	<option id="37233" name="option_id_37233">
+		<!-- Bow/ Crossbow Resistance +2% -->
+	</option>
+	<option id="37234" name="option_id_37234">
+		<!-- Bow/ Crossbow Resistance +4% -->
+	</option>
+	<option id="37235" name="option_id_37235">
+		<!-- Bow/ Crossbow Resistance +6% -->
+	</option>
+	<option id="37236" name="option_id_37236">
+		<!-- Bow/ Crossbow Resistance +8% -->
+	</option>
+	<option id="37237" name="option_id_37237">
+		<!-- Bow/ Crossbow Resistance +10% -->
+	</option>
+	<option id="37238" name="option_id_37238">
+		<!-- Dagger/ Dual Daggers Resistance +2% -->
+	</option>
+	<option id="37239" name="option_id_37239">
+		<!-- Dagger/ Dual Daggers Resistance +4% -->
+	</option>
+	<option id="37240" name="option_id_37240">
+		<!-- Dagger/ Dual Daggers Resistance +6% -->
+	</option>
+	<option id="37241" name="option_id_37241">
+		<!-- Dagger/ Dual Daggers Resistance +8% -->
+	</option>
+	<option id="37242" name="option_id_37242">
+		<!-- Dagger/ Dual Daggers Resistance +10% -->
+	</option>
+	<option id="37243" name="option_id_37243">
+		<!-- Sword/ Dual Swords Resistance +2% -->
+	</option>
+	<option id="37244" name="option_id_37244">
+		<!-- Sword/ Dual Swords Resistance +4% -->
+	</option>
+	<option id="37245" name="option_id_37245">
+		<!-- Sword/ Dual Swords Resistance +6% -->
+	</option>
+	<option id="37246" name="option_id_37246">
+		<!-- Sword/ Dual Swords Resistance +8% -->
+	</option>
+	<option id="37247" name="option_id_37247">
+		<!-- Sword/ Dual Swords Resistance +10% -->
+	</option>
+	<option id="37248" name="option_id_37248">
+		<!-- Debuff Resistance +2% -->
+	</option>
+	<option id="37249" name="option_id_37249">
+		<!-- Debuff Resistance +4% -->
+	</option>
+	<option id="37250" name="option_id_37250">
+		<!-- Debuff Resistance +6% -->
+	</option>
+	<option id="37251" name="option_id_37251">
+		<!-- Debuff Resistance +8% -->
+	</option>
+	<option id="37252" name="option_id_37252">
+		<!-- Debuff Resistance +10% -->
+	</option>
+	<option id="37253" name="option_id_37253">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="37254" name="option_id_37254">
+		<!-- Received Healing +4% -->
+	</option>
+	<option id="37255" name="option_id_37255">
+		<!-- Received Healing +6% -->
+	</option>
+	<option id="37256" name="option_id_37256">
+		<!-- Received Healing +8% -->
+	</option>
+	<option id="37257" name="option_id_37257">
+		<!-- Received Healing +10% -->
+	</option>
+	<option id="37258" name="option_id_37258">
+		<!-- Skill cooldown -1% -->
+	</option>
+	<option id="37259" name="option_id_37259">
+		<!-- Skill Cooldown -2% -->
+	</option>
+	<option id="37260" name="option_id_37260">
+		<!-- Skill cooldown -3% -->
+	</option>
+	<option id="37261" name="option_id_37261">
+		<!-- Skill Cooldown -4% -->
+	</option>
+	<option id="37262" name="option_id_37262">
+		<!-- Skill Cooldown -5% -->
+	</option>
+	<option id="37263" name="option_id_37263">
+		<!-- Acquired XP/ SP +2% -->
+	</option>
+	<option id="37264" name="option_id_37264">
+		<!-- Acquired XP/ SP +4% -->
+	</option>
+	<option id="37265" name="option_id_37265">
+		<!-- Acquired XP/ SP +6% -->
+	</option>
+	<option id="37266" name="option_id_37266">
+		<!-- Acquired XP/ SP +8% -->
+	</option>
+	<option id="37267" name="option_id_37267">
+		<!-- Acquired XP/ SP +10% -->
+	</option>
+	<option id="37268" name="option_id_37268">
+		<!-- P. Skill Power +10% -->
+	</option>
+	<option id="37269" name="option_id_37269">
+		<!-- P. Skill Power +15% -->
+	</option>
+	<option id="37270" name="option_id_37270">
+		<!-- P. Skill Power +20% -->
+	</option>
+	<option id="37271" name="option_id_37271">
+		<!-- M. Skill Power +10% -->
+	</option>
+	<option id="37272" name="option_id_37272">
+		<!-- M. Skill Power +15% -->
+	</option>
+	<option id="37273" name="option_id_37273">
+		<!-- M. Skill Power +20% -->
+	</option>
+	<option id="37274" name="option_id_37274">
+		<!-- Critical Damage for basic attacks +17% -->
+	</option>
+	<option id="37275" name="option_id_37275">
+		<!-- Critical Damage for basic attacks +20% -->
+	</option>
+	<option id="37276" name="option_id_37276">
+		<!-- Critical Damage for basic attacks +23% -->
+	</option>
+	<option id="37277" name="option_id_37277">
+		<!-- P. Skill Critical Damage +17% -->
+	</option>
+	<option id="37278" name="option_id_37278">
+		<!-- P. Skill Critical Damage +20% -->
+	</option>
+	<option id="37279" name="option_id_37279">
+		<!-- P. Skill Critical Damage +23% -->
+	</option>
+	<option id="37280" name="option_id_37280">
+		<!-- M. Skill Critical Damage +17% -->
+	</option>
+	<option id="37281" name="option_id_37281">
+		<!-- M. Skill Critical Damage +20% -->
+	</option>
+	<option id="37282" name="option_id_37282">
+		<!-- M. Skill Critical Damage +23% -->
+	</option>
+	<option id="37283" name="option_id_37283">
+		<!-- Fixed Damage Resistance +17% -->
+	</option>
+	<option id="37284" name="option_id_37284">
+		<!-- Fixed Damage Resistance +20% -->
+	</option>
+	<option id="37285" name="option_id_37285">
+		<!-- Received damage when immobilized -20% -->
+	</option>
+	<option id="37286" name="option_id_37286">
+		<!-- Damage +15% -->
+	</option>
+	<option id="37287" name="option_id_37287">
+		<!-- Damage +20% -->
+	</option>
+	<option id="37288" name="option_id_37288">
+		<!-- Received damage -15% -->
+	</option>
+	<option id="37289" name="option_id_37289">
+		<!-- Received damage -20% -->
+	</option>
+	<option id="37290" name="option_id_37290">
+		<!-- Damage +10%, Accuracy +20 -->
+	</option>
+	<option id="37291" name="option_id_37291">
+		<!-- All Critical Damage +10%, Accuracy +20 -->
+	</option>
+	<option id="37292" name="option_id_37292">
+		<!-- Skill Power +10%, Accuracy +20 -->
+	</option>
+	<option id="37293" name="Collection_6_493">
+		<!-- Damage +1%, received damage -1% -->
+		<passive_skill id="37157" level="1" />
+	</option>
+	<option id="37294" name="Collection_6_494">
+		<!-- Damage +1%, received damage -1% -->
+		<passive_skill id="37158" level="1" />
+	</option>
+	<option id="37295" name="Collection_6_495">
+		<!-- Damage +1%, received damage -1% -->
+		<passive_skill id="37159" level="1" />
+	</option>
+</list>

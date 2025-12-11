@@ -33,6 +33,7 @@ import org.l2jmobius.gameserver.model.actor.instance.FriendlyNpc;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -41,13 +42,11 @@ import org.l2jmobius.gameserver.network.serverpackets.ExChangeNpcState;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * TODO: Re-enter time for all players is 20 mins after someone finish the dung.
  * @author GolbergSoft
  */
-public class HeavenlyRift extends AbstractNpcAI
+public class HeavenlyRift extends Script
 {
 	// NPCs
 	private static final int DIMENTIONAL_VORTEX = 30952;

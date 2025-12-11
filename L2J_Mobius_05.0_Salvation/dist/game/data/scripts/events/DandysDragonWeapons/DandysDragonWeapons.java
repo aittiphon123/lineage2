@@ -31,7 +31,7 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
-import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
+import org.l2jmobius.gameserver.model.script.LongTimeEvent;
 
 /**
  * Dandy's Dragon Weapons.
@@ -106,7 +106,7 @@ public final class DandysDragonWeapons extends LongTimeEvent
 			}
 			else if (reply == 2)
 			{
-				MultisellData.getInstance().separateAndSend(2501, player, npc, false); // Custom ID
+				MultisellData.getInstance().separateAndSend(3393001, player, npc, false); // Custom ID
 			}
 		}
 		else if (ask == -10001001)

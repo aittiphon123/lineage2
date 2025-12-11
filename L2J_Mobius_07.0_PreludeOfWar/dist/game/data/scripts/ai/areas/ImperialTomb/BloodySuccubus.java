@@ -22,16 +22,15 @@ package ai.areas.ImperialTomb;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Simple AI for Bloody Succubus.
  * @author Gigi
  */
-public class BloodySuccubus extends AbstractNpcAI
+public class BloodySuccubus extends Script
 {
 	// NPCs
 	private static final int BLOODY_SUCCUBUS = 23185;

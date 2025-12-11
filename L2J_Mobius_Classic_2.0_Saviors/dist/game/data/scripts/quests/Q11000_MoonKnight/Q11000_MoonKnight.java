@@ -20,7 +20,7 @@
  */
 package quests.Q11000_MoonKnight;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -30,10 +30,10 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelChanged;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPressTutorialMark;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowQuestionMark;
 
@@ -461,7 +461,7 @@ public class Q11000_MoonKnight extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}
@@ -479,7 +479,7 @@ public class Q11000_MoonKnight extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLogin(OnPlayerLogin event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}

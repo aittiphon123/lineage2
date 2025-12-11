@@ -23,8 +23,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.type.EtcItemType;
 import org.l2jmobius.gameserver.taskmanagers.BuyListTaskManager;
@@ -74,7 +74,7 @@ public class Product
 		long price = _price;
 		if (_item.getItemType().equals(EtcItemType.CASTLE_GUARD))
 		{
-			price *= Config.RATE_SIEGE_GUARDS_PRICE;
+			price *= RatesConfig.RATE_SIEGE_GUARDS_PRICE;
 		}
 		
 		return price;

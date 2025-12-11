@@ -23,11 +23,10 @@ package instances.ResidenceOfKingPetram;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import instances.AbstractInstance;
 
 /**
  * @author RobikBobik, Mobius
@@ -35,7 +34,7 @@ import instances.AbstractInstance;
  * @TODO: Rewrite code to modern style.
  * @TODO: Petram Skills and minion skills
  */
-public class ResidenceOfKingPetram extends AbstractInstance
+public class ResidenceOfKingPetram extends InstanceScript
 {
 	// NPCs
 	private static final int TRITAN = 34049;

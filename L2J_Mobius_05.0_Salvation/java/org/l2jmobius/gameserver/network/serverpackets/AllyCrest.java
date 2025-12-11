@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.data.sql.CrestTable;
 import org.l2jmobius.gameserver.model.Crest;
 import org.l2jmobius.gameserver.network.GameClient;
@@ -52,7 +52,7 @@ public class AllyCrest extends ServerPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.ALLIANCE_CREST.writeId(this, buffer);
-		buffer.writeInt(Config.SERVER_ID);
+		buffer.writeInt(ServerConfig.SERVER_ID);
 		buffer.writeInt(_crestId);
 		if (_data != null)
 		{

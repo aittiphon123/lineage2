@@ -29,14 +29,13 @@ import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerBypass;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.ExPremiumManagerShowHtml;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Index
  */
-public class EinhasadStore extends AbstractNpcAI
+public class EinhasadStore extends Script
 {
 	// NPC
 	private static final int MERCHANT = 34487;

@@ -20,14 +20,14 @@
  */
 package quests.Q00316_DestroyPlagueCarriers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 public class Q00316_DestroyPlagueCarriers extends Quest
 {
@@ -110,7 +110,7 @@ public class Q00316_DestroyPlagueCarriers extends Quest
 					takeItems(player, VAROOL_FOULCLAW_FANG, -1);
 					
 					int reward = (ratFangs * 60) + (varoolFangs * 10000);
-					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (ratFangs >= 10))
+					if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (ratFangs >= 10))
 					{
 						reward += 5000;
 					}

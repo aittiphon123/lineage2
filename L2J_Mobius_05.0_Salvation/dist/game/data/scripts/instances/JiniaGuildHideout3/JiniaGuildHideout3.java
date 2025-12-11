@@ -19,16 +19,16 @@ package instances.JiniaGuildHideout3;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 
-import instances.AbstractInstance;
 import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
 
 /**
  * Jinia Guild Hideout instance zone.
  * @author Adry_85
  */
-public class JiniaGuildHideout3 extends AbstractInstance
+public class JiniaGuildHideout3 extends InstanceScript
 {
 	// NPC
 	private static final int RAFFORTY = 32020;

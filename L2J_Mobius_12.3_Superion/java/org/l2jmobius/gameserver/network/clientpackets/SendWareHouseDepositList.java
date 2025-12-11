@@ -25,7 +25,8 @@ import static org.l2jmobius.gameserver.model.itemcontainer.Inventory.ADENA_ID;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -51,7 +52,7 @@ public class SendWareHouseDepositList extends ClientPacket
 	protected void readImpl()
 	{
 		final int size = readInt();
-		if ((size <= 0) || (size > Config.MAX_ITEM_IN_PACKET) || ((size * BATCH_LENGTH) != remaining()))
+		if ((size <= 0) || (size > PlayerConfig.MAX_ITEM_IN_PACKET) || ((size * BATCH_LENGTH) != remaining()))
 		{
 			return;
 		}
@@ -113,12 +114,12 @@ public class SendWareHouseDepositList extends ClientPacket
 		
 		if (player.hasItemRequest())
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to use enchant Exploit!", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to use enchant Exploit!", GeneralConfig.DEFAULT_PUNISH);
 			return;
 		}
 		
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && (player.getReputation() < 0))
+		if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && (player.getReputation() < 0))
 		{
 			return;
 		}

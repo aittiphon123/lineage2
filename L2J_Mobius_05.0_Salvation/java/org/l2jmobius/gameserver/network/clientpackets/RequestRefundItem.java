@@ -22,7 +22,9 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import static org.l2jmobius.gameserver.model.actor.Npc.INTERACTION_DISTANCE;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.MerchantZeroSellPriceConfig;
 import org.l2jmobius.gameserver.data.xml.BuyListData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -54,7 +56,7 @@ public class RequestRefundItem extends ClientPacket
 	{
 		_listId = readInt();
 		final int count = readInt();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != remaining()))
+		if ((count <= 0) || (count > PlayerConfig.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != remaining()))
 		{
 			return;
 		}
@@ -109,7 +111,7 @@ public class RequestRefundItem extends ClientPacket
 		final ProductList buyList = BuyListData.getInstance().getBuyList(_listId);
 		if (buyList == null)
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId, GeneralConfig.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -130,7 +132,7 @@ public class RequestRefundItem extends ClientPacket
 			final int idx = _items[i];
 			if ((idx < 0) || (idx >= refund.length))
 			{
-				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent invalid refund index", Config.DEFAULT_PUNISH);
+				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent invalid refund index", GeneralConfig.DEFAULT_PUNISH);
 				return;
 			}
 			
@@ -139,7 +141,7 @@ public class RequestRefundItem extends ClientPacket
 			{
 				if (idx == _items[j])
 				{
-					PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent duplicate refund index", Config.DEFAULT_PUNISH);
+					PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent duplicate refund index", GeneralConfig.DEFAULT_PUNISH);
 					return;
 				}
 			}
@@ -153,7 +155,7 @@ public class RequestRefundItem extends ClientPacket
 			{
 				if (objectIds[i] == objectIds[j])
 				{
-					PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " has duplicate items in refund list", Config.DEFAULT_PUNISH);
+					PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " has duplicate items in refund list", GeneralConfig.DEFAULT_PUNISH);
 					return;
 				}
 			}
@@ -185,7 +187,7 @@ public class RequestRefundItem extends ClientPacket
 			return;
 		}
 		
-		if (!Config.MERCHANT_ZERO_SELL_PRICE && ((adena < 0) || !player.reduceAdena(ItemProcessType.FEE, adena, player.getLastFolkNPC(), false)))
+		if (!MerchantZeroSellPriceConfig.MERCHANT_ZERO_SELL_PRICE && ((adena < 0) || !player.reduceAdena(ItemProcessType.FEE, adena, player.getLastFolkNPC(), false)))
 		{
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
 			player.sendPacket(ActionFailed.STATIC_PACKET);

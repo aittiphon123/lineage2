@@ -228,7 +228,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>107</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 		</conditions>
 		<effects>
@@ -1476,7 +1475,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>110</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 		</conditions>
 		<effects>

@@ -23,18 +23,17 @@ package ai.bosses.EtisVanEtina;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class GreatTempleDarkJudge extends AbstractNpcAI
+public class GreatTempleDarkJudge extends Script
 {
 	// Npc
 	private static final int GREAT_TEMPLE_DARK_JUDGE = 24095;
@@ -45,7 +44,8 @@ public class GreatTempleDarkJudge extends AbstractNpcAI
 	
 	private GreatTempleDarkJudge()
 	{
-		registerMobs(GREAT_TEMPLE_DARK_JUDGE);
+		addAttackId(GREAT_TEMPLE_DARK_JUDGE);
+		addSpellFinishedId(GREAT_TEMPLE_DARK_JUDGE);
 	}
 	
 	@Override

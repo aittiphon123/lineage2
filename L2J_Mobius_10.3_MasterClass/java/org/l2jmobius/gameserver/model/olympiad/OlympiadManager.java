@@ -24,7 +24,8 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
+import org.l2jmobius.gameserver.config.custom.DualboxCheckConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.managers.AntiFeedManager;
 import org.l2jmobius.gameserver.model.StatSet;
@@ -60,7 +61,7 @@ public class OlympiadManager
 		List<Set<Integer>> result = null;
 		for (Entry<Integer, Set<Integer>> classList : _classBasedRegisters.entrySet())
 		{
-			if ((classList.getValue() != null) && (classList.getValue().size() >= Config.OLYMPIAD_CLASSED))
+			if ((classList.getValue() != null) && (classList.getValue().size() >= OlympiadConfig.OLYMPIAD_CLASSED))
 			{
 				if (result == null)
 				{
@@ -76,7 +77,7 @@ public class OlympiadManager
 	
 	protected final boolean hasEnoughRegisteredNonClassed()
 	{
-		return _nonClassBasedRegisters.size() >= Config.OLYMPIAD_NONCLASSED;
+		return _nonClassBasedRegisters.size() >= OlympiadConfig.OLYMPIAD_NONCLASSED;
 	}
 	
 	protected void clearRegistered()
@@ -227,11 +228,11 @@ public class OlympiadManager
 					return false;
 				}
 				
-				if ((Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
+				if ((DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player, DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 				{
 					final NpcHtmlMessage message = new NpcHtmlMessage(player.getLastHtmlActionOriginId());
 					message.setFile(player, "data/html/mods/OlympiadIPRestriction.htm");
-					message.replace("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
+					message.replace("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
 					player.sendPacket(message);
 					return false;
 				}
@@ -248,11 +249,11 @@ public class OlympiadManager
 					return false;
 				}
 				
-				if ((Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
+				if ((DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player, DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 				{
 					final NpcHtmlMessage message = new NpcHtmlMessage(player.getLastHtmlActionOriginId());
 					message.setFile(player, "data/html/mods/OlympiadIPRestriction.htm");
-					message.replace("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
+					message.replace("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
 					player.sendPacket(message);
 					return false;
 				}
@@ -296,7 +297,7 @@ public class OlympiadManager
 		final Integer objId = noble.getObjectId();
 		if (_nonClassBasedRegisters.remove(objId))
 		{
-			if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
+			if (DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 			{
 				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, noble);
 			}
@@ -308,7 +309,7 @@ public class OlympiadManager
 		final Set<Integer> classed = _classBasedRegisters.get(getClassGroup(noble));
 		if ((classed != null) && classed.remove(objId))
 		{
-			if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
+			if (DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 			{
 				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, noble);
 			}

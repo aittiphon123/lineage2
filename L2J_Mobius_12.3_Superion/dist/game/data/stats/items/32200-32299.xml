@@ -983,7 +983,6 @@
 	<item id="32249" name="Infinite Wooden Quiver" type="EtcItem">
 		<!-- A quiver containing arrows made of wood. Used with No-grade bows. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_arrows_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -994,7 +993,6 @@
 	<item id="32250" name="Infinite Bone Quiver" type="EtcItem">
 		<!-- A quiver with arrows made of sharpened bones. For D-grade bows. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_arrows_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1006,7 +1004,6 @@
 	<item id="32251" name="Infinite Steel Quiver" type="EtcItem">
 		<!-- A quiver with arrows made of steel. For C-grade bows. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_fine_steel_arrows_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1018,7 +1015,6 @@
 	<item id="32252" name="Infinite Silver Quiver" type="EtcItem">
 		<!-- A quiver with arrows made of silver. For B-grade bows. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_silver_arrows_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1030,7 +1026,6 @@
 	<item id="32253" name="Infinite Mithril Quiver" type="EtcItem">
 		<!-- A quiver with arrows made of mithril. For A-grade bows. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1042,7 +1037,6 @@
 	<item id="32254" name="Infinite Quiver of Light" type="EtcItem">
 		<!-- A quiver with arrows made of unknown metal. For S-grade bows. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_shining_arrows_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1054,7 +1048,6 @@
 	<item id="32255" name="Infinite Orichalcum Quiver" type="EtcItem">
 		<!-- A quiver with arrows made of copper. For R-grade bows. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1066,7 +1059,6 @@
 	<item id="32256" name="Infinite Wooden Bolt Container" type="EtcItem">
 		<!-- Container with bolts made of wood. Used with a No-grade Crossbow. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_bolts_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1077,7 +1069,6 @@
 	<item id="32257" name="Infinite Bone Bolt Container" type="EtcItem">
 		<!-- Container with bolts made of sharply ground bone. Used with a D-grade Crossbow. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_bolts_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1089,7 +1080,6 @@
 	<item id="32258" name="Infinite Steel Bolt Container" type="EtcItem">
 		<!-- Container with bolts made of steel. Used with a C-grade Crossbow. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_fine_steel_bolts_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1101,7 +1091,6 @@
 	<item id="32259" name="Infinite Silver Bolt Container" type="EtcItem">
 		<!-- Container with steel bolts plated in silver. Used with a B-grade Crossbow. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_silver_bolts_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1113,7 +1102,6 @@
 	<item id="32260" name="Infinite Mithril Bolt Container" type="EtcItem">
 		<!-- A container of bolts coated by mithril. For A-grade bows. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_bolts_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1125,7 +1113,6 @@
 	<item id="32261" name="Infinite Light Bolt Container" type="EtcItem">
 		<!-- This container Has bolts made of unknown material. Used with S-grade crossbows. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_shining_bolts_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -1137,7 +1124,6 @@
 	<item id="32262" name="Infinite Orichalcum Bolt Container" type="EtcItem">
 		<!-- A quiver with bolts made of copper. For R-grade crossbows. No longer used. Can be sold in a store. -->
 		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_bolts_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />

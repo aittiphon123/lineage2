@@ -24,16 +24,16 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 
-import instances.AbstractInstance;
 import quests.Q10376_BloodyGoodTime.Q10376_BloodyGoodTime;
 
 /**
  * Advent Of Delusion instance zone.
  * @author Trevor The Third
  */
-public class AdventOfDelusion extends AbstractInstance
+public class AdventOfDelusion extends InstanceScript
 {
 	// Boss
 	private static final int BLOOD_THIRST = 27481;

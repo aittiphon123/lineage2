@@ -18,8 +18,8 @@ package custom.SellBuff;
 
 import java.util.StringTokenizer;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.StringUtil;
+import org.l2jmobius.gameserver.config.custom.SellBuffsConfig;
 import org.l2jmobius.gameserver.data.holders.SellBuffHolder;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.handler.BypassHandler;
@@ -30,7 +30,7 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
@@ -55,7 +55,7 @@ public class SellBuffBypassHandler implements IBypassHandler
 	
 	private SellBuffBypassHandler()
 	{
-		if (Config.SELLBUFF_ENABLED)
+		if (SellBuffsConfig.SELLBUFF_ENABLED)
 		{
 			BypassHandler.getInstance().registerHandler(this);
 		}
@@ -88,7 +88,7 @@ public class SellBuffBypassHandler implements IBypassHandler
 	
 	private boolean onCommand(String command, Player player, String params)
 	{
-		if (!Config.SELLBUFF_ENABLED)
+		if (!SellBuffsConfig.SELLBUFF_ENABLED)
 		{
 			return false;
 		}
@@ -178,7 +178,7 @@ public class SellBuffBypassHandler implements IBypassHandler
 						}
 						catch (NumberFormatException e)
 						{
-							player.sendMessage("Too big price! Maximum price is " + Config.SELLBUFF_MAX_PRICE);
+							player.sendMessage("Too big price! Maximum price is " + SellBuffsConfig.SELLBUFF_MAX_PRICE);
 							SellBuffsManager.getInstance().sendBuffEditMenu(player);
 						}
 					}
@@ -259,7 +259,7 @@ public class SellBuffBypassHandler implements IBypassHandler
 						}
 						catch (NumberFormatException e)
 						{
-							player.sendMessage("Too big price! Maximum price is " + Config.SELLBUFF_MIN_PRICE);
+							player.sendMessage("Too big price! Maximum price is " + SellBuffsConfig.SELLBUFF_MIN_PRICE);
 							SellBuffsManager.getInstance().sendBuffEditMenu(player);
 						}
 					}
@@ -274,19 +274,19 @@ public class SellBuffBypassHandler implements IBypassHandler
 					{
 						return false;
 					}
-					else if (price < Config.SELLBUFF_MIN_PRICE)
+					else if (price < SellBuffsConfig.SELLBUFF_MIN_PRICE)
 					{
-						player.sendMessage("Too small price! Minimum price is " + Config.SELLBUFF_MIN_PRICE);
+						player.sendMessage("Too small price! Minimum price is " + SellBuffsConfig.SELLBUFF_MIN_PRICE);
 						return false;
 					}
-					else if (price > Config.SELLBUFF_MAX_PRICE)
+					else if (price > SellBuffsConfig.SELLBUFF_MAX_PRICE)
 					{
-						player.sendMessage("Too big price! Maximum price is " + Config.SELLBUFF_MAX_PRICE);
+						player.sendMessage("Too big price! Maximum price is " + SellBuffsConfig.SELLBUFF_MAX_PRICE);
 						return false;
 					}
-					else if (player.getSellingBuffs().size() >= Config.SELLBUFF_MAX_BUFFS)
+					else if (player.getSellingBuffs().size() >= SellBuffsConfig.SELLBUFF_MAX_BUFFS)
 					{
-						player.sendMessage("You already reached max count of buffs! Max buffs is: " + Config.SELLBUFF_MAX_BUFFS);
+						player.sendMessage("You already reached max count of buffs! Max buffs is: " + SellBuffsConfig.SELLBUFF_MAX_BUFFS);
 						return false;
 					}
 					else if (!SellBuffsManager.getInstance().isInSellList(player, skillToAdd))
@@ -370,7 +370,7 @@ public class SellBuffBypassHandler implements IBypassHandler
 						return false;
 					}
 					
-					if (seller.getCurrentMp() < (skillToBuy.getMpConsume() * Config.SELLBUFF_MP_MULTIPLER))
+					if (seller.getCurrentMp() < (skillToBuy.getMpConsume() * SellBuffsConfig.SELLBUFF_MP_MULTIPLER))
 					{
 						player.sendMessage(seller.getName() + " has no enough mana for " + skillToBuy.getName() + "!");
 						SellBuffsManager.getInstance().sendBuffMenu(player, seller, index);
@@ -380,16 +380,16 @@ public class SellBuffBypassHandler implements IBypassHandler
 					final SellBuffHolder holder = seller.getSellingBuffs().stream().filter(h -> (h.getSkillId() == skillToBuy.getId())).findFirst().orElse(null);
 					if (holder != null)
 					{
-						if (Quest.getQuestItemsCount(player, Config.SELLBUFF_PAYMENT_ID) >= holder.getPrice())
+						if (Quest.getQuestItemsCount(player, SellBuffsConfig.SELLBUFF_PAYMENT_ID) >= holder.getPrice())
 						{
-							Quest.takeItems(player, Config.SELLBUFF_PAYMENT_ID, holder.getPrice());
-							Quest.giveItems(seller, Config.SELLBUFF_PAYMENT_ID, holder.getPrice());
-							seller.reduceCurrentMp(skillToBuy.getMpConsume() * Config.SELLBUFF_MP_MULTIPLER);
+							Quest.takeItems(player, SellBuffsConfig.SELLBUFF_PAYMENT_ID, holder.getPrice());
+							Quest.giveItems(seller, SellBuffsConfig.SELLBUFF_PAYMENT_ID, holder.getPrice());
+							seller.reduceCurrentMp(skillToBuy.getMpConsume() * SellBuffsConfig.SELLBUFF_MP_MULTIPLER);
 							skillToBuy.activateSkill(seller, player);
 						}
 						else
 						{
-							final ItemTemplate item = ItemData.getInstance().getTemplate(Config.SELLBUFF_PAYMENT_ID);
+							final ItemTemplate item = ItemData.getInstance().getTemplate(SellBuffsConfig.SELLBUFF_PAYMENT_ID);
 							if (item != null)
 							{
 								player.sendMessage("Not enough " + item.getName() + "!");

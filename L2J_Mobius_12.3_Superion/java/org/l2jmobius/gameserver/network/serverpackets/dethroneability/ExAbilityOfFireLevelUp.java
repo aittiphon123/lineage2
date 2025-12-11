@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.network.serverpackets.dethroneability;
 import java.util.Collections;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
@@ -215,52 +215,52 @@ public class ExAbilityOfFireLevelUp extends ServerPacket
 		{
 			case 1:
 			{
-				requiredItems = Config.CONQUEST_ABILITY_UPGRADE_LEVEL_1_REQUIRED_ITEMS;
+				requiredItems = ConquestConfig.CONQUEST_ABILITY_UPGRADE_LEVEL_1_REQUIRED_ITEMS;
 				break;
 			}
 			case 2:
 			{
-				requiredItems = Config.CONQUEST_ABILITY_UPGRADE_LEVEL_2_REQUIRED_ITEMS;
+				requiredItems = ConquestConfig.CONQUEST_ABILITY_UPGRADE_LEVEL_2_REQUIRED_ITEMS;
 				break;
 			}
 			case 3:
 			{
-				requiredItems = Config.CONQUEST_ABILITY_UPGRADE_LEVEL_3_REQUIRED_ITEMS;
+				requiredItems = ConquestConfig.CONQUEST_ABILITY_UPGRADE_LEVEL_3_REQUIRED_ITEMS;
 				break;
 			}
 			case 4:
 			{
-				requiredItems = Config.CONQUEST_ABILITY_UPGRADE_LEVEL_4_REQUIRED_ITEMS;
+				requiredItems = ConquestConfig.CONQUEST_ABILITY_UPGRADE_LEVEL_4_REQUIRED_ITEMS;
 				break;
 			}
 			case 5:
 			{
-				requiredItems = Config.CONQUEST_ABILITY_UPGRADE_LEVEL_5_REQUIRED_ITEMS;
+				requiredItems = ConquestConfig.CONQUEST_ABILITY_UPGRADE_LEVEL_5_REQUIRED_ITEMS;
 				break;
 			}
 			case 6:
 			{
-				requiredItems = Config.CONQUEST_ABILITY_UPGRADE_LEVEL_6_REQUIRED_ITEMS;
+				requiredItems = ConquestConfig.CONQUEST_ABILITY_UPGRADE_LEVEL_6_REQUIRED_ITEMS;
 				break;
 			}
 			case 7:
 			{
-				requiredItems = Config.CONQUEST_ABILITY_UPGRADE_LEVEL_7_REQUIRED_ITEMS;
+				requiredItems = ConquestConfig.CONQUEST_ABILITY_UPGRADE_LEVEL_7_REQUIRED_ITEMS;
 				break;
 			}
 			case 8:
 			{
-				requiredItems = Config.CONQUEST_ABILITY_UPGRADE_LEVEL_8_REQUIRED_ITEMS;
+				requiredItems = ConquestConfig.CONQUEST_ABILITY_UPGRADE_LEVEL_8_REQUIRED_ITEMS;
 				break;
 			}
 			case 9:
 			{
-				requiredItems = Config.CONQUEST_ABILITY_UPGRADE_LEVEL_9_REQUIRED_ITEMS;
+				requiredItems = ConquestConfig.CONQUEST_ABILITY_UPGRADE_LEVEL_9_REQUIRED_ITEMS;
 				break;
 			}
 			case 10:
 			{
-				requiredItems = Config.CONQUEST_ABILITY_UPGRADE_LEVEL_10_REQUIRED_ITEMS;
+				requiredItems = ConquestConfig.CONQUEST_ABILITY_UPGRADE_LEVEL_10_REQUIRED_ITEMS;
 				break;
 			}
 			default:

@@ -26,18 +26,17 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 
-import ai.AbstractNpcAI;
-
 /**
  * Eviscerator Tariah AI
  * @author Kazumi
  */
-public final class EvisceratorTariah extends AbstractNpcAI
+public final class EvisceratorTariah extends Script
 {
 	// NPCs
 	private static final int TARIAH = 34377;

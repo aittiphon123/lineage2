@@ -23,18 +23,17 @@ package ai.bosses.EtisVanEtina;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class SoulDestroyer extends AbstractNpcAI
+public class SoulDestroyer extends Script
 {
 	// Npc
 	private static final int SOUL_DESTROYER = 24076;
@@ -45,7 +44,8 @@ public class SoulDestroyer extends AbstractNpcAI
 	
 	private SoulDestroyer()
 	{
-		registerMobs(SOUL_DESTROYER);
+		addAttackId(SOUL_DESTROYER);
+		addSpellFinishedId(SOUL_DESTROYER);
 	}
 	
 	@Override

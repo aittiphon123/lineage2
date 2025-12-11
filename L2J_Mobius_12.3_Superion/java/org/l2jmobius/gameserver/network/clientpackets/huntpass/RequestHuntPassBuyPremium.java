@@ -22,7 +22,7 @@ package org.l2jmobius.gameserver.network.clientpackets.huntpass;
 
 import java.util.Calendar;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.HuntPassConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -53,13 +53,13 @@ public class RequestHuntPassBuyPremium extends ClientPacket
 		}
 		
 		final Calendar calendar = Calendar.getInstance();
-		if ((calendar.get(Calendar.DAY_OF_MONTH) == Config.HUNT_PASS_PERIOD) && (calendar.get(Calendar.HOUR_OF_DAY) == 6) && (calendar.get(Calendar.MINUTE) < 30))
+		if ((calendar.get(Calendar.DAY_OF_MONTH) == HuntPassConfig.HUNT_PASS_PERIOD) && (calendar.get(Calendar.HOUR_OF_DAY) == 6) && (calendar.get(Calendar.MINUTE) < 30))
 		{
 			player.sendPacket(SystemMessageId.CURRENTLY_UNAVAILABLE_FOR_PURCHASE_YOU_CAN_BUY_THE_SEASON_PASS_ADDITIONAL_REWARDS_ONLY_UNTIL_6_30_A_M_OF_THE_SEASON_S_LAST_DAY);
 			return;
 		}
 		
-		if (!player.destroyItemByItemId(ItemProcessType.FEE, Config.HUNT_PASS_PREMIUM_ITEM_ID, Config.HUNT_PASS_PREMIUM_ITEM_COUNT, player, true))
+		if (!player.destroyItemByItemId(ItemProcessType.FEE, HuntPassConfig.HUNT_PASS_PREMIUM_ITEM_ID, HuntPassConfig.HUNT_PASS_PREMIUM_ITEM_COUNT, player, true))
 		{
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_MONEY_TO_USE_THE_FUNCTION);
 			return;

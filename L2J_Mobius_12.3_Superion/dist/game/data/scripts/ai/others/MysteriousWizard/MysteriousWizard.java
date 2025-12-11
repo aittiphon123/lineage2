@@ -23,13 +23,12 @@ package ai.others.MysteriousWizard;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Mobius
  */
-public class MysteriousWizard extends AbstractNpcAI
+public class MysteriousWizard extends Script
 {
 	private static final int MYSTERIOUS_WIZARD = 31522;
 	

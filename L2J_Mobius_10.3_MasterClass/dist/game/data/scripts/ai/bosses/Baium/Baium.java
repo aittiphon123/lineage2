@@ -44,6 +44,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.MountType;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
@@ -57,15 +58,13 @@ import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * Baium AI<br>
  * This version of Baium is applied in Master Class Ch. 3 (October 26, 2022) linked to TimedHunting floor 9.<br>
  * Baium was removed from the game in the Shield of Kingdom version on August 6, 2024.
  * @author Notorion
  */
-public class Baium extends AbstractNpcAI
+public class Baium extends Script
 {
 	private static final Logger LOGGER = Logger.getLogger(Baium.class.getName());
 	

@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.managers.HomunculusManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -59,9 +59,9 @@ public class HomunculusList
 			_homunculusList.add(homunculus);
 		}
 		
-		if (_homunculusList.size() > Config.MAX_HOMUNCULUS_COUNT)
+		if (_homunculusList.size() > PlayerConfig.MAX_HOMUNCULUS_COUNT)
 		{
-			for (int i = Config.MAX_HOMUNCULUS_COUNT; i < _homunculusList.size(); i++)
+			for (int i = PlayerConfig.MAX_HOMUNCULUS_COUNT; i < _homunculusList.size(); i++)
 			{
 				_homunculusList.remove(i);
 			}
@@ -103,7 +103,7 @@ public class HomunculusList
 	
 	public int getFreeSize()
 	{
-		return Math.max(0, Config.MAX_HOMUNCULUS_COUNT - size());
+		return Math.max(0, PlayerConfig.MAX_HOMUNCULUS_COUNT - size());
 	}
 	
 	public boolean isFull()
@@ -156,7 +156,7 @@ public class HomunculusList
 			
 			// Order.
 			int slot = 0;
-			for (int i = 0; i < Config.MAX_HOMUNCULUS_COUNT; i++)
+			for (int i = 0; i < PlayerConfig.MAX_HOMUNCULUS_COUNT; i++)
 			{
 				final Homunculus homu = get(i);
 				if (homu != null)

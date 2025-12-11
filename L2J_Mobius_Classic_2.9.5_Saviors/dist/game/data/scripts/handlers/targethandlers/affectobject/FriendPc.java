@@ -16,7 +16,7 @@
  */
 package handlers.targethandlers.affectobject;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.handler.IAffectObjectHandler;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -49,7 +49,7 @@ public class FriendPc implements IAffectObjectHandler
 				return true;
 			}
 			
-			if (Config.ALT_COMMAND_CHANNEL_FRIENDS)
+			if (PlayerConfig.ALT_COMMAND_CHANNEL_FRIENDS)
 			{
 				final CommandChannel playerCC = player.getCommandChannel();
 				final CommandChannel targetCC = targetPlayer.getCommandChannel();

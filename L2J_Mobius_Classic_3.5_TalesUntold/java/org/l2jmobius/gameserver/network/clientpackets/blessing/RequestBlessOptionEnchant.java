@@ -20,8 +20,10 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.blessing;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.BlessingItemRequest;
@@ -116,12 +118,12 @@ public class RequestBlessOptionEnchant extends ClientPacket
 		if (player.getInventory().destroyItem(ItemProcessType.FEE, targetScroll.getObjectId(), 1, player, item) == null)
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
-			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to bless with a scroll he doesn't have", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to bless with a scroll he doesn't have", GeneralConfig.DEFAULT_PUNISH);
 			player.sendPacket(new ExBlessOptionEnchant(EnchantResult.ERROR));
 			return;
 		}
 		
-		if (Rnd.get(100) < Config.BLESSING_CHANCE) // Success
+		if (Rnd.get(100) < RatesConfig.BLESSING_CHANCE) // Success
 		{
 			final ItemTemplate it = item.getTemplate();
 			
@@ -131,8 +133,8 @@ public class RequestBlessOptionEnchant extends ClientPacket
 			player.sendPacket(new ExBlessOptionEnchant(1));
 			
 			// Announce the success.
-			if ((item.getEnchantLevel() >= (item.isArmor() ? Config.MIN_ARMOR_ENCHANT_ANNOUNCE : Config.MIN_WEAPON_ENCHANT_ANNOUNCE)) //
-				&& (item.getEnchantLevel() <= (item.isArmor() ? Config.MAX_ARMOR_ENCHANT_ANNOUNCE : Config.MAX_WEAPON_ENCHANT_ANNOUNCE)))
+			if ((item.getEnchantLevel() >= (item.isArmor() ? PlayerConfig.MIN_ARMOR_ENCHANT_ANNOUNCE : PlayerConfig.MIN_WEAPON_ENCHANT_ANNOUNCE)) //
+				&& (item.getEnchantLevel() <= (item.isArmor() ? PlayerConfig.MAX_ARMOR_ENCHANT_ANNOUNCE : PlayerConfig.MAX_WEAPON_ENCHANT_ANNOUNCE)))
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_SUCCESSFULLY_ENCHANTED_A_S2_S3);
 				sm.addString(player.getName());

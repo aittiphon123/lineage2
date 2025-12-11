@@ -31,17 +31,16 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerBypass
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.itemcontainer.PlayerFreight;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.PackageToList;
 import org.l2jmobius.gameserver.network.serverpackets.WareHouseWithdrawalList;
-
-import ai.AbstractNpcAI;
 
 /**
  * Dimensional Merchant AI.
  * @author Mobius
  */
-public class DimensionalMerchant extends AbstractNpcAI
+public class DimensionalMerchant extends Script
 {
 	// NPC
 	private static final int MERCHANT = 32478; // Dimensional Merchant
@@ -120,6 +119,12 @@ public class DimensionalMerchant extends AbstractNpcAI
 		{
 			notifyEvent(event.getCommand().replace(COMMAND_BYPASS, ""), null, player);
 		}
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

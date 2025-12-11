@@ -18,18 +18,18 @@ package quests.Q10369_NoblesseSoulTesting;
 
 import java.util.Collection;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -327,7 +327,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 								}
 								case 14:
 								{
-									final Quest instance = QuestManager.getInstance().getQuest(EvasHiddenSpace.class.getSimpleName());
+									final Quest instance = ScriptManager.getInstance().getScript(EvasHiddenSpace.class.getSimpleName());
 									if (instance != null)
 									{
 										instance.onEvent("enterInstance", npc, player);
@@ -454,7 +454,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 	{
 		final Player partyMember = getRandomPartyMember(killer);
 		final QuestState qs = getQuestState(partyMember, false);
-		if (canProgress(partyMember) && (qs != null) && qs.isStarted() && (partyMember.calculateDistance2D(npc) <= Config.ALT_PARTY_RANGE))
+		if (canProgress(partyMember) && (qs != null) && qs.isStarted() && (partyMember.calculateDistance2D(npc) <= PlayerConfig.ALT_PARTY_RANGE))
 		{
 			switch (qs.getCond())
 			{

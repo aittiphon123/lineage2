@@ -20,14 +20,14 @@
  */
 package quests.Q00267_WrathOfVerdure;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 public class Q00267_WrathOfVerdure extends Quest
 {
@@ -100,7 +100,7 @@ public class Q00267_WrathOfVerdure extends Quest
 					htmltext = "31853-05.htm";
 					takeItems(player, GOBLIN_CLUB, -1);
 					rewardItems(player, SILVERY_LEAF, count);
-					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (count >= 10))
+					if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (count >= 10))
 					{
 						giveAdena(player, 600, true);
 					}

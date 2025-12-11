@@ -28,9 +28,12 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
+import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
+import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
+import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.model.CharSelectInfoPackage;
 import org.l2jmobius.gameserver.model.World;
@@ -82,7 +85,7 @@ public class CharSelectionInfo extends ServerPacket
 		ServerPackets.CHARACTER_SELECTION_INFO.writeId(this, buffer);
 		final int size = _characterPackages.size();
 		buffer.writeInt(size); // Created character count
-		buffer.writeInt(Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
+		buffer.writeInt(ServerConfig.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
 		buffer.writeByte(0);
 		long lastAccess = 0;
 		if (_activeId == -1)
@@ -183,7 +186,7 @@ public class CharSelectionInfo extends ServerPacket
 						characterList.add(charInfopackage);
 						
 						// Disconnect offline trader.
-						if (Config.OFFLINE_DISCONNECT_SAME_ACCOUNT)
+						if (OfflineTradeConfig.OFFLINE_DISCONNECT_SAME_ACCOUNT)
 						{
 							final Player player = World.getInstance().getPlayer(charInfopackage.getObjectId());
 							if ((player != null) && player.isInStoreMode())
@@ -194,7 +197,7 @@ public class CharSelectionInfo extends ServerPacket
 						}
 						
 						// Disconnect offline play.
-						if (Config.OFFLINE_PLAY_DISCONNECT_SAME_ACCOUNT)
+						if (OfflinePlayConfig.OFFLINE_PLAY_DISCONNECT_SAME_ACCOUNT)
 						{
 							final Player player = World.getInstance().getPlayer(charInfopackage.getObjectId());
 							if ((player != null) && player.isOfflinePlay())
@@ -291,12 +294,12 @@ public class CharSelectionInfo extends ServerPacket
 			charInfopackage.setEvil();
 		}
 		
-		if (Config.MULTILANG_ENABLE)
+		if (MultilingualSupportConfig.MULTILANG_ENABLE)
 		{
 			String lang = chardata.getString("language");
-			if (!Config.MULTILANG_ALLOWED.contains(lang))
+			if (!MultilingualSupportConfig.MULTILANG_ALLOWED.contains(lang))
 			{
-				lang = Config.MULTILANG_DEFAULT;
+				lang = MultilingualSupportConfig.MULTILANG_DEFAULT;
 			}
 			
 			charInfopackage.setHtmlPrefix("data/lang/" + lang + "/");

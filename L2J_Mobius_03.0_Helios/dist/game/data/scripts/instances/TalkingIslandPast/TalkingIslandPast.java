@@ -21,19 +21,19 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
 import quests.Q10385_RedThreadOfFate.Q10385_RedThreadOfFate;
 
 /**
  * Talking Island (Past) instance zone.
  * @author Gladicek
  */
-public class TalkingIslandPast extends AbstractInstance
+public class TalkingIslandPast extends InstanceScript
 {
 	// NPCs
 	private static final int DARIN = 33748;

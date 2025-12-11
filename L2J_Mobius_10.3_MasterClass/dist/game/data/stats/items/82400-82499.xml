@@ -27,7 +27,6 @@
 	<item id="82401" name="Pure Crystal" type="EtcItem">
 		<!-- A crystal that remained after soul purification and disappearance. It's worthless. -->
 		<set name="icon" val="icon.cursed_prison_soul" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -38,7 +37,6 @@
 	<item id="82402" name="Moonlight Petal" type="EtcItem">
 		<!-- A petal of mysterious flower, which has been growing in earth covered with sweet blood under moonlight. It slightly smells blood. -->
 		<set name="icon" val="icon.cursed_prison_petal" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -60,7 +58,6 @@
 	<item id="82404" name="Vitality Maintaining Rune" additionalName="1-day" type="EtcItem">
 		<!-- Available for 1 d. When in inventory, maintains the Vitality level. -->
 		<set name="icon" val="icon.ev_charge_run" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
@@ -280,7 +277,6 @@
 	<item id="82414" name="Beora's Energy Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, Vitality bonus +30%. The effect doesn't work on boss monsters. -->
 		<set name="icon" val="icon.bm_package_vitality_rune_30d" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -445,7 +441,6 @@
 	<item id="82421" name="Protection of Light" type="EtcItem">
 		<!-- Can be obtained if trying Cloak of Light Dragon on. -->
 		<set name="icon" val="icon.bm_star_agathion_mineral" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -471,7 +466,6 @@
 	<item id="82423" name="Dry Ice" additionalName="Event" type="EtcItem">
 		<!-- Cooling dry ice that will help you survive Aden's heat. <How to use>. Required for compounding Freya's Ice Doll Lv. 1-9. In case of failure Dry Ice disappears, but Freya's Ice Doll remains and its level stays the same. -->
 		<set name="icon" val="icon.ev_dryice" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -482,7 +476,6 @@
 	<item id="82424" name="Freya's Ice Doll Lv. 1" additionalName="Event" type="EtcItem">
 		<!-- An ice doll. Freya filled it with cool energy to help Aden adventurers survive in this heat. Can be enhanced through compounding and then exchanged for a reward. <Enhancing>. Compounding with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -493,7 +486,6 @@
 	<item id="82425" name="Freya's Ice Doll Lv. 2" additionalName="Event" type="EtcItem">
 		<!-- An ice doll. Freya filled it with cool energy to help Aden adventurers survive in this heat. Can be exchanged for any reward through the event craft. <Enhancing>. Compounding with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -504,7 +496,6 @@
 	<item id="82426" name="Freya's Ice Doll Lv. 3" additionalName="Event" type="EtcItem">
 		<!-- An ice doll. Freya filled it with cool energy to help Aden adventurers survive in this heat. Can be exchanged for any reward through the event craft. <Enhancing>. Compounding with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -515,7 +506,6 @@
 	<item id="82427" name="Freya's Ice Doll Lv. 4" additionalName="Event" type="EtcItem">
 		<!-- An ice doll. Freya filled it with cool energy to help Aden adventurers survive in this heat. Can be exchanged for any reward through the event craft. <Enhancing>. Compounding with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -526,7 +516,6 @@
 	<item id="82428" name="Freya's Ice Doll Lv. 5" additionalName="Event" type="EtcItem">
 		<!-- An ice doll. Freya filled it with cool energy to help Aden adventurers survive in this heat. Can be exchanged for any reward through the event craft. <Enhancing>. Compounding with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -537,7 +526,6 @@
 	<item id="82429" name="Freya's Ice Doll Lv. 6" additionalName="Event" type="EtcItem">
 		<!-- An ice doll. Freya filled it with cool energy to help Aden adventurers survive in this heat. Can be exchanged for any reward through the event craft. <Enhancing>. Compounding with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -548,7 +536,6 @@
 	<item id="82430" name="Freya's Ice Doll Lv. 7" additionalName="Event" type="EtcItem">
 		<!-- A glowing ice doll. Freya filled it with cool energy to help Aden adventurers survive in this heat. Can be exchanged for any reward through the event craft. <Enhancing>. Compounding with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_high" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -559,7 +546,6 @@
 	<item id="82431" name="Freya's Ice Doll Lv. 8" additionalName="Event" type="EtcItem">
 		<!-- A glowing ice doll. Freya filled it with cool energy to help Aden adventurers survive in this heat. Can be exchanged for any reward through the event craft. <Enhancing>. Compounding with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_high" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -570,7 +556,6 @@
 	<item id="82432" name="Freya's Ice Doll Lv. 9" additionalName="Event" type="EtcItem">
 		<!-- A glowing ice doll. Freya filled it with cool energy to help Aden adventurers survive in this heat. Can be exchanged for any reward through the event craft. <Enhancing>. Compounding with Dry Ice. <Weekend limited craft>. Crafting limited for a server, available every Saturday and Sunday from 22:00 till 23:00. -->
 		<set name="icon" val="icon.ev_icedoll_high" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -581,7 +566,6 @@
 	<item id="82433" name="Freya's Ice Doll Lv. 10" additionalName="Event" type="EtcItem">
 		<!-- A glowing ice doll. Freya filled it with cool energy to help Aden adventurers survive in this heat. Can be exchanged for any reward through the event craft. <Weekend limited craft>. Crafting limited for a server, available every Saturday and Sunday from 22:00 till 23:00. -->
 		<set name="icon" val="icon.ev_icedoll_high" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />

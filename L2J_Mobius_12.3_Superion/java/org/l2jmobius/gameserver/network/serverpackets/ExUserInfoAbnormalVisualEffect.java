@@ -18,8 +18,8 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import java.util.Set;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Team;
 import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
@@ -41,7 +41,7 @@ public class ExUserInfoAbnormalVisualEffect extends ServerPacket
 		_player = player;
 		_invisible = player.isInvisible();
 		_abnormalVisualEffects = player.getEffectList().getCurrentAbnormalVisualEffects();
-		_team = (Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null) ? _player.getTeam() : Team.NONE;
+		_team = (GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null) ? _player.getTeam() : Team.NONE;
 	}
 	
 	@Override
@@ -63,14 +63,14 @@ public class ExUserInfoAbnormalVisualEffect extends ServerPacket
 		
 		if (_team == Team.BLUE)
 		{
-			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)
+			if (GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null)
 			{
-				buffer.writeShort(Config.BLUE_TEAM_ABNORMAL_EFFECT.getClientId());
+				buffer.writeShort(GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT.getClientId());
 			}
 		}
-		else if ((_team == Team.RED) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+		else if ((_team == Team.RED) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null))
 		{
-			buffer.writeShort(Config.RED_TEAM_ABNORMAL_EFFECT.getClientId());
+			buffer.writeShort(GeneralConfig.RED_TEAM_ABNORMAL_EFFECT.getClientId());
 		}
 	}
 }

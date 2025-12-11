@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package quests;
 
@@ -20,7 +24,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -32,9 +36,9 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelChanged;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowQuestionMark;
@@ -42,7 +46,7 @@ import org.l2jmobius.gameserver.util.ArrayUtil;
 
 /**
  * Abstract class for all Third Class Transfer quests.
- * @author St3eT
+ * @author St3eT, Trevor The Third
  */
 public abstract class ThirdClassTransferQuest extends Quest
 {
@@ -227,8 +231,8 @@ public abstract class ThirdClassTransferQuest extends Quest
 				final PlayerClass newClassId = player.getPlayerClass().getNextClasses().stream().findFirst().orElse(null);
 				if (newClassId != null)
 				{
-					final PlayerClass currentClassId = player.getPlayerClass();
-					if (!newClassId.childOf(currentClassId))
+					final PlayerClass currentPlayerClass = player.getPlayerClass();
+					if (!newClassId.childOf(currentPlayerClass))
 					{
 						break;
 					}
@@ -342,7 +346,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}
@@ -360,7 +364,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLogin(OnPlayerLogin event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}

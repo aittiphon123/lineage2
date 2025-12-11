@@ -19,14 +19,13 @@ package ai.areas.AncientCityArcan.Lykus;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Lykus AI.
  * @author St3eT
  */
-public class Lykus extends AbstractNpcAI
+public class Lykus extends Script
 {
 	// NPCs
 	private static final int LYKUS = 33521;
@@ -85,6 +84,12 @@ public class Lykus extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

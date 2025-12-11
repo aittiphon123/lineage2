@@ -18,16 +18,15 @@ package ai.areas.TalkingIsland;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Lumi AI.
  * @author Gladicek
  */
-public class Lumi extends AbstractNpcAI
+public class Lumi extends Script
 {
 	// NPCs
 	private static final int LUMI = 33025;

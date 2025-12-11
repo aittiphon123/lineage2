@@ -26,7 +26,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.custom.CaptchaConfig;
 import org.l2jmobius.gameserver.data.BotReportTable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.captcha.Captcha;
@@ -45,8 +45,8 @@ public class CaptchaRequest extends AbstractRequest
 		_captcha = captcha;
 		final long currentTime = currentTimeMillis();
 		setTimestamp(currentTime);
-		scheduleTimeout(Duration.ofMinutes(Config.VALIDATION_TIME).toMillis());
-		_timeout = Instant.ofEpochMilli(currentTime).plus(Config.VALIDATION_TIME, ChronoUnit.MINUTES);
+		scheduleTimeout(Duration.ofMinutes(CaptchaConfig.VALIDATION_TIME).toMillis());
+		_timeout = Instant.ofEpochMilli(currentTime).plus(CaptchaConfig.VALIDATION_TIME, ChronoUnit.MINUTES);
 	}
 	
 	@Override

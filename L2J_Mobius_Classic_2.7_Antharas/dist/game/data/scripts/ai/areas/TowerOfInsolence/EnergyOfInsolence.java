@@ -31,18 +31,17 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.holders.npc.ChanceLocation;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author Brutallis
  */
-public class EnergyOfInsolence extends AbstractNpcAI
+public class EnergyOfInsolence extends Script
 {
 	private static final int LEVEL_MAX_DIFF = 9;
 	private static final int TIME_UNTIL_MOVE = 1800000;

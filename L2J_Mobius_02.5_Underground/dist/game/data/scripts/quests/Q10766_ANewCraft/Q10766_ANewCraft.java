@@ -30,8 +30,8 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.item.OnItemCreate;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
 
 /**

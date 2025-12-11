@@ -23,18 +23,17 @@ package ai.bosses.Cyrax;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class TempleEliteWizard extends AbstractNpcAI
+public class TempleEliteWizard extends Script
 {
 	// NPC
 	private static final int TEMPLE_ELITE_WIZARD = 29378;
@@ -45,7 +44,8 @@ public class TempleEliteWizard extends AbstractNpcAI
 	
 	private TempleEliteWizard()
 	{
-		registerMobs(TEMPLE_ELITE_WIZARD);
+		addAttackId(TEMPLE_ELITE_WIZARD);
+		addSpellFinishedId(TEMPLE_ELITE_WIZARD);
 	}
 	
 	@Override

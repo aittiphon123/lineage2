@@ -23,10 +23,19 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.LoginServerThread;
 import org.l2jmobius.gameserver.cache.HtmCache;
+import org.l2jmobius.gameserver.config.AttendanceRewardsConfig;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.ServerConfig;
+import org.l2jmobius.gameserver.config.custom.FactionSystemConfig;
+import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
+import org.l2jmobius.gameserver.config.custom.ScreenWelcomeMessageConfig;
+import org.l2jmobius.gameserver.config.custom.WeddingConfig;
 import org.l2jmobius.gameserver.data.sql.AnnouncementsTable;
 import org.l2jmobius.gameserver.data.sql.OfflineTraderTable;
 import org.l2jmobius.gameserver.data.xml.AdminData;
@@ -37,6 +46,7 @@ import org.l2jmobius.gameserver.data.xml.MableGameData;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
 import org.l2jmobius.gameserver.managers.AntiFeedManager;
 import org.l2jmobius.gameserver.managers.CastleManager;
+import org.l2jmobius.gameserver.managers.CoupleManager;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.managers.FortManager;
 import org.l2jmobius.gameserver.managers.FortSiegeManager;
@@ -47,6 +57,7 @@ import org.l2jmobius.gameserver.managers.PetitionManager;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.managers.ServerRestartManager;
 import org.l2jmobius.gameserver.managers.SiegeManager;
+import org.l2jmobius.gameserver.model.Couple;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -58,6 +69,7 @@ import org.l2jmobius.gameserver.model.actor.holders.player.AttendanceInfoHolder;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.EtcItemType;
@@ -65,8 +77,8 @@ import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
 import org.l2jmobius.gameserver.model.punishment.PunishmentAffect;
 import org.l2jmobius.gameserver.model.punishment.PunishmentType;
-import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.residences.ClanHall;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.Fort;
 import org.l2jmobius.gameserver.model.siege.FortSiege;
@@ -193,7 +205,7 @@ public class EnterWorld extends ClientPacket
 		
 		// Restore to instanced area if enabled.
 		final PlayerVariables vars = player.getVariables();
-		if (Config.RESTORE_PLAYER_INSTANCE)
+		if (GeneralConfig.RESTORE_PLAYER_INSTANCE)
 		{
 			final Instance instance = InstanceManager.getInstance().getPlayerInstance(player, false);
 			if ((instance != null) && (instance.getId() == vars.getInt(PlayerVariables.INSTANCE_RESTORE, 0)))
@@ -214,7 +226,7 @@ public class EnterWorld extends ClientPacket
 		{
 			gmStartupProcess:
 			{
-				if (Config.GM_STARTUP_BUILDER_HIDE && AdminData.getInstance().hasAccess("admin_hide", player.getAccessLevel()))
+				if (GeneralConfig.GM_STARTUP_BUILDER_HIDE && AdminData.getInstance().hasAccess("admin_hide", player.getAccessLevel()))
 				{
 					player.setHiding(true);
 					player.sendSysMessage("hide is default for builder.");
@@ -225,30 +237,30 @@ public class EnterWorld extends ClientPacket
 					break gmStartupProcess;
 				}
 				
-				if (Config.GM_STARTUP_INVULNERABLE && AdminData.getInstance().hasAccess("admin_invul", player.getAccessLevel()))
+				if (GeneralConfig.GM_STARTUP_INVULNERABLE && AdminData.getInstance().hasAccess("admin_invul", player.getAccessLevel()))
 				{
 					player.setInvul(true);
 				}
 				
-				if (Config.GM_STARTUP_INVISIBLE && AdminData.getInstance().hasAccess("admin_invisible", player.getAccessLevel()))
+				if (GeneralConfig.GM_STARTUP_INVISIBLE && AdminData.getInstance().hasAccess("admin_invisible", player.getAccessLevel()))
 				{
 					player.setInvisible(true);
 					player.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.STEALTH);
 				}
 				
-				if (Config.GM_STARTUP_SILENCE && AdminData.getInstance().hasAccess("admin_silence", player.getAccessLevel()))
+				if (GeneralConfig.GM_STARTUP_SILENCE && AdminData.getInstance().hasAccess("admin_silence", player.getAccessLevel()))
 				{
 					player.setSilenceMode(true);
 				}
 				
-				if (Config.GM_STARTUP_DIET_MODE && AdminData.getInstance().hasAccess("admin_diet", player.getAccessLevel()))
+				if (GeneralConfig.GM_STARTUP_DIET_MODE && AdminData.getInstance().hasAccess("admin_diet", player.getAccessLevel()))
 				{
 					player.setDietMode(true);
 					player.refreshOverloaded(true);
 				}
 			}
 			
-			if (Config.GM_STARTUP_AUTO_LIST && AdminData.getInstance().hasAccess("admin_gmliston", player.getAccessLevel()))
+			if (GeneralConfig.GM_STARTUP_AUTO_LIST && AdminData.getInstance().hasAccess("admin_gmliston", player.getAccessLevel()))
 			{
 				AdminData.getInstance().addGm(player, false);
 			}
@@ -257,12 +269,12 @@ public class EnterWorld extends ClientPacket
 				AdminData.getInstance().addGm(player, true);
 			}
 			
-			if (Config.GM_GIVE_SPECIAL_SKILLS)
+			if (GeneralConfig.GM_GIVE_SPECIAL_SKILLS)
 			{
 				SkillTreeData.getInstance().addSkills(player, false);
 			}
 			
-			if (Config.GM_GIVE_SPECIAL_AURA_SKILLS)
+			if (GeneralConfig.GM_GIVE_SPECIAL_AURA_SKILLS)
 			{
 				SkillTreeData.getInstance().addSkills(player, true);
 			}
@@ -343,7 +355,7 @@ public class EnterWorld extends ClientPacket
 			showClanNotice = clan.isNoticeEnabled();
 		}
 		
-		if (Config.ENABLE_VITALITY)
+		if (PlayerConfig.ENABLE_VITALITY)
 		{
 			player.sendPacket(new ExVitalityEffectInfo(player));
 		}
@@ -428,23 +440,23 @@ public class EnterWorld extends ClientPacket
 		}
 		
 		// Faction System
-		if (Config.FACTION_SYSTEM_ENABLED)
+		if (FactionSystemConfig.FACTION_SYSTEM_ENABLED)
 		{
 			if (player.isGood())
 			{
 				final PlayerAppearance appearance = player.getAppearance();
-				appearance.setNameColor(Config.FACTION_GOOD_NAME_COLOR);
-				appearance.setTitleColor(Config.FACTION_GOOD_NAME_COLOR);
-				player.sendMessage("Welcome " + player.getName() + ", you are fighting for the " + Config.FACTION_GOOD_TEAM_NAME + " faction.");
-				player.sendPacket(new ExShowScreenMessage("Welcome " + player.getName() + ", you are fighting for the " + Config.FACTION_GOOD_TEAM_NAME + " faction.", 10000));
+				appearance.setNameColor(FactionSystemConfig.FACTION_GOOD_NAME_COLOR);
+				appearance.setTitleColor(FactionSystemConfig.FACTION_GOOD_NAME_COLOR);
+				player.sendMessage("Welcome " + player.getName() + ", you are fighting for the " + FactionSystemConfig.FACTION_GOOD_TEAM_NAME + " faction.");
+				player.sendPacket(new ExShowScreenMessage("Welcome " + player.getName() + ", you are fighting for the " + FactionSystemConfig.FACTION_GOOD_TEAM_NAME + " faction.", 10000));
 			}
 			else if (player.isEvil())
 			{
 				final PlayerAppearance appearance = player.getAppearance();
-				appearance.setNameColor(Config.FACTION_EVIL_NAME_COLOR);
-				appearance.setTitleColor(Config.FACTION_EVIL_NAME_COLOR);
-				player.sendMessage("Welcome " + player.getName() + ", you are fighting for the " + Config.FACTION_EVIL_TEAM_NAME + " faction.");
-				player.sendPacket(new ExShowScreenMessage("Welcome " + player.getName() + ", you are fighting for the " + Config.FACTION_EVIL_TEAM_NAME + " faction.", 10000));
+				appearance.setNameColor(FactionSystemConfig.FACTION_EVIL_NAME_COLOR);
+				appearance.setTitleColor(FactionSystemConfig.FACTION_EVIL_NAME_COLOR);
+				player.sendMessage("Welcome " + player.getName() + ", you are fighting for the " + FactionSystemConfig.FACTION_EVIL_TEAM_NAME + " faction.");
+				player.sendPacket(new ExShowScreenMessage("Welcome " + player.getName() + ", you are fighting for the " + FactionSystemConfig.FACTION_EVIL_TEAM_NAME + " faction.", 10000));
 			}
 		}
 		
@@ -452,7 +464,7 @@ public class EnterWorld extends ClientPacket
 		
 		// Send Quest List
 		player.sendPacket(new QuestList(player));
-		if (Config.PLAYER_SPAWN_PROTECTION > 0)
+		if (PlayerConfig.PLAYER_SPAWN_PROTECTION > 0)
 		{
 			player.setSpawnProtection(true);
 		}
@@ -465,7 +477,7 @@ public class EnterWorld extends ClientPacket
 			CursedWeaponsManager.getInstance().getCursedWeapon(player.getCursedWeaponEquippedId()).cursedOnLogin();
 		}
 		
-		if (Config.PC_CAFE_ENABLED)
+		if (PremiumSystemConfig.PC_CAFE_ENABLED)
 		{
 			if (player.getPcCafePoints() > 0)
 			{
@@ -487,11 +499,11 @@ public class EnterWorld extends ClientPacket
 		player.sendPacket(new L2FriendList(player));
 		
 		// Intro video.
-		if (Config.SHOW_INTRO_VIDEO && vars.hasVariable(PlayerVariables.INTRO_VIDEO))
+		if (PlayerConfig.SHOW_INTRO_VIDEO && vars.hasVariable(PlayerVariables.INTRO_VIDEO))
 		{
 			vars.remove(PlayerVariables.INTRO_VIDEO);
 			player.sendPacket(ExShowUsm.ANTHARAS_INTRO);
-			if (!Config.DISABLE_TUTORIAL)
+			if (!PlayerConfig.DISABLE_TUTORIAL)
 			{
 				ThreadPool.schedule(() -> player.sendPacket(new ExShowScreenMessage(NpcStringId.TARTI_IS_WORRIED_ABOUT_S1, ExShowScreenMessage.TOP_CENTER, 10000, player.getName())), 15000);
 			}
@@ -512,7 +524,7 @@ public class EnterWorld extends ClientPacket
 		
 		AnnouncementsTable.getInstance().showAnnouncements(player);
 		
-		if ((Config.SERVER_RESTART_SCHEDULE_ENABLED) && (Config.SERVER_RESTART_SCHEDULE_MESSAGE))
+		if ((ServerConfig.SERVER_RESTART_SCHEDULE_ENABLED) && (ServerConfig.SERVER_RESTART_SCHEDULE_MESSAGE))
 		{
 			player.sendPacket(new CreatureSay(null, ChatType.BATTLEFIELD, "[SERVER]", "Next restart is scheduled at " + ServerRestartManager.getInstance().getNextRestartTime() + "."));
 		}
@@ -526,7 +538,7 @@ public class EnterWorld extends ClientPacket
 			notice.disableValidation();
 			player.sendPacket(notice);
 		}
-		else if (Config.SERVER_NEWS)
+		else if (GeneralConfig.SERVER_NEWS)
 		{
 			final String serverNews = HtmCache.getInstance().getHtm(player, "data/html/servnews.htm");
 			if (serverNews != null)
@@ -535,7 +547,7 @@ public class EnterWorld extends ClientPacket
 			}
 		}
 		
-		if (Config.PETITIONING_ALLOWED)
+		if (PlayerConfig.PETITIONING_ALLOWED)
 		{
 			PetitionManager.getInstance().checkPetitionMessages(player);
 		}
@@ -587,8 +599,8 @@ public class EnterWorld extends ClientPacket
 			}
 			else
 			{
-				final long slot = player.getInventory().getSlotFromItem(player.getInventory().getItemByItemId(9819));
-				player.getInventory().unEquipItemInBodySlot(slot);
+				final BodyPart bodyPart = BodyPart.fromItem(player.getInventory().getItemByItemId(9819));
+				player.getInventory().unEquipItemInBodySlot(bodyPart);
 				player.destroyItem(ItemProcessType.DESTROY, player.getInventory().getItemByItemId(9819), null, true);
 			}
 		}
@@ -601,7 +613,7 @@ public class EnterWorld extends ClientPacket
 		}
 		
 		// Over-enchant protection.
-		if (Config.OVER_ENCHANT_PROTECTION && !player.isGM())
+		if (PlayerConfig.OVER_ENCHANT_PROTECTION && !player.isGM())
 		{
 			boolean punish = false;
 			for (Item item : player.getInventory().getItems())
@@ -617,12 +629,12 @@ public class EnterWorld extends ClientPacket
 				}
 			}
 			
-			if (punish && (Config.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE))
+			if (punish && (PlayerConfig.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE))
 			{
 				player.sendMessage("[Server]: You have over-enchanted items!");
 				player.sendMessage("[Server]: Respect our server rules.");
 				player.sendPacket(new ExShowScreenMessage("You have over-enchanted items!", 6000));
-				PunishmentManager.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", Config.OVER_ENCHANT_PUNISHMENT);
+				PunishmentManager.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", PlayerConfig.OVER_ENCHANT_PUNISHMENT);
 			}
 		}
 		
@@ -637,7 +649,7 @@ public class EnterWorld extends ClientPacket
 			player.destroyItem(ItemProcessType.DESTROY, player.getInventory().getItemByItemId(8689), null, true);
 		}
 		
-		if (Config.ALLOW_MAIL)
+		if (GeneralConfig.ALLOW_MAIL)
 		{
 			if (MailManager.getInstance().hasUnreadPost(player))
 			{
@@ -645,9 +657,9 @@ public class EnterWorld extends ClientPacket
 			}
 		}
 		
-		if (Config.WELCOME_MESSAGE_ENABLED)
+		if (ScreenWelcomeMessageConfig.WELCOME_MESSAGE_ENABLED)
 		{
-			player.sendPacket(new ExShowScreenMessage(Config.WELCOME_MESSAGE_TEXT, Config.WELCOME_MESSAGE_TIME));
+			player.sendPacket(new ExShowScreenMessage(ScreenWelcomeMessageConfig.WELCOME_MESSAGE_TEXT, ScreenWelcomeMessageConfig.WELCOME_MESSAGE_TIME));
 		}
 		
 		final int birthday = player.checkBirthDay();
@@ -668,7 +680,7 @@ public class EnterWorld extends ClientPacket
 			player.sendPacket(ExNotifyPremiumItem.STATIC_PACKET);
 		}
 		
-		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.STORE_OFFLINE_TRADE_IN_REALTIME)
+		if ((OfflineTradeConfig.OFFLINE_TRADE_ENABLE || OfflineTradeConfig.OFFLINE_CRAFT_ENABLE) && OfflineTradeConfig.STORE_OFFLINE_TRADE_IN_REALTIME)
 		{
 			OfflineTraderTable.getInstance().onTransaction(player, true, false);
 		}
@@ -681,7 +693,7 @@ public class EnterWorld extends ClientPacket
 		}
 		
 		// Send packet that olympiad is opened.
-		if (Config.OLYMPIAD_ENABLED && Olympiad.getInstance().inCompPeriod())
+		if (OlympiadConfig.OLYMPIAD_ENABLED && Olympiad.getInstance().inCompPeriod())
 		{
 			player.sendPacket(new ExOlympiadInfo(1));
 		}
@@ -696,7 +708,7 @@ public class EnterWorld extends ClientPacket
 		}
 		
 		player.sendPacket(new ExAcquireAPSkillList(player));
-		if (Config.ENABLE_WORLD_CHAT)
+		if (GeneralConfig.ENABLE_WORLD_CHAT)
 		{
 			player.sendPacket(new ExWorldChatCnt(player));
 		}
@@ -724,7 +736,7 @@ public class EnterWorld extends ClientPacket
 		player.sendPacket(new ItemDeletionInfo());
 		
 		// Activate first agathion when available.
-		final Item agathion = player.getInventory().unEquipItemInBodySlot(ItemTemplate.SLOT_AGATHION);
+		final Item agathion = player.getInventory().unEquipItemInBodySlot(BodyPart.AGATHION);
 		if (agathion != null)
 		{
 			player.getInventory().equipItemAndRecord(agathion);
@@ -734,7 +746,7 @@ public class EnterWorld extends ClientPacket
 		final Item leftHandItem = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		if ((leftHandItem != null) && ((leftHandItem.getItemType() == EtcItemType.ARROW) || (leftHandItem.getItemType() == EtcItemType.BOLT)))
 		{
-			player.getInventory().unEquipItemInBodySlot(Inventory.PAPERDOLL_LHAND);
+			player.getInventory().unEquipItemInBodySlot(BodyPart.L_HAND);
 		}
 		
 		// Mable event.
@@ -743,7 +755,7 @@ public class EnterWorld extends ClientPacket
 			player.sendPacket(ExMableGameUILauncher.STATIC_PACKET);
 		}
 		
-		if (Config.ENABLE_ATTENDANCE_REWARDS)
+		if (AttendanceRewardsConfig.ENABLE_ATTENDANCE_REWARDS)
 		{
 			ThreadPool.schedule(() ->
 			{
@@ -755,21 +767,21 @@ public class EnterWorld extends ClientPacket
 					player.sendPacket(new ExShowScreenMessage("Your attendance day " + lastRewardIndex + " reward is ready.", ExShowScreenMessage.TOP_CENTER, 7000, 0, true, true));
 					player.sendMessage("Your attendance day " + lastRewardIndex + " reward is ready.");
 					player.sendMessage("Click on General Menu -> Attendance Check.");
-					if (Config.ATTENDANCE_POPUP_WINDOW)
+					if (AttendanceRewardsConfig.ATTENDANCE_POPUP_WINDOW)
 					{
 						player.sendPacket(new ExVipAttendanceItemList(player));
 					}
 				}
-			}, Config.ATTENDANCE_REWARD_DELAY * 60 * 1000);
+			}, AttendanceRewardsConfig.ATTENDANCE_REWARD_DELAY * 60 * 1000);
 			
-			if (Config.ATTENDANCE_POPUP_START)
+			if (AttendanceRewardsConfig.ATTENDANCE_POPUP_START)
 			{
 				player.sendPacket(new ExVipAttendanceItemList(player));
 			}
 		}
 		
 		// Delayed HWID checks.
-		if (Config.HARDWARE_INFO_ENABLED)
+		if (ServerConfig.HARDWARE_INFO_ENABLED)
 		{
 			ThreadPool.schedule(() ->
 			{
@@ -823,11 +835,11 @@ public class EnterWorld extends ClientPacket
 				}
 				
 				// Check max players.
-				if (Config.KICK_MISSING_HWID && (hwInfo == null))
+				if (ServerConfig.KICK_MISSING_HWID && (hwInfo == null))
 				{
 					Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 				}
-				else if (Config.MAX_PLAYERS_PER_HWID > 0)
+				else if (ServerConfig.MAX_PLAYERS_PER_HWID > 0)
 				{
 					int count = 0;
 					for (Player plr : World.getInstance().getPlayers())
@@ -842,7 +854,7 @@ public class EnterWorld extends ClientPacket
 						}
 					}
 					
-					if (count > Config.MAX_PLAYERS_PER_HWID)
+					if (count > ServerConfig.MAX_PLAYERS_PER_HWID)
 					{
 						Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 					}
@@ -864,7 +876,44 @@ public class EnterWorld extends ClientPacket
 		// EnterWorld has finished.
 		player.setEnteredWorld();
 		
-		if ((player.hasPremiumStatus() || !Config.PC_CAFE_ONLY_PREMIUM) && Config.PC_CAFE_RETAIL_LIKE)
+		// Wedding checks.
+		if (WeddingConfig.ALLOW_WEDDING)
+		{
+			final int playerObjectId = player.getObjectId();
+			for (Couple couple : CoupleManager.getInstance().getCouples())
+			{
+				if ((couple.getPlayer1Id() == playerObjectId) || (couple.getPlayer2Id() == playerObjectId))
+				{
+					if (couple.getMaried())
+					{
+						player.setMarried(true);
+					}
+					
+					player.setCoupleId(couple.getId());
+					
+					if (couple.getPlayer1Id() == playerObjectId)
+					{
+						player.setPartnerId(couple.getPlayer2Id());
+					}
+					else
+					{
+						player.setPartnerId(couple.getPlayer1Id());
+					}
+				}
+			}
+			
+			final int partnerId = player.getPartnerId();
+			if (partnerId != 0)
+			{
+				final Player partner = World.getInstance().getPlayer(partnerId);
+				if (partner != null)
+				{
+					partner.sendMessage("Your partner has logged in.");
+				}
+			}
+		}
+		
+		if ((player.hasPremiumStatus() || !PremiumSystemConfig.PC_CAFE_ONLY_PREMIUM) && PremiumSystemConfig.PC_CAFE_RETAIL_LIKE)
 		{
 			PcCafePointsManager.getInstance().run(player);
 		}
@@ -873,9 +922,6 @@ public class EnterWorld extends ClientPacket
 		player.getVariables().remove(PlayerVariables.LAST_HUNTING_ZONE_ID);
 	}
 	
-	/**
-	 * @param player
-	 */
 	private void notifyClanMembers(Player player)
 	{
 		final Clan clan = player.getClan();
@@ -890,9 +936,6 @@ public class EnterWorld extends ClientPacket
 		}
 	}
 	
-	/**
-	 * @param player
-	 */
 	private void notifySponsorOrApprentice(Player player)
 	{
 		if (player.getSponsor() != 0)

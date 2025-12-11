@@ -21,15 +21,15 @@
 package quests.Q10134_ChamberOfProphecies;
 
 import org.l2jmobius.gameserver.data.xml.TeleportListData;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestDialogType;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuestLocation;
-import org.l2jmobius.gameserver.model.quest.newquestdata.QuestCondType;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestDialogType;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuestLocation;
+import org.l2jmobius.gameserver.model.script.newquestdata.QuestCondType;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestDialog;
 
 import instances.ChamberOfProphecies.ChamberOfProphecies;
@@ -94,7 +94,7 @@ public class Q10134_ChamberOfProphecies extends Quest
 				final NewQuestLocation questLocation = getQuestData().getLocation();
 				if (questState.isCond(QuestCondType.STARTED))
 				{
-					QuestManager.getInstance().getQuest(ChamberOfProphecies.class.getSimpleName()).notifyEvent("enterInstance", null, player);
+					ScriptManager.getInstance().getScript(ChamberOfProphecies.class.getSimpleName()).notifyEvent("enterInstance", null, player);
 				}
 				else if (questState.isCond(QuestCondType.DONE) && !questState.isCompleted())
 				{

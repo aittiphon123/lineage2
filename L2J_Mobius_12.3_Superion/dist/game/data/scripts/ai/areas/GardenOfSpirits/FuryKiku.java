@@ -25,15 +25,14 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Fury Kiku AI
  * @author Gigi
  * @date 2018-07-23 - [15:47:15]
  */
-public class FuryKiku extends AbstractNpcAI
+public class FuryKiku extends Script
 {
 	// Monsters
 	private static final int FURYKIKU = 23545;

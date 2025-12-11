@@ -32,13 +32,12 @@ import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.spawns.SpawnTemplate;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
-
-import ai.AbstractNpcAI;
 
 /**
  * Harnak Underground Ruins
@@ -46,7 +45,7 @@ import ai.AbstractNpcAI;
  * @author LasTravel, Gigi
  * @date 2017-03-10 - [13:09:05]
  */
-public class HarnakUndergroundRuinsZone extends AbstractNpcAI
+public class HarnakUndergroundRuinsZone extends Script
 {
 	// @formatter:off
 	private static final int[] NORMAL_MOBS = {22931, 22932, 22933, 22934, 22935, 22936, 22937, 22938, 23349};

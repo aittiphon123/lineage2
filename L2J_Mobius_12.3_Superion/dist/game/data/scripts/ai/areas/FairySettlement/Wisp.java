@@ -22,15 +22,14 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import ai.AbstractNpcAI;
 
 /**
  * Wisp AI.
  * @author St3eT
  */
-public class Wisp extends AbstractNpcAI
+public class Wisp extends Script
 {
 	// NPCs
 	private static final int WISP = 32915;

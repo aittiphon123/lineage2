@@ -19,18 +19,17 @@ package ai.others.ArenaManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 
-import ai.AbstractNpcAI;
-
 /**
  * Arena Manager AI.
  * @author St3eT
  */
-public class ArenaManager extends AbstractNpcAI
+public class ArenaManager extends Script
 {
 	// NPC
 	private static final int ARENA_MANAGER = 31226;
@@ -127,6 +126,12 @@ public class ArenaManager extends AbstractNpcAI
 		}
 		
 		return super.onEvent(event, npc, player);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

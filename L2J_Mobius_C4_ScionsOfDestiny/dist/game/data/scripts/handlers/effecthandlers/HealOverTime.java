@@ -24,7 +24,10 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.conditions.Condition;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
+import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.Skill;
+import org.l2jmobius.gameserver.model.stats.Formulas;
+import org.l2jmobius.gameserver.network.serverpackets.ExRegenMax;
 
 /**
  * Heal Over Time effect implementation.
@@ -63,13 +66,12 @@ public class HealOverTime extends AbstractEffect
 		return skill.isToggle();
 	}
 	
-	// Packet does not exist on C6?
-	// @Override
-	// public void onStart(Creature effector, Creature effected, Skill skill)
-	// {
-	// if (effected.isPlayer() && (getTicks() > 0) && (skill.getAbnormalType() == AbnormalType.HP_RECOVER))
-	// {
-	// // effected.sendPacket(new ExRegenMax(Formulas.calcEffectAbnormalTime(effector, effected, skill), getTicks(), _power));
-	// }
-	// }
+	@Override
+	public void onStart(Creature effector, Creature effected, Skill skill)
+	{
+		if (effected.isPlayer() && (getTicks() > 0) && (skill.getAbnormalType() == AbnormalType.HP_RECOVER))
+		{
+			effected.sendPacket(new ExRegenMax(Formulas.calcEffectAbnormalTime(effector, effected, skill), getTicks(), _power));
+		}
+	}
 }

@@ -24,7 +24,6 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.network.Buffer;
 import org.l2jmobius.commons.network.Client;
@@ -32,12 +31,14 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.TraceUtil;
 import org.l2jmobius.gameserver.LoginServerThread;
 import org.l2jmobius.gameserver.LoginServerThread.SessionKey;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.WeddingConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
-import org.l2jmobius.gameserver.model.CharSelectInfoPackage;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
+import org.l2jmobius.gameserver.network.holders.CharacterInfoHolder;
 import org.l2jmobius.gameserver.network.holders.ClientHardwareInfoHolder;
 import org.l2jmobius.gameserver.network.serverpackets.LeaveWorld;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
@@ -74,7 +75,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 	private SessionKey _sessionKey;
 	private Player _player;
 	private ClientHardwareInfoHolder _hardwareInfo;
-	private List<CharSelectInfoPackage> _charSlotMapping = null;
+	private List<CharacterInfoHolder> _charSlotMapping = null;
 	private volatile boolean _isDetached = false;
 	private boolean _isAuthedGG;
 	private boolean _protocolOk;
@@ -286,7 +287,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 				// Setting delete time
 				if (answer == 0)
 				{
-					if (Config.DELETE_DAYS == 0)
+					if (PlayerConfig.DELETE_DAYS == 0)
 					{
 						deleteCharByObjId(objectId);
 					}
@@ -294,7 +295,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 					{
 						try (PreparedStatement ps2 = con.prepareStatement("UPDATE characters SET deletetime=? WHERE charId=?"))
 						{
-							ps2.setLong(1, System.currentTimeMillis() + (Config.DELETE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
+							ps2.setLong(1, System.currentTimeMillis() + (PlayerConfig.DELETE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
 							ps2.setInt(2, objectId);
 							ps2.execute();
 						}
@@ -475,7 +476,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 				ps.execute();
 			}
 			
-			if (Config.ALLOW_WEDDING)
+			if (WeddingConfig.ALLOW_WEDDING)
 			{
 				try (PreparedStatement ps = con.prepareStatement("DELETE FROM mods_wedding WHERE player1Id = ? OR player2Id = ?"))
 				{
@@ -538,12 +539,12 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 		return player;
 	}
 	
-	public void setCharSelection(List<CharSelectInfoPackage> characters)
+	public void setCharSelection(List<CharacterInfoHolder> characters)
 	{
 		_charSlotMapping = characters;
 	}
 	
-	public CharSelectInfoPackage getCharSelection(int charslot)
+	public CharacterInfoHolder getCharSelection(int charslot)
 	{
 		if ((_charSlotMapping == null) || (charslot < 0) || (charslot >= _charSlotMapping.size()))
 		{
@@ -559,7 +560,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 	 */
 	private int getObjectIdForSlot(int characterSlot)
 	{
-		final CharSelectInfoPackage info = getCharSelection(characterSlot);
+		final CharacterInfoHolder info = getCharSelection(characterSlot);
 		if (info == null)
 		{
 			LOGGER.warning(toString() + " tried to delete Character in slot " + characterSlot + " but no characters exits at that slot.");

@@ -30,7 +30,8 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -38,7 +39,6 @@ import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 
-import ai.AbstractNpcAI;
 import instances.MysticTavern.StoryOfFreya.StoryOfFreya;
 import instances.MysticTavern.StoryOfTauti.StoryOfTauti;
 import quests.Q10297_GrandOpeningComeToOurPub.Q10297_GrandOpeningComeToOurPub;
@@ -51,7 +51,7 @@ import quests.Q10297_GrandOpeningComeToOurPub.Q10297_GrandOpeningComeToOurPub;
  * @VIDEO KELBIM: https://www.youtube.com/watch?v=wL1D49u6vxE
  * @author Mobius, Gigi
  */
-public class MysticTavern extends AbstractNpcAI
+public class MysticTavern extends Script
 {
 	// NPC
 	private static final int GLOBE = 34200;

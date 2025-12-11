@@ -28,9 +28,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.RandomCraftConfig;
 import org.l2jmobius.gameserver.data.holders.RandomCraftRewardItemHolder;
 import org.l2jmobius.gameserver.data.xml.RandomCraftData;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -180,7 +180,7 @@ public class PlayerRandomCraft
 		
 		_player.addRequest(new RandomCraftRequest(_player));
 		
-		if ((_fullCraftPoints > 0) && _player.reduceAdena(ItemProcessType.FEE, Config.RANDOM_CRAFT_REFRESH_FEE, _player, true))
+		if ((_fullCraftPoints > 0) && _player.reduceAdena(ItemProcessType.FEE, RandomCraftConfig.RANDOM_CRAFT_REFRESH_FEE, _player, true))
 		{
 			_player.sendPacket(new ExCraftInfo(_player));
 			_player.sendPacket(new ExCraftRandomRefresh());
@@ -258,7 +258,7 @@ public class PlayerRandomCraft
 		
 		_player.addRequest(new RandomCraftRequest(_player));
 		
-		if (_player.reduceAdena(ItemProcessType.FEE, Config.RANDOM_CRAFT_CREATE_FEE, _player, true))
+		if (_player.reduceAdena(ItemProcessType.FEE, RandomCraftConfig.RANDOM_CRAFT_CREATE_FEE, _player, true))
 		{
 			final int madeId = Rnd.get(0, 4);
 			final RandomCraftRewardItemHolder holder = _rewardList.get(madeId);

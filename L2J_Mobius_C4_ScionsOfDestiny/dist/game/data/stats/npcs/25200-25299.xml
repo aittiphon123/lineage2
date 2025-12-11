@@ -117,10 +117,6 @@
 					<item id="959" min="1" max="1" chance="6.06546" /> <!-- Scroll: Enchant Weapon (Grade S) -->
 					<item id="6577" min="1" max="1" chance="1.01106" /> <!-- Blessed Scroll: Enchant Weapon (Grade S) -->
 				</group>
-				<group chance="50">
-				</group>
-				<group chance="100">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -355,8 +351,6 @@
 					<item id="951" min="1" max="1" chance="56.5674" /> <!-- Scroll: Enchant Weapon (Grade C) -->
 					<item id="952" min="12" max="36" chance="17.2845" /> <!-- Scroll: Enchant Armor (Grade C) -->
 					<item id="6573" min="1" max="1" chance="2.07415" /> <!-- Blessed Scroll: Enchant Weapon (Grade C) -->
-				</group>
-				<group chance="50">
 				</group>
 			</drop>
 		</dropLists>
@@ -719,8 +713,6 @@
 					<item id="4602" min="2" max="4" chance="17.5299" /> <!-- Greater Dye of Strength (Str+3 Dex-3) -->
 					<item id="4603" min="2" max="6" chance="13.1474" /> <!-- Greater Dye of Constitution (Con+3 Str-3) -->
 				</group>
-				<group chance="50">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -832,10 +824,6 @@
 					<item id="6577" min="1" max="1" chance="0.93991" /> <!-- Blessed Scroll: Enchant Weapon (Grade S) -->
 					<item id="959" min="1" max="1" chance="5.63884" /> <!-- Scroll: Enchant Weapon (Grade S) -->
 					<item id="960" min="1" max="1" chance="56.3877" /> <!-- Scroll: Enchant Armor (Grade S) -->
-				</group>
-				<group chance="75">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>
@@ -1098,8 +1086,6 @@
 					<item id="730" min="1" max="1" chance="87.007" /> <!-- Scroll: Enchant Armor (Grade A) -->
 					<item id="729" min="1" max="1" chance="11.6009" /> <!-- Scroll: Enchant Weapon (Grade A) -->
 					<item id="6569" min="1" max="1" chance="1.39211" /> <!-- Blessed Scroll: Enchant Weapon (Grade A) -->
-				</group>
-				<group chance="50">
 				</group>
 			</drop>
 		</dropLists>
@@ -1413,10 +1399,6 @@
 					<item id="6569" min="1" max="1" chance="1.27901" /> <!-- Blessed Scroll: Enchant Weapon (Grade A) -->
 					<item id="6578" min="1" max="1" chance="4.26312" /> <!-- Blessed Scroll: Enchant Armor (Grade S) -->
 				</group>
-				<group chance="50">
-				</group>
-				<group chance="100">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -1482,8 +1464,6 @@
 					<item id="729" min="1" max="1" chance="8.00723" /> <!-- Scroll: Enchant Weapon (Grade A) -->
 					<item id="6569" min="1" max="1" chance="0.96094" /> <!-- Blessed Scroll: Enchant Weapon (Grade A) -->
 				</group>
-				<group chance="25">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -1546,10 +1526,6 @@
 					<item id="960" min="1" max="1" chance="60.0417" /> <!-- Scroll: Enchant Armor (Grade S) -->
 					<item id="959" min="1" max="1" chance="6.00421" /> <!-- Scroll: Enchant Weapon (Grade S) -->
 					<item id="6577" min="1" max="1" chance="1.00086" /> <!-- Blessed Scroll: Enchant Weapon (Grade S) -->
-				</group>
-				<group chance="50">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>
@@ -1671,8 +1647,6 @@
 					<item id="730" min="1" max="1" chance="60.28" /> <!-- Scroll: Enchant Armor (Grade A) -->
 					<item id="729" min="1" max="1" chance="8.03733" /> <!-- Scroll: Enchant Weapon (Grade A) -->
 					<item id="6569" min="1" max="1" chance="0.96455" /> <!-- Blessed Scroll: Enchant Weapon (Grade A) -->
-				</group>
-				<group chance="25">
 				</group>
 			</drop>
 		</dropLists>
@@ -2097,10 +2071,6 @@
 					<item id="730" min="1" max="3" chance="63.3615" /> <!-- Scroll: Enchant Armor (Grade A) -->
 					<item id="6578" min="1" max="1" chance="6.75869" /> <!-- Blessed Scroll: Enchant Armor (Grade S) -->
 				</group>
-				<group chance="50">
-				</group>
-				<group chance="100">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -2287,10 +2257,6 @@
 					<item id="959" min="1" max="1" chance="4.05107" /> <!-- Scroll: Enchant Weapon (Grade S) -->
 					<item id="6577" min="1" max="1" chance="0.67523" /> <!-- Blessed Scroll: Enchant Weapon (Grade S) -->
 				</group>
-				<group chance="25">
-				</group>
-				<group chance="100">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -2418,8 +2384,6 @@
 					<item id="6569" min="1" max="1" chance="2.10673" /> <!-- Blessed Scroll: Enchant Weapon (Grade A) -->
 					<item id="6570" min="1" max="1" chance="17.555" /> <!-- Blessed Scroll: Enchant Armor (Grade A) -->
 				</group>
-				<group chance="75">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -2473,8 +2437,6 @@
 					<item id="4078" min="81" max="243" chance="6.08635" /> <!-- Blue Wolf Breastplate Part -->
 					<item id="6571" min="1" max="1" chance="2.25009" /> <!-- Blessed Scroll: Enchant Weapon (Grade B) -->
 					<item id="6572" min="1" max="1" chance="21.0002" /> <!-- Blessed Scroll: Enchant Armor (Grade B) -->
-				</group>
-				<group chance="25">
 				</group>
 			</drop>
 		</dropLists>
@@ -2664,8 +2626,6 @@
 					<item id="4601" min="1" max="3" chance="37.7132" /> <!-- Greater Dye of Strength (Str+3 Con-3) -->
 					<item id="4602" min="2" max="4" chance="25.1421" /> <!-- Greater Dye of Strength (Str+3 Dex-3) -->
 					<item id="4603" min="2" max="6" chance="18.8566" /> <!-- Greater Dye of Constitution (Con+3 Str-3) -->
-				</group>
-				<group chance="25">
 				</group>
 			</drop>
 		</dropLists>
@@ -3036,10 +2996,6 @@
 				<group chance="88.9557">
 					<item id="730" min="1" max="3" chance="64.9663" /> <!-- Scroll: Enchant Armor (Grade A) -->
 					<item id="6578" min="1" max="1" chance="6.92985" /> <!-- Blessed Scroll: Enchant Armor (Grade S) -->
-				</group>
-				<group chance="75">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>
@@ -4261,10 +4217,6 @@
 				<group chance="81.2542">
 					<item id="730" min="1" max="3" chance="90.3614" /> <!-- Scroll: Enchant Armor (Grade A) -->
 					<item id="6578" min="1" max="1" chance="9.63864" /> <!-- Blessed Scroll: Enchant Armor (Grade S) -->
-				</group>
-				<group chance="100">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>

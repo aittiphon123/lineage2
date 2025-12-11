@@ -22,14 +22,13 @@ package ai.areas.FaeronVillage.AltarOfSouls;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Altar of Souls AI.
  * @author Mobius
  */
-public class AltarOfSouls extends AbstractNpcAI
+public class AltarOfSouls extends Script
 {
 	// NPCs
 	private static final int ALTAR_OF_SOULS = 33920;

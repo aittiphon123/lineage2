@@ -20,14 +20,13 @@ import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Hadel AI.
  * @author St3eT
  */
-public class Hadel extends AbstractNpcAI
+public class Hadel extends Script
 {
 	// NPC
 	private static final int HADEL = 33344;
@@ -74,6 +73,12 @@ public class Hadel extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

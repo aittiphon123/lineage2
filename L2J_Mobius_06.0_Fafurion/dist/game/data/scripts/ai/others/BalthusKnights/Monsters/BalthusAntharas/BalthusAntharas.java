@@ -29,7 +29,8 @@ import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -39,14 +40,13 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import ai.AbstractNpcAI;
 import quests.Q10555_ChargeAtAntharas.Q10555_ChargeAtAntharas;
 
 /**
  * Balthus Antharas AI
  * @author Kazumi
  */
-public final class BalthusAntharas extends AbstractNpcAI
+public final class BalthusAntharas extends Script
 {
 	// NPCs
 	private static final int BALTHUS_KNIGHT = 34372;

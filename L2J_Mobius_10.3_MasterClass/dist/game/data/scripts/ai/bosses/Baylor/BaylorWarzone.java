@@ -33,19 +33,18 @@ import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import instances.AbstractInstance;
-
 /**
  * Baylor Warzone instance zone.
  * @author St3eT, CostyKiller
  */
-public class BaylorWarzone extends AbstractInstance
+public class BaylorWarzone extends InstanceScript
 {
 	// NPCs
 	private static final int BAYLOR = 29213;

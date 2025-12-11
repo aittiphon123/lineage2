@@ -20,8 +20,8 @@
  */
 package quests.not_done;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.model.script.Quest;
 
 /**
  * @author Mobius
@@ -35,7 +35,7 @@ public class Q00911_RequestFromTheRedLibraGuildLv2 extends Quest
 		super(911);
 		addStartNpc(START_NPC);
 		addTalkId(START_NPC);
-		addCondMinLevel(Config.PLAYER_MAXIMUM_LEVEL /* 21 */, getNoQuestMsg(null));
+		addCondMinLevel(PlayerConfig.PLAYER_MAXIMUM_LEVEL /* 21 */, getNoQuestMsg(null));
 		// addCondMaxLevel(40, getNoQuestMsg(null));
 	}
 }

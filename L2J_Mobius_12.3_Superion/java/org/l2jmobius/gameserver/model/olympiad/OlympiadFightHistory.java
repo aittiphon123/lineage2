@@ -70,11 +70,11 @@ public class OlympiadFightHistory
 		{
 			if (winner == 1)
 			{
-				return 0;
+				return 1;
 			}
 			else if (winner == 2)
 			{
-				return 1;
+				return 0;
 			}
 			else
 			{
@@ -84,11 +84,11 @@ public class OlympiadFightHistory
 		
 		if (winner == 2)
 		{
-			return 0;
+			return 1;
 		}
 		else if (winner == 1)
 		{
-			return 1;
+			return 0;
 		}
 		else
 		{
@@ -158,11 +158,11 @@ public class OlympiadFightHistory
 						{
 							if (winner == 1)
 							{
-								winInfo = 0;
+								winInfo = 1;
 							}
 							else if (winner == 2)
 							{
-								winInfo = 1;
+								winInfo = 0;
 							}
 							else
 							{
@@ -173,11 +173,11 @@ public class OlympiadFightHistory
 						{
 							if (winner == 2)
 							{
-								winInfo = 0;
+								winInfo = 1;
 							}
 							else if (winner == 1)
 							{
-								winInfo = 1;
+								winInfo = 0;
 							}
 							else
 							{

@@ -29,21 +29,20 @@ import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
 import org.l2jmobius.gameserver.model.actor.instance.FriendlyNpc;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.Earthquake;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import instances.AbstractInstance;
-
 /**
  * Evil Incubator instance zone.
  * @author St3eT
  */
-public class EvilIncubator extends AbstractInstance
+public class EvilIncubator extends InstanceScript
 {
 	// NPCs
 	private static final int VANGUARD_MEMBER = 33165;

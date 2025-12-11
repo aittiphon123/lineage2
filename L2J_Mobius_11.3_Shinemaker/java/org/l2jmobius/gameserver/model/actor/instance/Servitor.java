@@ -28,10 +28,10 @@ import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.sql.CharSummonTable;
 import org.l2jmobius.gameserver.data.sql.SummonEffectTable;
 import org.l2jmobius.gameserver.data.sql.SummonEffectTable.SummonEffect;
@@ -216,6 +216,11 @@ public class Servitor extends Summon implements Runnable
 			skillLevel = 1;
 		}
 		
+		if (isServitor())
+		{
+			skillLevel = skill.getLevel();
+		}
+		
 		final Skill skillToCast = SkillData.getInstance().getSkill(skill.getId(), skillLevel);
 		if (skillToCast != null)
 		{
@@ -263,7 +268,7 @@ public class Servitor extends Summon implements Runnable
 			return;
 		}
 		
-		if (Config.RESTORE_SERVITOR_ON_RECONNECT)
+		if (PlayerConfig.RESTORE_SERVITOR_ON_RECONNECT)
 		{
 			if (isDead())
 			{
@@ -279,7 +284,7 @@ public class Servitor extends Summon implements Runnable
 	@Override
 	public void storeEffect(boolean storeEffects)
 	{
-		if (!Config.SUMMON_STORE_SKILL_COOLTIME)
+		if (!PlayerConfig.SUMMON_STORE_SKILL_COOLTIME)
 		{
 			return;
 		}
@@ -341,7 +346,7 @@ public class Servitor extends Summon implements Runnable
 						}
 						
 						// Dances and songs are not kept in retail.
-						if (skill.isDance() && !Config.ALT_STORE_DANCES)
+						if (skill.isDance() && !PlayerConfig.ALT_STORE_DANCES)
 						{
 							continue;
 						}

@@ -16,7 +16,7 @@
  */
 package handlers.skillconditionhandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.sql.CharSummonTable;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -46,7 +46,7 @@ public class CanSummonPetSkillCondition implements ISkillCondition
 		}
 		
 		boolean canSummon = true;
-		if (Config.RESTORE_PET_ON_RECONNECT && CharSummonTable.getInstance().getPets().containsKey(player.getObjectId()))
+		if (PlayerConfig.RESTORE_PET_ON_RECONNECT && CharSummonTable.getInstance().getPets().containsKey(player.getObjectId()))
 		{
 			player.sendPacket(SystemMessageId.YOU_MAY_NOT_SUMMON_MULTIPLE_PETS_AT_THE_SAME_TIME);
 			canSummon = false;

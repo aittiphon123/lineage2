@@ -20,14 +20,14 @@
  */
 package quests.Q00510_AClansPrestige;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
@@ -139,7 +139,7 @@ public class Q00510_AClansPrestige extends Quest
 		
 		// Check if the clan leader is within 1500 range of the raid boss.
 		final Player clanLeader = st.getPlayer();
-		if (npc.calculateDistance3D(clanLeader) < Config.ALT_PARTY_RANGE)
+		if (npc.calculateDistance3D(clanLeader) < PlayerConfig.ALT_PARTY_RANGE)
 		{
 			giveItems(clanLeader, CLAW, 1);
 			playSound(clanLeader, QuestSound.ITEMSOUND_QUEST_MIDDLE);

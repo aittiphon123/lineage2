@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package quests.Q10735_ASpecialPower;
 
@@ -23,18 +27,17 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
-import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 import quests.Q10734_DoOrDie.Q10734_DoOrDie;
 
 /**
  * A Special Power (10735)<br>
  * Instance part is implemented in <b>FaeronTrainingGrounds1</b> script.
- * @author Sdw
+ * @author Sdw, Trevor The Third
  */
 public class Q10735_ASpecialPower extends Quest
 {
@@ -46,13 +49,16 @@ public class Q10735_ASpecialPower extends Quest
 	private static final int FLOATO2 = 27531;
 	private static final int RATEL = 27527;
 	
-	// Reward
-	private static final ItemHolder SPIRITSHOTS_REWARD = new ItemHolder(2509, 500);
-	
 	// Misc
 	private static final int MIN_LEVEL = 4;
 	private static final int MAX_LEVEL = 20;
-	public static final int KILL_COUNT_VAR = 0;
+	public static final int KILL_COUNT = 0;
+	
+	// Rewards
+	private static final int EXP_REWARD = 3154;
+	private static final int SP_REWARD = 0;
+	private static final int NG_SPIRITSHOTS_REWARD = 2509;
+	private static final int ADENA_REWARD = 900;
 	
 	public Q10735_ASpecialPower()
 	{
@@ -111,9 +117,9 @@ public class Q10735_ASpecialPower extends Quest
 					}
 					case 7:
 					{
-						giveAdena(player, 900, true);
-						rewardItems(player, SPIRITSHOTS_REWARD);
-						addExpAndSp(player, 3154, 0);
+						giveAdena(player, ADENA_REWARD, true);
+						giveItems(player, NG_SPIRITSHOTS_REWARD, 500);
+						addExpAndSp(player, EXP_REWARD, SP_REWARD);
 						qs.exitQuest(false, true);
 						htmltext = "33942-05.html";
 						break;
@@ -160,7 +166,7 @@ public class Q10735_ASpecialPower extends Quest
 			
 			if (npcId != -1)
 			{
-				holder.add(new NpcLogListHolder(npcId, false, qs.getMemoStateEx(KILL_COUNT_VAR)));
+				holder.add(new NpcLogListHolder(npcId, false, qs.getMemoStateEx(KILL_COUNT)));
 			}
 		}
 		

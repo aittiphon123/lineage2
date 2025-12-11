@@ -18,14 +18,13 @@ package ai.areas.TownOfGludio.Acateo;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Acateo AI.
  * @author Gladicek
  */
-public class Acateo extends AbstractNpcAI
+public class Acateo extends Script
 {
 	// NPC
 	private static final int ACATEO = 33905;

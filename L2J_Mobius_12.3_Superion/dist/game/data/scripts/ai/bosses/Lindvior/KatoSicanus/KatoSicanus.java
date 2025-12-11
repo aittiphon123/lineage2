@@ -22,22 +22,22 @@ package ai.bosses.Lindvior.KatoSicanus;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
-
-import ai.AbstractNpcAI;
 
 /**
  * Kato Sicanus Teleporter AI
  * @author Gigi
  * @date 2017-07-13 - [22:17:16]
  */
-public class KatoSicanus extends AbstractNpcAI
+public class KatoSicanus extends Script
 {
 	// NPCs
 	private static final int KATO_SICANUS = 33881;
@@ -88,7 +88,7 @@ public class KatoSicanus extends AbstractNpcAI
 				final boolean isPartyLeader = (isInCC) ? party.getCommandChannel().isLeader(player) : party.isLeader(player);
 				for (Player member : members)
 				{
-					if (!member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+					if (!member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 					{
 						return "33881-4.html";
 					}
@@ -99,23 +99,23 @@ public class KatoSicanus extends AbstractNpcAI
 					return "33881-3.html";
 				}
 				
-				if ((members.size() < Config.LINDVIOR_MIN_PLAYERS) || (members.size() > Config.LINDVIOR_MAX_PLAYERS))
+				if ((members.size() < GrandBossConfig.LINDVIOR_MIN_PLAYERS) || (members.size() > GrandBossConfig.LINDVIOR_MAX_PLAYERS))
 				{
 					final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 					packet.setHtml(getHtm(player, "33881-4.html"));
-					packet.replace("%min%", Integer.toString(Config.LINDVIOR_MIN_PLAYERS));
-					packet.replace("%max%", Integer.toString(Config.LINDVIOR_MAX_PLAYERS));
+					packet.replace("%min%", Integer.toString(GrandBossConfig.LINDVIOR_MIN_PLAYERS));
+					packet.replace("%max%", Integer.toString(GrandBossConfig.LINDVIOR_MAX_PLAYERS));
 					player.sendPacket(packet);
 					return null;
 				}
 				
 				for (Player member : members)
 				{
-					if (member.getLevel() < Config.LINDVIOR_MIN_PLAYER_LEVEL)
+					if (member.getLevel() < GrandBossConfig.LINDVIOR_MIN_PLAYER_LEVEL)
 					{
 						final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 						packet.setHtml(getHtm(player, "33881-5.html"));
-						packet.replace("%minLevel%", Integer.toString(Config.LINDVIOR_MIN_PLAYER_LEVEL));
+						packet.replace("%minLevel%", Integer.toString(GrandBossConfig.LINDVIOR_MIN_PLAYER_LEVEL));
 						player.sendPacket(packet);
 						return null;
 					}
@@ -123,7 +123,7 @@ public class KatoSicanus extends AbstractNpcAI
 				
 				for (Player member : members)
 				{
-					if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+					if (member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 					{
 						member.teleToLocation(LINDVIOR_LOCATION, true);
 						addSpawn(INVISIBLE, 46707, -28586, -1400, 0, false, 0, false);

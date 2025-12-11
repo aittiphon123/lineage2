@@ -35,11 +35,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.communitybbs.BB.Forum;
 import org.l2jmobius.gameserver.communitybbs.Manager.ForumsBBSManager;
+import org.l2jmobius.gameserver.config.FeatureConfig;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.sql.CrestTable;
@@ -395,7 +397,7 @@ public class Clan
 			return;
 		}
 		
-		if (Config.REMOVE_CASTLE_CIRCLETS)
+		if (PlayerConfig.REMOVE_CASTLE_CIRCLETS)
 		{
 			CastleManager.getInstance().removeCirclet(exMember, getCastleId());
 		}
@@ -411,7 +413,7 @@ public class Clan
 			if (player.isClanLeader())
 			{
 				SiegeManager.getInstance().removeSiegeSkills(player);
-				player.setClanCreateExpiryTime(System.currentTimeMillis() + TimeUnit.DAYS.toMillis(Config.ALT_CLAN_CREATE_DAYS));
+				player.setClanCreateExpiryTime(System.currentTimeMillis() + TimeUnit.DAYS.toMillis(PlayerConfig.ALT_CLAN_CREATE_DAYS));
 			}
 			
 			player.sendSkillList();
@@ -431,7 +433,7 @@ public class Clan
 		}
 		else
 		{
-			removeMemberInDatabase(exMember.getObjectId(), clanJoinExpiryTime, getLeaderId() == objectId ? System.currentTimeMillis() + TimeUnit.DAYS.toMillis(Config.ALT_CLAN_CREATE_DAYS) : 0);
+			removeMemberInDatabase(exMember.getObjectId(), clanJoinExpiryTime, getLeaderId() == objectId ? System.currentTimeMillis() + TimeUnit.DAYS.toMillis(PlayerConfig.ALT_CLAN_CREATE_DAYS) : 0);
 		}
 		
 		// Notify to scripts
@@ -659,7 +661,7 @@ public class Clan
 	private void setLevel(int level)
 	{
 		_level = level;
-		if ((_level >= 2) && (_forum == null) && Config.ENABLE_COMMUNITY_BOARD)
+		if ((_level >= 2) && (_forum == null) && GeneralConfig.ENABLE_COMMUNITY_BOARD)
 		{
 			final Forum forum = ForumsBBSManager.getInstance().getForumByName("ClanRoot");
 			if (forum != null)
@@ -819,7 +821,7 @@ public class Clan
 	 */
 	public void increaseBloodOathCount()
 	{
-		_bloodOathCount += Config.FS_BLOOD_OATH_COUNT;
+		_bloodOathCount += FeatureConfig.FS_BLOOD_OATH_COUNT;
 		updateBloodOathCountInDB();
 	}
 	
@@ -976,7 +978,7 @@ public class Clan
 					}
 					
 					setCharPenaltyExpiryTime(clanData.getLong("char_penalty_expiry_time"));
-					if ((_charPenaltyExpiryTime + (Config.ALT_CLAN_JOIN_DAYS * 86400000)) < System.currentTimeMillis()) // 24*60*60*1000 = 86400000
+					if ((_charPenaltyExpiryTime + (PlayerConfig.ALT_CLAN_JOIN_DAYS * 86400000)) < System.currentTimeMillis()) // 24*60*60*1000 = 86400000
 					{
 						setCharPenaltyExpiryTime(0);
 					}
@@ -1613,7 +1615,7 @@ public class Clan
 			return false;
 		}
 		
-		if (ClanTable.getInstance().getClanAllies(player.getAllyId()).size() >= Config.ALT_MAX_NUM_OF_CLANS_IN_ALLY)
+		if (ClanTable.getInstance().getClanAllies(player.getAllyId()).size() >= PlayerConfig.ALT_MAX_NUM_OF_CLANS_IN_ALLY)
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_LIMIT);
 			return false;
@@ -1761,7 +1763,7 @@ public class Clan
 		setAllyId(0);
 		setAllyName(null);
 		changeAllyCrest(0, false);
-		setAllyPenaltyExpiryTime(currentTime + (Config.ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED * 86400000), PENALTY_TYPE_DISSOLVE_ALLY); // 24*60*60*1000 = 86400000
+		setAllyPenaltyExpiryTime(currentTime + (PlayerConfig.ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED * 86400000), PENALTY_TYPE_DISSOLVE_ALLY); // 24*60*60*1000 = 86400000
 		updateClanInDB();
 	}
 	

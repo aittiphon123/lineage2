@@ -18,13 +18,13 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.PetDataTable;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.PetLevelData;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
 import org.l2jmobius.gameserver.model.stats.IStatFunction;
 import org.l2jmobius.gameserver.model.stats.Stat;
@@ -51,7 +51,7 @@ public class SpeedFinalizer implements IStatFunction
 		if (creature.isPlayer())
 		{
 			// Enchanted feet bonus
-			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_FEET);
+			baseValue += calcEnchantBodyPart(creature, BodyPart.FEET);
 			
 			// Match retail speed value.
 			// Verified on 4game EU server, protocol 286.
@@ -70,11 +70,11 @@ public class SpeedFinalizer implements IStatFunction
 		final double maxSpeed;
 		if (creature.isPlayer())
 		{
-			maxSpeed = creature.isGM() ? 10000 : Config.MAX_RUN_SPEED + creature.getStat().getValue(Stat.SPEED_LIMIT, 0);
+			maxSpeed = creature.isGM() ? 10000 : PlayerConfig.MAX_RUN_SPEED + creature.getStat().getValue(Stat.SPEED_LIMIT, 0);
 		}
 		else if (creature.isSummon())
 		{
-			maxSpeed = Config.MAX_RUN_SPEED_SUMMON + creature.getStat().getValue(Stat.SPEED_LIMIT, 0);
+			maxSpeed = PlayerConfig.MAX_RUN_SPEED_SUMMON + creature.getStat().getValue(Stat.SPEED_LIMIT, 0);
 		}
 		else
 		{
@@ -122,7 +122,7 @@ public class SpeedFinalizer implements IStatFunction
 				}
 			}
 			
-			baseValue += Config.RUN_SPD_BOOST;
+			baseValue += PlayerConfig.RUN_SPD_BOOST;
 		}
 		
 		if (creature.isPlayable() && creature.isInsideZone(ZoneId.SWAMP))

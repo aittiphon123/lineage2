@@ -31,10 +31,11 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.commons.config.InterfaceConfig;
 import org.l2jmobius.gameserver.ai.Action;
 import org.l2jmobius.gameserver.ai.CreatureAI;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.custom.FactionSystemConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -135,7 +136,7 @@ public class World
 		}
 		
 		// When GUI is enabled World is called early. So we need to skip this log.
-		if (!Config.ENABLE_GUI)
+		if (!InterfaceConfig.ENABLE_GUI)
 		{
 			LOGGER.info(getClass().getSimpleName() + ": (" + REGIONS_X + " by " + REGIONS_Y + ") World Region Grid set up.");
 		}
@@ -175,7 +176,7 @@ public class World
 				Disconnection.of(newPlayer).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 				LOGGER.warning(getClass().getSimpleName() + ": Duplicate character!? Disconnected both characters (" + newPlayer.getName() + ")");
 			}
-			else if (Config.FACTION_SYSTEM_ENABLED)
+			else if (FactionSystemConfig.FACTION_SYSTEM_ENABLED)
 			{
 				addFactionPlayerToWorld(newPlayer);
 			}
@@ -206,7 +207,7 @@ public class World
 			
 			_allPlayers.remove(object.getObjectId());
 			
-			if (Config.FACTION_SYSTEM_ENABLED)
+			if (FactionSystemConfig.FACTION_SYSTEM_ENABLED)
 			{
 				if (player.isGood())
 				{

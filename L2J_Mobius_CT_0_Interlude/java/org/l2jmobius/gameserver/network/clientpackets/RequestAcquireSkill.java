@@ -16,7 +16,8 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
@@ -72,7 +73,7 @@ public class RequestAcquireSkill extends ClientPacket
 		
 		if ((_level < 1) || (_level > 1000) || (_id < 1))
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, "Wrong Packet Data in Aquired Skill", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, "Wrong Packet Data in Aquired Skill", GeneralConfig.DEFAULT_PUNISH);
 			PacketLogger.warning("Recived Wrong Packet Data in Aquired Skill - id: " + _id + " level: " + _level + " for " + player);
 			return;
 		}
@@ -125,7 +126,7 @@ public class RequestAcquireSkill extends ClientPacket
 				final int repCost = s.getLevelUpSp();
 				if (clan.getReputationScore() >= repCost)
 				{
-					if (Config.LIFE_CRYSTAL_NEEDED)
+					if (PlayerConfig.LIFE_CRYSTAL_NEEDED)
 					{
 						for (ItemHolder item : s.getRequiredItems())
 						{
@@ -202,7 +203,7 @@ public class RequestAcquireSkill extends ClientPacket
 				return false;
 			}
 			
-			if (!Config.DIVINE_SP_BOOK_NEEDED && (_id == CommonSkill.DIVINE_INSPIRATION.getId()))
+			if (!PlayerConfig.DIVINE_SP_BOOK_NEEDED && (_id == CommonSkill.DIVINE_INSPIRATION.getId()))
 			{
 				return true;
 			}

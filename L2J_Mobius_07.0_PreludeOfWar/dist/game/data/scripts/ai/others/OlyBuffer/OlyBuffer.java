@@ -20,19 +20,18 @@
  */
 package ai.others.OlyBuffer;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import ai.AbstractNpcAI;
 
 /**
  * Olympiad Buffer AI.
  * @author St3eT, Mobius
  */
-public class OlyBuffer extends AbstractNpcAI
+public class OlyBuffer extends Script
 {
 	// NPC
 	private static final int OLYMPIAD_BUFFER = 36402;
@@ -51,7 +50,7 @@ public class OlyBuffer extends AbstractNpcAI
 	
 	private OlyBuffer()
 	{
-		if (Config.OLYMPIAD_ENABLED)
+		if (OlympiadConfig.OLYMPIAD_ENABLED)
 		{
 			addStartNpc(OLYMPIAD_BUFFER);
 			addFirstTalkId(OLYMPIAD_BUFFER);

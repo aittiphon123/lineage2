@@ -18,7 +18,7 @@ package handlers.itemhandlers;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.handler.IItemHandler;
 import org.l2jmobius.gameserver.managers.CastleManorManager;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -41,7 +41,7 @@ public class Seed implements IItemHandler
 	@Override
 	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
-		if (!Config.ALLOW_MANOR)
+		if (!GeneralConfig.ALLOW_MANOR)
 		{
 			return false;
 		}

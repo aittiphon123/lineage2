@@ -23,18 +23,17 @@ import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.enums.AcquireSkillType;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExAcquirableSkillListByClass;
 import org.l2jmobius.gameserver.network.serverpackets.ExTutorialShowId;
 
-import ai.AbstractNpcAI;
-
 /**
  * Alchemist Manager AI.
  * @author Sdw
  */
-public class AlchemistManager extends AbstractNpcAI
+public class AlchemistManager extends Script
 {
 	// NPCs
 	private static final int[] ALCHEMISTS =
@@ -91,6 +90,12 @@ public class AlchemistManager extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

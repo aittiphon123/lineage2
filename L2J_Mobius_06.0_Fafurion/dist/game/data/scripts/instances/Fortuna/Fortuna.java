@@ -25,17 +25,16 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
-
-import instances.AbstractInstance;
 
 /**
  * @author Mobius, Stayway
  * @URL https://l2wiki.com/Fortuna
  * @VIDEO https://www.youtube.com/watch?v=OeDVPu-STY4
  */
-public class Fortuna extends AbstractInstance
+public class Fortuna extends InstanceScript
 {
 	// NPCs
 	private static final int ARCAN_IZAEL = 32894;

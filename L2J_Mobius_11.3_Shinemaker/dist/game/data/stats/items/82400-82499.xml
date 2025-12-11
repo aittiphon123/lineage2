@@ -27,7 +27,6 @@
 	<item id="82401" name="Pure Crystal" type="EtcItem">
 		<!-- A crystal left after soul purification and disappearance. It's priceless. -->
 		<set name="icon" val="icon.cursed_prison_soul" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -38,7 +37,6 @@
 	<item id="82402" name="Moonlight Petal" type="EtcItem">
 		<!-- A petal of a mysterious flower grown under moonlight in earth covered with sweet blood. It slightly smells of blood. -->
 		<set name="icon" val="icon.cursed_prison_petal" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -60,7 +58,6 @@
 	<item id="82404" name="Vitality Maintaining Rune" additionalName="1-day" type="EtcItem">
 		<!-- When in inventory, sustains the Vitality level. Available for 7 d. -->
 		<set name="icon" val="icon.ev_charge_run" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
@@ -310,7 +307,6 @@
 	<item id="82414" name="Beora's Energy Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, Vitality bonus +30%. The effect doesn't work on boss monsters. -->
 		<set name="icon" val="icon.bm_package_vitality_rune_30d" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -475,7 +471,6 @@
 	<item id="82421" name="Protection of Light" type="EtcItem">
 		<!-- Can be obtained while crafting Light Dragon's Cloak. Collect several of these to have the guaranteed success for Sealed Light Dragon's Cloak craft. -->
 		<set name="icon" val="icon.bm_star_agathion_mineral" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -501,7 +496,6 @@
 	<item id="82423" name="Dry Ice" additionalName="Event" type="EtcItem">
 		<!-- Cooling dry ice. <How to use>. Required for compounding Freya's Ice Doll Lv. 1-9. In case of failure, Dry Ice disappears, but Freya's Ice Doll remains and its level stays the same. -->
 		<set name="icon" val="icon.ev_dryice" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -512,7 +506,6 @@
 	<item id="82424" name="Freya's Ice Doll Lv. 1" additionalName="Event" type="EtcItem">
 		<!-- An ice doll imbued with Freya's cool energy. Can be upgraded through compounding and then exchanged for a reward. <Upgrade>. Compound with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -523,7 +516,6 @@
 	<item id="82425" name="Freya's Ice Doll Lv. 2" additionalName="Event" type="EtcItem">
 		<!-- An ice doll imbued with Freya's cool energy. Can be exchanged for any reward through the event craft. <Upgrade>. Compound with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -534,7 +526,6 @@
 	<item id="82426" name="Freya's Ice Doll Lv. 3" additionalName="Event" type="EtcItem">
 		<!-- An ice doll imbued with Freya's cool energy. Can be exchanged for any reward through the event craft. <Upgrade>. Compound with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -545,7 +536,6 @@
 	<item id="82427" name="Freya's Ice Doll Lv. 4" additionalName="Event" type="EtcItem">
 		<!-- An ice doll imbued with Freya's cool energy. Can be exchanged for any reward through the event craft. <Upgrade>. Compound with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -556,7 +546,6 @@
 	<item id="82428" name="Freya's Ice Doll Lv. 5" additionalName="Event" type="EtcItem">
 		<!-- An ice doll imbued with Freya's cool energy. Can be exchanged for any reward through the event craft. <Upgrade>. Compound with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -567,7 +556,6 @@
 	<item id="82429" name="Freya's Ice Doll Lv. 6" additionalName="Event" type="EtcItem">
 		<!-- An ice doll imbued with Freya's cool energy. Can be exchanged for any reward through the event craft. <Upgrade>. Compound with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_low" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -578,7 +566,6 @@
 	<item id="82430" name="Freya's Ice Doll Lv. 7" additionalName="Event" type="EtcItem">
 		<!-- A glowing ice doll imbued with Freya's cool energy. Can be exchanged for any reward through the event craft. <Upgrade>. Compound with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_high" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -589,7 +576,6 @@
 	<item id="82431" name="Freya's Ice Doll Lv. 8" additionalName="Event" type="EtcItem">
 		<!-- A glowing ice doll imbued with Freya's cool energy. Can be exchanged for any reward through the event craft. <Upgrade>. Compound with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_high" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -600,7 +586,6 @@
 	<item id="82432" name="Freya's Ice Doll Lv. 9" additionalName="Event" type="EtcItem">
 		<!-- A glowing ice doll imbued with Freya's cool energy. Can be exchanged for any reward through the event craft. <Upgrade>. Compound with Dry Ice. -->
 		<set name="icon" val="icon.ev_icedoll_high" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -611,7 +596,6 @@
 	<item id="82433" name="Freya's Ice Doll Lv. 10" additionalName="Event" type="EtcItem">
 		<!-- A glowing ice doll imbued with Freya's cool energy. Can be exchanged for any reward through the event craft. -->
 		<set name="icon" val="icon.ev_icedoll_high" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -842,7 +826,6 @@
 	<item id="82445" name="Fresh Watermelon Flower" additionalName="Event" type="EtcItem">
 		<!-- A flower gently picked from a watermelon. Take it to Doo Doo Doo in any town to obtain an Appearance Stone. -->
 		<set name="icon" val="icon.etc_flower_i02" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1259,7 +1242,6 @@
 	<item id="82469" name="Superior Red Cat's Eye Shard" additionalName="Event" type="EtcItem">
 		<!-- According to Moon Child, it is a shard of Superior Red Cat's Eye. Collect 15 of these to use in the limited craft on weekends. <Weekend limited craft>. Superior Red Cat's Eye Lv. 5 can be crafted every Saturday and Sunday from 22:00 till 23:00. The crafting is limited per server. -->
 		<set name="icon" val="icon.etc_broken_crystal_red_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1270,7 +1252,6 @@
 	<item id="82470" name="Enhanced Rune Stone Fragment" additionalName="Event" type="EtcItem">
 		<!-- According to Moon Child, it is a fragment of Enhanced Rune Stone. Collect 12 of these to use in the limited craft on weekends. <Weekend limited craft>. Enhanced Rune Stone can be crafted every Saturday and Sunday from 22:00 till 23:00. The crafting is limited per server. -->
 		<set name="icon" val="icon.etc_broken_crystal_gold_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1281,7 +1262,6 @@
 	<item id="82471" name="Weapon Enhancement Stone Fragment" additionalName="Event" type="EtcItem">
 		<!-- According to Moon Child, it is a fragment of Weapon Upgrade Stone. Collect 10 of these to use in the limited craft on weekends. <Weekend limited craft>. Weapon Upgrade Stone can be crafted every Saturday and Sunday from 22:00 till 23:00. The crafting is limited per server. -->
 		<set name="icon" val="icon.etc_broken_crystal_silver_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1292,7 +1272,6 @@
 	<item id="82472" name="Vitality Sustaining Rune" additionalName="14-day" type="EtcItem">
 		<!-- When in inventory, sustains the Vitality level. Available for 14 d. -->
 		<set name="icon" val="icon.ev_charge_run" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
@@ -1518,7 +1497,6 @@
 	<item id="82481" name="Summer Sorceress' Teardrop" additionalName="Ore Lv. 1" type="EtcItem">
 		<!-- A shard of Summer Sorceress' crystallized teardrop. Legends say that its depths conceal Jinia's flower. <Cleansing>. Can be cleansed through compounding with High Priest's Holy Water or Summer Labyrinth' Cool Energy. -->
 		<set name="icon" val="icon.freya_fairy_tear" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1529,7 +1507,6 @@
 	<item id="82482" name="Summer Sorceress' Teardrop" additionalName="Ore Lv. 2" type="EtcItem">
 		<!-- A shard of Summer Sorceress' crystallized teardrop. Legends say that its depths conceal Jinia's flower. <Cleansing>. Can be cleansed through compounding with High Priest's Holy Water or Summer Labyrinth' Cool Energy. -->
 		<set name="icon" val="icon.freya_fairy_tear" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1540,7 +1517,6 @@
 	<item id="82483" name="Summer Sorceress' Teardrop" additionalName="Ore Lv. 3" type="EtcItem">
 		<!-- A shard of Summer Sorceress' crystallized teardrop. Legends say that its depths conceal Jinia's flower. <Cleansing>. Can be cleansed through compounding with High Priest's Holy Water or Summer Labyrinth' Cool Energy. -->
 		<set name="icon" val="icon.freya_fairy_tear" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1551,7 +1527,6 @@
 	<item id="82484" name="Summer Sorceress' Crystal" additionalName="Crystal Lv. 1" type="EtcItem">
 		<!-- A crystal obtained through cleansing of Summer Sorceress' Teardrops. You think you can see Jinia's flower in its depths. <Cleansing>. Can be cleansed through compounding with High Priest's Holy Water or Summer Labyrinth' Cool Energy. -->
 		<set name="icon" val="icon.freya_fairy_crystal" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1562,7 +1537,6 @@
 	<item id="82485" name="Summer Sorceress' Crystal" additionalName="Crystal Lv. 2" type="EtcItem">
 		<!-- A crystal obtained through cleansing of Summer Sorceress' Teardrops. You think you can see Jinia's flower in its depths. <Cleansing>. Can be cleansed through compounding with High Priest's Holy Water or Summer Labyrinth' Cool Energy. -->
 		<set name="icon" val="icon.freya_fairy_crystal" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1573,7 +1547,6 @@
 	<item id="82486" name="Summer Sorceress' Crystal" additionalName="Crystal Lv. 3" type="EtcItem">
 		<!-- A crystal obtained through cleansing of Summer Sorceress' Teardrops. You think you can see Jinia's flower in its depths. <Cleansing>. Can be cleansed through compounding with High Priest's Holy Water or Summer Labyrinth' Cool Energy. -->
 		<set name="icon" val="icon.freya_fairy_crystal" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1584,7 +1557,6 @@
 	<item id="82487" name="Frosty Ice Flower" additionalName="Icebound" type="EtcItem">
 		<!-- A frosty ice flower from the crystal. It will wither right away if not treated with care. <Cleansing>. Can be cleansed through compounding with High Priest's Holy Water, Summer Labyrinth's Warm Energy or Summer Labyrinth's Temperate Energy. -->
 		<set name="icon" val="icon.freya_ice_flower" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1595,7 +1567,6 @@
 	<item id="82488" name="Frosty Ice Flower" additionalName="Frozen" type="EtcItem">
 		<!-- A frosty ice flower from the crystal. It will wither right away if not treated with care. <Cleansing>. Can be cleansed through compounding with High Priest's Holy Water, Summer Labyrinth's Warm Energy or Summer Labyrinth's Temperate Energy. -->
 		<set name="icon" val="icon.freya_ice_flower" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1606,7 +1577,6 @@
 	<item id="82489" name="Frosty Ice Flower" additionalName="Blooming" type="EtcItem">
 		<!-- A frosty ice flower from the crystal. It will wither right away if not treated with care. <Cleansing>. Can be cleansed through compounding with High Priest's Holy Water, Summer Labyrinth's Warm Energy or Summer Labyrinth's Temperate Energy. -->
 		<set name="icon" val="icon.freya_ice_flower" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1617,7 +1587,6 @@
 	<item id="82490" name="Jinia's Flower" type="EtcItem">
 		<!-- A rare flower. Nobody has seen it since the time Freya created the Frozen Labyrinth. Kanna's knights believed that it would appear again when the Labyrinth restored its former appearance. That was why they gave a new name to their order - Jinia Guild. <Acquisition>. Cleansing of Summer Sorceress' Teardrops. -->
 		<set name="icon" val="icon.freya_flower" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1628,7 +1597,6 @@
 	<item id="82491" name="Summer Labyrinth' Warm Energy" type="EtcItem">
 		<!-- Once upon a time this energy made Jinia's Flower bloom. Many believe that the flower can appear again if the Summer Labyrinth becomes warm again. <How to use>. Can be compounded with Frosty Ice Flower. Success rate: 50% (fixed). -->
 		<set name="icon" val="icon.freya_heart_energy" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1637,7 +1605,6 @@
 	<item id="82492" name="Summer Labyrinth' Cool Energy" type="EtcItem">
 		<!-- Once upon a time this energy made Jinia's Flower bloom. Many believe that the flower can appear again if the Summer Labyrinth becomes cool again. <How to use>. Can be compounded with Summer Sorceress' Teardrop, Summer Sorceress' Crystal and Frosty Ice Flower. In case of failure, the enhancement level remains the same, only Summer Labyrinth' Cool Energy is lost. -->
 		<set name="icon" val="icon.freya_mild_energy" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1646,7 +1613,6 @@
 	<item id="82493" name="Freya's Cloak" type="EtcItem">
 		<!-- A frost-covered cloak of Ice Queen Freya. A long time ago Elder Sayan's crystal ball shattered. Its power was released and turned Princess Maliss into the Ice Queen. Since then she has been calling herself Freya, the Ice Queen. -->
 		<set name="icon" val="icon.freya_cape" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1655,7 +1621,6 @@
 	<item id="82494" name="Freya's Necklace" type="EtcItem">
 		<!-- A frost-covered necklace of Ice Queen Freya. Kanna's knights swore to turn the Ice Queen back into Maliss and renamed themselves into Jinia Guild. After that, throughout the ages every guild leader changed their name to Jinia. -->
 		<set name="icon" val="icon.freya_necklace" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1664,7 +1629,6 @@
 	<item id="82495" name="Freya's Staff" type="EtcItem">
 		<!-- A frost-covered staff of Ice Queen Freya. The Ice Queen's real name is Maliss. She is from the Elmoreden's imperial dynasty. Even as a child, the princess showed strong magic potential. -->
 		<set name="icon" val="icon.freya_stick" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1673,7 +1637,6 @@
 	<item id="82496" name="Freya's Crown" type="EtcItem">
 		<!-- A frost-covered crown of Ice Queen Freya. After being exiled from the Ivory Tower, Maliss settled in the Summer Labyrinth with her loyal Kanna's knights. -->
 		<set name="icon" val="icon.freya_crown" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1713,7 +1676,6 @@
 	<item id="82499" name="Personal Conquest Points" type="EtcItem">
 		<!-- Points granted for actions in the Conquest world: monster hunting, PvP, missions and the Sacred Fire summoning. The number of personal Conquest points define your place in the corresponding rankings. Keep in mind that the personal ranking reward is given only if you have at least 1000 personal Conquest points. -->
 		<set name="icon" val="icon.dethrone_personal_point" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />

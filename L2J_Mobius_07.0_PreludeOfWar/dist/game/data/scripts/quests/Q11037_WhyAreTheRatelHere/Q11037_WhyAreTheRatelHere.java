@@ -23,16 +23,16 @@ package quests.Q11037_WhyAreTheRatelHere;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
@@ -114,7 +114,7 @@ public class Q11037_WhyAreTheRatelHere extends Quest
 					htmltext = event;
 					
 					// Initialize next quest.
-					final Quest nextQuest = QuestManager.getInstance().getQuest(Q11038_GrowlersTurnedViolent.class.getSimpleName());
+					final Quest nextQuest = ScriptManager.getInstance().getScript(Q11038_GrowlersTurnedViolent.class.getSimpleName());
 					if (nextQuest != null)
 					{
 						nextQuest.newQuestState(player);

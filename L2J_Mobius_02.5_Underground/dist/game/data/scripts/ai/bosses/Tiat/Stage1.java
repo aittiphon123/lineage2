@@ -44,14 +44,13 @@ import org.l2jmobius.gameserver.model.actor.enums.creature.TrapAction;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.actor.instance.Trap;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import instances.AbstractInstance;
 
 /**
  * Seed of Destruction instance zone.<br>
@@ -64,7 +63,7 @@ import instances.AbstractInstance;
  * Please maintain consistency between the Seed scripts.
  * @author Gigiikun
  */
-public class Stage1 extends AbstractInstance implements IXmlReader
+public class Stage1 extends InstanceScript implements IXmlReader
 {
 	private static final Logger LOGGER = Logger.getLogger(Stage1.class.getName());
 	

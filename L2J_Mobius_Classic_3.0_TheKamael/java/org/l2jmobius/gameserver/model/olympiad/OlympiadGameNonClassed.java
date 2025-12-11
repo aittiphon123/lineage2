@@ -18,7 +18,7 @@ package org.l2jmobius.gameserver.model.olympiad;
 
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 
 /**
  * @author DS
@@ -39,7 +39,7 @@ public class OlympiadGameNonClassed extends OlympiadGameNormal
 	@Override
 	protected int getDivider()
 	{
-		return Config.OLYMPIAD_DIVIDER_NON_CLASSED;
+		return OlympiadConfig.OLYMPIAD_DIVIDER_NON_CLASSED;
 	}
 	
 	protected static OlympiadGameNonClassed createGame(int id, Set<Integer> list)

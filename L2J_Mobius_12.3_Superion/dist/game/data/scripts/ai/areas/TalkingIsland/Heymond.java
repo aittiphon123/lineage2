@@ -18,16 +18,15 @@ package ai.areas.TalkingIsland;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Heymond AI.
  * @author St3eT
  */
-public class Heymond extends AbstractNpcAI
+public class Heymond extends Script
 {
 	// NPCs
 	private static final int BANETTE = 33114;

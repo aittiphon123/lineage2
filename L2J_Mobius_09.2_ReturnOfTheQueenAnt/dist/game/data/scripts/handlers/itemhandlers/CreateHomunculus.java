@@ -23,8 +23,8 @@ package handlers.itemhandlers;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.HomunculusCreationData;
 import org.l2jmobius.gameserver.data.xml.HomunculusData;
 import org.l2jmobius.gameserver.handler.IItemHandler;
@@ -57,7 +57,7 @@ public class CreateHomunculus implements IItemHandler
 		
 		final Player player = playable.asPlayer();
 		final int size = player.getHomunculusList().size();
-		if (size >= Config.MAX_HOMUNCULUS_COUNT)
+		if (size >= PlayerConfig.MAX_HOMUNCULUS_COUNT)
 		{
 			player.sendMessage("There's no available slot for Homunculus!");
 			return false;

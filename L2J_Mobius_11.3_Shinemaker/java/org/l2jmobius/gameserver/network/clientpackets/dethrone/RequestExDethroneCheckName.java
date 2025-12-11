@@ -24,9 +24,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.util.StringUtil;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.PacketLogger;
@@ -116,9 +116,9 @@ public class RequestExDethroneCheckName extends ClientPacket
 	
 	private boolean checkRestrictedNames(String name)
 	{
-		if (Config.FORBIDDEN_NAMES.length > 0)
+		if (PlayerConfig.FORBIDDEN_NAMES.length > 0)
 		{
-			for (String forbidden : Config.FORBIDDEN_NAMES)
+			for (String forbidden : PlayerConfig.FORBIDDEN_NAMES)
 			{
 				if (name.toLowerCase().contains(forbidden.toLowerCase()))
 				{

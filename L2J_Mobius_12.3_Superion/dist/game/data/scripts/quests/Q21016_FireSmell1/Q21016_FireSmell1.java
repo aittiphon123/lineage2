@@ -22,10 +22,10 @@ package quests.Q21016_FireSmell1;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestDialogType;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.QuestCondType;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestDialogType;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.QuestCondType;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestDialog;
 
 import quests.Q21017_FireSmell2.Q21017_FireSmell2;

@@ -27,8 +27,8 @@ import java.util.logging.Logger;
 
 import org.w3c.dom.Document;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.HuntPassConfig;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 
@@ -52,7 +52,7 @@ public class HuntPassData implements IXmlReader
 	@Override
 	public void load()
 	{
-		if (Config.ENABLE_HUNT_PASS)
+		if (HuntPassConfig.ENABLE_HUNT_PASS)
 		{
 			_rewards.clear();
 			parseDatapackFile("data/HuntPass.xml");

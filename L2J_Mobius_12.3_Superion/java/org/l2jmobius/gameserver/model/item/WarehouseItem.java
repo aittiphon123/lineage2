@@ -26,6 +26,7 @@ import java.util.Objects;
 import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
 import org.l2jmobius.gameserver.model.ensoul.EnsoulOption;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
 import org.l2jmobius.gameserver.model.item.type.ItemType;
@@ -175,7 +176,7 @@ public class WarehouseItem
 	/**
 	 * @return the part of body used with this item.
 	 */
-	public long getBodyPart()
+	public BodyPart getBodyPart()
 	{
 		return _item.getBodyPart();
 	}
@@ -201,7 +202,7 @@ public class WarehouseItem
 	 */
 	public boolean isWeapon()
 	{
-		return (_item instanceof Weapon);
+		return _item instanceof Weapon;
 	}
 	
 	/**
@@ -209,7 +210,7 @@ public class WarehouseItem
 	 */
 	public boolean isArmor()
 	{
-		return (_item instanceof Armor);
+		return _item instanceof Armor;
 	}
 	
 	/**
@@ -217,7 +218,7 @@ public class WarehouseItem
 	 */
 	public boolean isEtcItem()
 	{
-		return (_item instanceof EtcItem);
+		return _item instanceof EtcItem;
 	}
 	
 	/**

@@ -35,6 +35,7 @@ import org.l2jmobius.gameserver.model.actor.instance.FriendlyNpc;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
@@ -49,14 +50,12 @@ import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
-import instances.AbstractInstance;
-
 /**
  * Mystic Tavern Tauti Instance
  * @VIDEO https://www.youtube.com/watch?v=uPXWZ1ZCtFk
  * @author Gigi, Mobius
  */
-public class StoryOfTauti extends AbstractInstance
+public class StoryOfTauti extends InstanceScript
 {
 	// NPC
 	private static final int DETON = 34170;
@@ -391,7 +390,7 @@ public class StoryOfTauti extends AbstractInstance
 				// final QuestState qs = member.getQuestState(Q00833_DevilsTreasureTauti.class.getSimpleName());
 				// if ((qs != null) && qs.isCond(6))
 				// {
-				// final Quest qs833 = QuestManager.getInstance().getQuest(Q00833_DevilsTreasureTauti.class.getSimpleName());
+				// final Quest qs833 = ScriptManager.getInstance().getScript(Q00833_DevilsTreasureTauti.class.getSimpleName());
 				// if (qs833 != null)
 				// {
 				// qs.setCond(7, true);
@@ -634,7 +633,7 @@ public class StoryOfTauti extends AbstractInstance
 						// final QuestState qs = member.getQuestState(Q00833_DevilsTreasureTauti.class.getSimpleName());
 						// if ((qs != null) && qs.isCond(7))
 						// {
-						// final Quest qs833 = QuestManager.getInstance().getQuest(Q00833_DevilsTreasureTauti.class.getSimpleName());
+						// final Quest qs833 = ScriptManager.getInstance().getScript(Q00833_DevilsTreasureTauti.class.getSimpleName());
 						// if (qs833 != null)
 						// {
 						// qs.setCond(8, true);
@@ -865,7 +864,7 @@ public class StoryOfTauti extends AbstractInstance
 					// final QuestState qs = member.getQuestState(Q00833_DevilsTreasureTauti.class.getSimpleName());
 					// if ((qs != null) && qs.isCond(2))
 					// {
-					// final Quest qs833 = QuestManager.getInstance().getQuest(Q00833_DevilsTreasureTauti.class.getSimpleName());
+					// final Quest qs833 = ScriptManager.getInstance().getScript(Q00833_DevilsTreasureTauti.class.getSimpleName());
 					// if (qs833 != null)
 					// {
 					// qs.setCond(3, true);
@@ -894,7 +893,7 @@ public class StoryOfTauti extends AbstractInstance
 					// final QuestState qs = member.getQuestState(Q00833_DevilsTreasureTauti.class.getSimpleName());
 					// if ((qs != null) && qs.isCond(2))
 					// {
-					// final Quest qs833 = QuestManager.getInstance().getQuest(Q00833_DevilsTreasureTauti.class.getSimpleName());
+					// final Quest qs833 = ScriptManager.getInstance().getScript(Q00833_DevilsTreasureTauti.class.getSimpleName());
 					// if (qs833 != null)
 					// {
 					// qs.setCond(4, true);

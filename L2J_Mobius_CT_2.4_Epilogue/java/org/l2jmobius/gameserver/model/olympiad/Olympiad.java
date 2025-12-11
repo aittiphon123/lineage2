@@ -32,9 +32,10 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
+import org.l2jmobius.gameserver.config.custom.DualboxCheckConfig;
 import org.l2jmobius.gameserver.managers.AntiFeedManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.StatSet;
@@ -122,14 +123,14 @@ public class Olympiad extends ListenersContainer
 		134
 	};
 	
-	private static final int COMP_START = Config.OLYMPIAD_START_TIME; // 6PM
-	private static final int COMP_MIN = Config.OLYMPIAD_MIN; // 00 mins
-	private static final long COMP_PERIOD = Config.OLYMPIAD_CPERIOD; // 6 hours
-	protected static final long WEEKLY_PERIOD = Config.OLYMPIAD_WPERIOD; // 1 week
-	protected static final long VALIDATION_PERIOD = Config.OLYMPIAD_VPERIOD; // 24 hours
+	private static final int COMP_START = OlympiadConfig.OLYMPIAD_START_TIME; // 6PM
+	private static final int COMP_MIN = OlympiadConfig.OLYMPIAD_MIN; // 00 mins
+	private static final long COMP_PERIOD = OlympiadConfig.OLYMPIAD_CPERIOD; // 6 hours
+	protected static final long WEEKLY_PERIOD = OlympiadConfig.OLYMPIAD_WPERIOD; // 1 week
+	protected static final long VALIDATION_PERIOD = OlympiadConfig.OLYMPIAD_VPERIOD; // 24 hours
 	
-	protected static final int DEFAULT_POINTS = Config.OLYMPIAD_START_POINTS;
-	protected static final int WEEKLY_POINTS = Config.OLYMPIAD_WEEKLY_POINTS;
+	protected static final int DEFAULT_POINTS = OlympiadConfig.OLYMPIAD_START_POINTS;
+	protected static final int WEEKLY_POINTS = OlympiadConfig.OLYMPIAD_WEEKLY_POINTS;
 	
 	public static final String CHAR_ID = "charId";
 	public static final String CLASS_ID = "class_id";
@@ -163,7 +164,7 @@ public class Olympiad extends ListenersContainer
 	
 	Olympiad()
 	{
-		if (Config.OLYMPIAD_ENABLED)
+		if (OlympiadConfig.OLYMPIAD_ENABLED)
 		{
 			load();
 			AntiFeedManager.getInstance().registerEvent(AntiFeedManager.OLYMPIAD_ID);
@@ -267,7 +268,7 @@ public class Olympiad extends ListenersContainer
 				statData.set(CLASS_ID, rset.getInt(CLASS_ID));
 				statData.set(CHAR_NAME, rset.getString(CHAR_NAME));
 				final int compDone = rset.getInt(COMP_DONE);
-				statData.set(POINTS, MathUtil.clamp(rset.getInt(POINTS), 0, (Config.OLYMPIAD_MAX_POINTS * compDone) + (Config.OLYMPIAD_WEEKLY_POINTS * 4)));
+				statData.set(POINTS, MathUtil.clamp(rset.getInt(POINTS), 0, (OlympiadConfig.OLYMPIAD_MAX_POINTS * compDone) + (OlympiadConfig.OLYMPIAD_WEEKLY_POINTS * 4)));
 				statData.set(COMP_DONE, compDone);
 				statData.set(COMP_WON, rset.getInt(COMP_WON));
 				statData.set(COMP_LOST, rset.getInt(COMP_LOST));
@@ -440,14 +441,14 @@ public class Olympiad extends ListenersContainer
 		_classBasedRegisters = new HashMap<>();
 		
 		_compStart = Calendar.getInstance();
-		if (Config.OLYMPIAD_USE_CUSTOM_PERIOD_SETTINGS)
+		if (OlympiadConfig.OLYMPIAD_USE_CUSTOM_PERIOD_SETTINGS)
 		{
 			final int currentDay = _compStart.get(Calendar.DAY_OF_WEEK);
 			boolean dayFound = false;
 			int dayCounter = 0;
 			for (int i = currentDay; i < 8; i++)
 			{
-				if (Config.OLYMPIAD_COMPETITION_DAYS.contains(i))
+				if (OlympiadConfig.OLYMPIAD_COMPETITION_DAYS.contains(i))
 				{
 					dayFound = true;
 					break;
@@ -460,7 +461,7 @@ public class Olympiad extends ListenersContainer
 			{
 				for (int i = 1; i < 8; i++)
 				{
-					if (Config.OLYMPIAD_COMPETITION_DAYS.contains(i))
+					if (OlympiadConfig.OLYMPIAD_COMPETITION_DAYS.contains(i))
 					{
 						break;
 					}
@@ -707,7 +708,7 @@ public class Olympiad extends ListenersContainer
 		
 		for (Integer classList : getRegisteredClassBased().keySet())
 		{
-			if (getRegisteredClassBased().get(classList).size() >= Config.OLYMPIAD_CLASSED)
+			if (getRegisteredClassBased().get(classList).size() >= OlympiadConfig.OLYMPIAD_CLASSED)
 			{
 				result.add(classList);
 			}
@@ -723,7 +724,7 @@ public class Olympiad extends ListenersContainer
 	
 	protected static boolean hasEnoughRegisteredNonClassed()
 	{
-		return Olympiad.getRegisteredNonClassBased().size() >= Config.OLYMPIAD_NONCLASSED;
+		return Olympiad.getRegisteredNonClassBased().size() >= OlympiadConfig.OLYMPIAD_NONCLASSED;
 	}
 	
 	protected static void clearRegistered()
@@ -808,7 +809,7 @@ public class Olympiad extends ListenersContainer
 		sm = new SystemMessage(SystemMessageId.YOU_HAVE_BEEN_REMOVED_FROM_THE_GRAND_OLYMPIAD_GAMES_WAITING_LIST);
 		noble.sendPacket(sm);
 		
-		if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
+		if (DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 		{
 			AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, noble);
 		}
@@ -953,7 +954,7 @@ public class Olympiad extends ListenersContainer
 		sm.addInt(_currentCycle);
 		Broadcast.toAllOnlinePlayers(sm);
 		
-		if (!Config.OLYMPIAD_USE_CUSTOM_PERIOD_SETTINGS)
+		if (!OlympiadConfig.OLYMPIAD_USE_CUSTOM_PERIOD_SETTINGS)
 		{
 			final Calendar currentTime = Calendar.getInstance();
 			currentTime.add(Calendar.MONTH, 1);
@@ -977,18 +978,18 @@ public class Olympiad extends ListenersContainer
 			
 			final Calendar nextChange = Calendar.getInstance();
 			
-			switch (Config.OLYMPIAD_PERIOD)
+			switch (OlympiadConfig.OLYMPIAD_PERIOD)
 			{
 				case "DAY":
 				{
-					currentTime.add(Calendar.DAY_OF_MONTH, Config.OLYMPIAD_PERIOD_MULTIPLIER);
+					currentTime.add(Calendar.DAY_OF_MONTH, OlympiadConfig.OLYMPIAD_PERIOD_MULTIPLIER);
 					currentTime.add(Calendar.DAY_OF_MONTH, -1); // last day is for validation
 					
-					if (Config.OLYMPIAD_PERIOD_MULTIPLIER >= 14)
+					if (OlympiadConfig.OLYMPIAD_PERIOD_MULTIPLIER >= 14)
 					{
 						_nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
 					}
-					else if (Config.OLYMPIAD_PERIOD_MULTIPLIER >= 7)
+					else if (OlympiadConfig.OLYMPIAD_PERIOD_MULTIPLIER >= 7)
 					{
 						_nextWeeklyChange = nextChange.getTimeInMillis() + (WEEKLY_PERIOD / 2);
 					}
@@ -1000,10 +1001,10 @@ public class Olympiad extends ListenersContainer
 				}
 				case "WEEK":
 				{
-					currentTime.add(Calendar.WEEK_OF_MONTH, Config.OLYMPIAD_PERIOD_MULTIPLIER);
+					currentTime.add(Calendar.WEEK_OF_MONTH, OlympiadConfig.OLYMPIAD_PERIOD_MULTIPLIER);
 					currentTime.add(Calendar.DAY_OF_MONTH, -1); // last day is for validation
 					
-					if (Config.OLYMPIAD_PERIOD_MULTIPLIER > 1)
+					if (OlympiadConfig.OLYMPIAD_PERIOD_MULTIPLIER > 1)
 					{
 						_nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
 					}
@@ -1015,7 +1016,7 @@ public class Olympiad extends ListenersContainer
 				}
 				case "MONTH":
 				{
-					currentTime.add(Calendar.MONTH, Config.OLYMPIAD_PERIOD_MULTIPLIER);
+					currentTime.add(Calendar.MONTH, OlympiadConfig.OLYMPIAD_PERIOD_MULTIPLIER);
 					currentTime.add(Calendar.DAY_OF_MONTH, -1); // last day is for validation
 					
 					_nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
@@ -1071,13 +1072,13 @@ public class Olympiad extends ListenersContainer
 			}
 		}
 		
-		if (Config.OLYMPIAD_USE_CUSTOM_PERIOD_SETTINGS)
+		if (OlympiadConfig.OLYMPIAD_USE_CUSTOM_PERIOD_SETTINGS)
 		{
 			boolean dayFound = false;
 			int dayCounter = 0;
 			for (int i = currentDay; i < 8; i++)
 			{
-				if (Config.OLYMPIAD_COMPETITION_DAYS.contains(i))
+				if (OlympiadConfig.OLYMPIAD_COMPETITION_DAYS.contains(i))
 				{
 					dayFound = true;
 					break;
@@ -1090,7 +1091,7 @@ public class Olympiad extends ListenersContainer
 			{
 				for (int i = 1; i < 8; i++)
 				{
-					if (Config.OLYMPIAD_COMPETITION_DAYS.contains(i))
+					if (OlympiadConfig.OLYMPIAD_COMPETITION_DAYS.contains(i))
 					{
 						break;
 					}
@@ -1152,7 +1153,7 @@ public class Olympiad extends ListenersContainer
 		
 		for (StatSet nobleInfo : NOBLES.values())
 		{
-			nobleInfo.set(POINTS, MathUtil.clamp(nobleInfo.getInt(POINTS, 0) + WEEKLY_POINTS, 0, (nobleInfo.getInt(COMP_DONE, 0) * Config.OLYMPIAD_MAX_POINTS) + (Config.OLYMPIAD_WEEKLY_POINTS * 4)));
+			nobleInfo.set(POINTS, MathUtil.clamp(nobleInfo.getInt(POINTS, 0) + WEEKLY_POINTS, 0, (nobleInfo.getInt(COMP_DONE, 0) * OlympiadConfig.OLYMPIAD_MAX_POINTS) + (OlympiadConfig.OLYMPIAD_WEEKLY_POINTS * 4)));
 		}
 	}
 	
@@ -1568,7 +1569,7 @@ public class Olympiad extends ListenersContainer
 	public List<String> getClassLeaderBoard(int classId)
 	{
 		final List<String> names = new ArrayList<>();
-		final String query = Config.OLYMPIAD_SHOW_MONTHLY_WINNERS ? ((classId == 132) ? GET_EACH_CLASS_LEADER_SOULHOUND : GET_EACH_CLASS_LEADER) : ((classId == 132) ? GET_EACH_CLASS_LEADER_CURRENT_SOULHOUND : GET_EACH_CLASS_LEADER_CURRENT);
+		final String query = OlympiadConfig.OLYMPIAD_SHOW_MONTHLY_WINNERS ? ((classId == 132) ? GET_EACH_CLASS_LEADER_SOULHOUND : GET_EACH_CLASS_LEADER) : ((classId == 132) ? GET_EACH_CLASS_LEADER_CURRENT_SOULHOUND : GET_EACH_CLASS_LEADER_CURRENT);
 		try (Connection con = DatabaseFactory.getConnection();
 			PreparedStatement ps = con.prepareStatement(query))
 		{
@@ -1608,38 +1609,38 @@ public class Olympiad extends ListenersContainer
 		}
 		
 		// Hero point bonus
-		int points = Hero.getInstance().isHero(objectId) ? Config.OLYMPIAD_HERO_POINTS : 0;
+		int points = Hero.getInstance().isHero(objectId) ? OlympiadConfig.OLYMPIAD_HERO_POINTS : 0;
 		
 		// Rank point bonus
 		switch (NOBLES_RANK.get(objectId))
 		{
 			case 1:
 			{
-				points += Config.OLYMPIAD_RANK1_POINTS;
+				points += OlympiadConfig.OLYMPIAD_RANK1_POINTS;
 				break;
 			}
 			case 2:
 			{
-				points += Config.OLYMPIAD_RANK2_POINTS;
+				points += OlympiadConfig.OLYMPIAD_RANK2_POINTS;
 				break;
 			}
 			case 3:
 			{
-				points += Config.OLYMPIAD_RANK3_POINTS;
+				points += OlympiadConfig.OLYMPIAD_RANK3_POINTS;
 				break;
 			}
 			case 4:
 			{
-				points += Config.OLYMPIAD_RANK4_POINTS;
+				points += OlympiadConfig.OLYMPIAD_RANK4_POINTS;
 				break;
 			}
 			default:
 			{
-				points += Config.OLYMPIAD_RANK5_POINTS;
+				points += OlympiadConfig.OLYMPIAD_RANK5_POINTS;
 			}
 		}
 		
-		points *= Config.OLYMPIAD_GP_PER_POINT;
+		points *= OlympiadConfig.OLYMPIAD_GP_PER_POINT;
 		
 		// This is a one time calculation.
 		noble.set(POINTS, 0);

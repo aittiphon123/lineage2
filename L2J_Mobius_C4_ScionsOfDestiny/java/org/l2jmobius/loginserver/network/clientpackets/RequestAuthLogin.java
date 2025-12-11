@@ -26,11 +26,11 @@ import java.util.logging.Logger;
 
 import javax.crypto.Cipher;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.loginserver.GameServerTable;
 import org.l2jmobius.loginserver.GameServerThread;
 import org.l2jmobius.loginserver.LoginController;
 import org.l2jmobius.loginserver.LoginServer;
+import org.l2jmobius.loginserver.config.LoginConfig;
 import org.l2jmobius.loginserver.network.AbstractClientPacket;
 import org.l2jmobius.loginserver.network.LoginClient;
 import org.l2jmobius.loginserver.network.LoginClient.LoginClientState;
@@ -128,7 +128,7 @@ public class RequestAuthLogin extends AbstractClientPacket
 		getClient().setState(LoginClientState.AUTHED_LOGIN);
 		login.assignKeyToLogin(getClient());
 		
-		if (Config.SHOW_LICENCE)
+		if (LoginConfig.SHOW_LICENCE)
 		{
 			getClient().sendPacket(new LoginOk(getClient().getSessionKey()));
 		}

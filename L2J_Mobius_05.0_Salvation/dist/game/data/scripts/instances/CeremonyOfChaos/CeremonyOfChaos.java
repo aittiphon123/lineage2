@@ -29,8 +29,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.CeremonyOfChaosConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.InstanceManager;
@@ -56,6 +56,7 @@ import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.olympiad.OlympiadManager;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
@@ -77,12 +78,10 @@ import org.l2jmobius.gameserver.network.serverpackets.ceremonyofchaos.ExCuriousH
 import org.l2jmobius.gameserver.network.serverpackets.ceremonyofchaos.ExCuriousHouseResult;
 import org.l2jmobius.gameserver.network.serverpackets.ceremonyofchaos.ExCuriousHouseState;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author Sdw, Mobius, CostyKiller
  */
-public class CeremonyOfChaos extends AbstractNpcAI
+public class CeremonyOfChaos extends Script
 {
 	// Items
 	private static final ItemHolder[] INITIAL_ITEMS =
@@ -128,13 +127,13 @@ public class CeremonyOfChaos extends AbstractNpcAI
 		// Enabled Tuesday, Wednesday, Thursday
 		final Calendar calendar = Calendar.getInstance();
 		final int day = calendar.get(Calendar.DAY_OF_WEEK);
-		if (!Config.COC_COMPETITION_DAYS.contains(day))
+		if (!CeremonyOfChaosConfig.COC_COMPETITION_DAYS.contains(day))
 		{
 			return;
 		}
 		
 		// Event starts at 18, should stop if past 00:00.
-		if (calendar.get(Calendar.HOUR_OF_DAY) < Config.COC_START_TIME)
+		if (calendar.get(Calendar.HOUR_OF_DAY) < CeremonyOfChaosConfig.COC_START_TIME)
 		{
 			return;
 		}
@@ -164,7 +163,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 	
 	private void registrationEnd()
 	{
-		if (REGISTERED_PLAYERS.size() >= Config.COC_MIN_PLAYERS)
+		if (REGISTERED_PLAYERS.size() >= CeremonyOfChaosConfig.COC_MIN_PLAYERS)
 		{
 			_registrationOpen = false;
 			
@@ -217,7 +216,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 	
 	public void preparePlayers()
 	{
-		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(0, Config.COC_MAX_PLAYERS, PARTICIPANT_PLAYERS);
+		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(0, CeremonyOfChaosConfig.COC_MAX_PLAYERS, PARTICIPANT_PLAYERS);
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0);
 		int index = 0;
 		int position = 1;
@@ -450,7 +449,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 					break;
 				}
 				
-				if (REGISTERED_PLAYERS.size() >= Config.COC_MAX_PLAYERS)
+				if (REGISTERED_PLAYERS.size() >= CeremonyOfChaosConfig.COC_MAX_PLAYERS)
 				{
 					player.sendPacket(SystemMessageId.THERE_ARE_TOO_MANY_CHALLENGERS_YOU_CANNOT_PARTICIPATE_NOW);
 					break;
@@ -679,13 +678,13 @@ public class CeremonyOfChaos extends AbstractNpcAI
 			{
 				msg = new SystemMessage(SystemMessageId.CONGRATULATIONS_C1_YOU_WIN_THE_MATCH);
 				msg.addString(winner.getName());
-				for (ItemHolder reward : Config.COC_WINNER_REWARDS)
+				for (ItemHolder reward : CeremonyOfChaosConfig.COC_WINNER_REWARDS)
 				{
 					winner.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), winner, true);
 				}
 				
 				// Save monthly progress.
-				final int totalMarks = winner.getVariables().getInt(PlayerVariables.CEREMONY_OF_CHAOS_MARKS, 0) + (int) (Config.COC_WINNER_REWARDS.get(1).getCount());
+				final int totalMarks = winner.getVariables().getInt(PlayerVariables.CEREMONY_OF_CHAOS_MARKS, 0) + (int) (CeremonyOfChaosConfig.COC_WINNER_REWARDS.get(1).getCount());
 				winner.getVariables().set(PlayerVariables.CEREMONY_OF_CHAOS_MARKS, totalMarks);
 				if (totalMarks > GlobalVariablesManager.getInstance().getInt(GlobalVariablesManager.COC_TOP_MARKS, 0))
 				{
@@ -987,7 +986,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 			sm = SystemMessageId.ONLY_CHARACTERS_WHO_ARE_A_PART_OF_A_CLAN_OF_LEVEL_6_OR_ABOVE_MAY_PARTICIPATE;
 			canRegister = false;
 		}
-		else if ((REGISTERED_PLAYERS.size() >= (Config.COC_MAX_ARENAS * Config.COC_MAX_PLAYERS)) && !PARTICIPANT_PLAYERS.contains(player))
+		else if ((REGISTERED_PLAYERS.size() >= (CeremonyOfChaosConfig.COC_MAX_ARENAS * CeremonyOfChaosConfig.COC_MAX_PLAYERS)) && !PARTICIPANT_PLAYERS.contains(player))
 		{
 			sm = SystemMessageId.THERE_ARE_TOO_MANY_CHALLENGERS_YOU_CANNOT_PARTICIPATE_NOW;
 			canRegister = false;

@@ -25,8 +25,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -127,7 +127,7 @@ public class ExDethroneRankingInfo extends ServerPacket
 		for (RankInfo rankInfo : _rankInfoList)
 		{
 			buffer.writeInt(rankInfo.rank);
-			buffer.writeInt(Config.SERVER_ID);
+			buffer.writeInt(ServerConfig.SERVER_ID);
 			buffer.writeSizedString(rankInfo.name);
 			buffer.writeLong(rankInfo.points);
 		}

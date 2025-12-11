@@ -26,12 +26,11 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import instances.AbstractInstance;
 
 /**
  * Nornils Garden Instance
@@ -40,7 +39,7 @@ import instances.AbstractInstance;
  * @author Gigi, Mobius
  * @date 2017-02-22 - [15:22:27]
  */
-public class NornilsGarden extends AbstractInstance
+public class NornilsGarden extends InstanceScript
 {
 	// NPCs
 	private static final int BOZ_CORE = 33781;

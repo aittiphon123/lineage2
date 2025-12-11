@@ -24,7 +24,7 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -38,15 +38,15 @@ import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 public class Disarmor extends AbstractEffect
 {
 	private final Map<Integer, Integer> _unequippedItems; // PlayerObjId, ItemObjId
-	private final long _slot;
+	private final BodyPart _slot;
 	
 	public Disarmor(StatSet params)
 	{
 		_unequippedItems = new ConcurrentHashMap<>();
 		
 		final String slot = params.getString("slot", "chest");
-		_slot = ItemTemplate.SLOTS.getOrDefault(slot, (long) ItemTemplate.SLOT_NONE);
-		if (_slot == ItemTemplate.SLOT_NONE)
+		_slot = BodyPart.fromName(slot);
+		if (_slot == BodyPart.NONE)
 		{
 			LOGGER.severe("Unknown bodypart slot for effect: " + slot);
 		}
@@ -55,7 +55,7 @@ public class Disarmor extends AbstractEffect
 	@Override
 	public boolean canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (_slot != ItemTemplate.SLOT_NONE) && effected.isPlayer();
+		return (_slot != BodyPart.NONE) && effected.isPlayer();
 	}
 	
 	@Override

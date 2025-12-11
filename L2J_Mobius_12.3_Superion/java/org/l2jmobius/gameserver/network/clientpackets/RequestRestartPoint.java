@@ -34,9 +34,9 @@ import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.listeners.AbstractEventListener;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
-import org.l2jmobius.gameserver.model.quest.Event;
 import org.l2jmobius.gameserver.model.residences.ClanHall;
 import org.l2jmobius.gameserver.model.residences.ResidenceFunctionType;
+import org.l2jmobius.gameserver.model.script.Event;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.Castle.CastleFunction;
 import org.l2jmobius.gameserver.model.siege.Fort;
@@ -275,6 +275,19 @@ public class RequestRestartPoint extends ClientPacket
 			}
 			case 7: // TODO: Adventurer's Song
 			{
+				break;
+			}
+			case 25: // Timed Hunting - To restart place.
+			{
+				if (player.isInTimedHuntingZone())
+				{
+					loc = player.getTimedHuntingZone().getExitLocation();
+				}
+				
+				if (loc == null)
+				{
+					loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+				}
 				break;
 			}
 			case 27: // to jail

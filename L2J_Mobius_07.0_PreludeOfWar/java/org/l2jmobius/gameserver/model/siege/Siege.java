@@ -35,10 +35,10 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.cache.RelationCache;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.xml.SiegeScheduleData;
 import org.l2jmobius.gameserver.managers.CastleManager;
@@ -265,7 +265,7 @@ public class Siege implements Siegable
 				final Clan clan = ClanTable.getInstance().getClan(getCastle().getOwnerId());
 				sm = new SystemMessage(SystemMessageId.CLAN_S1_IS_VICTORIOUS_OVER_S2_S_CASTLE_SIEGE);
 				sm.addString(clan.getName());
-				sm.addCastleId(_castle.getResidenceId());
+				sm.addString(_castle.getName());
 				Broadcast.toAllOnlinePlayers(sm);
 				
 				if (clan.getId() == _firstOwnerClanId)
@@ -620,7 +620,7 @@ public class Siege implements Siegable
 					if (checkIfInZone(member))
 					{
 						member.setInSiege(true);
-						member.startFameTask(Config.CASTLE_ZONE_FAME_TASK_FREQUENCY * 1000, Config.CASTLE_ZONE_FAME_AQUIRE_POINTS);
+						member.startFameTask(PlayerConfig.CASTLE_ZONE_FAME_TASK_FREQUENCY * 1000, PlayerConfig.CASTLE_ZONE_FAME_AQUIRE_POINTS);
 					}
 				}
 				
@@ -684,7 +684,7 @@ public class Siege implements Siegable
 					if (checkIfInZone(member))
 					{
 						member.setInSiege(true);
-						member.startFameTask(Config.CASTLE_ZONE_FAME_TASK_FREQUENCY * 1000, Config.CASTLE_ZONE_FAME_AQUIRE_POINTS);
+						member.startFameTask(PlayerConfig.CASTLE_ZONE_FAME_TASK_FREQUENCY * 1000, PlayerConfig.CASTLE_ZONE_FAME_AQUIRE_POINTS);
 					}
 				}
 				
@@ -1798,13 +1798,13 @@ public class Siege implements Siegable
 	@Override
 	public int getFameFrequency()
 	{
-		return Config.CASTLE_ZONE_FAME_TASK_FREQUENCY;
+		return PlayerConfig.CASTLE_ZONE_FAME_TASK_FREQUENCY;
 	}
 	
 	@Override
 	public int getFameAmount()
 	{
-		return Config.CASTLE_ZONE_FAME_AQUIRE_POINTS;
+		return PlayerConfig.CASTLE_ZONE_FAME_AQUIRE_POINTS;
 	}
 	
 	@Override

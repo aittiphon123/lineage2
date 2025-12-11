@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.relics;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.RelicSystemConfig;
 import org.l2jmobius.gameserver.data.holders.RelicDataHolder;
 import org.l2jmobius.gameserver.data.xml.RelicData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
@@ -79,7 +79,7 @@ public class RequestRelicsActive extends ClientPacket
 				if (skill != null)
 				{
 					player.removeSkill(skill);
-					if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+					if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 					{
 						player.sendMessage("Relic Skill Id: " + skill.getId() + " Lvl: " + skill.getLevel() + " was removed.");
 					}
@@ -87,7 +87,7 @@ public class RequestRelicsActive extends ClientPacket
 			}
 			
 			player.addSkill(relicSkill, true);
-			if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+			if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 			{
 				player.sendMessage("Relic Skill Id: " + skillId + " Lvl: " + skillLevel + " was added.");
 			}

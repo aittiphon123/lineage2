@@ -23,18 +23,17 @@ package ai.bosses.Lilith;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class LilithEliteShaman extends AbstractNpcAI
+public class LilithEliteShaman extends Script
 {
 	// Npc
 	private static final int LILITH_ELITE_SHAMAN = 29339;
@@ -48,7 +47,8 @@ public class LilithEliteShaman extends AbstractNpcAI
 	
 	private LilithEliteShaman()
 	{
-		registerMobs(LILITH_ELITE_SHAMAN);
+		addAttackId(LILITH_ELITE_SHAMAN);
+		addSpellFinishedId(LILITH_ELITE_SHAMAN);
 	}
 	
 	@Override

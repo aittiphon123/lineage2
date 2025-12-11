@@ -22,22 +22,22 @@ package ai.others.BalthusKnights.Helper.StigMachFriend;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureAttacked;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 
-import ai.AbstractNpcAI;
 import instances.BalthusKnights.AntharasNest;
 import quests.Q10555_ChargeAtAntharas.Q10555_ChargeAtAntharas;
 
@@ -45,7 +45,7 @@ import quests.Q10555_ChargeAtAntharas.Q10555_ChargeAtAntharas;
  * Stig Mach Friend AI
  * @author Kazumi
  */
-public final class StigMachFriend extends AbstractNpcAI
+public final class StigMachFriend extends Script
 {
 	// NPCs
 	private static final int STIG_MACH_FRIEND = 34366;
@@ -170,7 +170,7 @@ public final class StigMachFriend extends AbstractNpcAI
 			final QuestState qs = killer.getQuestState(Q10555_ChargeAtAntharas.class.getSimpleName());
 			if ((qs != null) && qs.isCond(2))
 			{
-				final Quest instance = QuestManager.getInstance().getQuest(AntharasNest.class.getSimpleName());
+				final Quest instance = ScriptManager.getInstance().getScript(AntharasNest.class.getSimpleName());
 				if (instance != null)
 				{
 					_firstAttacked = true;

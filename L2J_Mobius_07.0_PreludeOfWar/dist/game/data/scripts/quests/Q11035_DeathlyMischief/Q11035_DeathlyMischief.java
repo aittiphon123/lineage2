@@ -20,14 +20,14 @@
  */
 package quests.Q11035_DeathlyMischief;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.ExTutorialShowId;
@@ -112,7 +112,7 @@ public class Q11035_DeathlyMischief extends Quest
 					htmltext = event;
 					
 					// Initialize next quest.
-					final Quest nextQuest = QuestManager.getInstance().getQuest(Q11025_PathOfDestinyProving.class.getSimpleName());
+					final Quest nextQuest = ScriptManager.getInstance().getScript(Q11025_PathOfDestinyProving.class.getSimpleName());
 					if (nextQuest != null)
 					{
 						nextQuest.newQuestState(player);

@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import java.util.Collection;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.clan.ClanMember;
@@ -67,7 +67,7 @@ public class PledgeShowMemberListAll extends ServerPacket
 		ServerPackets.PLEDGE_SHOW_MEMBER_LIST_ALL.writeId(this, buffer);
 		buffer.writeInt(0); // _isSubPledge
 		buffer.writeInt(_clan.getId());
-		buffer.writeInt(Config.SERVER_ID);
+		buffer.writeInt(ServerConfig.SERVER_ID);
 		buffer.writeInt(0);
 		buffer.writeString(_name);
 		buffer.writeString(_leaderName);

@@ -31,9 +31,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.data.xml.DethroneShopData;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -49,6 +49,7 @@ import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPvPKill;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.model.zone.type.ConquestZone;
@@ -58,13 +59,11 @@ import org.l2jmobius.gameserver.network.serverpackets.dethrone.ExDethroneSeasonI
 import org.l2jmobius.gameserver.util.Broadcast;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * Conquest Engine.
  * @author CostyKiller
  */
-public class ConquestEngine extends AbstractNpcAI
+public class ConquestEngine extends Script
 {
 	private static final ConquestPointData CONQUEST_POINT_DATA = ConquestPointData.getInstance();
 	private static final int BLOODY_COIN = 80306;
@@ -105,7 +104,7 @@ public class ConquestEngine extends AbstractNpcAI
 	
 	public ConquestEngine()
 	{
-		if (Config.CONQUEST_SYSTEM_ENABLED)
+		if (ConquestConfig.CONQUEST_SYSTEM_ENABLED)
 		{
 			init();
 			load();
@@ -149,9 +148,9 @@ public class ConquestEngine extends AbstractNpcAI
 		
 		if (!loaded)
 		{
-			_currentCycle = Config.CONQUEST_CURRENT_CYCLE;
-			_conquestSeasonEnd = Config.CONQUEST_SEASON_END;
-			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Cycle data loaded from config.");
+			_currentCycle = ConquestConfig.CONQUEST_CURRENT_CYCLE;
+			_conquestSeasonEnd = ConquestConfig.CONQUEST_SEASON_END;
+			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Cycle data loaded from ConquestConfig.");
 		}
 		
 		LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Current cycle: " + _currentCycle);
@@ -174,7 +173,7 @@ public class ConquestEngine extends AbstractNpcAI
 		
 		// Get the current date and time.
 		LocalDateTime now = LocalDateTime.now();
-		final LocalDateTime resetTime = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_RESET_TIME));
+		final LocalDateTime resetTime = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(ConquestConfig.CONQUEST_RESET_TIME));
 		
 		// Check if conquest season end is on initial config value and set new value
 		if (_conquestSeasonEnd == 0)
@@ -186,7 +185,7 @@ public class ConquestEngine extends AbstractNpcAI
 			saveConquestCycleData();
 		}
 		// Check current day is first day of month or the day set in config
-		else if (now.getDayOfMonth() == Integer.valueOf(Config.CONQUEST_RESET_DAY))
+		else if (now.getDayOfMonth() == Integer.valueOf(ConquestConfig.CONQUEST_RESET_DAY))
 		{
 			// Reset Conquest Cycle data and set conquest end if conquest season end has passed
 			if (now.isAfter(resetTime) && (_conquestSeasonEnd < System.currentTimeMillis()))
@@ -228,24 +227,24 @@ public class ConquestEngine extends AbstractNpcAI
 		
 		// Find the time of the next season end.
 		long millisUntilSeasonEnd = 0;
-		String customConfigDate = String.format("%d-%02d-%02d", now.getYear(), now.getMonthValue(), Integer.parseInt(Config.CONQUEST_RESET_DAY));
+		String customConfigDate = String.format("%d-%02d-%02d", now.getYear(), now.getMonthValue(), Integer.parseInt(ConquestConfig.CONQUEST_RESET_DAY));
 		String defaultConfigDate = String.format("%d-%02d-%02d", now.getYear(), now.getMonthValue(), now.toLocalDate().lengthOfMonth());
 		
 		// default config adds one day to last day of month
-		if (Integer.valueOf(Config.CONQUEST_RESET_DAY) == 01)
+		if (Integer.valueOf(ConquestConfig.CONQUEST_RESET_DAY) == 01)
 		{
-			final LocalDateTime endTime = LocalDateTime.of(LocalDate.parse(defaultConfigDate.trim()).plusDays(1), LocalTime.parse(Config.CONQUEST_RESET_TIME));
+			final LocalDateTime endTime = LocalDateTime.of(LocalDate.parse(defaultConfigDate.trim()).plusDays(1), LocalTime.parse(ConquestConfig.CONQUEST_RESET_TIME));
 			millisUntilSeasonEnd = ChronoUnit.MILLIS.between(now, endTime);
 		}
 		// Config value of day < current day adds a month to season end
-		else if (Integer.valueOf(Config.CONQUEST_RESET_DAY) < now.getDayOfWeek().getValue())
+		else if (Integer.valueOf(ConquestConfig.CONQUEST_RESET_DAY) < now.getDayOfWeek().getValue())
 		{
-			final LocalDateTime endTime = LocalDateTime.of(LocalDate.parse(customConfigDate.trim()).plusMonths(1), LocalTime.parse(Config.CONQUEST_RESET_TIME));
+			final LocalDateTime endTime = LocalDateTime.of(LocalDate.parse(customConfigDate.trim()).plusMonths(1), LocalTime.parse(ConquestConfig.CONQUEST_RESET_TIME));
 			millisUntilSeasonEnd = ChronoUnit.MILLIS.between(now, endTime);
 		}
 		else
 		{
-			final LocalDateTime endTime = LocalDateTime.of(LocalDate.parse(customConfigDate.trim()), LocalTime.parse(Config.CONQUEST_RESET_TIME));
+			final LocalDateTime endTime = LocalDateTime.of(LocalDate.parse(customConfigDate.trim()), LocalTime.parse(ConquestConfig.CONQUEST_RESET_TIME));
 			millisUntilSeasonEnd = ChronoUnit.MILLIS.between(now, endTime);
 		}
 		
@@ -262,14 +261,14 @@ public class ConquestEngine extends AbstractNpcAI
 		
 		// Find the closest start time of the next available window.
 		long millisUntilOpenAccessStart = 0;
-		if (Config.CONQUEST_AVAILABLE_DAYS1.contains(now.getDayOfWeek().getValue()))
+		if (ConquestConfig.CONQUEST_AVAILABLE_DAYS1.contains(now.getDayOfWeek().getValue()))
 		{
-			final LocalDateTime startTime1 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_START_HOUR1));
-			final LocalDateTime endTime1 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_END_HOUR1));
-			final LocalDateTime startTime2 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_START_HOUR2));
+			final LocalDateTime startTime1 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(ConquestConfig.CONQUEST_START_HOUR1));
+			final LocalDateTime endTime1 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(ConquestConfig.CONQUEST_END_HOUR1));
+			final LocalDateTime startTime2 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(ConquestConfig.CONQUEST_START_HOUR2));
 			
 			// Added 1 day to endTime2 for proper millis calculation
-			final LocalDateTime endTime2 = LocalDateTime.of(now.toLocalDate().plusDays(1), LocalTime.parse(Config.CONQUEST_END_HOUR2));
+			final LocalDateTime endTime2 = LocalDateTime.of(now.toLocalDate().plusDays(1), LocalTime.parse(ConquestConfig.CONQUEST_END_HOUR2));
 			
 			if ((now.isAfter(startTime1) && now.isBefore(endTime1)) || (now.isAfter(startTime2) && now.isBefore(endTime2)))
 			{
@@ -284,12 +283,12 @@ public class ConquestEngine extends AbstractNpcAI
 				millisUntilOpenAccessStart = ChronoUnit.MILLIS.between(now, startTime1);
 			}
 		}
-		else if (Config.CONQUEST_AVAILABLE_DAYS2.contains(now.getDayOfWeek().getValue()))
+		else if (ConquestConfig.CONQUEST_AVAILABLE_DAYS2.contains(now.getDayOfWeek().getValue()))
 		{
-			final LocalDateTime startTime3 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_START_HOUR3));
+			final LocalDateTime startTime3 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(ConquestConfig.CONQUEST_START_HOUR3));
 			
 			// Added 1 day to endTime3 for proper millis calculation
-			final LocalDateTime endTime3 = LocalDateTime.of(now.toLocalDate().plusDays(1), LocalTime.parse(Config.CONQUEST_END_HOUR3));
+			final LocalDateTime endTime3 = LocalDateTime.of(now.toLocalDate().plusDays(1), LocalTime.parse(ConquestConfig.CONQUEST_END_HOUR3));
 			if (now.isBefore(startTime3))
 			{
 				millisUntilOpenAccessStart = ChronoUnit.MILLIS.between(now, startTime3);
@@ -313,12 +312,12 @@ public class ConquestEngine extends AbstractNpcAI
 		
 		// Find the closest end time of the next available window.
 		long millisUntilOpenAccessEnd = 0;
-		if (Config.CONQUEST_AVAILABLE_DAYS1.contains(now.getDayOfWeek().getValue()))
+		if (ConquestConfig.CONQUEST_AVAILABLE_DAYS1.contains(now.getDayOfWeek().getValue()))
 		{
-			final LocalDateTime startTime1 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_START_HOUR1));
-			final LocalDateTime endTime1 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_END_HOUR1));
-			final LocalDateTime startTime2 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_START_HOUR2));
-			final LocalDateTime endTime2 = LocalDateTime.of(now.toLocalDate().plusDays(1), LocalTime.parse(Config.CONQUEST_END_HOUR2));
+			final LocalDateTime startTime1 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(ConquestConfig.CONQUEST_START_HOUR1));
+			final LocalDateTime endTime1 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(ConquestConfig.CONQUEST_END_HOUR1));
+			final LocalDateTime startTime2 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(ConquestConfig.CONQUEST_START_HOUR2));
+			final LocalDateTime endTime2 = LocalDateTime.of(now.toLocalDate().plusDays(1), LocalTime.parse(ConquestConfig.CONQUEST_END_HOUR2));
 			
 			if (now.isAfter(startTime1) && now.isBefore(endTime1))
 			{
@@ -333,10 +332,10 @@ public class ConquestEngine extends AbstractNpcAI
 				millisUntilOpenAccessEnd = 0;
 			}
 		}
-		else if (Config.CONQUEST_AVAILABLE_DAYS2.contains(now.getDayOfWeek().getValue()))
+		else if (ConquestConfig.CONQUEST_AVAILABLE_DAYS2.contains(now.getDayOfWeek().getValue()))
 		{
-			final LocalDateTime startTime3 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_START_HOUR3));
-			final LocalDateTime endTime3 = LocalDateTime.of(now.toLocalDate().plusDays(1), LocalTime.parse(Config.CONQUEST_END_HOUR3));
+			final LocalDateTime startTime3 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(ConquestConfig.CONQUEST_START_HOUR3));
+			final LocalDateTime endTime3 = LocalDateTime.of(now.toLocalDate().plusDays(1), LocalTime.parse(ConquestConfig.CONQUEST_END_HOUR3));
 			if (now.isBefore(startTime3))
 			{
 				millisUntilOpenAccessEnd = 0;
@@ -353,7 +352,7 @@ public class ConquestEngine extends AbstractNpcAI
 	protected void init()
 	{
 		// Schedule not enabled means conquest is available all time
-		if (!Config.CONQUEST_SCHEDULE_ENABLED)
+		if (!ConquestConfig.CONQUEST_SCHEDULE_ENABLED)
 		{
 			_isConquestAvailable = true;
 			GlobalVariablesManager.getInstance().set(CONQUEST_AVAILABLE_VAR, true);
@@ -372,7 +371,7 @@ public class ConquestEngine extends AbstractNpcAI
 	{
 		_scheduledOpenAccessStartTask = ThreadPool.schedule(() ->
 		{
-			if (!Config.CONQUEST_SYSTEM_ENABLED)
+			if (!ConquestConfig.CONQUEST_SYSTEM_ENABLED)
 			{
 				return;
 			}
@@ -711,10 +710,10 @@ public class ConquestEngine extends AbstractNpcAI
 		int finalZonePoints = zonePoints;
 		if (useRates)
 		{
-			finalPersonalPoints = personalPoints * Config.CONQUEST_RATE_PERSONAL_POINTS;
-			finalServerPoints = serverPoints * Config.CONQUEST_RATE_SERVER_POINTS;
-			finalServerSoulOrbs = serverSoulOrbs * Config.CONQUEST_RATE_SERVER_SOUL_ORBS;
-			finalZonePoints = zonePoints * Config.CONQUEST_RATE_ZONE_POINTS;
+			finalPersonalPoints = personalPoints * ConquestConfig.CONQUEST_RATE_PERSONAL_POINTS;
+			finalServerPoints = serverPoints * ConquestConfig.CONQUEST_RATE_SERVER_POINTS;
+			finalServerSoulOrbs = serverSoulOrbs * ConquestConfig.CONQUEST_RATE_SERVER_SOUL_ORBS;
+			finalZonePoints = zonePoints * ConquestConfig.CONQUEST_RATE_ZONE_POINTS;
 		}
 		
 		setPersonalPoints(player, finalPersonalPoints);
@@ -730,7 +729,7 @@ public class ConquestEngine extends AbstractNpcAI
 	 */
 	public int getAttackPoints(Player player)
 	{
-		return player.getVariables().getInt(PlayerVariables.CONQUEST_ATTACK_POINTS, Config.CONQUEST_ATTACK_POINTS);
+		return player.getVariables().getInt(PlayerVariables.CONQUEST_ATTACK_POINTS, ConquestConfig.CONQUEST_ATTACK_POINTS);
 	}
 	
 	/**
@@ -740,7 +739,7 @@ public class ConquestEngine extends AbstractNpcAI
 	 */
 	public int getLifePoints(Player player)
 	{
-		return player.getVariables().getInt(PlayerVariables.CONQUEST_LIFE_POINTS, Config.CONQUEST_LIFE_POINTS);
+		return player.getVariables().getInt(PlayerVariables.CONQUEST_LIFE_POINTS, ConquestConfig.CONQUEST_LIFE_POINTS);
 	}
 	
 	/**
@@ -818,7 +817,7 @@ public class ConquestEngine extends AbstractNpcAI
 				updatePoints(attackerPlayer, CONQUEST_POINT_DATA.getPvpPersonalPointsAmount(targetPlayer.getLevel()), CONQUEST_POINT_DATA.getPvpServerPointsAmount(targetPlayer.getLevel()), 0, 0, 0, true);
 				if ((getAttackPoints(attackerPlayer) >= 1) && (getLifePoints(targetPlayer) >= 1))
 				{
-					attackerPlayer.addItem(ItemProcessType.REWARD, BLOODY_COIN, CONQUEST_POINT_DATA.getCoinsAmount(targetPlayer.getLevel()) * Config.CONQUEST_RATE_BLOODY_COINS, attackerPlayer, true);
+					attackerPlayer.addItem(ItemProcessType.REWARD, BLOODY_COIN, CONQUEST_POINT_DATA.getCoinsAmount(targetPlayer.getLevel()) * ConquestConfig.CONQUEST_RATE_BLOODY_COINS, attackerPlayer, true);
 					setAttackPoints(attackerPlayer, -1);
 					setLifePoints(targetPlayer, -1);
 					
@@ -830,7 +829,7 @@ public class ConquestEngine extends AbstractNpcAI
 					// Winner Message
 					SystemMessage sm2 = new SystemMessage(SystemMessageId.YOU_HAVE_DEFEATED_C1_AND_GOT_BLOODY_COINS_X_S2_PERSONAL_CONQUEST_POINTS_X_S3_SERVER_CONQUEST_POINTS_X_S4_ATTACK_POINTS_1_TO_CHECK_THEIR_CURRENT_AMOUNT_ENTER_BLOODYCOIN_IN_YOUR_CHAT_WINDOW);
 					sm2.addString(targetPlayer.getName());
-					sm2.addString(Integer.toString(CONQUEST_POINT_DATA.getCoinsAmount(targetPlayer.getLevel()) * Config.CONQUEST_RATE_BLOODY_COINS));
+					sm2.addString(Integer.toString(CONQUEST_POINT_DATA.getCoinsAmount(targetPlayer.getLevel()) * ConquestConfig.CONQUEST_RATE_BLOODY_COINS));
 					sm2.addString(Long.toString(CONQUEST_POINT_DATA.getPvpPersonalPointsAmount(targetPlayer.getLevel())));
 					sm2.addString(Long.toString(CONQUEST_POINT_DATA.getPvpServerPointsAmount(targetPlayer.getLevel())));
 					attackerPlayer.sendPacket(sm2);
@@ -846,9 +845,9 @@ public class ConquestEngine extends AbstractNpcAI
 		// Update data for offline players.
 		// Attack Points
 		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ?"))
+			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ? AND charId IN (SELECT charId FROM characters WHERE online = 0)"))
 		{
-			ps.setInt(1, Config.CONQUEST_ATTACK_POINTS);
+			ps.setInt(1, ConquestConfig.CONQUEST_ATTACK_POINTS);
 			ps.setString(2, PlayerVariables.CONQUEST_ATTACK_POINTS);
 			ps.executeUpdate();
 		}
@@ -859,9 +858,9 @@ public class ConquestEngine extends AbstractNpcAI
 		
 		// Life Points
 		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ?"))
+			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ? AND charId IN (SELECT charId FROM characters WHERE online = 0)"))
 		{
-			ps.setInt(1, Config.CONQUEST_LIFE_POINTS);
+			ps.setInt(1, ConquestConfig.CONQUEST_LIFE_POINTS);
 			ps.setString(2, PlayerVariables.CONQUEST_LIFE_POINTS);
 			ps.executeUpdate();
 		}
@@ -896,8 +895,8 @@ public class ConquestEngine extends AbstractNpcAI
 		for (Player player : World.getInstance().getPlayers())
 		{
 			final PlayerVariables vars = player.getVariables();
-			vars.set(PlayerVariables.CONQUEST_ATTACK_POINTS, Config.CONQUEST_ATTACK_POINTS);
-			vars.set(PlayerVariables.CONQUEST_LIFE_POINTS, Config.CONQUEST_LIFE_POINTS);
+			vars.set(PlayerVariables.CONQUEST_ATTACK_POINTS, ConquestConfig.CONQUEST_ATTACK_POINTS);
+			vars.set(PlayerVariables.CONQUEST_LIFE_POINTS, ConquestConfig.CONQUEST_LIFE_POINTS);
 		}
 		
 		LOGGER.info(getClass().getSimpleName() + ": Player points entries have been reset.");

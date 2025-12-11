@@ -20,12 +20,12 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.teleports;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.holders.TeleportListHolder;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.RaidTeleportListData;
 import org.l2jmobius.gameserver.managers.CastleManager;
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -83,7 +83,7 @@ public class ExTeleportToRaidPosition extends ClientPacket
 			player.sendMessage("You cannot teleport right now.");
 			return;
 		}
-		else if (template.isType("RaidBoss") && (DBSpawnManager.getInstance().getStatus(_raidId) != RaidBossStatus.ALIVE))
+		else if (template.isType("RaidBoss") && (DatabaseSpawnManager.getInstance().getStatus(_raidId) != RaidBossStatus.ALIVE))
 		{
 			player.sendMessage("You cannot teleport right now.");
 			return;
@@ -97,7 +97,7 @@ public class ExTeleportToRaidPosition extends ClientPacket
 		}
 		
 		// Karma related configurations.
-		if ((!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && (player.getReputation() < 0))
+		if ((!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && (player.getReputation() < 0))
 		{
 			player.sendMessage("You cannot teleport right now.");
 			return;
@@ -111,7 +111,7 @@ public class ExTeleportToRaidPosition extends ClientPacket
 		}
 		
 		final Location location = teleport.getLocation();
-		if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
+		if (!PlayerConfig.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
 		{
 			final Castle castle = CastleManager.getInstance().getCastle(location.getX(), location.getY(), location.getZ());
 			if ((castle != null) && castle.getSiege().isInProgress())

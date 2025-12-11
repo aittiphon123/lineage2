@@ -353,8 +353,6 @@
 					<item id="4614" min="1" max="1" chance="34.6448" /> <!-- Greater Dye of Strength (Str+4 Dex-4) -->
 					<item id="4615" min="1" max="1" chance="34.6448" /> <!-- Greater Dye of Constitution (Con+4 Str-4) -->
 				</group>
-				<group chance="25">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -482,8 +480,6 @@
 					<item id="2060" min="4" max="12" chance="35.5727" /> <!-- Stormbringer Blade -->
 					<item id="2059" min="8" max="22" chance="17.7482" /> <!-- Flamberge Blade -->
 					<item id="6573" min="1" max="1" chance="6.19467" /> <!-- Blessed Scroll: Enchant Weapon (Grade C) -->
-				</group>
-				<group chance="50">
 				</group>
 			</drop>
 		</dropLists>
@@ -714,8 +710,6 @@
 					<item id="2048" min="2" max="6" chance="12.5506" /> <!-- Bonebreaker Head -->
 					<item id="952" min="3" max="9" chance="87.4494" /> <!-- Scroll: Enchant Armor (Grade C) -->
 				</group>
-				<group chance="50">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -863,8 +857,6 @@
 					<item id="4608" min="1" max="1" chance="33.3333" /> <!-- Greater Dye of Intelligence (Int+3 Wit-3) -->
 					<item id="4607" min="1" max="1" chance="33.3333" /> <!-- Greater Dye of Intelligence (Int+3 Men-3) -->
 				</group>
-				<group chance="50">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -959,8 +951,6 @@
 					<item id="4604" min="2" max="6" chance="15.464" /> <!-- Greater Dye of Constitution (Con+3 Dex-3) -->
 					<item id="4605" min="3" max="7" chance="12.3711" /> <!-- Greater Dye of Dexterity (Dex+3 Str-3) -->
 					<item id="4606" min="3" max="9" chance="10.3093" /> <!-- Greater Dye of Dexterity (Dex+3 Con-3) -->
-				</group>
-				<group chance="50">
 				</group>
 			</drop>
 		</dropLists>
@@ -1099,8 +1089,6 @@
 					<item id="4623" min="1" max="1" chance="45.5927" /> <!-- Greater Dye of Wit (Wit+4 Int-4) -->
 					<item id="4624" min="1" max="1" chance="45.5927" /> <!-- Greater Dye of Wit (Wit+4 Men-4) -->
 					<item id="6572" min="1" max="1" chance="8.81461" /> <!-- Blessed Scroll: Enchant Armor (Grade B) -->
-				</group>
-				<group chance="50">
 				</group>
 			</drop>
 		</dropLists>
@@ -1886,8 +1874,6 @@
 					<item id="4612" min="1" max="1" chance="30.7018" /> <!-- Greater Dye of Wit (Wit+3 Men-3) -->
 					<item id="6574" min="1" max="1" chance="7.89461" /> <!-- Blessed Scroll: Enchant Armor (Grade C) -->
 				</group>
-				<group chance="50">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -2132,10 +2118,6 @@
 					<item id="960" min="1" max="1" chance="18.4164" /> <!-- Scroll: Enchant Armor (Grade S) -->
 					<item id="959" min="1" max="1" chance="1.84169" /> <!-- Scroll: Enchant Weapon (Grade S) -->
 					<item id="6577" min="1" max="1" chance="0.30707" /> <!-- Blessed Scroll: Enchant Weapon (Grade S) -->
-				</group>
-				<group chance="25">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>
@@ -2401,10 +2383,6 @@
 					<item id="959" min="1" max="1" chance="3.82826" /> <!-- Scroll: Enchant Weapon (Grade S) -->
 					<item id="6577" min="1" max="1" chance="0.63812" /> <!-- Blessed Scroll: Enchant Weapon (Grade S) -->
 				</group>
-				<group chance="25">
-				</group>
-				<group chance="100">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -2525,8 +2503,6 @@
 					<item id="4601" min="1" max="3" chance="15.6367" /> <!-- Greater Dye of Strength (Str+3 Con-3) -->
 					<item id="4602" min="2" max="4" chance="10.4245" /> <!-- Greater Dye of Strength (Str+3 Dex-3) -->
 					<item id="4603" min="1" max="1" chance="31.2734" /> <!-- Greater Dye of Constitution (Con+3 Str-3) -->
-				</group>
-				<group chance="25">
 				</group>
 			</drop>
 		</dropLists>
@@ -2980,8 +2956,6 @@
 					<item id="729" min="1" max="1" chance="4.91964" /> <!-- Scroll: Enchant Weapon (Grade A) -->
 					<item id="6569" min="1" max="1" chance="0.59037" /> <!-- Blessed Scroll: Enchant Weapon (Grade A) -->
 				</group>
-				<group chance="50">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -3106,10 +3080,6 @@
 					<item id="5542" min="3" max="9" chance="59.8264" /> <!-- Halberd Edge -->
 					<item id="6569" min="1" max="1" chance="0.91997" /> <!-- Blessed Scroll: Enchant Weapon (Grade A) -->
 					<item id="6570" min="1" max="1" chance="7.66574" /> <!-- Blessed Scroll: Enchant Armor (Grade A) -->
-				</group>
-				<group chance="50">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>
@@ -3475,8 +3445,6 @@
 					<item id="5536" min="3" max="9" chance="56.1664" /> <!-- Bloody Orchid Head -->
 					<item id="729" min="1" max="1" chance="7.13325" /> <!-- Scroll: Enchant Weapon (Grade A) -->
 					<item id="6570" min="1" max="1" chance="7.13325" /> <!-- Blessed Scroll: Enchant Armor (Grade A) -->
-				</group>
-				<group chance="25">
 				</group>
 			</drop>
 		</dropLists>
@@ -4025,8 +3993,6 @@
 				<group chance="87.5931">
 					<item id="951" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Weapon (Grade C) -->
 				</group>
-				<group chance="50">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -4150,8 +4116,6 @@
 					<item id="4613" min="1" max="1" chance="30.3951" /> <!-- Greater Dye of Strength (Str+4 Con-4) -->
 					<item id="4614" min="1" max="1" chance="30.3951" /> <!-- Greater Dye of Strength (Str+4 Dex-4) -->
 					<item id="4615" min="1" max="1" chance="30.3951" /> <!-- Greater Dye of Constitution (Con+4 Str-4) -->
-				</group>
-				<group chance="50">
 				</group>
 			</drop>
 		</dropLists>
@@ -4374,8 +4338,6 @@
 					<item id="4601" min="1" max="3" chance="16.0028" /> <!-- Greater Dye of Strength (Str+3 Con-3) -->
 					<item id="4602" min="2" max="4" chance="10.6685" /> <!-- Greater Dye of Strength (Str+3 Dex-3) -->
 					<item id="4603" min="1" max="1" chance="32.0056" /> <!-- Greater Dye of Constitution (Con+3 Str-3) -->
-				</group>
-				<group chance="50">
 				</group>
 			</drop>
 		</dropLists>

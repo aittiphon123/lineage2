@@ -20,10 +20,10 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.classchange;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.serverpackets.classchange.ExClassChangeSetAlarm;
 
@@ -86,7 +86,7 @@ public class ExRequestClassChangeVerifying extends ClientPacket
 	
 	private boolean firstClassCheck(Player player)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return true;
 		}
@@ -137,7 +137,7 @@ public class ExRequestClassChangeVerifying extends ClientPacket
 	
 	private boolean thirdClassCheck(Player player)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return true;
 		}

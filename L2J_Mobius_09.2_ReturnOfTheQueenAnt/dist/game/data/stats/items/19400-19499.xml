@@ -607,7 +607,6 @@
 	<item id="19443" name="Orichalcum Bolt" type="EtcItem">
 		<!-- Bolt made of Orichalcum. Used as bolts for R-grade crossbows. -->
 		<set name="icon" val="icon.etc_oricalcum_bolt_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />

@@ -33,18 +33,17 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerDlgAnswer;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.SiegeGuardHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ConfirmDlg;
 
-import ai.AbstractNpcAI;
-
 /**
  * Mercenary Ticket Item Handler.
  * @author St3eT
  */
-public class MercTicket extends AbstractNpcAI implements IItemHandler
+public class MercTicket extends Script implements IItemHandler
 {
 	private final Map<Integer, Item> _items = new ConcurrentHashMap<>();
 	

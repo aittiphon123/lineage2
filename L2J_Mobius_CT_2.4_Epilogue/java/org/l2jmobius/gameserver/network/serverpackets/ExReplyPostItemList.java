@@ -50,7 +50,7 @@ public class ExReplyPostItemList extends ServerPacket
 			buffer.writeLong(item.getCount());
 			buffer.writeShort(item.getTemplate().getType2());
 			buffer.writeShort(item.getCustomType1());
-			buffer.writeInt(item.getTemplate().getBodyPart());
+			buffer.writeInt(item.getTemplate().getBodyPart().getMask());
 			buffer.writeShort(item.getEnchantLevel());
 			buffer.writeShort(item.getCustomType2());
 			buffer.writeShort(item.getAttackElementType());

@@ -41,7 +41,7 @@ public class ExRpItemLink extends ServerPacket
 		buffer.writeInt(_item.getDisplayId());
 		buffer.writeLong(_item.getCount());
 		buffer.writeShort(_item.getTemplate().getType2());
-		buffer.writeInt(_item.getTemplate().getBodyPart());
+		buffer.writeInt(_item.getTemplate().getBodyPart().getMask());
 		buffer.writeShort(_item.getEnchantLevel());
 		buffer.writeShort(_item.getCustomType2());
 		buffer.writeShort(0); // ??

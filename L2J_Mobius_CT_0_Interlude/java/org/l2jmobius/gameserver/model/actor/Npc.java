@@ -30,10 +30,19 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.cache.HtmCache;
+import org.l2jmobius.gameserver.config.FeatureConfig;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.RatesConfig;
+import org.l2jmobius.gameserver.config.ServerConfig;
+import org.l2jmobius.gameserver.config.custom.FakePlayersConfig;
+import org.l2jmobius.gameserver.config.custom.PrivateStoreRangeConfig;
+import org.l2jmobius.gameserver.config.custom.PvpAnnounceConfig;
+import org.l2jmobius.gameserver.config.custom.PvpRewardItemConfig;
 import org.l2jmobius.gameserver.data.xml.DynamicExpRateData;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.data.xml.NpcData;
@@ -82,8 +91,8 @@ import org.l2jmobius.gameserver.model.item.enums.ShotType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
-import org.l2jmobius.gameserver.model.quest.QuestTimer;
-import org.l2jmobius.gameserver.model.quest.timers.TimerHolder;
+import org.l2jmobius.gameserver.model.script.QuestTimer;
+import org.l2jmobius.gameserver.model.script.timers.TimerHolder;
 import org.l2jmobius.gameserver.model.sevensigns.SevenSigns;
 import org.l2jmobius.gameserver.model.sevensigns.SevenSignsFestival;
 import org.l2jmobius.gameserver.model.siege.Castle;
@@ -183,7 +192,7 @@ public class Npc extends Creature
 		// initialize the "current" equipment
 		_currentLHandId = getTemplate().getLHandId();
 		_currentRHandId = getTemplate().getRHandId();
-		_currentEnchant = Config.ENABLE_RANDOM_ENCHANT_EFFECT ? Rnd.get(4, 21) : getTemplate().getWeaponEnchant();
+		_currentEnchant = NpcConfig.ENABLE_RANDOM_ENCHANT_EFFECT ? Rnd.get(4, 21) : getTemplate().getWeaponEnchant();
 		
 		// initialize the "current" collisions
 		_currentCollisionHeight = getTemplate().getFCollisionHeight();
@@ -269,7 +278,7 @@ public class Npc extends Creature
 	 */
 	public boolean hasRandomAnimation()
 	{
-		return ((Config.MAX_NPC_ANIMATION > 0) && isRandomAnimationEnabled() && (getAiType() != AIType.CORPSE));
+		return ((GeneralConfig.MAX_NPC_ANIMATION > 0) && isRandomAnimationEnabled() && (getAiType() != AIType.CORPSE));
 	}
 	
 	/**
@@ -343,7 +352,7 @@ public class Npc extends Creature
 	@Override
 	public boolean canBeAttacked()
 	{
-		return Config.ALT_ATTACKABLE_NPCS;
+		return NpcConfig.ALT_ATTACKABLE_NPCS;
 	}
 	
 	/**
@@ -751,7 +760,7 @@ public class Npc extends Creature
 		}
 		
 		final String temp = "data/html/default/" + pom + ".htm";
-		if (Config.HTM_CACHE)
+		if (GeneralConfig.HTM_CACHE)
 		{
 			// If not running lazy cache the file must be in the cache or it does not exist
 			if (HtmCache.getInstance().contains(temp))
@@ -761,7 +770,7 @@ public class Npc extends Creature
 		}
 		else
 		{
-			final File file = new File(Config.DATAPACK_ROOT, temp);
+			final File file = new File(ServerConfig.DATAPACK_ROOT, temp);
 			if (file.isFile())
 			{
 				final String lowerCaseName = file.getName().toLowerCase();
@@ -828,28 +837,28 @@ public class Npc extends Creature
 		
 		if (player.getKarma() > 0)
 		{
-			if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this instanceof Merchant))
+			if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this instanceof Merchant))
 			{
 				if (showPkDenyChatWindow(player, "merchant"))
 				{
 					return;
 				}
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && (this instanceof Teleporter))
+			else if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && (this instanceof Teleporter))
 			{
 				if (showPkDenyChatWindow(player, "teleporter"))
 				{
 					return;
 				}
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && (this instanceof Warehouse))
+			else if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && (this instanceof Warehouse))
 			{
 				if (showPkDenyChatWindow(player, "warehouse"))
 				{
 					return;
 				}
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this instanceof Fisherman))
+			else if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this instanceof Fisherman))
 			{
 				if (showPkDenyChatWindow(player, "fisherman"))
 				{
@@ -899,7 +908,7 @@ public class Npc extends Creature
 			}
 			case 31113: // Merchant of Mammon
 			{
-				if (Config.ALT_STRICT_SEVENSIGNS)
+				if (FeatureConfig.ALT_STRICT_SEVENSIGNS)
 				{
 					switch (compWinner)
 					{
@@ -936,7 +945,7 @@ public class Npc extends Creature
 			}
 			case 31126: // Blacksmith of Mammon
 			{
-				if (Config.ALT_STRICT_SEVENSIGNS)
+				if (FeatureConfig.ALT_STRICT_SEVENSIGNS)
 				{
 					switch (compWinner)
 					{
@@ -1091,7 +1100,7 @@ public class Npc extends Creature
 			return (long) (getTemplate().getExp() * DynamicExpRateData.getInstance().getDynamicExpRate(level));
 		}
 		
-		return (long) (getTemplate().getExp() * Config.RATE_XP);
+		return (long) (getTemplate().getExp() * RatesConfig.RATE_XP);
 	}
 	
 	/**
@@ -1105,7 +1114,7 @@ public class Npc extends Creature
 			return (int) (getTemplate().getSP() * DynamicExpRateData.getInstance().getDynamicSpRate(level));
 		}
 		
-		return (int) (getTemplate().getSP() * Config.RATE_SP);
+		return (int) (getTemplate().getSP() * RatesConfig.RATE_SP);
 	}
 	
 	/**
@@ -1145,7 +1154,7 @@ public class Npc extends Creature
 			final Player player = killer.asPlayer();
 			if (isScriptValue(0) && (getKarma() < 0))
 			{
-				if (Config.FAKE_PLAYER_KILL_KARMA)
+				if (FakePlayersConfig.FAKE_PLAYER_KILL_KARMA)
 				{
 					player.setKarma(player.getKarma() + Formulas.calculateKarmaGain(player.getPkKills(), killer.isSummon()));
 					player.setPkKills(player.getPkKills() + 1);
@@ -1153,20 +1162,20 @@ public class Npc extends Creature
 					player.checkItemRestriction();
 					
 					// pk item rewards
-					if (Config.REWARD_PK_ITEM)
+					if (PvpRewardItemConfig.REWARD_PK_ITEM)
 					{
-						if (!(Config.DISABLE_REWARDS_IN_INSTANCES && (getInstanceId() != 0)) && //
-							!(Config.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
+						if (!(PvpRewardItemConfig.DISABLE_REWARDS_IN_INSTANCES && (getInstanceId() != 0)) && //
+							!(PvpRewardItemConfig.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
 						{
-							player.addItem(ItemProcessType.REWARD, Config.REWARD_PK_ITEM_ID, Config.REWARD_PK_ITEM_AMOUNT, this, Config.REWARD_PK_ITEM_MESSAGE);
+							player.addItem(ItemProcessType.REWARD, PvpRewardItemConfig.REWARD_PK_ITEM_ID, PvpRewardItemConfig.REWARD_PK_ITEM_AMOUNT, this, PvpRewardItemConfig.REWARD_PK_ITEM_MESSAGE);
 						}
 					}
 					
 					// announce pk
-					if (Config.ANNOUNCE_PK_PVP && !player.isGM())
+					if (PvpAnnounceConfig.ANNOUNCE_PK_PVP && !player.isGM())
 					{
-						final String msg = Config.ANNOUNCE_PK_MSG.replace("$killer", player.getName()).replace("$target", getName());
-						if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
+						final String msg = PvpAnnounceConfig.ANNOUNCE_PK_MSG.replace("$killer", player.getName()).replace("$target", getName());
+						if (PvpAnnounceConfig.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
 						{
 							final SystemMessage sm = new SystemMessage(SystemMessageId.S1_3);
 							sm.addString(msg);
@@ -1179,26 +1188,26 @@ public class Npc extends Creature
 					}
 				}
 			}
-			else if (Config.FAKE_PLAYER_KILL_PVP)
+			else if (FakePlayersConfig.FAKE_PLAYER_KILL_PVP)
 			{
 				player.setPvpKills(player.getPvpKills() + 1);
 				player.broadcastUserInfo();
 				
 				// pvp item rewards
-				if (Config.REWARD_PVP_ITEM)
+				if (PvpRewardItemConfig.REWARD_PVP_ITEM)
 				{
-					if (!(Config.DISABLE_REWARDS_IN_INSTANCES && (getInstanceId() != 0)) && //
-						!(Config.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
+					if (!(PvpRewardItemConfig.DISABLE_REWARDS_IN_INSTANCES && (getInstanceId() != 0)) && //
+						!(PvpRewardItemConfig.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
 					{
-						player.addItem(ItemProcessType.REWARD, Config.REWARD_PVP_ITEM_ID, Config.REWARD_PVP_ITEM_AMOUNT, this, Config.REWARD_PVP_ITEM_MESSAGE);
+						player.addItem(ItemProcessType.REWARD, PvpRewardItemConfig.REWARD_PVP_ITEM_ID, PvpRewardItemConfig.REWARD_PVP_ITEM_AMOUNT, this, PvpRewardItemConfig.REWARD_PVP_ITEM_MESSAGE);
 					}
 				}
 				
 				// announce pvp
-				if (Config.ANNOUNCE_PK_PVP && !player.isGM())
+				if (PvpAnnounceConfig.ANNOUNCE_PK_PVP && !player.isGM())
 				{
-					final String msg = Config.ANNOUNCE_PVP_MSG.replace("$killer", player.getName()).replace("$target", getName());
-					if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
+					final String msg = PvpAnnounceConfig.ANNOUNCE_PVP_MSG.replace("$killer", player.getName()).replace("$target", getName());
+					if (PvpAnnounceConfig.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
 					{
 						final SystemMessage sm = new SystemMessage(SystemMessageId.S1_3);
 						sm.addString(msg);
@@ -1620,7 +1629,7 @@ public class Npc extends Creature
 	@Override
 	public void rechargeShots(boolean physical, boolean magic)
 	{
-		if (_isFakePlayer && Config.FAKE_PLAYER_USE_SHOTS)
+		if (_isFakePlayer && FakePlayersConfig.FAKE_PLAYER_USE_SHOTS)
 		{
 			if (physical)
 			{
@@ -1827,7 +1836,7 @@ public class Npc extends Creature
 			item.dropMe(this, newX, newY, newZ);
 			
 			// Add drop to auto destroy item task.
-			if (!Config.LIST_PROTECTED_ITEMS.contains(itemId) && (((Config.AUTODESTROY_ITEM_AFTER > 0) && !item.getTemplate().hasExImmediateEffect()) || ((Config.HERB_AUTO_DESTROY_TIME > 0) && item.getTemplate().hasExImmediateEffect())))
+			if (!GeneralConfig.LIST_PROTECTED_ITEMS.contains(itemId) && (((GeneralConfig.AUTODESTROY_ITEM_AFTER > 0) && !item.getTemplate().hasExImmediateEffect()) || ((GeneralConfig.HERB_AUTO_DESTROY_TIME > 0) && item.getTemplate().hasExImmediateEffect())))
 			{
 				ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 			}
@@ -1835,7 +1844,7 @@ public class Npc extends Creature
 			item.setProtected(false);
 			
 			// If stackable, end loop as entire count is included in 1 instance of item.
-			if (item.isStackable() || !Config.MULTIPLE_ITEM_DROP)
+			if (item.isStackable() || !GeneralConfig.MULTIPLE_ITEM_DROP)
 			{
 				break;
 			}
@@ -2028,7 +2037,7 @@ public class Npc extends Creature
 	@Override
 	public int getMinShopDistance()
 	{
-		return Config.SHOP_MIN_RANGE_FROM_NPC;
+		return PrivateStoreRangeConfig.SHOP_MIN_RANGE_FROM_NPC;
 	}
 	
 	public void addQuestTimer(QuestTimer questTimer)

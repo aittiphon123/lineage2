@@ -37,19 +37,18 @@ import org.l2jmobius.gameserver.model.actor.instance.FriendlyNpc;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
 import org.l2jmobius.gameserver.model.events.holders.instance.OnInstanceStatusChange;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 import org.l2jmobius.gameserver.util.MapUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * Kartia Helper Elise AI. Healer
  * @author flanagak
  */
-public class KartiaHelperElise extends AbstractNpcAI
+public class KartiaHelperElise extends Script
 {
 	// NPCs
 	private static final int[] KARTIA_ELISE =

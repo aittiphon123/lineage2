@@ -25,19 +25,18 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
-import instances.AbstractInstance;
-
 /**
  * Kimerian Common instance zone.
  * @author St3eT, Gladicek
  */
-public class KimerianCommon extends AbstractInstance
+public class KimerianCommon extends InstanceScript
 {
 	// NPCs
 	private static final int KIMERIAN = 25745;

@@ -22,15 +22,14 @@ package ai.areas.BlackbirdCampsite.Valleria;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Faction;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Valleria AI.
  * @author CostyKiller
  */
-public class Valleria extends AbstractNpcAI
+public class Valleria extends Script
 {
 	// NPC
 	private static final int VALLERIA = 34435;

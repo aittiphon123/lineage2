@@ -461,7 +461,6 @@
 	<item id="9632" name="Wooden Bolt" type="EtcItem">
 		<!-- Can be used as a bolt for a no-grade Crossbow. -->
 		<set name="icon" val="icon.etc_wooden_bolt_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -473,7 +472,6 @@
 	<item id="9633" name="Bone Bolt" type="EtcItem">
 		<!-- Can be used as a bolt for a D-grade Crossbow. -->
 		<set name="icon" val="icon.etc_bone_bolt_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
@@ -486,7 +484,6 @@
 	<item id="9634" name="Steel Bolt" type="EtcItem">
 		<!-- Can be used as a bolt for a C-grade Crossbow. -->
 		<set name="icon" val="icon.etc_fine_steel_bolt_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
@@ -499,7 +496,6 @@
 	<item id="9635" name="Silver Bolt" type="EtcItem">
 		<!-- This silver-plated steel bolt can be used with a B-grade Crossbow. -->
 		<set name="icon" val="icon.etc_silver_bolt_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -512,7 +508,6 @@
 	<item id="9636" name="Mithril Bolt" type="EtcItem">
 		<!-- This mithril-plated steel bolt can be used with an A-grade Crossbow. -->
 		<set name="icon" val="icon.etc_mithril_bolt_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
@@ -525,7 +520,6 @@
 	<item id="9637" name="Bolt of Light" type="EtcItem">
 		<!-- This bolt, made of unknown material, can be used with an S-grade Crossbow. -->
 		<set name="icon" val="icon.etc_shining_bolt_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />

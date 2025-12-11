@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.model.actor.stat;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Summon;
 
 public class SummonStat extends PlayableStat
@@ -39,12 +39,12 @@ public class SummonStat extends PlayableStat
 	@Override
 	public double getRunSpeed()
 	{
-		final double val = super.getRunSpeed() + Config.RUN_SPD_BOOST;
+		final double val = super.getRunSpeed() + PlayerConfig.RUN_SPD_BOOST;
 		
 		// Apply max run speed cap.
-		if (val > Config.MAX_RUN_SPEED_SUMMON) // In retail maximum run speed is 350 for summons and 300 for players
+		if (val > PlayerConfig.MAX_RUN_SPEED_SUMMON) // In retail maximum run speed is 350 for summons and 300 for players
 		{
-			return Config.MAX_RUN_SPEED_SUMMON;
+			return PlayerConfig.MAX_RUN_SPEED_SUMMON;
 		}
 		
 		return val;
@@ -53,12 +53,12 @@ public class SummonStat extends PlayableStat
 	@Override
 	public double getWalkSpeed()
 	{
-		final double val = super.getWalkSpeed() + Config.RUN_SPD_BOOST;
+		final double val = super.getWalkSpeed() + PlayerConfig.RUN_SPD_BOOST;
 		
 		// Apply max run speed cap.
-		if (val > Config.MAX_RUN_SPEED_SUMMON) // In retail maximum run speed is 350 for summons and 300 for players
+		if (val > PlayerConfig.MAX_RUN_SPEED_SUMMON) // In retail maximum run speed is 350 for summons and 300 for players
 		{
-			return Config.MAX_RUN_SPEED_SUMMON;
+			return PlayerConfig.MAX_RUN_SPEED_SUMMON;
 		}
 		
 		return val;

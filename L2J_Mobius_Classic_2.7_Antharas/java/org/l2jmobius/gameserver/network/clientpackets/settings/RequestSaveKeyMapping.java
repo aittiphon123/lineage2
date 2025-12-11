@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.settings;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.ConnectionState;
@@ -50,7 +50,7 @@ public class RequestSaveKeyMapping extends ClientPacket
 	protected void runImpl()
 	{
 		final Player player = getPlayer();
-		if (!Config.STORE_UI_SETTINGS || //
+		if (!PlayerConfig.STORE_UI_SETTINGS || //
 			(player == null) || //
 			(_uiKeyMapping == null) || //
 			(getClient().getConnectionState() != ConnectionState.IN_GAME))

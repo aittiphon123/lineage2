@@ -19,15 +19,14 @@ package ai.others.Spawns;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.spawns.SpawnGroup;
 import org.l2jmobius.gameserver.model.spawns.SpawnTemplate;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author UnAfraid
  */
-public class NoRandomActivity extends AbstractNpcAI
+public class NoRandomActivity extends Script
 {
 	private NoRandomActivity()
 	{

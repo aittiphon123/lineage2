@@ -168,7 +168,6 @@
 	<item id="83004" name="Shining Relic Summon Coupon - 11 times" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain 11 relics of No-grade/ D-grade/ C-grade/ B-grade. -->
 		<set name="icon" val="icon.bless_relics_summon_11_ticket_lv1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -180,7 +179,6 @@
 	<item id="83005" name="Shining Relic Summon Coupon - 1 time" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain 1 relic of No-grade/ D-grade/ C-grade/ B-grade. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -192,7 +190,6 @@
 	<item id="83006" name="Relic Summon Coupon - 11 times" type="EtcItem">
 		<!-- A coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain 11 relics of No-grade/ D-grade/ C-grade. -->
 		<set name="icon" val="icon.relics_summon_11_ticket_lv1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -204,7 +201,6 @@
 	<item id="83007" name="Relic Summon Coupon - 1 time" type="EtcItem">
 		<!-- A coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain a relic of No-grade/ D-grade/ C-grade. -->
 		<set name="icon" val="icon.relics_summon_1_ticket_lv1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -216,7 +212,6 @@
 	<item id="83008" name="C-grade Relic Ticket - 1 time" type="EtcItem">
 		<!-- A coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain a relic of D-grade/ C-grade. -->
 		<set name="icon" val="icon.relics_summon_1_ticket_lv3" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -228,7 +223,6 @@
 	<item id="83009" name="B-grade Relic Ticket - 1 time" type="EtcItem">
 		<!-- A coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain a relic of C-grade/ B-grade. -->
 		<set name="icon" val="icon.relics_summon_1_ticket_lv4" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -240,7 +234,6 @@
 	<item id="83010" name="A-grade Relic Ticket - 1 time" type="EtcItem">
 		<!-- A coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain a relic of B-grade/ A-grade. -->
 		<set name="icon" val="icon.relics_summon_1_ticket_lv5" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -252,7 +245,6 @@
 	<item id="83011" name="B-grade Relic Shard" type="EtcItem">
 		<!-- Can be obtained when failing to compound a C-grade relic. Combine several of these shards to create B-grade Relic Summon Coupon - 1-time. -->
 		<set name="icon" val="icon.relics_confirme_summon_ticket_lv4" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
 		<set name="is_tradable" val="false" />
@@ -263,7 +255,6 @@
 	<item id="83012" name="A-grade Relic Shard" type="EtcItem">
 		<!-- Can be obtained when failing to compound a B-grade relic. Combine several of these shards to create A-grade Relic Summon Coupon - 1-time. -->
 		<set name="icon" val="icon.relics_confirme_summon_ticket_lv5" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
 		<set name="is_tradable" val="false" />
@@ -274,7 +265,6 @@
 	<item id="83013" name="Coatl's Essence" type="EtcItem">
 		<!-- Can be obtained after defeating Coatl. Add to a collection to boost your stats. -->
 		<set name="icon" val="icon.etc_hard_fossil_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
 		<set name="is_sellable" val="false" />
@@ -290,7 +280,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="POTION" />
 		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
 		<skills>
 			<skill id="39862" level="1" /> <!-- High Priest's Grace -->
 		</skills>
@@ -318,6 +310,10 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="82169" min="5" max="5" chance="100" /> <!-- Forgotten Spellbook - Finale -->
+		</capsuled_items>
 	</item>
 	<item id="83017" name="Test Pack_lv1" type="EtcItem">
 		<!-- Test Pack_lv1 -->
@@ -329,6 +325,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="47821" min="1" max="1" chance="100" /> <!-- Sayha's Talisman Pack Lv. 10 -->
+			<item id="48666" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack -->
+			<item id="48667" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack (Lv. 1) -->
+			<item id="48908" min="1" max="1" chance="100" /> <!-- Shillien's Soul Crystal Lv. 10 - Weapon -->
+			<item id="80663" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack (Lv. 2) -->
+			<item id="35566" min="1" max="1" chance="100" /> <!-- Dark Weapon Upgrade Stone -->
+			<item id="35568" min="1" max="1" chance="100" /> <!-- Bloody Weapon Upgrade Stone -->
+			<item id="19463" min="1" max="1" chance="100" /> <!-- Antharas' Blessed Earring -->
+			<item id="19464" min="1" max="1" chance="100" /> <!-- Valakas' Blessed Necklace -->
+			<item id="36946" min="1" max="1" chance="100" /> <!-- Lindvior's Earring -->
+		</capsuled_items>
 	</item>
 	<item id="83018" name="Test Pack_lv3" type="EtcItem">
 		<!-- Test Pack_lv3 -->
@@ -340,6 +349,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="47821" min="1" max="1" chance="100" /> <!-- Sayha's Talisman Pack Lv. 10 -->
+			<item id="48666" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack -->
+			<item id="48667" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack (Lv. 1) -->
+			<item id="48908" min="1" max="1" chance="100" /> <!-- Shillien's Soul Crystal Lv. 10 - Weapon -->
+			<item id="80663" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack (Lv. 2) -->
+			<item id="35566" min="1" max="1" chance="100" /> <!-- Dark Weapon Upgrade Stone -->
+			<item id="35568" min="1" max="1" chance="100" /> <!-- Bloody Weapon Upgrade Stone -->
+			<item id="19463" min="1" max="1" chance="100" /> <!-- Antharas' Blessed Earring -->
+			<item id="19464" min="1" max="1" chance="100" /> <!-- Valakas' Blessed Necklace -->
+			<item id="36946" min="1" max="1" chance="100" /> <!-- Lindvior's Earring -->
+		</capsuled_items>
 	</item>
 	<item id="83019" name="Test Pack_lv5" type="EtcItem">
 		<!-- Test Pack_lv5 -->
@@ -351,6 +373,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="47821" min="1" max="1" chance="100" /> <!-- Sayha's Talisman Pack Lv. 10 -->
+			<item id="48666" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack -->
+			<item id="48667" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack (Lv. 1) -->
+			<item id="48908" min="1" max="1" chance="100" /> <!-- Shillien's Soul Crystal Lv. 10 - Weapon -->
+			<item id="80663" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack (Lv. 2) -->
+			<item id="35566" min="1" max="1" chance="100" /> <!-- Dark Weapon Upgrade Stone -->
+			<item id="35568" min="1" max="1" chance="100" /> <!-- Bloody Weapon Upgrade Stone -->
+			<item id="19463" min="1" max="1" chance="100" /> <!-- Antharas' Blessed Earring -->
+			<item id="19464" min="1" max="1" chance="100" /> <!-- Valakas' Blessed Necklace -->
+			<item id="36946" min="1" max="1" chance="100" /> <!-- Lindvior's Earring -->
+		</capsuled_items>
 	</item>
 	<item id="83020" name="Test Pack_lv7" type="EtcItem">
 		<!-- Test Pack_lv7 -->
@@ -362,11 +397,23 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="47821" min="1" max="1" chance="100" /> <!-- Sayha's Talisman Pack Lv. 10 -->
+			<item id="48666" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack -->
+			<item id="48667" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack (Lv. 1) -->
+			<item id="48908" min="1" max="1" chance="100" /> <!-- Shillien's Soul Crystal Lv. 10 - Weapon -->
+			<item id="80663" min="1" max="1" chance="100" /> <!-- Dragon Weapon Pack (Lv. 2) -->
+			<item id="35566" min="1" max="1" chance="100" /> <!-- Dark Weapon Upgrade Stone -->
+			<item id="35568" min="1" max="1" chance="100" /> <!-- Bloody Weapon Upgrade Stone -->
+			<item id="19463" min="1" max="1" chance="100" /> <!-- Antharas' Blessed Earring -->
+			<item id="19464" min="1" max="1" chance="100" /> <!-- Valakas' Blessed Necklace -->
+			<item id="36946" min="1" max="1" chance="100" /> <!-- Lindvior's Earring -->
+		</capsuled_items>
 	</item>
 	<item id="83021" name="Test item Relic C_A - 11 times" type="EtcItem">
 		<!-- Double-click to obtain 11 relics of grades from C to A. Test. -->
 		<set name="icon" val="icon.xmas_present_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -427,7 +474,6 @@
 	<item id="83024" name="Shining Soul Crystal Craft Book" type="EtcItem">
 		<!-- Can be used for crafting Masia's Soul Crystal - Lv. 1, Pa'agrio's Soul Crystal - Lv. 1, Eva's Soul Crystal - Lv. 1 and Swift Growth Cookie. -->
 		<set name="icon" val="icon.etc_roll_of_paper_red_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
 		<set name="is_sellable" val="false" />
@@ -443,6 +489,10 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39864" level="1" /> <!-- Santiago's Royal Soup -->
+		</skills>
 	</item>
 	<item id="83060" name="Harvest Festival's Special Kit" type="EtcItem">
 		<!-- Double-click to obtain Swift Growth Cookie (400 pcs.), Vitality Sustaining Rune Pack (1 pc.), Freya's Scroll of Storm (1200 pcs.), My Teleport Scroll (100 pcs.), Aether (1000 pcs.), Relic Summon Coupon - 11-time (5 pcs.), Tales of Dimensions (400 pcs.). -->

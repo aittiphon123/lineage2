@@ -19,8 +19,8 @@ package handlers.admincommandhandlers;
 import java.io.File;
 import java.util.StringTokenizer;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.cache.HtmCache;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -97,7 +97,7 @@ public class AdminHtml implements IAdminCommandHandler
 		}
 		else
 		{
-			content = HtmCache.getInstance().loadFile(new File(Config.DATAPACK_ROOT, path));
+			content = HtmCache.getInstance().loadFile(new File(ServerConfig.DATAPACK_ROOT, path));
 		}
 		
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);

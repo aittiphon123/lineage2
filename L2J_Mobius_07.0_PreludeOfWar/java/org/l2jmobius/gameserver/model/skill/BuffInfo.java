@@ -26,8 +26,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.EffectList;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -317,7 +317,7 @@ public class BuffInfo
 		}
 		
 		// When effects are initialized, the successfully landed.
-		if (!_hideStartMessage && _effected.isPlayer() && (_effected.asPlayer().hasEnteredWorld() || Config.SHOW_EFFECT_MESSAGES_ON_LOGIN) && !_skill.isHidingMessages() && !_skill.isAura() && isDisplayedForEffected())
+		if (!_hideStartMessage && _effected.isPlayer() && (_effected.asPlayer().hasEnteredWorld() || PlayerConfig.SHOW_EFFECT_MESSAGES_ON_LOGIN) && !_skill.isHidingMessages() && !_skill.isAura() && isDisplayedForEffected())
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_S_EFFECT_CAN_BE_FELT);
 			sm.addSkillName(_skill);
@@ -351,7 +351,7 @@ public class BuffInfo
 			{
 				// The task for the effect ticks.
 				final EffectTickTask effectTask = new EffectTickTask(this, effect);
-				final ScheduledFuture<?> scheduledFuture = ThreadPool.scheduleAtFixedRate(effectTask, effect.getTicks() * Config.EFFECT_TICK_RATIO, effect.getTicks() * Config.EFFECT_TICK_RATIO);
+				final ScheduledFuture<?> scheduledFuture = ThreadPool.scheduleAtFixedRate(effectTask, effect.getTicks() * PlayerConfig.EFFECT_TICK_RATIO, effect.getTicks() * PlayerConfig.EFFECT_TICK_RATIO);
 				
 				// Adds the task for ticking.
 				addTask(effect, new EffectTaskInfo(effectTask, scheduledFuture));

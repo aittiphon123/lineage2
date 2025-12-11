@@ -18,9 +18,10 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
-import org.l2jmobius.gameserver.data.sql.EnchantSkillTreesTable;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.data.xml.EnchantSkillTreeData;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
@@ -104,7 +105,7 @@ public class RequestExEnchantSkill extends ClientPacket
 		byte rate = 0;
 		int baseLevel = 1;
 		
-		for (EnchantSkillLearn s : EnchantSkillTreesTable.getInstance().getAvailableEnchantSkills(player))
+		for (EnchantSkillLearn s : EnchantSkillTreeData.getInstance().getAvailableEnchantSkills(player))
 		{
 			final Skill sk = SkillData.getInstance().getSkill(s.getId(), s.getLevel());
 			if ((sk == null) || (sk != skill) || !trainer.getTemplate().canTeach(player.getPlayerClass()))
@@ -119,7 +120,7 @@ public class RequestExEnchantSkill extends ClientPacket
 			baseLevel = s.getBaseLevel();
 		}
 		
-		if ((counts == 0) && !Config.ALT_GAME_SKILL_LEARN)
+		if ((counts == 0) && !PlayerConfig.ALT_GAME_SKILL_LEARN)
 		{
 			player.sendMessage("You are trying to learn skill that you can't...");
 			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to learn skill that he can't!!!", IllegalActionPunishmentType.KICK);
@@ -133,7 +134,7 @@ public class RequestExEnchantSkill extends ClientPacket
 			final long expAfter = player.getExp() - requiredExp;
 			if ((player.getExp() >= requiredExp) && (expAfter >= ExperienceData.getInstance().getExpForLevel(player.getLevel())))
 			{
-				if (Config.ES_SP_BOOK_NEEDED && ((_skillLevel == 101) || (_skillLevel == 141))) // only first level requires book
+				if (PlayerConfig.ES_SP_BOOK_NEEDED && ((_skillLevel == 101) || (_skillLevel == 141))) // only first level requires book
 				{
 					spb = player.getInventory().getItemByItemId(6622);
 					if (spb == null) // Does not have spellbook.
@@ -160,7 +161,7 @@ public class RequestExEnchantSkill extends ClientPacket
 		
 		if (Rnd.get(100) < rate)
 		{
-			if (Config.LOG_SKILL_ENCHANTS)
+			if (GeneralConfig.LOG_SKILL_ENCHANTS)
 			{
 				final StringBuilder sb = new StringBuilder();
 				LOGGER_ENCHANT.info(sb.append("Success, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", Skill:").append(skill).append(", SPB:").append(spb).append(", Rate:").append(rate).toString());
@@ -188,7 +189,7 @@ public class RequestExEnchantSkill extends ClientPacket
 			
 			player.sendPacket(SystemMessageId.SKILL_ENCHANT_FAILED_THE_SKILL_WILL_BE_INITIALIZED);
 			
-			if (Config.LOG_SKILL_ENCHANTS)
+			if (GeneralConfig.LOG_SKILL_ENCHANTS)
 			{
 				final StringBuilder sb = new StringBuilder();
 				LOGGER_ENCHANT.info(sb.append("Failed, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", Skill:").append(skill).append(", SPB:").append(spb).append(", Rate:").append(rate).toString());

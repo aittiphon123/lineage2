@@ -27,15 +27,14 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-
-import ai.AbstractNpcAI;
 
 /**
  * Hermuncus' Minion AI.
  * @author St3eT
  */
-public class HermuncusMinion extends AbstractNpcAI
+public class HermuncusMinion extends Script
 {
 	// NPCs
 	private static final Map<Integer, Integer> HERMUNCUS_MINIONS = new HashMap<>();

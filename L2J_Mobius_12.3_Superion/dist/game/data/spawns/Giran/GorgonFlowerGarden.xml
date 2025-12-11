@@ -10,6 +10,7 @@
 			<npc id="33383" x="114481" y="132610" z="-3106" heading="34120" respawnTime="60sec" /> <!-- Guard -->
 			<npc id="33383" x="114693" y="132402" z="-3103" heading="50744" respawnTime="60sec" /> <!-- Guard -->
 			<npc id="33383" x="115071" y="132401" z="-3103" heading="49895" respawnTime="60sec" /> <!-- Guard -->
+			<npc id="30640" x="106345" y="135523" z="-3416" respawnTime="60sec" /> <!-- Brynthea - Summoner -->
 		</group>
 	</spawn>
 </list>

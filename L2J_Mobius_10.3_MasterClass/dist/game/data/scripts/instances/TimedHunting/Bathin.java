@@ -29,16 +29,15 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NasSeKa
  */
-public class Bathin extends AbstractNpcAI
+public class Bathin extends Script
 {
 	// NPC
 	private static final int BATHIN = 26445;

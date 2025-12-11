@@ -105,7 +105,6 @@ public enum InstanceType
 	ClanHallDoorman(Doorman),
 	
 	// Custom
-	ClassMaster(Folk),
 	SchemeBuffer(Npc),
 	EventMob(Npc);
 	

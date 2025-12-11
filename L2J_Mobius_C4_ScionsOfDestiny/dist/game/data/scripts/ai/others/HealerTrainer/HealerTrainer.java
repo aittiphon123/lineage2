@@ -16,18 +16,17 @@
  */
 package ai.others.HealerTrainer;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-
-import ai.AbstractNpcAI;
 
 /**
  * Trainer healers AI.
  * @author Zoey76
  */
-public class HealerTrainer extends AbstractNpcAI
+public class HealerTrainer extends Script
 {
 	// NPC
 	// @formatter:off
@@ -103,7 +102,7 @@ public class HealerTrainer extends AbstractNpcAI
 					break;
 				}
 				
-				if (player.getAdena() < Config.FEE_DELETE_TRANSFER_SKILLS)
+				if (player.getAdena() < PlayerConfig.FEE_DELETE_TRANSFER_SKILLS)
 				{
 					player.sendMessage("You cannot reset the Skill Link because there is not enough Adena.");
 					break;
@@ -117,6 +116,12 @@ public class HealerTrainer extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

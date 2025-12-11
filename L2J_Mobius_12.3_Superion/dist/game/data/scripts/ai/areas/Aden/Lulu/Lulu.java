@@ -29,18 +29,17 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerDlgAnswer;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ConfirmDlg;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author Index
  */
-public class Lulu extends AbstractNpcAI
+public class Lulu extends Script
 {
 	// NPCs
 	private static final int LULU = 34545;

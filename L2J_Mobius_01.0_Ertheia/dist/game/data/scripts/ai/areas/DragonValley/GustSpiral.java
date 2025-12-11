@@ -23,16 +23,15 @@ package ai.areas.DragonValley;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * AI for Gust Spiral (23447)
  * @author Gigi, Mobius
  */
-public class GustSpiral extends AbstractNpcAI
+public class GustSpiral extends Script
 {
 	// NPC
 	private static final int GUST_SPIRAL = 23447;

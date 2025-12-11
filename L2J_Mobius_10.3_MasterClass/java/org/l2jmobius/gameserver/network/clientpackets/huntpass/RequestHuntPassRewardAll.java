@@ -20,8 +20,9 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.huntpass;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
+import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.data.xml.HuntPassData;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.model.HuntPass;
@@ -60,7 +61,7 @@ public class RequestHuntPassRewardAll extends ClientPacket
 			return;
 		}
 		
-		if (!Config.OFFLINE_DISCONNECT_SAME_ACCOUNT || !Config.OFFLINE_PLAY_DISCONNECT_SAME_ACCOUNT)
+		if (!OfflineTradeConfig.OFFLINE_DISCONNECT_SAME_ACCOUNT || !OfflinePlayConfig.OFFLINE_PLAY_DISCONNECT_SAME_ACCOUNT)
 		{
 			int sameAccountPlayers = 0;
 			for (Player worldPlayer : World.getInstance().getPlayers())

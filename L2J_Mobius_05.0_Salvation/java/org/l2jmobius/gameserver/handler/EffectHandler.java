@@ -22,7 +22,7 @@ import java.util.function.Function;
 
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
-import org.l2jmobius.gameserver.scripting.EngineManager;
+import org.l2jmobius.gameserver.scripting.ScriptEngine;
 
 /**
  * @author BiggBoss
@@ -50,7 +50,7 @@ public class EffectHandler
 	{
 		try
 		{
-			EngineManager.getInstance().executeScript(EngineManager.EFFECT_MASTER_HANDLER_FILE);
+			ScriptEngine.getInstance().executeScript(ScriptEngine.EFFECT_MASTER_HANDLER_FILE);
 		}
 		catch (Exception e)
 		{

@@ -544,7 +544,6 @@
 		<basicProperty>NONE</basicProperty>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<effectPoint>0</effectPoint>
-		<irreplaceableBuff>true</irreplaceableBuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>120</magicLevel>
 		<stayAfterDeath>true</stayAfterDeath>
@@ -612,7 +611,6 @@
 		<basicProperty>NONE</basicProperty>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<effectPoint>0</effectPoint>
-		<irreplaceableBuff>true</irreplaceableBuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>120</magicLevel>
 		<stayAfterDeath>true</stayAfterDeath>
@@ -680,7 +678,6 @@
 		<basicProperty>NONE</basicProperty>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<effectPoint>0</effectPoint>
-		<irreplaceableBuff>true</irreplaceableBuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>120</magicLevel>
 		<stayAfterDeath>true</stayAfterDeath>
@@ -746,7 +743,6 @@
 		<basicProperty>NONE</basicProperty>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<effectPoint>0</effectPoint>
-		<irreplaceableBuff>true</irreplaceableBuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>120</magicLevel>
 		<stayAfterDeath>true</stayAfterDeath>

@@ -22,10 +22,10 @@ package ai.others.FactionCertificates;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Faction;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 
-import ai.AbstractNpcAI;
 import quests.Q10875_ForReputation.Q10875_ForReputation;
 import quests.Q10881_ForThePride.Q10881_ForThePride;
 
@@ -33,7 +33,7 @@ import quests.Q10881_ForThePride.Q10881_ForThePride;
  * Custom Faction Certificates AI.
  * @author CostyKiller
  */
-public class FactionCertificates extends AbstractNpcAI
+public class FactionCertificates extends Script
 {
 	// NPCs
 	private static final int LEONA_BLACKBIRD = 31595; // Blackbird Guild Leader

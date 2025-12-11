@@ -24,7 +24,8 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -34,14 +35,13 @@ import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
-import instances.AbstractInstance;
 import quests.Q00196_SevenSignsSealOfTheEmperor.Q00196_SevenSignsSealOfTheEmperor;
 
 /**
  * Disciple's Necropolis Past instance zone.
  * @author Adry_85
  */
-public class SSQDisciplesNecropolisPast extends AbstractInstance
+public class SSQDisciplesNecropolisPast extends InstanceScript
 {
 	// NPCs
 	private static final int SEAL_DEVICE = 27384;

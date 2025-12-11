@@ -41,10 +41,11 @@ import java.util.logging.Logger;
 
 import org.w3c.dom.Document;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.WorldExchangeConfig;
+import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
 import org.l2jmobius.gameserver.model.ItemInfo;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.VariationInstance;
@@ -87,7 +88,7 @@ public class WorldExchangeManager implements IXmlReader
 	
 	public WorldExchangeManager()
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -95,17 +96,17 @@ public class WorldExchangeManager implements IXmlReader
 		firstLoad();
 		if (_checkStatus == null)
 		{
-			_checkStatus = ThreadPool.scheduleAtFixedRate(this::checkBidStatus, Config.WORLD_EXCHANGE_SAVE_INTERVAL, Config.WORLD_EXCHANGE_SAVE_INTERVAL);
+			_checkStatus = ThreadPool.scheduleAtFixedRate(this::checkBidStatus, WorldExchangeConfig.WORLD_EXCHANGE_SAVE_INTERVAL, WorldExchangeConfig.WORLD_EXCHANGE_SAVE_INTERVAL);
 		}
 	}
 	
 	@Override
 	public void load()
 	{
-		if (Config.MULTILANG_ENABLE)
+		if (MultilingualSupportConfig.MULTILANG_ENABLE)
 		{
 			_localItemNames.clear();
-			for (String lang : Config.MULTILANG_ALLOWED)
+			for (String lang : MultilingualSupportConfig.MULTILANG_ALLOWED)
 			{
 				final File file = new File("data/lang/" + lang + "/ItemNameLocalisation.xml");
 				if (!file.isFile())
@@ -126,9 +127,9 @@ public class WorldExchangeManager implements IXmlReader
 			}
 		}
 		
-		if (!Config.MULTILANG_DEFAULT.equals(Config.WORLD_EXCHANGE_DEFAULT_LANG) && !_localItemNames.containsKey(Config.WORLD_EXCHANGE_DEFAULT_LANG))
+		if (!MultilingualSupportConfig.MULTILANG_DEFAULT.equals(WorldExchangeConfig.WORLD_EXCHANGE_DEFAULT_LANG) && !_localItemNames.containsKey(WorldExchangeConfig.WORLD_EXCHANGE_DEFAULT_LANG))
 		{
-			parseDatapackFile("data/lang/" + Config.WORLD_EXCHANGE_DEFAULT_LANG + "/ItemNameLocalisation.xml");
+			parseDatapackFile("data/lang/" + WorldExchangeConfig.WORLD_EXCHANGE_DEFAULT_LANG + "/ItemNameLocalisation.xml");
 		}
 	}
 	
@@ -164,7 +165,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	private void checkBidStatus()
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -188,7 +189,7 @@ public class WorldExchangeManager implements IXmlReader
 				}
 				case WORLD_EXCHANGE_REGISTERED:
 				{
-					holder.setEndTime(calculateDate(Config.WORLD_EXCHANGE_ITEM_BACK_PERIOD));
+					holder.setEndTime(calculateDate(WorldExchangeConfig.WORLD_EXCHANGE_ITEM_BACK_PERIOD));
 					holder.setStoreType(WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME);
 					_itemBids.replace(entry.getKey(), holder);
 					insert(entry.getKey(), false);
@@ -201,7 +202,7 @@ public class WorldExchangeManager implements IXmlReader
 					insert(entry.getKey(), true);
 					Item item = holder.getItemInstance();
 					item.setItemLocation(ItemLocation.VOID);
-					item.updateDatabase(!Config.WORLD_EXCHANGE_LAZY_UPDATE);
+					item.updateDatabase(!WorldExchangeConfig.WORLD_EXCHANGE_LAZY_UPDATE);
 					break;
 				}
 			}
@@ -214,7 +215,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	synchronized Map<Integer, Item> loadItemInstances()
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return Collections.emptyMap();
 		}
@@ -248,7 +249,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	private synchronized void loadItemBids(Map<Integer, Item> itemInstances)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -290,7 +291,7 @@ public class WorldExchangeManager implements IXmlReader
 						continue;
 					}
 					
-					endTime = calculateDate(Config.WORLD_EXCHANGE_ITEM_BACK_PERIOD);
+					endTime = calculateDate(WorldExchangeConfig.WORLD_EXCHANGE_ITEM_BACK_PERIOD);
 					storeType = WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME;
 					needChange = true;
 				}
@@ -306,7 +307,7 @@ public class WorldExchangeManager implements IXmlReader
 	
 	private long calculateFeeForRegister(Player player, int objectId, long amount, long priceForEach)
 	{
-		return Math.round(priceForEach * Config.WORLD_EXCHANGE_ADENA_FEE);
+		return Math.round(priceForEach * WorldExchangeConfig.WORLD_EXCHANGE_ADENA_FEE);
 	}
 	
 	/**
@@ -318,7 +319,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	public synchronized void registerItemBid(Player player, int itemObjectId, long amount, long priceForEach)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -347,9 +348,9 @@ public class WorldExchangeManager implements IXmlReader
 		
 		final Item item = player.getInventory().getItemByObjectId(itemObjectId);
 		long feePrice = calculateFeeForRegister(player, itemObjectId, amount, priceForEach);
-		if ((Config.WORLD_EXCHANGE_MAX_ADENA_FEE != -1) && (feePrice > Config.WORLD_EXCHANGE_MAX_ADENA_FEE))
+		if ((WorldExchangeConfig.WORLD_EXCHANGE_MAX_ADENA_FEE != -1) && (feePrice > WorldExchangeConfig.WORLD_EXCHANGE_MAX_ADENA_FEE))
 		{
-			feePrice = Config.WORLD_EXCHANGE_MAX_ADENA_FEE;
+			feePrice = WorldExchangeConfig.WORLD_EXCHANGE_MAX_ADENA_FEE;
 		}
 		
 		if (feePrice > player.getAdena())
@@ -395,10 +396,10 @@ public class WorldExchangeManager implements IXmlReader
 		
 		player.sendInventoryUpdate(iu);
 		player.getInventory().reduceAdena(ItemProcessType.FEE, feePrice, player, null);
-		final long endTime = calculateDate(Config.WORLD_EXCHANGE_ITEM_SELL_PERIOD);
+		final long endTime = calculateDate(WorldExchangeConfig.WORLD_EXCHANGE_ITEM_SELL_PERIOD);
 		_itemBids.put(freeId, new WorldExchangeHolder(freeId, itemInstance, new ItemInfo(itemInstance), priceForEach, player.getObjectId(), WorldExchangeItemStatusType.WORLD_EXCHANGE_REGISTERED, category, System.currentTimeMillis(), endTime, true));
 		player.sendPacket(new WorldExchangeRegisterItem(itemObjectId, amount, (byte) 1));
-		if (!Config.WORLD_EXCHANGE_LAZY_UPDATE)
+		if (!WorldExchangeConfig.WORLD_EXCHANGE_LAZY_UPDATE)
 		{
 			insert(freeId, false);
 		}
@@ -423,7 +424,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	public void getItemStatusAndMakeAction(Player player, long worldExchangeIndex)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -464,7 +465,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	private void cancelBid(Player player, WorldExchangeHolder worldExchangeItem)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -513,7 +514,7 @@ public class WorldExchangeManager implements IXmlReader
 		worldExchangeItem.setStoreType(WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE);
 		worldExchangeItem.setHasChanges(true);
 		_itemBids.replace(worldExchangeItem.getWorldExchangeId(), worldExchangeItem);
-		if (!Config.WORLD_EXCHANGE_LAZY_UPDATE)
+		if (!WorldExchangeConfig.WORLD_EXCHANGE_LAZY_UPDATE)
 		{
 			insert(worldExchangeItem.getWorldExchangeId(), true);
 		}
@@ -526,7 +527,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	private void takeBidMoney(Player player, WorldExchangeHolder worldExchangeItem)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -579,16 +580,16 @@ public class WorldExchangeManager implements IXmlReader
 		}
 		
 		player.sendPacket(new WorldExchangeSettleRecvResult(worldExchangeItem.getItemInstance().getObjectId(), worldExchangeItem.getItemInstance().getCount(), (byte) 1));
-		final long fee = Math.max(1, Math.min(20000, Math.round((worldExchangeItem.getPrice() * Config.WORLD_EXCHANGE_LCOIN_TAX * 100) / 100)));
-		final long returnPrice = worldExchangeItem.getPrice() - Math.min(fee, (Config.WORLD_EXCHANGE_MAX_LCOIN_TAX != -1 ? Config.WORLD_EXCHANGE_MAX_LCOIN_TAX : Long.MAX_VALUE)); // floating-point accuracy workaround :D
+		final long fee = Math.max(1, Math.min(20000, Math.round((worldExchangeItem.getPrice() * WorldExchangeConfig.WORLD_EXCHANGE_LCOIN_TAX * 100) / 100)));
+		final long returnPrice = worldExchangeItem.getPrice() - Math.min(fee, (WorldExchangeConfig.WORLD_EXCHANGE_MAX_LCOIN_TAX != -1 ? WorldExchangeConfig.WORLD_EXCHANGE_MAX_LCOIN_TAX : Long.MAX_VALUE)); // floating-point accuracy workaround :D
 		player.getInventory().addItem(ItemProcessType.FEE, Inventory.EINHASAD_COIN_ID, (returnPrice), player, null);
 		worldExchangeItem.setStoreType(WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE);
 		Item item = worldExchangeItem.getItemInstance();
 		item.setItemLocation(ItemLocation.VOID);
-		item.updateDatabase(!Config.WORLD_EXCHANGE_LAZY_UPDATE);
+		item.updateDatabase(!WorldExchangeConfig.WORLD_EXCHANGE_LAZY_UPDATE);
 		worldExchangeItem.setHasChanges(true);
 		_itemBids.replace(worldExchangeItem.getWorldExchangeId(), worldExchangeItem);
-		if (!Config.WORLD_EXCHANGE_LAZY_UPDATE)
+		if (!WorldExchangeConfig.WORLD_EXCHANGE_LAZY_UPDATE)
 		{
 			insert(worldExchangeItem.getWorldExchangeId(), true);
 		}
@@ -601,7 +602,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	private void returnItem(Player player, WorldExchangeHolder worldExchangeItem)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -658,7 +659,7 @@ public class WorldExchangeManager implements IXmlReader
 		worldExchangeItem.setStoreType(WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE);
 		worldExchangeItem.setHasChanges(true);
 		_itemBids.replace(worldExchangeItem.getWorldExchangeId(), worldExchangeItem);
-		if (!Config.WORLD_EXCHANGE_LAZY_UPDATE)
+		if (!WorldExchangeConfig.WORLD_EXCHANGE_LAZY_UPDATE)
 		{
 			insert(worldExchangeItem.getWorldExchangeId(), true);
 		}
@@ -671,7 +672,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	public void buyItem(Player player, long worldExchangeId)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -708,10 +709,10 @@ public class WorldExchangeManager implements IXmlReader
 		
 		player.getInventory().destroyItem(ItemProcessType.BUY, lcoin, worldExchangeItem.getPrice(), player, null);
 		final Item newItem = createItem(worldExchangeItem.getItemInstance(), player);
-		final long destroyTime = calculateDate(Config.WORLD_EXCHANGE_PAYMENT_TAKE_PERIOD);
+		final long destroyTime = calculateDate(WorldExchangeConfig.WORLD_EXCHANGE_PAYMENT_TAKE_PERIOD);
 		WorldExchangeHolder newHolder = new WorldExchangeHolder(worldExchangeId, newItem, new ItemInfo(newItem), worldExchangeItem.getPrice(), worldExchangeItem.getOldOwnerId(), WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD, worldExchangeItem.getCategory(), worldExchangeItem.getStartTime(), destroyTime, true);
 		_itemBids.replace(worldExchangeId, worldExchangeItem, newHolder);
-		if (!Config.WORLD_EXCHANGE_LAZY_UPDATE)
+		if (!WorldExchangeConfig.WORLD_EXCHANGE_LAZY_UPDATE)
 		{
 			insert(worldExchangeItem.getWorldExchangeId(), false);
 		}
@@ -790,7 +791,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	public List<WorldExchangeHolder> getItemBids(int ownerId, WorldExchangeItemSubType type, WorldExchangeSortType sortType, String lang)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return Collections.emptyList();
 		}
@@ -825,7 +826,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	public List<WorldExchangeHolder> getItemBids(List<Integer> ids, WorldExchangeSortType sortType, String lang)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return Collections.emptyList();
 		}
@@ -938,7 +939,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	public Map<WorldExchangeItemStatusType, List<WorldExchangeHolder>> getPlayerBids(int ownerId)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return Collections.emptyMap();
 		}
@@ -987,7 +988,7 @@ public class WorldExchangeManager implements IXmlReader
 	
 	public void addCategoryType(List<Integer> itemIds, int category)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -1011,7 +1012,7 @@ public class WorldExchangeManager implements IXmlReader
 	 */
 	public void checkPlayerSellAlarm(Player player)
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}
@@ -1028,7 +1029,7 @@ public class WorldExchangeManager implements IXmlReader
 	
 	public void storeMe()
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE || !Config.WORLD_EXCHANGE_LAZY_UPDATE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE || !WorldExchangeConfig.WORLD_EXCHANGE_LAZY_UPDATE)
 		{
 			return;
 		}
@@ -1065,7 +1066,7 @@ public class WorldExchangeManager implements IXmlReader
 	
 	public void insert(long worldExchangeId, boolean remove)
 	{
-		if (Config.WORLD_EXCHANGE_LAZY_UPDATE)
+		if (WorldExchangeConfig.WORLD_EXCHANGE_LAZY_UPDATE)
 		{
 			return;
 		}

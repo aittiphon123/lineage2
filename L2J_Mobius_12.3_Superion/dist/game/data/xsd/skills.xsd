@@ -3059,6 +3059,8 @@
 															<xs:element name="rangeDistance" type="xs:unsignedShort" />
 															<xs:element name="summonOnTarget" type="xs:boolean" />
 															<xs:element name="skillDelay" type="xs:unsignedShort" />
+															<xs:element name="minLevel" type="xs:unsignedByte" />
+															<xs:element name="maxLevel" type="xs:unsignedByte" />
 														</xs:choice>
 													</xs:sequence>
 													<xs:attribute name="name" type="xs:string" use="required" />

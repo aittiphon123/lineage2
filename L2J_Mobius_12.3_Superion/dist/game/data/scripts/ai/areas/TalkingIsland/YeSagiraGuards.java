@@ -25,14 +25,13 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Ye Sagira Guards AI.
  * @author Mobius
  */
-public class YeSagiraGuards extends AbstractNpcAI
+public class YeSagiraGuards extends Script
 {
 	// NPCs
 	private static final int[] GUARDS =

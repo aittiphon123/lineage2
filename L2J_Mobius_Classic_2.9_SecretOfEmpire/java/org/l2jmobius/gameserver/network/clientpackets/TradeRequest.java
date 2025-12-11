@@ -20,8 +20,9 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.BotReportTable;
 import org.l2jmobius.gameserver.data.xml.FakePlayerData;
 import org.l2jmobius.gameserver.model.BlockList;
@@ -172,19 +173,19 @@ public class TradeRequest extends ClientPacket
 		}
 		
 		// L2J Customs: Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (player.getReputation() < 0))
+		if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (player.getReputation() < 0))
 		{
 			player.sendMessage("You cannot trade while you are in a chaotic state.");
 			return;
 		}
 		
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (partner.getReputation() < 0))
+		if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (partner.getReputation() < 0))
 		{
 			player.sendMessage("You cannot request a trade while your target is in a chaotic state.");
 			return;
 		}
 		
-		if (Config.JAIL_DISABLE_TRANSACTION && (player.isJailed() || partner.isJailed()))
+		if (GeneralConfig.JAIL_DISABLE_TRANSACTION && (player.isJailed() || partner.isJailed()))
 		{
 			player.sendMessage("You cannot trade while you are in in Jail.");
 			return;

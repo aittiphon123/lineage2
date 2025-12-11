@@ -21,18 +21,17 @@ import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.sevensigns.SevenSigns;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 
-import ai.AbstractNpcAI;
-
 /**
  * Preacher of Doom and Orator of Revelations AI
  * @author UnAfraid, malyelfik
  */
-public class CabaleBuffer extends AbstractNpcAI
+public class CabaleBuffer extends Script
 {
 	private static final int DISTANCE_TO_WATCH_OBJECT = 900;
 	

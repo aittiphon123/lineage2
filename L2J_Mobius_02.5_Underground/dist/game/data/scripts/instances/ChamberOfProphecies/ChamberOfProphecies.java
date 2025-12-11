@@ -29,7 +29,8 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.FriendlyNpc;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -39,14 +40,13 @@ import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import instances.AbstractInstance;
 import quests.Q10753_WindsOfFateChoices.Q10753_WindsOfFateChoices;
 
 /**
  * Chamber of Prophecies instance.
  * @author Gigi, Mobius
  */
-public class ChamberOfProphecies extends AbstractInstance
+public class ChamberOfProphecies extends InstanceScript
 {
 	// NPCs
 	private static final int KAIN_VAN_HALTER = 31639;

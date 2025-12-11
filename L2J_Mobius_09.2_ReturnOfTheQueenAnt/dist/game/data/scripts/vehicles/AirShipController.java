@@ -34,6 +34,7 @@ import org.l2jmobius.gameserver.model.actor.instance.AirShip;
 import org.l2jmobius.gameserver.model.actor.instance.ControllableAirShip;
 import org.l2jmobius.gameserver.model.clan.ClanAccess;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
@@ -43,9 +44,7 @@ import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import ai.AbstractNpcAI;
-
-public abstract class AirShipController extends AbstractNpcAI
+public abstract class AirShipController extends Script
 {
 	private class DecayTask implements Runnable
 	{

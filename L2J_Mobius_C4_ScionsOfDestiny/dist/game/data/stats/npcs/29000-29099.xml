@@ -307,8 +307,6 @@
 				<group chance="96.5">
 					<item id="951" min="1" max="1" chance="14.5078" /> <!-- Scroll: Enchant Weapon (Grade C) -->
 				</group>
-				<group chance="33.3333">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -984,10 +982,6 @@
 				<group chance="100">
 					<item id="3936" min="1" max="39" chance="100" /> <!-- Blessed Scroll of Resurrection -->
 				</group>
-				<group chance="70.6666">
-				</group>
-				<group chance="100">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -1045,10 +1039,6 @@
 				</group>
 				<group chance="100">
 					<item id="6658" min="1" max="1" chance="100" /> <!-- Ring of Baium -->
-				</group>
-				<group chance="86.4516">
-				</group>
-				<group chance="75.5">
 				</group>
 			</drop>
 		</dropLists>
@@ -1180,8 +1170,6 @@
 				</group>
 				<group chance="95">
 					<item id="947" min="1" max="1" chance="6.31579" /> <!-- Scroll: Enchant Weapon (Grade B) -->
-				</group>
-				<group chance="8">
 				</group>
 			</drop>
 		</dropLists>
@@ -1572,8 +1560,6 @@
 				</group>
 				<group chance="100">
 					<item id="3936" min="1" max="39" chance="100" /> <!-- Blessed Scroll of Resurrection -->
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>

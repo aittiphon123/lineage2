@@ -265,7 +265,6 @@
 	<item id="81913" name="No Doubt" additionalName="Event" type="EtcItem">
 		<!-- A symbol of those who go only forward without hesitation. When in inventory, maintains your Vitality level. Available for 7 d. -->
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
@@ -703,7 +702,6 @@
 	<item id="81939" name="Shiny Star Shard" type="EtcItem">
 		<!-- Can be exchanged for Zodiac Agathion's Book of Growth through the Game Assistant. -->
 		<set name="icon" val="icon.bm_star_agathion_mineral" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -1552,7 +1550,6 @@
 	<item id="81979" name="Usurper's Name Change Coupon" type="EtcItem">
 		<!-- Required for changing a name used in the Conquest. In order to do it, use the Conquest UI before entering the Conquest world. -->
 		<set name="icon" val="icon.dethrone_name_change" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1565,7 +1562,6 @@
 	<item id="81980" name="Soul Orb" type="EtcItem">
 		<!-- At first glance, looks like an ordinary glass bead. However, if you take a closer look, you will see a soul trapped inside. Listen closely, and you will hear its whisper: 'Here, in the depths of darkness filled with horror and despair, one may acquire special powers, and that will let them rule the world.'. It's time to go to the Conquest world. -->
 		<set name="icon" val="icon.soul_bead" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1578,7 +1574,6 @@
 	<item id="81981" name="Dimensional Chain" type="EtcItem">
 		<!-- A chain that connects our world with the Conquest one. Only the Aden Castle lord can open or close the path between the worlds. -->
 		<set name="icon" val="icon.dethrone_aden_link" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />

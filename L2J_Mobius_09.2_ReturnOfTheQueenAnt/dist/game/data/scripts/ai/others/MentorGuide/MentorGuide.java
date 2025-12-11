@@ -25,9 +25,9 @@ import java.util.logging.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.commons.util.StringUtil;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.managers.MentorManager;
@@ -48,6 +48,7 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerMentor
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerProfessionChange;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Mail;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -56,13 +57,11 @@ import org.l2jmobius.gameserver.network.enums.MailType;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.mentoring.ExMentorList;
 
-import ai.AbstractNpcAI;
-
 /**
  * Mentor Guide AI.
  * @author Gnacik, UnAfraid
  */
-public class MentorGuide extends AbstractNpcAI implements IXmlReader
+public class MentorGuide extends Script implements IXmlReader
 {
 	private static final Logger LOGGER = Logger.getLogger(MentorGuide.class.getName());
 	
@@ -474,7 +473,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 		final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
 		if (mentor != null)
 		{
-			MentorManager.getInstance().setPenalty(mentor.getObjectId(), Config.MENTOR_PENALTY_FOR_MENTEE_COMPLETE);
+			MentorManager.getInstance().setPenalty(mentor.getObjectId(), PlayerConfig.MENTOR_PENALTY_FOR_MENTEE_COMPLETE);
 			MentorManager.getInstance().deleteMentor(mentor.getObjectId(), player.getObjectId());
 			if (mentor.isOnline())
 			{

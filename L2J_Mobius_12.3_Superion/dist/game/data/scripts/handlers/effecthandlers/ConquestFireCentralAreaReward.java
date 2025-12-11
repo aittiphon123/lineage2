@@ -20,15 +20,15 @@
  */
 package handlers.effecthandlers;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.item.instance.Item;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
@@ -62,9 +62,9 @@ public class ConquestFireCentralAreaReward extends AbstractEffect
 		if (effected.isPlayer() && FIRE_SOURCE_CENTRAL_AREA_ZONE.isInsideZone(effected))
 		{
 			final Player player = effected.asPlayer();
-			if (Rnd.get(100) < Config.CONQUEST_ABILITY_FIRE_SOURCE_UPGRADE_CHANCE)
+			if (Rnd.get(100) < ConquestConfig.CONQUEST_ABILITY_FIRE_SOURCE_UPGRADE_CHANCE)
 			{
-				player.getVariables().set(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, player.getVariables().getInt(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, 0) + Config.CONQUEST_ABILITY_FIRE_SOURCE_EXP_AMOUNT);
+				player.getVariables().set(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, player.getVariables().getInt(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, 0) + ConquestConfig.CONQUEST_ABILITY_FIRE_SOURCE_EXP_AMOUNT);
 				player.sendPacket(SystemMessageId.YOU_HAVE_RECEIVED_FIRE_SOURCE_POINTS);
 				Quest.showOnScreenMsg(player, "You have received Fire Source points.", 5000);
 			}

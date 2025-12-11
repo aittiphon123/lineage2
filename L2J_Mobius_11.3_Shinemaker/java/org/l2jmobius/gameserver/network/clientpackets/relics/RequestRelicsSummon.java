@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.relics;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.RelicSystemConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.RelicSummonRequest;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
@@ -59,7 +59,7 @@ public class RequestRelicsSummon extends ClientPacket
 			return;
 		}
 		
-		if (player.getAccountVariables().getInt(AccountVariables.UNCONFIRMED_RELICS_COUNT, 0) == Config.RELIC_UNCONFIRMED_LIST_LIMIT)
+		if (player.getAccountVariables().getInt(AccountVariables.UNCONFIRMED_RELICS_COUNT, 0) == RelicSystemConfig.RELIC_UNCONFIRMED_LIST_LIMIT)
 		{
 			player.sendPacket(SystemMessageId.SUMMON_COMPOUND_IS_UNAVAILABLE_AS_YOU_HAVE_MORE_THAN_100_UNCONFIRMED_RELICS);
 			return;
@@ -73,7 +73,7 @@ public class RequestRelicsSummon extends ClientPacket
 		
 		player.addRequest(new RelicSummonRequest(player));
 		
-		final int relicSummonCount = Config.ELEVEN_SUMMON_COUNT_COUPONS.contains(_couponId) ? 11 : 1;
+		final int relicSummonCount = RelicSystemConfig.ELEVEN_SUMMON_COUNT_COUPONS.contains(_couponId) ? 11 : 1;
 		player.sendPacket(new ExRelicsSummonResult(player, _couponId, relicSummonCount));
 	}
 }

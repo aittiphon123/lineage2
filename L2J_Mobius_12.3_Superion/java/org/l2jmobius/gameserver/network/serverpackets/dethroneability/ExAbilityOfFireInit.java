@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets.dethroneability;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
@@ -59,7 +59,7 @@ public class ExAbilityOfFireInit extends ServerPacket
 		{
 			if (checkItems(_player))
 			{
-				for (ItemHolder requiredItems : Config.CONQUEST_ABILITY_UPGRADES_RESET_REQUIRED_ITEMS)
+				for (ItemHolder requiredItems : ConquestConfig.CONQUEST_ABILITY_UPGRADES_RESET_REQUIRED_ITEMS)
 				{
 					_player.destroyItemByItemId(ItemProcessType.FEE, requiredItems.getId(), requiredItems.getCount(), _player, true);
 					_success = 1;
@@ -83,7 +83,7 @@ public class ExAbilityOfFireInit extends ServerPacket
 		{
 			if (checkItems(_player))
 			{
-				for (ItemHolder requiredItems : Config.CONQUEST_ABILITY_UPGRADES_RESET_REQUIRED_ITEMS)
+				for (ItemHolder requiredItems : ConquestConfig.CONQUEST_ABILITY_UPGRADES_RESET_REQUIRED_ITEMS)
 				{
 					_player.destroyItemByItemId(ItemProcessType.FEE, requiredItems.getId(), requiredItems.getCount(), _player, true);
 					_success = 1;
@@ -107,7 +107,7 @@ public class ExAbilityOfFireInit extends ServerPacket
 		{
 			if (checkItems(_player))
 			{
-				for (ItemHolder requiredItems : Config.CONQUEST_ABILITY_UPGRADES_RESET_REQUIRED_ITEMS)
+				for (ItemHolder requiredItems : ConquestConfig.CONQUEST_ABILITY_UPGRADES_RESET_REQUIRED_ITEMS)
 				{
 					_player.destroyItemByItemId(ItemProcessType.FEE, requiredItems.getId(), requiredItems.getCount(), _player, true);
 					_success = 1;
@@ -131,7 +131,7 @@ public class ExAbilityOfFireInit extends ServerPacket
 		{
 			if (checkItems(_player))
 			{
-				for (ItemHolder requiredItems : Config.CONQUEST_ABILITY_UPGRADES_RESET_REQUIRED_ITEMS)
+				for (ItemHolder requiredItems : ConquestConfig.CONQUEST_ABILITY_UPGRADES_RESET_REQUIRED_ITEMS)
 				{
 					_player.destroyItemByItemId(ItemProcessType.FEE, requiredItems.getId(), requiredItems.getCount(), _player, true);
 					_success = 1;
@@ -155,7 +155,7 @@ public class ExAbilityOfFireInit extends ServerPacket
 	
 	public boolean checkItems(Player player)
 	{
-		for (ItemHolder requiredItems : Config.CONQUEST_ABILITY_UPGRADES_RESET_REQUIRED_ITEMS)
+		for (ItemHolder requiredItems : ConquestConfig.CONQUEST_ABILITY_UPGRADES_RESET_REQUIRED_ITEMS)
 		{
 			if (player.getInventory().getItemByItemId(requiredItems.getId()).getCount() >= requiredItems.getCount())
 			{

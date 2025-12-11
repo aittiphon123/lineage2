@@ -26,18 +26,17 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
-
 /**
  * @author Manax, Mobius, Tanatos
  */
-public class SpiritForest extends AbstractInstance
+public class SpiritForest extends InstanceScript
 {
 	// NPCs
 	private static final int BENUSTA = 34542;

@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.dethrone;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -91,7 +91,7 @@ public class RequestExDethroneEnter extends ClientPacket
 			}, 3000);
 			return;
 		}
-		else if (!Config.CONQUEST_SYSTEM_ENABLED || (Config.CONQUEST_SYSTEM_ENABLED && (GlobalVariablesManager.getInstance().hasVariable("CONQUEST_AVAILABLE") && !GlobalVariablesManager.getInstance().getBoolean("CONQUEST_AVAILABLE", false))))
+		else if (!ConquestConfig.CONQUEST_SYSTEM_ENABLED || (ConquestConfig.CONQUEST_SYSTEM_ENABLED && (GlobalVariablesManager.getInstance().hasVariable("CONQUEST_AVAILABLE") && !GlobalVariablesManager.getInstance().getBoolean("CONQUEST_AVAILABLE", false))))
 		{
 			player.sendPacket(SystemMessageId.THE_PATH_TO_THE_CONQUEST_WORLD_IS_CLOSED_YOU_CAN_GET_THERE_ON_MONDAYS_TUESDAYS_WEDNESDAYS_AND_THURSDAYS_FROM_10_00_TILL_14_00_AND_FROM_22_00_TILL_00_00_AND_ON_FRIDAYS_SATURDAYS_AND_SUNDAYS_FROM_20_00_TILL_01_00_OF_THE_FOLLOWING_DAY_SERVER_TIME_PVP_IS_DISABLED_FROM_20_00_TILL_22_00_FOR_2_HOURS_BECAUSE_THE_NEW_WORLD_EXPLORATION_IS_UNDER_WAY);
 			return;

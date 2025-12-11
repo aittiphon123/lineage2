@@ -22,14 +22,13 @@ import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Black Marketeer of Mammon AI.
  * @author St3eT
  */
-public class BlackMarketeerOfMammon extends AbstractNpcAI
+public class BlackMarketeerOfMammon extends Script
 {
 	// NPC
 	private static final int BLACK_MARKETEER = 31092;
@@ -82,6 +81,12 @@ public class BlackMarketeerOfMammon extends AbstractNpcAI
 		}
 		
 		return super.onEvent(htmltext, npc, player);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

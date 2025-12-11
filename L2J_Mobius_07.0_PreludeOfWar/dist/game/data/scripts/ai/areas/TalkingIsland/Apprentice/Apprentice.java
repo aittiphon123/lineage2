@@ -18,17 +18,16 @@ package ai.areas.TalkingIsland.Apprentice;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Apprentice AI.
  * @author St3eT
  */
-public class Apprentice extends AbstractNpcAI
+public class Apprentice extends Script
 {
 	// NPCs
 	private static final int APPRENTICE = 33124;
@@ -70,6 +69,12 @@ public class Apprentice extends AbstractNpcAI
 	public void onSpawn(Npc npc)
 	{
 		startQuestTimer("SPAM_TEXT", 12000, npc, null, true);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

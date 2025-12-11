@@ -31,17 +31,16 @@ import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureAt
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
 import org.l2jmobius.gameserver.model.events.holders.instance.OnInstanceStatusChange;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * Kartia Helper Eliyah's Guardian Spirit
  * @author flanagak
  */
-public class KartiaHelperGuardian extends AbstractNpcAI
+public class KartiaHelperGuardian extends Script
 {
 	// NPCs
 	private static final int[] KARTIA_ELIYAH =

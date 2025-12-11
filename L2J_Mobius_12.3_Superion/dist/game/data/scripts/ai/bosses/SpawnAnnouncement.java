@@ -26,14 +26,13 @@ import java.util.Set;
 
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Tanatos
  */
-public class SpawnAnnouncement extends AbstractNpcAI
+public class SpawnAnnouncement extends Script
 {
 	private static final int STAKATO_CROG = 29426;
 	private static final int DEMONIC_VENOM = 29427;

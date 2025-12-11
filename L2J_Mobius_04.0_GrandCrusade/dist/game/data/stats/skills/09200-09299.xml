@@ -83,7 +83,7 @@
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<effectPoint>1</effectPoint>
@@ -484,8 +484,6 @@
 		<basicProperty>NONE</basicProperty>
 		<effectPoint>1</effectPoint>
 		<isMagic>1</isMagic>
-		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>33766</itemConsumeId> <!-- Elixir of Blessing -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
@@ -521,7 +519,7 @@
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<effectPoint>1</effectPoint>
@@ -529,15 +527,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="TriggerSkillByDamageReceived">
-				<!-- Critical Damage Increase -->
-				<attackerType>Creature</attackerType>
-				<chance>80</chance>
-				<targetType>SELF</targetType>
-				<minDamage>300</minDamage>
-				<skillId>11569</skillId> <!-- Critical Damage Increase -->
-				<skillLevel>1</skillLevel>
-			</effect>
 			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -547,15 +536,15 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicCriticalRate">
-				<amount>20</amount>
+				<amount>22</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="CriticalDamage">
+			<effect name="CriticalRate">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttack">
-				<amount>10</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
@@ -571,7 +560,7 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
-				<amount>20</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
@@ -589,6 +578,15 @@
 			<effect name="Speed">
 				<amount>-15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByDamageReceived">
+				<!-- Critical Damage Increase -->
+				<attackerType>Creature</attackerType>
+				<chance>80</chance>
+				<targetType>SELF</targetType>
+				<minDamage>300</minDamage>
+				<skillId>11569</skillId> <!-- Critical Damage Increase -->
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
@@ -682,7 +680,7 @@
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<effectPoint>1</effectPoint>
@@ -861,15 +859,12 @@
 		<magicLevel>-2</magicLevel>
 		<specialLevel>-2</specialLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</slot>
-			</effect>
 			<effect name="PhysicalAttack">
 				<amount>17</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttack">
@@ -880,9 +875,12 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalDefence">
-				<amount>15</amount>
-				<mode>PER</mode>
+			<effect name="DispelBySlotProbability">
+				<dispel>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -893,7 +891,7 @@
 		<targetType>SELF</targetType>
 		<abnormalLevel>0</abnormalLevel>
 		<abnormalTime>-1</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<canBeDispelled>false</canBeDispelled>
@@ -905,6 +903,58 @@
 		<magicLevel>-2</magicLevel>
 		<specialLevel>-2</specialLevel>
 		<effects>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="TriggerSkillByDamageDealt">
 				<attackerType>Creature</attackerType>
 				<minDamage>1</minDamage>
@@ -921,54 +971,6 @@
 			</effect>
 			<effect name="BlockAbnormalSlot">
 				<slot>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
-			</effect>
-			<effect name="PhysicalAttack">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttack">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="Speed">
-				<amount>-15</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="HpRegen">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="ResistAbnormalByCategory">
-				<amount>-10</amount>
-				<slot>DEBUFF</slot>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>20</amount>
-				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -991,16 +993,6 @@
 		<magicLevel>-2</magicLevel>
 		<specialLevel>-2</specialLevel>
 		<effects>
-			<effect name="VampiricAttack">
-				<amount>9</amount>
-				<chance>80</chance>
-			</effect>
-			<effect name="DispelBySlot">
-				<dispel>IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;VAMPIRIC_ATTACK,-1;CASTING_TIME_DOWN,-1</dispel>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</slot>
-			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
 				<mode>PER</mode>
@@ -1008,6 +1000,17 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>31</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="VampiricAttack">
+				<amount>9</amount>
+				<chance>30</chance>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -1030,14 +1033,7 @@
 		<magicLevel>-2</magicLevel>
 		<specialLevel>-2</specialLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
-			</effect>
-			<effect name="MaxCp">
+			<effect name="MaxHp">
 				<amount>37</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1045,13 +1041,20 @@
 				<amount>37</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxCp">
+				<amount>37</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MaxHp">
-				<amount>37</amount>
-				<mode>PER</mode>
+			<effect name="DispelBySlotProbability">
+				<dispel>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -1062,7 +1065,7 @@
 		<targetType>SELF</targetType>
 		<abnormalLevel>0</abnormalLevel>
 		<abnormalTime>-1</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<canBeDispelled>false</canBeDispelled>
@@ -1074,19 +1077,12 @@
 		<magicLevel>-2</magicLevel>
 		<specialLevel>-2</specialLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;CHEAP_MAGIC;MULTI_BUFF;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;CHEAP_MAGIC;MULTI_BUFF;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
+			<effect name="CriticalRate">
+				<amount>32</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalRate">
-				<amount>32</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicCriticalRate">
@@ -1096,7 +1092,7 @@
 			<effect name="MagicMpCost">
 				<amount>-20</amount>
 				<mode>PER</mode>
-				<magicType>22</magicType>
+				<magicType>0</magicType>
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>-10</amount>
@@ -1104,14 +1100,21 @@
 				<magicType>1</magicType>
 			</effect>
 			<effect name="MagicMpCost">
-				<amount>-10</amount>
+				<amount>-20</amount>
 				<mode>PER</mode>
-				<magicType>0</magicType>
+				<magicType>3</magicType>
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>-20</amount>
 				<mode>PER</mode>
-				<magicType>3</magicType>
+				<magicType>22</magicType>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;CHEAP_MAGIC;MULTI_BUFF;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;CHEAP_MAGIC;MULTI_BUFF;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -1134,22 +1137,11 @@
 		<magicLevel>-2</magicLevel>
 		<specialLevel>-2</specialLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
-			</effect>
-			<effect name="Speed">
-				<amount>34</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalEvasion">
+			<effect name="Accuracy">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="Accuracy">
+			<effect name="PhysicalEvasion">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1157,9 +1149,20 @@
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceCriticalRate">
+			<effect name="Speed">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -1214,6 +1217,7 @@
 		<isMagic>2</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
+		<reuseDelay>-1000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<conditions>
 			<condition name="OpNeedAgathion" />
@@ -1237,6 +1241,7 @@
 		<isMagic>2</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
+		<reuseDelay>-1000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<conditions>
 			<condition name="OpNeedAgathion" />
@@ -1260,6 +1265,7 @@
 		<isMagic>2</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
+		<reuseDelay>-1000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<conditions>
 			<condition name="OpNeedAgathion" />
@@ -1283,6 +1289,7 @@
 		<isMagic>2</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
+		<reuseDelay>-1000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<conditions>
 			<condition name="OpNeedAgathion" />
@@ -1306,6 +1313,7 @@
 		<isMagic>2</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
+		<reuseDelay>-1000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<conditions>
 			<condition name="OpNeedAgathion" />
@@ -2029,15 +2037,12 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>2000</reuseDelay>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</slot>
-			</effect>
 			<effect name="PhysicalAttack">
 				<amount>17</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttack">
@@ -2048,9 +2053,12 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalDefence">
-				<amount>15</amount>
-				<mode>PER</mode>
+			<effect name="DispelBySlotProbability">
+				<dispel>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -2061,7 +2069,7 @@
 		<targetType>TARGET</targetType>
 		<abnormalLevel>5</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<castRange>900</castRange>
@@ -2074,35 +2082,23 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>2000</reuseDelay>
 		<effects>
-			<effect name="TriggerSkillByDamageReceived">
-				<!-- Critical Damage Increase -->
-				<attackerType>Creature</attackerType>
-				<chance>80</chance>
-				<targetType>SELF</targetType>
-				<minDamage>300</minDamage>
-				<skillId>11569</skillId> <!-- Critical Damage Increase -->
-				<skillLevel>1</skillLevel>
-			</effect>
-			<effect name="DispelBySlotProbability">
-				<dispel>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
-			</effect>
-			<effect name="PhysicalAttack">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttack">
+			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="Speed">
-				<amount>-15</amount>
+			<effect name="HpRegen">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalDefence">
+			<effect name="MagicCriticalRate">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2114,33 +2110,46 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="HpRegen">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceCriticalDamage">
-				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="ResistAbnormalByCategory">
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
 			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>20</amount>
-				<mode>DIFF</mode>
+			<effect name="DefenceCriticalDamage">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>80</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>6059</skillId> <!-- Counter Critical -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -2164,17 +2173,6 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>2000</reuseDelay>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</slot>
-			</effect>
-			<effect name="VampiricAttack">
-				<amount>9</amount>
-				<chance>80</chance>
-			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
 				<mode>PER</mode>
@@ -2182,6 +2180,17 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>31</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="VampiricAttack">
+				<amount>9</amount>
+				<chance>30</chance>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -2205,14 +2214,7 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>2000</reuseDelay>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
-			</effect>
-			<effect name="MaxCp">
+			<effect name="MaxHp">
 				<amount>37</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2220,13 +2222,20 @@
 				<amount>37</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxCp">
+				<amount>37</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MaxHp">
-				<amount>37</amount>
-				<mode>PER</mode>
+			<effect name="DispelBySlotProbability">
+				<dispel>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -2237,7 +2246,7 @@
 		<targetType>TARGET</targetType>
 		<abnormalLevel>5</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<castRange>900</castRange>
@@ -2311,22 +2320,11 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>2000</reuseDelay>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
-			</effect>
-			<effect name="Speed">
-				<amount>34</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalEvasion">
+			<effect name="Accuracy">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="Accuracy">
+			<effect name="PhysicalEvasion">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -2334,9 +2332,20 @@
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="Speed">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="DefenceCriticalDamage">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -2421,7 +2430,7 @@
 		<targetType>SELF</targetType>
 		<abnormalLevel>6</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<canBeDispelled>false</canBeDispelled>
@@ -2433,15 +2442,6 @@
 		<specialLevel>-2</specialLevel>
 		<stayAfterDeath>true</stayAfterDeath>
 		<effects>
-			<effect name="TriggerSkillByDamageReceived">
-				<!-- Critical Damage Increase -->
-				<attackerType>Creature</attackerType>
-				<chance>80</chance>
-				<targetType>SELF</targetType>
-				<minDamage>300</minDamage>
-				<skillId>11569</skillId> <!-- Critical Damage Increase -->
-				<skillLevel>1</skillLevel>
-			</effect>
 			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -2496,6 +2496,15 @@
 					<value level="2">-10</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByDamageReceived">
+				<!-- Critical Damage Increase -->
+				<attackerType>Creature</attackerType>
+				<chance>80</chance>
+				<targetType>SELF</targetType>
+				<minDamage>300</minDamage>
+				<skillId>11569</skillId> <!-- Critical Damage Increase -->
+				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
@@ -2615,7 +2624,7 @@
 		<targetType>SELF</targetType>
 		<abnormalLevel>6</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<canBeDispelled>false</canBeDispelled>

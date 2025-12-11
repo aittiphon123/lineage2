@@ -22,9 +22,9 @@ package ai.areas.Heine.LionelHunter;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 
-import ai.AbstractNpcAI;
 import quests.Q10507_ObtainingNewPower.Q10507_ObtainingNewPower;
 import quests.Q10811_ExaltedOneWhoFacesTheLimit.Q10811_ExaltedOneWhoFacesTheLimit;
 import quests.Q10817_ExaltedOneWhoOvercomesTheLimit.Q10817_ExaltedOneWhoOvercomesTheLimit;
@@ -36,7 +36,7 @@ import quests.Q10879_ExaltedGuideToPower.Q10879_ExaltedGuideToPower;
  * Lionel Hunter AI.
  * @author Sero, CostyKiller
  */
-public class LionelHunter extends AbstractNpcAI
+public class LionelHunter extends Script
 {
 	// NPC
 	private static final int LIONEL_HUNTER_HEINE = 33907;

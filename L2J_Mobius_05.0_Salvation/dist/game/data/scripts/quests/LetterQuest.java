@@ -20,7 +20,7 @@
  */
 package quests;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.model.Location;
@@ -34,9 +34,9 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerBypass
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelChanged;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPressTutorialMark;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.HtmlActionScope;
@@ -217,7 +217,7 @@ public abstract class LetterQuest extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}
@@ -236,7 +236,7 @@ public abstract class LetterQuest extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLogin(OnPlayerLogin event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}

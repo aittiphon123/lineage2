@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.PartyRequest;
 import org.l2jmobius.gameserver.model.groups.Party;
@@ -76,7 +76,7 @@ public class RequestAnswerJoinParty extends ClientPacket
 		requestor.sendPacket(new JoinParty(_response, requestor));
 		if (_response == 1)
 		{
-			if (party.getMemberCount() >= Config.ALT_PARTY_MAX_MEMBERS)
+			if (party.getMemberCount() >= PlayerConfig.ALT_PARTY_MAX_MEMBERS)
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.THE_PARTY_IS_FULL);
 				player.sendPacket(sm);

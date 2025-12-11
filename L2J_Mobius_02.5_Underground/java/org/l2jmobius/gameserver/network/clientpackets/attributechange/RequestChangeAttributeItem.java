@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.attributechange;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
@@ -69,7 +69,7 @@ public class RequestChangeAttributeItem extends ClientPacket
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 			player.sendPacket(ExChangeAttributeFail.STATIC);
-			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to change attribute without an attribute change crystal.", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to change attribute without an attribute change crystal.", GeneralConfig.DEFAULT_PUNISH);
 			return;
 		}
 		

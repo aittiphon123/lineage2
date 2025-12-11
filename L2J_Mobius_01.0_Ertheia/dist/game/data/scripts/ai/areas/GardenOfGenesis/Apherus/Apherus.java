@@ -27,18 +27,17 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import ai.AbstractNpcAI;
-
 /**
  * Apherus RB
  * @author Gigi
  */
-public class Apherus extends AbstractNpcAI
+public class Apherus extends Script
 {
 	private static final int APHERUS = 25775;
 	private static final int APHERUS_SUBORDINATE = 25865;

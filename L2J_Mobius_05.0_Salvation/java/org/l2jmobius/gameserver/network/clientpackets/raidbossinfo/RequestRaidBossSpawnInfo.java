@@ -23,7 +23,7 @@ package org.l2jmobius.gameserver.network.clientpackets.raidbossinfo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.npc.RaidBossStatus;
@@ -44,7 +44,7 @@ public class RequestRaidBossSpawnInfo extends ClientPacket
 		for (int i = 0; i < count; i++)
 		{
 			final int bossId = readInt();
-			if (DBSpawnManager.getInstance().getStatus(bossId) == RaidBossStatus.ALIVE)
+			if (DatabaseSpawnManager.getInstance().getStatus(bossId) == RaidBossStatus.ALIVE)
 			{
 				_bossIds.add(bossId);
 			}

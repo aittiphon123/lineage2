@@ -23,9 +23,9 @@ package quests.Q00620_FourGoblets;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
 public class Q00620_FourGoblets extends Quest

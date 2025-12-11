@@ -25,12 +25,17 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.time.TimeUtil;
+import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.clan.Clan;
+import org.l2jmobius.gameserver.model.clan.ClanMember;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
+import org.l2jmobius.gameserver.model.sevensigns.SevenSigns;
+import org.l2jmobius.gameserver.model.sevensigns.SevenSignsFestival;
 
 /**
  * @author Mobius
@@ -70,11 +75,24 @@ public class DailyResetManager
 		
 		// Global save task.
 		ThreadPool.scheduleAtFixedRate(this::onSave, 1800000, 1800000); // 1800000 = 30 minutes
+		
+		// Recommend reset task (13:00).
+		ThreadPool.scheduleAtFixedRate(this::resetRecommends, TimeUtil.getNextTime(13, 0).getTimeInMillis() - currentTime, 86400000); // 86400000 = 1 day
 	}
 	
 	private void onReset()
 	{
 		LOGGER.info("Starting reset of daily tasks...");
+		
+		// Store last reset time.
+		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.DAILY_TASK_RESET, System.currentTimeMillis());
+		
+		// Wednesday weekly tasks.
+		final Calendar calendar = Calendar.getInstance();
+		if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY)
+		{
+			clanLeaderApply();
+		}
 		
 		// Trigger daily reset event.
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_DAILY_RESET))
@@ -100,6 +118,41 @@ public class DailyResetManager
 		{
 			Olympiad.getInstance().saveOlympiadStatus();
 			LOGGER.info("Olympiad System: Data updated.");
+		}
+		
+		SevenSigns.getInstance().saveSevenSignsStatus();
+		if (!SevenSigns.getInstance().isSealValidationPeriod())
+		{
+			SevenSignsFestival.getInstance().saveFestivalData(false);
+		}
+		LOGGER.info("SevenSigns: Data updated.");
+	}
+	
+	private void clanLeaderApply()
+	{
+		for (Clan clan : ClanTable.getInstance().getClans())
+		{
+			if (clan.getNewLeaderId() != 0)
+			{
+				final ClanMember member = clan.getClanMember(clan.getNewLeaderId());
+				if (member == null)
+				{
+					continue;
+				}
+				
+				clan.setNewLeader(member);
+			}
+		}
+		
+		LOGGER.info("Clan leaders have been updated.");
+	}
+	
+	private void resetRecommends()
+	{
+		for (Player player : World.getInstance().getPlayers())
+		{
+			player.restartRecom();
+			player.updateUserInfo();
 		}
 	}
 	

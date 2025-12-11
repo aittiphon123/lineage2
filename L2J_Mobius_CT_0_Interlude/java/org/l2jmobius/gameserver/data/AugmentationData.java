@@ -30,9 +30,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.model.Augmentation;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.clientpackets.AbstractRefinePacket;
@@ -76,7 +78,7 @@ public class AugmentationData
 		}
 		
 		load();
-		if (!Config.RETAIL_LIKE_AUGMENTATION)
+		if (!PlayerConfig.RETAIL_LIKE_AUGMENTATION)
 		{
 			for (int i = 0; i < 10; i++)
 			{
@@ -193,7 +195,7 @@ public class AugmentationData
 	{
 		// Load the skillmap
 		// Note: the skillmap data is only used when generating new augmentations the client expects a different id in order to display the skill in the items description...
-		if (!Config.RETAIL_LIKE_AUGMENTATION)
+		if (!PlayerConfig.RETAIL_LIKE_AUGMENTATION)
 		{
 			try
 			{
@@ -202,7 +204,7 @@ public class AugmentationData
 				factory.setValidating(false);
 				factory.setIgnoringComments(true);
 				
-				final File file = new File(Config.DATAPACK_ROOT + "/data/stats/augmentation/augmentation_skillmap.xml");
+				final File file = new File(ServerConfig.DATAPACK_ROOT + "/data/stats/augmentation/augmentation_skillmap.xml");
 				if (!file.exists())
 				{
 					LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": ERROR The augmentation skillmap file is missing.");
@@ -290,7 +292,7 @@ public class AugmentationData
 			factory.setValidating(false);
 			factory.setIgnoringComments(true);
 			
-			final File file = new File(Config.DATAPACK_ROOT + "/data/stats/augmentation/retailchances.xml");
+			final File file = new File(ServerConfig.DATAPACK_ROOT + "/data/stats/augmentation/retailchances.xml");
 			if (file.exists())
 			{
 				Document document = null;
@@ -383,11 +385,11 @@ public class AugmentationData
 	 * @param item
 	 * @return
 	 */
-	public Augmentation generateRandomAugmentation(int level, int lifeStoneGrade, int bodyPart, int lifeStoneId, Item item)
+	public Augmentation generateRandomAugmentation(int level, int lifeStoneGrade, BodyPart bodyPart, int lifeStoneId, Item item)
 	{
 		int stat12 = 0;
 		int stat34 = 0;
-		if (Config.RETAIL_LIKE_AUGMENTATION)
+		if (PlayerConfig.RETAIL_LIKE_AUGMENTATION)
 		{
 			if (item.getTemplate().isMagicWeapon())
 			{
@@ -424,27 +426,27 @@ public class AugmentationData
 				{
 					case AbstractRefinePacket.GRADE_NONE:
 					{
-						gradeChance = Config.RETAIL_LIKE_AUGMENTATION_NG_CHANCE;
+						gradeChance = PlayerConfig.RETAIL_LIKE_AUGMENTATION_NG_CHANCE;
 						break;
 					}
 					case AbstractRefinePacket.GRADE_MID:
 					{
-						gradeChance = Config.RETAIL_LIKE_AUGMENTATION_MID_CHANCE;
+						gradeChance = PlayerConfig.RETAIL_LIKE_AUGMENTATION_MID_CHANCE;
 						break;
 					}
 					case AbstractRefinePacket.GRADE_HIGH:
 					{
-						gradeChance = Config.RETAIL_LIKE_AUGMENTATION_HIGH_CHANCE;
+						gradeChance = PlayerConfig.RETAIL_LIKE_AUGMENTATION_HIGH_CHANCE;
 						break;
 					}
 					case AbstractRefinePacket.GRADE_TOP:
 					{
-						gradeChance = Config.RETAIL_LIKE_AUGMENTATION_TOP_CHANCE;
+						gradeChance = PlayerConfig.RETAIL_LIKE_AUGMENTATION_TOP_CHANCE;
 						break;
 					}
 					default:
 					{
-						gradeChance = Config.RETAIL_LIKE_AUGMENTATION_NG_CHANCE;
+						gradeChance = PlayerConfig.RETAIL_LIKE_AUGMENTATION_NG_CHANCE;
 					}
 				}
 				
@@ -521,27 +523,27 @@ public class AugmentationData
 				{
 					case AbstractRefinePacket.GRADE_NONE:
 					{
-						gradeChance = Config.RETAIL_LIKE_AUGMENTATION_NG_CHANCE;
+						gradeChance = PlayerConfig.RETAIL_LIKE_AUGMENTATION_NG_CHANCE;
 						break;
 					}
 					case AbstractRefinePacket.GRADE_MID:
 					{
-						gradeChance = Config.RETAIL_LIKE_AUGMENTATION_MID_CHANCE;
+						gradeChance = PlayerConfig.RETAIL_LIKE_AUGMENTATION_MID_CHANCE;
 						break;
 					}
 					case AbstractRefinePacket.GRADE_HIGH:
 					{
-						gradeChance = Config.RETAIL_LIKE_AUGMENTATION_HIGH_CHANCE;
+						gradeChance = PlayerConfig.RETAIL_LIKE_AUGMENTATION_HIGH_CHANCE;
 						break;
 					}
 					case AbstractRefinePacket.GRADE_TOP:
 					{
-						gradeChance = Config.RETAIL_LIKE_AUGMENTATION_TOP_CHANCE;
+						gradeChance = PlayerConfig.RETAIL_LIKE_AUGMENTATION_TOP_CHANCE;
 						break;
 					}
 					default:
 					{
-						gradeChance = Config.RETAIL_LIKE_AUGMENTATION_NG_CHANCE;
+						gradeChance = PlayerConfig.RETAIL_LIKE_AUGMENTATION_NG_CHANCE;
 					}
 				}
 				
@@ -597,12 +599,12 @@ public class AugmentationData
 		{
 			case AbstractRefinePacket.GRADE_NONE:
 			{
-				if (Rnd.get(1, 100) <= Config.AUGMENTATION_NG_SKILL_CHANCE)
+				if (Rnd.get(1, 100) <= PlayerConfig.AUGMENTATION_NG_SKILL_CHANCE)
 				{
 					generateSkill = true;
 				}
 				
-				if (Rnd.get(1, 100) <= Config.AUGMENTATION_NG_GLOW_CHANCE)
+				if (Rnd.get(1, 100) <= PlayerConfig.AUGMENTATION_NG_GLOW_CHANCE)
 				{
 					generateGlow = true;
 				}
@@ -610,12 +612,12 @@ public class AugmentationData
 			}
 			case AbstractRefinePacket.GRADE_MID:
 			{
-				if (Rnd.get(1, 100) <= Config.AUGMENTATION_MID_SKILL_CHANCE)
+				if (Rnd.get(1, 100) <= PlayerConfig.AUGMENTATION_MID_SKILL_CHANCE)
 				{
 					generateSkill = true;
 				}
 				
-				if (Rnd.get(1, 100) <= Config.AUGMENTATION_MID_GLOW_CHANCE)
+				if (Rnd.get(1, 100) <= PlayerConfig.AUGMENTATION_MID_GLOW_CHANCE)
 				{
 					generateGlow = true;
 				}
@@ -623,12 +625,12 @@ public class AugmentationData
 			}
 			case AbstractRefinePacket.GRADE_HIGH:
 			{
-				if (Rnd.get(1, 100) <= Config.AUGMENTATION_HIGH_SKILL_CHANCE)
+				if (Rnd.get(1, 100) <= PlayerConfig.AUGMENTATION_HIGH_SKILL_CHANCE)
 				{
 					generateSkill = true;
 				}
 				
-				if (Rnd.get(1, 100) <= Config.AUGMENTATION_HIGH_GLOW_CHANCE)
+				if (Rnd.get(1, 100) <= PlayerConfig.AUGMENTATION_HIGH_GLOW_CHANCE)
 				{
 					generateGlow = true;
 				}
@@ -636,12 +638,12 @@ public class AugmentationData
 			}
 			case AbstractRefinePacket.GRADE_TOP:
 			{
-				if (Rnd.get(1, 100) <= Config.AUGMENTATION_TOP_SKILL_CHANCE)
+				if (Rnd.get(1, 100) <= PlayerConfig.AUGMENTATION_TOP_SKILL_CHANCE)
 				{
 					generateSkill = true;
 				}
 				
-				if (Rnd.get(1, 100) <= Config.AUGMENTATION_TOP_GLOW_CHANCE)
+				if (Rnd.get(1, 100) <= PlayerConfig.AUGMENTATION_TOP_GLOW_CHANCE)
 				{
 					generateGlow = true;
 				}
@@ -649,7 +651,7 @@ public class AugmentationData
 			}
 		}
 		
-		if (!generateSkill && (Rnd.get(1, 100) <= Config.AUGMENTATION_BASESTAT_CHANCE))
+		if (!generateSkill && (Rnd.get(1, 100) <= PlayerConfig.AUGMENTATION_BASESTAT_CHANCE))
 		{
 			stat34 = Rnd.get(BASESTAT_STR, BASESTAT_MEN);
 		}

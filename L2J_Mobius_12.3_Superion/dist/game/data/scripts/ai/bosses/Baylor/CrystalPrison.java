@@ -27,18 +27,17 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
-
 /**
  * @author St3eT, Tanatos
  * @URL https://www.youtube.com/watch?v=eZWDAvnykss
  */
-public class CrystalPrison extends AbstractInstance
+public class CrystalPrison extends InstanceScript
 {
 	// NPCs
 	private static final int BENUSTA = 34542;

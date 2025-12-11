@@ -22,18 +22,22 @@
 		<magicLevel>105</magicLevel>
 		<stayAfterDeath>true</stayAfterDeath>
 		<effects>
-			<effect name="PveMagicalSkillDamageBonus">
+			<effect name="ExpModify">
 				<amount>10</amount>
-				<mode>PER</mode>
 			</effect>
-			<effect name="PvePhysicalAttackDamageBonus">
+			<effect name="SpModify">
 				<amount>10</amount>
-				<mode>PER</mode>
 			</effect>
-			<effect name="PvePhysicalSkillDamageBonus">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
+		<effect name="ExpModify">
+    			<amount>50</amount>
+    			<minLevel>1</minLevel>
+    			<maxLevel>123</maxLevel>
+		</effect>
+		<effect name="SpModify">
+ 			   <amount>50</amount>
+ 			   <minLevel>1</minLevel>
+			   <maxLevel>123</maxLevel>
+		</effect>
 		</effects>
 	</skill>
 	<skill id="34401" toLevel="1" name="Sweet Smell of Blood">

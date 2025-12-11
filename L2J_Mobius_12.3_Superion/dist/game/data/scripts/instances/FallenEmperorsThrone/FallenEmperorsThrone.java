@@ -23,19 +23,18 @@ package instances.FallenEmperorsThrone;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.util.Broadcast;
 
-import instances.AbstractInstance;
-
 /**
  * @author CostyKiller
  * @URL: https://l2wiki.com/Fallen_Emperors_Throne
  */
-public class FallenEmperorsThrone extends AbstractInstance
+public class FallenEmperorsThrone extends InstanceScript
 {
 	// NPC
 	private static final int KEKROPUS = 34222;

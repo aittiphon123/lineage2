@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -39,7 +39,7 @@ public class ExOpenHtml extends ClientPacket
 	protected void runImpl()
 	{
 		final Player player = getPlayer();
-		if ((player != null) && Config.PC_CAFE_ENABLED)
+		if ((player != null) && PremiumSystemConfig.PC_CAFE_ENABLED)
 		{
 			final NpcHtmlMessage html = new NpcHtmlMessage();
 			html.setFile(player, "data/html/pccafe.htm");

@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.model.Location;
@@ -35,17 +35,16 @@ import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
-
-import ai.AbstractNpcAI;
 
 /**
  * Core AI.
  * @author DrLecter, Emperorc, Mobius
  */
-public class Core extends AbstractNpcAI
+public class Core extends Script
 {
 	// NPCs
 	private static final int CORE = 29006;
@@ -86,7 +85,10 @@ public class Core extends AbstractNpcAI
 	
 	private Core()
 	{
-		registerMobs(CORE, DEATH_KNIGHT, DOOM_WRAITH, SUSCEPTOR);
+		addKillId(CORE, DEATH_KNIGHT, DOOM_WRAITH, SUSCEPTOR);
+		addAttackId(CORE);
+		addSpawnId(CORE);
+		
 		_firstAttacked = false;
 		final StatSet info = GrandBossManager.getInstance().getStatSet(CORE);
 		if (GrandBossManager.getInstance().getStatus(CORE) == DEAD)
@@ -177,21 +179,18 @@ public class Core extends AbstractNpcAI
 	@Override
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
 	{
-		if (npc.getId() == CORE)
+		if (_firstAttacked)
 		{
-			if (_firstAttacked)
+			if (getRandom(100) == 0)
 			{
-				if (getRandom(100) == 0)
-				{
-					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.REMOVING_INTRUDERS);
-				}
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.REMOVING_INTRUDERS);
 			}
-			else
-			{
-				_firstAttacked = true;
-				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.A_NON_PERMITTED_TARGET_HAS_BEEN_DISCOVERED);
-				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.INTRUDER_REMOVAL_SYSTEM_INITIATED);
-			}
+		}
+		else
+		{
+			_firstAttacked = true;
+			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.A_NON_PERMITTED_TARGET_HAS_BEEN_DISCOVERED);
+			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.INTRUDER_REMOVAL_SYSTEM_INITIATED);
 		}
 	}
 	
@@ -209,8 +208,9 @@ public class Core extends AbstractNpcAI
 			addSpawn(900103, 18948, 110166, -6397, 0, false, 900000);
 			GrandBossManager.getInstance().setStatus(CORE, DEAD);
 			
-			final long baseIntervalMillis = Config.CORE_SPAWN_INTERVAL * 3600000;
-			final long randomRangeMillis = Config.CORE_SPAWN_RANDOM * 3600000;
+			// Calculate Min and Max respawn times randomly.
+			final long baseIntervalMillis = GrandBossConfig.CORE_SPAWN_INTERVAL * 3600000;
+			final long randomRangeMillis = GrandBossConfig.CORE_SPAWN_RANDOM * 3600000;
 			final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 			startQuestTimer("core_unlock", respawnTime, null, null);
 			
@@ -231,10 +231,7 @@ public class Core extends AbstractNpcAI
 	@Override
 	public void onSpawn(Npc npc)
 	{
-		if (npc.getId() == CORE)
-		{
-			npc.setImmobilized(true);
-		}
+		npc.setImmobilized(true);
 	}
 	
 	public static void main(String[] args)

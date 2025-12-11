@@ -24,7 +24,7 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.holders.TimedHuntingZoneHolder;
 import org.l2jmobius.gameserver.data.xml.TimedHuntingZoneData;
 import org.l2jmobius.gameserver.managers.InstanceManager;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
@@ -201,11 +201,11 @@ public class ExTimedHuntingZoneEnter extends ClientPacket
 				{
 					player.sendPacket(SystemMessageId.YOU_LL_BE_TAKEN_TO_THE_WORLD_HUNTING_ZONE_IN_3_SEC);
 					player.stopMove(null);
-					ThreadPool.schedule(() -> QuestManager.getInstance().getQuest("TimedHunting").notifyEvent("ENTER " + _zoneId, null, player), 3000);
+					ThreadPool.schedule(() -> ScriptManager.getInstance().getScript("TimedHunting").notifyEvent("ENTER " + _zoneId, null, player), 3000);
 				}
 				else
 				{
-					QuestManager.getInstance().getQuest("TimedHunting").notifyEvent("ENTER " + _zoneId, null, player);
+					ScriptManager.getInstance().getScript("TimedHunting").notifyEvent("ENTER " + _zoneId, null, player);
 				}
 			}
 			

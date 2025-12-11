@@ -21,15 +21,14 @@ import org.l2jmobius.gameserver.data.SpawnTable;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * Npc Location Info AI.
  * @author Nyaran
  */
-public class NpcLocationInfo extends AbstractNpcAI
+public class NpcLocationInfo extends Script
 {
 	private static final int[] NPC =
 	{
@@ -213,51 +212,6 @@ public class NpcLocationInfo extends AbstractNpcAI
 		30568, // Urutu Chief Hatos
 		30585, // Tataru Zu Hestui
 		30587, // Gantaki Zu Urutu
-		
-		// Kamael Villag
-		32163, // Gatekeeper Ragara
-		32173, // Zerstorer Marcela
-		32174, // Marksman Maddy
-		32175, // Marksman Bixon
-		32176, // Marksman Ambra
-		32177, // Marksman Syzar
-		32178, // Guard Karba
-		32179, // Marksman Putin
-		32180, // Marksman Kato
-		32164, // Weapons Trader Erinu
-		32165, // Armor Trader Zacon
-		32168, // Magic Trader Janis
-		32166, // Accessory Trader Treavi
-		32167, // Consumption Goods Trader Neazel
-		32141, // Master Nerga
-		32142, // Master Tenor
-		32143, // Master Belkis
-		32144, // Master Sonya
-		32145, // Grand Master Maynard
-		32146, // Grand Master Valpor
-		32139, // Hierarch Casca
-		32140, // Hierarch Zenya
-		32138, // Hierarch Kekropus
-		32171, // Warehouse Chief Hoffa
-		32170, // Warehouse Keeper Benis
-		32172, // Warehouse Freightman Saylem
-		32153, // High Priest Prana
-		32154, // Grand Master Aldenia
-		32155, // Priest Nabot
-		32156, // Master Talbot
-		32150, // Hight Prefect Took
-		32151, // Prefect Harz
-		32152, // Seer Henri
-		32147, // Grand Master Libian
-		32148, // Master Sydnet
-		32149, // Magister Enea
-		32160, // Grand Magister Devon
-		32162, // Magister Martika
-		32161, // Master Black
-		32158, // Warehouse Chief Fisler
-		32157, // Head Blacksmith Moka
-		32159, // Blacksmith Kincaid
-		32169, // Spellbook Trader Mifren
 	};
 	
 	private NpcLocationInfo()

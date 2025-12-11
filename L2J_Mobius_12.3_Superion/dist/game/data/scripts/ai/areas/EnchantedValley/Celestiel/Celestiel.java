@@ -23,17 +23,16 @@ package ai.areas.EnchantedValley.Celestiel;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Faction;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
-
-import ai.AbstractNpcAI;
 
 /**
  * Celestiel AI
  * @author Gigi
  * @date 2017-06-13 - [20:09:34]
  */
-public class Celestiel extends AbstractNpcAI
+public class Celestiel extends Script
 {
 	// NPC
 	private static final int CELESTIEL = 34234;

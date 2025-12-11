@@ -16,7 +16,9 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
+import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
+import org.l2jmobius.gameserver.config.custom.WeddingConfig;
 import org.l2jmobius.gameserver.data.sql.OfflineTraderTable;
 import org.l2jmobius.gameserver.handler.AdminCommandHandler;
 import org.l2jmobius.gameserver.managers.ZoneBuildManager;
@@ -74,12 +76,12 @@ public class DlgAnswer extends ClientPacket
 			// Custom .offlineplay voiced command dialog.
 			if (player.removeAction(PlayerAction.OFFLINE_PLAY))
 			{
-				if ((_answer == 0) || !Config.ENABLE_OFFLINE_PLAY_COMMAND)
+				if ((_answer == 0) || !OfflinePlayConfig.ENABLE_OFFLINE_PLAY_COMMAND)
 				{
 					return;
 				}
 				
-				if (Config.OFFLINE_PLAY_PREMIUM && !player.hasPremiumStatus())
+				if (OfflinePlayConfig.OFFLINE_PLAY_PREMIUM && !player.hasPremiumStatus())
 				{
 					player.sendMessage("This command is only available to premium players.");
 					return;
@@ -115,7 +117,7 @@ public class DlgAnswer extends ClientPacket
 			
 			if (player.removeAction(PlayerAction.USER_ENGAGE))
 			{
-				if (Config.ALLOW_WEDDING)
+				if (WeddingConfig.ALLOW_WEDDING)
 				{
 					player.engageAnswer(_answer);
 				}
@@ -148,7 +150,7 @@ public class DlgAnswer extends ClientPacket
 		}
 		else if (_messageId == SystemMessageId.QUIT_GAME_DO_YOU_WANT_TO_CONTINUE.getId())
 		{
-			if ((_answer == 0) || !Config.ENABLE_OFFLINE_COMMAND || (!Config.OFFLINE_TRADE_ENABLE && !Config.OFFLINE_CRAFT_ENABLE))
+			if ((_answer == 0) || !OfflineTradeConfig.ENABLE_OFFLINE_COMMAND || (!OfflineTradeConfig.OFFLINE_TRADE_ENABLE && !OfflineTradeConfig.OFFLINE_CRAFT_ENABLE))
 			{
 				return;
 			}

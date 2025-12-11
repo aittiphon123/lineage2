@@ -27,8 +27,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.handler.IItemHandler;
 import org.l2jmobius.gameserver.managers.DailyResetManager;
@@ -99,8 +99,8 @@ public class ExtractableItems implements IItemHandler
 					
 					if (Rnd.get(100000) <= expi.getChance())
 					{
-						final long min = (long) (expi.getMin() * Config.RATE_EXTRACTABLE);
-						final long max = (long) (expi.getMax() * Config.RATE_EXTRACTABLE);
+						final long min = (long) (expi.getMin() * RatesConfig.RATE_EXTRACTABLE);
+						final long max = (long) (expi.getMax() * RatesConfig.RATE_EXTRACTABLE);
 						long createItemAmount = (max == min) ? min : (Rnd.get((max - min) + 1) + min);
 						if (createItemAmount == 0)
 						{
@@ -179,8 +179,8 @@ public class ExtractableItems implements IItemHandler
 				
 				if (Rnd.get(100000) <= expi.getChance())
 				{
-					final long min = (long) (expi.getMin() * Config.RATE_EXTRACTABLE);
-					final long max = (long) (expi.getMax() * Config.RATE_EXTRACTABLE);
+					final long min = (long) (expi.getMin() * RatesConfig.RATE_EXTRACTABLE);
+					final long max = (long) (expi.getMax() * RatesConfig.RATE_EXTRACTABLE);
 					long createItemAmount = (max == min) ? min : (Rnd.get((max - min) + 1) + min);
 					if (createItemAmount == 0)
 					{

@@ -25,7 +25,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Consumer;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
 import org.l2jmobius.gameserver.data.xml.OptionData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.handler.IVoicedCommandHandler;
@@ -67,9 +68,9 @@ public class OfflinePlay implements IVoicedCommandHandler
 	
 	private static final Consumer<OnPlayerLogin> ON_PLAYER_LOGIN = event ->
 	{
-		if (Config.ENABLE_OFFLINE_PLAY_COMMAND && !Config.OFFLINE_PLAY_LOGIN_MESSAGE.isEmpty())
+		if (OfflinePlayConfig.ENABLE_OFFLINE_PLAY_COMMAND && !OfflinePlayConfig.OFFLINE_PLAY_LOGIN_MESSAGE.isEmpty())
 		{
-			event.getPlayer().sendPacket(new CreatureSay(null, ChatType.ANNOUNCEMENT, "OfflinePlay", Config.OFFLINE_PLAY_LOGIN_MESSAGE));
+			event.getPlayer().sendPacket(new CreatureSay(null, ChatType.ANNOUNCEMENT, "OfflinePlay", OfflinePlayConfig.OFFLINE_PLAY_LOGIN_MESSAGE));
 		}
 	};
 	
@@ -81,7 +82,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 	@Override
 	public boolean onCommand(String command, Player player, String params)
 	{
-		if (!Config.ENABLE_OFFLINE_PLAY_COMMAND || (player == null))
+		if (!OfflinePlayConfig.ENABLE_OFFLINE_PLAY_COMMAND || (player == null))
 		{
 			return false;
 		}
@@ -90,7 +91,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 		{
 			case "offlineplay":
 			{
-				if (Config.OFFLINE_PLAY_PREMIUM && !player.hasPremiumStatus())
+				if (OfflinePlayConfig.OFFLINE_PLAY_PREMIUM && !player.hasPremiumStatus())
 				{
 					player.sendPacket(new ExShowScreenMessage("This command is only available to premium players.", 5000));
 					player.sendMessage("This command is only available to premium players.");
@@ -141,7 +142,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 				final List<Skill> siegeSkills = SkillData.getInstance().getSiegeSkills(true);
 				for (Skill skill : player.getAllSkills())
 				{
-					if (!siegeSkills.contains(skill) && !skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !Config.DISABLED_AUTO_SKILLS.contains(skill.getId()))
+					if (!siegeSkills.contains(skill) && !skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !OfflinePlayConfig.DISABLED_AUTO_SKILLS.contains(skill.getId()))
 					{
 						skills.add(skill);
 					}
@@ -153,7 +154,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 					{
 						for (Skill skill : summon.getAllSkills())
 						{
-							if (!skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !Config.DISABLED_AUTO_SKILLS.contains(skill.getId()))
+							if (!skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !OfflinePlayConfig.DISABLED_AUTO_SKILLS.contains(skill.getId()))
 							{
 								skills.add(skill);
 							}
@@ -165,7 +166,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 				{
 					for (Skill skill : player.getPet().getAllSkills())
 					{
-						if (!skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !Config.DISABLED_AUTO_SKILLS.contains(skill.getId()))
+						if (!skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !OfflinePlayConfig.DISABLED_AUTO_SKILLS.contains(skill.getId()))
 						{
 							skills.add(skill);
 						}
@@ -292,7 +293,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 						}
 					}
 					
-					if (Config.ENABLE_AUTO_SKILL && (knownSkill != null) && skills.contains(knownSkill))
+					if (GeneralConfig.ENABLE_AUTO_SKILL && (knownSkill != null) && skills.contains(knownSkill))
 					{
 						if (knownSkill.hasNegativeEffect())
 						{

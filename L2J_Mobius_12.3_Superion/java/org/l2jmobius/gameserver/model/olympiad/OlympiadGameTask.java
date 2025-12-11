@@ -19,8 +19,8 @@ package org.l2jmobius.gameserver.model.olympiad;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.olympiad.ExOlympiadMatchInfo;
@@ -174,7 +174,7 @@ public class OlympiadGameTask implements Runnable
 				case BEGIN:
 				{
 					_state = OlympiadGameState.TELEPORT_TO_ARENA;
-					_countDown = Config.OLYMPIAD_WAIT_TIME;
+					_countDown = OlympiadConfig.OLYMPIAD_WAIT_TIME;
 					break;
 				}
 				// Teleport to arena countdown
@@ -267,7 +267,7 @@ public class OlympiadGameTask implements Runnable
 				// Beginning of the battle
 				case BATTLE_STARTED:
 				{
-					_countDown = (int) Config.OLYMPIAD_BATTLE / 1000;
+					_countDown = (int) OlympiadConfig.OLYMPIAD_BATTLE / 1000;
 					
 					_game.broadcastPacket(new ExOlympiadMatchInfo(player1, player2, 0, 0, 1, 100));
 					
@@ -286,7 +286,7 @@ public class OlympiadGameTask implements Runnable
 				case ROUND_1:
 				{
 					_state = OlympiadGameState.BATTLE_IN_PROGRESS; // set state first, used in zone update
-					_countDown = (int) Config.OLYMPIAD_BATTLE / 1000;
+					_countDown = (int) OlympiadConfig.OLYMPIAD_BATTLE / 1000;
 					_stadium.makeZonePvPForCharsInside(true);
 					if (!startBattle())
 					{
@@ -298,7 +298,7 @@ public class OlympiadGameTask implements Runnable
 				case BATTLE_IN_PROGRESS:
 				{
 					_countDown -= 1;
-					final int remaining = (int) Config.OLYMPIAD_BATTLE / 1000;
+					final int remaining = (int) OlympiadConfig.OLYMPIAD_BATTLE / 1000;
 					for (int announceTime : BATTLE_END_TIME_SECOND)
 					{
 						if (announceTime == remaining)
@@ -338,7 +338,7 @@ public class OlympiadGameTask implements Runnable
 					{
 						_game.removePlayersInvul();
 						_state = OlympiadGameState.ROUND_2;
-						_countDown = (int) Config.OLYMPIAD_BATTLE / 1000;
+						_countDown = (int) OlympiadConfig.OLYMPIAD_BATTLE / 1000;
 						final SystemMessage round2 = new SystemMessage(SystemMessageId.HIDDEN_MSG_OLYMPIAD_ROUND_2);
 						_stadium.broadcastPacket(round2);
 						final SystemMessage start = new SystemMessage(SystemMessageId.HIDDEN_MSG_START_OLYMPIAD);
@@ -351,7 +351,7 @@ public class OlympiadGameTask implements Runnable
 				case ROUND_2:
 				{
 					_countDown -= 1;
-					final int remaining = (int) Config.OLYMPIAD_BATTLE / 1000;
+					final int remaining = (int) OlympiadConfig.OLYMPIAD_BATTLE / 1000;
 					for (int announceTime : BATTLE_END_TIME_SECOND)
 					{
 						if (announceTime == remaining)
@@ -398,7 +398,7 @@ public class OlympiadGameTask implements Runnable
 					{
 						_state = OlympiadGameState.ROUND_3;
 						_game.removePlayersInvul();
-						_countDown = (int) Config.OLYMPIAD_BATTLE / 1000;
+						_countDown = (int) OlympiadConfig.OLYMPIAD_BATTLE / 1000;
 						final SystemMessage round2 = new SystemMessage(SystemMessageId.HIDDEN_MSG_OLYMPIAD_ROUND_3);
 						_stadium.broadcastPacket(round2);
 						final SystemMessage start = new SystemMessage(SystemMessageId.HIDDEN_MSG_START_OLYMPIAD);
@@ -411,7 +411,7 @@ public class OlympiadGameTask implements Runnable
 				case ROUND_3:
 				{
 					_countDown -= 1;
-					final int remaining = (int) Config.OLYMPIAD_BATTLE / 1000;
+					final int remaining = (int) OlympiadConfig.OLYMPIAD_BATTLE / 1000;
 					for (int announceTime : BATTLE_END_TIME_SECOND)
 					{
 						if (announceTime == remaining)

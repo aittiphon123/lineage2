@@ -16,7 +16,7 @@
  */
 package handlers.itemhandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.holders.RecipeHolder;
 import org.l2jmobius.gameserver.data.xml.RecipeData;
 import org.l2jmobius.gameserver.handler.IItemHandler;
@@ -40,7 +40,7 @@ public class Recipes implements IItemHandler
 			return false;
 		}
 		
-		if (!Config.IS_CRAFTING_ENABLED)
+		if (!PlayerConfig.IS_CRAFTING_ENABLED)
 		{
 			playable.sendMessage("Crafting is disabled, you cannot register this recipe.");
 			return false;

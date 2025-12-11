@@ -20,7 +20,8 @@
  */
 package quests.Q10331_StartOfFate;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -34,10 +35,10 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelChanged;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPressTutorialMark;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowQuestionMark;
 
@@ -125,10 +126,10 @@ public class Q10331_StartOfFate extends Quest
 				if (event.startsWith("classChange;") && (getQuestItemsCount(player, SARIL_NECKLACE) >= 1))
 				{
 					final PlayerClass newClassId = PlayerClass.getPlayerClass(Integer.parseInt(event.replace("classChange;", "")));
-					final PlayerClass currentClassId = player.getPlayerClass();
-					if (!newClassId.childOf(currentClassId) || ((qs.getCond() < 3) && (qs.getCond() > 8)))
+					final PlayerClass currentPlayerClass = player.getPlayerClass();
+					if (!newClassId.childOf(currentPlayerClass) || ((qs.getCond() < 3) && (qs.getCond() > 8)))
 					{
-						PunishmentManager.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to cheat the 1st class transfer!", Config.DEFAULT_PUNISH);
+						PunishmentManager.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to cheat the 1st class transfer!", GeneralConfig.DEFAULT_PUNISH);
 						return null;
 					}
 					
@@ -534,7 +535,7 @@ public class Q10331_StartOfFate extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}
@@ -554,7 +555,7 @@ public class Q10331_StartOfFate extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLogin(OnPlayerLogin event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}

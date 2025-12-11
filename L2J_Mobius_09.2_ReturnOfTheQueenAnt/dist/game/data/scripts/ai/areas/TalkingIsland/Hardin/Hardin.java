@@ -22,7 +22,7 @@ package ai.areas.TalkingIsland.Hardin;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.ClassListData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
@@ -37,19 +37,18 @@ import org.l2jmobius.gameserver.model.actor.enums.player.SubclassInfoType;
 import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.serverpackets.ExSubjobInfo;
 import org.l2jmobius.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.taskmanagers.AutoUseTaskManager;
 
-import ai.AbstractNpcAI;
-
 /**
  * Hardin (Agent of Chaos) AI.
  * @author Mobius
  */
-public class Hardin extends AbstractNpcAI
+public class Hardin extends Script
 {
 	// NPC
 	private static final int HARDIN = 33870;
@@ -82,27 +81,27 @@ public class Hardin extends AbstractNpcAI
 			for (PlayerClass c : PlayerClass.values())
 			{
 				if ((((c.level() != 4) && (c.getRace() != Race.ERTHEIA)) //
-					|| (Config.HARDIN_ENABLE_ERTHEIAS && (c.getRace() == Race.ERTHEIA) && (c.level() != 3))) //
-					|| (!Config.HARDIN_ENABLE_ERTHEIAS && (c.getRace() == Race.ERTHEIA)) //
+					|| (PlayerConfig.HARDIN_ENABLE_ERTHEIAS && (c.getRace() == Race.ERTHEIA) && (c.level() != 3))) //
+					|| (!PlayerConfig.HARDIN_ENABLE_ERTHEIAS && (c.getRace() == Race.ERTHEIA)) //
 					|| (c == player.getPlayerClass()) //
 					|| (c == playerBaseTemplate))
 				{
 					continue;
 				}
 				
-				if (!player.isDualClassActive() || (player.isDualClassActive() && Config.HARDIN_ENABLE_DUALCLASS_CHECKS))
+				if (!player.isDualClassActive() || (player.isDualClassActive() && PlayerConfig.HARDIN_ENABLE_DUALCLASS_CHECKS))
 				{
-					if (!Config.HARDIN_ENABLE_ALL_RACES && (c.getRace() != player.getPlayerClass().getRace()))
+					if (!PlayerConfig.HARDIN_ENABLE_ALL_RACES && (c.getRace() != player.getPlayerClass().getRace()))
 					{
 						continue;
 					}
 					
-					if (!Config.HARDIN_ENABLE_ALL_SPECS && (c.isMage() != player.isMageClass()))
+					if (!PlayerConfig.HARDIN_ENABLE_ALL_SPECS && (c.isMage() != player.isMageClass()))
 					{
 						continue;
 					}
 					
-					if (Config.HARDIN_SAME_AWAKEN_GROUP)
+					if (PlayerConfig.HARDIN_SAME_AWAKEN_GROUP)
 					{
 						final String original = c.toString().contains("_") ? c.toString().substring(0, c.toString().indexOf('_') - 1) : c.toString();
 						final String search = player.getPlayerClass().toString().contains("_") ? player.getPlayerClass().toString().substring(0, player.getPlayerClass().toString().indexOf('_') - 1) : player.getPlayerClass().toString();
@@ -112,7 +111,7 @@ public class Hardin extends AbstractNpcAI
 						}
 					}
 					
-					if (Config.HARDIN_RETAIL_LIMITATIONS)
+					if (PlayerConfig.HARDIN_RETAIL_LIMITATIONS)
 					{
 						if ((c == PlayerClass.TYRR_MAESTRO) && (player.getRace() != Race.DWARF))
 						{
@@ -220,7 +219,7 @@ public class Hardin extends AbstractNpcAI
 				player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
 			}
 			
-			final List<Integer> removedSkillIds = Config.HARDIN_REMOVED_SKILLS.get(newClass.getId());
+			final List<Integer> removedSkillIds = PlayerConfig.HARDIN_REMOVED_SKILLS.get(newClass.getId());
 			if (removedSkillIds != null)
 			{
 				for (int skillId : removedSkillIds)
@@ -261,7 +260,7 @@ public class Hardin extends AbstractNpcAI
 			// return "33870-03.html";
 			// }
 			
-			if (!Config.HARDIN_ENABLE_ERTHEIAS)
+			if (!PlayerConfig.HARDIN_ENABLE_ERTHEIAS)
 			{
 				return "33870-02.html";
 			}

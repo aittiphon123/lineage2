@@ -20,14 +20,14 @@
  */
 package quests.Q10824_ConfrontingTheGreatestDanger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
 import quests.Q10823_ExaltedOneWhoShattersTheLimit.Q10823_ExaltedOneWhoShattersTheLimit;
@@ -284,7 +284,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(3) && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE) && ArrayUtil.contains(MONSTERS, npc.getId()))
+		if ((qs != null) && qs.isCond(3) && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE) && ArrayUtil.contains(MONSTERS, npc.getId()))
 		{
 			giveItems(player, PROOF_OF_PREPARATION, 1);
 			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
@@ -293,7 +293,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 				qs.setCond(4, true);
 			}
 		}
-		else if ((qs != null) && qs.isCond(1) && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE) && ArrayUtil.contains(DIM_RAID_RBS, npc.getId()))
+		else if ((qs != null) && qs.isCond(1) && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE) && ArrayUtil.contains(DIM_RAID_RBS, npc.getId()))
 		{
 			giveItems(player, MARK_OF_ADVANCE, 1);
 			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);

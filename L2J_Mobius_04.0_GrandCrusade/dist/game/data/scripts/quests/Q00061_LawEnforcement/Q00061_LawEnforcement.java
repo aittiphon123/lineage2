@@ -16,16 +16,16 @@
  */
 package quests.Q00061_LawEnforcement;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 /**
  * Law Enforcement (61)
@@ -119,10 +119,10 @@ public class Q00061_LawEnforcement extends Quest
 						final PlayerClass newClassId = player.getPlayerClass().getNextClasses().stream().findFirst().orElse(null);
 						if (newClassId != null)
 						{
-							final PlayerClass currentClassId = player.getPlayerClass();
-							if (!newClassId.childOf(currentClassId))
+							final PlayerClass currentPlayerClass = player.getPlayerClass();
+							if (!newClassId.childOf(currentPlayerClass))
 							{
-								PunishmentManager.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to cheat class transfer for Judicator!", Config.DEFAULT_PUNISH);
+								PunishmentManager.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to cheat class transfer for Judicator!", GeneralConfig.DEFAULT_PUNISH);
 							}
 							
 							player.setPlayerClass(JUDICATOR);

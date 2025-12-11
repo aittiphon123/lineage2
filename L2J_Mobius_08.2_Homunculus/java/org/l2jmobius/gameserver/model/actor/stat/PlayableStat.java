@@ -22,7 +22,7 @@ package org.l2jmobius.gameserver.model.actor.stat;
 
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.data.xml.PetDataTable;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
@@ -109,7 +109,7 @@ public class PlayableStat extends CreatureStat
 	public boolean removeExp(long amount)
 	{
 		long value = amount;
-		if (((getExp() - value) < getExpForLevel(getLevel())) && (!Config.PLAYER_DELEVEL || (Config.PLAYER_DELEVEL && (getLevel() <= Config.DELEVEL_MINIMUM))))
+		if (((getExp() - value) < getExpForLevel(getLevel())) && (!PlayerConfig.PLAYER_DELEVEL || (PlayerConfig.PLAYER_DELEVEL && (getLevel() <= PlayerConfig.DELEVEL_MINIMUM))))
 		{
 			value = getExp() - getExpForLevel(getLevel());
 		}
@@ -191,7 +191,7 @@ public class PlayableStat extends CreatureStat
 		}
 		
 		final Playable playable = getActiveChar();
-		if (!levelIncreased && playable.isPlayer() && !playable.isGM() && Config.DECREASE_SKILL_LEVEL)
+		if (!levelIncreased && playable.isPlayer() && !playable.isGM() && PlayerConfig.DECREASE_SKILL_LEVEL)
 		{
 			playable.asPlayer().checkPlayerSkills();
 		}
@@ -216,15 +216,15 @@ public class PlayableStat extends CreatureStat
 		}
 		
 		final long currentSp = getSp();
-		if (currentSp >= Config.MAX_SP)
+		if (currentSp >= PlayerConfig.MAX_SP)
 		{
 			return false;
 		}
 		
 		long value = amount;
-		if (currentSp > (Config.MAX_SP - value))
+		if (currentSp > (PlayerConfig.MAX_SP - value))
 		{
-			value = Config.MAX_SP - currentSp;
+			value = PlayerConfig.MAX_SP - currentSp;
 		}
 		
 		setSp(currentSp + value);

@@ -25,8 +25,10 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.data.holders.InstanceReenterTimeHolder;
 import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.model.Location;
@@ -57,14 +59,14 @@ public class InstanceTemplate extends ListenersContainer
 	private String _name = "UnknownInstance";
 	private int _duration = -1;
 	private long _emptyDestroyTime = -1;
-	private int _ejectTime = Config.EJECT_DEAD_PLAYER_TIME;
+	private int _ejectTime = GeneralConfig.EJECT_DEAD_PLAYER_TIME;
 	private int _maxWorldCount = -1;
 	private boolean _isPvP = false;
 	private boolean _allowPlayerSummon = false;
-	private float _expRate = Config.RATE_INSTANCE_XP;
-	private float _spRate = Config.RATE_INSTANCE_SP;
-	private float _expPartyRate = Config.RATE_INSTANCE_PARTY_XP;
-	private float _spPartyRate = Config.RATE_INSTANCE_PARTY_SP;
+	private float _expRate = RatesConfig.RATE_INSTANCE_XP;
+	private float _spRate = RatesConfig.RATE_INSTANCE_SP;
+	private float _expPartyRate = RatesConfig.RATE_INSTANCE_PARTY_XP;
+	private float _spPartyRate = RatesConfig.RATE_INSTANCE_PARTY_SP;
 	private StatSet _parameters = StatSet.EMPTY_STATSET;
 	private final Map<Integer, DoorTemplate> _doors = new HashMap<>();
 	private final List<SpawnTemplate> _spawns = new ArrayList<>();
@@ -139,7 +141,7 @@ public class InstanceTemplate extends ListenersContainer
 	
 	/**
 	 * Set time after death player will be ejected from instance world.<br>
-	 * Default: {@link Config#EJECT_DEAD_PLAYER_TIME}
+	 * Default: {@link GeneralConfig#EJECT_DEAD_PLAYER_TIME}
 	 * @param ejectTime time in minutes
 	 */
 	public void setEjectTime(int ejectTime)
@@ -289,7 +291,7 @@ public class InstanceTemplate extends ListenersContainer
 			}
 			
 			// Party
-			final int partySize = Config.ALT_PARTY_MAX_MEMBERS;
+			final int partySize = PlayerConfig.ALT_PARTY_MAX_MEMBERS;
 			if (((max > 1) && (max <= partySize)) || ((min <= partySize) && (max > partySize)))
 			{
 				_groupMask |= GroupType.PARTY.getMask();

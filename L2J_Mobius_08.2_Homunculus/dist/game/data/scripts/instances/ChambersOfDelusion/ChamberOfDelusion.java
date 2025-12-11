@@ -24,14 +24,15 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.stream.IntStream;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -39,13 +40,11 @@ import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.Earthquake;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import instances.AbstractInstance;
-
 /**
  * Chambers of Delusion.
  * @author GKR
  */
-public class ChamberOfDelusion extends AbstractInstance
+public class ChamberOfDelusion extends InstanceScript
 {
 	// NPCs
 	private static final Map<Integer, Integer> ENTRANCE_GATEKEEPER = new HashMap<>();
@@ -331,7 +330,7 @@ public class ChamberOfDelusion extends AbstractInstance
 			if (isBigChamber(world))
 			{
 				world.setReenterTime();
-				if (world.getRemainingTime() > (Config.INSTANCE_FINISH_TIME * 60000))
+				if (world.getRemainingTime() > (GeneralConfig.INSTANCE_FINISH_TIME * 60000))
 				{
 					world.finishInstance();
 				}

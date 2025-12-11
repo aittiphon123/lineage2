@@ -41,6 +41,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.groups.CommandChannel;
 import org.l2jmobius.gameserver.model.groups.Party;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
@@ -54,13 +55,11 @@ import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 
-import ai.AbstractNpcAI;
-
 /**
  * Orfen's AI
  * @author Notorion
  */
-public class Orfen extends AbstractNpcAI
+public class Orfen extends Script
 {
 	// NPCs
 	private static final int ORFEN = 29325;

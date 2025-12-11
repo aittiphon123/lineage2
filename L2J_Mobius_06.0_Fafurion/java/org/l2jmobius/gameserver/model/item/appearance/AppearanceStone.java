@@ -25,7 +25,7 @@ import java.util.Set;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ArmorType;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
@@ -48,7 +48,7 @@ public class AppearanceStone
 	private final AppearanceMagicType _magicType;
 	private Set<CrystalType> _crystalTypes;
 	private Set<AppearanceTargetType> _targetTypes;
-	private Set<Long> _bodyParts;
+	private Set<BodyPart> _bodyParts;
 	private Set<Race> _races;
 	private Set<Race> _racesNot;
 	private Set<AppearanceHolder> _allVisualIds;
@@ -103,8 +103,8 @@ public class AppearanceStone
 			addCrystalType(crystalType);
 		}
 		
-		final long bodyPart = ItemTemplate.SLOTS.get(set.getString("bodyPart", "none"));
-		if (bodyPart != ItemTemplate.SLOT_NONE)
+		final BodyPart bodyPart = BodyPart.fromName(set.getString("bodyPart", "none"));
+		if (bodyPart != BodyPart.NONE)
 		{
 			addBodyPart(bodyPart);
 		}
@@ -197,14 +197,14 @@ public class AppearanceStone
 		return _targetTypes != null ? _targetTypes : Collections.emptySet();
 	}
 	
-	public void addBodyPart(long part)
+	public void addBodyPart(BodyPart bodyPart)
 	{
 		if (_bodyParts == null)
 		{
 			_bodyParts = new HashSet<>();
 		}
 		
-		_bodyParts.add(part);
+		_bodyParts.add(bodyPart);
 	}
 	
 	public void addVisualId(AppearanceHolder appearanceHolder)
@@ -222,7 +222,7 @@ public class AppearanceStone
 		return _allVisualIds != null ? _allVisualIds : Collections.emptySet();
 	}
 	
-	public Set<Long> getBodyParts()
+	public Set<BodyPart> getBodyParts()
 	{
 		return _bodyParts != null ? _bodyParts : Collections.emptySet();
 	}
@@ -290,13 +290,13 @@ public class AppearanceStone
 					return false;
 				}
 				
-				if ((targetItem.isWeapon() && !getTargetTypes().contains(AppearanceTargetType.WEAPON)) || (targetItem.isArmor() && !getTargetTypes().contains(AppearanceTargetType.ARMOR) && !((targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR) || (targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR2) || (targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIRALL))) || (targetItem.isEtcItem() && !getTargetTypes().contains(AppearanceTargetType.ACCESSORY)))
+				if ((targetItem.isWeapon() && !getTargetTypes().contains(AppearanceTargetType.WEAPON)) || (targetItem.isArmor() && !getTargetTypes().contains(AppearanceTargetType.ARMOR) && !((targetItem.getTemplate().getBodyPart() == BodyPart.HAIR) || (targetItem.getTemplate().getBodyPart() == BodyPart.HAIR2) || (targetItem.getTemplate().getBodyPart() == BodyPart.HAIRALL))) || (targetItem.isEtcItem() && !getTargetTypes().contains(AppearanceTargetType.ACCESSORY)))
 				{
 					player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 					return false;
 				}
 				
-				if (((targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR) || (targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR2) || (targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIRALL)) && !getTargetTypes().contains(AppearanceTargetType.ACCESSORY))
+				if (((targetItem.getTemplate().getBodyPart() == BodyPart.HAIR) || (targetItem.getTemplate().getBodyPart() == BodyPart.HAIR2) || (targetItem.getTemplate().getBodyPart() == BodyPart.HAIRALL)) && !getTargetTypes().contains(AppearanceTargetType.ACCESSORY))
 				{
 					player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 					return false;
@@ -346,7 +346,7 @@ public class AppearanceStone
 					}
 					case ACCESSORY:
 					{
-						if ((targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_HAIR) && (targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_HAIR2) && (targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_HAIRALL))
+						if ((targetItem.getTemplate().getBodyPart() != BodyPart.HAIR) && (targetItem.getTemplate().getBodyPart() != BodyPart.HAIR2) && (targetItem.getTemplate().getBodyPart() != BodyPart.HAIRALL))
 						{
 							player.sendPacket(SystemMessageId.HAIR_ACCESSORIES_ONLY);
 							return false;
@@ -406,7 +406,7 @@ public class AppearanceStone
 			{
 				case ONE_HANDED:
 				{
-					if ((targetItem.getTemplate().getBodyPart() & ItemTemplate.SLOT_R_HAND) != ItemTemplate.SLOT_R_HAND)
+					if (targetItem.getTemplate().getBodyPart() != BodyPart.R_HAND)
 					{
 						player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 						return false;
@@ -415,7 +415,7 @@ public class AppearanceStone
 				}
 				case TWO_HANDED:
 				{
-					if ((targetItem.getTemplate().getBodyPart() & ItemTemplate.SLOT_LR_HAND) != ItemTemplate.SLOT_LR_HAND)
+					if (targetItem.getTemplate().getBodyPart() != BodyPart.LR_HAND)
 					{
 						player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 						return false;
@@ -477,7 +477,7 @@ public class AppearanceStone
 	{
 		for (AppearanceHolder holder : _allVisualIds)
 		{
-			if (targetItem.isArmor() && (holder.getBodyPart() != 0) && (targetItem.getTemplate().getBodyPart() != holder.getBodyPart()))
+			if (targetItem.isArmor() && (holder.getBodyPart() != BodyPart.NONE) && (targetItem.getTemplate().getBodyPart() != holder.getBodyPart()))
 			{
 				continue;
 			}
@@ -500,7 +500,7 @@ public class AppearanceStone
 				{
 					case ONE_HANDED:
 					{
-						if ((targetItem.getTemplate().getBodyPart() & ItemTemplate.SLOT_R_HAND) != ItemTemplate.SLOT_R_HAND)
+						if (targetItem.getTemplate().getBodyPart() != BodyPart.R_HAND)
 						{
 							continue;
 						}
@@ -508,7 +508,7 @@ public class AppearanceStone
 					}
 					case TWO_HANDED:
 					{
-						if ((targetItem.getTemplate().getBodyPart() & ItemTemplate.SLOT_LR_HAND) != ItemTemplate.SLOT_LR_HAND)
+						if (targetItem.getTemplate().getBodyPart() != BodyPart.LR_HAND)
 						{
 							continue;
 						}

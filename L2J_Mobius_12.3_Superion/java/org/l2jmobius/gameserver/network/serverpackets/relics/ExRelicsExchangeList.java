@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.network.serverpackets.relics;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.RelicSystemConfig;
 import org.l2jmobius.gameserver.data.xml.RelicData;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.holders.player.PlayerRelicData;
@@ -50,10 +50,10 @@ public class ExRelicsExchangeList extends ServerPacket
 	{
 		ServerPackets.EX_RELICS_EXCHANGE_LIST.writeId(this, buffer);
 		
-		final int attemptsRemainingCountBgrade = _player.getAccountVariables().getInt(AccountVariables.B_GRADE_RELIC_ATEMPTS, Config.RELIC_REPLACE_ATTEMPTS_B_GRADE) > 0 ? _player.getAccountVariables().getInt(AccountVariables.B_GRADE_RELIC_ATEMPTS, Config.RELIC_REPLACE_ATTEMPTS_B_GRADE) : 0;
-		final int attemptsRemainingCountAgrade = _player.getAccountVariables().getInt(AccountVariables.A_GRADE_RELIC_ATEMPTS, Config.RELIC_REPLACE_ATTEMPTS_A_GRADE) > 0 ? _player.getAccountVariables().getInt(AccountVariables.A_GRADE_RELIC_ATEMPTS, Config.RELIC_REPLACE_ATTEMPTS_A_GRADE) : 0;
-		final int maxRelicsOnConfirmationList = Config.RELIC_UNCONFIRMED_LIST_LIMIT;
-		final long defaultReplacementTime = Config.RELIC_UNCONFIRMED_TIME_LIMIT * 86400000; // 86400000 = 1 day in milliseconds
+		final int attemptsRemainingCountBgrade = _player.getAccountVariables().getInt(AccountVariables.B_GRADE_RELIC_ATEMPTS, RelicSystemConfig.RELIC_REPLACE_ATTEMPTS_B_GRADE) > 0 ? _player.getAccountVariables().getInt(AccountVariables.B_GRADE_RELIC_ATEMPTS, RelicSystemConfig.RELIC_REPLACE_ATTEMPTS_B_GRADE) : 0;
+		final int attemptsRemainingCountAgrade = _player.getAccountVariables().getInt(AccountVariables.A_GRADE_RELIC_ATEMPTS, RelicSystemConfig.RELIC_REPLACE_ATTEMPTS_A_GRADE) > 0 ? _player.getAccountVariables().getInt(AccountVariables.A_GRADE_RELIC_ATEMPTS, RelicSystemConfig.RELIC_REPLACE_ATTEMPTS_A_GRADE) : 0;
+		final int maxRelicsOnConfirmationList = RelicSystemConfig.RELIC_UNCONFIRMED_LIST_LIMIT;
+		final long defaultReplacementTime = RelicSystemConfig.RELIC_UNCONFIRMED_TIME_LIMIT * 86400000; // 86400000 = 1 day in milliseconds
 		
 		long relicSummonTime = 0;
 		final List<Integer> unconfirmedRelics = new ArrayList<>();

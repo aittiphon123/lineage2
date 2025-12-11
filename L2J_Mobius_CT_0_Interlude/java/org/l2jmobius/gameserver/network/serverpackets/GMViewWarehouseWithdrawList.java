@@ -69,7 +69,7 @@ public class GMViewWarehouseWithdrawList extends AbstractItemPacket
 			
 			if (item.isEquipable())
 			{
-				buffer.writeInt(item.getTemplate().getBodyPart());
+				buffer.writeInt(item.getTemplate().getBodyPart().getMask());
 				buffer.writeShort(item.getEnchantLevel());
 				
 				if (item.isWeapon())

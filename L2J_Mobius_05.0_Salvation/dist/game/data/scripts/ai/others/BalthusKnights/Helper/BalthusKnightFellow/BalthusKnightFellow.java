@@ -23,14 +23,13 @@ package ai.others.BalthusKnights.Helper.BalthusKnightFellow;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Balthus Knight Fellow AI
  * @author Kazumi
  */
-public final class BalthusKnightFellow extends AbstractNpcAI
+public final class BalthusKnightFellow extends Script
 {
 	// NPCs
 	private static final int FELLOW = 34368;

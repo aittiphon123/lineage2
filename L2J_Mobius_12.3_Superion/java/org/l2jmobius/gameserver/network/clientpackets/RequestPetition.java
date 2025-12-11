@@ -16,7 +16,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.AdminData;
 import org.l2jmobius.gameserver.managers.PetitionManager;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -77,14 +77,14 @@ public class RequestPetition extends ClientPacket
 			return;
 		}
 		
-		if (PetitionManager.getInstance().getPendingPetitionCount() == Config.MAX_PETITIONS_PENDING)
+		if (PetitionManager.getInstance().getPendingPetitionCount() == PlayerConfig.MAX_PETITIONS_PENDING)
 		{
 			player.sendPacket(SystemMessageId.UNABLE_TO_SEND_YOUR_REQUEST_TO_THE_GLOBAL_SUPPORT_PLEASE_TRY_AGAIN_LATER);
 			return;
 		}
 		
 		final int totalPetitions = PetitionManager.getInstance().getPlayerTotalPetitionCount(player) + 1;
-		if (totalPetitions > Config.MAX_PETITIONS_PER_PLAYER)
+		if (totalPetitions > PlayerConfig.MAX_PETITIONS_PER_PLAYER)
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_SUBMITTED_MAXIMUM_NUMBER_OF_S1_GLOBAL_SUPPORT_REQUESTS_TODAY_YOU_CANNOT_SUBMIT_MORE_REQUESTS);
 			sm.addInt(totalPetitions);
@@ -105,7 +105,7 @@ public class RequestPetition extends ClientPacket
 		
 		sm = new SystemMessage(SystemMessageId.SUPPORT_RECEIVED_S1_TIME_S_GLOBAL_SUPPORT_REQUESTS_LEFT_FOR_TODAY_S2);
 		sm.addInt(totalPetitions);
-		sm.addInt(Config.MAX_PETITIONS_PER_PLAYER - totalPetitions);
+		sm.addInt(PlayerConfig.MAX_PETITIONS_PER_PLAYER - totalPetitions);
 		player.sendPacket(sm);
 		
 		sm = new SystemMessage(SystemMessageId.S1_USERS_ARE_IN_LINE_TO_GET_THE_GLOBAL_SUPPORT);

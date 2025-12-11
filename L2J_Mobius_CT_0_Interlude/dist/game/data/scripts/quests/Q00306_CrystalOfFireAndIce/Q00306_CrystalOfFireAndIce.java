@@ -20,12 +20,12 @@
  */
 package quests.Q00306_CrystalOfFireAndIce;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 public class Q00306_CrystalOfFireAndIce extends Quest
 {
@@ -104,7 +104,7 @@ public class Q00306_CrystalOfFireAndIce extends Quest
 					takeItems(player, ICE_SHARD, -1);
 					
 					int reward = totalItems * 60;
-					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (totalItems >= 10))
+					if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (totalItems >= 10))
 					{
 						reward += 5000;
 					}

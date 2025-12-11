@@ -19,9 +19,10 @@ package org.l2jmobius.gameserver.model.fishing;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.data.xml.FishingData;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -124,7 +125,7 @@ public class Fishing
 	
 	private void castLine()
 	{
-		if (!Config.ALLOW_FISHING && !_player.isGM())
+		if (!GeneralConfig.ALLOW_FISHING && !_player.isGM())
 		{
 			_player.sendMessage("Fishing is disabled.");
 			_player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -154,9 +155,9 @@ public class Fishing
 			return;
 		}
 		
-		if (Config.PREMIUM_SYSTEM_ENABLED)
+		if (PremiumSystemConfig.PREMIUM_SYSTEM_ENABLED)
 		{
-			if (Config.PREMIUM_ONLY_FISHING && !_player.hasPremiumStatus())
+			if (PremiumSystemConfig.PREMIUM_ONLY_FISHING && !_player.hasPremiumStatus())
 			{
 				_player.sendMessage("You reel your line in and stop fishing.");
 				_player.sendPacket(ActionFailed.STATIC_PACKET);

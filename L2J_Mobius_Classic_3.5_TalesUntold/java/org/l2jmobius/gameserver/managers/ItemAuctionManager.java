@@ -32,9 +32,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.itemauction.ItemAuctionInstance;
 
 /**
@@ -49,7 +49,7 @@ public class ItemAuctionManager implements IXmlReader
 	
 	protected ItemAuctionManager()
 	{
-		if (!Config.ALT_ITEM_AUCTION_ENABLED)
+		if (!GeneralConfig.ALT_ITEM_AUCTION_ENABLED)
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Disabled.");
 			return;

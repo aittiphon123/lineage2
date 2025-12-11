@@ -24,14 +24,15 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2jmobius.gameserver.data.xml.SpawnData;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.spawns.SpawnGroup;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
@@ -41,7 +42,6 @@ import org.l2jmobius.gameserver.network.serverpackets.Earthquake;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
-import ai.AbstractNpcAI;
 import instances.TaintedDimension.TaintedDimension;
 import quests.Q10301_ShadowOfTerrorBlackishRedFog.Q10301_ShadowOfTerrorBlackishRedFog;
 
@@ -49,7 +49,7 @@ import quests.Q10301_ShadowOfTerrorBlackishRedFog.Q10301_ShadowOfTerrorBlackishR
  * Ancient Arcan City AI.
  * @author St3eT, Mobius
  */
-public class AncientArcanCity extends AbstractNpcAI
+public class AncientArcanCity extends Script
 {
 	// NPC
 	private static final int CEREMONIAL_CAT = 33093;
@@ -129,7 +129,7 @@ public class AncientArcanCity extends AbstractNpcAI
 				final QuestState qs = player.getQuestState(Q10301_ShadowOfTerrorBlackishRedFog.class.getSimpleName());
 				if ((qs != null) && qs.isCond(3))
 				{
-					final Quest instance = QuestManager.getInstance().getQuest(TaintedDimension.class.getSimpleName());
+					final Quest instance = ScriptManager.getInstance().getScript(TaintedDimension.class.getSimpleName());
 					if (instance != null)
 					{
 						instance.notifyEvent("enterInstance", null, player);

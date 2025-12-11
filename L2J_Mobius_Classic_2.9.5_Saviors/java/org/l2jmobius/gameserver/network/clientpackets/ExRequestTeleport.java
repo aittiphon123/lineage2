@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.holders.TeleportListHolder;
 import org.l2jmobius.gameserver.data.xml.TeleportListData;
 import org.l2jmobius.gameserver.managers.CastleManager;
@@ -77,14 +77,14 @@ public class ExRequestTeleport extends ClientPacket
 		}
 		
 		// Teleport in combat configuration.
-		if (!Config.TELEPORT_WHILE_PLAYER_IN_COMBAT && (player.isInCombat() || player.isCastingNow()))
+		if (!PlayerConfig.TELEPORT_WHILE_PLAYER_IN_COMBAT && (player.isInCombat() || player.isCastingNow()))
 		{
 			player.sendMessage("You cannot teleport in combat.");
 			return;
 		}
 		
 		// Karma related configurations.
-		if ((!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && (player.getReputation() < 0))
+		if ((!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && (player.getReputation() < 0))
 		{
 			player.sendMessage("You cannot teleport right now.");
 			return;
@@ -98,7 +98,7 @@ public class ExRequestTeleport extends ClientPacket
 		}
 		
 		final Location location = teleport.getLocation();
-		if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
+		if (!PlayerConfig.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
 		{
 			final Castle castle = CastleManager.getInstance().getCastle(location.getX(), location.getY(), location.getZ());
 			if ((castle != null) && castle.getSiege().isInProgress())
@@ -108,7 +108,7 @@ public class ExRequestTeleport extends ClientPacket
 			}
 		}
 		
-		if (player.getLevel() > Config.MAX_FREE_TELEPORT_LEVEL)
+		if (player.getLevel() > PlayerConfig.MAX_FREE_TELEPORT_LEVEL)
 		{
 			final int price = teleport.getPrice();
 			if (price > 0)

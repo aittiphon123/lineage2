@@ -22,7 +22,7 @@ package events.RedLibra.Eraton;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.ClassListData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
@@ -44,6 +44,7 @@ import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.olympiad.Hero;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.Disconnection;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -53,8 +54,6 @@ import org.l2jmobius.gameserver.network.serverpackets.LeaveWorld;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.taskmanagers.AutoUseTaskManager;
-
-import ai.AbstractNpcAI;
 
 /**
  * Red Libra<br>
@@ -66,7 +65,7 @@ import ai.AbstractNpcAI;
  * Congratulations! The main character class has been changed. The process is accompanied by a distinctive animation with a character jumping up.
  * @author Index, Gaikotsu
  */
-public class Eraton extends AbstractNpcAI
+public class Eraton extends Script
 {
 	// NPC
 	private static final int ERATON = 34584;
@@ -243,11 +242,11 @@ public class Eraton extends AbstractNpcAI
 			}
 			default:
 			{
-				final PlayerClass classId = PlayerClass.valueOf(event.replace("ERATON_", ""));
-				if (classId != null)
+				final PlayerClass playerClass = PlayerClass.valueOf(event.replace("ERATON_", ""));
+				if (playerClass != null)
 				{
 					final StringBuilder sb = new StringBuilder();
-					sb.append("<Button ALIGN=LEFT ICON=NORMAL action=\"bypass -h menu_select?ask=1&reply=" + classId.getId() + "\">" + "Select " + ClassListData.getInstance().getClass(classId.getId()).getClassName() + "</Button>");
+					sb.append("<Button ALIGN=LEFT ICON=NORMAL action=\"bypass -h menu_select?ask=1&reply=" + playerClass.getId() + "\">" + "Select " + ClassListData.getInstance().getClass(playerClass.getId()).getClassName() + "</Button>");
 					htmltext = getHtm(player, "34584-3.html").replace("%CONFIRM_BUTTON%", sb.toString());
 				}
 			}
@@ -327,7 +326,7 @@ public class Eraton extends AbstractNpcAI
 				player.stopAllEffects();
 				player.getEffectList().stopAllToggles();
 				player.getEffectList().stopAllEffectsWithoutExclusions(false, false); // ReplaceSkillBySkill should stop here.
-				if (Config.ERATON_RETAINED_SKILLS.isEmpty())
+				if (PlayerConfig.ERATON_RETAINED_SKILLS.isEmpty())
 				{
 					player.removeAllSkills();
 				}
@@ -335,7 +334,7 @@ public class Eraton extends AbstractNpcAI
 				{
 					for (Skill skill : player.getAllSkills())
 					{
-						if (!Config.ERATON_RETAINED_SKILLS.contains(skill.getId()))
+						if (!PlayerConfig.ERATON_RETAINED_SKILLS.contains(skill.getId()))
 						{
 							player.removeSkill(skill);
 						}
@@ -396,7 +395,7 @@ public class Eraton extends AbstractNpcAI
 					player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
 				}
 				
-				final List<Integer> removedSkillIds = Config.HARDIN_REMOVED_SKILLS.get(classId);
+				final List<Integer> removedSkillIds = PlayerConfig.HARDIN_REMOVED_SKILLS.get(classId);
 				if (removedSkillIds != null)
 				{
 					for (int skillId : removedSkillIds)
@@ -426,7 +425,7 @@ public class Eraton extends AbstractNpcAI
 				// Remove olympiad nobless.
 				Olympiad.removeNobleStats(player.getObjectId());
 				
-				// Set new classId.
+				// Set new PlayerClass.
 				player.restoreDualSkills();
 				player.store(false);
 				player.broadcastUserInfo();

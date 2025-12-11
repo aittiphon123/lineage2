@@ -26,7 +26,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.data.xml.ClassListData;
@@ -44,6 +44,7 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.AcquireSkillList;
 import org.l2jmobius.gameserver.network.serverpackets.ExSubjobInfo;
@@ -51,13 +52,11 @@ import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import ai.AbstractNpcAI;
-
 /**
  * Raina AI.
  * @author St3eT
  */
-public class Raina extends AbstractNpcAI
+public class Raina extends Script
 {
 	// NPC
 	private static final int RAINA = 33491;
@@ -181,7 +180,7 @@ public class Raina extends AbstractNpcAI
 				{
 					htmltext = "noQuest.html";
 				}
-				else if (!hasAllSubclassLeveled(player) || (player.getTotalSubClasses() >= Config.MAX_SUBCLASS))
+				else if (!hasAllSubclassLeveled(player) || (player.getTotalSubClasses() >= PlayerConfig.MAX_SUBCLASS))
 				{
 					htmltext = "addFailed.html";
 				}
@@ -275,7 +274,19 @@ public class Raina extends AbstractNpcAI
 				}
 				else
 				{
-					player.sendMessage("Not done yet.");
+					final StringBuilder sb = new StringBuilder();
+					final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "subclassChangeList.html");
+					for (SubClassHolder subClass : player.getSubClasses().values())
+					{
+						if (subClass != null)
+						{
+							final int classId = subClass.getId();
+							final int npcStringId = 11170000 + classId;
+							sb.append("<fstring p1=\"7\" p2=\"" + subClass.getClassIndex() + "\">" + npcStringId + "</fstring>");
+						}
+					}
+					html.replace("%removeList%", sb.toString());
+					player.sendPacket(html);
 				}
 				break;
 			}
@@ -418,7 +429,7 @@ public class Raina extends AbstractNpcAI
 			}
 			case "upgradeSubClassToDualClass":
 			{
-				if (Config.ALT_GAME_DUALCLASS_WITHOUT_QUEST)
+				if (PlayerConfig.ALT_GAME_DUALCLASS_WITHOUT_QUEST)
 				{
 					if (player.isTransformed())
 					{
@@ -497,6 +508,7 @@ public class Raina extends AbstractNpcAI
 				}
 				
 				player.setActiveClass(player.getTotalSubClasses());
+				player.broadcastUserInfo();
 				player.sendPacket(new ExSubjobInfo(player, SubclassInfoType.NEW_SLOT_USED));
 				player.sendPacket(SystemMessageId.THE_NEW_SUBCLASS_S1_HAS_BEEN_ADDED_CONGRATS);
 				player.sendPacket(getNpcHtmlMessage(player, npc, "addSuccess.html"));
@@ -627,7 +639,7 @@ public class Raina extends AbstractNpcAI
 				// break;
 				// }
 				
-				if (!Config.ALT_GAME_SUBCLASS_WITHOUT_QUESTS)
+				if (!PlayerConfig.ALT_GAME_SUBCLASS_WITHOUT_QUESTS)
 				{
 					break;
 				}
@@ -651,6 +663,84 @@ public class Raina extends AbstractNpcAI
 					giveItems(player, getPowerItemId(player), 1);
 					takeItems(player, CHAOS_POMANDER, -1);
 					giveItems(player, CHAOS_POMANDER, 2);
+				}
+				break;
+			}
+			case 7: // change subclass list
+			{
+				final int subclassIndex = event.getReply();
+				final Set<PlayerClass> availSubs = getAvailableSubClasses(player);
+				final StringBuilder sb = new StringBuilder();
+				final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "changeSubclassList.html");
+				if ((availSubs == null) || availSubs.isEmpty())
+				{
+					return;
+				}
+				
+				for (PlayerClass subClass : availSubs)
+				{
+					if (subClass != null)
+					{
+						final int classId = subClass.getId();
+						final int npcStringId = 11170000 + classId;
+						sb.append("<fstring p1=\"8\" p2=\"" + classId + "\">" + npcStringId + "</fstring>");
+					}
+				}
+				npc.getVariables().set("SUBCLASS_INDEX_" + player.getObjectId(), subclassIndex);
+				html.replace("%subclassList%", sb.toString());
+				player.sendPacket(html);
+				break;
+			}
+			case 8: // change subclass confirm menu
+			{
+				final int classId = event.getReply();
+				final int classIndex = npc.getVariables().getInt("SUBCLASS_INDEX_" + player.getObjectId(), -1);
+				if (classIndex < 0)
+				{
+					return;
+				}
+				
+				final StringBuilder sb = new StringBuilder();
+				final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "addConfirm2.html");
+				final int npcStringId = 11170000 + classId;
+				sb.append("<fstring p1=\"9\" p2=\"" + classId + "\">" + npcStringId + "</fstring>");
+				html.replace("%confirmButton%", sb.toString());
+				player.sendPacket(html);
+				break;
+			}
+			case 9: // change subclass
+			{
+				final int classId = event.getReply();
+				final int classIndex = npc.getVariables().getInt("SUBCLASS_INDEX_" + player.getObjectId(), -1);
+				if (classIndex < 0)
+				{
+					return;
+				}
+				
+				final SubClassHolder subClass = player.getSubClasses().get(classIndex);
+				if (subClass != null)
+				{
+					final long subChangeLevel = subClass.getLevel();
+					final long subChangeExp = subClass.getExp();
+					if (player.modifySubClass(classIndex, classId, false))
+					{
+						player.abortCast();
+						player.stopAllEffectsExceptThoseThatLastThroughDeath();
+						player.stopAllEffects();
+						player.stopCubics();
+						player.setActiveClass(classIndex);
+						
+						final SubClassHolder newClass = player.getSubClasses().get(classIndex);
+						newClass.setExp(subChangeExp);
+						newClass.setLevel((byte) subChangeLevel);
+						
+						player.sendPacket(new ExSubjobInfo(player, SubclassInfoType.CLASS_CHANGED));
+						player.sendPacket(getNpcHtmlMessage(player, npc, "addSuccess.html"));
+						
+						final SystemMessage msg = new SystemMessage(SystemMessageId.THE_NEW_SUBCLASS_S1_HAS_BEEN_ADDED_CONGRATS);
+						msg.addClassId(newClass.getId());
+						player.sendPacket(msg);
+					}
 				}
 				break;
 			}
@@ -694,7 +784,7 @@ public class Raina extends AbstractNpcAI
 	{
 		// final QuestState qs = isErtheia ? player.getQuestState(Q10472_WindsOfFateEncroachingShadows.class.getSimpleName()) : player.getQuestState(Q10385_RedThreadOfFate.class.getSimpleName());
 		// return (((qs != null) && qs.isCompleted()) || Config.ALT_GAME_SUBCLASS_WITHOUT_QUESTS);
-		return (Config.ALT_GAME_SUBCLASS_WITHOUT_QUESTS);
+		return (PlayerConfig.ALT_GAME_SUBCLASS_WITHOUT_QUESTS);
 	}
 	
 	/**
@@ -845,7 +935,7 @@ public class Raina extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
-		if (Config.ALT_GAME_DUALCLASS_WITHOUT_QUEST)
+		if (PlayerConfig.ALT_GAME_DUALCLASS_WITHOUT_QUEST)
 		{
 			return "addDualClassWithoutQuest.html";
 		}

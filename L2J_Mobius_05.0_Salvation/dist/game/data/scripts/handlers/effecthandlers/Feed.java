@@ -16,7 +16,7 @@
  */
 package handlers.effecthandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -54,7 +54,7 @@ public class Feed extends AbstractEffect
 		if (effected.isPet())
 		{
 			final Pet pet = effected.asPet();
-			pet.setCurrentFed(pet.getCurrentFed() + (_normal * Config.PET_FOOD_RATE));
+			pet.setCurrentFed(pet.getCurrentFed() + (_normal * RatesConfig.PET_FOOD_RATE));
 		}
 		else if (effected.isPlayer())
 		{

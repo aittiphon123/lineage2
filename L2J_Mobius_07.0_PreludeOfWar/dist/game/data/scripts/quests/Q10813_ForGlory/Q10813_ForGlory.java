@@ -16,7 +16,7 @@
  */
 package quests.Q10813_ForGlory;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -25,10 +25,10 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.ceremonyofchaos.OnCeremonyOfChaosMatchResult;
 import org.l2jmobius.gameserver.model.events.holders.olympiad.OnOlympiadMatchResult;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 import quests.Q10811_ExaltedOneWhoFacesTheLimit.Q10811_ExaltedOneWhoFacesTheLimit;
 
@@ -95,7 +95,7 @@ public class Q10813_ForGlory extends Quest
 						giveItems(player, MYSTERIOUS_BUTLER_CERTIFICATE, 1);
 						qs.exitQuest(false, true);
 						
-						final Quest mainQ = QuestManager.getInstance().getQuest(Q10811_ExaltedOneWhoFacesTheLimit.class.getSimpleName());
+						final Quest mainQ = ScriptManager.getInstance().getScript(Q10811_ExaltedOneWhoFacesTheLimit.class.getSimpleName());
 						if (mainQ != null)
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);

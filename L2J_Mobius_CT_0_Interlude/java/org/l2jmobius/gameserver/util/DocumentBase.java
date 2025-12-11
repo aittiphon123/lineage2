@@ -79,6 +79,7 @@ import org.l2jmobius.gameserver.model.conditions.ConditionPlayerInvSize;
 import org.l2jmobius.gameserver.model.conditions.ConditionPlayerIsClanLeader;
 import org.l2jmobius.gameserver.model.conditions.ConditionPlayerIsHero;
 import org.l2jmobius.gameserver.model.conditions.ConditionPlayerIsPvpFlagged;
+import org.l2jmobius.gameserver.model.conditions.ConditionPlayerIsRidingStrider;
 import org.l2jmobius.gameserver.model.conditions.ConditionPlayerLevel;
 import org.l2jmobius.gameserver.model.conditions.ConditionPlayerLevelRange;
 import org.l2jmobius.gameserver.model.conditions.ConditionPlayerMp;
@@ -116,6 +117,7 @@ import org.l2jmobius.gameserver.model.conditions.ConditionUsingSlotType;
 import org.l2jmobius.gameserver.model.conditions.ConditionWithSkill;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.type.ArmorType;
 import org.l2jmobius.gameserver.model.item.type.WeaponType;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
@@ -584,6 +586,12 @@ public abstract class DocumentBase
 				{
 					final boolean val = Boolean.parseBoolean(a.getNodeValue());
 					cond = joinAnd(cond, new ConditionPlayerIsPvpFlagged(val));
+					break;
+				}
+				case "isridingstrider":
+				{
+					final boolean val = Boolean.parseBoolean(a.getNodeValue());
+					cond = joinAnd(cond, new ConditionPlayerIsRidingStrider(val));
 					break;
 				}
 				case "hp":
@@ -1156,9 +1164,10 @@ public abstract class DocumentBase
 					{
 						final int old = mask;
 						final String item = st.nextToken().trim();
-						if (ItemTemplate.SLOTS.containsKey(item))
+						final BodyPart bodyPart = BodyPart.fromName(item);
+						if (bodyPart != null)
 						{
-							mask |= ItemTemplate.SLOTS.get(item);
+							mask |= bodyPart.getMask();
 						}
 						
 						if (old == mask)

@@ -23,15 +23,15 @@ package ai.areas.AteliaRefinery;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 
-import ai.AbstractNpcAI;
 import quests.Q10890_SaviorsPathHallOfEtina.Q10890_SaviorsPathHallOfEtina;
 
 /**
  * @author NviX
  */
-public class AteliaRefinery extends AbstractNpcAI
+public class AteliaRefinery extends Script
 {
 	// NPC
 	private static final int ATELIA_REFINERY_TELEPORT_DEVICE = 34441;

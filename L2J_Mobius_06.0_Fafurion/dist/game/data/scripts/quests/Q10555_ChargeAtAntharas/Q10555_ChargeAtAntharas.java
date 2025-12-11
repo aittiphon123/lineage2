@@ -20,7 +20,7 @@
  */
 package quests.Q10555_ChargeAtAntharas;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -30,9 +30,9 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -168,7 +168,7 @@ public final class Q10555_ChargeAtAntharas extends Quest
 					{
 						case STIG_MACH_FRIEND:
 						{
-							final Quest instance = QuestManager.getInstance().getQuest(AntharasNest.class.getSimpleName());
+							final Quest instance = ScriptManager.getInstance().getScript(AntharasNest.class.getSimpleName());
 							if (instance != null)
 							{
 								instance.onEvent("startGemDragonsAttack", npc, player);
@@ -344,7 +344,7 @@ public final class Q10555_ChargeAtAntharas extends Quest
 				}
 				case 3:
 				{
-					final Quest instance = QuestManager.getInstance().getQuest(AntharasNest.class.getSimpleName());
+					final Quest instance = ScriptManager.getInstance().getScript(AntharasNest.class.getSimpleName());
 					if (instance != null)
 					{
 						instance.onEvent("enterInstance", npc, player);
@@ -377,7 +377,7 @@ public final class Q10555_ChargeAtAntharas extends Quest
 				if (qs.getInt(Integer.toString(GEM_DRAGON_ANTHARAS)) >= 5)
 				{
 					qs.setCond(3, false);
-					final Quest instance = QuestManager.getInstance().getQuest(AntharasNest.class.getSimpleName());
+					final Quest instance = ScriptManager.getInstance().getScript(AntharasNest.class.getSimpleName());
 					if (instance != null)
 					{
 						instance.onEvent("startAntharasProgress", npc, killer);

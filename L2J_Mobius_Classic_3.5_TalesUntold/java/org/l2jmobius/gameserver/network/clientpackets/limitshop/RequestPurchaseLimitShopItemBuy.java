@@ -25,9 +25,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.VipSystemConfig;
 import org.l2jmobius.gameserver.data.holders.LimitShopProductHolder;
 import org.l2jmobius.gameserver.data.holders.LimitShopRandomCraftReward;
 import org.l2jmobius.gameserver.data.xml.LimitShopData;
@@ -278,7 +278,7 @@ public class RequestPurchaseLimitShopItemBuy extends ClientPacket
 				}
 			}
 			
-			if (Config.VIP_SYSTEM_L_SHOP_AFFECT)
+			if (VipSystemConfig.VIP_SYSTEM_L_SHOP_AFFECT)
 			{
 				player.updateVipPoints(_amount);
 			}

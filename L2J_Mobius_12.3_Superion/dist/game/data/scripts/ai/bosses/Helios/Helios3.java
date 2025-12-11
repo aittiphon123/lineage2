@@ -23,18 +23,17 @@ package ai.bosses.Helios;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class Helios3 extends AbstractNpcAI
+public class Helios3 extends Script
 {
 	// Npc
 	private static final int HELIOS = 29305;
@@ -47,7 +46,8 @@ public class Helios3 extends AbstractNpcAI
 	
 	private Helios3()
 	{
-		registerMobs(HELIOS);
+		addAttackId(HELIOS);
+		addSpellFinishedId(HELIOS);
 	}
 	
 	@Override

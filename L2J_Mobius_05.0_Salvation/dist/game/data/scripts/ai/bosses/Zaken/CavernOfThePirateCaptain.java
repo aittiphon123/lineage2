@@ -19,23 +19,22 @@ package ai.bosses.Zaken;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
-
-import instances.AbstractInstance;
 
 /**
  * Cavern Of The Pirate Captain (Day Dream) instance Zone.
  * @author St3eT
  */
-public class CavernOfThePirateCaptain extends AbstractInstance
+public class CavernOfThePirateCaptain extends InstanceScript
 {
 	// NPCs
 	private static final int PATHFINDER = 32713; // Pathfinder Worker
@@ -273,7 +272,7 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 			if (npc.getId() == ZAKEN_83)
 			{
 				final long time = world.getElapsedTime();
-				for (Player playersInside : world.getPlayersInsideRadius(npc, Config.ALT_PARTY_RANGE))
+				for (Player playersInside : world.getPlayersInsideRadius(npc, PlayerConfig.ALT_PARTY_RANGE))
 				{
 					for (int[] reward : VORPAL_JEWELS)
 					{

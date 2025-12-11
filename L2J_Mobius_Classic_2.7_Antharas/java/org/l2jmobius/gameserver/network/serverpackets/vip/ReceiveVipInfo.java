@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.network.serverpackets.vip;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.VipSystemConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.vip.VipManager;
 import org.l2jmobius.gameserver.network.GameClient;
@@ -57,7 +57,7 @@ public class ReceiveVipInfo extends ServerPacket
 	@Override
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
-		if (!Config.VIP_SYSTEM_ENABLED)
+		if (!VipSystemConfig.VIP_SYSTEM_ENABLED)
 		{
 			return;
 		}

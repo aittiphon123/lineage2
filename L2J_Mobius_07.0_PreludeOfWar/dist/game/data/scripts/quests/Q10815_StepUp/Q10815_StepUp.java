@@ -22,8 +22,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -31,10 +31,10 @@ import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerChat;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 
@@ -101,7 +101,7 @@ public class Q10815_StepUp extends Quest
 						giveItems(player, SIR_ERIC_RODEMAI_CERTIFICATE, 1);
 						qs.exitQuest(false, true);
 						
-						final Quest mainQ = QuestManager.getInstance().getQuest(Q10811_ExaltedOneWhoFacesTheLimit.class.getSimpleName());
+						final Quest mainQ = ScriptManager.getInstance().getScript(Q10811_ExaltedOneWhoFacesTheLimit.class.getSimpleName());
 						if (mainQ != null)
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
@@ -171,7 +171,7 @@ public class Q10815_StepUp extends Quest
 			int chatCount = qs.getInt("chat");
 			if (event.getChatType() == ChatType.WORLD)
 			{
-				if (Config.WORLD_CHAT_INTERVAL.getSeconds() > 0)
+				if (GeneralConfig.WORLD_CHAT_INTERVAL.getSeconds() > 0)
 				{
 					final Instant instant = REUSE.getOrDefault(player.getObjectId(), null);
 					if ((instant != null) && instant.isAfter(now))
@@ -189,9 +189,9 @@ public class Q10815_StepUp extends Quest
 				else
 				{
 					qs.set("chat", chatCount);
-					if (Config.WORLD_CHAT_INTERVAL.getSeconds() > 0)
+					if (GeneralConfig.WORLD_CHAT_INTERVAL.getSeconds() > 0)
 					{
-						REUSE.put(player.getObjectId(), now.plus(Config.WORLD_CHAT_INTERVAL));
+						REUSE.put(player.getObjectId(), now.plus(GeneralConfig.WORLD_CHAT_INTERVAL));
 					}
 				}
 			}

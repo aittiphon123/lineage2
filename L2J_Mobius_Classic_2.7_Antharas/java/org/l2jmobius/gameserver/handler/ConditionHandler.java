@@ -22,7 +22,7 @@ import java.util.function.Function;
 
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.conditions.ICondition;
-import org.l2jmobius.gameserver.scripting.ScriptManager;
+import org.l2jmobius.gameserver.scripting.ScriptEngine;
 
 /**
  * @author Sdw
@@ -50,7 +50,7 @@ public class ConditionHandler
 	{
 		try
 		{
-			ScriptManager.getInstance().executeScript(ScriptManager.CONDITION_HANDLER_FILE);
+			ScriptEngine.getInstance().executeScript(ScriptEngine.CONDITION_HANDLER_FILE);
 		}
 		catch (Exception e)
 		{

@@ -25,14 +25,14 @@ import java.util.List;
 
 import org.l2jmobius.gameserver.data.holders.MonsterBookCardHolder;
 import org.l2jmobius.gameserver.data.xml.MonsterBookData;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Faction;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 import quests.Q10873_ExaltedReachingAnotherLevel.Q10873_ExaltedReachingAnotherLevel;
 
@@ -116,7 +116,7 @@ public class Q10877_BreakThroughCrisis extends Quest
 					giveItems(player, ARCTURUS_CERTIFICATE, 1);
 					qs.exitQuest(false, true);
 					
-					final Quest mainQ = QuestManager.getInstance().getQuest(Q10873_ExaltedReachingAnotherLevel.class.getSimpleName());
+					final Quest mainQ = ScriptManager.getInstance().getScript(Q10873_ExaltedReachingAnotherLevel.class.getSimpleName());
 					if (mainQ != null)
 					{
 						mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);

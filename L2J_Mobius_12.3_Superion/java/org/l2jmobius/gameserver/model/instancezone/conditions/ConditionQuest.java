@@ -16,13 +16,13 @@
  */
 package org.l2jmobius.gameserver.model.instancezone.conditions;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.InstanceTemplate;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 
 /**
@@ -43,7 +43,7 @@ public class ConditionQuest extends Condition
 	protected boolean test(Player player, Npc npc)
 	{
 		final int id = getParameters().getInt("id");
-		final Quest q = QuestManager.getInstance().getQuest(id);
+		final Quest q = ScriptManager.getInstance().getQuest(id);
 		if (q == null)
 		{
 			return false;

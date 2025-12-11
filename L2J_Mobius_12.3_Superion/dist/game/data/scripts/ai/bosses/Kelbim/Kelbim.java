@@ -23,7 +23,7 @@ package ai.bosses.Kelbim;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.MapRegionManager;
@@ -36,7 +36,8 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.groups.Party;
-import org.l2jmobius.gameserver.model.quest.QuestTimer;
+import org.l2jmobius.gameserver.model.script.QuestTimer;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.enums.Movie;
@@ -44,14 +45,12 @@ import org.l2jmobius.gameserver.network.serverpackets.Earthquake;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.util.Broadcast;
 
-import ai.AbstractNpcAI;
-
 /**
  * Kelbim AI
  * @author LasTravel
  * @video https://www.youtube.com/watch?v=qVkk2BJoGoU
  */
-public class Kelbim extends AbstractNpcAI
+public class Kelbim extends Script
 {
 	// Status
 	private static final int ALIVE = 0;
@@ -336,7 +335,7 @@ public class Kelbim extends AbstractNpcAI
 			{
 				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 				packet.setHtml(getHtm(player, "34052-2.html"));
-				packet.replace("%min%", Integer.toString(Config.KELBIM_MIN_PLAYERS));
+				packet.replace("%min%", Integer.toString(GrandBossConfig.KELBIM_MIN_PLAYERS));
 				player.sendPacket(packet);
 				return null;
 			}
@@ -357,11 +356,11 @@ public class Kelbim extends AbstractNpcAI
 			{
 				return "34052-3.html";
 			}
-			else if ((members.size() < Config.KELBIM_MIN_PLAYERS) || (members.size() > Config.KELBIM_MAX_PLAYERS))
+			else if ((members.size() < GrandBossConfig.KELBIM_MIN_PLAYERS) || (members.size() > GrandBossConfig.KELBIM_MAX_PLAYERS))
 			{
 				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 				packet.setHtml(getHtm(player, "34052-2.html"));
-				packet.replace("%min%", Integer.toString(Config.KELBIM_MIN_PLAYERS));
+				packet.replace("%min%", Integer.toString(GrandBossConfig.KELBIM_MIN_PLAYERS));
 				player.sendPacket(packet);
 			}
 			else
@@ -371,7 +370,7 @@ public class Kelbim extends AbstractNpcAI
 					if ((status == ALIVE) && member.isInsideRadius3D(npc, 1000))
 					{
 						GrandBossManager.getInstance().setStatus(KELBIM, WAITING);
-						startQuestTimer("stage_1_start", Config.KELBIM_WAIT_TIME * 60 * 1000, null, null);
+						startQuestTimer("stage_1_start", GrandBossConfig.KELBIM_WAIT_TIME * 60 * 1000, null, null);
 						member.teleToLocation(KELBIM_LOCATION, true);
 					}
 					else
@@ -454,8 +453,8 @@ public class Kelbim extends AbstractNpcAI
 		
 		GrandBossManager.getInstance().setStatus(KELBIM, DEAD);
 		
-		final long baseIntervalMillis = Config.KELBIM_SPAWN_INTERVAL * 3600000;
-		final long randomRangeMillis = Config.KELBIM_SPAWN_RANDOM * 3600000;
+		final long baseIntervalMillis = GrandBossConfig.KELBIM_SPAWN_INTERVAL * 3600000;
+		final long randomRangeMillis = GrandBossConfig.KELBIM_SPAWN_RANDOM * 3600000;
 		final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 		final StatSet info = GrandBossManager.getInstance().getStatSet(KELBIM);
 		info.set("respawn_time", System.currentTimeMillis() + respawnTime);

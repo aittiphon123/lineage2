@@ -16,7 +16,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.mentoring;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.managers.MentorManager;
 import org.l2jmobius.gameserver.model.Mentee;
@@ -69,7 +69,7 @@ public class RequestMentorCancel extends ClientPacket
 					}
 					
 					player.sendPacket(new SystemMessage(SystemMessageId.THE_MENTORING_RELATIONSHIP_WITH_S1_HAS_BEEN_CANCELED_THE_MENTOR_CANNOT_OBTAIN_ANOTHER_MENTEE_FOR_TWO_DAYS).addString(_name));
-					MentorManager.getInstance().setPenalty(player.getObjectId(), Config.MENTOR_PENALTY_FOR_MENTEE_LEAVE);
+					MentorManager.getInstance().setPenalty(player.getObjectId(), PlayerConfig.MENTOR_PENALTY_FOR_MENTEE_LEAVE);
 					MentorManager.getInstance().deleteMentor(player.getObjectId(), mentee.getObjectId());
 					
 					// Notify to scripts
@@ -91,7 +91,7 @@ public class RequestMentorCancel extends ClientPacket
 						MentorManager.getInstance().cancelAllMentoringBuffs(mentor.getPlayer());
 					}
 					
-					MentorManager.getInstance().setPenalty(mentor.getObjectId(), Config.MENTOR_PENALTY_FOR_MENTEE_LEAVE);
+					MentorManager.getInstance().setPenalty(mentor.getObjectId(), PlayerConfig.MENTOR_PENALTY_FOR_MENTEE_LEAVE);
 					MentorManager.getInstance().deleteMentor(mentor.getObjectId(), player.getObjectId());
 					
 					// Notify to scripts

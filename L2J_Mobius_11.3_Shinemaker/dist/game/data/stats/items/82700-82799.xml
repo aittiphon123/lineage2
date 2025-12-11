@@ -3,7 +3,6 @@
 	<item id="82700" name="Eraton's Dye Lv. 6 (Critical Damage for Basic Attacks)" additionalName="STR +7, DEX +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 6 (Critical Damage for Basic Attacks) (STR +7, DEX +7, CHA +6). Take 1 unit to the Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, Critical Damage for basic attacks +10%, Armor P. Def. +12, Accessory M. Def. +12. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -11,7 +10,6 @@
 	<item id="82701" name="Eraton's Dye Lv. 7 (Critical Damage for Basic Attacks)" additionalName="STR +7, DEX +7, CHA +7" type="EtcItem">
 		<!-- Eraton's Dye Lv. 7 (Critical Damage for Basic Attacks) (STR +7, DEX +7, CHA +7). Take 1 unit to the Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, Critical Damage for basic attacks +11%, Armor P. Def. +14, Accessory M. Def. +14. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -19,7 +17,6 @@
 	<item id="82702" name="Eraton's Dye Lv. 8 (Critical Damage for Basic Attacks)" additionalName="STR +8, DEX +8, CHA +8" type="EtcItem">
 		<!-- Eraton's Dye Lv. 8 (Critical Damage for Basic Attacks) (STR +8, DEX +8, CHA +8). Take 1 unit to the Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, Critical Damage for basic attacks +12%, Armor P. Def. +16, Accessory M. Def. +16. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -27,7 +24,6 @@
 	<item id="82703" name="Eraton's Dye Lv. 9 (Critical Damage for Basic Attacks)" additionalName="STR +9, DEX +9, CHA +9" type="EtcItem">
 		<!-- Eraton's Dye Lv. 9 (Critical Damage for Basic Attacks) (STR +9, DEX +9, CHA +9). Take 1 unit to the Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, Critical Damage for basic attacks +12%, Armor P. Def. +18, Accessory M. Def. +18. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -35,7 +31,6 @@
 	<item id="82704" name="Eraton's Dye Lv. 10 (Critical Damage for Basic Attacks)" additionalName="STR +10, DEX +10, CHA +10" type="EtcItem">
 		<!-- Eraton's Dye Lv. 10 (Critical Damage for Basic Attacks) (STR +10, DEX +10, CHA +10). Take 1 unit to the Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -10%, damage +10%, Critical Damage for basic attacks +15%, Armor P. Def. +20, Accessory M. Def. +20. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the third Liberation. -->
 		<set name="icon" val="icon.bm_dye_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -43,7 +38,6 @@
 	<item id="82705" name="Eraton's Dye Lv. 1 (P. Skill Critical Damage)" additionalName="STR +5, DEX +5, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 1 (P. Skill Critical Damage): STR +5, DEX +5, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, P. Skill Critical Damage +5%, armor P. Def. +2, accessory M. Def. +2. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -51,7 +45,6 @@
 	<item id="82706" name="Eraton's Dye Lv. 2 (P. Skill Critical Damage)" additionalName="STR +5, DEX +6, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 2 (P. Skill Critical Damage) (STR +5, DEX +6, CHA +5). Take 1 unit to the Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, P. Skill Critical Damage +6%, Armor P. Def. +4, Accessory M. Def. +4. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -59,7 +52,6 @@
 	<item id="82707" name="Eraton's Dye Lv. 3 (P. Skill Critical Damage)" additionalName="STR +6, DEX +6, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 3 (P. Skill Critical Damage): STR +6, DEX +6, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, P. Skill Critical Damage +7%, armor P. Def. +6, accessory M. Def. +6. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -67,7 +59,6 @@
 	<item id="82708" name="Eraton's Dye Lv. 4 (P. Skill Critical Damage)" additionalName="STR +6, DEX +6, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 4 (P. Skill Critical Damage): STR +6, DEX +6, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, P. Skill Critical Damage +8%, armor P. Def. +8, accessory M. Def. +8. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -75,7 +66,6 @@
 	<item id="82709" name="Eraton's Dye Lv. 5 (P. Skill Critical Damage)" additionalName="STR +6, DEX +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 5 (P. Skill Critical Damage): STR +6, DEX +7, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, P. Skill Critical Damage +9%, armor P. Def. +10, accessory M. Def. +10. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -83,7 +73,6 @@
 	<item id="82710" name="Eraton's Dye Lv. 6 (P. Skill Critical Damage)" additionalName="STR +7, DEX +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 6 (P. Skill Critical Damage): STR +7, DEX +7, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, P. Skill Critical Damage +10%, armor P. Def. +12, accessory M. Def. +12. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -91,7 +80,6 @@
 	<item id="82711" name="Eraton's Dye Lv. 7 (P. Skill Critical Damage)" additionalName="STR +7, DEX +7, CHA +7" type="EtcItem">
 		<!-- Eraton's Dye Lv. 7 (P. Skill Critical Damage): STR +7, DEX +7, CHA +7. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, P. Skill Critical Damage +11%, armor P. Def. +14, accessory M. Def. +14. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -99,7 +87,6 @@
 	<item id="82712" name="Eraton's Dye Lv. 8 (P. Skill Critical Damage)" additionalName="STR +8, DEX +8, CHA +8" type="EtcItem">
 		<!-- Eraton's Dye Lv. 8 (P. Skill Critical Damage): STR +8, DEX +8, CHA +8. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, P. Skill Critical Damage +12%, armor P. Def. +16, accessory M. Def. +16. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -107,7 +94,6 @@
 	<item id="82713" name="Eraton's Dye Lv. 9 (P. Skill Critical Damage)" additionalName="STR +9, DEX +9, CHA +9" type="EtcItem">
 		<!-- Eraton's Dye Lv. 9 (P. Skill Critical Damage): STR +9, DEX +9, CHA +9. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, P. Skill Critical Damage +13%, armor P. Def. +18, accessory M. Def. +18. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -115,7 +101,6 @@
 	<item id="82714" name="Eraton's Dye Lv. 10 (P. Skill Critical Damage)" additionalName="STR +10, DEX +10, CHA +10" type="EtcItem">
 		<!-- Eraton's Dye Lv. 10 (P. Skill Critical Damage): STR +10, DEX +10, CHA +10. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -10%, damage +10%, P. Skill Critical Damage +15%, armor P. Def. +20, accessory M. Def. +20. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -123,7 +108,6 @@
 	<item id="82715" name="Eraton's Dye Lv. 1 (P. Skill Power)" additionalName="STR +5, DEX +5, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 1 (P. Skill Power): STR +5, DEX +5, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, P. Skill Power +5%, armor P. Def. +2, accessory M. Def. +2. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -131,7 +115,6 @@
 	<item id="82716" name="Eraton's Dye Lv. 2 (P. Skill Power)" additionalName="STR +5, DEX +6, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 2 (P. Skill Power): STR +5, DEX +6, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, P. Skill Power +6%, armor P. Def. +4, accessory M. Def. +4. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -139,7 +122,6 @@
 	<item id="82717" name="Eraton's Dye Lv. 3 (P. Skill Power)" additionalName="STR +6, DEX +6, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 3 (P. Skill Power): STR +6, DEX +6, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, P. Skill Power +7%, armor P. Def. +6, accessory M. Def. +6. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -147,7 +129,6 @@
 	<item id="82718" name="Eraton's Dye Lv. 4 (P. Skill Power)" additionalName="STR +6, DEX +6, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 4 (P. Skill Power): STR +6, DEX +6, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, P. Skill Power +8%, armor P. Def. +8, accessory M. Def. +8. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -155,7 +136,6 @@
 	<item id="82719" name="Eraton's Dye Lv. 5 (P. Skill Power)" additionalName="STR +6, DEX +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 5 (P. Skill Power): STR +6, DEX +7, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, P. Skill Power +9%, armor P. Def. +10, accessory M. Def. +10. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -163,7 +143,6 @@
 	<item id="82720" name="Eraton's Dye Lv. 6 (P. Skill Power)" additionalName="STR +7, DEX +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 6 (P. Skill Power): STR +7, DEX +7, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, P. Skill Power +10%, armor P. Def. +12, accessory M. Def. +12. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -171,7 +150,6 @@
 	<item id="82721" name="Eraton's Dye Lv. 7 (P. Skill Power)" additionalName="STR +7, DEX +7, CHA +7" type="EtcItem">
 		<!-- Eraton's Dye Lv. 7 (P. Skill Power): STR +7, DEX +7, CHA +7. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, P. Skill Power +11%, armor P. Def. +14, accessory M. Def. +14. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -179,7 +157,6 @@
 	<item id="82722" name="Eraton's Dye Lv. 8 (P. Skill Power)" additionalName="STR +8, DEX +8, CHA +8" type="EtcItem">
 		<!-- Eraton's Dye Lv. 8 (P. Skill Power): STR +8, DEX +8, CHA +8. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, P. Skill Power +12%, armor P. Def. +16, accessory M. Def. +16. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -187,7 +164,6 @@
 	<item id="82723" name="Eraton's Dye Lv. 9 (P. Skill Power)" additionalName="STR +9, DEX +9, CHA +9" type="EtcItem">
 		<!-- Eraton's Dye Lv. 9 (P. Skill Power): STR +9, DEX +9, CHA +9. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, P. Skill Power +13%, armor P. Def. +18, accessory M. Def. +18. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -195,7 +171,6 @@
 	<item id="82724" name="Eraton's Dye Lv. 10 (P. Skill Power)" additionalName="STR +10, DEX +10, CHA +10" type="EtcItem">
 		<!-- Eraton's Dye Lv. 10 (P. Skill Power): STR +10, DEX +10, CHA +10. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -10%, damage +10%, P. Skill Power +15%, armor P. Def. +20, accessory M. Def. +20. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_physical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -203,7 +178,6 @@
 	<item id="82725" name="Eraton's Dye Lv. 1 (M. Atk.)" additionalName="INT +5, WIT +5, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 1 (M. Atk.): INT +5, WIT +5, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, M. Atk. +5%, armor P. Def. +2, accessory M. Def. +2. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magic" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -211,7 +185,6 @@
 	<item id="82726" name="Eraton's Dye Lv. 2 (M. Atk.)" additionalName="INT +5, WIT +6, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 2 (M. Atk.): INT +5, WIT +6, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, M. Atk. +6%, armor P. Def. +4, accessory M. Def. +4. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magic" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -219,7 +192,6 @@
 	<item id="82727" name="Eraton's Dye Lv. 3 (M. Atk.)" additionalName="INT +6, WIT +6, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 3 (M. Atk.): INT +6, WIT +6, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, M. Atk. +7%, armor P. Def. +6, accessory M. Def. +6. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magic" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -227,7 +199,6 @@
 	<item id="82728" name="Eraton's Dye Lv. 4 (M. Atk.)" additionalName="INT +6, WIT +6, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 4 (M. Atk.): INT +6, WIT +6, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, M. Atk. +8%, armor P. Def. +8, accessory M. Def. +8. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magic" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -235,7 +206,6 @@
 	<item id="82729" name="Eraton's Dye Lv. 5 (M. Atk.)" additionalName="INT +6, WIT +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 5 (M. Atk.): INT +6, WIT +7, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, M. Atk. +9%, armor P. Def. +10, accessory M. Def. +10. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magic" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -243,7 +213,6 @@
 	<item id="82730" name="Eraton's Dye Lv. 6 (M. Atk.)" additionalName="INT +7, WIT +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 6 (M. Atk.): INT +7, WIT +7, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, M. Atk. +10%, armor P. Def. +12, accessory M. Def. +12. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magic" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -251,7 +220,6 @@
 	<item id="82731" name="Eraton's Dye Lv. 7 (M. Atk.)" additionalName="INT +7, WIT +7, CHA +7" type="EtcItem">
 		<!-- Eraton's Dye Lv. 7 (M. Atk.) (INT +7, WIT +7, CHA +7). Take 1 unit to the Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, M. Atk. +11%, Armor P. Def. +14, Accessory M. Def. +14. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the third Liberation. -->
 		<set name="icon" val="icon.bm_dye_magic" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -259,7 +227,6 @@
 	<item id="82732" name="Eraton's Dye Lv. 8 (M. Atk.)" additionalName="INT +8, WIT +8, CHA +8" type="EtcItem">
 		<!-- Eraton's Dye Lv. 8 (M. Atk.) (INT +8, WIT +8, CHA +8). Take 1 unit to the Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, M. Atk. +12%, Armor P. Def. +16, Accessory M. Def. +16. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the third Liberation. -->
 		<set name="icon" val="icon.bm_dye_magic" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -267,7 +234,6 @@
 	<item id="82733" name="Eraton's Dye Lv. 9 (M. Atk.)" additionalName="INT +9, WIT +9, CHA +9" type="EtcItem">
 		<!-- Eraton's Dye Lv. 9 (M. Atk.): INT +9, WIT +9, CHA +9. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, M. Atk. +13%, armor P. Def. +18, accessory M. Def. +18. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magic" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -275,7 +241,6 @@
 	<item id="82734" name="Eraton's Dye Lv. 10 (M. Atk.)" additionalName="INT +10, WIT +10, CHA +10" type="EtcItem">
 		<!-- Eraton's Dye Lv. 10 (M. Atk.): INT +10, WIT +10, CHA +10. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -10%, damage +10%, M. Atk. +15%, armor P. Def. +20, accessory M. Def. +20. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magic" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -283,7 +248,6 @@
 	<item id="82735" name="Eraton's Dye Lv. 1 (M. Critical Damage)" additionalName="INT +5, WIT +5, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 1 (M. Critical Damage): INT +5, WIT +5, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, M. Critical Damage +5%, armor P. Def. +2, accessory M. Def. +2. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -291,7 +255,6 @@
 	<item id="82736" name="Eraton's Dye Lv. 2 (M. Critical Damage)" additionalName="INT +5, WIT +6, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 2 (M. Critical Damage): INT +5, WIT +6, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, M. Critical Damage +6%, armor P. Def. +4, accessory M. Def. +4. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -299,7 +262,6 @@
 	<item id="82737" name="Eraton's Dye Lv. 3 (M. Critical Damage)" additionalName="INT +6, WIT +6, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 3 (M. Critical Damage): INT +6, WIT +6, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, M. Critical Damage +7%, armor P. Def. +6, accessory M. Def. +6. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -307,7 +269,6 @@
 	<item id="82738" name="Eraton's Dye Lv. 4 (M. Critical Damage)" additionalName="INT +6, WIT +6, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 4 (M. Critical Damage): INT +6, WIT +6, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, M. Critical Damage +8%, armor P. Def. +8, accessory M. Def. +8. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -315,7 +276,6 @@
 	<item id="82739" name="Eraton's Dye Lv. 5 (M. Critical Damage)" additionalName="INT +6, WIT +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 5 (M. Critical Damage): INT +6, WIT +7, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, M. Critical Damage +9%, armor P. Def. +10, accessory M. Def. +10. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -323,7 +283,6 @@
 	<item id="82740" name="Eraton's Dye Lv. 6 (M. Critical Damage)" additionalName="INT +7, WIT +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 6 (M. Critical Damage): INT +7, WIT +7, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, M. Critical Damage +10%, armor P. Def. +12, accessory M. Def. +12. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -331,7 +290,6 @@
 	<item id="82741" name="Eraton's Dye Lv. 7 (M. Critical Damage)" additionalName="INT +7, WIT +7, CHA +7" type="EtcItem">
 		<!-- Eraton's Dye Lv. 7 (M. Critical Damage): INT +7, WIT +7, CHA +7. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, M. Critical Damage +11%, armor P. Def. +14, accessory M. Def. +14. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -339,7 +297,6 @@
 	<item id="82742" name="Eraton's Dye Lv. 8 (M. Critical Damage)" additionalName="INT +8, WIT +8, CHA +8" type="EtcItem">
 		<!-- Eraton's Dye Lv. 8 (M. Critical Damage): INT +8, WIT +8, CHA +8. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, M. Critical Damage +12%, armor P. Def. +16, accessory M. Def. +16. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -347,7 +304,6 @@
 	<item id="82743" name="Eraton's Dye Lv. 9 (M. Critical Damage)" additionalName="INT +9, WIT +9, CHA +9" type="EtcItem">
 		<!-- Eraton's Dye Lv. 9 (M. Critical Damage): INT +9, WIT +9, CHA +9. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, M. Critical Damage +13%, armor P. Def. +18, accessory M. Def. +18. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -355,7 +311,6 @@
 	<item id="82744" name="Eraton's Dye Lv. 10 (M. Critical Damage)" additionalName="INT +10, WIT +10, CHA +10" type="EtcItem">
 		<!-- Eraton's Dye Lv. 10 (M. Critical Damage): INT +10, WIT +10, CHA +10. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -10%, damage +10%, M. Critical Damage +15%, armor P. Def. +20, accessory M. Def. +20. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_critical_damage" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -363,7 +318,6 @@
 	<item id="82745" name="Eraton's Dye Lv. 1 (M. Skill Power)" additionalName="INT +5, WIT +5, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 1 (M. Skill Power): INT +5, WIT +5, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, M. Skill Power +5%, armor P. Def. +2, accessory M. Def. +2. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -371,7 +325,6 @@
 	<item id="82746" name="Eraton's Dye Lv. 2 (M. Skill Power)" additionalName="INT +5, WIT +6, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 2 (M. Skill Power): INT +5, WIT +6, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, M. Skill Power +6%, armor P. Def. +4, accessory M. Def. +4. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -379,7 +332,6 @@
 	<item id="82747" name="Eraton's Dye Lv. 3 (M. Skill Power)" additionalName="INT +6, WIT +6, CHA +5" type="EtcItem">
 		<!-- Eraton's Dye Lv. 3 (M. Skill Power): INT +6, WIT +6, CHA +5. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -3%, damage +3%, M. Skill Power +7%, armor P. Def. +6, accessory M. Def. +6. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -387,7 +339,6 @@
 	<item id="82748" name="Eraton's Dye Lv. 4 (M. Skill Power)" additionalName="INT +6, WIT +6, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 4 (M. Skill Power): INT +6, WIT +6, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, M. Skill Power +8%, armor P. Def. +8, accessory M. Def. +8. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -395,7 +346,6 @@
 	<item id="82749" name="Eraton's Dye Lv. 5 (M. Skill Power)" additionalName="INT +6, WIT +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 5 (M. Skill Power): INT +6, WIT +7, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, M. Skill Power +9%, armor P. Def. +10, accessory M. Def. +10. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -403,7 +353,6 @@
 	<item id="82750" name="Eraton's Dye Lv. 6 (M. Skill Power)" additionalName="INT +7, WIT +7, CHA +6" type="EtcItem">
 		<!-- Eraton's Dye Lv. 6 (M. Skill Power): INT +7, WIT +7, CHA +6. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -5%, damage +5%, M. Skill Power +10%, armor P. Def. +12, accessory M. Def. +12. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -411,7 +360,6 @@
 	<item id="82751" name="Eraton's Dye Lv. 7 (M. Skill Power)" additionalName="INT +7, WIT +7, CHA +7" type="EtcItem">
 		<!-- Eraton's Dye Lv. 7 (M. Skill Power): INT +7, WIT +7, CHA +7. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, M. Skill Power +11%, armor P. Def. +14, accessory M. Def. +14. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -419,7 +367,6 @@
 	<item id="82752" name="Eraton's Dye Lv. 8 (M. Skill Power)" additionalName="INT +8, WIT +8, CHA +8" type="EtcItem">
 		<!-- Eraton's Dye Lv. 8 (M. Skill Power): INT +8, WIT +8, CHA +8. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, M. Skill Power +12%, armor P. Def. +16, accessory M. Def. +16. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -427,7 +374,6 @@
 	<item id="82753" name="Eraton's Dye Lv. 9 (M. Skill Power)" additionalName="INT +9, WIT +9, CHA +9" type="EtcItem">
 		<!-- Eraton's Dye Lv. 9 (M. Skill Power): INT +9, WIT +9, CHA +9. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -7%, damage +7%, M. Skill Power +13%, armor P. Def. +18, accessory M. Def. +18. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -435,7 +381,6 @@
 	<item id="82754" name="Eraton's Dye Lv. 10 (M. Skill Power)" additionalName="INT +10, WIT +10, CHA +10" type="EtcItem">
 		<!-- Eraton's Dye Lv. 10 (M. Skill Power): INT +10, WIT +10, CHA +10. Take 1 unit to Dye Merchant to get a tattoo that boosts your stats. The tattoo's effect: received damage -10%, damage +10%, M. Skill Power +15%, armor P. Def. +20, accessory M. Def. +20. Effects of two identical tattoos do not stack. Requirements: all classes after the Awakening or the 3rd Liberation. -->
 		<set name="icon" val="icon.bm_dye_magical_skill_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -476,7 +421,6 @@
 	<item id="82756" name="Holiday Red Sock" additionalName="Event" type="EtcItem">
 		<!-- A holiday sock to put Santa Claus' gifts. Can be added to a collection. -->
 		<set name="icon" val="icon.xmas_present_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -543,7 +487,6 @@
 	<item id="82760" name="Wonder Grape" additionalName="Event" type="EtcItem">
 		<!-- Juicy grapes that emit tasty odor. <How to use>. Can be exchanged for Sweet Red Wine or Wine Lover's Badge in the Event tab of the craft menu. -->
 		<set name="icon" val="icon.ev_mysterious_grape" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -570,7 +513,6 @@
 	<item id="82762" name="Wine Lover's Badge" additionalName="Event" type="EtcItem">
 		<!-- Can be added to a collection. -->
 		<set name="icon" val="icon.ev_wine_fan_badge" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -631,7 +573,6 @@
 	<item id="82766" name="Golden Orb" additionalName="Event" type="EtcItem">
 		<!-- Can be used to replace 4 types of Orbs in collections. <Items to replace>. Orb of Bloody Soul. Orb of Abyss. Orb of Darkness. Orb of Anger. Note!. Can only be used in the World-type collections. One Golden Orb can replace any number of Orbs in a collection. -->
 		<set name="icon" val="icon.ev_2022_attendance_collection" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
@@ -955,7 +896,6 @@
 	<item id="82776" name="Vitality Sustaining Rune" additionalName="4-day" type="EtcItem">
 		<!-- When in inventory, sustains Vitality. Available for 30 d. -->
 		<set name="icon" val="icon.ev_charge_run" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="L" />
 		<set name="material" val="PAPER" />
@@ -1043,7 +983,6 @@
 	<item id="82783" name="Craft Coupon: +32 Supreme Krishna Weapon" additionalName="Event" type="EtcItem">
 		<!-- A coupon from Rim Kamaloka Box. <How to use>. Use it to craft +32 Supreme Krishna Weapon Pack (server-limited craft) with a certain chance. -->
 		<set name="icon" val="icon.etc_level_bustup_ticket_i02" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1054,7 +993,6 @@
 	<item id="82784" name="Craft Coupon: Dragon's Accessory" additionalName="Event" type="EtcItem">
 		<!-- A coupon from Rim Kamaloka Box. <How to use>. Use it to craft Dragon's Necklace, Dragon's Earring or Dragon's Ring (server-limited craft) with a certain chance. -->
 		<set name="icon" val="icon..etc_level_bustup_ticket_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1184,7 +1122,6 @@
 		<!-- A badge obtained from a Stakato Cocoon. Another sign of Golden Ram Army's shameful defeat in the battle against Stakato. <Enchanting>. Use Scroll: Enchant Badge of the Golden Ram Army -->
 		<set name="icon" val="icon.stakato_collection_badge" />
 		<set name="immediate_effect" val="true" />
-		<set name="default_action" val="NONE" />
 		<set name="bodypart" val="neck" />
 		<set name="crystal_type" val="R" />
 		<set name="material" val="GOLD" />
@@ -1228,7 +1165,6 @@
 	<item id="82792" name="Stakato Queen's Heart" type="EtcItem">
 		<!-- A large heart, still warm to the touch. <How to use>. Talk to Mercenary Supplier Abercrombie in the Swamp of Screams to exchange it for various items. -->
 		<set name="icon" val="icon.stakato_queen_heart" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1237,7 +1173,6 @@
 	<item id="82793" name="Sieghardt Ein's Certificate" type="EtcItem">
 		<!-- A certificate given to Golden Ram Army by Sieghardt Ein after the Tower of Insolence conquest. There was a time when Golden Ram mercenaries were treated as the best fighters who could beat anyone, but after the humiliating defeat in the battle against Stakato they had to stoop to contraband trade. <Acquisition>. Can be obtained with a certain chance in exchange for Stakato Queen's Heart through Mercenary Supplier Abercrombie in the Swamp of Screams. -->
 		<set name="icon" val="icon.prophets_paper_piece_i01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />

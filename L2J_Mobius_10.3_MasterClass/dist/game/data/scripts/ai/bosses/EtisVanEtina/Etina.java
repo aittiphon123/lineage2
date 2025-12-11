@@ -23,18 +23,17 @@ package ai.bosses.EtisVanEtina;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class Etina extends AbstractNpcAI
+public class Etina extends Script
 {
 	// Npc
 	private static final int ETINA1 = 29318;
@@ -48,7 +47,8 @@ public class Etina extends AbstractNpcAI
 	
 	private Etina()
 	{
-		registerMobs(ETINA1, ETINA2);
+		addAttackId(ETINA1, ETINA2);
+		addSpellFinishedId(ETINA1, ETINA2);
 	}
 	
 	@Override

@@ -31,18 +31,17 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import instances.AbstractInstance;
-
 /**
  * @author Mobius, Tanatos
  */
-public class Kastia125 extends AbstractInstance
+public class Kastia125 extends InstanceScript
 {
 	// NPC
 	private static final int KARINIA = 34541;

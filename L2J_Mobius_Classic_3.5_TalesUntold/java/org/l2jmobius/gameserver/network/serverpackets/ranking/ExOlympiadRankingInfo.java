@@ -27,8 +27,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -82,7 +82,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 		}
 	}
 	
-	private void writeFilteredRankingData(RankingOlympiadCategory category, RankingOlympiadScope scope, PlayerClass classId, WritableBuffer buffer)
+	private void writeFilteredRankingData(RankingOlympiadCategory category, RankingOlympiadScope scope, PlayerClass playerClass, WritableBuffer buffer)
 	{
 		switch (category)
 		{
@@ -93,7 +93,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 			}
 			case CLASS:
 			{
-				writeScopeData(scope, _playerList.entrySet().stream().filter(it -> it.getValue().getInt("classId") == classId.getId()).collect(Collectors.toList()), _snapshotList.entrySet().stream().filter(it -> it.getValue().getInt("classId") == classId.getId()).collect(Collectors.toList()), buffer);
+				writeScopeData(scope, _playerList.entrySet().stream().filter(it -> it.getValue().getInt("classId") == playerClass.getId()).collect(Collectors.toList()), _snapshotList.entrySet().stream().filter(it -> it.getValue().getInt("classId") == playerClass.getId()).collect(Collectors.toList()), buffer);
 				break;
 			}
 		}
@@ -158,7 +158,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 				buffer.writeInt(scope == RankingOlympiadScope.SELF ? data.getKey() : curRank);
 			}
 			
-			buffer.writeInt(Config.SERVER_ID); // server id
+			buffer.writeInt(ServerConfig.SERVER_ID); // server id
 			buffer.writeInt(player.getInt("level")); // level
 			buffer.writeInt(player.getInt("classId")); // class id
 			buffer.writeInt(player.getInt("clanLevel")); // clan level

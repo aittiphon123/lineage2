@@ -32,16 +32,15 @@ import org.l2jmobius.gameserver.model.events.annotations.Id;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Wastelands AI.
  * @author St3eT
  */
-public class Wastelands extends AbstractNpcAI
+public class Wastelands extends Script
 {
 	// NPCs
 	private static final int JOEL = 33516;

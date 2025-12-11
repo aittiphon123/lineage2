@@ -18,14 +18,13 @@ package ai.bosses.Istina.Rumiese;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Rumiese AI.
  * @author St3eT
  */
-public class Rumiese extends AbstractNpcAI
+public class Rumiese extends Script
 {
 	// NPC
 	private static final int RUMIESE = 33151;
@@ -67,6 +66,12 @@ public class Rumiese extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

@@ -20,7 +20,7 @@
  */
 package handlers.bypasshandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.handler.IBypassHandler;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -79,7 +79,7 @@ public class SupportMagic implements IBypassHandler
 	private static final int LOWEST_LEVEL = 6;
 	private static final int CUBIC_LOWEST = 16;
 	private static final int CUBIC_HIGHEST = 34;
-	private static final int HASTE_LEVEL_2 = Config.MAX_NEWBIE_BUFF_LEVEL + 1; // disabled
+	private static final int HASTE_LEVEL_2 = PlayerConfig.MAX_NEWBIE_BUFF_LEVEL + 1; // disabled
 	
 	@Override
 	public boolean onCommand(String command, Player player, Creature target)
@@ -114,7 +114,7 @@ public class SupportMagic implements IBypassHandler
 			npc.showChatWindow(player, "data/html/default/SupportMagicLowLevel.htm");
 			return;
 		}
-		else if (level > Config.MAX_NEWBIE_BUFF_LEVEL)
+		else if (level > PlayerConfig.MAX_NEWBIE_BUFF_LEVEL)
 		{
 			npc.showChatWindow(player, "data/html/default/SupportMagicHighLevel.htm");
 			return;

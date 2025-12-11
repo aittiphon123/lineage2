@@ -33,6 +33,7 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -41,14 +42,12 @@ import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import instances.AbstractInstance;
-
 /**
  * Balok Warzone instance zone.
  * @author LasTravel, Gigi
  * @Video https://www.youtube.com/watch?v=w_-SNNPoulo&t=204s
  */
-public class BalokWarzone extends AbstractInstance
+public class BalokWarzone extends InstanceScript
 {
 	// NPCs
 	private static final int BALOK = 29218;

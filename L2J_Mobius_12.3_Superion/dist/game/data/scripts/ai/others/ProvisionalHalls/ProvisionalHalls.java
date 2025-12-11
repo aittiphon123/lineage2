@@ -34,14 +34,13 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.residences.ClanHall;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Custom implementation for Provisional Clan Halls.
  * @author Mobius
  */
-public class ProvisionalHalls extends AbstractNpcAI
+public class ProvisionalHalls extends Script
 {
 	// NPCs
 	private static final int KERRY = 33359;

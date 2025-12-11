@@ -23,15 +23,14 @@ package ai.others.BalthusKnights.Helper.BalthusKnightAteld;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import ai.AbstractNpcAI;
 
 /**
  * Balthus Knight Ateld AI
  * @author Kazumi
  */
-public final class BalthusKnightAteld extends AbstractNpcAI
+public final class BalthusKnightAteld extends Script
 {
 	// NPCs
 	private static final int ATELD = 34369;

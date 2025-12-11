@@ -20,14 +20,13 @@ import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Handermonkey AI.
  * @author Gladicek
  */
-public class Handermonkey extends AbstractNpcAI
+public class Handermonkey extends Script
 {
 	// NPC
 	private static final int HANDERMONKEY = 33203;

@@ -104,7 +104,6 @@
 			<npc id="35466" x="148224" y="-56496" z="-2760" heading="21000" respawnTime="60sec" /> <!-- Gerard - Clan Hall Gatekeeper -->
 			<npc id="35467" x="149024" y="-55456" z="-2760" respawnTime="60sec" /> <!-- Branhillde - Clan Hall Manager -->
 			<npc id="35468" x="148912" y="-55568" z="-2760" heading="32000" respawnTime="60sec" /> <!-- Lambert - Clan Hall Gatekeeper -->
-			<npc id="36615" x="147850" y="-55244" z="-2735" heading="63477" respawnTime="60sec" /> <!-- Mermoden -->
 			<npc id="36706" x="149019" y="-54783" z="-2776" heading="47907" respawnTime="60sec" /> <!-- Mermoden -->
 		</group>
 	</spawn>

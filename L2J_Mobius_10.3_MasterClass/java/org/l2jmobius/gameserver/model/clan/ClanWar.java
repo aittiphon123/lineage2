@@ -20,8 +20,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.FeatureConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.enums.ClanWarState;
@@ -127,8 +127,8 @@ public class ClanWar
 			// however, when the other side reputation score is 0 or below, your clan cannot acquire any reputation points from them.
 			if (victimClan.getReputationScore() > 0)
 			{
-				victimClan.takeReputationScore(Config.REPUTATION_SCORE_PER_KILL);
-				killerClan.addReputationScore(Config.REPUTATION_SCORE_PER_KILL);
+				victimClan.takeReputationScore(FeatureConfig.REPUTATION_SCORE_PER_KILL);
+				killerClan.addReputationScore(FeatureConfig.REPUTATION_SCORE_PER_KILL);
 			}
 			
 			// System Message notification to clan members

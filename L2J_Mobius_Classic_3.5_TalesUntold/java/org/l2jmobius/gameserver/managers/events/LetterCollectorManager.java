@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.item.holders.ItemChanceHolder;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 
@@ -42,7 +42,7 @@ public class LetterCollectorManager
 	private final Map<Integer, Boolean> _needToSumAllChance = new HashMap<>();
 	
 	private int _minLevel = 1;
-	private int _maxLevel = Config.PLAYER_MAXIMUM_LEVEL;
+	private int _maxLevel = PlayerConfig.PLAYER_MAXIMUM_LEVEL;
 	
 	protected LetterCollectorManager()
 	{
@@ -73,7 +73,7 @@ public class LetterCollectorManager
 	{
 		if (maxLevel < 1)
 		{
-			_maxLevel = Config.PLAYER_MAXIMUM_LEVEL;
+			_maxLevel = PlayerConfig.PLAYER_MAXIMUM_LEVEL;
 		}
 		else
 		{

@@ -18,15 +18,14 @@ package ai.areas.Parnassus.Fioren;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.enums.Movie;
-
-import ai.AbstractNpcAI;
 
 /**
  * Fioren AI.
  * @author St3eT
  */
-public class Fioren extends AbstractNpcAI
+public class Fioren extends Script
 {
 	// NPCs
 	private static final int FIOREN = 33044;
@@ -47,6 +46,12 @@ public class Fioren extends AbstractNpcAI
 		}
 		
 		return super.onEvent(event, npc, player);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

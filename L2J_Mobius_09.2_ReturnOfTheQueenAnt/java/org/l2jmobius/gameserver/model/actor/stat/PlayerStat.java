@@ -25,8 +25,10 @@ import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.data.xml.FishingData;
@@ -152,7 +154,7 @@ public class PlayerStat extends PlayableStat
 		
 		// if this player has a pet and it is in his range he takes from the owner's Exp, give the pet Exp now
 		final Summon sPet = player.getPet();
-		if ((sPet != null) && (player.calculateDistance3D(sPet) < Config.ALT_PARTY_RANGE))
+		if ((sPet != null) && (player.calculateDistance3D(sPet) < PlayerConfig.ALT_PARTY_RANGE))
 		{
 			final Pet pet = sPet.asPet();
 			ratioTakenByPlayer = pet.getPetLevelData().getOwnerExpTaken() / 100f;
@@ -375,7 +377,7 @@ public class PlayerStat extends PlayableStat
 	
 	public void setStartingExp(long value)
 	{
-		if (Config.BOTREPORT_ENABLE)
+		if (GeneralConfig.BOTREPORT_ENABLE)
 		{
 			_startingXp = value;
 		}
@@ -529,7 +531,7 @@ public class PlayerStat extends PlayableStat
 	{
 		if (getVitalityPoints() > 0)
 		{
-			return getMul(Stat.VITALITY_EXP_RATE, 1) * (getActiveChar().hasPremiumStatus() ? Config.RATE_VITALITY_EXP_PREMIUM_MULTIPLIER : Config.RATE_VITALITY_EXP_MULTIPLIER);
+			return getMul(Stat.VITALITY_EXP_RATE, 1) * (getActiveChar().hasPremiumStatus() ? RatesConfig.RATE_VITALITY_EXP_PREMIUM_MULTIPLIER : RatesConfig.RATE_VITALITY_EXP_MULTIPLIER);
 		}
 		
 		return 0;
@@ -620,7 +622,7 @@ public class PlayerStat extends PlayableStat
 	
 	public synchronized void updateVitalityPoints(int value, boolean useRates, boolean quiet)
 	{
-		if ((value == 0) || !Config.ENABLE_VITALITY)
+		if ((value == 0) || !PlayerConfig.ENABLE_VITALITY)
 		{
 			return;
 		}
@@ -647,12 +649,12 @@ public class PlayerStat extends PlayableStat
 			if (points > 0)
 			{
 				// vitality increased
-				points *= Config.RATE_VITALITY_GAIN;
+				points *= RatesConfig.RATE_VITALITY_GAIN;
 			}
 			else
 			{
 				// vitality decreased
-				points *= Config.RATE_VITALITY_LOST;
+				points *= RatesConfig.RATE_VITALITY_LOST;
 			}
 		}
 		
@@ -696,9 +698,9 @@ public class PlayerStat extends PlayableStat
 		
 		// Check for abnormal bonuses
 		bonus = Math.max(bonus, 1);
-		if (Config.MAX_BONUS_EXP > 0)
+		if (PlayerConfig.MAX_BONUS_EXP > 0)
 		{
-			bonus = Math.min(bonus, Config.MAX_BONUS_EXP);
+			bonus = Math.min(bonus, PlayerConfig.MAX_BONUS_EXP);
 		}
 		
 		return bonus;
@@ -727,9 +729,9 @@ public class PlayerStat extends PlayableStat
 		
 		// Check for abnormal bonuses
 		bonus = Math.max(bonus, 1);
-		if (Config.MAX_BONUS_SP > 0)
+		if (PlayerConfig.MAX_BONUS_SP > 0)
 		{
-			bonus = Math.min(bonus, Config.MAX_BONUS_SP);
+			bonus = Math.min(bonus, PlayerConfig.MAX_BONUS_SP);
 		}
 		
 		return bonus;

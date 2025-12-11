@@ -20,8 +20,8 @@
  */
 package ai.bosses.Baium;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -35,6 +35,7 @@ import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.MountType;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -48,13 +49,11 @@ import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * Baium AI.
  * @author St3eT, Edoo
  */
-public class Baium extends AbstractNpcAI
+public class Baium extends Script
 {
 	// NPCs
 	private static final int BAIUM = 29020; // Baium
@@ -75,7 +74,7 @@ public class Baium extends AbstractNpcAI
 	private static final SkillHolder BAIUM_PRESENT = new SkillHolder(4136, 1); // Baium's Gift
 	private static final SkillHolder ANTI_STRIDER = new SkillHolder(4258, 1); // Hinder Strider
 	// Zone
-	private static final NoRestartZone zone = ZoneManager.getInstance().getZoneById(70051, NoRestartZone.class); // Baium zone
+	private static final NoRestartZone ZONE = ZoneManager.getInstance().getZoneById(70051, NoRestartZone.class); // Baium zone
 	// Status
 	private static final int ALIVE = 0;
 	private static final int WAITING = 1;
@@ -223,7 +222,7 @@ public class Baium extends AbstractNpcAI
 			{
 				if (npc != null)
 				{
-					zone.broadcastPacket(new SocialAction(_baium.getObjectId(), 2));
+					ZONE.broadcastPacket(new SocialAction(_baium.getObjectId(), 2));
 				}
 				break;
 			}
@@ -231,8 +230,8 @@ public class Baium extends AbstractNpcAI
 			{
 				if (npc != null)
 				{
-					zone.broadcastPacket(new Earthquake(npc.getX(), npc.getY(), npc.getZ(), 40, 10));
-					zone.broadcastPacket(new PlaySound("BS02_A"));
+					ZONE.broadcastPacket(new Earthquake(npc.getX(), npc.getY(), npc.getZ(), 40, 10));
+					ZONE.broadcastPacket(new PlaySound("BS02_A"));
 					startQuestTimer("SOCIAL_ACTION", 8000, npc, player);
 				}
 				break;
@@ -241,7 +240,7 @@ public class Baium extends AbstractNpcAI
 			{
 				if (npc != null)
 				{
-					zone.broadcastPacket(new SocialAction(npc.getObjectId(), 3));
+					ZONE.broadcastPacket(new SocialAction(npc.getObjectId(), 3));
 					startQuestTimer("PLAYER_PORT", 6000, npc, player);
 				}
 				break;
@@ -267,17 +266,17 @@ public class Baium extends AbstractNpcAI
 			{
 				if ((player != null) && player.isInsideRadius3D(npc, 16000))
 				{
-					zone.broadcastPacket(new SocialAction(npc.getObjectId(), 1));
+					ZONE.broadcastPacket(new SocialAction(npc.getObjectId(), 1));
 					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.HOW_DARE_YOU_WAKE_ME_NOW_YOU_SHALL_DIE, player.getName());
 					npc.setTarget(player);
 					npc.doCast(BAIUM_PRESENT.getSkill());
 				}
 				
-				for (Player players : zone.getPlayersInside())
+				for (Player insidePlayer : ZONE.getPlayersInside())
 				{
-					if (players.isHero())
+					if (insidePlayer.isHero() && GrandBossConfig.BAIUM_RECOGNIZE_HERO)
 					{
-						zone.broadcastPacket(new ExShowScreenMessage(NpcStringId.NOT_EVEN_THE_GODS_THEMSELVES_COULD_TOUCH_ME_BUT_YOU_S1_YOU_DARE_CHALLENGE_ME_IGNORANT_MORTAL, 2, 4000, players.getName()));
+						ZONE.broadcastPacket(new ExShowScreenMessage(NpcStringId.NOT_EVEN_THE_GODS_THEMSELVES_COULD_TOUCH_ME_BUT_YOU_S1_YOU_DARE_CHALLENGE_ME_IGNORANT_MORTAL, 2, 4000, insidePlayer.getName()));
 						break;
 					}
 				}
@@ -308,7 +307,7 @@ public class Baium extends AbstractNpcAI
 				{
 					for (Player creature : World.getInstance().getVisibleObjectsInRange(npc, Player.class, 2000))
 					{
-						if (zone.isInsideZone(creature) && !creature.isDead())
+						if (ZONE.isInsideZone(creature) && !creature.isDead())
 						{
 							addAttackPlayerDesire(npc, creature);
 							break;
@@ -329,7 +328,7 @@ public class Baium extends AbstractNpcAI
 						break;
 					}
 					
-					if ((mostHated != null) && mostHated.isPlayer() && zone.isInsideZone(mostHated))
+					if ((mostHated != null) && mostHated.isPlayer() && ZONE.isInsideZone(mostHated))
 					{
 						if (mob.getTarget() != mostHated)
 						{
@@ -343,7 +342,7 @@ public class Baium extends AbstractNpcAI
 						boolean found = false;
 						for (Playable creature : World.getInstance().getVisibleObjectsInRange(mob, Playable.class, 1000))
 						{
-							if (zone.isInsideZone(creature) && !creature.isDead())
+							if (ZONE.isInsideZone(creature) && !creature.isDead())
 							{
 								if (mob.getTarget() != creature)
 								{
@@ -408,7 +407,7 @@ public class Baium extends AbstractNpcAI
 			}
 			case "CLEAR_ZONE":
 			{
-				for (Creature creature : zone.getCharactersInside())
+				for (Creature creature : ZONE.getCharactersInside())
 				{
 					if (creature != null)
 					{
@@ -460,7 +459,7 @@ public class Baium extends AbstractNpcAI
 			{
 				if (getStatus() == IN_FIGHT)
 				{
-					for (Creature creature : zone.getCharactersInside())
+					for (Creature creature : ZONE.getCharactersInside())
 					{
 						if ((creature != null) && creature.isNpc() && (creature.getId() == ARCHANGEL))
 						{
@@ -533,12 +532,12 @@ public class Baium extends AbstractNpcAI
 			final Creature mostHated = mob.getMostHated();
 			if ((getRandom(100) < 10) && SkillCaster.checkUseConditions(mob, SPEAR_ATTACK.getSkill()))
 			{
-				if ((mostHated != null) && (npc.calculateDistance3D(mostHated) < 1000) && zone.isCharacterInZone(mostHated))
+				if ((mostHated != null) && (npc.calculateDistance3D(mostHated) < 1000) && ZONE.isCharacterInZone(mostHated))
 				{
 					mob.setTarget(mostHated);
 					mob.doCast(SPEAR_ATTACK.getSkill());
 				}
-				else if (zone.isCharacterInZone(attacker))
+				else if (ZONE.isCharacterInZone(attacker))
 				{
 					mob.setTarget(attacker);
 					mob.doCast(SPEAR_ATTACK.getSkill());
@@ -556,14 +555,14 @@ public class Baium extends AbstractNpcAI
 	@Override
 	public void onKill(Npc npc, Player killer, boolean isSummon)
 	{
-		if (zone.isCharacterInZone(killer))
+		if (ZONE.isCharacterInZone(killer))
 		{
 			setStatus(DEAD);
 			addSpawn(TELE_CUBE, TELEPORT_CUBIC_LOC, false, 900000);
-			zone.broadcastPacket(new PlaySound("BS01_D"));
+			ZONE.broadcastPacket(new PlaySound("BS01_D"));
 			
-			final long baseIntervalMillis = Config.BAIUM_SPAWN_INTERVAL * 3600000;
-			final long randomRangeMillis = Config.BAIUM_SPAWN_RANDOM * 3600000;
+			final long baseIntervalMillis = GrandBossConfig.BAIUM_SPAWN_INTERVAL * 3600000;
+			final long randomRangeMillis = GrandBossConfig.BAIUM_SPAWN_RANDOM * 3600000;
 			final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 			setRespawn(respawnTime);
 			startQuestTimer("CLEAR_STATUS", respawnTime, null, null);
@@ -575,7 +574,7 @@ public class Baium extends AbstractNpcAI
 	@Override
 	public void onCreatureSee(Npc npc, Creature creature)
 	{
-		if (!zone.isInsideZone(creature) || (creature.isNpc() && (creature.getId() == BAIUM_STONE)))
+		if (!ZONE.isInsideZone(creature) || (creature.isNpc() && (creature.getId() == BAIUM_STONE)))
 		{
 			return;
 		}
@@ -616,7 +615,7 @@ public class Baium extends AbstractNpcAI
 	public void onSpellFinished(Npc npc, Player player, Skill skill)
 	{
 		startQuestTimer("MANAGE_SKILLS", 1000, npc, null);
-		if (!zone.isCharacterInZone(npc) && (_baium != null))
+		if (!ZONE.isCharacterInZone(npc) && (_baium != null))
 		{
 			_baium.teleToLocation(BAIUM_LOC);
 		}
@@ -792,6 +791,12 @@ public class Baium extends AbstractNpcAI
 			npc.setTarget(creature);
 			npc.doCast(skillToCast.getSkill());
 		}
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

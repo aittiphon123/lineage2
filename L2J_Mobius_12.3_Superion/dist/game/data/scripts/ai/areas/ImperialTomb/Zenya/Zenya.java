@@ -23,14 +23,13 @@ package ai.areas.ImperialTomb.Zenya;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Zenya AI.
  * @author Stayway
  */
-public class Zenya extends AbstractNpcAI
+public class Zenya extends Script
 {
 	// NPC
 	private static final int ZENYA = 32140;

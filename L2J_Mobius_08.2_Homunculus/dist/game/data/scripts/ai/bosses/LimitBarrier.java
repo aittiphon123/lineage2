@@ -25,14 +25,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.scripting.annotations.Disabled;
-
-import ai.AbstractNpcAI;
 
 /**
  * Limit Barrier AI<br>
@@ -46,7 +45,7 @@ import ai.AbstractNpcAI;
  * @author RobikBobik
  */
 @Disabled // Behaviour does not go well with low population servers.
-public class LimitBarrier extends AbstractNpcAI
+public class LimitBarrier extends Script
 {
 	// NPCs
 	private static final int[] RAID_BOSSES =

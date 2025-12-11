@@ -22,21 +22,21 @@ package ai.others.BalthusKnights.Helper.TartiFriend;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDamageReceived;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 
-import ai.AbstractNpcAI;
 import instances.BalthusKnights.AntharasNest;
 import quests.Q10555_ChargeAtAntharas.Q10555_ChargeAtAntharas;
 
@@ -44,7 +44,7 @@ import quests.Q10555_ChargeAtAntharas.Q10555_ChargeAtAntharas;
  * Tarti Friend AI
  * @author Kazumi
  */
-public final class TartiFriend extends AbstractNpcAI
+public final class TartiFriend extends Script
 {
 	// NPCs
 	private static final int TARTI_FRIEND = 34365;
@@ -326,7 +326,7 @@ public final class TartiFriend extends AbstractNpcAI
 			final QuestState qs = killer.getQuestState(Q10555_ChargeAtAntharas.class.getSimpleName());
 			if ((qs != null) && qs.isCond(2))
 			{
-				final Quest instance = QuestManager.getInstance().getQuest(AntharasNest.class.getSimpleName());
+				final Quest instance = ScriptManager.getInstance().getScript(AntharasNest.class.getSimpleName());
 				if ((instance != null) && (!_firstAttacked))
 				{
 					_firstAttacked = true;

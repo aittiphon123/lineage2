@@ -22,7 +22,7 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import java.util.Arrays;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.EnchantItemAttributeRequest;
 import org.l2jmobius.gameserver.model.actor.request.EnchantItemRequest;
@@ -162,7 +162,7 @@ public abstract class AbstractRefinePacket extends ClientPacket
 			return false;
 		}
 		
-		if (item.isPvp() && !Config.ALT_ALLOW_AUGMENT_PVP_ITEMS)
+		if (item.isPvp() && !PlayerConfig.ALT_ALLOW_AUGMENT_PVP_ITEMS)
 		{
 			return false;
 		}
@@ -187,7 +187,7 @@ public abstract class AbstractRefinePacket extends ClientPacket
 		}
 		
 		// blacklist check
-		if (Arrays.binarySearch(Config.AUGMENTATION_BLACKLIST, item.getId()) >= 0)
+		if (Arrays.binarySearch(PlayerConfig.AUGMENTATION_BLACKLIST, item.getId()) >= 0)
 		{
 			return false;
 		}

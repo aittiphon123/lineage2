@@ -19,14 +19,13 @@ package ai.areas.SeedOfAnnihilation.Klemis;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Klemis AI.
  * @author St3eT
  */
-public class Klemis extends AbstractNpcAI
+public class Klemis extends Script
 {
 	// NPC
 	private static final int KLEMIS = 32734; // Klemis
@@ -60,6 +59,12 @@ public class Klemis extends AbstractNpcAI
 		}
 		
 		return super.onEvent(event, npc, player);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

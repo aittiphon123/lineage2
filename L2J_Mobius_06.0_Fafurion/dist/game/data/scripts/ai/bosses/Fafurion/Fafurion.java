@@ -22,7 +22,7 @@ package ai.bosses.Fafurion;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -33,17 +33,16 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.groups.Party;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.zone.type.NoRestartZone;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author Mobius
  */
-public class Fafurion extends AbstractNpcAI
+public class Fafurion extends Script
 {
 	// NPCs
 	private static final int HEART_OF_TSUNAMI = 34488;
@@ -251,7 +250,7 @@ public class Fafurion extends AbstractNpcAI
 						return "34488-02.html";
 					}
 					
-					if ((members.size() < Config.FAFURION_MIN_PLAYERS) || (members.size() > Config.FAFURION_MAX_PLAYERS))
+					if ((members.size() < GrandBossConfig.FAFURION_MIN_PLAYERS) || (members.size() > GrandBossConfig.FAFURION_MAX_PLAYERS))
 					{
 						return "34488-01.html";
 					}
@@ -263,7 +262,7 @@ public class Fafurion extends AbstractNpcAI
 					
 					for (Player member : members)
 					{
-						if (member.getLevel() < Config.FAFURION_MIN_PLAYER_LEVEL)
+						if (member.getLevel() < GrandBossConfig.FAFURION_MIN_PLAYER_LEVEL)
 						{
 							return "34488-01.html";
 						}
@@ -289,8 +288,8 @@ public class Fafurion extends AbstractNpcAI
 				if (status == ALIVE)
 				{
 					GrandBossManager.getInstance().setStatus(FAFURION_GRANDBOSS_ID, WAITING);
-					startQuestTimer("beginning", Config.FAFURION_WAIT_TIME * 60000, null, null);
-					startQuestTimer("warning", Config.FAFURION_WAIT_TIME > 0 ? (Config.FAFURION_WAIT_TIME * 60000) - 30000 : 0, null, player);
+					startQuestTimer("beginning", GrandBossConfig.FAFURION_WAIT_TIME * 60000, null, null);
+					startQuestTimer("warning", GrandBossConfig.FAFURION_WAIT_TIME > 0 ? (GrandBossConfig.FAFURION_WAIT_TIME * 60000) - 30000 : 0, null, player);
 				}
 				break;
 			}
@@ -532,8 +531,8 @@ public class Fafurion extends AbstractNpcAI
 			
 			GrandBossManager.getInstance().setStatus(FAFURION_GRANDBOSS_ID, DEAD);
 			
-			final long baseIntervalMillis = Config.FAFURION_SPAWN_INTERVAL * 3600000;
-			final long randomRangeMillis = Config.FAFURION_SPAWN_RANDOM * 3600000;
+			final long baseIntervalMillis = GrandBossConfig.FAFURION_SPAWN_INTERVAL * 3600000;
+			final long randomRangeMillis = GrandBossConfig.FAFURION_SPAWN_RANDOM * 3600000;
 			final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 			final StatSet info = GrandBossManager.getInstance().getStatSet(FAFURION_GRANDBOSS_ID);
 			info.set("respawn_time", System.currentTimeMillis() + respawnTime);

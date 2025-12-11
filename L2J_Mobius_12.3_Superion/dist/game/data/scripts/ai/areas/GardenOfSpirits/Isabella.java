@@ -25,15 +25,14 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Isabella Raid Boss AI
  * @URL https://www.youtube.com/watch?v=3M73b6Kre6Y
  * @author Gigi, Mobius
  */
-public class Isabella extends AbstractNpcAI
+public class Isabella extends Script
 {
 	// NPC
 	private static final int ISABELLA = 26131;

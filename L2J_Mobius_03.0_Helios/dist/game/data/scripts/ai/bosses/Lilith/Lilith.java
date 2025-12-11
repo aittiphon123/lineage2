@@ -25,8 +25,8 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.holders.SpawnHolder;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
@@ -42,14 +42,13 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.groups.Party;
-import org.l2jmobius.gameserver.model.quest.QuestTimer;
+import org.l2jmobius.gameserver.model.script.QuestTimer;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * Lilith AI
@@ -57,7 +56,7 @@ import ai.AbstractNpcAI;
  * @URL http://boards.lineage2.com/showpost.php?p=3386784&postcount=6<br>
  * @video https://www.youtube.com/watch?v=H3MuIwUjjD4
  */
-public class Lilith extends AbstractNpcAI
+public class Lilith extends Script
 {
 	// Status
 	private static final int ALIVE = 0;
@@ -534,7 +533,7 @@ public class Lilith extends AbstractNpcAI
 			{
 				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 				packet.setHtml(getHtm(player, "31118-02.html"));
-				packet.replace("%min%", Integer.toString(Config.LILITH_MIN_PLAYERS));
+				packet.replace("%min%", Integer.toString(GrandBossConfig.LILITH_MIN_PLAYERS));
 				player.sendPacket(packet);
 				return null;
 			}
@@ -548,23 +547,23 @@ public class Lilith extends AbstractNpcAI
 				return "31118-03.html";
 			}
 			
-			if ((members.size() < Config.LILITH_MIN_PLAYERS) || (members.size() > Config.LILITH_MAX_PLAYERS))
+			if ((members.size() < GrandBossConfig.LILITH_MIN_PLAYERS) || (members.size() > GrandBossConfig.LILITH_MAX_PLAYERS))
 			{
 				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 				packet.setHtml(getHtm(player, "31118-02.html"));
-				packet.replace("%min%", Integer.toString(Config.LILITH_MIN_PLAYERS));
+				packet.replace("%min%", Integer.toString(GrandBossConfig.LILITH_MIN_PLAYERS));
 				player.sendPacket(packet);
 				return null;
 			}
 			
 			for (Player member : members)
 			{
-				if ((member.getLevel() < Config.LILITH_MIN_PLAYER_LEVEL) || (member.getLevel() > Config.LILITH_MAX_PLAYER_LEVEL))
+				if ((member.getLevel() < GrandBossConfig.LILITH_MIN_PLAYER_LEVEL) || (member.getLevel() > GrandBossConfig.LILITH_MAX_PLAYER_LEVEL))
 				{
 					final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 					packet.setHtml(getHtm(player, "31118-04.html"));
-					packet.replace("%minLevel%", Integer.toString(Config.LILITH_MIN_PLAYER_LEVEL));
-					packet.replace("%maxLevel%", Integer.toString(Config.LILITH_MAX_PLAYER_LEVEL));
+					packet.replace("%minLevel%", Integer.toString(GrandBossConfig.LILITH_MIN_PLAYER_LEVEL));
+					packet.replace("%maxLevel%", Integer.toString(GrandBossConfig.LILITH_MAX_PLAYER_LEVEL));
 					player.sendPacket(packet);
 					return null;
 				}

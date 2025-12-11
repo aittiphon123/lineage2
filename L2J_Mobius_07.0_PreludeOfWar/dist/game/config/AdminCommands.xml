@@ -194,7 +194,7 @@
 	<admin command="set_displayeffect" description="Set visual effect ID on targeted NPC." accessLevel="100" />
 	<admin command="set_displayeffect_menu" description="Open NPC display effect selection menu." accessLevel="100" />
 	<admin command="playmovie" description="Play in-game cinematic movie for player." accessLevel="100" />
-	<admin command="event_trigger" description="Doest not exist." accessLevel="100" />
+	<admin command="event_trigger" description="Triggers a client visual event." accessLevel="100" />
 
 	<!-- ADMIN SPEED -->
 	<admin command="gmspeed" description="Set the player speed from 1 to 10." accessLevel="30" />

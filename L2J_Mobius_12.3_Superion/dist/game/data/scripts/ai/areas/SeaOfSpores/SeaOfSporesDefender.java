@@ -26,15 +26,14 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Notorion
  */
-public class SeaOfSporesDefender extends AbstractNpcAI
+public class SeaOfSporesDefender extends Script
 {
 	// NPCs
 	private static final int FUNGUS_DEFENDER = 24649;

@@ -22,6 +22,7 @@ package org.l2jmobius.gameserver.model.conditions;
 
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.skill.Skill;
 
 /**
@@ -49,10 +50,10 @@ public class ConditionUsingTwoHandWeapon extends Condition
 		{
 			if (_value)
 			{
-				return (weapon.getBodyPart() & ItemTemplate.SLOT_LR_HAND) != 0;
+				return weapon.getBodyPart() == BodyPart.LR_HAND;
 			}
 			
-			return (weapon.getBodyPart() & ItemTemplate.SLOT_LR_HAND) == 0;
+			return weapon.getBodyPart() != BodyPart.LR_HAND;
 		}
 		
 		return false;

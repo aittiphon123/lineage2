@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.DevelopmentConfig;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 
 /**
@@ -228,6 +228,7 @@ public enum ServerPackets
 	FRIEND_STATUS(0xFC),
 	FRIEND_RECV_MSG(0xFD),
 	// ExPackets
+	EX_REGEN_MAX(0xFE, 0x01),
 	EX_COLOSSEUM_FENCE_INFO(0xFE, 0x09),
 	EX_PARTY_ROOM_MEMBER(0xFE, 0x0E),
 	EX_CLOSE_PARTY_ROOM(0xFE, 0x0F),
@@ -316,10 +317,10 @@ public enum ServerPackets
 	
 	public void writeId(ServerPacket packet, WritableBuffer buffer)
 	{
-		if (Config.DEBUG_SERVER_PACKETS)
+		if (DevelopmentConfig.DEBUG_SERVER_PACKETS)
 		{
 			final String name = packet.getClass().getSimpleName();
-			if (!Config.EXCLUDED_DEBUG_PACKETS.contains(name))
+			if (!DevelopmentConfig.EXCLUDED_DEBUG_PACKETS.contains(name))
 			{
 				PacketLogger.info((_id2 > 0 ? "[S EX] " : "[S] ") + name);
 			}

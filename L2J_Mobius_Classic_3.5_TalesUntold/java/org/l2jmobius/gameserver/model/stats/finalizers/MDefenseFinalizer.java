@@ -22,7 +22,7 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.NpcConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
@@ -88,7 +88,7 @@ public class MDefenseFinalizer implements IStatFunction
 		
 		if (creature.isRaid())
 		{
-			baseValue *= Config.RAID_MDEFENCE_MULTIPLIER;
+			baseValue *= NpcConfig.RAID_MDEFENCE_MULTIPLIER;
 		}
 		
 		final double bonus = creature.getMEN() > 0 ? BaseStat.MEN.calcBonus(creature) : 1;

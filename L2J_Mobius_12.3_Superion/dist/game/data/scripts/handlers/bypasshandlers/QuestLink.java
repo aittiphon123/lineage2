@@ -27,17 +27,18 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
 import org.l2jmobius.gameserver.data.xml.NewQuestData;
 import org.l2jmobius.gameserver.handler.IBypassHandler;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.listeners.AbstractEventListener;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.NpcStringId.NSLocalisation;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -110,7 +111,7 @@ public class QuestLink implements IBypassHandler
 		}
 		
 		Collection<Quest> questList = quests;
-		if (Config.ORDER_QUEST_LIST_BY_QUESTID)
+		if (GeneralConfig.ORDER_QUEST_LIST_BY_QUESTID)
 		{
 			final Map<Integer, Quest> orderedQuests = new TreeMap<>(); // Use TreeMap to order quests
 			for (Quest q : questList)
@@ -144,7 +145,7 @@ public class QuestLink implements IBypassHandler
 					sbCanStart.append("<font color=\"bbaa88\">");
 					sbCanStart.append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
 					String localisation = quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01</fstring>";
-					if (Config.MULTILANG_ENABLE)
+					if (MultilingualSupportConfig.MULTILANG_ENABLE)
 					{
 						final NpcStringId ns = NpcStringId.getNpcStringId(Integer.parseInt(quest.getNpcStringId() + "01"));
 						if (ns != null)
@@ -165,7 +166,7 @@ public class QuestLink implements IBypassHandler
 					sbCantStart.append("<font color=\"a62f31\">");
 					sbCantStart.append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
 					String localisation = quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01</fstring>";
-					if (Config.MULTILANG_ENABLE)
+					if (MultilingualSupportConfig.MULTILANG_ENABLE)
 					{
 						final NpcStringId ns = NpcStringId.getNpcStringId(Integer.parseInt(quest.getNpcStringId() + "01"));
 						if (ns != null)
@@ -194,7 +195,7 @@ public class QuestLink implements IBypassHandler
 				sbStarted.append("<font color=\"ffdd66\">");
 				sbStarted.append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
 				String localisation = quest.isCustomQuest() ? quest.getPath() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02</fstring>";
-				if (Config.MULTILANG_ENABLE)
+				if (MultilingualSupportConfig.MULTILANG_ENABLE)
 				{
 					final NpcStringId ns = NpcStringId.getNpcStringId(Integer.parseInt(quest.getNpcStringId() + "02"));
 					if (ns != null)
@@ -215,7 +216,7 @@ public class QuestLink implements IBypassHandler
 				sbCompleted.append("<font color=\"787878\">");
 				sbCompleted.append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
 				String localisation = quest.isCustomQuest() ? quest.getPath() + " (Done) " : "<fstring>" + quest.getNpcStringId() + "03</fstring>";
-				if (Config.MULTILANG_ENABLE)
+				if (MultilingualSupportConfig.MULTILANG_ENABLE)
 				{
 					final NpcStringId ns = NpcStringId.getNpcStringId(Integer.parseInt(quest.getNpcStringId() + "03"));
 					if (ns != null)
@@ -278,7 +279,7 @@ public class QuestLink implements IBypassHandler
 	{
 		String content = null;
 		
-		final Quest q = QuestManager.getInstance().getQuest(questId);
+		final Quest q = ScriptManager.getInstance().getScript(questId);
 		
 		// Get the state of the selected quest
 		final QuestState qs = player.getQuestState(questId);

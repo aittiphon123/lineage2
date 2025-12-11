@@ -26,7 +26,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.holders.RecipeHolder;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.data.xml.RecipeData;
@@ -53,7 +54,7 @@ public class RequestRecipeShopListSet extends ClientPacket
 	protected void readImpl()
 	{
 		final int count = readInt();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != remaining()))
+		if ((count <= 0) || (count > PlayerConfig.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != remaining()))
 		{
 			return;
 		}
@@ -135,13 +136,13 @@ public class RequestRecipeShopListSet extends ClientPacket
 			
 			if (!player.hasRecipeList(recipe.getId()))
 			{
-				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! " + player + " of account " + player.getAccountName() + " tried to set recipe which he does not have.", Config.DEFAULT_PUNISH);
+				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! " + player + " of account " + player.getAccountName() + " tried to set recipe which he does not have.", GeneralConfig.DEFAULT_PUNISH);
 				return;
 			}
 			
 			if (recipeCost > MAX_ADENA)
 			{
-				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! " + player + " of account " + player.getAccountName() + " tried to set price of " + recipeCost + " adena in Private Manufacture.", Config.DEFAULT_PUNISH);
+				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! " + player + " of account " + player.getAccountName() + " tried to set price of " + recipeCost + " adena in Private Manufacture.", GeneralConfig.DEFAULT_PUNISH);
 				return;
 			}
 		}

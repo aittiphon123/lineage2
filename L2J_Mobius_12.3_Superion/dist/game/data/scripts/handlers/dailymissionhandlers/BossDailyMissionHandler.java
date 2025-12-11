@@ -20,7 +20,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.handler.AbstractDailyMissionHandler;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -119,7 +119,7 @@ public class BossDailyMissionHandler extends AbstractDailyMissionHandler
 					final List<Player> members = channel != null ? channel.getMembers() : party.getMembers();
 					for (Player member : members)
 					{
-						if (member.calculateDistance3D(monster) <= Config.ALT_PARTY_RANGE)
+						if (member.calculateDistance3D(monster) <= PlayerConfig.ALT_PARTY_RANGE)
 						{
 							processPlayerProgress(member);
 						}

@@ -23,15 +23,14 @@ package ai.areas.HuntersVillage.Merlot;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Merlot AI.
  * @author crystalgarden
  */
-public class Merlot extends AbstractNpcAI
+public class Merlot extends Script
 {
 	// NPC
 	private static final int MERLOT = 34018;

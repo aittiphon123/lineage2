@@ -18,16 +18,15 @@ package ai.areas.GardenOfGenesis;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import ai.AbstractNpcAI;
 
 /**
  * Genesis Vines AI.
  * @author St3eT
  */
-public class GenesisVines extends AbstractNpcAI
+public class GenesisVines extends Script
 {
 	// NPCs
 	private static final int VINE = 18987; // Vine

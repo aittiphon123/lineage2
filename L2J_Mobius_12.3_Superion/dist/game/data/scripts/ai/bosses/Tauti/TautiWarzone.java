@@ -27,16 +27,15 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
-
-import instances.AbstractInstance;
 
 /**
  * Tauti Warzone instance zone.
  * @author Mobius
  */
-public class TautiWarzone extends AbstractInstance
+public class TautiWarzone extends InstanceScript
 {
 	// NPCs
 	private static final int FINARIA = 33675;

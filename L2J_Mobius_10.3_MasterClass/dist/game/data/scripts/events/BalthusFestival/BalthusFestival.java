@@ -47,7 +47,7 @@ import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemChanceHolder;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.holders.ItemSkillHolder;
-import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
+import org.l2jmobius.gameserver.model.script.LongTimeEvent;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.serverpackets.balthusevent.ExBalthusEvent;

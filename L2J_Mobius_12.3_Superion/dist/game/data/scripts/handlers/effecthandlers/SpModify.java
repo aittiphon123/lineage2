@@ -17,6 +17,9 @@
 package handlers.effecthandlers;
 
 import org.l2jmobius.gameserver.model.StatSet;
+import org.l2jmobius.gameserver.model.actor.Creature;
+import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.stats.Stat;
 
 /**
@@ -24,8 +27,37 @@ import org.l2jmobius.gameserver.model.stats.Stat;
  */
 public class SpModify extends AbstractStatAddEffect
 {
+	private final int _minLevel;
+	private final int _maxLevel;
+	
 	public SpModify(StatSet params)
 	{
 		super(params, Stat.BONUS_SP);
+		_minLevel = params.getInt("minLevel", -1);
+		_maxLevel = params.getInt("maxLevel", -1);
+	}
+	
+	@Override
+	public void pump(Creature effected, Skill skill)
+	{
+		final Player player = effected.asPlayer();
+		if (player == null)
+		{
+			return;
+		}
+		
+		// Check level restriction.
+		if ((_minLevel > 0) && (_maxLevel > 0))
+		{
+			final int level = player.getLevel();
+			if ((level < _minLevel) || (level > _maxLevel))
+			{
+				return;
+			}
+		}
+		
+		effected.getStat().mergeAdd(Stat.BONUS_SP, _amount);
+		
+		player.sendUserBoostStat();
 	}
 }

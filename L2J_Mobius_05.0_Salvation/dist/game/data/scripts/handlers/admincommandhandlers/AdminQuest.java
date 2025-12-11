@@ -32,16 +32,16 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.listeners.AbstractEventListener;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestTimer;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestTimer;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2jmobius.gameserver.scripting.EngineManager;
+import org.l2jmobius.gameserver.scripting.ScriptEngine;
 
 public class AdminQuest implements IAdminCommandHandler
 {
@@ -61,10 +61,10 @@ public class AdminQuest implements IAdminCommandHandler
 	{
 		if (StringUtil.isNumeric(script))
 		{
-			return QuestManager.getInstance().getQuest(Integer.parseInt(script));
+			return ScriptManager.getInstance().getQuest(Integer.parseInt(script));
 		}
 		
-		return QuestManager.getInstance().getQuest(script);
+		return ScriptManager.getInstance().getScript(script);
 	}
 	
 	@Override
@@ -104,7 +104,7 @@ public class AdminQuest implements IAdminCommandHandler
 			final String script = st.nextToken();
 			try
 			{
-				EngineManager.getInstance().executeScript(Paths.get(script));
+				ScriptEngine.getInstance().executeScript(Paths.get(script));
 				activeChar.sendSysMessage("Script loaded seccessful!");
 			}
 			catch (Exception e)
@@ -189,7 +189,7 @@ public class AdminQuest implements IAdminCommandHandler
 		else if (command.startsWith("admin_quest_info "))
 		{
 			final String questName = command.substring("admin_quest_info ".length());
-			final Quest quest = QuestManager.getInstance().getQuest(questName);
+			final Quest quest = ScriptManager.getInstance().getScript(questName);
 			String events = "";
 			String npcs = "";
 			String items = "";
@@ -307,7 +307,7 @@ public class AdminQuest implements IAdminCommandHandler
 		if ((dir == null) || dir.trim().isEmpty() || dir.contains(".."))
 		{
 			final StringBuilder sb = new StringBuilder(200);
-			path = EngineManager.SCRIPT_FOLDER.toFile();
+			path = ScriptEngine.SCRIPT_FOLDER.toFile();
 			final String[] children = path.list();
 			Arrays.sort(children);
 			for (String c : children)
@@ -332,7 +332,7 @@ public class AdminQuest implements IAdminCommandHandler
 		}
 		else
 		{
-			path = new File(EngineManager.SCRIPT_FOLDER.toFile(), dir);
+			path = new File(ScriptEngine.SCRIPT_FOLDER.toFile(), dir);
 			if (!path.isDirectory())
 			{
 				activeChar.sendSysMessage("Wrong path.");

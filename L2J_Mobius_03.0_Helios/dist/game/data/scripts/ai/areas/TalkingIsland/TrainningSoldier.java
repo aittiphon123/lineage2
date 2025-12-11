@@ -24,14 +24,13 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Trainning Soldier AI.
  * @author Mobius
  */
-public class TrainningSoldier extends AbstractNpcAI
+public class TrainningSoldier extends Script
 {
 	// NPCs
 	private static final int SOLDIER = 33201; // Trainning Soldier

@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.network.serverpackets.ability;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
 import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -116,7 +116,7 @@ public class ExAcquireAPSkillList extends ServerPacket
 		}
 		
 		buffer.writeByte(_abilityPreset); // CurrentPreset
-		buffer.writeLong(Config.ABILITY_POINTS_RESET_SP); // Changed to from Adena to SP on Grand Crusade.
+		buffer.writeLong(PlayerConfig.ABILITY_POINTS_RESET_SP); // Changed to from Adena to SP on Grand Crusade.
 		buffer.writeInt(_abilityPoints);
 		buffer.writeInt(_usedAbilityPoints);
 		buffer.writeInt(_skills.size());

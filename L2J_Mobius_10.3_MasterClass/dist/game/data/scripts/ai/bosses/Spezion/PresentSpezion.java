@@ -17,14 +17,13 @@
 package ai.bosses.Spezion;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Present Spezion AI.
  * @author St3eT
  */
-public class PresentSpezion extends AbstractNpcAI
+public class PresentSpezion extends Script
 {
 	// NPCs
 	private static final int PRESENT_SPEZION = 32948;

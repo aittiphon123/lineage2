@@ -22,17 +22,16 @@ package ai.areas.TalkingIsland.HarnakUndergroundRuinsZone;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Harnak Monsters AI
  * @author Gigi
  * @date 2017-03-11 - [13:50:02]
  */
-public class HurnakMobMsg extends AbstractNpcAI
+public class HurnakMobMsg extends Script
 {
 	// NPCs
 	private static final int NOCTUM = 23349;

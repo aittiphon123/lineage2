@@ -22,20 +22,20 @@ package ai.areas.AteliaRefinery.Leona;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Liamxroy
  */
-public class Leona extends AbstractNpcAI
+public class Leona extends Script
 {
 	// NPCs
 	private static final int LEONA = 34426;
@@ -88,23 +88,23 @@ public class Leona extends AbstractNpcAI
 					return "34426-3.html";
 				}
 				
-				if ((members.size() < Config.ETINA_MIN_PLAYERS) || (members.size() > Config.ETINA_MAX_PLAYERS))
+				if ((members.size() < GrandBossConfig.ETINA_MIN_PLAYERS) || (members.size() > GrandBossConfig.ETINA_MAX_PLAYERS))
 				{
 					final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 					packet.setHtml(getHtm(player, "34426-4.html"));
-					packet.replace("%min%", Integer.toString(Config.ETINA_MIN_PLAYERS));
-					packet.replace("%max%", Integer.toString(Config.ETINA_MAX_PLAYERS));
+					packet.replace("%min%", Integer.toString(GrandBossConfig.ETINA_MIN_PLAYERS));
+					packet.replace("%max%", Integer.toString(GrandBossConfig.ETINA_MAX_PLAYERS));
 					player.sendPacket(packet);
 					return null;
 				}
 				
 				for (Player member : members)
 				{
-					if (member.getLevel() < Config.ETINA_MIN_PLAYER_LEVEL)
+					if (member.getLevel() < GrandBossConfig.ETINA_MIN_PLAYER_LEVEL)
 					{
 						final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 						packet.setHtml(getHtm(player, "34426-5.html"));
-						packet.replace("%minlvl%", Integer.toString(Config.ETINA_MIN_PLAYER_LEVEL));
+						packet.replace("%minlvl%", Integer.toString(GrandBossConfig.ETINA_MIN_PLAYER_LEVEL));
 						player.sendPacket(packet);
 						return null;
 					}
@@ -112,7 +112,7 @@ public class Leona extends AbstractNpcAI
 				
 				for (Player member : members)
 				{
-					if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+					if (member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 					{
 						member.teleToLocation(ENTER_LOC, false);
 						GrandBossManager.getInstance().setStatus(ETINA_RAID, 1);

@@ -33,9 +33,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.CursedWeapon;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -67,7 +67,7 @@ public class CursedWeaponsManager implements IXmlReader
 	@Override
 	public void load()
 	{
-		if (!Config.ALLOW_CURSED_WEAPONS)
+		if (!GeneralConfig.ALLOW_CURSED_WEAPONS)
 		{
 			return;
 		}

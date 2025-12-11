@@ -23,12 +23,11 @@ package custom.MissQueen;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
+import org.l2jmobius.gameserver.model.script.State;
 
-import ai.AbstractNpcAI;
-
-public class MissQueen extends AbstractNpcAI
+public class MissQueen extends Script
 {
 	// NPC
 	private static final int MISS_QUEEN = 31760;

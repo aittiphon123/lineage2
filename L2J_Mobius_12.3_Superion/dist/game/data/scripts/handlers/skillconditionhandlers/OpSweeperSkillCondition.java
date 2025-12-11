@@ -16,7 +16,7 @@
  */
 package handlers.skillconditionhandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.NpcConfig;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Attackable;
@@ -54,7 +54,7 @@ public class OpSweeperSkillCondition implements ISkillCondition
 							canSweep = attackable.checkSpoilOwner(sweeper, true);
 							if (canSweep)
 							{
-								canSweep = !attackable.isOldCorpse(sweeper, Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
+								canSweep = !attackable.isOldCorpse(sweeper, NpcConfig.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
 							}
 							
 							if (canSweep)

@@ -33,8 +33,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.BiFunction;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
@@ -59,7 +59,7 @@ public class CreatureStat
 	private long _sp = 0;
 	private byte _level = 1;
 	/** Creature's maximum buff count. */
-	private int _maxBuffCount = Config.BUFFS_MAX_AMOUNT;
+	private int _maxBuffCount = PlayerConfig.BUFFS_MAX_AMOUNT;
 	private double _vampiricSum = 0;
 	private double _mpVampiricSum = 0;
 	
@@ -475,7 +475,7 @@ public class CreatureStat
 		
 		double mpConsume = skill.getMpConsume();
 		final double nextDanceMpCost = Math.ceil(skill.getMpConsume() / 2.);
-		if (skill.isDance() && Config.DANCE_CONSUME_ADDITIONAL_MP && (_creature != null) && (_creature.getDanceCount() > 0))
+		if (skill.isDance() && PlayerConfig.DANCE_CONSUME_ADDITIONAL_MP && (_creature != null) && (_creature.getDanceCount() > 0))
 		{
 			mpConsume += _creature.getDanceCount() * nextDanceMpCost;
 		}

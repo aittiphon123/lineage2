@@ -16,7 +16,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.sayune;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.custom.SayuneForAllConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.SayuneData;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -43,7 +43,7 @@ public class RequestFlyMoveStart extends ClientPacket
 	protected void runImpl()
 	{
 		final Player player = getPlayer();
-		if ((player == null) || !player.isInsideZone(ZoneId.SAYUNE) || player.hasRequest(SayuneRequest.class) || (!player.isInCategory(CategoryType.SIXTH_CLASS_GROUP) && !Config.FREE_JUMPS_FOR_ALL))
+		if ((player == null) || !player.isInsideZone(ZoneId.SAYUNE) || player.hasRequest(SayuneRequest.class) || (!player.isInCategory(CategoryType.SIXTH_CLASS_GROUP) && !SayuneForAllConfig.FREE_JUMPS_FOR_ALL))
 		{
 			return;
 		}

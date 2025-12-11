@@ -22,12 +22,12 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.NpcConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
 import org.l2jmobius.gameserver.model.actor.transform.Transform;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.stats.IStatFunction;
@@ -77,7 +77,7 @@ public class PDefenseFinalizer implements IStatFunction
 				final Transform transform = creature.getTransformation();
 				for (int slot : SLOTS)
 				{
-					if (!inv.isPaperdollSlotEmpty(slot) || ((slot == Inventory.PAPERDOLL_LEGS) && !inv.isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST) && (inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR)))
+					if (!inv.isPaperdollSlotEmpty(slot) || ((slot == Inventory.PAPERDOLL_LEGS) && !inv.isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST) && (inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getTemplate().getBodyPart() == BodyPart.FULL_ARMOR)))
 					{
 						baseValue -= transform == null ? player.getTemplate().getBaseDefBySlot(slot) : transform.getBaseDefBySlot(player, slot);
 					}
@@ -87,7 +87,7 @@ public class PDefenseFinalizer implements IStatFunction
 		
 		if (creature.isRaid())
 		{
-			baseValue *= Config.RAID_PDEFENCE_MULTIPLIER;
+			baseValue *= NpcConfig.RAID_PDEFENCE_MULTIPLIER;
 		}
 		
 		if (creature.getLevel() > 0)

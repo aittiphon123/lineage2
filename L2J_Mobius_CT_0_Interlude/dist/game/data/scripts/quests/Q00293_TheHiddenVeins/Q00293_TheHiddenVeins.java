@@ -20,14 +20,14 @@
  */
 package quests.Q00293_TheHiddenVeins;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 
 public class Q00293_TheHiddenVeins extends Quest
@@ -151,7 +151,7 @@ public class Q00293_TheHiddenVeins extends Quest
 							}
 							
 							int reward = (chrysoliteOres * 10) + (hiddenVeinMaps * 1000);
-							if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (chrysoliteOres >= 10))
+							if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (chrysoliteOres >= 10))
 							{
 								reward += 2000;
 							}

@@ -29,18 +29,17 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
-
 /**
  * Teredor Warzone instance zone.
  * @author St3eT
  */
-public class TeredorWarzone extends AbstractInstance
+public class TeredorWarzone extends InstanceScript
 {
 	// NPCs
 	private static final int FILAUR = 30535;

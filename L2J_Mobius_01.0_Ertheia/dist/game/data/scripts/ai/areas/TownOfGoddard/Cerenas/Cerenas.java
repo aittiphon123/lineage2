@@ -18,16 +18,16 @@ package ai.areas.TownOfGoddard.Cerenas;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 
-import ai.AbstractNpcAI;
 import quests.Q10369_NoblesseSoulTesting.Q10369_NoblesseSoulTesting;
 
 /**
  * Cerenas AI.
  * @author Gladicek
  */
-public class Cerenas extends AbstractNpcAI
+public class Cerenas extends Script
 {
 	// NPC
 	private static final int CERENAS = 31281;

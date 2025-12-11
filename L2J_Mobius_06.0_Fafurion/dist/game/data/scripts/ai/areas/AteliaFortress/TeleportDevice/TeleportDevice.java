@@ -23,16 +23,15 @@ package ai.areas.AteliaFortress.TeleportDevice;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Faction;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Kingdom's Royal Guard Teleport Device
  * @author Gigi
  * @date 2018-04-30 - [23:32:48]
  */
-public class TeleportDevice extends AbstractNpcAI
+public class TeleportDevice extends Script
 {
 	// NPC
 	private static final int TELEPORT_DEVICE = 34242;

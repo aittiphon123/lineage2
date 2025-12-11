@@ -25,16 +25,15 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.enums.Movie;
-
-import instances.AbstractInstance;
 
 /**
  * Camille instance zone.
  * @author Sero
  * @URL https://www.youtube.com/watch?v=jpv9S_xQVrA
  */
-public class Camille extends AbstractInstance
+public class Camille extends InstanceScript
 {
 	// NPCs
 	private static final int CAMILLE = 26236;

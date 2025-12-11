@@ -333,7 +333,6 @@
 	<item id="60213" name="Bloodthirsty Weapon Coupon" additionalName="Event" type="EtcItem">
 		<!-- Granted for enchanting Mysterious Dragon Slayer to +25. Can be exchanged for a desired reward via a request to GM. -->
 		<set name="icon" val="icon.bm_payback_ticket_01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -510,7 +509,6 @@
 	<item id="60218" name="Attendance Gift Rune: P./ M. Atk." additionalName="6-hour" type="EtcItem">
 		<!-- When in inventory, P./ M. Atk. +10%. -->
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_half_power" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -521,7 +519,6 @@
 	<item id="60219" name="Attendance Gift Rune: Acquired XP" additionalName="6-hour" type="EtcItem">
 		<!-- When in inventory, acquired XP/ SP +30%. -->
 		<set name="icon" val="icon.bm_sayha_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -532,7 +529,6 @@
 	<item id="60220" name="Attendance Gift Rune: Vitality Bonus" additionalName="6-hour" type="EtcItem">
 		<!-- When in inventory, Vitality bonus +50%. -->
 		<set name="icon" val="Branchsys2.icon.br_life_rune_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -543,7 +539,6 @@
 	<item id="60221" name="Attendance Gift Rune: PvE" additionalName="6-hour" type="EtcItem">
 		<!-- When in inventory, PvE damage +15%, acquired XP/ SP +30%. -->
 		<set name="icon" val="icon.gc_rune_of_lucien" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -554,7 +549,6 @@
 	<item id="60222" name="Attendance Gift Rune: P./ M. Def." additionalName="6-hour" type="EtcItem">
 		<!-- When in inventory, P./ M. Def. +10%. -->
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_flint_will" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -565,7 +559,6 @@
 	<item id="60223" name="Attendance Gift Rune: All Stats" additionalName="6-hour" type="EtcItem">
 		<!-- When in inventory, STR/ DEX/ CON/ INT/ WIT/ MEN/ CHA/ LUC +1. -->
 		<set name="icon" val="Branchsys2.icon.br_spirit_rune_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -576,7 +569,6 @@
 	<item id="60224" name="Attendance Gift Rune Craft Coupon" additionalName="Event" type="EtcItem">
 		<!-- A coupon for adventurers who frequently come to Aden. Can be used for crafting special items. Note!. Required level for using Craft Coupons: 105+. -->
 		<set name="icon" val="icon.ev_2021_thanksgiving_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -587,7 +579,6 @@
 	<item id="60225" name="Special Exalted Weapon Coupon" additionalName="Event" type="EtcItem">
 		<!-- Required for crafting Enhanced Exalted and Krishna weapons. Note!. Required level for using Craft Coupons: 105+. -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -1087,7 +1078,6 @@
 	<item id="60266" name="Freya's Ice Crystal" type="EtcItem">
 		<!-- Imbued with Freya's power. Can be used through the Craft function. -->
 		<set name="icon" val="icon.bm_freya_crystal" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -1461,7 +1451,6 @@
 	<item id="60283" name="Commemorable Update Coin" type="EtcItem">
 		<!-- A coin for commemorating the update launch. Its special bonuses will be available after you add it to the collection. -->
 		<set name="icon" val="icon.bm_nebit_coin" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -1472,7 +1461,6 @@
 	<item id="60284" name="Magic Antharas Doll" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, applies the following effects:. Vitality bonus +16%. Acquired XP/ SP +11%. PvE damage +10%. Vitality sustention for characters of Lv. 1-110. Vitality sustention in the Conquest world for all characters -->
 		<set name="icon" val="icon.bm_antaras_doll_30d_01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
@@ -1674,7 +1662,6 @@
 	<item id="60290" name="Leaf of Appreciation" type="EtcItem">
 		<!-- A special gift for brave warriors ready for new adventures on the continent. Its additional effects become available after adding the item to collections. -->
 		<set name="icon" val="icon.s_dormant_user_display" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -1703,7 +1690,6 @@
 	<item id="60293" name="Lucky Craft Coupon" type="EtcItem">
 		<!-- Required for crafting various items during the Lucky Game. -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1714,7 +1700,6 @@
 	<item id="60294" name="Collection - Kaliel's Blessing" type="EtcItem">
 		<!-- An item for the Kaliel's Blessing collection. -->
 		<set name="icon" val="icon.etc_paper_white_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1723,7 +1708,6 @@
 	<item id="60295" name="Cherry Petal" additionalName="Event" type="EtcItem">
 		<!-- Can be added to a collection to get additional bonuses or exchanged for various supplies via Lilly who can be found in any town. -->
 		<set name="icon" val="BranchIcon.icon.g_ev_sakura_piece_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1783,7 +1767,6 @@
 	<item id="60297" name="Festival Coin" type="EtcItem">
 		<!-- A coin for participating in the Ranking Festival. Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="BranchIcon.Icon.g_bm_premium_coin_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />

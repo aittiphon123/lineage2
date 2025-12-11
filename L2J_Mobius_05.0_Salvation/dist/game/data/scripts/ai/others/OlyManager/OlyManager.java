@@ -26,7 +26,7 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
 import org.l2jmobius.gameserver.handler.BypassHandler;
@@ -41,16 +41,15 @@ import org.l2jmobius.gameserver.model.olympiad.Olympiad;
 import org.l2jmobius.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2jmobius.gameserver.model.olympiad.OlympiadGameTask;
 import org.l2jmobius.gameserver.model.olympiad.OlympiadManager;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExOlympiadMatchList;
-
-import ai.AbstractNpcAI;
 
 /**
  * Olympiad Manager AI.
  * @author St3eT
  */
-public class OlyManager extends AbstractNpcAI implements IBypassHandler
+public class OlyManager extends Script implements IBypassHandler
 {
 	private static final Logger LOGGER = Logger.getLogger(OlyManager.class.getName());
 	
@@ -79,7 +78,7 @@ public class OlyManager extends AbstractNpcAI implements IBypassHandler
 	
 	private OlyManager()
 	{
-		if (Config.OLYMPIAD_ENABLED)
+		if (OlympiadConfig.OLYMPIAD_ENABLED)
 		{
 			addStartNpc(MANAGER);
 			addFirstTalkId(MANAGER);
@@ -192,7 +191,7 @@ public class OlyManager extends AbstractNpcAI implements IBypassHandler
 					if (tradePoints > 0)
 					{
 						player.getVariables().remove(Olympiad.UNCLAIMED_OLYMPIAD_POINTS_VAR);
-						giveItems(player, Config.OLYMPIAD_COMP_RITEM, tradePoints * Config.OLYMPIAD_MARK_PER_POINT);
+						giveItems(player, OlympiadConfig.OLYMPIAD_COMP_RITEM, tradePoints * OlympiadConfig.OLYMPIAD_MARK_PER_POINT);
 					}
 				}
 				else

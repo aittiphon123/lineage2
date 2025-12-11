@@ -20,8 +20,9 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.FakePlayerData;
 import org.l2jmobius.gameserver.model.BlockList;
 import org.l2jmobius.gameserver.model.World;
@@ -121,10 +122,27 @@ public class RequestJoinParty extends ClientPacket
 			return;
 		}
 		
-		if (requestor.isRegisteredOnEvent())
+		if (requestor.isRegisteredOnEvent() || target.isRegisteredOnEvent())
 		{
-			requestor.sendMessage("You cannot invite to a party while participating in an event.");
-			return;
+			if (GeneralConfig.ALLOW_PARTY_IN_SAME_EVENT)
+			{
+				if (!((requestor.getInstanceId() == target.getInstanceId()) && requestor.isRegisteredOnEvent() && target.isRegisteredOnEvent()))
+				{
+					requestor.sendMessage("Event paticipants cannot be invited to parties.");
+					return;
+				}
+				
+				if (!requestor.getTeam().equals(target.getTeam()))
+				{
+					requestor.sendMessage("You cannot be invited to a party of another team.");
+					return;
+				}
+			}
+			else
+			{
+				requestor.sendMessage("Event paticipants cannot be invited to parties.");
+				return;
+			}
 		}
 		
 		SystemMessage sm;
@@ -216,7 +234,7 @@ public class RequestJoinParty extends ClientPacket
 		{
 			requestor.sendPacket(SystemMessageId.ONLY_THE_LEADER_CAN_GIVE_OUT_INVITATIONS);
 		}
-		else if (party.getMemberCount() >= Config.ALT_PARTY_MAX_MEMBERS)
+		else if (party.getMemberCount() >= PlayerConfig.ALT_PARTY_MAX_MEMBERS)
 		{
 			requestor.sendPacket(SystemMessageId.THE_PARTY_IS_FULL);
 		}

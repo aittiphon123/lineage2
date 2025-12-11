@@ -20,15 +20,15 @@
  */
 package quests.Q00265_BondsOfSlavery;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 
 public class Q00265_BondsOfSlavery extends Quest
@@ -107,7 +107,7 @@ public class Q00265_BondsOfSlavery extends Quest
 					htmltext = "30357-05.htm";
 					
 					int reward = 12 * shackles;
-					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (shackles >= 10))
+					if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (shackles >= 10))
 					{
 						reward += 500;
 					}

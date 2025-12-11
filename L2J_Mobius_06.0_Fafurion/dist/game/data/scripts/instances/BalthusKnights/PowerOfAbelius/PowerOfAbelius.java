@@ -23,16 +23,16 @@ package instances.BalthusKnights.PowerOfAbelius;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 
-import instances.AbstractInstance;
 import quests.Q10556_ForgottenPowerStartOfFate.Q10556_ForgottenPowerStartOfFate;
 
 /**
  * Power of Abelius instance zone.
  * @author Kazumi
  */
-public final class PowerOfAbelius extends AbstractInstance
+public final class PowerOfAbelius extends InstanceScript
 {
 	// NPCs
 	private static final int MASTER_DEFENDER = 34386;

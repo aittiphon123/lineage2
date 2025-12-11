@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.attendance;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.AttendanceRewardsConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
@@ -45,7 +45,7 @@ public class RequestVipAttendanceItemList extends ClientPacket
 			return;
 		}
 		
-		if (!Config.ENABLE_ATTENDANCE_REWARDS)
+		if (!AttendanceRewardsConfig.ENABLE_ATTENDANCE_REWARDS)
 		{
 			player.sendPacket(SystemMessageId.DUE_TO_A_SYSTEM_ERROR_THE_ATTENDANCE_REWARD_CANNOT_BE_RECEIVED_PLEASE_TRY_AGAIN_LATER_BY_GOING_TO_MENU_ATTENDANCE_CHECK);
 			return;

@@ -23,17 +23,16 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
-
-import instances.AbstractInstance;
 
 /**
  * Crystal Caverns - Coral Garden instance zone.
  * @author St3eT
  */
-public class CrystalCavernsCoralGarden extends AbstractInstance
+public class CrystalCavernsCoralGarden extends InstanceScript
 {
 	// NPCs
 	private static final int CAVERNS_ENTRACE = 33522;

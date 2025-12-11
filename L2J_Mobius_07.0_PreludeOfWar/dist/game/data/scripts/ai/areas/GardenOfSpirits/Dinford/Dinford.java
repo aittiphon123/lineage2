@@ -29,16 +29,15 @@ import org.l2jmobius.gameserver.model.events.annotations.Id;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
-
-import ai.AbstractNpcAI;
 
 /**
  * Dinford in Blackbird Campsite
  * @author Gigi
  * @date 2018-04-07 - [12:07:12]
  */
-public class Dinford extends AbstractNpcAI
+public class Dinford extends Script
 {
 	// NPC
 	private static final int DINFORD = 34236;

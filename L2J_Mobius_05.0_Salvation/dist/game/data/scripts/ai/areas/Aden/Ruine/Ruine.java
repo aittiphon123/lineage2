@@ -23,15 +23,14 @@ package ai.areas.Aden.Ruine;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Ruine AI
  * @author Gigi
  * @date 2017-02-18 - [20:14:22]
  */
-public class Ruine extends AbstractNpcAI
+public class Ruine extends Script
 {
 	// NPC
 	private static final int COD_ADEN_OFFICER = 34229;

@@ -23,9 +23,9 @@ package ai.bosses.Frintezza;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.time.TimeUtil;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.xml.DoorData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
@@ -39,6 +39,7 @@ import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.groups.CommandChannel;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.zone.type.BossZone;
@@ -54,13 +55,11 @@ import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.network.serverpackets.SpecialCamera;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import ai.AbstractNpcAI;
-
 /**
  * Frintezza AI
  * @author Darki699, sandman, JOJO, Skache
  */
-public class Frintezza extends AbstractNpcAI
+public class Frintezza extends Script
 {
 	// NPCs
 	private static final int SCARLET1 = 29046;
@@ -266,7 +265,7 @@ public class Frintezza extends AbstractNpcAI
 	
 	private Frintezza()
 	{
-		final int[] mob =
+		final int[] mobs =
 		{
 			SCARLET1,
 			SCARLET2,
@@ -288,12 +287,15 @@ public class Frintezza extends AbstractNpcAI
 			29050,
 			29051
 		};
-		_zone = GrandBossManager.getInstance().getZone(174232, -88020, -5116);
-		registerMobs(mob);
+		addAttackId(mobs);
+		addKillId(mobs);
 		addStartNpc(GUIDE);
 		addTalkId(GUIDE);
 		addStartNpc(TELEPORT_CUBE);
 		addTalkId(TELEPORT_CUBE);
+		
+		_zone = GrandBossManager.getInstance().getZone(174232, -88020, -5116);
+		
 		final StatSet info = GrandBossManager.getInstance().getStatSet(FRINTEZZA);
 		final int status = GrandBossManager.getInstance().getStatus(FRINTEZZA);
 		if (status == DEAD)
@@ -1528,10 +1530,8 @@ public class Frintezza extends AbstractNpcAI
 		if (npc.getId() == FRINTEZZA)
 		{
 			npc.setCurrentHpMp(npc.getMaxHp(), 0);
-			return;
 		}
-		
-		if ((npc.getId() == SCARLET1) && (_secondMorph == 0) && (_thirdMorph == 0) && (_onMorph == 0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.75)) && (GrandBossManager.getInstance().getStatus(FRINTEZZA) == FIGHTING))
+		else if ((npc.getId() == SCARLET1) && (_secondMorph == 0) && (_thirdMorph == 0) && (_onMorph == 0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.75)) && (GrandBossManager.getInstance().getStatus(FRINTEZZA) == FIGHTING))
 		{
 			startQuestTimer("attack_stop", 0, _frintezza, null);
 			_secondMorph = 1;
@@ -1595,8 +1595,8 @@ public class Frintezza extends AbstractNpcAI
 			startQuestTimer("remove_players", 900000, npc, null);
 			GrandBossManager.getInstance().setStatus(FRINTEZZA, DEAD);
 			
-			final long baseIntervalMillis = Config.FRINTEZZA_SPAWN_INTERVAL * 3600000;
-			final long randomRangeMillis = Config.FRINTEZZA_SPAWN_RANDOM * 3600000;
+			final long baseIntervalMillis = GrandBossConfig.FRINTEZZA_SPAWN_INTERVAL * 3600000;
+			final long randomRangeMillis = GrandBossConfig.FRINTEZZA_SPAWN_RANDOM * 3600000;
 			final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 			
 			// Next respawn time.

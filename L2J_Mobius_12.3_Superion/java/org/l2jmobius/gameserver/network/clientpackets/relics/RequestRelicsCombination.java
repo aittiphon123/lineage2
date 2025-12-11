@@ -25,7 +25,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.RelicSystemConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.holders.player.PlayerRelicData;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -72,13 +72,13 @@ public class RequestRelicsCombination extends ClientPacket
 			}
 		}
 		
-		if (unconfirmedRelics.size() == Config.RELIC_UNCONFIRMED_LIST_LIMIT) // If you have 100 relics in your confirmation list, restrictions are applied to the relic summoning and compounding functions.
+		if (unconfirmedRelics.size() == RelicSystemConfig.RELIC_UNCONFIRMED_LIST_LIMIT) // If you have 100 relics in your confirmation list, restrictions are applied to the relic summoning and compounding functions.
 		{
 			player.sendPacket(SystemMessageId.SUMMON_COMPOUND_IS_UNAVAILABLE_AS_YOU_HAVE_MORE_THAN_100_UNCONFIRMED_RELICS);
 			return;
 		}
 		
-		if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+		if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 		{
 			player.sendMessage("Compound Ingredients: " + _relicsUsedCount);
 		}
@@ -101,7 +101,7 @@ public class RequestRelicsCombination extends ClientPacket
 			if ((ingredientRelic != null) && (ingredientRelic.getRelicCount() > 0))
 			{
 				ingredientRelic.setRelicCount(ingredientRelic.getRelicCount() - 1);
-				if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+				if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 				{
 					player.sendMessage("Ingredient Relic " + i + " data updated, ID: " + ingredientRelic.getRelicId() + ", Count: " + ingredientRelic.getRelicCount());
 				}

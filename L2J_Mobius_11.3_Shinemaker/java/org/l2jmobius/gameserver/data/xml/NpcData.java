@@ -39,8 +39,10 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.RatesConfig;
+import org.l2jmobius.gameserver.config.custom.FakePlayersConfig;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.enums.npc.AISkillScope;
@@ -81,7 +83,7 @@ public class NpcData implements IXmlReader
 		
 		parseDatapackDirectory("data/stats/npcs", false);
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _npcs.size() + " NPCs.");
-		if (Config.CUSTOM_NPC_DATA)
+		if (GeneralConfig.CUSTOM_NPC_DATA)
 		{
 			final int npcCount = _npcs.size();
 			parseDatapackDirectory("data/stats/npcs/custom", true);
@@ -432,7 +434,7 @@ public class NpcData implements IXmlReader
 								{
 									set.set("soulShot", parseInteger(attrs, "soul"));
 									set.set("spiritShot", parseInteger(attrs, "spirit"));
-									set.set("shotShotChance", parseInteger(attrs, "shotChance"));
+									set.set("soulShotChance", parseInteger(attrs, "shotChance"));
 									set.set("spiritShotChance", parseInteger(attrs, "spiritChance"));
 									break;
 								}
@@ -609,7 +611,7 @@ public class NpcData implements IXmlReader
 							}
 						}
 						
-						if (!Config.FAKE_PLAYERS_ENABLED && set.getBoolean("fakePlayer", false))
+						if (!FakePlayersConfig.FAKE_PLAYERS_ENABLED && set.getBoolean("fakePlayer", false))
 						{
 							continue;
 						}
@@ -752,14 +754,14 @@ public class NpcData implements IXmlReader
 						template.removeDrops();
 						
 						// Add configurable item drop for bosses.
-						if ((Config.BOSS_DROP_ENABLED) && (type.contains("RaidBoss") && (level >= Config.BOSS_DROP_MIN_LEVEL) && (level <= Config.BOSS_DROP_MAX_LEVEL)))
+						if ((RatesConfig.BOSS_DROP_ENABLED) && (type.contains("RaidBoss") && (level >= RatesConfig.BOSS_DROP_MIN_LEVEL) && (level <= RatesConfig.BOSS_DROP_MAX_LEVEL)))
 						{
 							if (dropLists == null)
 							{
 								dropLists = new ArrayList<>();
 							}
 							
-							dropLists.addAll(Config.BOSS_DROP_LIST);
+							dropLists.addAll(RatesConfig.BOSS_DROP_LIST);
 						}
 						
 						// Set new drop lists.

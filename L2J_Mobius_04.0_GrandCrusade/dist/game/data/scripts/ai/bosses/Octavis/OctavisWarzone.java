@@ -26,6 +26,7 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.stats.Stat;
@@ -36,13 +37,11 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowUsm;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
-import instances.AbstractInstance;
-
 /**
  * Octavis Warzone instance zone.
  * @author St3eT
  */
-public class OctavisWarzone extends AbstractInstance
+public class OctavisWarzone extends InstanceScript
 {
 	// NPCs
 	private static final int[] OCTAVIS_STAGE_1 =

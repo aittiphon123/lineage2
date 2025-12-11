@@ -16,8 +16,8 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.StringUtil;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.xml.FakePlayerData;
 import org.l2jmobius.gameserver.network.serverpackets.ExIsCharNameCreatable;
@@ -72,6 +72,6 @@ public class RequestCharacterNameCreatable extends ClientPacket
 	
 	private boolean isValidName(String text)
 	{
-		return Config.CHARNAME_TEMPLATE_PATTERN.matcher(text).matches();
+		return ServerConfig.CHARNAME_TEMPLATE_PATTERN.matcher(text).matches();
 	}
 }

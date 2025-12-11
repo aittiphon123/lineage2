@@ -32,13 +32,13 @@ import org.l2jmobius.gameserver.model.actor.instance.FriendlyNpc;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.instancezone.InstanceTemplate;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.Fort;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
 import quests.Q00726_LightWithinTheDarkness.Q00726_LightWithinTheDarkness;
 import quests.Q00727_HopeWithinTheDarkness.Q00727_HopeWithinTheDarkness;
 
@@ -46,7 +46,7 @@ import quests.Q00727_HopeWithinTheDarkness.Q00727_HopeWithinTheDarkness;
  * Pailaka (Rune Castle)
  * @author Mobius
  */
-public class PailakaRuneCastle extends AbstractInstance
+public class PailakaRuneCastle extends InstanceScript
 {
 	// NPCs
 	private static final int[] VICTIMS =

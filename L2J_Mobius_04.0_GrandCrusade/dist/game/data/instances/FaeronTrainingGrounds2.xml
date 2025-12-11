@@ -18,9 +18,20 @@
 		<!-- <quest id="10736" state="STARTED" /> -->
 	</conditions>
 	<spawnlist>
-		<group>
-			<!-- Katalin -->
+		<group name="Katalin">
 			<npc id="33945" x="-74961" y="240636" z="-3584" heading="0" />
+		</group>
+		<group name="Floato" spawnByDefault="false">
+			<npc id="27526" x="-74760" y="240773" z="-3560" heading="0" />
+			<npc id="27526" x="-74721" y="240513" z="-3584" heading="0" />
+		</group>
+		<group name="Floato2" spawnByDefault="false">
+			<npc id="27531" x="-74760" y="240773" z="-3560" heading="0" />
+			<npc id="27531" x="-74721" y="240513" z="-3584" heading="0" />
+		</group>
+		<group name="Ratel" spawnByDefault="false">
+			<npc id="27527" x="-74760" y="240773" z="-3560" heading="0" />
+			<npc id="27527" x="-74721" y="240513" z="-3584" heading="0" />
 		</group>
 	</spawnlist>
 </instance>

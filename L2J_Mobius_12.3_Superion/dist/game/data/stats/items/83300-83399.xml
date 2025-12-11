@@ -14,7 +14,6 @@
 	<item id="83301" name="Guaranteed C-grade Relic Summon Coupon - 1-time" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain one C-grade relic. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv3" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -26,7 +25,6 @@
 	<item id="83302" name="Guaranteed B-grade Relic Summon Coupon - 1-time" additionalName="Official Broadcast" type="EtcItem">
 		<!-- Double-click to obtain one B-grade relic. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv4" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -38,7 +36,6 @@
 	<item id="83303" name="Guaranteed A-grade Relic Summon Coupon - 1-time" additionalName="Official Broadcast" type="EtcItem">
 		<!-- Double-click to obtain one A-grade relic. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv5" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -77,7 +74,6 @@
 	<item id="83306" name="B-grade Relic Compound Retry Coupon" additionalName="Event" type="EtcItem">
 		<!-- Double-click to retry a B-grade relic compounding. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv3" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -88,7 +84,6 @@
 	<item id="83307" name="A-grade Relic Compound Retry Coupon" additionalName="Event" type="EtcItem">
 		<!-- Double-click to retry an A-grade relic compounding. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv4" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -156,7 +151,6 @@
 	<item id="83312" name="Blue Stone - Session Zone" additionalName="Event" type="EtcItem">
 		<!-- A blue stone imbued with the power of blue water. -->
 		<set name="icon" val="icon.elemental_water_stone_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -169,7 +163,6 @@
 	<item id="83313" name="Blue Stone - Solo Instance Zone" additionalName="Event" type="EtcItem">
 		<!-- A blue stone imbued with the power of blue water. -->
 		<set name="icon" val="icon.elemental_water_stone_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -182,7 +175,6 @@
 	<item id="83314" name="Blue Stone - Party Instance Zone" additionalName="Event" type="EtcItem">
 		<!-- A blue stone imbued with the power of blue water. -->
 		<set name="icon" val="icon.elemental_water_stone_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -195,7 +187,6 @@
 	<item id="83315" name="Blue Stone - Field Hunting Zone" additionalName="Event" type="EtcItem">
 		<!-- A blue stone imbued with the power of blue water. -->
 		<set name="icon" val="icon.elemental_water_stone_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -208,7 +199,6 @@
 	<item id="83316" name="Blue Stone - Tower of Insolence" additionalName="Event" type="EtcItem">
 		<!-- A blue stone imbued with the power of blue water. -->
 		<set name="icon" val="icon.elemental_water_stone_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -221,7 +211,6 @@
 	<item id="83317" name="Blue Stone - Time Rift" additionalName="Event" type="EtcItem">
 		<!-- A blue stone imbued with the power of blue water. -->
 		<set name="icon" val="icon.elemental_water_stone_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -234,7 +223,6 @@
 	<item id="83318" name="Blue Energy - Swamp of Screams" additionalName="Event" type="EtcItem">
 		<!-- The energy of blue water. -->
 		<set name="icon" val="icon.elemental_star_water_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -247,7 +235,6 @@
 	<item id="83319" name="Blue Energy - Field Raid" additionalName="Event" type="EtcItem">
 		<!-- The energy of blue water. -->
 		<set name="icon" val="icon.elemental_star_water_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -260,7 +247,6 @@
 	<item id="83320" name="Blue Energy - Ice Queen's Castle" additionalName="Event" type="EtcItem">
 		<!-- The energy of blue water. -->
 		<set name="icon" val="icon.elemental_star_water_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -273,7 +259,6 @@
 	<item id="83321" name="Blue Energy - Empress' Palace" additionalName="Event" type="EtcItem">
 		<!-- The energy of blue water. -->
 		<set name="icon" val="icon.elemental_star_water_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -286,7 +271,6 @@
 	<item id="83322" name="Blue Energy - Tower of Insolence" additionalName="Event" type="EtcItem">
 		<!-- The energy of blue water. -->
 		<set name="icon" val="icon.elemental_star_water_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -299,7 +283,6 @@
 	<item id="83323" name="Blue Energy - Time Rift" additionalName="Event" type="EtcItem">
 		<!-- The energy of blue water. -->
 		<set name="icon" val="icon.elemental_star_water_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -312,7 +295,6 @@
 	<item id="83324" name="Rockfish" additionalName="Event" type="EtcItem">
 		<!-- A very tasty sea fish. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.fish_normal_i08" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -323,7 +305,6 @@
 	<item id="83325" name="Flatfish" additionalName="Event" type="EtcItem">
 		<!-- A soft flatfish. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.fish_normal_i06" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -334,7 +315,6 @@
 	<item id="83326" name="Blue Mackerel" additionalName="Event" type="EtcItem">
 		<!-- A fish that is very good for you. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.fish_normal_i04" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -345,7 +325,6 @@
 	<item id="83327" name="Bass" additionalName="Event" type="EtcItem">
 		<!-- A sea fish that is especially popular in the summer. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.fish_normal_i07" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -356,7 +335,6 @@
 	<item id="83328" name="Mackerel Pike" additionalName="Event" type="EtcItem">
 		<!-- A very agile fish that is hard to catch. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.wp_fishing1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -367,7 +345,6 @@
 	<item id="83329" name="Red Pargo" additionalName="Event" type="EtcItem">
 		<!-- A red sea fish. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.etc_bream_i08" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -378,7 +355,6 @@
 	<item id="83330" name="Octopus" additionalName="Event" type="EtcItem">
 		<!-- The master of disguise. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.ev_2024_fish_low_01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -389,7 +365,6 @@
 	<item id="83331" name="Barred Knifejaw" additionalName="Event" type="EtcItem">
 		<!-- A beautiful striped sea fish. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.ev_2024_fish_low_02" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -400,7 +375,6 @@
 	<item id="83332" name="Pufferfish" additionalName="Event" type="EtcItem">
 		<!-- A fish that inflates to ward off predators. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.ev_2024_fish_high_02" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -411,7 +385,6 @@
 	<item id="83333" name="Sun-fish" additionalName="Event" type="EtcItem">
 		<!-- An amazing sea fish. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.ev_2024_fish_high_03" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -422,7 +395,6 @@
 	<item id="83334" name="Piranha" additionalName="Event" type="EtcItem">
 		<!-- A very dangerous freshwater fish. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. Note!. If piranha bites Jouri, you won't receive points, rewards, XP, and SP. -->
 		<set name="icon" val="icon.ev_2024_fish_high_04" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -433,7 +405,6 @@
 	<item id="83335" name="Napoleon Fish" additionalName="Event" type="EtcItem">
 		<!-- One of the biggest fish to live in the coral reef. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.ev_2024_fish_high_01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -444,7 +415,6 @@
 	<item id="83336" name="Whale Shark" additionalName="Event" type="EtcItem">
 		<!-- The largest fish in the sea. <How to use>. Can be exchanged for competition points, rewards, XP, and SP by talking to Jouri at the event fishing dock in Giran. -->
 		<set name="icon" val="icon.ev_2024_fish_high_05" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -822,6 +792,7 @@
 		<set name="bodypart" val="brooch_jewel" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="R" />
+		<set name="crystal_count" val="2" />
 		<set name="material" val="GOLD" />
 		<set name="weight" val="5" />
 		<set name="enchant_enabled" val="true" />
@@ -851,6 +822,7 @@
 		<set name="bodypart" val="brooch_jewel" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="R" />
+		<set name="crystal_count" val="2" />
 		<set name="material" val="GOLD" />
 		<set name="weight" val="5" />
 		<set name="enchant_enabled" val="true" />
@@ -880,6 +852,7 @@
 		<set name="bodypart" val="brooch_jewel" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="R" />
+		<set name="crystal_count" val="2" />
 		<set name="material" val="GOLD" />
 		<set name="weight" val="5" />
 		<set name="enchant_enabled" val="true" />
@@ -934,7 +907,6 @@
 	<item id="83357" name="Amber Shard" type="EtcItem">
 		<!-- A shard that remained after Amber enchantment failed. <How to use>. Can be used to craft Amber. <Acquisition>. Failed Amber enchantment. -->
 		<set name="icon" val="icon.chaotic_amber_spall" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1037,7 +1009,6 @@
 	<item id="83363" name="Wisdom Crystal" type="EtcItem">
 		<!-- Glows softly. Can be used to upgrade gems through crafting. -->
 		<set name="icon" val="icon.jewel_upgrade_crystal" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
@@ -1045,7 +1016,6 @@
 	<item id="83364" name="Chaos Golem Victory Certificate" type="EtcItem">
 		<!-- A document confirming that you contributed to the victory over Chaos Golems. Can be added to a collection. <Acquisition>. Weekly quest Field Raid: Defeat the Chaos Golems. -->
 		<set name="icon" val="icon.prophets_paper_of_tobald_i02" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1058,7 +1028,6 @@
 	<item id="83365" name="Chaos Golem #17's Core" type="EtcItem">
 		<!-- A rare trophy that can be obtained with a low chance from the Pack of Triumph over Chaos Golems. <Acquisition>. Chaos Golems field raid -->
 		<set name="icon" val="icon.aden_rune_high_i03" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1067,7 +1036,6 @@
 	<item id="83366" name="Chaos Golem #18's Core" type="EtcItem">
 		<!-- A rare trophy that can be obtained with a low chance from the Pack of Triumph over Chaos Golems. <Acquisition>. Chaos Golems field raid -->
 		<set name="icon" val="icon.aden_rune_high_i02" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1103,7 +1071,6 @@
 	<item id="83369" name="Blue Paper" additionalName="Event" type="EtcItem">
 		<!-- Blue paper that can be used to make a Sky Lantern. <How to use>. Event craft -->
 		<set name="icon" val="icon.etc_color_paper_blue_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1115,7 +1082,6 @@
 	<item id="83370" name="White Paper" additionalName="Event" type="EtcItem">
 		<!-- White paper that can be used to make a Sky Lantern. <How to use>. Event craft -->
 		<set name="icon" val="icon.etc_color_paper_white_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1127,7 +1093,6 @@
 	<item id="83371" name="Yellow Paper" additionalName="Event" type="EtcItem">
 		<!-- Yellow paper that can be used to make a Sky Lantern. <How to use>. Event craft -->
 		<set name="icon" val="icon.etc_color_paper_yellow_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />

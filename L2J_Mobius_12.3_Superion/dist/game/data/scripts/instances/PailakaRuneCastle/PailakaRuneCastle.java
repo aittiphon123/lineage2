@@ -32,18 +32,17 @@ import org.l2jmobius.gameserver.model.actor.instance.FriendlyNpc;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.instancezone.InstanceTemplate;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.Fort;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
-
 /**
  * Pailaka (Rune Castle)
  * @author Mobius
  */
-public class PailakaRuneCastle extends AbstractInstance
+public class PailakaRuneCastle extends InstanceScript
 {
 	// NPCs
 	private static final int[] VICTIMS =

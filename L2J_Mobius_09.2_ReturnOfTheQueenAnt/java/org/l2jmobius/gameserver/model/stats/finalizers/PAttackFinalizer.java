@@ -18,9 +18,11 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
 import org.l2jmobius.gameserver.model.stats.IStatFunction;
 import org.l2jmobius.gameserver.model.stats.Stat;
@@ -47,22 +49,22 @@ public class PAttackFinalizer implements IStatFunction
 		if (creature.isPlayer())
 		{
 			// Enchanted chest bonus
-			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_CHEST, ItemTemplate.SLOT_FULL_ARMOR);
+			baseValue += calcEnchantBodyPart(creature, BodyPart.CHEST, BodyPart.FULL_ARMOR);
 		}
 		
-		if (Config.CHAMPION_ENABLE && creature.isChampion())
+		if (ChampionMonstersConfig.CHAMPION_ENABLE && creature.isChampion())
 		{
-			baseValue *= Config.CHAMPION_ATK;
+			baseValue *= ChampionMonstersConfig.CHAMPION_ATK;
 		}
 		
 		if (creature.isRaid())
 		{
-			baseValue *= Config.RAID_PATTACK_MULTIPLIER;
+			baseValue *= NpcConfig.RAID_PATTACK_MULTIPLIER;
 		}
 		
 		final double chaBonus = creature.isPlayer() ? BaseStat.CHA.calcBonus(creature) : 1;
 		baseValue *= BaseStat.STR.calcBonus(creature) * creature.getLevelMod() * chaBonus;
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), 0, creature.isPlayable() ? Config.MAX_PATK : Double.MAX_VALUE);
+		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), 0, creature.isPlayable() ? PlayerConfig.MAX_PATK : Double.MAX_VALUE);
 	}
 	
 	@Override

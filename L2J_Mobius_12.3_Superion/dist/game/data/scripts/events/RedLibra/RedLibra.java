@@ -47,7 +47,7 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
-import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
+import org.l2jmobius.gameserver.model.script.LongTimeEvent;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -405,7 +405,7 @@ public class RedLibra extends LongTimeEvent
 		
 		// Update data for offline players.
 		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
+			PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ? AND account_name NOT IN (SELECT account_name FROM characters WHERE online = 1)"))
 		{
 			ps.setString(1, GREEN_BUFF_VAR);
 			ps.executeUpdate();

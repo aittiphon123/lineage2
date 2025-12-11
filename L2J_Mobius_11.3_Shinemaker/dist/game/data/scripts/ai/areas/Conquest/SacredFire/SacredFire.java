@@ -28,9 +28,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.World;
@@ -50,6 +50,7 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerSummon
 import org.l2jmobius.gameserver.model.events.holders.item.OnItemUse;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
@@ -58,13 +59,11 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.dethroneability.ExHolyFireNotify;
 
-import ai.AbstractNpcAI;
-
 /**
  * Conquest Sacred Fire AI.
  * @author CostyKiller, -K
  */
-public class SacredFire extends AbstractNpcAI
+public class SacredFire extends Script
 {
 	private static final boolean DEBUG = false; // Set it true to display related messages into server console.
 	
@@ -205,10 +204,10 @@ public class SacredFire extends AbstractNpcAI
 						
 						if (player.isInventoryUnder90(false))
 						{
-							if (!Config.CONQUEST_SACRED_FIRE_REWARDS.isEmpty())
+							if (!ConquestConfig.CONQUEST_SACRED_FIRE_REWARDS.isEmpty())
 							{
 								// Common items rewards.
-								giveItems(player, getRandomEntry(Config.CONQUEST_SACRED_FIRE_REWARDS));
+								giveItems(player, getRandomEntry(ConquestConfig.CONQUEST_SACRED_FIRE_REWARDS));
 							}
 						}
 						else
@@ -298,7 +297,7 @@ public class SacredFire extends AbstractNpcAI
 			}
 			
 			// Decay spawned sacred fires.
-			for (int i = Config.CONQUEST_MAX_SACRED_FIRE_SLOTS_COUNT; i >= 1; i--)
+			for (int i = ConquestConfig.CONQUEST_MAX_SACRED_FIRE_SLOTS_COUNT; i >= 1; i--)
 			{
 				final WorldObject sacredFire = World.getInstance().findObject(player.getVariables().getInt("SACRED_FIRE_SLOT_" + i + "_OID", 0));
 				if (sacredFire != null)
@@ -373,10 +372,10 @@ public class SacredFire extends AbstractNpcAI
 		// Check zone and transformation (rabbit transform id is 105).
 		if (FIRE_SOURCE_COMMON_AREA_ZONE.isInsideZone(player) && (player.getTransformationId() == 105))
 		{
-			if (player.getVariables().getInt(PlayerVariables.CONQUEST_SACRED_FIRE_SLOT_COUNT, 0) < Config.CONQUEST_MAX_SACRED_FIRE_SLOTS_COUNT)
+			if (player.getVariables().getInt(PlayerVariables.CONQUEST_SACRED_FIRE_SLOT_COUNT, 0) < ConquestConfig.CONQUEST_MAX_SACRED_FIRE_SLOTS_COUNT)
 			{
 				// Get Sacred Fire slot.
-				int sacredFireSlot = Config.CONQUEST_MAX_SACRED_FIRE_SLOTS_COUNT;
+				int sacredFireSlot = ConquestConfig.CONQUEST_MAX_SACRED_FIRE_SLOTS_COUNT;
 				for (int i = sacredFireSlot; i >= 1; i--)
 				{
 					if ((player.getVariables().getInt("SACRED_FIRE_SLOT_" + i, 0) == 0) || (player.getVariables().getInt("SACRED_FIRE_SLOT_" + i, 0) == 3))
@@ -424,33 +423,33 @@ public class SacredFire extends AbstractNpcAI
 						final SystemMessage sm = new SystemMessage(SystemMessageId.FIRE_SOURCE_POINTS_S1_PERSONAL_CONQUEST_POINTS_S2_SERVER_CONQUEST_POINTS_S3);
 						
 						// Points rewards.
-						if (Config.CONQUEST_SACRED_FIRE_REWARD_FIRE_SOURCE_POINTS != 0)
+						if (ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_FIRE_SOURCE_POINTS != 0)
 						{
-							player.getVariables().set(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, player.getVariables().getInt(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, 0) + Config.CONQUEST_SACRED_FIRE_REWARD_FIRE_SOURCE_POINTS);
+							player.getVariables().set(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, player.getVariables().getInt(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, 0) + ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_FIRE_SOURCE_POINTS);
 						}
 						
 						// Message update.
-						sm.addInt(Config.CONQUEST_SACRED_FIRE_REWARD_FIRE_SOURCE_POINTS != 0 ? Config.CONQUEST_SACRED_FIRE_REWARD_FIRE_SOURCE_POINTS : 0);
-						if (Config.CONQUEST_SACRED_FIRE_REWARD_PERSONAL_POINTS != 0)
+						sm.addInt(ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_FIRE_SOURCE_POINTS != 0 ? ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_FIRE_SOURCE_POINTS : 0);
+						if (ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_PERSONAL_POINTS != 0)
 						{
-							player.getVariables().set(PlayerVariables.CONQUEST_PERSONAL_POINTS, player.getVariables().getLong(PlayerVariables.CONQUEST_PERSONAL_POINTS, 0) + Config.CONQUEST_SACRED_FIRE_REWARD_PERSONAL_POINTS);
+							player.getVariables().set(PlayerVariables.CONQUEST_PERSONAL_POINTS, player.getVariables().getLong(PlayerVariables.CONQUEST_PERSONAL_POINTS, 0) + ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_PERSONAL_POINTS);
 						}
 						
 						// Message update.
-						sm.addLong(Config.CONQUEST_SACRED_FIRE_REWARD_PERSONAL_POINTS != 0 ? Config.CONQUEST_SACRED_FIRE_REWARD_PERSONAL_POINTS : 0);
-						if (Config.CONQUEST_SACRED_FIRE_REWARD_SERVER_POINTS != 0)
+						sm.addLong(ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_PERSONAL_POINTS != 0 ? ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_PERSONAL_POINTS : 0);
+						if (ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_SERVER_POINTS != 0)
 						{
-							GlobalVariablesManager.getInstance().set("CONQUEST_SERVER_POINTS", GlobalVariablesManager.getInstance().getLong("CONQUEST_SERVER_POINTS", 0) + Config.CONQUEST_SACRED_FIRE_REWARD_SERVER_POINTS);
+							GlobalVariablesManager.getInstance().set("CONQUEST_SERVER_POINTS", GlobalVariablesManager.getInstance().getLong("CONQUEST_SERVER_POINTS", 0) + ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_SERVER_POINTS);
 						}
 						
 						// Message update.
-						sm.addLong(Config.CONQUEST_SACRED_FIRE_REWARD_SERVER_POINTS != 0 ? Config.CONQUEST_SACRED_FIRE_REWARD_SERVER_POINTS : 0);
+						sm.addLong(ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_SERVER_POINTS != 0 ? ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_SERVER_POINTS : 0);
 						player.sendPacket(sm);
 						
 						// Common items rewards.
-						if (Config.CONQUEST_SACRED_FIRE_REWARDS.size() > 0)
+						if (ConquestConfig.CONQUEST_SACRED_FIRE_REWARDS.size() > 0)
 						{
-							for (ItemHolder reward : Config.CONQUEST_SACRED_FIRE_REWARDS)
+							for (ItemHolder reward : ConquestConfig.CONQUEST_SACRED_FIRE_REWARDS)
 							{
 								player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), player, true);
 							}

@@ -20,18 +20,18 @@
  */
 package quests.Q10526_ExaltedGuideToPower;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.TeleportListData;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestDialogType;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuest;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuestLocation;
-import org.l2jmobius.gameserver.model.quest.newquestdata.QuestCondType;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestDialogType;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuest;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuestLocation;
+import org.l2jmobius.gameserver.model.script.newquestdata.QuestCondType;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestDialog;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestNotification;
 
@@ -203,7 +203,7 @@ public class Q10526_ExaltedGuideToPower extends Quest
 			
 			for (Player member : party.getMembers())
 			{
-				if (member.calculateDistance3D(npc) < Config.ALT_PARTY_RANGE)
+				if (member.calculateDistance3D(npc) < PlayerConfig.ALT_PARTY_RANGE)
 				{
 					final QuestState questState = getQuestState(member, false);
 					if ((questState != null) && questState.isCond(QuestCondType.STARTED))

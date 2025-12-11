@@ -32,7 +32,7 @@ import org.w3c.dom.Node;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.gameserver.data.holders.MonsterBookCardHolder;
 import org.l2jmobius.gameserver.data.holders.MonsterBookRewardHolder;
-import org.l2jmobius.gameserver.model.quest.Faction;
+import org.l2jmobius.gameserver.model.script.Faction;
 
 /**
  * @author Mobius

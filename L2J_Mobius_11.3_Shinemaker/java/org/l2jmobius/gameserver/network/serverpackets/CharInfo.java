@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import java.util.Set;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.managers.RankManager;
@@ -126,7 +126,7 @@ public class CharInfo extends ServerPacket
 		_armorEnchant = _inventory.getArmorSetEnchant();
 		_baitLocation = player.getFishing().getBaitLocation();
 		_abnormalVisualEffects = player.getEffectList().getCurrentAbnormalVisualEffects();
-		_team = (Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null) ? player.getTeam() : Team.NONE;
+		_team = (GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null) ? player.getTeam() : Team.NONE;
 		_afkAnimation = ((player.getClan() != null) && (CastleManager.getInstance().getCastleByOwner(player.getClan()) != null)) ? (player.isClanLeader() ? 100 : 101) : 0;
 		_rank = RankManager.getInstance().getPlayerGlobalRank(_player) == 1 ? 1 : RankManager.getInstance().getPlayerRaceRank(_player) == 1 ? 2 : RankManager.getInstance().getPlayerClassRank(_player) == 1 ? 4 : 0;
 		_gmSeeInvis = gmSeeInvis;
@@ -236,7 +236,7 @@ public class CharInfo extends ServerPacket
 		buffer.writeByte(_player.getTeam().getId()); // Confirmed
 		buffer.writeInt(_player.getClanCrestLargeId());
 		buffer.writeByte(_player.getNobleLevel()); // Confirmed
-		buffer.writeByte(_player.isLegend() ? 4 : _player.isHero() || (_player.isGM() && Config.GM_HERO_AURA) ? 2 : 0); // 152 - Value for enabled changed to 2? 4 = legend
+		buffer.writeByte(_player.isLegend() ? 4 : _player.isHero() || (_player.isGM() && GeneralConfig.GM_HERO_AURA) ? 2 : 0); // 152 - Value for enabled changed to 2? 4 = legend
 		
 		buffer.writeByte(_player.isFishing()); // Confirmed
 		if (_baitLocation != null)
@@ -282,14 +282,14 @@ public class CharInfo extends ServerPacket
 		
 		if (_team == Team.BLUE)
 		{
-			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)
+			if (GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null)
 			{
-				buffer.writeShort(Config.BLUE_TEAM_ABNORMAL_EFFECT.getClientId());
+				buffer.writeShort(GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT.getClientId());
 			}
 		}
-		else if ((_team == Team.RED) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+		else if ((_team == Team.RED) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null))
 		{
-			buffer.writeShort(Config.RED_TEAM_ABNORMAL_EFFECT.getClientId());
+			buffer.writeShort(GeneralConfig.RED_TEAM_ABNORMAL_EFFECT.getClientId());
 		}
 		
 		buffer.writeByte(_player.isTrueHero() ? 100 : 0);

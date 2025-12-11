@@ -26,7 +26,7 @@ import java.util.Map.Entry;
 
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;

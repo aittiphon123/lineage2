@@ -19,16 +19,15 @@ package ai.areas.TalkingIsland.Walkers;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Mei AI.
  * @author Gladicek
  */
-public class Mei extends AbstractNpcAI
+public class Mei extends Script
 {
 	// NPC
 	private static final int MEI = 33280;

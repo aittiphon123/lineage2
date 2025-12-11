@@ -34,8 +34,9 @@ import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.actor.instance.RaidBoss;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -50,14 +51,13 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 import org.l2jmobius.gameserver.taskmanagers.DecayTaskManager;
 
-import instances.AbstractInstance;
 import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
 
 /**
  * Ice Queen's Castle (Normal Battle) instance zone.
  * @author St3eT
  */
-public class IceQueensCastleBattle extends AbstractInstance
+public class IceQueensCastleBattle extends InstanceScript
 {
 	// Npcs
 	private static final int FREYA_THRONE = 29177; // First freya

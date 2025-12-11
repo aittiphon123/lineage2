@@ -19,10 +19,10 @@ package org.l2jmobius.gameserver.network.clientpackets.appearance;
 import org.l2jmobius.gameserver.data.xml.AppearanceItemData;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.ShapeShiftingItemRequest;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.appearance.AppearanceHolder;
 import org.l2jmobius.gameserver.model.item.appearance.AppearanceStone;
 import org.l2jmobius.gameserver.model.item.appearance.AppearanceType;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemLocation;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
@@ -173,7 +173,7 @@ public class RequestShapeShiftingItem extends ClientPacket
 				return;
 			}
 			
-			if ((extractItem.getTemplate().getBodyPart() != targetItem.getTemplate().getBodyPart()) && ((extractItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_FULL_ARMOR) || (targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_CHEST)))
+			if ((extractItem.getTemplate().getBodyPart() != targetItem.getTemplate().getBodyPart()) && ((extractItem.getTemplate().getBodyPart() != BodyPart.FULL_ARMOR) || (targetItem.getTemplate().getBodyPart() != BodyPart.CHEST)))
 			{
 				player.sendPacket(ExShapeShiftingResult.CLOSE);
 				player.removeRequest(ShapeShiftingItemRequest.class);

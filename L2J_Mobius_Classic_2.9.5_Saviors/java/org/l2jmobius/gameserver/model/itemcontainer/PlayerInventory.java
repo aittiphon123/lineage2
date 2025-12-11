@@ -31,8 +31,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.TransmogConfig;
 import org.l2jmobius.gameserver.data.xml.AgathionData;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.model.TradeItem;
@@ -953,7 +954,7 @@ public class PlayerInventory extends Inventory
 					paperdoll[slot][1] = template == null ? itemId : template.getDisplayId();
 					
 					paperdoll[slot][2] = invdata.getInt("enchant_level");
-					paperdoll[slot][3] = vars.getInt(ItemVariables.VISUAL_ID, Config.ENABLE_TRANSMOG ? vars.getInt(ItemVariables.TRANSMOG_ID, 0) : 0);
+					paperdoll[slot][3] = vars.getInt(ItemVariables.VISUAL_ID, TransmogConfig.ENABLE_TRANSMOG ? vars.getInt(ItemVariables.TRANSMOG_ID, 0) : 0);
 					if (paperdoll[slot][3] > 0) // fix for hair appearance conflicting with original model
 					{
 						paperdoll[slot][1] = paperdoll[slot][3];
@@ -1047,7 +1048,7 @@ public class PlayerInventory extends Inventory
 	
 	public boolean validateCapacity(long slots, boolean questItem)
 	{
-		return ((slots == 0) && !Config.AUTO_LOOT_SLOT_LIMIT) || questItem ? (getQuestSize() + slots) <= _owner.getQuestInventoryLimit() : (getNonQuestSize() + slots) <= _owner.getInventoryLimit();
+		return ((slots == 0) && !PlayerConfig.AUTO_LOOT_SLOT_LIMIT) || questItem ? (getQuestSize() + slots) <= _owner.getQuestInventoryLimit() : (getNonQuestSize() + slots) <= _owner.getInventoryLimit();
 	}
 	
 	@Override

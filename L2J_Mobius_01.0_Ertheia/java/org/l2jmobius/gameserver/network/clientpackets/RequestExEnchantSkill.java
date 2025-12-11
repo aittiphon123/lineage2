@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.holders.EnchantSkillHolder;
 import org.l2jmobius.gameserver.data.xml.EnchantSkillGroupsData;
@@ -195,7 +195,7 @@ public class RequestExEnchantSkill extends ClientPacket
 				if (Rnd.get(100) <= enchantSkillHolder.getChance(_type))
 				{
 					final Skill enchantedSkill = SkillData.getInstance().getSkill(_skillId, skillLevel, skillSubLevel);
-					if (Config.LOG_SKILL_ENCHANTS)
+					if (GeneralConfig.LOG_SKILL_ENCHANTS)
 					{
 						final StringBuilder sb = new StringBuilder();
 						LOGGER_ENCHANT.info(sb.append("Success, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", +").append(enchantedSkill.getLevel()).append(" ").append(enchantedSkill.getSubLevel()).append(" - ").append(enchantedSkill.getName()).append(" (").append(enchantedSkill.getId()).append("), ").append(enchantSkillHolder.getChance(_type)).toString());
@@ -238,7 +238,7 @@ public class RequestExEnchantSkill extends ClientPacket
 					
 					player.sendPacket(ExEnchantSkillResult.STATIC_PACKET_FALSE);
 					
-					if (Config.LOG_SKILL_ENCHANTS)
+					if (GeneralConfig.LOG_SKILL_ENCHANTS)
 					{
 						final StringBuilder sb = new StringBuilder();
 						LOGGER_ENCHANT.info(sb.append("Failed, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", +").append(enchantedSkill.getLevel()).append(" ").append(enchantedSkill.getSubLevel()).append(" - ").append(enchantedSkill.getName()).append(" (").append(enchantedSkill.getId()).append("), ").append(enchantSkillHolder.getChance(_type)).toString());
@@ -251,7 +251,7 @@ public class RequestExEnchantSkill extends ClientPacket
 				if (Rnd.get(100) <= enchantSkillHolder.getChance(_type))
 				{
 					final Skill enchantedSkill = SkillData.getInstance().getSkill(_skillId, skillLevel, skillSubLevel);
-					if (Config.LOG_SKILL_ENCHANTS)
+					if (GeneralConfig.LOG_SKILL_ENCHANTS)
 					{
 						final StringBuilder sb = new StringBuilder();
 						LOGGER_ENCHANT.info(sb.append("Success, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", +").append(enchantedSkill.getLevel()).append(" ").append(enchantedSkill.getSubLevel()).append(" - ").append(enchantedSkill.getName()).append(" (").append(enchantedSkill.getId()).append("), ").append(enchantSkillHolder.getChance(_type)).toString());
@@ -284,7 +284,7 @@ public class RequestExEnchantSkill extends ClientPacket
 					player.sendPacket(SystemMessageId.SKILL_ENCHANT_FAILED_THE_SKILL_WILL_BE_INITIALIZED);
 					player.sendPacket(ExEnchantSkillResult.STATIC_PACKET_FALSE);
 					
-					if (Config.LOG_SKILL_ENCHANTS)
+					if (GeneralConfig.LOG_SKILL_ENCHANTS)
 					{
 						final StringBuilder sb = new StringBuilder();
 						LOGGER_ENCHANT.info(sb.append("Failed, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", +").append(enchantedSkill.getLevel()).append(" ").append(enchantedSkill.getSubLevel()).append(" - ").append(enchantedSkill.getName()).append(" (").append(enchantedSkill.getId()).append("), ").append(enchantSkillHolder.getChance(_type)).toString());
@@ -313,7 +313,7 @@ public class RequestExEnchantSkill extends ClientPacket
 				player.sendPacket(sm.addSkillName(_skillId));
 				player.sendPacket(ExEnchantSkillResult.STATIC_PACKET_FALSE);
 				
-				if (Config.LOG_SKILL_ENCHANTS)
+				if (GeneralConfig.LOG_SKILL_ENCHANTS)
 				{
 					final StringBuilder sb = new StringBuilder();
 					LOGGER_ENCHANT.info(sb.append("Untrain success, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", +").append(enchantedSkill.getLevel()).append(" ").append(enchantedSkill.getSubLevel()).append(" - ").append(enchantedSkill.getName()).append(" (").append(enchantedSkill.getId()).append("), ").append(enchantSkillHolder.getChance(_type)).toString());

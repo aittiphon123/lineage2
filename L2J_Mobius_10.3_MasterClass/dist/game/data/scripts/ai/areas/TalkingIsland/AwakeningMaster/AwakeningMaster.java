@@ -37,20 +37,19 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerChange
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.olympiad.Hero;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.UserInfoType;
 import org.l2jmobius.gameserver.network.serverpackets.ExChangeToAwakenedClass;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowUsm;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 
-import ai.AbstractNpcAI;
-
 /**
  * AwakeningMaster AI.
  * @author Sdw
  */
-public class AwakeningMaster extends AbstractNpcAI
+public class AwakeningMaster extends Script
 {
 	// NPCs
 	private static final int SIGEL_MASTER = 33397;

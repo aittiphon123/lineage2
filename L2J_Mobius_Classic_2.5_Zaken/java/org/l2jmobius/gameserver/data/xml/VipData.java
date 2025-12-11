@@ -29,8 +29,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.VipSystemConfig;
 import org.l2jmobius.gameserver.model.vip.VipInfo;
 
 /**
@@ -50,7 +50,7 @@ public class VipData implements IXmlReader
 	@Override
 	public void load()
 	{
-		if (!Config.VIP_SYSTEM_ENABLED)
+		if (!VipSystemConfig.VIP_SYSTEM_ENABLED)
 		{
 			return;
 		}

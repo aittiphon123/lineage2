@@ -23,9 +23,9 @@ package ai.areas.Heine.LionelHunter;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 
-import ai.AbstractNpcAI;
 import quests.Q10514_NobleMaterial4.Q10514_NobleMaterial4;
 import quests.Q10515_NobleMaterial4.Q10515_NobleMaterial4;
 import quests.Q10516_NobleMaterial4.Q10516_NobleMaterial4;
@@ -35,7 +35,7 @@ import quests.Q10517_NobleMaterial4.Q10517_NobleMaterial4;
  * Lionel Hunter AI.
  * @author Stayway, CostyKiller
  */
-public class LionelHunter extends AbstractNpcAI
+public class LionelHunter extends Script
 {
 	// NPC
 	private static final int NPC_LIONEL = 33907;

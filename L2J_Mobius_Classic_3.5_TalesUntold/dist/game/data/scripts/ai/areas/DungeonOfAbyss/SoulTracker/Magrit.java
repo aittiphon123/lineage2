@@ -26,14 +26,13 @@ import java.util.Map;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author QuangNguyen
  */
-public class Magrit extends AbstractNpcAI
+public class Magrit extends Script
 {
 	// NPC
 	private static final int SOUL_TRACKER_MARGIT = 31774;

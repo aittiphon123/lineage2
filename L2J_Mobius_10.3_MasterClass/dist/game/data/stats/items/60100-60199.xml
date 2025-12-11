@@ -660,7 +660,6 @@
 	<item id="60151" name="Death Knight's Flame Soul" type="EtcItem">
 		<!-- Can be exchanged for various items through the Game Assistant side panel. -->
 		<set name="icon" val="icon.ev_firewood_box" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -669,7 +668,6 @@
 	<item id="60152" name="Blessed Exalted Armor Pack Coupon" additionalName="Event" type="EtcItem">
 		<!-- Required for creating Blessed Exalted Armor Pack through the Special Craft. -->
 		<set name="icon" val="icon.bm_challenger_wp_trade_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -680,7 +678,6 @@
 	<item id="60153" name="Conquest Expedition Support Package Coupon" type="EtcItem">
 		<!-- Required for creating Conquest Expedition Support Package through the Special Craft. -->
 		<set name="icon" val="BranchSys3.icon1.g_luckygame_card_trade_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -798,7 +795,6 @@
 	<item id="60159" name="Blessed Exalted Set Pack Coupon" additionalName="Event" type="EtcItem">
 		<!-- Can be exchanged for a pack with Blessed Exalted heavy/ light/ robe armor set through the Game Assistant. -->
 		<set name="icon" val="icon.bm_challenger_wp_trade_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
 		<set name="is_tradable" val="false" />
@@ -809,7 +805,6 @@
 	<item id="60160" name="Red/ Blue Cat's Eye Coupon" type="EtcItem">
 		<!-- Can be exchanged for Red Cat's Eye Lv. 4 or Blue Cat's Eye Lv. 4 through the Game Assistant. -->
 		<set name="icon" val="icon.bm_payback_ticket_01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
 		<set name="is_tradable" val="false" />
@@ -851,7 +846,6 @@
 	<item id="60164" name="Halloween's Strange Pumpkin" type="EtcItem">
 		<!-- Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.event_halloween_king_pumpkini00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -932,7 +926,6 @@
 	<item id="60166" name="Night Goblin's Coin" type="EtcItem">
 		<!-- A special coin with Night Goblin's power. Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.bm_goblin_coin" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1062,7 +1055,6 @@
 	<item id="60174" name="Letter J" additionalName="Event" type="EtcItem">
 		<!-- If you collect a special combination of letters and numbers, you can get a gift. -->
 		<set name="icon" val="BranchIcon.icon.etc_alphabet_j_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1071,7 +1063,6 @@
 	<item id="60175" name="Numbers 20" additionalName="Event" type="EtcItem">
 		<!-- If you collect a special combination of letters and numbers, you can get a gift. -->
 		<set name="icon" val="BranchIcon.icon.etc_alphabet_20_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1091,7 +1082,6 @@
 	<item id="60177" name="L2M Launch Commemoration Coin" additionalName="Event" type="EtcItem">
 		<!-- A coin for commemorating the L2M launch. Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="BranchIcon.icon.g_ev_l2coin_ncw_00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1188,7 +1178,6 @@
 	<item id="60184" name="Black Friday Mark" additionalName="Event" type="EtcItem">
 		<!-- A special mark for the Black Friday. Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.token_of_oman" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1300,7 +1289,6 @@
 	<item id="60190" name="Letter U" additionalName="Event" type="EtcItem">
 		<!-- Combine with other letters to create a special word and get a reward! -->
 		<set name="icon" val="icon.etc_alphabet_u_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1412,7 +1400,6 @@
 	<item id="60193" name="New Year Tiger's Jewel" additionalName="Event" type="EtcItem">
 		<!-- A special gift from Baby Tiger for celebrating the New Year of 2022. Its additional properties become active after adding to the collection. -->
 		<set name="icon" val="icon.etc_jewel_gold_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1483,7 +1470,6 @@
 	<item id="60195" name="Mysterious Pack Lv. 2" type="EtcItem">
 		<!-- Can be used to create Mysterious Chest Lv. 3 with a certain chance through the Special Craft, or exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.etc_pi_box_belief_pack" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1492,7 +1478,6 @@
 	<item id="60196" name="Mysterious Pack Lv. 3" type="EtcItem">
 		<!-- Can be used to create Mysterious Chest Lv. 4 with a certain chance through the Special Craft, or exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.etc_pi_box_belief_pack" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1501,7 +1486,6 @@
 	<item id="60197" name="Mysterious Pack Lv. 4" type="EtcItem">
 		<!-- Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.etc_pi_box_belief_pack" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1510,7 +1494,6 @@
 	<item id="60198" name="Mysterious Crystal" type="EtcItem">
 		<!-- Can be used for creating many valuable items. -->
 		<set name="icon" val="icon.etc_black_freezing_core_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />

@@ -28,20 +28,19 @@ import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.SubclassType;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.AcquireSkillType;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExAcquirableSkillListByClass;
 
-import ai.AbstractNpcAI;
-
 /**
  * Monk of Chaos AI.
  * @author Sdw
  * @author Mobius
  */
-public class MonkOfChaos extends AbstractNpcAI
+public class MonkOfChaos extends Script
 {
 	private static final int MONK_OF_CHAOS = 33880;
 	private static final int MIN_LEVEL = 85;
@@ -172,6 +171,12 @@ public class MonkOfChaos extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

@@ -22,10 +22,10 @@ package quests;
 
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.QuestCondType;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
+import org.l2jmobius.gameserver.model.script.newquestdata.QuestCondType;
 
-import ai.AbstractNpcAI;
 import quests.Q10031_ProphecyMachineRestoration.Q10031_ProphecyMachineRestoration;
 import quests.Q10032_ToGereth.Q10032_ToGereth;
 import quests.Q10033_ProphecyInterpretation.Q10033_ProphecyInterpretation;
@@ -42,7 +42,7 @@ import quests.Q10333_ProphecyInterpretation.Q10333_ProphecyInterpretation;
 /**
  * @author Mobius
  */
-public class ProphecyFragment extends AbstractNpcAI
+public class ProphecyFragment extends Script
 {
 	private ProphecyFragment()
 	{

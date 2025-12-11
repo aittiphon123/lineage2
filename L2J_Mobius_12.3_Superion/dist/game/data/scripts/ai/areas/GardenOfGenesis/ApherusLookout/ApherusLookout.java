@@ -22,15 +22,14 @@ package ai.areas.GardenOfGenesis.ApherusLookout;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Gigi
  */
-public class ApherusLookout extends AbstractNpcAI
+public class ApherusLookout extends Script
 {
 	private static final int APHERUS_LOOKOUT = 22964;
 	private static final int APHERUS_PACKAGE = 19001;

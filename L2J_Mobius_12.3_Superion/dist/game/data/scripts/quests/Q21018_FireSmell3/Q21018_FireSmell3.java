@@ -30,11 +30,11 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.conquest.OnConquestFlowerCollect;
 import org.l2jmobius.gameserver.model.events.listeners.ConsumerEventListener;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestDialogType;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuest;
-import org.l2jmobius.gameserver.model.quest.newquestdata.QuestCondType;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestDialogType;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuest;
+import org.l2jmobius.gameserver.model.script.newquestdata.QuestCondType;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestDialog;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestNotification;
 

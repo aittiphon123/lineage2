@@ -29,10 +29,10 @@ import org.w3c.dom.Node;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.appearance.AppearanceHolder;
 import org.l2jmobius.gameserver.model.item.appearance.AppearanceStone;
 import org.l2jmobius.gameserver.model.item.appearance.AppearanceTargetType;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
 
 /**
@@ -118,8 +118,8 @@ public class AppearanceItemData implements IXmlReader
 								}
 								case "bodyPart":
 								{
-									final int part = ItemTemplate.SLOTS.get(c.getTextContent());
-									stone.addBodyPart(part);
+									final BodyPart bodyPart = BodyPart.fromName(c.getTextContent());
+									stone.addBodyPart(bodyPart);
 									break;
 								}
 								case "race":

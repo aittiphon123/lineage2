@@ -37,9 +37,12 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.util.StringUtil;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.TransmogConfig;
 import org.l2jmobius.gameserver.data.holders.PreparedMultisellListHolder;
 import org.l2jmobius.gameserver.data.xml.AppearanceItemData;
 import org.l2jmobius.gameserver.data.xml.ArmorSetData;
@@ -79,6 +82,7 @@ import org.l2jmobius.gameserver.model.item.Weapon;
 import org.l2jmobius.gameserver.model.item.appearance.AppearanceStone;
 import org.l2jmobius.gameserver.model.item.appearance.AppearanceType;
 import org.l2jmobius.gameserver.model.item.enchant.attribute.AttributeHolder;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemLocation;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.enums.ItemSkillType;
@@ -341,7 +345,7 @@ public class Item extends WorldObject
 	{
 		setOwnerId(ownerId);
 		
-		if ((Config.LOG_ITEMS && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || (_itemTemplate.getId() == ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.contains(_itemTemplate.getId())))
+		if ((GeneralConfig.LOG_ITEMS && ((!GeneralConfig.LOG_ITEMS_SMALL_LOG) && (!GeneralConfig.LOG_ITEMS_IDS_ONLY))) || (GeneralConfig.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || (_itemTemplate.getId() == ADENA_ID))) || (GeneralConfig.LOG_ITEMS_IDS_ONLY && GeneralConfig.LOG_ITEMS_IDS_LIST.contains(_itemTemplate.getId())))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -353,7 +357,7 @@ public class Item extends WorldObject
 			}
 		}
 		
-		if ((creator != null) && creator.isGM() && Config.GMAUDIT)
+		if ((creator != null) && creator.isGM() && GeneralConfig.GMAUDIT)
 		{
 			final String targetName = (creator.getTarget() != null ? creator.getTarget().getName() : "no-target");
 			String referenceName = "no-reference";
@@ -516,7 +520,7 @@ public class Item extends WorldObject
 		
 		if ((process != null) && (process != ItemProcessType.NONE))
 		{
-			if ((Config.LOG_ITEMS && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || (_itemTemplate.getId() == ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.contains(_itemTemplate.getId())))
+			if ((GeneralConfig.LOG_ITEMS && ((!GeneralConfig.LOG_ITEMS_SMALL_LOG) && (!GeneralConfig.LOG_ITEMS_IDS_ONLY))) || (GeneralConfig.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || (_itemTemplate.getId() == ADENA_ID))) || (GeneralConfig.LOG_ITEMS_IDS_ONLY && GeneralConfig.LOG_ITEMS_IDS_LIST.contains(_itemTemplate.getId())))
 			{
 				if (_enchantLevel > 0)
 				{
@@ -528,7 +532,7 @@ public class Item extends WorldObject
 				}
 			}
 			
-			if ((creator != null) && creator.isGM() && Config.GMAUDIT)
+			if ((creator != null) && creator.isGM() && GeneralConfig.GMAUDIT)
 			{
 				final String targetName = (creator.getTarget() != null ? creator.getTarget().getName() : "no-target");
 				String referenceName = "no-reference";
@@ -566,7 +570,7 @@ public class Item extends WorldObject
 	 */
 	public boolean isEquipable()
 	{
-		return _itemTemplate.getBodyPart() != ItemTemplate.SLOT_NONE;
+		return _itemTemplate.getBodyPart() != BodyPart.NONE;
 	}
 	
 	/**
@@ -799,7 +803,7 @@ public class Item extends WorldObject
 		
 		if (isAugmented())
 		{
-			return Config.ALT_ALLOW_AUGMENT_TRADE;
+			return PlayerConfig.ALT_ALLOW_AUGMENT_TRADE;
 		}
 		
 		return getVisualId() == 0;
@@ -818,7 +822,7 @@ public class Item extends WorldObject
 		
 		if (isAugmented())
 		{
-			return Config.ALT_ALLOW_AUGMENT_DESTROY;
+			return PlayerConfig.ALT_ALLOW_AUGMENT_DESTROY;
 		}
 		
 		return true;
@@ -842,7 +846,7 @@ public class Item extends WorldObject
 		
 		if (isAugmented())
 		{
-			return Config.ALT_ALLOW_AUGMENT_TRADE;
+			return PlayerConfig.ALT_ALLOW_AUGMENT_TRADE;
 		}
 		
 		return true;
@@ -866,7 +870,7 @@ public class Item extends WorldObject
 		
 		if (isAugmented())
 		{
-			return Config.ALT_ALLOW_AUGMENT_TRADE;
+			return PlayerConfig.ALT_ALLOW_AUGMENT_TRADE;
 		}
 		
 		return true;
@@ -1533,7 +1537,7 @@ public class Item extends WorldObject
 				{
 					removeFromDb();
 				}
-				else if (!Config.LAZY_ITEMS_UPDATE || force)
+				else if (!GeneralConfig.LAZY_ITEMS_UPDATE || force)
 				{
 					updateInDb();
 				}
@@ -1602,7 +1606,7 @@ public class Item extends WorldObject
 		final WorldRegion region = getWorldRegion();
 		region.addVisibleObject(this);
 		World.getInstance().addVisibleObject(this, region);
-		if (Config.SAVE_DROPPED_ITEM)
+		if (GeneralConfig.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance().save(this);
 		}
@@ -1963,7 +1967,7 @@ public class Item extends WorldObject
 	@Override
 	public boolean decayMe()
 	{
-		if (Config.SAVE_DROPPED_ITEM)
+		if (GeneralConfig.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance().removeObject(this);
 		}
@@ -2010,16 +2014,16 @@ public class Item extends WorldObject
 		{
 			if (_itemTemplate.isWeapon())
 			{
-				if ((Config.OLYMPIAD_WEAPON_ENCHANT_LIMIT >= 0) && (enchant > Config.OLYMPIAD_WEAPON_ENCHANT_LIMIT))
+				if ((OlympiadConfig.OLYMPIAD_WEAPON_ENCHANT_LIMIT >= 0) && (enchant > OlympiadConfig.OLYMPIAD_WEAPON_ENCHANT_LIMIT))
 				{
-					enchant = Config.OLYMPIAD_WEAPON_ENCHANT_LIMIT;
+					enchant = OlympiadConfig.OLYMPIAD_WEAPON_ENCHANT_LIMIT;
 				}
 			}
 			else
 			{
-				if ((Config.OLYMPIAD_ARMOR_ENCHANT_LIMIT >= 0) && (enchant > Config.OLYMPIAD_ARMOR_ENCHANT_LIMIT))
+				if ((OlympiadConfig.OLYMPIAD_ARMOR_ENCHANT_LIMIT >= 0) && (enchant > OlympiadConfig.OLYMPIAD_ARMOR_ENCHANT_LIMIT))
 				{
-					enchant = Config.OLYMPIAD_ARMOR_ENCHANT_LIMIT;
+					enchant = OlympiadConfig.OLYMPIAD_ARMOR_ENCHANT_LIMIT;
 				}
 			}
 		}
@@ -2432,9 +2436,9 @@ public class Item extends WorldObject
 									}
 									
 									// Active, non offensive, skills start with reuse on equip.
-									if (!skill.hasNegativeEffect() && !skill.isTransformation() && (Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+									if (!skill.hasNegativeEffect() && !skill.isTransformation() && (PlayerConfig.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 									{
-										player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE);
+										player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : PlayerConfig.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE);
 									}
 									
 									updateTimeStamp = true;
@@ -2459,7 +2463,7 @@ public class Item extends WorldObject
 	
 	public int getTransmogId()
 	{
-		if (!Config.ENABLE_TRANSMOG)
+		if (!TransmogConfig.ENABLE_TRANSMOG)
 		{
 			return 0;
 		}

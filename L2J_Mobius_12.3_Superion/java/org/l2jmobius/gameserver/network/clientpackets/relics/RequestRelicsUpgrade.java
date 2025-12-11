@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.clientpackets.relics;
 
 import java.util.Collection;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.RelicSystemConfig;
 import org.l2jmobius.gameserver.data.holders.RelicDataHolder;
 import org.l2jmobius.gameserver.data.xml.RelicData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
@@ -62,14 +62,14 @@ public class RequestRelicsUpgrade extends ClientPacket
 			case 1:
 			{
 				_ingredient1Id = readInt();
-				_chance = Config.RELIC_ENHANCEMENT_CHANCE_1_INGREDIENT;
+				_chance = RelicSystemConfig.RELIC_ENHANCEMENT_CHANCE_1_INGREDIENT;
 				break;
 			}
 			case 2:
 			{
 				_ingredient1Id = readInt();
 				_ingredient2Id = readInt();
-				_chance = Config.RELIC_ENHANCEMENT_CHANCE_2_INGREDIENTS;
+				_chance = RelicSystemConfig.RELIC_ENHANCEMENT_CHANCE_2_INGREDIENTS;
 				break;
 			}
 			case 3:
@@ -77,7 +77,7 @@ public class RequestRelicsUpgrade extends ClientPacket
 				_ingredient1Id = readInt();
 				_ingredient2Id = readInt();
 				_ingredient3Id = readInt();
-				_chance = Config.RELIC_ENHANCEMENT_CHANCE_3_INGREDIENTS;
+				_chance = RelicSystemConfig.RELIC_ENHANCEMENT_CHANCE_3_INGREDIENTS;
 				break;
 			}
 			case 4:
@@ -86,7 +86,7 @@ public class RequestRelicsUpgrade extends ClientPacket
 				_ingredient2Id = readInt();
 				_ingredient3Id = readInt();
 				_ingredient4Id = readInt();
-				_chance = Config.RELIC_ENHANCEMENT_CHANCE_4_INGREDIENTS;
+				_chance = RelicSystemConfig.RELIC_ENHANCEMENT_CHANCE_4_INGREDIENTS;
 				break;
 			}
 		}
@@ -120,7 +120,7 @@ public class RequestRelicsUpgrade extends ClientPacket
 			// Increment the level of the existing relic if successful upgrade.
 			existingRelic.setRelicLevel(success ? existingRelic.getRelicLevel() + 1 : existingRelic.getRelicLevel());
 			_relicLevel = existingRelic.getRelicLevel();
-			if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+			if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 			{
 				player.sendMessage("Relic Id: " + existingRelic.getRelicId() + " " + (success ? "Upgrade successful! Relic is now level: " : "Upgrade failed! Relic is still level: ") + _relicLevel);
 			}
@@ -148,7 +148,7 @@ public class RequestRelicsUpgrade extends ClientPacket
 		if ((ingredientRelic1 != null) && (ingredientRelic1.getRelicCount() > 0))
 		{
 			ingredientRelic1.setRelicCount(ingredientRelic1.getRelicCount() - 1);
-			if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+			if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 			{
 				player.sendMessage("Ingredient Relic 1 data updated, ID: " + ingredientRelic1.getRelicId() + ", Count: " + ingredientRelic1.getRelicCount());
 			}
@@ -168,7 +168,7 @@ public class RequestRelicsUpgrade extends ClientPacket
 		if ((ingredientRelic2 != null) && (ingredientRelic2.getRelicCount() > 0))
 		{
 			ingredientRelic2.setRelicCount(ingredientRelic2.getRelicCount() - 1);
-			if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+			if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 			{
 				player.sendMessage("Ingredient Relic 2 data updated, ID: " + ingredientRelic2.getRelicId() + ", Count: " + ingredientRelic2.getRelicCount());
 			}
@@ -188,7 +188,7 @@ public class RequestRelicsUpgrade extends ClientPacket
 		if ((ingredientRelic3 != null) && (ingredientRelic3.getRelicCount() > 0))
 		{
 			ingredientRelic3.setRelicCount(ingredientRelic3.getRelicCount() - 1);
-			if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+			if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 			{
 				player.sendMessage("Ingredient Relic 3 data updated, ID: " + ingredientRelic3.getRelicId() + ", Count: " + ingredientRelic3.getRelicCount());
 			}
@@ -208,7 +208,7 @@ public class RequestRelicsUpgrade extends ClientPacket
 		if ((ingredientRelic4 != null) && (ingredientRelic4.getRelicCount() > 0))
 		{
 			ingredientRelic4.setRelicCount(ingredientRelic4.getRelicCount() - 1);
-			if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+			if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 			{
 				player.sendMessage("Ingredient Relic 4 data updated, ID: " + ingredientRelic4.getRelicId() + ", Count: " + ingredientRelic4.getRelicCount());
 			}
@@ -236,7 +236,7 @@ public class RequestRelicsUpgrade extends ClientPacket
 					if (skill != null)
 					{
 						player.removeSkill(skill);
-						if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+						if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 						{
 							player.sendMessage("Relic Skill Id: " + skill.getId() + " Lvl: " + skill.getLevel() + " was removed.");
 						}
@@ -244,7 +244,7 @@ public class RequestRelicsUpgrade extends ClientPacket
 				}
 				
 				player.addSkill(relicSkill, true);
-				if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+				if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 				{
 					player.sendMessage("Relic Skill Id: " + skillId + " Lvl: " + skillLevel + " was added.");
 				}

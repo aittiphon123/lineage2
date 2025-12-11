@@ -27,8 +27,8 @@ import java.util.Set;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.Weapon;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.type.WeaponType;
 import org.l2jmobius.gameserver.model.skill.ISkillCondition;
 import org.l2jmobius.gameserver.model.skill.Skill;
@@ -66,7 +66,7 @@ public class Op2hWeaponSkillCondition implements ISkillCondition
 		{
 			if (type == weaponType)
 			{
-				return (weapon.getBodyPart() & ItemTemplate.SLOT_LR_HAND) != 0;
+				return weapon.getBodyPart() == BodyPart.LR_HAND;
 			}
 		}
 		

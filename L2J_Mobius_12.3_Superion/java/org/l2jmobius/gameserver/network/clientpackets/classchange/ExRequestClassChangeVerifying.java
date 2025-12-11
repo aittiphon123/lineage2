@@ -20,12 +20,12 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.classchange;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.serverpackets.classchange.ExClassChangeSetAlarm;
 
@@ -36,7 +36,7 @@ public class ExRequestClassChangeVerifying extends ClientPacket
 {
 	// @formatter:off
 	private static final int[] FIRST_CLASS_QUESTS = {10007, 10207, 10307}; // Path of Destiny - Beginning
-	private static final int[] SECOND_CLASS_QUESTS = {10015, 20015, 30015}; // Path of Destiny - Proving
+	private static final int[] SECOND_CLASS_QUESTS = {10015, 10215, 10315}; // Path of Destiny - Proving
 	private static final int[] THIRD_CLASS_QUESTS = {10024, 10124, 10224, 10324}; // Path of Destiny - Conviction
 	private static final int[] FOURTH_CLASS_QUESTS = {10036, 10236, 10336}; // Path of Destiny - Overcome
 	// @formatter:on
@@ -102,7 +102,7 @@ public class ExRequestClassChangeVerifying extends ClientPacket
 	
 	private boolean firstClassCheck(Player player)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return true;
 		}
@@ -112,7 +112,7 @@ public class ExRequestClassChangeVerifying extends ClientPacket
 	
 	private boolean secondClassCheck(Player player)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return true;
 		}
@@ -122,7 +122,7 @@ public class ExRequestClassChangeVerifying extends ClientPacket
 	
 	private boolean thirdClassCheck(Player player)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return true;
 		}
@@ -132,7 +132,7 @@ public class ExRequestClassChangeVerifying extends ClientPacket
 	
 	private boolean fourthClassCheck(Player player)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return true;
 		}
@@ -150,7 +150,7 @@ public class ExRequestClassChangeVerifying extends ClientPacket
 	{
 		for (int questId : questIds)
 		{
-			final Quest quest = QuestManager.getInstance().getQuest(questId);
+			final Quest quest = ScriptManager.getInstance().getQuest(questId);
 			if (quest != null)
 			{
 				final QuestState qs = player.getQuestState(quest.getName());

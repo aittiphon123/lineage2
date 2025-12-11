@@ -28,15 +28,14 @@ import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Mobius
  */
-public class RankingSkillBonuses extends AbstractNpcAI
+public class RankingSkillBonuses extends Script
 {
 	// Skills
 	private static final Skill SERVER_LEVEL_RANKING_1ST_CLASS = SkillData.getInstance().getSkill(32874, 1);

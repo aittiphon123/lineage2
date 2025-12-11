@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -38,9 +38,9 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
@@ -303,7 +303,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				case 272:
 				{
 					qs.setCond(2);
-					final Quest abelius = QuestManager.getInstance().getQuest(PowerOfAbelius.class.getSimpleName());
+					final Quest abelius = ScriptManager.getInstance().getScript(PowerOfAbelius.class.getSimpleName());
 					if (abelius != null)
 					{
 						abelius.onEvent("enterInstance", npc, player);
@@ -313,7 +313,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				case 273:
 				{
 					qs.setCond(3);
-					final Quest sapyros = QuestManager.getInstance().getQuest(PowerOfSapyros.class.getSimpleName());
+					final Quest sapyros = ScriptManager.getInstance().getScript(PowerOfSapyros.class.getSimpleName());
 					if (sapyros != null)
 					{
 						sapyros.onEvent("enterInstance", npc, player);
@@ -323,7 +323,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				case 274:
 				{
 					qs.setCond(4);
-					final Quest kashnaga = QuestManager.getInstance().getQuest(PowerOfKashnaga.class.getSimpleName());
+					final Quest kashnaga = ScriptManager.getInstance().getScript(PowerOfKashnaga.class.getSimpleName());
 					if (kashnaga != null)
 					{
 						kashnaga.onEvent("enterInstance", npc, player);
@@ -333,7 +333,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				case 275:
 				{
 					qs.setCond(5);
-					final Quest cranigg = QuestManager.getInstance().getQuest(PowerOfCranigg.class.getSimpleName());
+					final Quest cranigg = ScriptManager.getInstance().getScript(PowerOfCranigg.class.getSimpleName());
 					if (cranigg != null)
 					{
 						cranigg.onEvent("enterInstance", npc, player);
@@ -343,7 +343,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				case 276:
 				{
 					qs.setCond(6);
-					final Quest naviarope = QuestManager.getInstance().getQuest(PowerOfNaviarope.class.getSimpleName());
+					final Quest naviarope = ScriptManager.getInstance().getScript(PowerOfNaviarope.class.getSimpleName());
 					if (naviarope != null)
 					{
 						naviarope.onEvent("enterInstance", npc, player);
@@ -353,7 +353,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				case 277:
 				{
 					qs.setCond(7);
-					final Quest raister = QuestManager.getInstance().getQuest(PowerOfRaister.class.getSimpleName());
+					final Quest raister = ScriptManager.getInstance().getScript(PowerOfRaister.class.getSimpleName());
 					if (raister != null)
 					{
 						raister.onEvent("enterInstance", npc, player);
@@ -363,7 +363,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				case 278:
 				{
 					qs.setCond(8);
-					final Quest soltkreig = QuestManager.getInstance().getQuest(PowerOfSoltkreig.class.getSimpleName());
+					final Quest soltkreig = ScriptManager.getInstance().getScript(PowerOfSoltkreig.class.getSimpleName());
 					if (soltkreig != null)
 					{
 						soltkreig.onEvent("enterInstance", npc, player);
@@ -373,7 +373,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				case 279:
 				{
 					qs.setCond(9);
-					final Quest lakcis = QuestManager.getInstance().getQuest(PowerOfLakcis.class.getSimpleName());
+					final Quest lakcis = ScriptManager.getInstance().getScript(PowerOfLakcis.class.getSimpleName());
 					if (lakcis != null)
 					{
 						lakcis.onEvent("enterInstance", npc, player);

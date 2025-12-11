@@ -20,20 +20,19 @@
  */
 package ai.others;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.NpcConfig;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.util.LocationUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Mobius
  */
-public class RandomWalkingGuards extends AbstractNpcAI
+public class RandomWalkingGuards extends Script
 {
 	private static final int[] GUARDS =
 	{
@@ -60,7 +59,7 @@ public class RandomWalkingGuards extends AbstractNpcAI
 		{
 			if (!npc.isInCombat())
 			{
-				final Location randomLoc = LocationUtil.getRandomLocation(npc.getSpawn().getLocation(), 0, Config.MAX_DRIFT_RANGE);
+				final Location randomLoc = LocationUtil.getRandomLocation(npc.getSpawn().getLocation(), 0, NpcConfig.MAX_DRIFT_RANGE);
 				addMoveToDesire(npc, GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(), randomLoc.getX(), randomLoc.getY(), randomLoc.getZ(), npc.getInstanceWorld()), 23);
 			}
 			

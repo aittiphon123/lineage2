@@ -20,19 +20,19 @@
  */
 package ai.others.NewbieHelper;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
+import org.l2jmobius.gameserver.model.script.State;
 
-import ai.AbstractNpcAI;
 import quests.Q00255_Tutorial.Q00255_Tutorial;
 
 /**
  * @author Mobius
  */
-public class NewbieHelper extends AbstractNpcAI
+public class NewbieHelper extends Script
 {
 	private static final int SOULSHOT_NOVICE = 5789;
 	private static final int SPIRITSHOT_NOVICE = 5790;
@@ -50,7 +50,7 @@ public class NewbieHelper extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
-		if (!Config.DISABLE_TUTORIAL)
+		if (!PlayerConfig.DISABLE_TUTORIAL)
 		{
 			final QuestState qs1 = getQuestState(player, true);
 			if (!qs1.isCompleted() && (player.getLevel() < 18))

@@ -29,13 +29,12 @@ import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureAt
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureSkillFinishCast;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcSpawn;
 import org.l2jmobius.gameserver.model.events.listeners.ConsumerEventListener;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Nik
  */
-public class Incarnation extends AbstractNpcAI
+public class Incarnation extends Script
 {
 	@RegisterEvent(EventType.ON_NPC_SPAWN) @RegisterType(ListenerRegisterType.NPC) @Id(13302) @Id(13303) @Id(13304) @Id(13305) @Id(13455) @Id(13456) @Id(13457)
 	public void onNpcSpawn(OnNpcSpawn event)

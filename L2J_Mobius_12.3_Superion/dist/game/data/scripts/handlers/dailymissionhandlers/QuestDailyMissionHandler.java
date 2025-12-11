@@ -26,8 +26,8 @@ import org.l2jmobius.gameserver.model.events.Containers;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerQuestComplete;
 import org.l2jmobius.gameserver.model.events.listeners.ConsumerEventListener;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuest;
 
 /**
  * @author UnAfraid

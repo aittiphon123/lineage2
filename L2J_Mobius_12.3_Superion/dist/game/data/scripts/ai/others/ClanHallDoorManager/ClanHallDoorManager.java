@@ -22,14 +22,13 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.ClanAccess;
 import org.l2jmobius.gameserver.model.residences.ClanHall;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Clan Hall Door Manager AI.
  * @author St3eT
  */
-public class ClanHallDoorManager extends AbstractNpcAI
+public class ClanHallDoorManager extends Script
 {
 	// NPCs
 	// @formatter:off

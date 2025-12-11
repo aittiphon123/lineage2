@@ -34,6 +34,7 @@ import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureAttacked;
 import org.l2jmobius.gameserver.model.events.holders.instance.OnInstanceStatusChange;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -41,13 +42,11 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * Etina Helper Aliber AI.
  * @author CostyKiller
  */
-public class EtinaHelperAliber extends AbstractNpcAI
+public class EtinaHelperAliber extends Script
 {
 	// NPCs
 	private static final int ETINA_HELPER_ALIBER = 34475;

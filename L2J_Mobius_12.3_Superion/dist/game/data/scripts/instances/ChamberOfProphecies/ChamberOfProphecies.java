@@ -21,7 +21,7 @@
 package instances.ChamberOfProphecies;
 
 import org.l2jmobius.gameserver.ai.Intention;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -30,8 +30,9 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.FriendlyNpc;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.QuestCondType;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.QuestCondType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -41,7 +42,6 @@ import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import instances.AbstractInstance;
 import quests.Q10034_ChamberOfProphecies.Q10034_ChamberOfProphecies;
 import quests.Q10134_ChamberOfProphecies.Q10134_ChamberOfProphecies;
 import quests.Q10234_ChamberOfProphecies.Q10234_ChamberOfProphecies;
@@ -51,7 +51,7 @@ import quests.Q10334_ChamberOfProphecies.Q10334_ChamberOfProphecies;
  * Chamber of Prophecies instance.
  * @author Gigi, Mobius
  */
-public class ChamberOfProphecies extends AbstractInstance
+public class ChamberOfProphecies extends InstanceScript
 {
 	// NPCs
 	private static final int KAIN_VAN_HALTER = 31639;
@@ -483,7 +483,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				if (questState != null)
 				{
 					questState.setCond(QuestCondType.DONE);
-					QuestManager.getInstance().getQuest(questState.getQuestName()).notifyEvent("COMPLETE", null, player);
+					ScriptManager.getInstance().getScript(questState.getQuestName()).notifyEvent("COMPLETE", null, player);
 				}
 				
 				startQuestTimer("finish", 3000, npc, player);

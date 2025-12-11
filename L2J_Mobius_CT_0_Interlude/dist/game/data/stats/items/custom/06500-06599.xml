@@ -14,7 +14,6 @@
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1650" />
 		<set name="price" val="48800000" />
-		<set name="change_weaponId" val="9373" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="mp_consume" val="11" />
@@ -47,7 +46,6 @@
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1650" />
 		<set name="price" val="48800000" />
-		<set name="change_weaponId" val="9374" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="mp_consume" val="11" />
@@ -79,7 +77,6 @@
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1650" />
 		<set name="price" val="48800000" />
-		<set name="change_weaponId" val="9375" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="mp_consume" val="11" />

@@ -20,15 +20,16 @@
  */
 package org.l2jmobius.gameserver.model.actor.instance;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.custom.FakePlayersConfig;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.enums.creature.InstanceType;
+import org.l2jmobius.gameserver.model.actor.holders.npc.MinionList;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.effects.EffectFlag;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.Skill;
-import org.l2jmobius.gameserver.util.MinionList;
 
 /**
  * This class manages all Monsters.
@@ -71,11 +72,11 @@ public class Monster extends Attackable
 	{
 		if (isFakePlayer())
 		{
-			return Config.FAKE_PLAYER_AUTO_ATTACKABLE || isInCombat() || attacker.isMonster() || (getScriptValue() > 0);
+			return FakePlayersConfig.FAKE_PLAYER_AUTO_ATTACKABLE || isInCombat() || attacker.isMonster() || (getScriptValue() > 0);
 		}
 		
 		// Check if the Monster target is aggressive
-		if (Config.GUARD_ATTACK_AGGRO_MOB && getTemplate().isAggressive() && (attacker instanceof Guard))
+		if (NpcConfig.GUARD_ATTACK_AGGRO_MOB && getTemplate().isAggressive() && (attacker instanceof Guard))
 		{
 			return true;
 		}

@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.teleports;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.holders.SharedTeleportHolder;
 import org.l2jmobius.gameserver.managers.SharedTeleportManager;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -65,7 +65,7 @@ public class ExRequestSharedLocationTeleport extends ClientPacket
 			return;
 		}
 		
-		if (player.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.TELEPORT_SHARE_LOCATION_COST)
+		if (player.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < GeneralConfig.TELEPORT_SHARE_LOCATION_COST)
 		{
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_L2_COINS);
 			return;
@@ -77,7 +77,7 @@ public class ExRequestSharedLocationTeleport extends ClientPacket
 			return;
 		}
 		
-		if (player.destroyItemByItemId(ItemProcessType.FEE, Inventory.LCOIN_ID, Config.TELEPORT_SHARE_LOCATION_COST, player, true))
+		if (player.destroyItemByItemId(ItemProcessType.FEE, Inventory.LCOIN_ID, GeneralConfig.TELEPORT_SHARE_LOCATION_COST, player, true))
 		{
 			teleport.decrementCount();
 			player.abortCast();

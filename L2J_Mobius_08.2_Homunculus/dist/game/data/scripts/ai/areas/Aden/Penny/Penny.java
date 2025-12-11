@@ -22,16 +22,15 @@ package ai.areas.Aden.Penny;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
-
-import ai.AbstractNpcAI;
 
 /**
  * Aden Faction Npc AI
  * @author NightBR
  * @date 2019-03-27
  */
-public class Penny extends AbstractNpcAI
+public class Penny extends Script
 {
 	// NPC
 	private static final int PENNY = 34413;

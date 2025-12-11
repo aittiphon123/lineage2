@@ -26,10 +26,10 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 
 public class Q00223_TestOfTheChampion extends Quest
@@ -169,8 +169,8 @@ public class Q00223_TestOfTheChampion extends Quest
 		{
 			case State.CREATED:
 			{
-				final PlayerClass classId = player.getPlayerClass();
-				if ((classId != PlayerClass.WARRIOR) && (classId != PlayerClass.ORC_RAIDER))
+				final PlayerClass playerClass = player.getPlayerClass();
+				if ((playerClass != PlayerClass.WARRIOR) && (playerClass != PlayerClass.ORC_RAIDER))
 				{
 					htmltext = "30624-01.htm";
 				}
@@ -180,7 +180,7 @@ public class Q00223_TestOfTheChampion extends Quest
 				}
 				else
 				{
-					htmltext = (classId == PlayerClass.WARRIOR) ? "30624-03.htm" : "30624-04.htm";
+					htmltext = (playerClass == PlayerClass.WARRIOR) ? "30624-03.htm" : "30624-04.htm";
 				}
 				break;
 			}

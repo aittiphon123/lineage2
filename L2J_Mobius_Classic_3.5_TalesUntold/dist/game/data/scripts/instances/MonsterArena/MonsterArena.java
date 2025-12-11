@@ -37,18 +37,17 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerClanLeft;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 
-import instances.AbstractInstance;
-
 /**
  * @author Mobius
  * @URL https://l2wiki.com/classic/Clan_-_Clan_Arena
  */
-public class MonsterArena extends AbstractInstance
+public class MonsterArena extends InstanceScript
 {
 	// NPCs
 	private static final int LEO = 30202;

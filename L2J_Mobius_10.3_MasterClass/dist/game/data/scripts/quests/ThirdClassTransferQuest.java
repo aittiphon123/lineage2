@@ -20,7 +20,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -33,9 +33,9 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelChanged;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPressTutorialMark;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
@@ -229,8 +229,8 @@ public abstract class ThirdClassTransferQuest extends Quest
 				final PlayerClass newClassId = player.getPlayerClass().getNextClasses().stream().findFirst().orElse(null);
 				if (newClassId != null)
 				{
-					final PlayerClass currentClassId = player.getPlayerClass();
-					if (!newClassId.childOf(currentClassId))
+					final PlayerClass currentPlayerClass = player.getPlayerClass();
+					if (!newClassId.childOf(currentPlayerClass))
 					{
 						break;
 					}
@@ -355,7 +355,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}
@@ -373,7 +373,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLogin(OnPlayerLogin event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}

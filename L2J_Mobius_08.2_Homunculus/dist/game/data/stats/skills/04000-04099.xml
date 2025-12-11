@@ -3290,7 +3290,7 @@
 	<skill id="4080" toLevel="1" name="Dark Heal">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>TARGET</targetType>
+		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -3902,7 +3902,7 @@
 		<!-- HP is restored. -->
 		<icon>icon.skill1229</icon>
 		<operateType>A2</operateType>
-		<targetType>TARGET</targetType>
+		<targetType>SELF</targetType>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>

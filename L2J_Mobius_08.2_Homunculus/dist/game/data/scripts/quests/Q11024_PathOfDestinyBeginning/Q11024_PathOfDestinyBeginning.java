@@ -23,11 +23,11 @@ package quests.Q11024_PathOfDestinyBeginning;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -37,11 +37,11 @@ import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.ExTutorialShowId;
@@ -179,7 +179,7 @@ public class Q11024_PathOfDestinyBeginning extends Quest
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
 					
-					final Quest nextQuest = QuestManager.getInstance().getQuest(Q11025_PathOfDestinyProving.class.getSimpleName());
+					final Quest nextQuest = ScriptManager.getInstance().getScript(Q11025_PathOfDestinyProving.class.getSimpleName());
 					if (nextQuest != null)
 					{
 						nextQuest.newQuestState(player);
@@ -431,7 +431,7 @@ public class Q11024_PathOfDestinyBeginning extends Quest
 		}
 		
 		final QuestState qs = getQuestState(player, false);
-		if (!Config.DISABLE_TUTORIAL && (qs == null) && (player.getLevel() < 20))
+		if (!PlayerConfig.DISABLE_TUTORIAL && (qs == null) && (player.getLevel() < 20))
 		{
 			showOnScreenMsg(player, NpcStringId.TARTI_IS_WORRIED_ABOUT_S1, ExShowScreenMessage.TOP_CENTER, 10000, player.getName());
 			return;
@@ -442,7 +442,7 @@ public class Q11024_PathOfDestinyBeginning extends Quest
 			return;
 		}
 		
-		if (Config.DISABLE_TUTORIAL || ((qs != null) && qs.isCompleted()))
+		if (PlayerConfig.DISABLE_TUTORIAL || ((qs != null) && qs.isCompleted()))
 		{
 			player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 		}

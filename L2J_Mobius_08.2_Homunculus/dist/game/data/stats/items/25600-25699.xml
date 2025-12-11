@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="25600" name="Appearance Stone: Santa Outfit" additionalName="Low-grade/ Debuff Reflect" type="EtcItem">
 		<!-- Changes the appearance of the entire armor to that of Santa Outfit. Used with upper or full-body armor. Debuff Reflection +3% after modification. Modified armor can be restored to its original appearance with Restoration Stone. -->

@@ -19,14 +19,13 @@ package ai.areas.KeucereusAllianceBase.SeedTeleportDevice;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Seed Teleport Device AI.
  * @author St3eT
  */
-public class SeedTeleportDevice extends AbstractNpcAI
+public class SeedTeleportDevice extends Script
 {
 	// NPCs
 	private static final int SEED_TELEPORT_DEVICE = 15929;
@@ -80,6 +79,12 @@ public class SeedTeleportDevice extends AbstractNpcAI
 		}
 		
 		return super.onEvent(event, npc, player);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

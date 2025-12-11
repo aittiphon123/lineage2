@@ -20,6 +20,7 @@
  */
 package org.l2jmobius.gameserver.model.item;
 
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
 import org.l2jmobius.gameserver.model.item.type.ItemType;
@@ -150,7 +151,7 @@ public class WarehouseItem
 	/**
 	 * @return the part of body used with this item.
 	 */
-	public int getBodyPart()
+	public BodyPart getBodyPart()
 	{
 		return _item.getBodyPart();
 	}

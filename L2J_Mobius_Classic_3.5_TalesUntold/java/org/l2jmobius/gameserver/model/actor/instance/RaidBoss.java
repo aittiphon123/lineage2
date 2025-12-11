@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.model.actor.instance;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.enums.creature.InstanceType;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
@@ -69,7 +69,7 @@ public class RaidBoss extends Monster
 	@Override
 	public boolean useVitalityRate()
 	{
-		return Config.RAIDBOSS_USE_VITALITY;
+		return PlayerConfig.RAIDBOSS_USE_VITALITY;
 	}
 	
 	public void setUseRaidCurse(boolean value)

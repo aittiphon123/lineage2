@@ -23,14 +23,13 @@ package instances.DimensionMakkum;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import instances.AbstractInstance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 
 /**
  * Dimension Makkum instance
  * @author Gigi
  */
-public class DimensionMakkum extends AbstractInstance
+public class DimensionMakkum extends InstanceScript
 {
 	// NPCs
 	private static final int PIORE = 34290;

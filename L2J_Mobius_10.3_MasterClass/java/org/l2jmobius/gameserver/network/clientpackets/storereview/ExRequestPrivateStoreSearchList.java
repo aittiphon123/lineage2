@@ -40,6 +40,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.PrivateStoreType;
 import org.l2jmobius.gameserver.model.item.EtcItem;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.holders.ItemEnchantHolder;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.serverpackets.storereview.ExPrivateStoreSearchHistory;
@@ -284,12 +285,38 @@ public class ExRequestPrivateStoreSearchList extends ClientPacket
 	
 	private boolean isEquipmentArmor(ItemTemplate item)
 	{
-		return item.isArmor() && ((item.getBodyPart() == ItemTemplate.SLOT_CHEST) || (item.getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR) || (item.getBodyPart() == ItemTemplate.SLOT_HEAD) || (item.getBodyPart() == ItemTemplate.SLOT_LEGS) || (item.getBodyPart() == ItemTemplate.SLOT_FEET) || (item.getBodyPart() == ItemTemplate.SLOT_GLOVES) || (item.getBodyPart() == (ItemTemplate.SLOT_CHEST | ItemTemplate.SLOT_LEGS)));
+		if (!item.isArmor())
+		{
+			return false;
+		}
+		
+		final BodyPart bodyPart = item.getBodyPart();
+		return (bodyPart == BodyPart.CHEST) //
+			|| (bodyPart == BodyPart.FULL_ARMOR) //
+			|| (bodyPart == BodyPart.HEAD) //
+			|| (bodyPart == BodyPart.LEGS) //
+			|| (bodyPart == BodyPart.FEET) //
+			|| (bodyPart == BodyPart.GLOVES);
 	}
 	
 	private boolean isAccessory(ItemTemplate item)
 	{
-		return item.isArmor() && ((item.getBodyPart() == (ItemTemplate.SLOT_L_BRACELET | ItemTemplate.SLOT_R_BRACELET | ItemTemplate.SLOT_BROOCH)) || (item.getBodyPart() == (ItemTemplate.SLOT_R_FINGER | ItemTemplate.SLOT_L_FINGER)) || (item.getBodyPart() == ItemTemplate.SLOT_NECK) || (item.getBodyPart() == (ItemTemplate.SLOT_R_EAR | ItemTemplate.SLOT_L_EAR)));
+		if (!item.isArmor())
+		{
+			return false;
+		}
+		
+		final BodyPart bodyPart = item.getBodyPart();
+		return ((bodyPart == BodyPart.L_BRACELET) //
+			|| (bodyPart == BodyPart.R_BRACELET) //
+			|| (bodyPart == BodyPart.BROOCH) //
+			|| (bodyPart == BodyPart.R_FINGER) //
+			|| (bodyPart == BodyPart.L_FINGER) //
+			|| (bodyPart == BodyPart.LR_FINGER) //
+			|| (bodyPart == BodyPart.NECK) //
+			|| (bodyPart == BodyPart.R_EAR) //
+			|| (bodyPart == BodyPart.L_EAR) //
+			|| (bodyPart == BodyPart.LR_EAR));
 	}
 	
 	private boolean isEnchantScroll(ItemTemplate item)
@@ -300,7 +327,6 @@ public class ExRequestPrivateStoreSearchList extends ClientPacket
 		}
 		
 		final IItemHandler ih = ItemHandler.getInstance().getHandler((EtcItem) item);
-		
 		return (ih != null) && ih.getClass().getSimpleName().equals("EnchantScrolls");
 	}
 	

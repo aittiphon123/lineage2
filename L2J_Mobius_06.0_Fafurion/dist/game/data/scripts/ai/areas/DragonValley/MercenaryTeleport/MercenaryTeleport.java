@@ -26,14 +26,13 @@ import java.util.Map;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Mercenary and Mercenary Captain teleport AI.
  * @author Gigi
  */
-public class MercenaryTeleport extends AbstractNpcAI
+public class MercenaryTeleport extends Script
 {
 	// NPCs
 	private static final int NAMO = 33973;

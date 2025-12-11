@@ -60,7 +60,7 @@ public class FatedSupportBox implements IItemHandler
 		
 		final Player player = playable.asPlayer();
 		final Race race = player.getRace();
-		final PlayerClass classId = player.getPlayerClass();
+		final PlayerClass playerClass = player.getPlayerClass();
 		
 		if (!player.isInventoryUnder80(false))
 		{
@@ -96,11 +96,11 @@ public class FatedSupportBox implements IItemHandler
 				{
 					player.addItem(ItemProcessType.REWARD, FATED_BOX_WIZARD, 1, player, true);
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.SUB_GROUP_ROGUE, classId.getId()))
+				else if (CategoryData.getInstance().isInCategory(CategoryType.SUB_GROUP_ROGUE, playerClass.getId()))
 				{
 					player.addItem(ItemProcessType.REWARD, FATED_BOX_ROGUE, 1, player, true);
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.SUB_GROUP_KNIGHT, classId.getId()))
+				else if (CategoryData.getInstance().isInCategory(CategoryType.SUB_GROUP_KNIGHT, playerClass.getId()))
 				{
 					player.addItem(ItemProcessType.REWARD, FATED_BOX_FIGHTER, 1, player, true);
 				}

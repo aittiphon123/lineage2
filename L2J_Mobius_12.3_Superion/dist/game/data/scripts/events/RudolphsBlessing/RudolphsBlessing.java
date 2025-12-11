@@ -30,7 +30,7 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerUnsumm
 import org.l2jmobius.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
-import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
+import org.l2jmobius.gameserver.model.script.LongTimeEvent;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;

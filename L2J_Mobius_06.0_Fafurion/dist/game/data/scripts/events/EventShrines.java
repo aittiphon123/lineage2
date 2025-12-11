@@ -25,7 +25,7 @@ import java.util.Map;
 
 import org.l2jmobius.gameserver.managers.events.EventShrineManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
@@ -33,7 +33,7 @@ import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
  * @author hlwrave, Mobius
  * @Add in event config.xml enableShrines="true" after event name to enable them.
  */
-public class EventShrines extends Quest
+public class EventShrines extends Script
 {
 	private static final Map<Integer, Integer> ZONE_TRIGGERS = new HashMap<>();
 	static
@@ -56,7 +56,6 @@ public class EventShrines extends Quest
 	
 	public EventShrines()
 	{
-		super(-1);
 		addEnterZoneId(ZONE_TRIGGERS.keySet());
 	}
 	

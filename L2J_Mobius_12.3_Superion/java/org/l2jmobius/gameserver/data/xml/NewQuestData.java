@@ -33,7 +33,7 @@ import org.w3c.dom.Document;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuest;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuest;
 
 /**
  * @author Magik

@@ -41,9 +41,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.commons.config.ThreadConfig;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.DevelopmentConfig;
+import org.l2jmobius.gameserver.config.ServerConfig;
+import org.l2jmobius.gameserver.config.custom.FakePlayersConfig;
 import org.l2jmobius.gameserver.data.SpawnTable;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.Spawn;
@@ -282,7 +285,7 @@ public class SpawnData implements IXmlReader
 		{
 			// Log a warning for invalid NPC IDs outside the fake player range [80000, 89999].
 			// This hardcoded check provides a resource-constrained solution to prevent unnecessary logging.
-			if (Config.FAKE_PLAYERS_ENABLED || ((npcId < 80000) && (npcId > 89999)))
+			if (FakePlayersConfig.FAKE_PLAYERS_ENABLED || ((npcId < 80000) && (npcId > 89999)))
 			{
 				LOGGER.warning(getClass().getSimpleName() + ": Requested spawn for non-existing NPC: " + npcId + " in file: " + spawnTemplate.getFile().getName());
 			}
@@ -296,7 +299,7 @@ public class SpawnData implements IXmlReader
 			return;
 		}
 		
-		if (!Config.FAKE_PLAYERS_ENABLED && template.isFakePlayer())
+		if (!FakePlayersConfig.FAKE_PLAYERS_ENABLED && template.isFakePlayer())
 		{
 			return;
 		}
@@ -423,13 +426,13 @@ public class SpawnData implements IXmlReader
 	 */
 	public void init()
 	{
-		if (Config.NO_SPAWNS)
+		if (DevelopmentConfig.NO_SPAWNS)
 		{
 			return;
 		}
 		
 		LOGGER.info(getClass().getSimpleName() + ": Initializing spawns...");
-		if (Config.THREADS_FOR_LOADING)
+		if (ThreadConfig.THREADS_FOR_LOADING)
 		{
 			final Collection<ScheduledFuture<?>> jobs = ConcurrentHashMap.newKeySet();
 			for (SpawnTemplate template : _spawnTemplates)
@@ -617,7 +620,7 @@ public class SpawnData implements IXmlReader
 		final String spawnDelay = String.valueOf(spawn.getRespawnDelay() / 1000);
 		if (spawnFile.exists()) // Update.
 		{
-			final File tempFile = new File(spawnFile.getAbsolutePath().substring(Config.DATAPACK_ROOT.getAbsolutePath().length() + 1).replace('\\', '/') + ".tmp");
+			final File tempFile = new File(spawnFile.getAbsolutePath().substring(ServerConfig.DATAPACK_ROOT.getAbsolutePath().length() + 1).replace('\\', '/') + ".tmp");
 			try
 			{
 				final BufferedReader reader = new BufferedReader(new FileReader(spawnFile));
@@ -687,7 +690,7 @@ public class SpawnData implements IXmlReader
 		final int y = ((spawn.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
 		final NpcSpawnTemplate npcSpawnTemplate = spawn.getNpcSpawnTemplate();
 		final File spawnFile = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate().getFile() : new File(OTHER_XML_FOLDER + "/" + x + "_" + y + ".xml");
-		final File tempFile = new File(spawnFile.getAbsolutePath().substring(Config.DATAPACK_ROOT.getAbsolutePath().length() + 1).replace('\\', '/') + ".tmp");
+		final File tempFile = new File(spawnFile.getAbsolutePath().substring(ServerConfig.DATAPACK_ROOT.getAbsolutePath().length() + 1).replace('\\', '/') + ".tmp");
 		try
 		{
 			final BufferedReader reader = new BufferedReader(new FileReader(spawnFile));
@@ -804,7 +807,7 @@ public class SpawnData implements IXmlReader
 			// Delete empty file.
 			if (lineCount < 8)
 			{
-				LOGGER.info(getClass().getSimpleName() + ": Deleted empty file: " + spawnFile.getAbsolutePath().substring(Config.DATAPACK_ROOT.getAbsolutePath().length() + 1).replace('\\', '/'));
+				LOGGER.info(getClass().getSimpleName() + ": Deleted empty file: " + spawnFile.getAbsolutePath().substring(ServerConfig.DATAPACK_ROOT.getAbsolutePath().length() + 1).replace('\\', '/'));
 				spawnFile.delete();
 			}
 		}

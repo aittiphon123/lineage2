@@ -24,6 +24,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.stats.Stat;
@@ -31,13 +32,11 @@ import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
-
 /**
  * Crystal Caverns - Emerald Square instance zone.
  * @author St3eT
  */
-public class CrystalCavernsEmeraldSquare extends AbstractInstance
+public class CrystalCavernsEmeraldSquare extends InstanceScript
 {
 	// NPCs
 	private static final int CAVERNS_ENTRACE = 33522;

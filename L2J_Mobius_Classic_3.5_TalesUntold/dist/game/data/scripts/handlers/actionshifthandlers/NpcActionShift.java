@@ -22,12 +22,12 @@ package handlers.actionshifthandlers;
 
 import java.util.Set;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.StringUtil;
+import org.l2jmobius.gameserver.config.NpcConfig;
 import org.l2jmobius.gameserver.data.xml.ClanHallData;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.handler.IActionShiftHandler;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.managers.WalkingManager;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -35,8 +35,8 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
 import org.l2jmobius.gameserver.model.actor.enums.creature.InstanceType;
-import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.residences.ClanHall;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -119,13 +119,13 @@ public class NpcActionShift implements IActionShiftHandler
 				final NpcSpawnTemplate template = spawn.getNpcSpawnTemplate();
 				if (template != null)
 				{
-					final String fileName = template.getSpawnTemplate().getFile().getAbsolutePath().substring(Config.DATAPACK_ROOT.getAbsolutePath().length() + 1).replace('\\', '/');
+					final String fileName = template.getSpawnTemplate().getFile().getAbsolutePath().substring(2).replace('\\', '/');
 					html.replace("%spawnfile%", fileName.replace("data/spawns/", ""));
 					html.replace("%spawnname%", String.valueOf(template.getSpawnTemplate().getName())); // used String.valueOf because it can be null
 					html.replace("%spawngroup%", String.valueOf(template.getGroup().getName())); // used String.valueOf because it can be null
 					if (template.getSpawnTemplate().getAI() != null)
 					{
-						final Quest script = QuestManager.getInstance().getQuest(template.getSpawnTemplate().getAI());
+						final Quest script = ScriptManager.getInstance().getScript(template.getSpawnTemplate().getAI());
 						if (script != null)
 						{
 							html.replace("%spawnai%", "<a action=\"bypass -h admin_quest_info " + script.getName() + "\"><font color=\"LEVEL\">" + script.getName() + "</font></a>");
@@ -197,7 +197,7 @@ public class NpcActionShift implements IActionShiftHandler
 			
 			player.sendPacket(html);
 		}
-		else if (Config.ALT_GAME_VIEWNPC)
+		else if (NpcConfig.ALT_GAME_VIEWNPC)
 		{
 			if (!target.isNpc() || target.isFakePlayer())
 			{

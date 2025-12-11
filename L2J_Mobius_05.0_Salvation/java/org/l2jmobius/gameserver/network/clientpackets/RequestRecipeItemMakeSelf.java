@@ -16,8 +16,9 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.holders.RecipeHolder;
 import org.l2jmobius.gameserver.data.xml.RecipeData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
@@ -66,7 +67,7 @@ public class RequestRecipeItemMakeSelf extends ClientPacket
 			return;
 		}
 		
-		if (!Config.IS_CRAFTING_ENABLED)
+		if (!PlayerConfig.IS_CRAFTING_ENABLED)
 		{
 			player.sendMessage("Item creation is currently disabled.");
 			return;
@@ -113,7 +114,7 @@ public class RequestRecipeItemMakeSelf extends ClientPacket
 		
 		if (!player.hasRecipeList(recipe.getId()))
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", GeneralConfig.DEFAULT_PUNISH);
 			return;
 		}
 		

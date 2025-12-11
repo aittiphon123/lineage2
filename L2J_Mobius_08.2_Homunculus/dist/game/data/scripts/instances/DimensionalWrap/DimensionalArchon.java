@@ -22,18 +22,17 @@ package instances.DimensionalWrap;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
-
-import ai.AbstractNpcAI;
 
 /**
  * Dimensional Archon AI
  * @author Gigi
  * @date 2018-09-08 - [18:09:02]
  */
-public class DimensionalArchon extends AbstractNpcAI
+public class DimensionalArchon extends Script
 {
 	// NPCs
 	private static final int DEMINSIONAL_ARCHON = 23469;

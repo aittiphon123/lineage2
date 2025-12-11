@@ -23,13 +23,12 @@ package ai.others.KastiaResearcher;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Mobius
  */
-public class KastiaResearcher extends AbstractNpcAI
+public class KastiaResearcher extends Script
 {
 	// NPC
 	private static final int RESEARCHER = 34566;
@@ -54,6 +53,12 @@ public class KastiaResearcher extends AbstractNpcAI
 		}
 		
 		return null;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

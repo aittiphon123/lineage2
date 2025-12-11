@@ -85,7 +85,6 @@
 			<npc id="35391" x="-12693" y="123815" z="-3112" heading="49152" respawnTime="60sec" /> <!-- Latif - Clan Hall Gatekeeper -->
 			<npc id="31031" x="-13188" y="124432" z="-3120" heading="16384" respawnTime="5sec" /> <!-- Anchor Crystal -->
 			<npc id="33946" x="-13838" y="123387" z="-3117" heading="24575" respawnTime="60sec" /> <!-- Adventure Guildsman -->
-			<npc id="36609" x="-14485" y="124177" z="-3126" heading="62688" respawnTime="60sec" /> <!-- Adventure Guildsman -->	
 			<!-- NEW SPAWN NPC: UPDATE PRELUDE OF WAR -->
 		</group>
 	</spawn>

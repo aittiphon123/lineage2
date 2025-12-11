@@ -24,8 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.holders.SpawnHolder;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -34,6 +34,7 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.type.NoSummonFriendZone;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -41,12 +42,10 @@ import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.util.Broadcast;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author Mobius, NviX
  */
-public class Helios extends AbstractNpcAI
+public class Helios extends Script
 {
 	// Raid
 	private static final int HELIOS1 = 29303;
@@ -510,8 +509,8 @@ public class Helios extends AbstractNpcAI
 				
 				GrandBossManager.getInstance().setStatus(HELIOS3, DEAD);
 				
-				final long baseIntervalMillis = Config.HELIOS_SPAWN_INTERVAL * 3600000;
-				final long randomRangeMillis = Config.HELIOS_SPAWN_RANDOM * 3600000;
+				final long baseIntervalMillis = GrandBossConfig.HELIOS_SPAWN_INTERVAL * 3600000;
+				final long randomRangeMillis = GrandBossConfig.HELIOS_SPAWN_RANDOM * 3600000;
 				final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 				final StatSet info = GrandBossManager.getInstance().getStatSet(HELIOS3);
 				info.set("respawn_time", System.currentTimeMillis() + respawnTime);

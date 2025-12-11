@@ -631,7 +631,6 @@
 	<item id="60037" name="Lucky Coin" type="EtcItem">
 		<!-- Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.etc_ev_kalie_token" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -649,7 +648,6 @@
 	<item id="60039" name="Shiny Golden Kingdom's Key" type="EtcItem">
 		<!-- Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.bm_dragon_key" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -813,7 +811,6 @@
 	<item id="60044" name="THE HERO RETURNS Coin" type="EtcItem">
 		<!-- A coin that can be obtained for completing the 'THE HERO RETURNS' event quest. Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="BranchIcon.Icon.etc_g_field_special_coin_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -824,7 +821,6 @@
 	<item id="60045" name="Hero's Symbol" additionalName="THE HERO" type="EtcItem">
 		<!-- A special gift for returning adventurers. Its bonuses will be available after you add it to the collection. -->
 		<set name="icon" val="icon.etc_london_olympic_gold" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
@@ -836,7 +832,6 @@
 	<item id="60046" name="God's Accessory Enhancement Stone" additionalName="THE HERO" type="EtcItem">
 		<!-- An enhancement stone imbued with a god's energy. Only for returning adventurers. Can be used to enhance god's accessories from THE HERO RETURNS event through compounding. -->
 		<set name="icon" val="BranchSys.Icon.br_spirit_skill_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="5" />
@@ -1163,7 +1158,6 @@
 	<item id="60066" name="Isolation Luck Charm Box" type="EtcItem">
 		<!-- Take it to the Game Assistant to obtain a useful item. -->
 		<set name="icon" val="icon.etc_ev_kalie_token" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1277,7 +1271,6 @@
 	<item id="60073" name="Freya's Ice Crystal" additionalName="Event" type="EtcItem">
 		<!-- Can be exchanged by Freya in any town for Freya's Marks and various supplies. -->
 		<set name="icon" val="icon.bm_freya_crystal" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1414,7 +1407,6 @@
 	<item id="60081" name="Mysterious Sphere" type="EtcItem">
 		<!-- Take it to the Game Assistant to obtain a useful item. -->
 		<set name="icon" val="icon.etc_warding_orb_blue_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1661,7 +1653,6 @@
 	<item id="60091" name="Abundance Mark" type="EtcItem">
 		<!-- A mark that symbolizes abundance. Required for creating High-grade Talisman of Abundance. -->
 		<set name="icon" val="BranchSys2.icon.g_dawn_gem" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="true" />
@@ -1681,7 +1672,6 @@
 	<item id="60093" name="Mooncake Lucky Message" type="EtcItem">
 		<!-- Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.etc_piece_of_report_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1690,7 +1680,6 @@
 	<item id="60094" name="God's Spirit Bottle" type="EtcItem">
 		<!-- Required for creating and upgrading god's accessories (6 types). -->
 		<set name="icon" val="BranchIcon.icon.energy_of_shilen_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />

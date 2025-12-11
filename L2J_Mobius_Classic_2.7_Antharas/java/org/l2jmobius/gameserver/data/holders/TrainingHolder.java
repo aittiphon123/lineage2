@@ -19,7 +19,7 @@ package org.l2jmobius.gameserver.data.holders;
 import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.TrainingCampConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 
 /**
@@ -32,7 +32,7 @@ public class TrainingHolder implements Serializable
 	private final int _level;
 	private final long _startTime;
 	private long _endTime = -1;
-	private static final long TRAINING_DIVIDER = TimeUnit.SECONDS.toMinutes(Config.TRAINING_CAMP_MAX_DURATION);
+	private static final long TRAINING_DIVIDER = TimeUnit.SECONDS.toMinutes(TrainingCampConfig.TRAINING_CAMP_MAX_DURATION);
 	
 	public TrainingHolder(int objectId, int classIndex, int level, long startTime, long endTime)
 	{
@@ -80,7 +80,7 @@ public class TrainingHolder implements Serializable
 	
 	public boolean isValid(Player player)
 	{
-		return Config.TRAINING_CAMP_ENABLE && (player.getObjectId() == _objectId) && (player.getClassIndex() == _classIndex);
+		return TrainingCampConfig.TRAINING_CAMP_ENABLE && (player.getObjectId() == _objectId) && (player.getClassIndex() == _classIndex);
 	}
 	
 	public long getElapsedTime()
@@ -90,12 +90,12 @@ public class TrainingHolder implements Serializable
 	
 	public long getRemainingTime()
 	{
-		return TimeUnit.SECONDS.toMinutes(Config.TRAINING_CAMP_MAX_DURATION - getElapsedTime());
+		return TimeUnit.SECONDS.toMinutes(TrainingCampConfig.TRAINING_CAMP_MAX_DURATION - getElapsedTime());
 	}
 	
 	public long getTrainingTime(TimeUnit unit)
 	{
-		return Math.min(unit.convert(Config.TRAINING_CAMP_MAX_DURATION, TimeUnit.SECONDS), unit.convert(_endTime - _startTime, TimeUnit.MILLISECONDS));
+		return Math.min(unit.convert(TrainingCampConfig.TRAINING_CAMP_MAX_DURATION, TimeUnit.SECONDS), unit.convert(_endTime - _startTime, TimeUnit.MILLISECONDS));
 	}
 	
 	public static long getTrainingDivider()

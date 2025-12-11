@@ -23,18 +23,17 @@ package ai.bosses.EtisVanEtina;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class LiberatorOfLust extends AbstractNpcAI
+public class LiberatorOfLust extends Script
 {
 	// Npc
 	private static final int LIBERATOR_OF_LUST = 29324;
@@ -45,7 +44,8 @@ public class LiberatorOfLust extends AbstractNpcAI
 	
 	private LiberatorOfLust()
 	{
-		registerMobs(LIBERATOR_OF_LUST);
+		addAttackId(LIBERATOR_OF_LUST);
+		addSpellFinishedId(LIBERATOR_OF_LUST);
 	}
 	
 	@Override

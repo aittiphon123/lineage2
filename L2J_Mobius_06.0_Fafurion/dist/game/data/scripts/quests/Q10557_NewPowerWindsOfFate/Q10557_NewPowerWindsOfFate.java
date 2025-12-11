@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -38,9 +38,9 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
@@ -184,7 +184,7 @@ public final class Q10557_NewPowerWindsOfFate extends Quest
 				}
 				case 280:
 				{
-					final Quest faeron = QuestManager.getInstance().getQuest(FaeronVillage.class.getSimpleName());
+					final Quest faeron = ScriptManager.getInstance().getScript(FaeronVillage.class.getSimpleName());
 					if (faeron != null)
 					{
 						faeron.onEvent("enterInstance", npc, player);

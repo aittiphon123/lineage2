@@ -24,7 +24,6 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.network.Buffer;
 import org.l2jmobius.commons.network.Client;
@@ -32,6 +31,9 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.TraceUtil;
 import org.l2jmobius.gameserver.LoginServerThread;
 import org.l2jmobius.gameserver.LoginServerThread.SessionKey;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.ServerConfig;
+import org.l2jmobius.gameserver.config.custom.WeddingConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.model.CharSelectInfoPackage;
@@ -97,7 +99,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 	@Override
 	public boolean encrypt(Buffer data, int offset, int size)
 	{
-		if (Config.PACKET_ENCRYPTION && (_encryption != null))
+		if (ServerConfig.PACKET_ENCRYPTION && (_encryption != null))
 		{
 			_encryption.encrypt(data, offset, size);
 		}
@@ -108,7 +110,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 	@Override
 	public boolean decrypt(Buffer data, int offset, int size)
 	{
-		if (Config.PACKET_ENCRYPTION && (_encryption != null))
+		if (ServerConfig.PACKET_ENCRYPTION && (_encryption != null))
 		{
 			_encryption.decrypt(data, offset, size);
 		}
@@ -140,7 +142,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 	public byte[] enableCrypt()
 	{
 		final byte[] key = BlowFishKeygen.getRandomKey();
-		if (Config.PACKET_ENCRYPTION)
+		if (ServerConfig.PACKET_ENCRYPTION)
 		{
 			_encryption = new Encryption();
 			_encryption.setKey(key);
@@ -280,7 +282,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 				// Setting delete time
 				if (answer == 0)
 				{
-					if (Config.DELETE_DAYS == 0)
+					if (PlayerConfig.DELETE_DAYS == 0)
 					{
 						deleteCharByObjId(objectId);
 					}
@@ -288,7 +290,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 					{
 						try (PreparedStatement ps2 = con.prepareStatement("UPDATE characters SET deletetime=? WHERE charId=?"))
 						{
-							ps2.setLong(1, System.currentTimeMillis() + (Config.DELETE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
+							ps2.setLong(1, System.currentTimeMillis() + (PlayerConfig.DELETE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
 							ps2.setInt(2, objectId);
 							ps2.execute();
 						}
@@ -475,7 +477,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 				ps.execute();
 			}
 			
-			if (Config.ALLOW_WEDDING)
+			if (WeddingConfig.ALLOW_WEDDING)
 			{
 				try (PreparedStatement ps = con.prepareStatement("DELETE FROM mods_wedding WHERE player1Id = ? OR player2Id = ?"))
 				{

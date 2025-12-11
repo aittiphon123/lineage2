@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets.dethrone;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
@@ -53,7 +53,7 @@ public class ExDethroneServerInfo extends ServerPacket
 		buffer.writeInt(1); // array size (only one server atm)
 		
 		buffer.writeInt(1); // server rank
-		buffer.writeInt(Config.SERVER_ID); // server id (off 15)
+		buffer.writeInt(ServerConfig.SERVER_ID); // server id (off 15)
 		buffer.writeLong(_serverPoints); // server points
 		
 		// buffer.writeInt(2); // server rank 2
@@ -76,7 +76,7 @@ public class ExDethroneServerInfo extends ServerPacket
 		// buffer.writeLong(123456); // server score 3
 		
 		buffer.writeInt(1); // server rank 1
-		buffer.writeInt(Config.SERVER_ID); // server id 4
+		buffer.writeInt(ServerConfig.SERVER_ID); // server id 4
 		buffer.writeLong(_serverSoulOrbs); // server score 4
 		
 		// Connection List Array
@@ -86,11 +86,11 @@ public class ExDethroneServerInfo extends ServerPacket
 		// buffer.writeInt(_bConnected ? 1 : 0); // connection status on/off for server id 1
 		// buffer.writeInt(_bConnected ? 2 : 0); // connection status on/off for server id 2
 		// buffer.writeInt(_bConnected ? 3 : 0); // connection status on/off for server id 3
-		buffer.writeInt(_connected ? Config.SERVER_ID : 0); // connection status on/off for server id 4
+		buffer.writeInt(_connected ? ServerConfig.SERVER_ID : 0); // connection status on/off for server id 4
 		
 		// Connection button status
 		buffer.writeInt(_adenCastleOwner ? 1 : 0); // 0 - connecting to conquest button is grey (disabled) / 1 - connecting to conquest button is green (enabled)
 		
-		buffer.writeInt(Config.SERVER_ID); // nDethroneWorldID
+		buffer.writeInt(ServerConfig.SERVER_ID); // nDethroneWorldID
 	}
 }

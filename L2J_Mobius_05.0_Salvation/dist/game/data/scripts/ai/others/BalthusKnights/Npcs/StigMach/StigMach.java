@@ -28,16 +28,15 @@ import org.l2jmobius.gameserver.model.events.annotations.Id;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
-
-import ai.AbstractNpcAI;
 
 /**
  * Stig Mach AI
  * @author Kazumi
  */
-public final class StigMach extends AbstractNpcAI
+public final class StigMach extends Script
 {
 	// NPCs
 	private static final int STIG = 34361;

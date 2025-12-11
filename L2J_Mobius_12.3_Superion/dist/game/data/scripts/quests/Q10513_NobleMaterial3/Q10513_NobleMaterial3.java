@@ -21,7 +21,7 @@
 package quests.Q10513_NobleMaterial3;
 
 import org.l2jmobius.gameserver.data.xml.TeleportListData;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -31,11 +31,11 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelChanged;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestDialogType;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuestLocation;
-import org.l2jmobius.gameserver.model.quest.newquestdata.QuestCondType;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestDialogType;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuestLocation;
+import org.l2jmobius.gameserver.model.script.newquestdata.QuestCondType;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestDialog;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestNotification;
 
@@ -148,25 +148,25 @@ public class Q10513_NobleMaterial3 extends Quest
 					questState.exitQuest(false, true);
 					rewardPlayer(player);
 					
-					final Quest nextQuest = QuestManager.getInstance().getQuest(Q10514_NobleMaterial4.class.getSimpleName());
+					final Quest nextQuest = ScriptManager.getInstance().getScript(Q10514_NobleMaterial4.class.getSimpleName());
 					if ((nextQuest != null) && nextQuest.canStartQuest(player))
 					{
 						player.sendPacket(new ExQuestDialog(10514, QuestDialogType.ACCEPT));
 					}
 					
-					final Quest nextQuest1 = QuestManager.getInstance().getQuest(Q10515_NobleMaterial4.class.getSimpleName());
+					final Quest nextQuest1 = ScriptManager.getInstance().getScript(Q10515_NobleMaterial4.class.getSimpleName());
 					if ((nextQuest1 != null) && nextQuest1.canStartQuest(player))
 					{
 						player.sendPacket(new ExQuestDialog(10515, QuestDialogType.ACCEPT));
 					}
 					
-					final Quest nextQuest2 = QuestManager.getInstance().getQuest(Q10516_NobleMaterial4.class.getSimpleName());
+					final Quest nextQuest2 = ScriptManager.getInstance().getScript(Q10516_NobleMaterial4.class.getSimpleName());
 					if ((nextQuest2 != null) && nextQuest2.canStartQuest(player))
 					{
 						player.sendPacket(new ExQuestDialog(10516, QuestDialogType.ACCEPT));
 					}
 					
-					final Quest nextQuest3 = QuestManager.getInstance().getQuest(Q10517_NobleMaterial4.class.getSimpleName());
+					final Quest nextQuest3 = ScriptManager.getInstance().getScript(Q10517_NobleMaterial4.class.getSimpleName());
 					if ((nextQuest3 != null) && nextQuest3.canStartQuest(player))
 					{
 						player.sendPacket(new ExQuestDialog(10517, QuestDialogType.ACCEPT));

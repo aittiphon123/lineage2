@@ -103,6 +103,10 @@ public class Die extends ServerPacket
 					_flags += 16;
 				}
 			}
+			else
+			{
+				_flags = -32388608; // To restart place.
+			}
 			
 			// Feather check.
 			if (creature.getAccessLevel().allowFixedRes() || creature.getInventory().haveItemForSelfResurrection())

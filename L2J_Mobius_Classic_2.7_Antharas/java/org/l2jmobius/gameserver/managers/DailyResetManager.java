@@ -28,10 +28,13 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.time.TimeUtil;
+import org.l2jmobius.gameserver.config.AttendanceRewardsConfig;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.TrainingCampConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.xml.DailyMissionData;
 import org.l2jmobius.gameserver.data.xml.PrimeShopData;
@@ -185,7 +188,7 @@ public class DailyResetManager
 	
 	private void resetVitalityDaily()
 	{
-		if (!Config.ENABLE_VITALITY)
+		if (!PlayerConfig.ENABLE_VITALITY)
 		{
 			return;
 		}
@@ -228,7 +231,7 @@ public class DailyResetManager
 	
 	private void resetVitalityWeekly()
 	{
-		if (!Config.ENABLE_VITALITY)
+		if (!PlayerConfig.ENABLE_VITALITY)
 		{
 			return;
 		}
@@ -277,7 +280,7 @@ public class DailyResetManager
 		{
 			for (int skillId : RESET_SKILLS)
 			{
-				try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_skills_save WHERE skill_id=?;"))
+				try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_skills_save WHERE skill_id=? AND charId IN (SELECT charId FROM characters WHERE online = 0)"))
 				{
 					ps.setInt(1, skillId);
 					ps.execute();
@@ -322,7 +325,7 @@ public class DailyResetManager
 		{
 			for (int itemId : RESET_ITEMS)
 			{
-				try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_item_reuse_save WHERE itemId=?;"))
+				try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_item_reuse_save WHERE itemId=? AND charId IN (SELECT charId FROM characters WHERE online = 0)"))
 				{
 					ps.setInt(1, itemId);
 					ps.execute();
@@ -359,14 +362,14 @@ public class DailyResetManager
 	
 	private void resetWorldChatPoints()
 	{
-		if (!Config.ENABLE_WORLD_CHAT)
+		if (!GeneralConfig.ENABLE_WORLD_CHAT)
 		{
 			return;
 		}
 		
 		// Update data for offline players.
 		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ?"))
+			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ? AND charId IN (SELECT charId FROM characters WHERE online = 0)"))
 		{
 			ps.setInt(1, 0);
 			ps.setString(2, PlayerVariables.WORLD_CHAT_VARIABLE_NAME);
@@ -419,11 +422,11 @@ public class DailyResetManager
 	
 	private void resetTrainingCamp()
 	{
-		if (Config.TRAINING_CAMP_ENABLE)
+		if (TrainingCampConfig.TRAINING_CAMP_ENABLE)
 		{
 			// Update data for offline players.
 			try (Connection con = DatabaseFactory.getConnection();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ?"))
+				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ? AND account_name NOT IN (SELECT account_name FROM characters WHERE online = 1)"))
 			{
 				ps.setString(1, "TRAINING_CAMP_DURATION");
 				ps.executeUpdate();
@@ -468,12 +471,12 @@ public class DailyResetManager
 	
 	private void resetAttendanceRewards()
 	{
-		if (Config.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
+		if (AttendanceRewardsConfig.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
 		{
 			// Update data for offline players.
 			try (Connection con = DatabaseFactory.getConnection())
 			{
-				try (PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
+				try (PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ? AND account_name NOT IN (SELECT account_name FROM characters WHERE online = 1)"))
 				{
 					ps.setString(1, PlayerVariables.ATTENDANCE_DATE);
 					ps.execute();
@@ -497,7 +500,7 @@ public class DailyResetManager
 			// Update data for offline players.
 			try (Connection con = DatabaseFactory.getConnection())
 			{
-				try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?"))
+				try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var = ? AND charId IN (SELECT charId FROM characters WHERE online = 0)"))
 				{
 					ps.setString(1, PlayerVariables.ATTENDANCE_DATE);
 					ps.execute();
@@ -524,7 +527,7 @@ public class DailyResetManager
 		{
 			// Update data for offline players.
 			try (Connection con = DatabaseFactory.getConnection();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
+				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ? AND account_name NOT IN (SELECT account_name FROM characters WHERE online = 1)"))
 			{
 				ps.setString(1, AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + holder.getBrId());
 				ps.executeUpdate();

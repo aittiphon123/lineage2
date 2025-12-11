@@ -31,6 +31,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
@@ -41,14 +42,12 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import instances.AbstractInstance;
-
 /**
  * @author Mobius, Liamxroy
  * @URL https://l2wiki.com/Ashen_Shadow_Revolutionaries
  * @VIDEO https://www.youtube.com/watch?v=ohkxylKJAtQ
  */
-public class AshenShadowRevolutionaries extends AbstractInstance
+public class AshenShadowRevolutionaries extends InstanceScript
 {
 	// NPCs
 	private static final int BENUSTA = 34542;

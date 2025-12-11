@@ -34,11 +34,11 @@ import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.cache.HtmCache;
 import org.l2jmobius.gameserver.communitybbs.BB.Mail;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.handler.CommunityBoardHandler;
 import org.l2jmobius.gameserver.handler.IWriteBoardHandler;
@@ -824,7 +824,7 @@ public class MailBoard implements IWriteBoardHandler
 	
 	private void onPlayerLogin(OnPlayerLogin event)
 	{
-		if (Config.ENABLE_COMMUNITY_BOARD)
+		if (GeneralConfig.ENABLE_COMMUNITY_BOARD)
 		{
 			final Player player = event.getPlayer();
 			if (checkIfUnreadMail(player))

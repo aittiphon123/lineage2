@@ -26,9 +26,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.StatType;
 import org.l2jmobius.gameserver.data.holders.RecipeHolder;
 import org.l2jmobius.gameserver.data.holders.RecipeStatHolder;
@@ -94,12 +95,12 @@ public class RecipeManager
 		
 		if (!manufacturer.getDwarvenRecipeBook().contains(recipeList) && !manufacturer.getCommonRecipeBook().contains(recipeList))
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", GeneralConfig.DEFAULT_PUNISH);
 			return;
 		}
 		
 		// Check if manufacturer is under manufacturing store or private store.
-		if (Config.ALT_GAME_CREATION && _activeMakers.containsKey(manufacturer.getObjectId()))
+		if (PlayerConfig.ALT_GAME_CREATION && _activeMakers.containsKey(manufacturer.getObjectId()))
 		{
 			player.sendPacket(SystemMessageId.PLEASE_CLOSE_THE_SETUP_WINDOW_FOR_A_PRIVATE_MANUFACTURING_STORE_OR_THE_SETUP_WINDOW_FOR_A_PRIVATE_STORE_AND_TRY_AGAIN);
 			return;
@@ -108,7 +109,7 @@ public class RecipeManager
 		final RecipeItemMaker maker = new RecipeItemMaker(manufacturer, recipeList, player);
 		if (maker._isValid)
 		{
-			if (Config.ALT_GAME_CREATION)
+			if (PlayerConfig.ALT_GAME_CREATION)
 			{
 				_activeMakers.put(manufacturer.getObjectId(), maker);
 				ThreadPool.schedule(maker, 100);
@@ -137,12 +138,12 @@ public class RecipeManager
 		
 		if (!player.getDwarvenRecipeBook().contains(recipeList) && !player.getCommonRecipeBook().contains(recipeList))
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", GeneralConfig.DEFAULT_PUNISH);
 			return;
 		}
 		
 		// Check if player is busy (possible if alt game creation is enabled)
-		if (Config.ALT_GAME_CREATION && _activeMakers.containsKey(player.getObjectId()))
+		if (PlayerConfig.ALT_GAME_CREATION && _activeMakers.containsKey(player.getObjectId()))
 		{
 			player.sendMessage("You are busy creating.");
 			return;
@@ -151,7 +152,7 @@ public class RecipeManager
 		final RecipeItemMaker maker = new RecipeItemMaker(player, recipeList, player);
 		if (maker._isValid)
 		{
-			if (Config.ALT_GAME_CREATION)
+			if (PlayerConfig.ALT_GAME_CREATION)
 			{
 				_activeMakers.put(player.getObjectId(), maker);
 				ThreadPool.schedule(maker, 100);
@@ -274,7 +275,7 @@ public class RecipeManager
 			}
 			
 			// initial AltStatChange checks
-			if (Config.ALT_GAME_CREATION)
+			if (PlayerConfig.ALT_GAME_CREATION)
 			{
 				calculateAltStatChange();
 			}
@@ -290,7 +291,7 @@ public class RecipeManager
 		@Override
 		public void run()
 		{
-			if (!Config.IS_CRAFTING_ENABLED)
+			if (!PlayerConfig.IS_CRAFTING_ENABLED)
 			{
 				_target.sendMessage("Item creation is currently disabled.");
 				abort();
@@ -311,7 +312,7 @@ public class RecipeManager
 			// return;
 			// }
 			
-			if (Config.ALT_GAME_CREATION && !_activeMakers.containsKey(_player.getObjectId()))
+			if (PlayerConfig.ALT_GAME_CREATION && !_activeMakers.containsKey(_player.getObjectId()))
 			{
 				if (_target != _player)
 				{
@@ -327,7 +328,7 @@ public class RecipeManager
 				return;
 			}
 			
-			if (Config.ALT_GAME_CREATION && !_items.isEmpty())
+			if (PlayerConfig.ALT_GAME_CREATION && !_items.isEmpty())
 			{
 				if (!calculateStatUse(true, true))
 				{
@@ -340,7 +341,7 @@ public class RecipeManager
 				// if still not empty, schedule another pass
 				if (!_items.isEmpty())
 				{
-					_delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getMReuseRate(_skill) * GameTimeTaskManager.TICKS_PER_SECOND * GameTimeTaskManager.MILLIS_IN_TICK);
+					_delay = (int) (PlayerConfig.ALT_GAME_CREATION_SPEED * _player.getMReuseRate(_skill) * GameTimeTaskManager.TICKS_PER_SECOND * GameTimeTaskManager.MILLIS_IN_TICK);
 					
 					// FIXME: please fix this packet to show crafting animation (somebody)
 					_player.broadcastSkillPacket(new MagicSkillUse(_player, _skillId, _skillLevel, _delay, 0), _player);
@@ -375,7 +376,7 @@ public class RecipeManager
 		
 		private void finishCrafting()
 		{
-			if (!Config.ALT_GAME_CREATION)
+			if (!PlayerConfig.ALT_GAME_CREATION)
 			{
 				calculateStatUse(false, true);
 			}
@@ -527,7 +528,7 @@ public class RecipeManager
 					if (_player.getCurrentHp() <= modifiedValue)
 					{
 						// rest (wait for HP)
-						if (Config.ALT_GAME_CREATION && isWait)
+						if (PlayerConfig.ALT_GAME_CREATION && isWait)
 						{
 							_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
 							ThreadPool.schedule(this, 100 + _delay);
@@ -550,7 +551,7 @@ public class RecipeManager
 					if (_player.getCurrentMp() < modifiedValue)
 					{
 						// rest (wait for MP)
-						if (Config.ALT_GAME_CREATION && isWait)
+						if (PlayerConfig.ALT_GAME_CREATION && isWait)
 						{
 							_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
 							ThreadPool.schedule(this, 100 + _delay);
@@ -699,7 +700,7 @@ public class RecipeManager
 			
 			_target.sendPacket(sm);
 			
-			if (Config.ALT_GAME_CREATION)
+			if (PlayerConfig.ALT_GAME_CREATION)
 			{
 				final int recipeLevel = _recipeList.getLevel();
 				if (_exp < 0)
@@ -731,7 +732,7 @@ public class RecipeManager
 				
 				// Added multiplication of Creation speed with XP/SP gain slower crafting -> more XP,
 				// faster crafting -> less XP you can use ALT_GAME_CREATION_XP_RATE/SP to modify XP/SP gained (default = 1)
-				_player.addExpAndSp((int) _player.calcStat(Stat.EXPSP_RATE, _exp * Config.ALT_GAME_CREATION_XP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null), (int) _player.calcStat(Stat.EXPSP_RATE, _sp * Config.ALT_GAME_CREATION_SP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null));
+				_player.addExpAndSp((int) _player.calcStat(Stat.EXPSP_RATE, _exp * PlayerConfig.ALT_GAME_CREATION_XP_RATE * PlayerConfig.ALT_GAME_CREATION_SPEED, null, null), (int) _player.calcStat(Stat.EXPSP_RATE, _sp * PlayerConfig.ALT_GAME_CREATION_SP_RATE * PlayerConfig.ALT_GAME_CREATION_SPEED, null, null));
 			}
 			
 			updateMakeInfo(true); // success

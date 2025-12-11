@@ -22,8 +22,9 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.EnchantItemData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.World;
@@ -120,7 +121,7 @@ public class RequestEnchantItem extends ClientPacket
 		}
 		
 		// first validation check - also over enchant check
-		if (!scrollTemplate.isValid(item, supportTemplate) || (Config.DISABLE_OVER_ENCHANTING && ((item.getEnchantLevel() == scrollTemplate.getMaxEnchantLevel()) || (!(item.getTemplate().getEnchantLimit() == 0) && (item.getEnchantLevel() == item.getTemplate().getEnchantLimit())))))
+		if (!scrollTemplate.isValid(item, supportTemplate) || (PlayerConfig.DISABLE_OVER_ENCHANTING && ((item.getEnchantLevel() == scrollTemplate.getMaxEnchantLevel()) || (!(item.getTemplate().getEnchantLimit() == 0) && (item.getEnchantLevel() == item.getTemplate().getEnchantLimit())))))
 		{
 			player.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
 			player.removeRequest(request.getClass());
@@ -131,7 +132,7 @@ public class RequestEnchantItem extends ClientPacket
 		// fast auto-enchant cheat check
 		if ((request.getTimestamp() == 0) || ((System.currentTimeMillis() - request.getTimestamp()) < 2000))
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, player + " use autoenchant program ", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, player + " use autoenchant program ", GeneralConfig.DEFAULT_PUNISH);
 			player.removeRequest(request.getClass());
 			player.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 			return;
@@ -141,7 +142,7 @@ public class RequestEnchantItem extends ClientPacket
 		if (player.getInventory().destroyItem(ItemProcessType.FEE, scroll.getObjectId(), 1, player, item) == null)
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
-			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to enchant with a scroll he doesn't have", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to enchant with a scroll he doesn't have", GeneralConfig.DEFAULT_PUNISH);
 			player.removeRequest(request.getClass());
 			player.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 			return;
@@ -151,7 +152,7 @@ public class RequestEnchantItem extends ClientPacket
 		if ((support != null) && (player.getInventory().destroyItem(ItemProcessType.FEE, support.getObjectId(), 1, player, item) == null))
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
-			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to enchant with a support item he doesn't have", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to enchant with a support item he doesn't have", GeneralConfig.DEFAULT_PUNISH);
 			player.removeRequest(request.getClass());
 			player.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 			return;
@@ -199,7 +200,7 @@ public class RequestEnchantItem extends ClientPacket
 					}
 					
 					player.sendPacket(new EnchantResult(EnchantResult.SUCCESS, item));
-					if (Config.LOG_ITEM_ENCHANTS)
+					if (GeneralConfig.LOG_ITEM_ENCHANTS)
 					{
 						final StringBuilder sb = new StringBuilder();
 						if (item.getEnchantLevel() > 0)
@@ -267,7 +268,7 @@ public class RequestEnchantItem extends ClientPacket
 						// safe enchant - remain old value
 						player.sendPacket(SystemMessageId.ENCHANT_FAILED_THE_ENCHANT_VALUE_FOR_THE_CORRESPONDING_ITEM_WILL_BE_EXACTLY_RETAINED);
 						player.sendPacket(new EnchantResult(EnchantResult.SAFE_FAIL, item));
-						if (Config.LOG_ITEM_ENCHANTS)
+						if (GeneralConfig.LOG_ITEM_ENCHANTS)
 						{
 							final StringBuilder sb = new StringBuilder();
 							if (item.getEnchantLevel() > 0)
@@ -334,7 +335,7 @@ public class RequestEnchantItem extends ClientPacket
 							
 							item.updateDatabase();
 							player.sendPacket(new EnchantResult(EnchantResult.BLESSED_FAIL, 0, 0));
-							if (Config.LOG_ITEM_ENCHANTS)
+							if (GeneralConfig.LOG_ITEM_ENCHANTS)
 							{
 								final StringBuilder sb = new StringBuilder();
 								if (item.getEnchantLevel() > 0)
@@ -364,10 +365,10 @@ public class RequestEnchantItem extends ClientPacket
 							if (player.getInventory().destroyItem(ItemProcessType.DESTROY, item, player, null) == null)
 							{
 								// unable to destroy item, cheater ?
-								PunishmentManager.handleIllegalPlayerAction(player, "Unable to delete item on enchant failure from " + player + ", possible cheater !", Config.DEFAULT_PUNISH);
+								PunishmentManager.handleIllegalPlayerAction(player, "Unable to delete item on enchant failure from " + player + ", possible cheater !", GeneralConfig.DEFAULT_PUNISH);
 								player.removeRequest(request.getClass());
 								player.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
-								if (Config.LOG_ITEM_ENCHANTS)
+								if (GeneralConfig.LOG_ITEM_ENCHANTS)
 								{
 									final StringBuilder sb = new StringBuilder();
 									if (item.getEnchantLevel() > 0)
@@ -427,7 +428,7 @@ public class RequestEnchantItem extends ClientPacket
 								player.sendPacket(new EnchantResult(EnchantResult.FAIL, crystalId, count));
 							}
 							
-							if (Config.LOG_ITEM_ENCHANTS)
+							if (GeneralConfig.LOG_ITEM_ENCHANTS)
 							{
 								final StringBuilder sb = new StringBuilder();
 								if (item.getEnchantLevel() > 0)

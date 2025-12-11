@@ -25,15 +25,14 @@ import java.util.List;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author NviX
  */
-public class SeaOfSpores extends AbstractNpcAI
+public class SeaOfSpores extends Script
 {
 	// Mobs
 	private static final int[] GROUP_MOBS =

@@ -23,21 +23,21 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.enums.Movie;
 
-import instances.AbstractInstance;
 import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
 
 /**
  * Ice Queen's Castle instance zone.
  * @author Adry_85
  */
-public class IceQueensCastle extends AbstractInstance
+public class IceQueensCastle extends InstanceScript
 {
 	// NPCs
 	private static final int FREYA = 18847;

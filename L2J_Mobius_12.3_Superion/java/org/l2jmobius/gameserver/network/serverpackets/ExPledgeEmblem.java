@@ -16,8 +16,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 
@@ -45,7 +45,7 @@ public class ExPledgeEmblem extends ServerPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.EX_PLEDGE_EMBLEM.writeId(this, buffer);
-		buffer.writeInt(Config.SERVER_ID);
+		buffer.writeInt(ServerConfig.SERVER_ID);
 		buffer.writeInt(_clanId);
 		buffer.writeInt(_crestId);
 		buffer.writeInt(_chunkId);

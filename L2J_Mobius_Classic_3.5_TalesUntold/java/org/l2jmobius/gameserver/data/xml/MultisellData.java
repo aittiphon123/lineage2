@@ -34,8 +34,8 @@ import java.util.logging.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.holders.MultisellEntryHolder;
 import org.l2jmobius.gameserver.data.holders.MultisellListHolder;
 import org.l2jmobius.gameserver.data.holders.PreparedMultisellListHolder;
@@ -44,6 +44,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.enchant.EnchantItemGroup;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.SpecialItemType;
 import org.l2jmobius.gameserver.model.item.holders.ItemChanceHolder;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
@@ -67,7 +68,7 @@ public class MultisellData implements IXmlReader
 	{
 		_multisells.clear();
 		parseDatapackDirectory("data/multisell", false);
-		if (Config.CUSTOM_MULTISELL_LOAD)
+		if (GeneralConfig.CUSTOM_MULTISELL_LOAD)
 		{
 			parseDatapackDirectory("data/multisell/custom", false);
 		}
@@ -147,7 +148,7 @@ public class MultisellData implements IXmlReader
 										}
 										else if (item.isArmor())
 										{
-											enchantmentLevel = (byte) Math.min(enchantmentLevel, item.getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR ? fullArmorGroupMax > -2 ? fullArmorGroupMax : enchantmentLevel : armorGroupMax > -2 ? armorGroupMax : enchantmentLevel);
+											enchantmentLevel = (byte) Math.min(enchantmentLevel, item.getBodyPart() == BodyPart.FULL_ARMOR ? fullArmorGroupMax > -2 ? fullArmorGroupMax : enchantmentLevel : armorGroupMax > -2 ? armorGroupMax : enchantmentLevel);
 										}
 									}
 								}
@@ -193,7 +194,7 @@ public class MultisellData implements IXmlReader
 						
 						// Check if buy price is lower than sell price.
 						// Only applies when there is only one ingredient and it is adena.
-						if (Config.CORRECT_PRICES && (ingredients.size() == 1) && (lastIngredientId == 57) && (lastIngredientCount < totalPrice))
+						if (GeneralConfig.CORRECT_PRICES && (ingredients.size() == 1) && (lastIngredientId == 57) && (lastIngredientCount < totalPrice))
 						{
 							LOGGER.warning("Buy price " + lastIngredientCount + " is less than sell price " + totalPrice + " at entry " + entryCounter.intValue() + " of multisell " + listId + ".");
 							

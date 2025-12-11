@@ -24,9 +24,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
@@ -78,7 +79,7 @@ public class AutoPlayTaskManager
 			
 			PLAY: for (Player player : _players)
 			{
-				if (!player.isOnline() || (player.isInOfflineMode() && !player.isOfflinePlay()) || !Config.ENABLE_AUTO_PLAY)
+				if (!player.isOnline() || (player.isInOfflineMode() && !player.isOfflinePlay()) || !GeneralConfig.ENABLE_AUTO_PLAY)
 				{
 					stopAutoPlay(player);
 					continue PLAY;
@@ -217,7 +218,7 @@ public class AutoPlayTaskManager
 				IDLE_COUNT.remove(player);
 				
 				// Pickup.
-				if (player.getAutoPlaySettings().doPickup())
+				if (player.getAutoPlaySettings().doPickup() && player.isInventoryUnder90(false))
 				{
 					PICKUP: for (Item droppedItem : World.getInstance().getVisibleObjectsInRange(player, Item.class, 200))
 					{
@@ -253,9 +254,9 @@ public class AutoPlayTaskManager
 				Creature creature = null;
 				final Party party = player.getParty();
 				final Player leader = party == null ? null : party.getLeader();
-				if (Config.ENABLE_AUTO_ASSIST && (party != null) && (leader != null) && (leader != player) && !leader.isDead())
+				if (GeneralConfig.ENABLE_AUTO_ASSIST && (party != null) && (leader != null) && (leader != player) && !leader.isDead())
 				{
-					if (leader.calculateDistance3D(player) < (Config.ALT_PARTY_RANGE * 2 /* 2? */))
+					if (leader.calculateDistance3D(player) < (PlayerConfig.ALT_PARTY_RANGE * 2 /* 2? */))
 					{
 						final WorldObject leaderTarget = leader.getTarget();
 						if ((leaderTarget != null) && (leaderTarget.isAttackable() || (leaderTarget.isPlayable() && !party.containsPlayer(leaderTarget.asPlayer()))))
@@ -323,7 +324,7 @@ public class AutoPlayTaskManager
 		private boolean isMageCaster(Player player)
 		{
 			// On new Classic auto attack is enabled via the Auto Attack action.
-			if (Config.AUTO_PLAY_ATTACK_ACTION)
+			if (GeneralConfig.AUTO_PLAY_ATTACK_ACTION)
 			{
 				return !player.getAutoUseSettings().getAutoActions().contains(AUTO_ATTACK_ACTION);
 			}

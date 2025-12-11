@@ -24,7 +24,8 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.FortManager;
@@ -183,7 +184,7 @@ public class VillageMaster extends Folk
 				return;
 			}
 			
-			if (Config.ALT_CLAN_LEADER_INSTANT_ACTIVATION)
+			if (PlayerConfig.ALT_CLAN_LEADER_INSTANT_ACTIVATION)
 			{
 				clan.setNewLeader(member);
 			}
@@ -300,7 +301,7 @@ public class VillageMaster extends Folk
 			return;
 		}
 		
-		clan.setDissolvingExpiryTime(System.currentTimeMillis() + (Config.ALT_CLAN_DISSOLVE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
+		clan.setDissolvingExpiryTime(System.currentTimeMillis() + (PlayerConfig.ALT_CLAN_DISSOLVE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
 		clan.updateClanInDB();
 		
 		// The clan leader should take the XP penalty of a full death.
@@ -326,7 +327,7 @@ public class VillageMaster extends Folk
 		Pattern pattern;
 		try
 		{
-			pattern = Pattern.compile(Config.CLAN_NAME_TEMPLATE);
+			pattern = Pattern.compile(ServerConfig.CLAN_NAME_TEMPLATE);
 		}
 		catch (PatternSyntaxException e)
 		{

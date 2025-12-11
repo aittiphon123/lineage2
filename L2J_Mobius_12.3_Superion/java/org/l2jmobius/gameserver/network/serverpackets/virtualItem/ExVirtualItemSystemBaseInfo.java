@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets.virtualItem;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.IllusoryEquipmentConfig;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
@@ -47,7 +47,7 @@ public class ExVirtualItemSystemBaseInfo extends ServerPacket
 		_illusoryPointsUsed = _player.getVariables().getInt(PlayerVariables.ILLUSORY_POINTS_USED, 0);
 		
 		// Event ending time ((start time + (2592000000L * config interval)) - current time).
-		_virtualItemEventEnd = (((_virtualItemEventStart + (2592000000L * Config.ILLUSORY_EQUIPMENT_EVENT_DURATION)) - System.currentTimeMillis()) / 1000);
+		_virtualItemEventEnd = (((_virtualItemEventStart + (2592000000L * IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_EVENT_DURATION)) - System.currentTimeMillis()) / 1000);
 	}
 	
 	@Override
@@ -57,6 +57,6 @@ public class ExVirtualItemSystemBaseInfo extends ServerPacket
 		buffer.writeInt((int) _virtualItemEventEnd);
 		buffer.writeInt(_illusoryPointsAcquired); // Total Illusory Points acquired
 		buffer.writeInt(_illusoryPointsUsed); // Total Illusory Points used
-		buffer.writeInt(Config.ILLUSORY_EQUIPMENT_EVENT_POINTS_LIMIT); // max available points default 600
+		buffer.writeInt(IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_EVENT_POINTS_LIMIT); // max available points default 600
 	}
 }

@@ -24,8 +24,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -37,7 +37,7 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
-import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
+import org.l2jmobius.gameserver.model.script.LongTimeEvent;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.util.ArrayUtil;
@@ -324,7 +324,7 @@ public class SnowmanEnergy extends LongTimeEvent
 					final List<Player> members = party.getMembers();
 					for (Player member : members)
 					{
-						if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+						if (member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 						{
 							SkillCaster.triggerCast(member, member, SNOWMAN_ENERGY);
 						}
@@ -354,7 +354,7 @@ public class SnowmanEnergy extends LongTimeEvent
 		
 		// Update data for offline players.
 		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
+			PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ? AND account_name NOT IN (SELECT account_name FROM characters WHERE online = 1)"))
 		{
 			ps.setString(1, SNOWMAN_GIFT_RECIEVED_VAR);
 			ps.executeUpdate();

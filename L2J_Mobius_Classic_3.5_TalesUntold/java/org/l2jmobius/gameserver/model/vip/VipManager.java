@@ -24,7 +24,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.function.Consumer;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.VipSystemConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.data.xml.VipData;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -43,13 +43,13 @@ import org.l2jmobius.gameserver.network.serverpackets.vip.ReceiveVipInfo;
  */
 public class VipManager
 {
-	private static final byte VIP_MAX_TIER = (byte) Config.VIP_SYSTEM_MAX_TIER;
+	private static final byte VIP_MAX_TIER = (byte) VipSystemConfig.VIP_SYSTEM_MAX_TIER;
 	
 	private final ConsumerEventListener _vipLoginListener = new ConsumerEventListener(null, EventType.ON_PLAYER_LOGIN, (Consumer<OnPlayerLogin>) this::onVipLogin, this);
 	
 	protected VipManager()
 	{
-		if (!Config.VIP_SYSTEM_ENABLED)
+		if (!VipSystemConfig.VIP_SYSTEM_ENABLED)
 		{
 			return;
 		}
@@ -75,7 +75,7 @@ public class VipManager
 	
 	private boolean canReceiveGift(Player player)
 	{
-		if (!Config.VIP_SYSTEM_ENABLED)
+		if (!VipSystemConfig.VIP_SYSTEM_ENABLED)
 		{
 			return false;
 		}

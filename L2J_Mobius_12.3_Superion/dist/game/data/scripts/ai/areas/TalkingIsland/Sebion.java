@@ -18,16 +18,15 @@ package ai.areas.TalkingIsland;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Sebion AI.
  * @author Gladicek
  */
-public class Sebion extends AbstractNpcAI
+public class Sebion extends Script
 {
 	// NPCs
 	private static final int SEBION = 32978;

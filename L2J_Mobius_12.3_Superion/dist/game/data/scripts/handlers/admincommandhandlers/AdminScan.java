@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
 
 import org.l2jmobius.gameserver.data.xml.SpawnData;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -97,9 +97,9 @@ public class AdminScan implements IAdminCommandHandler
 				if (spawn != null)
 				{
 					spawn.stopRespawn();
-					if (DBSpawnManager.getInstance().isDefined(spawn.getId()))
+					if (DatabaseSpawnManager.getInstance().isDefined(spawn.getId()))
 					{
-						DBSpawnManager.getInstance().deleteSpawn(spawn, true);
+						DatabaseSpawnManager.getInstance().deleteSpawn(spawn, true);
 					}
 					else
 					{

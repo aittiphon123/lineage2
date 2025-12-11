@@ -150,7 +150,7 @@ public class PaulinasSupportBox implements IItemHandler
 		
 		final Player player = playable.asPlayer();
 		final Race race = player.getRace();
-		final PlayerClass classId = player.getPlayerClass();
+		final PlayerClass playerClass = player.getPlayerClass();
 		if (!player.isInventoryUnder80(false))
 		{
 			player.sendPacket(SystemMessageId.YOU_VE_EXCEEDED_THE_LIMIT_AND_CANNOT_RETRIEVE_THE_ITEM_PLEASE_CHECK_YOUR_LIMIT_IN_THE_INVENTORY);
@@ -170,22 +170,22 @@ public class PaulinasSupportBox implements IItemHandler
 					case ELF:
 					case DARK_ELF:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_MAGIC_GROUP, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_MAGIC_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_D_ROBE, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_STAFF_D, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_ROGUE_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_ROGUE_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_D_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DAGGER_D, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_WARRIOR_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_WARRIOR_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_D_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_SWORD_D, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_KNIGHT_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_KNIGHT_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_D_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_GSWORD_D, 1, player, true);
@@ -194,7 +194,7 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case DWARF:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.DWARF_BOUNTY_CLASS, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.DWARF_BOUNTY_CLASS, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_D_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DAGGER_D, 1, player, true);
@@ -208,12 +208,12 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case ORC:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_ORCM_GROUP, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_ORCM_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_D_ROBE, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_STAFF_D, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.LIGHT_ARMOR_CLASS, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.LIGHT_ARMOR_CLASS, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_D_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_FIST_D, 1, player, true);
@@ -228,7 +228,7 @@ public class PaulinasSupportBox implements IItemHandler
 					case KAMAEL:
 					{
 						player.addItem(ItemProcessType.REWARD, BOX_D_LIGHT, 1, player, true);
-						if (CategoryData.getInstance().isInCategory(CategoryType.KAMAEL_FEMALE_MAIN_OCCUPATION, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.KAMAEL_FEMALE_MAIN_OCCUPATION, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, WEAPON_CROSSBOW_D, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, BOLTS_D, 2000, player, true);
@@ -264,23 +264,23 @@ public class PaulinasSupportBox implements IItemHandler
 					case ELF:
 					case DARK_ELF:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, classId.getId()) || (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_HEAL, classId.getId())))
+						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, playerClass.getId()) || (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_HEAL, playerClass.getId())))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_C_ROBE, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_STAFF_C, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_BOW, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_BOW, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_C_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_BOW_C, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, ARROWS_C, 3000, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DAGGER, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DAGGER, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_C_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DAGGER_C, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DANCE, classId.getId()) || (player.getPlayerClass() == PlayerClass.GLADIATOR))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DANCE, playerClass.getId()) || (player.getPlayerClass() == PlayerClass.GLADIATOR))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_C_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DUALSWORD_C, 1, player, true);
@@ -290,7 +290,7 @@ public class PaulinasSupportBox implements IItemHandler
 							player.addItem(ItemProcessType.REWARD, BOX_C_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_SPEAR_C, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_WARRIOR_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_WARRIOR_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_C_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_SWORD_C, 1, player, true);
@@ -304,7 +304,7 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case DWARF:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.DWARF_BOUNTY_CLASS, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.DWARF_BOUNTY_CLASS, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_C_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DAGGER_C, 1, player, true);
@@ -318,12 +318,12 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case ORC:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_ORCM_GROUP, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_ORCM_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_C_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_STAFF_C, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.LIGHT_ARMOR_CLASS, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.LIGHT_ARMOR_CLASS, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_C_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_FIST_C, 1, player, true);
@@ -338,11 +338,11 @@ public class PaulinasSupportBox implements IItemHandler
 					case KAMAEL:
 					{
 						player.addItem(ItemProcessType.REWARD, BOX_C_LIGHT, 1, player, true);
-						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, WEAPON_RAPIER_C, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_ARCHER, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_ARCHER, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, WEAPON_CROSSBOW_C, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, BOLTS_C, 3000, player, true);
@@ -378,23 +378,23 @@ public class PaulinasSupportBox implements IItemHandler
 					case ELF:
 					case DARK_ELF:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, classId.getId()) || (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_HEAL, classId.getId())))
+						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, playerClass.getId()) || (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_HEAL, playerClass.getId())))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_A_ROBE, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_STAFF_A, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_BOW, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_BOW, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_A_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_BOW_A, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, ARROWS_A, 3000, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DAGGER, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DAGGER, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_A_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DAGGER_A, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DANCE, classId.getId()) || (player.getPlayerClass() == PlayerClass.GLADIATOR))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DANCE, playerClass.getId()) || (player.getPlayerClass() == PlayerClass.GLADIATOR))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_A_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DUALSWORD_A, 1, player, true);
@@ -404,7 +404,7 @@ public class PaulinasSupportBox implements IItemHandler
 							player.addItem(ItemProcessType.REWARD, BOX_A_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_SPEAR_A, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_WARRIOR_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_WARRIOR_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_A_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_SWORD_A, 1, player, true);
@@ -418,7 +418,7 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case DWARF:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.DWARF_BOUNTY_CLASS, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.DWARF_BOUNTY_CLASS, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_A_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DAGGER_A, 1, player, true);
@@ -432,12 +432,12 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case ORC:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_ORCM_GROUP, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_ORCM_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_A_ROBE, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_STAFF_A, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.LIGHT_ARMOR_CLASS, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.LIGHT_ARMOR_CLASS, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_A_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_FIST_A, 1, player, true);
@@ -452,11 +452,11 @@ public class PaulinasSupportBox implements IItemHandler
 					case KAMAEL:
 					{
 						player.addItem(ItemProcessType.REWARD, BOX_A_LIGHT, 1, player, true);
-						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, WEAPON_RAPIER_A, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_ARCHER, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_ARCHER, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, WEAPON_CROSSBOW_A, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, BOLTS_A, 3000, player, true);
@@ -492,23 +492,23 @@ public class PaulinasSupportBox implements IItemHandler
 					case ELF:
 					case DARK_ELF:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, classId.getId()) || (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_HEAL, classId.getId())))
+						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, playerClass.getId()) || (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_HEAL, playerClass.getId())))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_S_ROBE, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_STAFF_S, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_BOW, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_BOW, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_S_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, ARROW_OF_LIGHT_S, 5000, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_BOW_S, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DAGGER, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DAGGER, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_S_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DAGGER_S, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DANCE, classId.getId()) || (player.getPlayerClass() == PlayerClass.DUELIST))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DANCE, playerClass.getId()) || (player.getPlayerClass() == PlayerClass.DUELIST))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_S_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DUALSWORD_S, 1, player, true);
@@ -518,7 +518,7 @@ public class PaulinasSupportBox implements IItemHandler
 							player.addItem(ItemProcessType.REWARD, BOX_S_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_SPEAR_S, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_WARRIOR_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_WARRIOR_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_S_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_SWORD_S, 1, player, true);
@@ -532,7 +532,7 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case DWARF:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.DWARF_BOUNTY_CLASS, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.DWARF_BOUNTY_CLASS, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_S_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DAGGER_S, 1, player, true);
@@ -546,12 +546,12 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case ORC:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_ORCM_GROUP, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_ORCM_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_S_ROBE, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_STAFF_S, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.LIGHT_ARMOR_CLASS, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.LIGHT_ARMOR_CLASS, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_S_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_FIST_S, 1, player, true);
@@ -566,11 +566,11 @@ public class PaulinasSupportBox implements IItemHandler
 					case KAMAEL:
 					{
 						player.addItem(ItemProcessType.REWARD, BOX_S_LIGHT, 1, player, true);
-						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, WEAPON_RAPIER_S, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_ARCHER, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_ARCHER, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, WEAPON_CROSSBOW_S, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, BOLT_OF_LIGHT_S, 5000, player, true);
@@ -606,29 +606,29 @@ public class PaulinasSupportBox implements IItemHandler
 					case ELF:
 					case DARK_ELF:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, classId.getId()) || (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, classId.getId())))
+						if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, playerClass.getId()) || (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, playerClass.getId())))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_R_ROBE, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_STAFF_R, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_EOLH_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_EOLH_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_R_ROBE, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_CASTER_R, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_SIGIL_R, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_R_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DUALDAGGER_R, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_R_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, ORICHALCUM_ARROW_R, 5000, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_BOW_R, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, classId.getId()) || (player.getPlayerClass() == PlayerClass.TYRR_DUELIST))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, playerClass.getId()) || (player.getPlayerClass() == PlayerClass.TYRR_DUELIST))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_R_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DUALSWORD_R, 1, player, true);
@@ -638,7 +638,7 @@ public class PaulinasSupportBox implements IItemHandler
 							player.addItem(ItemProcessType.REWARD, BOX_R_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_SPEAR_R, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_SIGEL_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_SIGEL_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_R_HEAVY, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_SWORD_R, 1, player, true);
@@ -654,7 +654,7 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case DWARF:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_R_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DUALDAGGER_R, 1, player, true);
@@ -669,7 +669,7 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case ORC:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_R_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_DUALSWORD_R, 1, player, true);
@@ -688,12 +688,12 @@ public class PaulinasSupportBox implements IItemHandler
 					}
 					case KAMAEL:
 					{
-						if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, classId.getId()))
+						if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_R_ROBE, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, WEAPON_STAFF_R, 1, player, true);
 						}
-						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, classId.getId()))
+						else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, playerClass.getId()))
 						{
 							player.addItem(ItemProcessType.REWARD, BOX_R_LIGHT, 1, player, true);
 							player.addItem(ItemProcessType.REWARD, ORICHALCUM_BOLT_R, 5000, player, true);

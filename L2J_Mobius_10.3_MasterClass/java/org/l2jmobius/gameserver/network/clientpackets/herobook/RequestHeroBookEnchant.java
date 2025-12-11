@@ -43,6 +43,6 @@ public class RequestHeroBookEnchant extends ClientPacket
 			return;
 		}
 		
-		new HeroBookManager().tryIncreaseLevel(player);
+		HeroBookManager.tryIncreaseLevel(player);
 	}
 }

@@ -18,16 +18,15 @@ package ai.areas.TalkingIsland;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Shannon AI.
  * @author St3eT
  */
-public class Shannon extends AbstractNpcAI
+public class Shannon extends Script
 {
 	// NPCs
 	private static final int SHANNON = 32974;

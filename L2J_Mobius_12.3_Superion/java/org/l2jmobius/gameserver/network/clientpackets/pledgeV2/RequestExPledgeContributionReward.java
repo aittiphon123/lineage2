@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.pledgeV2;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.FeatureConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
@@ -50,7 +50,7 @@ public class RequestExPledgeContributionReward extends ClientPacket
 			return;
 		}
 		
-		if (player.getClanContributionTotal() < Config.CLAN_CONTRIBUTION_REQUIRED)
+		if (player.getClanContributionTotal() < FeatureConfig.CLAN_CONTRIBUTION_REQUIRED)
 		{
 			return;
 		}
@@ -63,8 +63,8 @@ public class RequestExPledgeContributionReward extends ClientPacket
 		
 		player.getVariables().set(PlayerVariables.CLAN_CONTRIBUTION_REWARDED_COUNT, player.getVariables().getInt(PlayerVariables.CLAN_CONTRIBUTION_REWARDED_COUNT, 0) + 1);
 		
-		player.setFame(player.getFame() + Config.CLAN_CONTRIBUTION_FAME_REWARD);
-		player.sendMessage("You have been rewarded with " + Config.CLAN_CONTRIBUTION_FAME_REWARD + " fame points.");
+		player.setFame(player.getFame() + FeatureConfig.CLAN_CONTRIBUTION_FAME_REWARD);
+		player.sendMessage("You have been rewarded with " + FeatureConfig.CLAN_CONTRIBUTION_FAME_REWARD + " fame points.");
 		player.sendPacket(new ExPledgeContributionInfo(player, true));
 	}
 }

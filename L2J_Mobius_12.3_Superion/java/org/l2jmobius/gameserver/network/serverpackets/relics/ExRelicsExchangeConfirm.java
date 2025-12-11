@@ -24,8 +24,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.RelicSystemConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.holders.player.PlayerRelicData;
 import org.l2jmobius.gameserver.model.variables.AccountVariables;
@@ -102,7 +102,7 @@ public class ExRelicsExchangeConfirm extends ServerPacket
 				_player.getAccountVariables().set(AccountVariables.UNCONFIRMED_RELICS_COUNT, _player.getAccountVariables().getInt(AccountVariables.UNCONFIRMED_RELICS_COUNT, 0) - 1);
 				_player.getAccountVariables().storeMe();
 				_player.storeRelics();
-				if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+				if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 				{
 					_player.sendMessage("1.Existing unconfirmed Relic Id: " + existingUnconfirmedRelic.getRelicId() + " Index: " + existingUnconfirmedRelic.getRelicIndex() + " count decreased.");
 				}
@@ -115,7 +115,7 @@ public class ExRelicsExchangeConfirm extends ServerPacket
 				_player.storeRelics();
 				_player.sendPacket(new ExRelicsList(_player)); // Update confirmed relic list relics count.
 				_player.sendPacket(new ExRelicsUpdateList(1, existingRelic.getRelicId(), 0, existingRelic.getRelicCount() + 1)); // Update confirmed relic list with new relic.
-				if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+				if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 				{
 					_player.sendMessage("2.Existing Relic Id: " + existingRelic.getRelicId() + " Index: " + existingRelic.getRelicIndex() + " count increased.");
 				}
@@ -135,7 +135,7 @@ public class ExRelicsExchangeConfirm extends ServerPacket
 				existingUnconfirmedRelic.setRelicCount(existingUnconfirmedRelic.getRelicCount() - 1);
 				_player.getAccountVariables().set(AccountVariables.UNCONFIRMED_RELICS_COUNT, _player.getAccountVariables().getInt(AccountVariables.UNCONFIRMED_RELICS_COUNT, 0) - 1);
 				_player.getAccountVariables().storeMe();
-				if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+				if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 				{
 					_player.sendMessage("1.Existing unconfirmed Relic Id: " + existingUnconfirmedRelic.getRelicId() + " Index: " + existingUnconfirmedRelic.getRelicIndex() + " count decreased.");
 				}
@@ -145,7 +145,7 @@ public class ExRelicsExchangeConfirm extends ServerPacket
 			storedRelics.add(newRelic);
 			_player.storeRelics();
 			_player.sendPacket(new ExRelicsUpdateList(1, newRelic.getRelicId(), 0, 0)); // Update confirmed relic list with new relic.
-			if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+			if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 			{
 				_player.sendMessage("3.New Relic Id: " + newRelic.getRelicId() + " Index: " + newRelic.getRelicIndex() + " was added.");
 			}
@@ -166,7 +166,7 @@ public class ExRelicsExchangeConfirm extends ServerPacket
 		{
 			_player.deleteRelics(existingUnconfirmedRelic.getRelicId(), existingUnconfirmedRelic.getRelicLevel(), existingUnconfirmedRelic.getRelicCount(), existingUnconfirmedRelic.getRelicIndex(), existingUnconfirmedRelic.getRelicSummonTime());
 			_player.getRelics().remove(existingUnconfirmedRelic);
-			if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+			if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 			{
 				_player.sendMessage("4.Cleanup Relic Id: " + existingUnconfirmedRelic.getRelicId() + " Index: " + existingUnconfirmedRelic.getRelicIndex() + " was removed from db.");
 			}

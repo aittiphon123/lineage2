@@ -34,11 +34,11 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelC
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerProfessionChange;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerQuestAccept;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestDialogType;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuestLocation;
-import org.l2jmobius.gameserver.model.quest.newquestdata.QuestCondType;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestDialogType;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuestLocation;
+import org.l2jmobius.gameserver.model.script.newquestdata.QuestCondType;
 import org.l2jmobius.gameserver.network.serverpackets.classchange.ExClassChangeSetAlarm;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestDialog;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestNotification;
@@ -223,16 +223,16 @@ public class Q10315_PathOfDestinyProving extends Quest
 			player.sendPacket(new ExQuestNotification(questState));
 			giveItems(player, SS_R, 5000);
 			giveItems(player, BSS_R, 5000);
-		}
-		
-		switch (player.getPlayerClass())
-		{
-			case WIND_MAKER:
+			
+			switch (player.getPlayerClass())
 			{
-				giveItems(player, BOX_R_ROBE, 1);
-				giveItems(player, WEAPON_GSWORD_R, 1);
-				giveItems(player, WEAPON_BOW_R, 1);
-				break;
+				case WIND_MAKER:
+				{
+					giveItems(player, BOX_R_ROBE, 1);
+					giveItems(player, WEAPON_GSWORD_R, 1);
+					giveItems(player, WEAPON_BOW_R, 1);
+					break;
+				}
 			}
 		}
 	}

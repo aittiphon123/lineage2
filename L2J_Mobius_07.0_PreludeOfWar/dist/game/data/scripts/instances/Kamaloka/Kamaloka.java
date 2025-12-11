@@ -37,16 +37,15 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import instances.AbstractInstance;
-
 /**
  * Adapted from l2jserver script by Mobius
  */
-public class Kamaloka extends AbstractInstance
+public class Kamaloka extends InstanceScript
 {
 	/*
 	 * Reset time for all kamaloka Default: 6:30AM on server time

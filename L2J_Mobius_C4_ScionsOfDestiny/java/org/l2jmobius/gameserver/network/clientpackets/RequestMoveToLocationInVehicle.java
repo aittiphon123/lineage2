@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.managers.BoatManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -62,7 +62,7 @@ public class RequestMoveToLocationInVehicle extends ClientPacket
 			return;
 		}
 		
-		if ((Config.PLAYER_MOVEMENT_BLOCK_TIME > 0) && !player.isGM() && (player.getNotMoveUntil() > System.currentTimeMillis()))
+		if ((PlayerConfig.PLAYER_MOVEMENT_BLOCK_TIME > 0) && !player.isGM() && (player.getNotMoveUntil() > System.currentTimeMillis()))
 		{
 			player.sendMessage("You cannot move while speaking to an NPC. One moment please.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);

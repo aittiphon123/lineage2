@@ -29,9 +29,9 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.HuntPassConfig;
 import org.l2jmobius.gameserver.data.xml.HuntPassData;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -152,7 +152,7 @@ public class HuntPass
 	{
 		final Calendar calendar = Calendar.getInstance();
 		calendar.setTimeInMillis(System.currentTimeMillis());
-		calendar.set(Calendar.DAY_OF_MONTH, Config.HUNT_PASS_PERIOD);
+		calendar.set(Calendar.DAY_OF_MONTH, HuntPassConfig.HUNT_PASS_PERIOD);
 		calendar.set(Calendar.HOUR_OF_DAY, 6);
 		calendar.set(Calendar.MINUTE, 30);
 		if (calendar.getTimeInMillis() < System.currentTimeMillis())
@@ -175,7 +175,7 @@ public class HuntPass
 	
 	public void addPassPoint()
 	{
-		if (!Config.ENABLE_HUNT_PASS)
+		if (!HuntPassConfig.ENABLE_HUNT_PASS)
 		{
 			return;
 		}
@@ -189,9 +189,9 @@ public class HuntPass
 		
 		// Check current step.
 		boolean hasNewLevel = false;
-		while (points >= Config.HUNT_PASS_POINTS_FOR_STEP)
+		while (points >= HuntPassConfig.HUNT_PASS_POINTS_FOR_STEP)
 		{
-			points -= Config.HUNT_PASS_POINTS_FOR_STEP;
+			points -= HuntPassConfig.HUNT_PASS_POINTS_FOR_STEP;
 			setCurrentStep(getCurrentStep() + 1);
 			hasNewLevel = true;
 		}

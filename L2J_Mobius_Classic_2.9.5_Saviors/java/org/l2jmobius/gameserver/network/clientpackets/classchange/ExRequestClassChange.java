@@ -20,7 +20,7 @@ setPlayerClass * Copyright (c) 2013 L2jMobius
  */
 package org.l2jmobius.gameserver.network.clientpackets.classchange;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.model.ElementalSpirit;
@@ -124,9 +124,9 @@ public class ExRequestClassChange extends ClientPacket
 				player.sendPacket(new ElementalSpiritInfo(player, player.getActiveElementalSpiritType(), (byte) 0x01));
 			}
 			
-			if (Config.AUTO_LEARN_SKILLS)
+			if (PlayerConfig.AUTO_LEARN_SKILLS)
 			{
-				player.giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, true, Config.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
+				player.giveAvailableSkills(PlayerConfig.AUTO_LEARN_FS_SKILLS, true, PlayerConfig.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
 			}
 			
 			player.store(false); // Save player cause if server crashes before this char is saved, he will lose class.
@@ -134,7 +134,7 @@ public class ExRequestClassChange extends ClientPacket
 			player.sendSkillList();
 			player.sendPacket(new PlaySound("ItemSound.quest_fanfare_2"));
 			
-			if (Config.DISABLE_TUTORIAL && !player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) //
+			if (PlayerConfig.DISABLE_TUTORIAL && !player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) //
 				&& ((player.isInCategory(CategoryType.SECOND_CLASS_GROUP) && (playerLevel >= 38)) //
 					|| (player.isInCategory(CategoryType.THIRD_CLASS_GROUP) && (playerLevel >= 76))))
 			{

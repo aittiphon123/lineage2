@@ -22,21 +22,20 @@ package ai.bosses.Beleth.Wormhole;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
-
-import ai.AbstractNpcAI;
 
 /**
  * Wormhole AI (33901).
  * @author Gigi
  */
-public class Wormhole extends AbstractNpcAI
+public class Wormhole extends Script
 {
 	// NPCs
 	private static final int WORMHOLE = 33901;
@@ -74,7 +73,7 @@ public class Wormhole extends AbstractNpcAI
 			{
 				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 				packet.setHtml(getHtm(player, "33901-2.html"));
-				packet.replace("%min%", Integer.toString(Config.BELETH_MIN_PLAYERS));
+				packet.replace("%min%", Integer.toString(GrandBossConfig.BELETH_MIN_PLAYERS));
 				player.sendPacket(packet);
 				return null;
 			}
@@ -87,11 +86,11 @@ public class Wormhole extends AbstractNpcAI
 			{
 				return "33901-3.html";
 			}
-			else if ((members.size() < Config.BELETH_MIN_PLAYERS) || (members.size() > Config.BELETH_MAX_PLAYERS))
+			else if ((members.size() < GrandBossConfig.BELETH_MIN_PLAYERS) || (members.size() > GrandBossConfig.BELETH_MAX_PLAYERS))
 			{
 				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 				packet.setHtml(getHtm(player, "33901-2.html"));
-				packet.replace("%min%", Integer.toString(Config.BELETH_MIN_PLAYERS));
+				packet.replace("%min%", Integer.toString(GrandBossConfig.BELETH_MIN_PLAYERS));
 				player.sendPacket(packet);
 			}
 			else
@@ -114,8 +113,8 @@ public class Wormhole extends AbstractNpcAI
 	{
 		final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 		packet.setHtml(getHtm(player, "33901-1.html"));
-		packet.replace("%min%", Integer.toString(Config.BELETH_MIN_PLAYERS));
-		packet.replace("%max%", Integer.toString(Config.BELETH_MAX_PLAYERS));
+		packet.replace("%min%", Integer.toString(GrandBossConfig.BELETH_MIN_PLAYERS));
+		packet.replace("%max%", Integer.toString(GrandBossConfig.BELETH_MAX_PLAYERS));
 		player.sendPacket(packet);
 		return null;
 	}

@@ -24,15 +24,14 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Chest;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
-
-import ai.AbstractNpcAI;
 
 /**
  * Chest AI implementation.
  * @author Fulminus
  */
-public class Chests extends AbstractNpcAI
+public class Chests extends Script
 {
 	// NPCs
 	// @formatter:off

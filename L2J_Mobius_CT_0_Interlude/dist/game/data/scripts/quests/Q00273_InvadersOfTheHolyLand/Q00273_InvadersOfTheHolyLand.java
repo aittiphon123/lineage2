@@ -20,14 +20,14 @@
  */
 package quests.Q00273_InvadersOfTheHolyLand;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 
 public class Q00273_InvadersOfTheHolyLand extends Quest
@@ -114,7 +114,7 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 					}
 					
 					int reward = (black * 5) + (red * 50);
-					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD)
+					if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD)
 					{
 						reward += ((black >= 10) ? ((red >= 1) ? 1800 : 1500) : 0);
 					}

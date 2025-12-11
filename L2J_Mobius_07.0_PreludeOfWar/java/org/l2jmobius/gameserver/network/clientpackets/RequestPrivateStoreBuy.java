@@ -25,7 +25,9 @@ import static org.l2jmobius.gameserver.model.actor.Npc.INTERACTION_DISTANCE;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.data.sql.OfflineTraderTable;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.ItemRequest;
@@ -52,7 +54,7 @@ public class RequestPrivateStoreBuy extends ClientPacket
 	{
 		_storePlayerId = readInt();
 		final int count = readInt();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != remaining()))
+		if ((count <= 0) || (count > PlayerConfig.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != remaining()))
 		{
 			return;
 		}
@@ -138,7 +140,7 @@ public class RequestPrivateStoreBuy extends ClientPacket
 		if ((storePlayer.getPrivateStoreType() == PrivateStoreType.PACKAGE_SELL) && (storeList.getItemCount() > _items.size()))
 		{
 			final String msgErr = "[RequestPrivateStoreBuy] " + player + " tried to buy less items than sold by package-sell, ban this player for bot usage!";
-			PunishmentManager.handleIllegalPlayerAction(player, msgErr, Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, msgErr, GeneralConfig.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -154,7 +156,7 @@ public class RequestPrivateStoreBuy extends ClientPacket
 		}
 		
 		// Update offline trade record, if realtime saving is enabled
-		if (Config.OFFLINE_TRADE_ENABLE && Config.STORE_OFFLINE_TRADE_IN_REALTIME && ((storePlayer.getClient() == null) || storePlayer.getClient().isDetached()))
+		if (OfflineTradeConfig.OFFLINE_TRADE_ENABLE && OfflineTradeConfig.STORE_OFFLINE_TRADE_IN_REALTIME && ((storePlayer.getClient() == null) || storePlayer.getClient().isDetached()))
 		{
 			OfflineTraderTable.getInstance().onTransaction(storePlayer, storeList.getItemCount() == 0, false);
 		}

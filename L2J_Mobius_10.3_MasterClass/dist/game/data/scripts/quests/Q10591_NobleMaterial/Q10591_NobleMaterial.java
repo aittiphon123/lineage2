@@ -20,7 +20,7 @@
  */
 package quests.Q10591_NobleMaterial;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.model.Location;
@@ -32,10 +32,10 @@ import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerBecomeNoblesse;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -271,7 +271,7 @@ public class Q10591_NobleMaterial extends Quest
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final PlayerClass classId = player.getBaseTemplate().getPlayerClass();
+		final PlayerClass playerClass = player.getBaseTemplate().getPlayerClass();
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
 		switch (qs.getState())
@@ -297,7 +297,7 @@ public class Q10591_NobleMaterial extends Quest
 						
 						if (qs.isCond(1))
 						{
-							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, classId.getId()) || CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, classId.getId()) || CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, classId.getId()))
+							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, playerClass.getId()) || CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, playerClass.getId()) || CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, playerClass.getId()))
 							{
 								htmltext = "34513-04b.htm";
 							}
@@ -389,7 +389,7 @@ public class Q10591_NobleMaterial extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(2) && LocationUtil.checkIfInRange(Config.ALT_PARTY_RANGE, npc, player, false))
+		if ((qs != null) && qs.isCond(2) && LocationUtil.checkIfInRange(PlayerConfig.ALT_PARTY_RANGE, npc, player, false))
 		{
 			if (getQuestItemsCount(player, FLAME_ENERGY) < 1000)
 			{
@@ -413,7 +413,7 @@ public class Q10591_NobleMaterial extends Quest
 	public void basicRewards(Player player)
 	{
 		final Race race = player.getRace();
-		final PlayerClass classId = player.getBaseTemplate().getPlayerClass();
+		final PlayerClass playerClass = player.getBaseTemplate().getPlayerClass();
 		
 		giveAdena(player, ADENA_AMOUNT, false);
 		giveItems(player, ACHIEVEMENT_BOX_LV_100, 1);
@@ -424,7 +424,7 @@ public class Q10591_NobleMaterial extends Quest
 			case ELF:
 			case DARK_ELF:
 			{
-				if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, classId.getId()))
+				if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, playerClass.getId()))
 				{
 					giveItems(player, EXALTED_BUSTER, 1);
 					giveItems(player, EXALTED_ROBE_PACK, 1);
@@ -432,7 +432,7 @@ public class Q10591_NobleMaterial extends Quest
 					giveItems(player, COMMON_EXALTED_QUEST_REWARD_MAGIC, 1);
 					giveItems(player, SPECIAL_EXALTED_QUEST_REWARD_MAGIC, 1);
 				}
-				else if ((CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, classId.getId())))
+				else if ((CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, playerClass.getId())))
 				{
 					giveItems(player, EXALTED_RETRIBUTER, 1);
 					giveItems(player, EXALTED_ROBE_PACK, 1);
@@ -440,7 +440,7 @@ public class Q10591_NobleMaterial extends Quest
 					giveItems(player, COMMON_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 					giveItems(player, SPECIAL_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_EOLH_GROUP, classId.getId()))
+				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_EOLH_GROUP, playerClass.getId()))
 				{
 					giveItems(player, EXALTED_CASTER, 1);
 					giveItems(player, EXALTED_ROBE_PACK, 1);
@@ -448,7 +448,7 @@ public class Q10591_NobleMaterial extends Quest
 					giveItems(player, COMMON_EXALTED_QUEST_REWARD_MAGIC, 1);
 					giveItems(player, SPECIAL_EXALTED_QUEST_REWARD_MAGIC, 1);
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, classId.getId()))
+				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, playerClass.getId()))
 				{
 					giveItems(player, EXALTED_DUAL_DAGGERS, 1);
 					giveItems(player, EXALTED_LIGHT_ARMOR_PACK, 1);
@@ -456,7 +456,7 @@ public class Q10591_NobleMaterial extends Quest
 					giveItems(player, COMMON_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 					giveItems(player, SPECIAL_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, classId.getId()))
+				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, playerClass.getId()))
 				{
 					giveItems(player, EXALTED_THROWER, 1);
 					giveItems(player, EXALTED_LIGHT_ARMOR_PACK, 1);
@@ -464,7 +464,7 @@ public class Q10591_NobleMaterial extends Quest
 					giveItems(player, COMMON_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 					giveItems(player, SPECIAL_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, classId.getId()) || (player.getPlayerClass() == PlayerClass.TYRR_DUELIST))
+				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, playerClass.getId()) || (player.getPlayerClass() == PlayerClass.TYRR_DUELIST))
 				{
 					giveItems(player, EXALTED_DUAL_SWORDS, 1);
 					giveItems(player, EXALTED_HEAVY_ARMOR_PACK, 1);
@@ -480,7 +480,7 @@ public class Q10591_NobleMaterial extends Quest
 					giveItems(player, COMMON_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 					giveItems(player, SPECIAL_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_SIGEL_GROUP, classId.getId()))
+				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_SIGEL_GROUP, playerClass.getId()))
 				{
 					giveItems(player, EXALTED_CUTTER, 1);
 					giveItems(player, EXALTED_HEAVY_ARMOR_PACK, 1);
@@ -492,7 +492,7 @@ public class Q10591_NobleMaterial extends Quest
 			}
 			case DWARF:
 			{
-				if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, classId.getId()))
+				if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, playerClass.getId()))
 				{
 					giveItems(player, EXALTED_DUAL_DAGGERS, 1);
 					giveItems(player, EXALTED_LIGHT_ARMOR_PACK, 1);
@@ -512,7 +512,7 @@ public class Q10591_NobleMaterial extends Quest
 			}
 			case ORC:
 			{
-				if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, classId.getId()))
+				if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, playerClass.getId()))
 				{
 					giveItems(player, player.getPlayerClass() == PlayerClass.ISS_DOMINATOR ? EXALTED_CUTTER : EXALTED_DUAL_SWORDS, 1);
 					giveItems(player, EXALTED_HEAVY_ARMOR_PACK, 1);
@@ -540,7 +540,7 @@ public class Q10591_NobleMaterial extends Quest
 			}
 			case KAMAEL:
 			{
-				if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, classId.getId()))
+				if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, playerClass.getId()))
 				{
 					giveItems(player, EXALTED_BUSTER, 1);
 					giveItems(player, EXALTED_ROBE_PACK, 1);
@@ -548,7 +548,7 @@ public class Q10591_NobleMaterial extends Quest
 					giveItems(player, COMMON_EXALTED_QUEST_REWARD_MAGIC, 1);
 					giveItems(player, SPECIAL_EXALTED_QUEST_REWARD_MAGIC, 1);
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, classId.getId()))
+				else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, playerClass.getId()))
 				{
 					giveItems(player, EXALTED_SHOOTER, 1);
 					giveItems(player, EXALTED_LIGHT_ARMOR_PACK, 1);

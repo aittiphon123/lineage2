@@ -22,7 +22,7 @@ package ai.areas.TalkingIsland.Trandon;
 
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -36,17 +36,16 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerSubChange;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.clientpackets.RequestAcquireSkill;
-
-import ai.AbstractNpcAI;
 
 /**
  * Trandon AI.
  * @author malyelfik, Mobius
  */
-public class Trandon extends AbstractNpcAI
+public class Trandon extends Script
 {
 	// NPC
 	private static final int NPC_ID = 33490;
@@ -206,7 +205,7 @@ public class Trandon extends AbstractNpcAI
 				{
 					htmltext = "33490-21.html";
 				}
-				else if (player.getAdena() < Config.FEE_DELETE_SUBCLASS_SKILLS)
+				else if (player.getAdena() < PlayerConfig.FEE_DELETE_SUBCLASS_SKILLS)
 				{
 					htmltext = "33490-22.html";
 				}
@@ -219,7 +218,7 @@ public class Trandon extends AbstractNpcAI
 					htmltext = null; // TODO: Unknown html
 					takeItems(player, SUB_CERTIFICATE, -1);
 					player.getWarehouse().destroyItemByItemId(ItemProcessType.QUEST, SUB_CERTIFICATE, -1, player, npc);
-					takeItems(player, Inventory.ADENA_ID, Config.FEE_DELETE_SUBCLASS_SKILLS);
+					takeItems(player, Inventory.ADENA_ID, PlayerConfig.FEE_DELETE_SUBCLASS_SKILLS);
 					for (SubClassHolder subclass : player.getSubClasses().values())
 					{
 						player.getVariables().remove(SUB_CERTIFICATE_COUNT_VAR + subclass.getId());
@@ -332,7 +331,7 @@ public class Trandon extends AbstractNpcAI
 				{
 					htmltext = "33490-30.html";
 				}
-				else if (player.getAdena() < Config.FEE_DELETE_DUALCLASS_SKILLS)
+				else if (player.getAdena() < PlayerConfig.FEE_DELETE_DUALCLASS_SKILLS)
 				{
 					htmltext = "33490-32.html";
 				}
@@ -347,7 +346,7 @@ public class Trandon extends AbstractNpcAI
 					takeItems(player, DUAL_CERTIFICATE_ENHANCED, -1);
 					player.getWarehouse().destroyItemByItemId(ItemProcessType.QUEST, DUAL_CERTIFICATE, -1, player, npc);
 					player.getWarehouse().destroyItemByItemId(ItemProcessType.QUEST, DUAL_CERTIFICATE_ENHANCED, -1, player, npc);
-					takeItems(player, Inventory.ADENA_ID, Config.FEE_DELETE_DUALCLASS_SKILLS);
+					takeItems(player, Inventory.ADENA_ID, PlayerConfig.FEE_DELETE_DUALCLASS_SKILLS);
 					player.getVariables().remove(DUAL_CERTIFICATE_COUNT_VAR);
 					
 					final PlayerVariables vars = player.getVariables();
@@ -504,6 +503,12 @@ public class Trandon extends AbstractNpcAI
 				player.addSkill(sk, false);
 			}
 		}
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

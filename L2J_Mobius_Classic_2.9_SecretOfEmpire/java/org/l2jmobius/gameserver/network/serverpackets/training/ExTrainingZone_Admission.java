@@ -16,8 +16,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets.training;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.TrainingCampConfig;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -37,8 +37,8 @@ public class ExTrainingZone_Admission extends ServerPacket
 	{
 		_timeElapsed = timeElapsed;
 		_timeRemaining = timeRemaing;
-		_maxExp = Config.TRAINING_CAMP_EXP_MULTIPLIER * ((ExperienceData.getInstance().getExpForLevel(level) * ExperienceData.getInstance().getTrainingRate(level)) / Config.TRAINING_CAMP_MAX_DURATION);
-		_maxSp = Config.TRAINING_CAMP_SP_MULTIPLIER * (_maxExp / 250d);
+		_maxExp = TrainingCampConfig.TRAINING_CAMP_EXP_MULTIPLIER * ((ExperienceData.getInstance().getExpForLevel(level) * ExperienceData.getInstance().getTrainingRate(level)) / TrainingCampConfig.TRAINING_CAMP_MAX_DURATION);
+		_maxSp = TrainingCampConfig.TRAINING_CAMP_SP_MULTIPLIER * (_maxExp / 250d);
 	}
 	
 	@Override

@@ -20,7 +20,7 @@
  */
 package handlers.effecthandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.custom.ClassBalanceConfig;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -189,12 +189,12 @@ public class EnergyDamage extends AbstractEffect
 		double balanceMod = 1;
 		if (attacker.isPlayable())
 		{
-			balanceMod = effected.isPlayable() ? Config.PVP_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()] : Config.PVE_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
+			balanceMod = effected.isPlayable() ? ClassBalanceConfig.PVP_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()] : ClassBalanceConfig.PVE_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
 		}
 		
 		if (effected.isPlayable())
 		{
-			defence *= attacker.isPlayable() ? Config.PVP_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effected.asPlayer().getPlayerClass().getId()] : Config.PVE_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effected.asPlayer().getPlayerClass().getId()];
+			defence *= attacker.isPlayable() ? ClassBalanceConfig.PVP_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effected.asPlayer().getPlayerClass().getId()] : ClassBalanceConfig.PVE_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effected.asPlayer().getPlayerClass().getId()];
 		}
 		
 		damage = Math.max(0, damage * effector.getStat().getValue(Stat.PHYSICAL_SKILL_POWER, 1)) * balanceMod;

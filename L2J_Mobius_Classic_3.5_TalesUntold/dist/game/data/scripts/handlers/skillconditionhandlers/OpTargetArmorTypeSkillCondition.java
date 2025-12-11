@@ -27,7 +27,7 @@ import java.util.Set;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ArmorType;
 import org.l2jmobius.gameserver.model.item.type.ItemType;
@@ -76,7 +76,7 @@ public class OpTargetArmorTypeSkillCondition implements ISkillCondition
 		final ItemType chestType = chest.getTemplate().getItemType();
 		
 		// Get the chest body part.
-		final long chestBodyPart = chest.getTemplate().getBodyPart();
+		final BodyPart chestBodyPart = chest.getTemplate().getBodyPart();
 		
 		// Get the legs armor.
 		final Item legs = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
@@ -97,7 +97,7 @@ public class OpTargetArmorTypeSkillCondition implements ISkillCondition
 			}
 			
 			// Return true if chest armor is a full armor.
-			if (chestBodyPart == ItemTemplate.SLOT_FULL_ARMOR)
+			if (chestBodyPart == BodyPart.FULL_ARMOR)
 			{
 				return true;
 			}

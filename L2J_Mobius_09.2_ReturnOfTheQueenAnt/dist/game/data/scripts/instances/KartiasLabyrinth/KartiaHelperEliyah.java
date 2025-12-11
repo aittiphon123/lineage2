@@ -30,15 +30,14 @@ import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureAt
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
 import org.l2jmobius.gameserver.model.events.holders.instance.OnInstanceStatusChange;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * Kartia Helper Eliyah AI. Summoner
  * @author flanagak
  */
-public class KartiaHelperEliyah extends AbstractNpcAI
+public class KartiaHelperEliyah extends Script
 {
 	// NPCs
 	private static final int[] KARTIA_ELIYAH =

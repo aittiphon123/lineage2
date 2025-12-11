@@ -22,10 +22,11 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import java.util.StringTokenizer;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.commons.util.TraceUtil;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
 import org.l2jmobius.gameserver.handler.AdminCommandHandler;
 import org.l2jmobius.gameserver.handler.BypassHandler;
@@ -249,7 +250,7 @@ public class RequestBypassToServer extends ClientPacket
 			else if (_command.startsWith("manor_menu_select"))
 			{
 				final Npc lastNpc = player.getLastFolkNPC();
-				if (Config.ALLOW_MANOR && (lastNpc != null) && lastNpc.canInteract(player) && EventDispatcher.getInstance().hasListener(EventType.ON_NPC_MANOR_BYPASS, lastNpc))
+				if (GeneralConfig.ALLOW_MANOR && (lastNpc != null) && lastNpc.canInteract(player) && EventDispatcher.getInstance().hasListener(EventType.ON_NPC_MANOR_BYPASS, lastNpc))
 				{
 					final String[] split = _command.substring(_command.indexOf('?') + 1).split("&");
 					final int ask = Integer.parseInt(split[0].split("=")[1]);
@@ -260,7 +261,7 @@ public class RequestBypassToServer extends ClientPacket
 			}
 			else if (_command.startsWith("pccafe"))
 			{
-				if (!Config.PC_CAFE_ENABLED)
+				if (!PremiumSystemConfig.PC_CAFE_ENABLED)
 				{
 					return;
 				}

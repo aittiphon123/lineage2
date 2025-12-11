@@ -36,16 +36,15 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerClanLe
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogout;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerProfessionChange;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author UnAfraid, Mobius
  */
-public class ClanMaster extends AbstractNpcAI
+public class ClanMaster extends Script
 {
 	// @formatter:off
 	private static final int[] NPCS =

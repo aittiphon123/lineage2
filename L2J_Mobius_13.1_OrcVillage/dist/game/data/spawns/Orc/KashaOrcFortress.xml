@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="KashaOrcFortress">
+		<group name="Npc">
+			<npc id="31637" x="-14923" y="-114718" z="-4033" heading="26634" respawnTime="60sec" /> <!-- Khavatari Kashu -->
+			<npc id="30590" x="-22807" y="-110868" z="-3376" heading="30971" respawnTime="60sec" /> <!-- Rosheek - Khavatari -->
+		</group>
+	</spawn>
+</list>

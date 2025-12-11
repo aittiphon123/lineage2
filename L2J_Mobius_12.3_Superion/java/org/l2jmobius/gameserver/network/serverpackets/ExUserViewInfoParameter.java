@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.stat.PlayerStat;
 import org.l2jmobius.gameserver.model.item.enums.ItemGrade;
@@ -425,7 +425,7 @@ public class ExUserViewInfoParameter extends ServerPacket
 		
 		// P. Evasion (%)
 		buffer.writeShort(index++);
-		buffer.writeInt(((_player.getEvasionRate() * 100) / Config.MAX_EVASION));
+		buffer.writeInt(((_player.getEvasionRate() * 100) / PlayerConfig.MAX_EVASION));
 		
 		// P. Evasion (num.)
 		buffer.writeShort(index++);
@@ -433,7 +433,7 @@ public class ExUserViewInfoParameter extends ServerPacket
 		
 		// M. Evasion (%)
 		buffer.writeShort(index++);
-		buffer.writeInt(((_player.getMagicEvasionRate() * 100) / Config.MAX_EVASION));
+		buffer.writeInt(((_player.getMagicEvasionRate() * 100) / PlayerConfig.MAX_EVASION));
 		
 		// M. Evasion (num.)
 		buffer.writeShort(index++);
@@ -457,7 +457,7 @@ public class ExUserViewInfoParameter extends ServerPacket
 		
 		// Atk. Spd. (%)
 		buffer.writeShort(index++);
-		buffer.writeInt(((_player.getPAtkSpd() * 100) / Config.MAX_PATK_SPEED));
+		buffer.writeInt(((_player.getPAtkSpd() * 100) / PlayerConfig.MAX_PATK_SPEED));
 		
 		// Atk. Spd. (num.)
 		buffer.writeShort(index++);
@@ -465,7 +465,7 @@ public class ExUserViewInfoParameter extends ServerPacket
 		
 		// Casting Spd. (%)
 		buffer.writeShort(index++);
-		buffer.writeInt((_player.getMAtkSpd() * 100) / Config.MAX_MATK_SPEED);
+		buffer.writeInt((_player.getMAtkSpd() * 100) / PlayerConfig.MAX_MATK_SPEED);
 		
 		// Casting Spd. (num.)
 		buffer.writeShort(index++);
@@ -473,7 +473,7 @@ public class ExUserViewInfoParameter extends ServerPacket
 		
 		// Speed (%)
 		buffer.writeShort(index++);
-		buffer.writeInt((int) ((_player.getMoveSpeed() * 100) / Config.MAX_RUN_SPEED));
+		buffer.writeInt((int) ((_player.getMoveSpeed() * 100) / PlayerConfig.MAX_RUN_SPEED));
 		
 		// Speed (num.)
 		buffer.writeShort(index++);

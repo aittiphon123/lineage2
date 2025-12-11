@@ -16,7 +16,7 @@
  */
 package org.l2jmobius.loginserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.loginserver.config.LoginConfig;
 import org.l2jmobius.loginserver.network.serverpackets.PIAgreementCheck;
 
 /**
@@ -42,6 +42,6 @@ public class RequestPIAgreementCheck extends LoginClientPacket
 	@Override
 	public void run()
 	{
-		getClient().sendPacket(new PIAgreementCheck(_accountId, Config.SHOW_PI_AGREEMENT ? 0x01 : 0x00));
+		getClient().sendPacket(new PIAgreementCheck(_accountId, LoginConfig.SHOW_PI_AGREEMENT ? 0x01 : 0x00));
 	}
 }

@@ -24,13 +24,12 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Notorion
  */
-public class LizardmanBarracksXPParty extends AbstractNpcAI
+public class LizardmanBarracksXPParty extends Script
 {
 	// NPCs
 	private static final int[] MONSTER_IDS =

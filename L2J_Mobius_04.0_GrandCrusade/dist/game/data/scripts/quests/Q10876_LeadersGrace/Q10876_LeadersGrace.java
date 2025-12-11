@@ -20,13 +20,13 @@
  */
 package quests.Q10876_LeadersGrace;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 import quests.Q10873_ExaltedReachingAnotherLevel.Q10873_ExaltedReachingAnotherLevel;
 
@@ -99,7 +99,7 @@ public class Q10876_LeadersGrace extends Quest
 					giveItems(player, SANTIAGO_CERTIFICATE, 1);
 					qs.exitQuest(false, true);
 					
-					final Quest mainQ = QuestManager.getInstance().getQuest(Q10873_ExaltedReachingAnotherLevel.class.getSimpleName());
+					final Quest mainQ = ScriptManager.getInstance().getScript(Q10873_ExaltedReachingAnotherLevel.class.getSimpleName());
 					if (mainQ != null)
 					{
 						mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);

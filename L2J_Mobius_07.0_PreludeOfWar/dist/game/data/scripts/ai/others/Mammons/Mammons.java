@@ -21,21 +21,20 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.NpcConfig;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.util.Broadcast;
-
-import ai.AbstractNpcAI;
 
 /**
  * Mammons AI.
  * @author St3eT
  */
-public class Mammons extends AbstractNpcAI
+public class Mammons extends Script
 {
 	// NPCs
 	private static final int[] MAMMONS =
@@ -120,7 +119,7 @@ public class Mammons extends AbstractNpcAI
 				if (blacksmith != null)
 				{
 					blacksmith.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(RANDOM_SAY));
-					if (Config.ANNOUNCE_MAMMON_SPAWN)
+					if (NpcConfig.ANNOUNCE_MAMMON_SPAWN)
 					{
 						Broadcast.toAllOnlinePlayers("Mammon's has been spawned in Town of " + blacksmith.getCastle().getName() + ".", false);
 					}
@@ -130,6 +129,12 @@ public class Mammons extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

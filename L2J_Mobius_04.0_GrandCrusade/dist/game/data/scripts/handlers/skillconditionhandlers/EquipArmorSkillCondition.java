@@ -21,7 +21,7 @@ import java.util.List;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ArmorType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
@@ -73,8 +73,8 @@ public class EquipArmorSkillCondition implements ISkillCondition
 		// So from here, chest armor matches conditions.
 		
 		// Return true if chest armor is a Full Armor.
-		final int chestBodyPart = chest.getTemplate().getBodyPart();
-		if (chestBodyPart == ItemTemplate.SLOT_FULL_ARMOR)
+		final BodyPart chestBodyPart = chest.getTemplate().getBodyPart();
+		if (chestBodyPart == BodyPart.FULL_ARMOR)
 		{
 			return true;
 		}

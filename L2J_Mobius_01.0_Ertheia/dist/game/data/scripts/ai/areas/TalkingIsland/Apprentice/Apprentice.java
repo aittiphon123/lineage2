@@ -16,23 +16,23 @@
  */
 package ai.areas.TalkingIsland.Apprentice;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 
-import ai.AbstractNpcAI;
 import quests.Q10329_BackupSeekers.Q10329_BackupSeekers;
 
 /**
  * Apprentice AI.
  * @author St3eT
  */
-public class Apprentice extends AbstractNpcAI
+public class Apprentice extends Script
 {
 	// NPCs
 	private static final int APPRENTICE = 33124;
@@ -59,7 +59,7 @@ public class Apprentice extends AbstractNpcAI
 				final QuestState qs = player.getQuestState(Q10329_BackupSeekers.class.getSimpleName());
 				if ((qs != null) && qs.isStarted())
 				{
-					final Quest q10329 = QuestManager.getInstance().getQuest(Q10329_BackupSeekers.class.getSimpleName());
+					final Quest q10329 = ScriptManager.getInstance().getScript(Q10329_BackupSeekers.class.getSimpleName());
 					if (q10329 != null)
 					{
 						q10329.notifyEvent("RESPAWN_BART", null, player);
@@ -83,6 +83,12 @@ public class Apprentice extends AbstractNpcAI
 	public void onSpawn(Npc npc)
 	{
 		startQuestTimer("SPAM_TEXT", 12000, npc, null, true);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

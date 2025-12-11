@@ -20,16 +20,16 @@
  */
 package quests.Q10880_TheLastOneStanding;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Faction;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
 import quests.Q10879_ExaltedGuideToPower.Q10879_ExaltedGuideToPower;
@@ -170,7 +170,7 @@ public class Q10880_TheLastOneStanding extends Quest
 						addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, FP);
 						qs.exitQuest(false, true);
 						
-						final Quest mainQ = QuestManager.getInstance().getQuest(Q10879_ExaltedGuideToPower.class.getSimpleName());
+						final Quest mainQ = ScriptManager.getInstance().getScript(Q10879_ExaltedGuideToPower.class.getSimpleName());
 						if (mainQ != null)
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
@@ -196,7 +196,7 @@ public class Q10880_TheLastOneStanding extends Quest
 						addFactionPoints(player, Faction.UNWORLDLY_VISITORS, FP);
 						qs.exitQuest(false, true);
 						
-						final Quest mainQ = QuestManager.getInstance().getQuest(Q10879_ExaltedGuideToPower.class.getSimpleName());
+						final Quest mainQ = ScriptManager.getInstance().getScript(Q10879_ExaltedGuideToPower.class.getSimpleName());
 						if (mainQ != null)
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
@@ -222,7 +222,7 @@ public class Q10880_TheLastOneStanding extends Quest
 						addFactionPoints(player, Faction.KINGDOM_ROYAL_GUARDS, FP);
 						qs.exitQuest(false, true);
 						
-						final Quest mainQ = QuestManager.getInstance().getQuest(Q10879_ExaltedGuideToPower.class.getSimpleName());
+						final Quest mainQ = ScriptManager.getInstance().getScript(Q10879_ExaltedGuideToPower.class.getSimpleName());
 						if (mainQ != null)
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
@@ -304,7 +304,7 @@ public class Q10880_TheLastOneStanding extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE) && ArrayUtil.contains(MONSTERS, npc.getId()))
+		if ((qs != null) && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE) && ArrayUtil.contains(MONSTERS, npc.getId()))
 		{
 			giveItems(player, PROOF_OF_STRENGTH, 1);
 			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);

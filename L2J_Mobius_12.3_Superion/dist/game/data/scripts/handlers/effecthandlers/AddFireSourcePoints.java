@@ -20,13 +20,13 @@
  */
 package handlers.effecthandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.item.instance.Item;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 
@@ -55,9 +55,9 @@ public class AddFireSourcePoints extends AbstractEffect
 		}
 		
 		final Player player = effected.asPlayer();
-		if (Quest.getRandom(100) < Config.CONQUEST_ABILITY_FIRE_SOURCE_UPGRADE_CHANCE)
+		if (Quest.getRandom(100) < ConquestConfig.CONQUEST_ABILITY_FIRE_SOURCE_UPGRADE_CHANCE)
 		{
-			player.getVariables().set(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, player.getVariables().getInt(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, 0) + Config.CONQUEST_ABILITY_FIRE_SOURCE_EXP_AMOUNT);
+			player.getVariables().set(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, player.getVariables().getInt(PlayerVariables.CONQUEST_ABILITY_FIRE_SOURCE_EXP, 0) + ConquestConfig.CONQUEST_ABILITY_FIRE_SOURCE_EXP_AMOUNT);
 			player.sendMessage("You have added Fire Source points.");
 			Quest.showOnScreenMsg(player, "You have added Fire Source points.", 5000);
 		}

@@ -62,7 +62,7 @@ public class PrivateStoreManageListBuy extends ServerPacket
 			buffer.writeInt(item.getCount());
 			buffer.writeInt(item.getReferencePrice());
 			buffer.writeShort(0);
-			buffer.writeInt(item.getTemplate().getBodyPart());
+			buffer.writeInt(item.getTemplate().getBodyPart().getMask());
 			buffer.writeShort(item.getTemplate().getType2());
 		}
 		
@@ -75,7 +75,7 @@ public class PrivateStoreManageListBuy extends ServerPacket
 			buffer.writeInt(item.getCount());
 			buffer.writeInt(item.getItem().getReferencePrice());
 			buffer.writeShort(0);
-			buffer.writeInt(item.getItem().getBodyPart());
+			buffer.writeInt(item.getItem().getBodyPart().getMask());
 			buffer.writeShort(item.getItem().getType2());
 			buffer.writeInt(item.getPrice()); // your price
 			buffer.writeInt(item.getItem().getReferencePrice()); // fixed store price

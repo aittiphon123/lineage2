@@ -23,8 +23,9 @@ package org.l2jmobius.gameserver.network.serverpackets.dethrone;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ConquestConfig;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -72,7 +73,7 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 		}
 		
 		// Rank percent formula.
-		if (_personalPoints > Config.CONQUEST_PERSONAL_REWARD_MIN_POINTS)
+		if (_personalPoints > ConquestConfig.CONQUEST_PERSONAL_REWARD_MIN_POINTS)
 		{
 			final double rankPercent = ((_rank * 100) / (previousConquestPlayerList.size()));
 			if ((rankPercent > 0) && (rankPercent < 5))
@@ -129,9 +130,9 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 		buffer.writeInt(_rank); // My Rank
 		buffer.writeInt(_rankPercent); // My Rank percent
 		
-		buffer.writeInt(Config.SERVER_ID); // Conqueror Server
+		buffer.writeInt(ServerConfig.SERVER_ID); // Conqueror Server
 		buffer.writeInt(1); // total rankers only 1 server atm
-		buffer.writeInt(Config.SERVER_ID); // server id
+		buffer.writeInt(ServerConfig.SERVER_ID); // server id
 		buffer.writeLong(_previousSeasonServerPoints); // Server points
 		
 		buffer.writeLong(_previousSeasonServerSoulOrbs); // Total Soul Orbs
@@ -142,8 +143,8 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 		{
 			case 1:
 			{
-				buffer.writeInt(Config.CONQUEST_REWARDS_RANK_1.size());
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_1)
+				buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_1.size());
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_1)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());
@@ -152,8 +153,8 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 			}
 			case 2:
 			{
-				buffer.writeInt(Config.CONQUEST_REWARDS_RANK_2.size());
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_2)
+				buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_2.size());
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_2)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());
@@ -162,8 +163,8 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 			}
 			case 3:
 			{
-				buffer.writeInt(Config.CONQUEST_REWARDS_RANK_3.size());
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_3)
+				buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_3.size());
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_3)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());
@@ -172,8 +173,8 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 			}
 			case 4:
 			{
-				buffer.writeInt(Config.CONQUEST_REWARDS_RANK_4.size());
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_4)
+				buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_4.size());
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_4)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());
@@ -182,8 +183,8 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 			}
 			case 5:
 			{
-				buffer.writeInt(Config.CONQUEST_REWARDS_RANK_5.size());
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_5)
+				buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_5.size());
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_5)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());
@@ -192,8 +193,8 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 			}
 			case 6:
 			{
-				buffer.writeInt(Config.CONQUEST_REWARDS_RANK_6.size());
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_6)
+				buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_6.size());
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_6)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());
@@ -202,8 +203,8 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 			}
 			case 7:
 			{
-				buffer.writeInt(Config.CONQUEST_REWARDS_RANK_7.size());
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_7)
+				buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_7.size());
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_7)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());
@@ -212,8 +213,8 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 			}
 			case 8:
 			{
-				buffer.writeInt(Config.CONQUEST_REWARDS_RANK_8.size());
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_8)
+				buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_8.size());
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_8)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());
@@ -222,8 +223,8 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 			}
 			case 9:
 			{
-				buffer.writeInt(Config.CONQUEST_REWARDS_RANK_9.size());
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_9)
+				buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_9.size());
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_9)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());
@@ -232,8 +233,8 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 			}
 			case 10:
 			{
-				buffer.writeInt(Config.CONQUEST_REWARDS_RANK_10.size());
-				for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_10)
+				buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_10.size());
+				for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_10)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());
@@ -248,10 +249,10 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 		}
 		
 		// Conqueror Server Reward.
-		if (_personalPoints > Config.CONQUEST_SERVER_REWARD_MIN_POINTS)
+		if (_personalPoints > ConquestConfig.CONQUEST_SERVER_REWARD_MIN_POINTS)
 		{
-			buffer.writeInt(Config.CONQUEST_REWARDS_RANK_PARTICIPANT.size());
-			for (ItemHolder reward : Config.CONQUEST_REWARDS_RANK_PARTICIPANT)
+			buffer.writeInt(ConquestConfig.CONQUEST_REWARDS_RANK_PARTICIPANT.size());
+			for (ItemHolder reward : ConquestConfig.CONQUEST_REWARDS_RANK_PARTICIPANT)
 			{
 				buffer.writeInt(reward.getId());
 				buffer.writeLong(reward.getCount());

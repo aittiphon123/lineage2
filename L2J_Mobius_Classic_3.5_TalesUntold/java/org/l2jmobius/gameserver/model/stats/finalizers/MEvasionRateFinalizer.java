@@ -18,9 +18,9 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.stats.IStatFunction;
 import org.l2jmobius.gameserver.model.stats.Stat;
 
@@ -43,7 +43,7 @@ public class MEvasionRateFinalizer implements IStatFunction
 			baseValue += (Math.sqrt(creature.getWIT()) * 3) + (level * 2);
 			
 			// Enchanted helm bonus
-			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_HEAD);
+			baseValue += calcEnchantBodyPart(creature, BodyPart.HEAD);
 		}
 		else
 		{
@@ -55,7 +55,7 @@ public class MEvasionRateFinalizer implements IStatFunction
 			}
 		}
 		
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), Double.NEGATIVE_INFINITY, creature.isPlayable() ? Config.MAX_EVASION : Double.MAX_VALUE);
+		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), Double.NEGATIVE_INFINITY, creature.isPlayable() ? PlayerConfig.MAX_EVASION : Double.MAX_VALUE);
 	}
 	
 	@Override

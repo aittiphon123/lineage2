@@ -20,15 +20,14 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * Tree of Life AI.
  * @author St3eT
  */
-public class TreeOfLife extends AbstractNpcAI
+public class TreeOfLife extends Script
 {
 	// NPCs
 	private static final int[] TREE_OF_LIFE =

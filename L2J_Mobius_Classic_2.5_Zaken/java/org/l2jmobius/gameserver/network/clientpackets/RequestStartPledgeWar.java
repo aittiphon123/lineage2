@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
@@ -62,7 +62,7 @@ public class RequestStartPledgeWar extends ClientPacket
 			return;
 		}
 		
-		if ((clanDeclaringWar.getLevel() < 3) || (clanDeclaringWar.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR))
+		if ((clanDeclaringWar.getLevel() < 3) || (clanDeclaringWar.getMembersCount() < PlayerConfig.ALT_CLAN_MEMBERS_FOR_WAR))
 		{
 			player.sendPacket(SystemMessageId.A_CLAN_WAR_CAN_ONLY_BE_DECLARED_IF_THE_CLAN_IS_LEVEL_3_OR_ABOVE_AND_THE_NUMBER_OF_CLAN_MEMBERS_IS_15_OR_GREATER);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -100,7 +100,7 @@ public class RequestStartPledgeWar extends ClientPacket
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		else if ((clanDeclaredWar.getLevel() < 3) || (clanDeclaredWar.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR))
+		else if ((clanDeclaredWar.getLevel() < 3) || (clanDeclaredWar.getMembersCount() < PlayerConfig.ALT_CLAN_MEMBERS_FOR_WAR))
 		{
 			player.sendPacket(SystemMessageId.A_CLAN_WAR_CAN_ONLY_BE_DECLARED_IF_THE_CLAN_IS_LEVEL_3_OR_ABOVE_AND_THE_NUMBER_OF_CLAN_MEMBERS_IS_15_OR_GREATER);
 			player.sendPacket(ActionFailed.STATIC_PACKET);

@@ -22,7 +22,7 @@ package instances.DimensionalWrap;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.Location;
@@ -31,6 +31,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -40,8 +41,6 @@ import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import instances.AbstractInstance;
-
 /**
  * Dimensional Wrap instance
  * @URL https://l2wiki.com/Dimensional_Warp
@@ -49,7 +48,7 @@ import instances.AbstractInstance;
  * @author Gigi, Mobius
  * @date 2018-09-04 - [14:33:31]
  */
-public class DimensionalWrap extends AbstractInstance
+public class DimensionalWrap extends InstanceScript
 {
 	// NPCs
 	private static final int RESED = 33974;
@@ -149,7 +148,7 @@ public class DimensionalWrap extends AbstractInstance
 						final List<Player> members = party.getMembers();
 						for (Player member : members)
 						{
-							if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+							if (member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 							{
 								enterInstance(member, npc, TEMPLATE_ID);
 							}

@@ -61,7 +61,7 @@ public class PrivateStoreListSell extends ServerPacket
 				buffer.writeShort(0);
 				buffer.writeShort(item.getEnchant());
 				buffer.writeShort(item.getCustomType2());
-				buffer.writeInt(item.getItem().getBodyPart());
+				buffer.writeInt(item.getItem().getBodyPart().getMask());
 				buffer.writeInt(item.getPrice()); // your price
 				buffer.writeInt(item.getItem().getReferencePrice()); // store price
 			}

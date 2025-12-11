@@ -19,8 +19,9 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.BuyListData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -126,7 +127,7 @@ public class RequestPreviewItem extends ClientPacket
 		}
 		
 		// If Alternate rule Karma punishment is set to true, forbid Wear to player with Karma
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (player.getReputation() < 0))
+		if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (player.getReputation() < 0))
 		{
 			return;
 		}
@@ -158,7 +159,7 @@ public class RequestPreviewItem extends ClientPacket
 		final ProductList buyList = BuyListData.getInstance().getBuyList(_listId);
 		if (buyList == null)
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId, GeneralConfig.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -170,7 +171,7 @@ public class RequestPreviewItem extends ClientPacket
 			final Product product = buyList.getProductByItemId(itemId);
 			if (product == null)
 			{
-				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId + " and item_id " + itemId, Config.DEFAULT_PUNISH);
+				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId + " and item_id " + itemId, GeneralConfig.DEFAULT_PUNISH);
 				return;
 			}
 			
@@ -215,10 +216,10 @@ public class RequestPreviewItem extends ClientPacket
 			}
 			
 			itemList.put(slot, itemId);
-			totalPrice += Config.WEAR_PRICE;
+			totalPrice += GeneralConfig.WEAR_PRICE;
 			if (totalPrice > Inventory.MAX_ADENA)
 			{
-				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
+				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", GeneralConfig.DEFAULT_PUNISH);
 				return;
 			}
 		}
@@ -235,7 +236,7 @@ public class RequestPreviewItem extends ClientPacket
 			player.sendPacket(new ShopPreviewInfo(itemList));
 			
 			// Schedule task
-			ThreadPool.schedule(new RemoveWearItemsTask(player), Config.WEAR_DELAY * 1000);
+			ThreadPool.schedule(new RemoveWearItemsTask(player), GeneralConfig.WEAR_DELAY * 1000);
 		}
 	}
 }

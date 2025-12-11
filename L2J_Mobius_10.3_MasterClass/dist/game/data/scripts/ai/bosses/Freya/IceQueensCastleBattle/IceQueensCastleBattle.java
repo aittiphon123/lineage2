@@ -34,6 +34,7 @@ import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.actor.instance.RaidBoss;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -48,13 +49,11 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 import org.l2jmobius.gameserver.taskmanagers.DecayTaskManager;
 
-import instances.AbstractInstance;
-
 /**
  * Ice Queen's Castle (Normal Battle) instance zone.
  * @author St3eT
  */
-public class IceQueensCastleBattle extends AbstractInstance
+public class IceQueensCastleBattle extends InstanceScript
 {
 	// Npcs
 	private static final int FREYA_THRONE = 29177; // First freya

@@ -29,15 +29,14 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelChanged;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.classchange.ExRequestClassChangeUi;
-
-import ai.AbstractNpcAI;
 
 /**
  * Second class change has only level requirement.
  * @author Mobius
  */
-public class SecondClassChange extends AbstractNpcAI
+public class SecondClassChange extends Script
 {
 	private static final int LEVEL_REQUIREMENT = 40;
 	

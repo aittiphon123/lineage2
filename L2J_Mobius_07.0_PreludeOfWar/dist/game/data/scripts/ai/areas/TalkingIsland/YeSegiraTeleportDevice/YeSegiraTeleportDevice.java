@@ -28,15 +28,14 @@ import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerCreate;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.enums.Movie;
-
-import ai.AbstractNpcAI;
 
 /**
  * Ye Segira Teleport Device AI.
  * @author St3eT
  */
-public class YeSegiraTeleportDevice extends AbstractNpcAI
+public class YeSegiraTeleportDevice extends Script
 {
 	// NPCs
 	private static final int[] TELEPORT_DEVICES =
@@ -99,7 +98,7 @@ public class YeSegiraTeleportDevice extends AbstractNpcAI
 				// final QuestState qs = player.getQuestState(Q10365_ForTheSearchdogKing.class.getSimpleName());
 				// if ((qs != null) && qs.isStarted() && qs.isCond(1))
 				// {
-				// final Quest quest_10365 = QuestManager.getInstance().getQuest(Q10365_ForTheSearchdogKing.class.getSimpleName());
+				// final Quest quest_10365 = ScriptManager.getInstance().getScript(Q10365_ForTheSearchdogKing.class.getSimpleName());
 				// if (quest_10365 != null)
 				// {
 				// quest_10365.notifyEvent("TELEPORT_TO_NEXT_STAGE", null, player);
@@ -120,6 +119,12 @@ public class YeSegiraTeleportDevice extends AbstractNpcAI
 		{
 			player.getVariables().set(MOVIE_VAR, true);
 		}
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

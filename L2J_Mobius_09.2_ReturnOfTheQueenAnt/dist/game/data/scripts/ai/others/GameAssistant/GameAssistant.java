@@ -30,18 +30,17 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.itemcontainer.PlayerFreight;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExGetPremiumItemList;
 import org.l2jmobius.gameserver.network.serverpackets.PackageToList;
 import org.l2jmobius.gameserver.network.serverpackets.WareHouseWithdrawalList;
 
-import ai.AbstractNpcAI;
-
 /**
  * Game Assistant AI.
  * @author St3eT, Mobius, CostyKiller
  */
-public class GameAssistant extends AbstractNpcAI
+public class GameAssistant extends Script
 {
 	// NPC
 	private static final int MERCHANT = 32478; // Game Assistant
@@ -298,6 +297,12 @@ public class GameAssistant extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

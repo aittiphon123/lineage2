@@ -18,23 +18,22 @@ package ai.areas.FantasyIsle;
 
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.managers.HandysBlockCheckerManager;
 import org.l2jmobius.gameserver.model.ArenaParticipantsHolder;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExCubeGameChangeTimeToStart;
 import org.l2jmobius.gameserver.network.serverpackets.ExCubeGameRequestReady;
 import org.l2jmobius.gameserver.network.serverpackets.ExCubeGameTeamList;
 
-import ai.AbstractNpcAI;
-
 /**
  * Handys Block Checker Event AI.
  * @authors BiggBoss, Gigiikun
  */
-public class HandysBlockCheckerEvent extends AbstractNpcAI
+public class HandysBlockCheckerEvent extends Script
 {
 	private static final Logger LOGGER = Logger.getLogger(HandysBlockCheckerEvent.class.getName());
 	
@@ -78,7 +77,7 @@ public class HandysBlockCheckerEvent extends AbstractNpcAI
 			
 			final int countBlue = holder.getBlueTeamSize();
 			final int countRed = holder.getRedTeamSize();
-			final int minMembers = Config.MIN_BLOCK_CHECKER_TEAM_MEMBERS;
+			final int minMembers = GeneralConfig.MIN_BLOCK_CHECKER_TEAM_MEMBERS;
 			if ((countBlue >= minMembers) && (countRed >= minMembers))
 			{
 				holder.updateEvent();
@@ -97,7 +96,7 @@ public class HandysBlockCheckerEvent extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		if (Config.ENABLE_BLOCK_CHECKER_EVENT)
+		if (GeneralConfig.ENABLE_BLOCK_CHECKER_EVENT)
 		{
 			new HandysBlockCheckerEvent();
 			LOGGER.info("Handy's Block Checker Event is enabled");

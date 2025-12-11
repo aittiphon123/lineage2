@@ -20,8 +20,9 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.cache.HtmCache;
+import org.l2jmobius.gameserver.config.GameAssistantConfig;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.PacketLogger;
@@ -54,7 +55,7 @@ public class ExOpenHtml extends ClientPacket
 		{
 			case 1:
 			{
-				if (Config.PC_CAFE_ENABLED)
+				if (PremiumSystemConfig.PC_CAFE_ENABLED)
 				{
 					final NpcHtmlMessage html = new NpcHtmlMessage();
 					html.setFile(player, "data/html/pccafe.htm");
@@ -64,7 +65,7 @@ public class ExOpenHtml extends ClientPacket
 			}
 			case 5:
 			{
-				if (Config.GAME_ASSISTANT_ENABLED)
+				if (GameAssistantConfig.GAME_ASSISTANT_ENABLED)
 				{
 					final NpcHtmlMessage html = new NpcHtmlMessage();
 					html.setHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/DimensionalMerchant/32478.html"));

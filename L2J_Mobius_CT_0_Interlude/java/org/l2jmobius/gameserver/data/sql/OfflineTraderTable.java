@@ -28,9 +28,10 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.custom.DualboxCheckConfig;
+import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.data.holders.SellBuffHolder;
 import org.l2jmobius.gameserver.managers.AntiFeedManager;
 import org.l2jmobius.gameserver.model.ManufactureItem;
@@ -74,7 +75,6 @@ public class OfflineTraderTable
 		{
 			stm1.execute();
 			stm2.execute();
-			con.setAutoCommit(false); // avoid halfway done
 			for (Player pc : World.getInstance().getPlayers())
 			{
 				try
@@ -90,7 +90,7 @@ public class OfflineTraderTable
 						{
 							case BUY:
 							{
-								if (!Config.OFFLINE_TRADE_ENABLE)
+								if (!OfflineTradeConfig.OFFLINE_TRADE_ENABLE)
 								{
 									continue;
 								}
@@ -110,7 +110,7 @@ public class OfflineTraderTable
 							case SELL:
 							case PACKAGE_SELL:
 							{
-								if (!Config.OFFLINE_TRADE_ENABLE)
+								if (!OfflineTradeConfig.OFFLINE_TRADE_ENABLE)
 								{
 									continue;
 								}
@@ -144,7 +144,7 @@ public class OfflineTraderTable
 							}
 							case MANUFACTURE:
 							{
-								if (!Config.OFFLINE_CRAFT_ENABLE)
+								if (!OfflineTradeConfig.OFFLINE_CRAFT_ENABLE)
 								{
 									continue;
 								}
@@ -194,11 +194,11 @@ public class OfflineTraderTable
 			while (rs.next())
 			{
 				final long time = rs.getLong("time");
-				if (Config.OFFLINE_MAX_DAYS > 0)
+				if (OfflineTradeConfig.OFFLINE_MAX_DAYS > 0)
 				{
 					final Calendar cal = Calendar.getInstance();
 					cal.setTimeInMillis(time);
-					cal.add(Calendar.DAY_OF_YEAR, Config.OFFLINE_MAX_DAYS);
+					cal.add(Calendar.DAY_OF_YEAR, OfflineTradeConfig.OFFLINE_MAX_DAYS);
 					if (cal.getTimeInMillis() <= System.currentTimeMillis())
 					{
 						continue;
@@ -300,17 +300,17 @@ public class OfflineTraderTable
 					}
 					
 					player.sitDown();
-					if (Config.OFFLINE_SET_NAME_COLOR)
+					if (OfflineTradeConfig.OFFLINE_SET_NAME_COLOR)
 					{
-						player.getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);
+						player.getAppearance().setNameColor(OfflineTradeConfig.OFFLINE_NAME_COLOR);
 					}
 					
 					player.setPrivateStoreType(type);
 					player.setOnlineStatus(true, true);
 					player.restoreEffects();
-					if (!Config.OFFLINE_ABNORMAL_EFFECTS.isEmpty())
+					if (!OfflineTradeConfig.OFFLINE_ABNORMAL_EFFECTS.isEmpty())
 					{
-						player.startAbnormalVisualEffect(false, Config.OFFLINE_ABNORMAL_EFFECTS.get(Rnd.get(Config.OFFLINE_ABNORMAL_EFFECTS.size())));
+						player.startAbnormalVisualEffect(false, OfflineTradeConfig.OFFLINE_ABNORMAL_EFFECTS.get(Rnd.get(OfflineTradeConfig.OFFLINE_ABNORMAL_EFFECTS.size())));
 					}
 					
 					player.broadcastUserInfo();
@@ -329,7 +329,7 @@ public class OfflineTraderTable
 			World.OFFLINE_TRADE_COUNT = nTraders;
 			LOGGER.info(getClass().getSimpleName() + ": Loaded " + nTraders + " offline traders.");
 			
-			if (!Config.STORE_OFFLINE_TRADE_IN_REALTIME)
+			if (!OfflineTradeConfig.STORE_OFFLINE_TRADE_IN_REALTIME)
 			{
 				try (Statement stm1 = con.createStatement())
 				{
@@ -504,22 +504,22 @@ public class OfflineTraderTable
 			case PACKAGE_SELL:
 			case BUY:
 			{
-				canSetShop = Config.OFFLINE_TRADE_ENABLE;
+				canSetShop = OfflineTradeConfig.OFFLINE_TRADE_ENABLE;
 				break;
 			}
 			case MANUFACTURE:
 			{
-				canSetShop = Config.OFFLINE_TRADE_ENABLE;
+				canSetShop = OfflineTradeConfig.OFFLINE_TRADE_ENABLE;
 				break;
 			}
 			default:
 			{
-				canSetShop = Config.OFFLINE_CRAFT_ENABLE && player.isCrafting();
+				canSetShop = OfflineTradeConfig.OFFLINE_CRAFT_ENABLE && player.isCrafting();
 				break;
 			}
 		}
 		
-		if (Config.OFFLINE_MODE_IN_PEACE_ZONE && !player.isInsideZone(ZoneId.PEACE))
+		if (OfflineTradeConfig.OFFLINE_MODE_IN_PEACE_ZONE && !player.isInsideZone(ZoneId.PEACE))
 		{
 			canSetShop = false;
 		}
@@ -550,7 +550,7 @@ public class OfflineTraderTable
 		
 		final GameClient client = player.getClient();
 		client.close(LeaveWorld.STATIC_PACKET);
-		if (!Config.DUALBOX_COUNT_OFFLINE_TRADERS)
+		if (!DualboxCheckConfig.DUALBOX_COUNT_OFFLINE_TRADERS)
 		{
 			AntiFeedManager.getInstance().onDisconnect(client);
 		}
@@ -575,9 +575,9 @@ public class OfflineTraderTable
 			}
 		}
 		
-		if (Config.OFFLINE_SET_NAME_COLOR)
+		if (OfflineTradeConfig.OFFLINE_SET_NAME_COLOR)
 		{
-			player.getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);
+			player.getAppearance().setNameColor(OfflineTradeConfig.OFFLINE_NAME_COLOR);
 			player.broadcastUserInfo();
 		}
 		
@@ -587,7 +587,7 @@ public class OfflineTraderTable
 		}
 		
 		// Store trade on exit, if realtime saving is enabled.
-		if (Config.STORE_OFFLINE_TRADE_IN_REALTIME)
+		if (OfflineTradeConfig.STORE_OFFLINE_TRADE_IN_REALTIME)
 		{
 			onTransaction(player, false, true);
 		}
@@ -595,9 +595,9 @@ public class OfflineTraderTable
 		player.storeMe();
 		LOGGER_ACCOUNTING.info("Entering offline mode, " + client);
 		
-		if (!Config.OFFLINE_ABNORMAL_EFFECTS.isEmpty())
+		if (!OfflineTradeConfig.OFFLINE_ABNORMAL_EFFECTS.isEmpty())
 		{
-			player.startAbnormalVisualEffect(true, Config.OFFLINE_ABNORMAL_EFFECTS.get(Rnd.get(Config.OFFLINE_ABNORMAL_EFFECTS.size())));
+			player.startAbnormalVisualEffect(true, OfflineTradeConfig.OFFLINE_ABNORMAL_EFFECTS.get(Rnd.get(OfflineTradeConfig.OFFLINE_ABNORMAL_EFFECTS.size())));
 		}
 		
 		return true;

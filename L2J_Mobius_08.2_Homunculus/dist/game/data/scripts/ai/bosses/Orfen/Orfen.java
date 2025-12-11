@@ -23,8 +23,8 @@ package ai.bosses.Orfen;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
@@ -32,19 +32,18 @@ import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 
-import ai.AbstractNpcAI;
-
 /**
  * Orfen's AI
  * @author Emperorc, Mobius
  */
-public class Orfen extends AbstractNpcAI
+public class Orfen extends Script
 {
 	private static final Location SPAWN_LOCATION = new Location(43728, 17220, -4342);
 	
@@ -80,13 +79,10 @@ public class Orfen extends AbstractNpcAI
 	
 	private Orfen()
 	{
-		final int[] mobs =
-		{
-			ORFEN,
-			ARIMA,
-			ARIMUS
-		};
-		registerMobs(mobs);
+		addAttackId(ORFEN, ARIMA, ARIMUS);
+		addKillId(ORFEN, ARIMA, ARIMUS);
+		addFactionCallId(ORFEN, ARIMA, ARIMUS);
+		
 		final StatSet info = GrandBossManager.getInstance().getStatSet(ORFEN);
 		final int status = GrandBossManager.getInstance().getStatus(ORFEN);
 		if (status == DEAD)
@@ -340,7 +336,7 @@ public class Orfen extends AbstractNpcAI
 			GrandBossManager.getInstance().setStatus(ORFEN, DEAD);
 			
 			// Calculate Min and Max respawn times randomly.
-			long respawnTime = Config.ORFEN_SPAWN_INTERVAL + getRandom(-Config.ORFEN_SPAWN_RANDOM, Config.ORFEN_SPAWN_RANDOM);
+			long respawnTime = GrandBossConfig.ORFEN_SPAWN_INTERVAL + getRandom(-GrandBossConfig.ORFEN_SPAWN_RANDOM, GrandBossConfig.ORFEN_SPAWN_RANDOM);
 			respawnTime *= 3600000;
 			startQuestTimer("orfen_unlock", respawnTime, null, null);
 			

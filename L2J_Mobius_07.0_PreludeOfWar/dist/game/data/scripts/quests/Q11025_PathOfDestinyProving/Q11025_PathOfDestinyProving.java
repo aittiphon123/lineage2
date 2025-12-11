@@ -20,7 +20,7 @@
  */
 package quests.Q11025_PathOfDestinyProving;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.model.Location;
@@ -33,9 +33,9 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerProfessionChange;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.classchange.ExRequestClassChangeUi;
@@ -487,7 +487,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 		}
 		
 		final QuestState qs = getQuestState(player, false);
-		if (Config.DISABLE_TUTORIAL || ((qs != null) && qs.isCompleted()))
+		if (PlayerConfig.DISABLE_TUTORIAL || ((qs != null) && qs.isCompleted()))
 		{
 			player.sendPacket(ExRequestClassChangeUi.STATIC_PACKET);
 		}

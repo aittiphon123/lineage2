@@ -27,8 +27,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.RatesConfig;
+import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
+import org.l2jmobius.gameserver.config.custom.NpcStatMultipliersConfig;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.data.xml.NpcData;
@@ -199,7 +203,7 @@ public class NpcTemplate extends CreatureTemplate
 		_canBeSown = set.getBoolean("canBeSown", false);
 		_canBeCrt = set.getBoolean("exCrtEffect", true);
 		_isDeathPenalty = set.getBoolean("isDeathPenalty", false);
-		_corpseTime = set.getInt("corpseTime", Config.DEFAULT_CORPSE_TIME);
+		_corpseTime = set.getInt("corpseTime", NpcConfig.DEFAULT_CORPSE_TIME);
 		_aiType = set.getEnum("aiType", AIType.class, AIType.FIGHTER);
 		_aggroRange = set.getInt("aggroRange", 0);
 		_clanHelpRange = set.getInt("clanHelpRange", 0);
@@ -207,7 +211,7 @@ public class NpcTemplate extends CreatureTemplate
 		_isAggressive = set.getBoolean("isAggressive", false);
 		_soulShot = set.getInt("soulShot", 0);
 		_spiritShot = set.getInt("spiritShot", 0);
-		_soulShotChance = set.getInt("shotShotChance", 0);
+		_soulShotChance = set.getInt("soulShotChance", 0);
 		_spiritShotChance = set.getInt("spiritShotChance", 0);
 		_minSkillChance = set.getInt("minSkillChance", 7);
 		_maxSkillChance = set.getInt("maxSkillChance", 15);
@@ -220,57 +224,57 @@ public class NpcTemplate extends CreatureTemplate
 		_mpRewardType = set.getEnum("mpRewardType", MpRewardType.class, MpRewardType.DIFF);
 		_mpRewardTicks = set.getInt("mpRewardTicks", 0);
 		_mpRewardAffectType = set.getEnum("mpRewardAffectType", MpRewardAffectType.class, MpRewardAffectType.SOLO);
-		if (Config.ENABLE_NPC_STAT_MULTIPLIERS) // Custom NPC Stat Multipliers
+		if (NpcStatMultipliersConfig.ENABLE_NPC_STAT_MULTIPLIERS) // Custom NPC Stat Multipliers
 		{
 			switch (_type)
 			{
 				case "Monster":
 				{
-					_baseValues.put(Stat.MAX_HP, getBaseHpMax() * Config.MONSTER_HP_MULTIPLIER);
-					_baseValues.put(Stat.MAX_MP, getBaseMpMax() * Config.MONSTER_MP_MULTIPLIER);
-					_baseValues.put(Stat.PHYSICAL_ATTACK, getBasePAtk() * Config.MONSTER_PATK_MULTIPLIER);
-					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * Config.MONSTER_MATK_MULTIPLIER);
-					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * Config.MONSTER_PDEF_MULTIPLIER);
-					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * Config.MONSTER_MDEF_MULTIPLIER);
-					_aggroRange *= Config.MONSTER_AGRRO_RANGE_MULTIPLIER;
-					_clanHelpRange *= Config.MONSTER_CLAN_HELP_RANGE_MULTIPLIER;
+					_baseValues.put(Stat.MAX_HP, getBaseHpMax() * NpcStatMultipliersConfig.MONSTER_HP_MULTIPLIER);
+					_baseValues.put(Stat.MAX_MP, getBaseMpMax() * NpcStatMultipliersConfig.MONSTER_MP_MULTIPLIER);
+					_baseValues.put(Stat.PHYSICAL_ATTACK, getBasePAtk() * NpcStatMultipliersConfig.MONSTER_PATK_MULTIPLIER);
+					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * NpcStatMultipliersConfig.MONSTER_MATK_MULTIPLIER);
+					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * NpcStatMultipliersConfig.MONSTER_PDEF_MULTIPLIER);
+					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * NpcStatMultipliersConfig.MONSTER_MDEF_MULTIPLIER);
+					_aggroRange *= NpcStatMultipliersConfig.MONSTER_AGRRO_RANGE_MULTIPLIER;
+					_clanHelpRange *= NpcStatMultipliersConfig.MONSTER_CLAN_HELP_RANGE_MULTIPLIER;
 					break;
 				}
 				case "RaidBoss":
 				case "GrandBoss":
 				{
-					_baseValues.put(Stat.MAX_HP, getBaseHpMax() * Config.RAIDBOSS_HP_MULTIPLIER);
-					_baseValues.put(Stat.MAX_MP, getBaseMpMax() * Config.RAIDBOSS_MP_MULTIPLIER);
-					_baseValues.put(Stat.PHYSICAL_ATTACK, getBasePAtk() * Config.RAIDBOSS_PATK_MULTIPLIER);
-					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * Config.RAIDBOSS_MATK_MULTIPLIER);
-					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * Config.RAIDBOSS_PDEF_MULTIPLIER);
-					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * Config.RAIDBOSS_MDEF_MULTIPLIER);
-					_aggroRange *= Config.RAIDBOSS_AGRRO_RANGE_MULTIPLIER;
-					_clanHelpRange *= Config.RAIDBOSS_CLAN_HELP_RANGE_MULTIPLIER;
+					_baseValues.put(Stat.MAX_HP, getBaseHpMax() * NpcStatMultipliersConfig.RAIDBOSS_HP_MULTIPLIER);
+					_baseValues.put(Stat.MAX_MP, getBaseMpMax() * NpcStatMultipliersConfig.RAIDBOSS_MP_MULTIPLIER);
+					_baseValues.put(Stat.PHYSICAL_ATTACK, getBasePAtk() * NpcStatMultipliersConfig.RAIDBOSS_PATK_MULTIPLIER);
+					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * NpcStatMultipliersConfig.RAIDBOSS_MATK_MULTIPLIER);
+					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * NpcStatMultipliersConfig.RAIDBOSS_PDEF_MULTIPLIER);
+					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * NpcStatMultipliersConfig.RAIDBOSS_MDEF_MULTIPLIER);
+					_aggroRange *= NpcStatMultipliersConfig.RAIDBOSS_AGRRO_RANGE_MULTIPLIER;
+					_clanHelpRange *= NpcStatMultipliersConfig.RAIDBOSS_CLAN_HELP_RANGE_MULTIPLIER;
 					break;
 				}
 				case "Guard":
 				{
-					_baseValues.put(Stat.MAX_HP, getBaseHpMax() * Config.GUARD_HP_MULTIPLIER);
-					_baseValues.put(Stat.MAX_MP, getBaseMpMax() * Config.GUARD_MP_MULTIPLIER);
-					_baseValues.put(Stat.PHYSICAL_ATTACK, getBasePAtk() * Config.GUARD_PATK_MULTIPLIER);
-					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * Config.GUARD_MATK_MULTIPLIER);
-					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * Config.GUARD_PDEF_MULTIPLIER);
-					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * Config.GUARD_MDEF_MULTIPLIER);
-					_aggroRange *= Config.GUARD_AGRRO_RANGE_MULTIPLIER;
-					_clanHelpRange *= Config.GUARD_CLAN_HELP_RANGE_MULTIPLIER;
+					_baseValues.put(Stat.MAX_HP, getBaseHpMax() * NpcStatMultipliersConfig.GUARD_HP_MULTIPLIER);
+					_baseValues.put(Stat.MAX_MP, getBaseMpMax() * NpcStatMultipliersConfig.GUARD_MP_MULTIPLIER);
+					_baseValues.put(Stat.PHYSICAL_ATTACK, getBasePAtk() * NpcStatMultipliersConfig.GUARD_PATK_MULTIPLIER);
+					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * NpcStatMultipliersConfig.GUARD_MATK_MULTIPLIER);
+					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * NpcStatMultipliersConfig.GUARD_PDEF_MULTIPLIER);
+					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * NpcStatMultipliersConfig.GUARD_MDEF_MULTIPLIER);
+					_aggroRange *= NpcStatMultipliersConfig.GUARD_AGRRO_RANGE_MULTIPLIER;
+					_clanHelpRange *= NpcStatMultipliersConfig.GUARD_CLAN_HELP_RANGE_MULTIPLIER;
 					break;
 				}
 				case "Defender":
 				{
-					_baseValues.put(Stat.MAX_HP, getBaseHpMax() * Config.DEFENDER_HP_MULTIPLIER);
-					_baseValues.put(Stat.MAX_MP, getBaseMpMax() * Config.DEFENDER_MP_MULTIPLIER);
-					_baseValues.put(Stat.PHYSICAL_ATTACK, getBasePAtk() * Config.DEFENDER_PATK_MULTIPLIER);
-					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * Config.DEFENDER_MATK_MULTIPLIER);
-					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * Config.DEFENDER_PDEF_MULTIPLIER);
-					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * Config.DEFENDER_MDEF_MULTIPLIER);
-					_aggroRange *= Config.DEFENDER_AGRRO_RANGE_MULTIPLIER;
-					_clanHelpRange *= Config.DEFENDER_CLAN_HELP_RANGE_MULTIPLIER;
+					_baseValues.put(Stat.MAX_HP, getBaseHpMax() * NpcStatMultipliersConfig.DEFENDER_HP_MULTIPLIER);
+					_baseValues.put(Stat.MAX_MP, getBaseMpMax() * NpcStatMultipliersConfig.DEFENDER_MP_MULTIPLIER);
+					_baseValues.put(Stat.PHYSICAL_ATTACK, getBasePAtk() * NpcStatMultipliersConfig.DEFENDER_PATK_MULTIPLIER);
+					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * NpcStatMultipliersConfig.DEFENDER_MATK_MULTIPLIER);
+					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * NpcStatMultipliersConfig.DEFENDER_PDEF_MULTIPLIER);
+					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * NpcStatMultipliersConfig.DEFENDER_MDEF_MULTIPLIER);
+					_aggroRange *= NpcStatMultipliersConfig.DEFENDER_AGRRO_RANGE_MULTIPLIER;
+					_clanHelpRange *= NpcStatMultipliersConfig.DEFENDER_CLAN_HELP_RANGE_MULTIPLIER;
 					break;
 				}
 			}
@@ -782,11 +786,11 @@ public class NpcTemplate extends CreatureTemplate
 	{
 		// level difference calculations
 		final int levelDifference = victim.getLevel() - killer.getLevel();
-		final double levelGapChanceToDropAdena = MathUtil.scaleToRange(levelDifference, -Config.DROP_ADENA_MAX_LEVEL_DIFFERENCE, -Config.DROP_ADENA_MIN_LEVEL_DIFFERENCE, Config.DROP_ADENA_MIN_LEVEL_GAP_CHANCE, 100d);
-		final double levelGapChanceToDrop = MathUtil.scaleToRange(levelDifference, -Config.DROP_ITEM_MAX_LEVEL_DIFFERENCE, -Config.DROP_ITEM_MIN_LEVEL_DIFFERENCE, Config.DROP_ITEM_MIN_LEVEL_GAP_CHANCE, 100d);
+		final double levelGapChanceToDropAdena = MathUtil.scaleToRange(levelDifference, -RatesConfig.DROP_ADENA_MAX_LEVEL_DIFFERENCE, -RatesConfig.DROP_ADENA_MIN_LEVEL_DIFFERENCE, RatesConfig.DROP_ADENA_MIN_LEVEL_GAP_CHANCE, 100d);
+		final double levelGapChanceToDrop = MathUtil.scaleToRange(levelDifference, -RatesConfig.DROP_ITEM_MAX_LEVEL_DIFFERENCE, -RatesConfig.DROP_ITEM_MIN_LEVEL_DIFFERENCE, RatesConfig.DROP_ITEM_MIN_LEVEL_GAP_CHANCE, 100d);
 		
 		List<ItemHolder> calculatedDrops = null;
-		int dropOccurrenceCounter = victim.isRaid() ? Config.DROP_MAX_OCCURRENCES_RAIDBOSS : Config.DROP_MAX_OCCURRENCES_NORMAL;
+		int dropOccurrenceCounter = victim.isRaid() ? RatesConfig.DROP_MAX_OCCURRENCES_RAIDBOSS : RatesConfig.DROP_MAX_OCCURRENCES_NORMAL;
 		if (dropOccurrenceCounter > 0)
 		{
 			final Player player = killer.asPlayer();
@@ -804,12 +808,12 @@ public class NpcTemplate extends CreatureTemplate
 					
 					// chance
 					double rateChance = 1;
-					if (Config.RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
+					if (RatesConfig.RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
 					{
-						rateChance *= Config.RATE_DROP_CHANCE_BY_ID.get(itemId);
+						rateChance *= RatesConfig.RATE_DROP_CHANCE_BY_ID.get(itemId);
 						if (champion && (itemId == Inventory.ADENA_ID))
 						{
-							rateChance *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
+							rateChance *= ChampionMonstersConfig.CHAMPION_ADENAS_REWARDS_CHANCE;
 						}
 						
 						if ((itemId == Inventory.ADENA_ID) && (rateChance > 100))
@@ -819,25 +823,25 @@ public class NpcTemplate extends CreatureTemplate
 					}
 					else if (item.hasExImmediateEffect())
 					{
-						rateChance *= Config.RATE_HERB_DROP_CHANCE_MULTIPLIER;
+						rateChance *= RatesConfig.RATE_HERB_DROP_CHANCE_MULTIPLIER;
 					}
 					else if (victim.isRaid())
 					{
-						rateChance *= Config.RATE_RAID_DROP_CHANCE_MULTIPLIER;
+						rateChance *= RatesConfig.RATE_RAID_DROP_CHANCE_MULTIPLIER;
 					}
 					else
 					{
-						rateChance *= Config.RATE_DEATH_DROP_CHANCE_MULTIPLIER * (champion ? Config.CHAMPION_REWARDS_CHANCE : 1);
+						rateChance *= RatesConfig.RATE_DEATH_DROP_CHANCE_MULTIPLIER * (champion ? ChampionMonstersConfig.CHAMPION_REWARDS_CHANCE : 1);
 					}
 					
 					// premium chance
 					if (player != null)
 					{
-						if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
+						if (PremiumSystemConfig.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 						{
-							if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
+							if (PremiumSystemConfig.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
 							{
-								rateChance *= Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId);
+								rateChance *= PremiumSystemConfig.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId);
 							}
 							else if (item.hasExImmediateEffect())
 							{
@@ -849,7 +853,7 @@ public class NpcTemplate extends CreatureTemplate
 							}
 							else
 							{
-								rateChance *= Config.PREMIUM_RATE_DROP_CHANCE;
+								rateChance *= PremiumSystemConfig.PREMIUM_RATE_DROP_CHANCE;
 							}
 						}
 						
@@ -908,7 +912,7 @@ public class NpcTemplate extends CreatureTemplate
 					}
 					
 					// finally
-					final Float itemChance = Config.RATE_DROP_CHANCE_BY_ID.get(dropItem.getItemId());
+					final Float itemChance = RatesConfig.RATE_DROP_CHANCE_BY_ID.get(dropItem.getItemId());
 					if (itemChance != null)
 					{
 						if ((groupItemChance * itemChance) < 100)
@@ -953,27 +957,17 @@ public class NpcTemplate extends CreatureTemplate
 			}
 			
 			// champion extra drop
-			if (victim.isChampion())
+			if (victim.isChampion() && (Rnd.get(100) < (victim.getLevel() < killer.getLevel() ? ChampionMonstersConfig.CHAMPION_REWARD_LOWER_LEVEL_ITEM_CHANCE : ChampionMonstersConfig.CHAMPION_REWARD_HIGHER_LEVEL_ITEM_CHANCE)))
 			{
-				if ((victim.getLevel() < killer.getLevel()) && (Rnd.get(100) < Config.CHAMPION_REWARD_LOWER_LEVEL_ITEM_CHANCE))
-				{
-					return calculatedDrops;
-				}
-				
-				if ((victim.getLevel() > killer.getLevel()) && (Rnd.get(100) < Config.CHAMPION_REWARD_HIGHER_LEVEL_ITEM_CHANCE))
-				{
-					return calculatedDrops;
-				}
-				
 				// create list
 				if (calculatedDrops == null)
 				{
 					calculatedDrops = new ArrayList<>();
 				}
 				
-				if (!calculatedDrops.containsAll(Config.CHAMPION_REWARD_ITEMS))
+				if (!calculatedDrops.containsAll(ChampionMonstersConfig.CHAMPION_REWARD_ITEMS))
 				{
-					calculatedDrops.addAll(Config.CHAMPION_REWARD_ITEMS);
+					calculatedDrops.addAll(ChampionMonstersConfig.CHAMPION_REWARD_ITEMS);
 				}
 			}
 		}
@@ -987,10 +981,10 @@ public class NpcTemplate extends CreatureTemplate
 		
 		// level difference calculations
 		final int levelDifference = victim.getLevel() - killer.getLevel();
-		final double levelGapChanceToDropAdena = MathUtil.scaleToRange(levelDifference, -Config.DROP_ADENA_MAX_LEVEL_DIFFERENCE, -Config.DROP_ADENA_MIN_LEVEL_DIFFERENCE, Config.DROP_ADENA_MIN_LEVEL_GAP_CHANCE, 100d);
-		final double levelGapChanceToDrop = MathUtil.scaleToRange(levelDifference, -Config.DROP_ITEM_MAX_LEVEL_DIFFERENCE, -Config.DROP_ITEM_MIN_LEVEL_DIFFERENCE, Config.DROP_ITEM_MIN_LEVEL_GAP_CHANCE, 100d);
+		final double levelGapChanceToDropAdena = MathUtil.scaleToRange(levelDifference, -RatesConfig.DROP_ADENA_MAX_LEVEL_DIFFERENCE, -RatesConfig.DROP_ADENA_MIN_LEVEL_DIFFERENCE, RatesConfig.DROP_ADENA_MIN_LEVEL_GAP_CHANCE, 100d);
+		final double levelGapChanceToDrop = MathUtil.scaleToRange(levelDifference, -RatesConfig.DROP_ITEM_MAX_LEVEL_DIFFERENCE, -RatesConfig.DROP_ITEM_MIN_LEVEL_DIFFERENCE, RatesConfig.DROP_ITEM_MIN_LEVEL_GAP_CHANCE, 100d);
 		
-		int dropOccurrenceCounter = victim.isRaid() ? Config.DROP_MAX_OCCURRENCES_RAIDBOSS : Config.DROP_MAX_OCCURRENCES_NORMAL;
+		int dropOccurrenceCounter = victim.isRaid() ? RatesConfig.DROP_MAX_OCCURRENCES_RAIDBOSS : RatesConfig.DROP_MAX_OCCURRENCES_NORMAL;
 		List<ItemHolder> calculatedDrops = null;
 		List<ItemHolder> randomDrops = null;
 		ItemHolder cachedItem = null;
@@ -1033,7 +1027,7 @@ public class NpcTemplate extends CreatureTemplate
 				}
 				
 				// finally
-				final Float itemChance = Config.RATE_DROP_CHANCE_BY_ID.get(dropItem.getItemId());
+				final Float itemChance = RatesConfig.RATE_DROP_CHANCE_BY_ID.get(dropItem.getItemId());
 				if (itemChance != null)
 				{
 					if ((dropItem.getChance() * itemChance) < 100)
@@ -1066,27 +1060,17 @@ public class NpcTemplate extends CreatureTemplate
 		}
 		
 		// champion extra drop
-		if (victim.isChampion())
+		if (victim.isChampion() && (Rnd.get(100) < (victim.getLevel() < killer.getLevel() ? ChampionMonstersConfig.CHAMPION_REWARD_LOWER_LEVEL_ITEM_CHANCE : ChampionMonstersConfig.CHAMPION_REWARD_HIGHER_LEVEL_ITEM_CHANCE)))
 		{
-			if ((victim.getLevel() < killer.getLevel()) && (Rnd.get(100) < Config.CHAMPION_REWARD_LOWER_LEVEL_ITEM_CHANCE))
-			{
-				return calculatedDrops;
-			}
-			
-			if ((victim.getLevel() > killer.getLevel()) && (Rnd.get(100) < Config.CHAMPION_REWARD_HIGHER_LEVEL_ITEM_CHANCE))
-			{
-				return calculatedDrops;
-			}
-			
 			// create list
 			if (calculatedDrops == null)
 			{
 				calculatedDrops = new ArrayList<>();
 			}
 			
-			if (!calculatedDrops.containsAll(Config.CHAMPION_REWARD_ITEMS))
+			if (!calculatedDrops.containsAll(ChampionMonstersConfig.CHAMPION_REWARD_ITEMS))
 			{
-				calculatedDrops.addAll(Config.CHAMPION_REWARD_ITEMS);
+				calculatedDrops.addAll(ChampionMonstersConfig.CHAMPION_REWARD_ITEMS);
 			}
 		}
 		
@@ -1112,36 +1096,36 @@ public class NpcTemplate extends CreatureTemplate
 		{
 			// amount is calculated after chance returned success
 			double rateAmount = 1;
-			if (Config.RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
+			if (RatesConfig.RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
 			{
-				rateAmount *= Config.RATE_DROP_AMOUNT_BY_ID.get(itemId);
+				rateAmount *= RatesConfig.RATE_DROP_AMOUNT_BY_ID.get(itemId);
 				if (champion && (itemId == Inventory.ADENA_ID))
 				{
-					rateAmount *= Config.CHAMPION_ADENAS_REWARDS_AMOUNT;
+					rateAmount *= ChampionMonstersConfig.CHAMPION_ADENAS_REWARDS_AMOUNT;
 				}
 			}
 			else if (item.hasExImmediateEffect())
 			{
-				rateAmount *= Config.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
+				rateAmount *= RatesConfig.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
 			}
 			else if (victim.isRaid())
 			{
-				rateAmount *= Config.RATE_RAID_DROP_AMOUNT_MULTIPLIER;
+				rateAmount *= RatesConfig.RATE_RAID_DROP_AMOUNT_MULTIPLIER;
 			}
 			else
 			{
-				rateAmount *= Config.RATE_DEATH_DROP_AMOUNT_MULTIPLIER * (champion ? Config.CHAMPION_REWARDS_AMOUNT : 1);
+				rateAmount *= RatesConfig.RATE_DEATH_DROP_AMOUNT_MULTIPLIER * (champion ? ChampionMonstersConfig.CHAMPION_REWARDS_AMOUNT : 1);
 			}
 			
 			// premium amount
 			final Player player = killer.asPlayer();
 			if (player != null)
 			{
-				if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
+				if (PremiumSystemConfig.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 				{
-					if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
+					if (PremiumSystemConfig.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
 					{
-						rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId);
+						rateAmount *= PremiumSystemConfig.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId);
 					}
 					else if (item.hasExImmediateEffect())
 					{
@@ -1153,7 +1137,7 @@ public class NpcTemplate extends CreatureTemplate
 					}
 					else
 					{
-						rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT;
+						rateAmount *= PremiumSystemConfig.PREMIUM_RATE_DROP_AMOUNT;
 					}
 				}
 				
@@ -1191,12 +1175,12 @@ public class NpcTemplate extends CreatureTemplate
 				
 				// chance
 				double rateChance = 1;
-				if (Config.RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
+				if (RatesConfig.RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
 				{
-					rateChance *= Config.RATE_DROP_CHANCE_BY_ID.get(itemId);
+					rateChance *= RatesConfig.RATE_DROP_CHANCE_BY_ID.get(itemId);
 					if (champion && (itemId == Inventory.ADENA_ID))
 					{
-						rateChance *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
+						rateChance *= ChampionMonstersConfig.CHAMPION_ADENAS_REWARDS_CHANCE;
 					}
 					
 					if ((itemId == Inventory.ADENA_ID) && (rateChance > 100))
@@ -1206,26 +1190,26 @@ public class NpcTemplate extends CreatureTemplate
 				}
 				else if (item.hasExImmediateEffect())
 				{
-					rateChance *= Config.RATE_HERB_DROP_CHANCE_MULTIPLIER;
+					rateChance *= RatesConfig.RATE_HERB_DROP_CHANCE_MULTIPLIER;
 				}
 				else if (victim.isRaid())
 				{
-					rateChance *= Config.RATE_RAID_DROP_CHANCE_MULTIPLIER;
+					rateChance *= RatesConfig.RATE_RAID_DROP_CHANCE_MULTIPLIER;
 				}
 				else
 				{
-					rateChance *= Config.RATE_DEATH_DROP_CHANCE_MULTIPLIER * (champion ? Config.CHAMPION_REWARDS_CHANCE : 1);
+					rateChance *= RatesConfig.RATE_DEATH_DROP_CHANCE_MULTIPLIER * (champion ? ChampionMonstersConfig.CHAMPION_REWARDS_CHANCE : 1);
 				}
 				
 				// premium chance
 				final Player player = killer.asPlayer();
 				if (player != null)
 				{
-					if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
+					if (PremiumSystemConfig.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 					{
-						if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
+						if (PremiumSystemConfig.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
 						{
-							rateChance *= Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId);
+							rateChance *= PremiumSystemConfig.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId);
 						}
 						else if (item.hasExImmediateEffect())
 						{
@@ -1237,7 +1221,7 @@ public class NpcTemplate extends CreatureTemplate
 						}
 						else
 						{
-							rateChance *= Config.PREMIUM_RATE_DROP_CHANCE;
+							rateChance *= PremiumSystemConfig.PREMIUM_RATE_DROP_CHANCE;
 						}
 					}
 					
@@ -1250,35 +1234,35 @@ public class NpcTemplate extends CreatureTemplate
 				{
 					// amount is calculated after chance returned success
 					double rateAmount = 1;
-					if (Config.RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
+					if (RatesConfig.RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
 					{
-						rateAmount *= Config.RATE_DROP_AMOUNT_BY_ID.get(itemId);
+						rateAmount *= RatesConfig.RATE_DROP_AMOUNT_BY_ID.get(itemId);
 						if (champion && (itemId == Inventory.ADENA_ID))
 						{
-							rateAmount *= Config.CHAMPION_ADENAS_REWARDS_AMOUNT;
+							rateAmount *= ChampionMonstersConfig.CHAMPION_ADENAS_REWARDS_AMOUNT;
 						}
 					}
 					else if (item.hasExImmediateEffect())
 					{
-						rateAmount *= Config.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
+						rateAmount *= RatesConfig.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
 					}
 					else if (victim.isRaid())
 					{
-						rateAmount *= Config.RATE_RAID_DROP_AMOUNT_MULTIPLIER;
+						rateAmount *= RatesConfig.RATE_RAID_DROP_AMOUNT_MULTIPLIER;
 					}
 					else
 					{
-						rateAmount *= Config.RATE_DEATH_DROP_AMOUNT_MULTIPLIER * (champion ? Config.CHAMPION_REWARDS_AMOUNT : 1);
+						rateAmount *= RatesConfig.RATE_DEATH_DROP_AMOUNT_MULTIPLIER * (champion ? ChampionMonstersConfig.CHAMPION_REWARDS_AMOUNT : 1);
 					}
 					
 					// premium amount
 					if (player != null)
 					{
-						if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
+						if (PremiumSystemConfig.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 						{
-							if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
+							if (PremiumSystemConfig.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
 							{
-								rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId);
+								rateAmount *= PremiumSystemConfig.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId);
 							}
 							else if (item.hasExImmediateEffect())
 							{
@@ -1290,7 +1274,7 @@ public class NpcTemplate extends CreatureTemplate
 							}
 							else
 							{
-								rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT;
+								rateAmount *= PremiumSystemConfig.PREMIUM_RATE_DROP_AMOUNT;
 							}
 						}
 						
@@ -1324,15 +1308,15 @@ public class NpcTemplate extends CreatureTemplate
 			case SPOIL:
 			{
 				// chance
-				double rateChance = Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER;
+				double rateChance = RatesConfig.RATE_SPOIL_DROP_CHANCE_MULTIPLIER;
 				
 				// premium chance
 				final Player player = killer.asPlayer();
 				if (player != null)
 				{
-					if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
+					if (PremiumSystemConfig.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 					{
-						rateChance *= Config.PREMIUM_RATE_SPOIL_CHANCE;
+						rateChance *= PremiumSystemConfig.PREMIUM_RATE_SPOIL_CHANCE;
 					}
 					
 					// bonus spoil rate effect
@@ -1343,12 +1327,12 @@ public class NpcTemplate extends CreatureTemplate
 				if ((Rnd.nextDouble() * 100) < (dropItem.getChance() * rateChance))
 				{
 					// amount is calculated after chance returned success
-					double rateAmount = Config.RATE_SPOIL_DROP_AMOUNT_MULTIPLIER;
+					double rateAmount = RatesConfig.RATE_SPOIL_DROP_AMOUNT_MULTIPLIER;
 					
 					// premium amount
-					if (Config.PREMIUM_SYSTEM_ENABLED && (player != null) && player.hasPremiumStatus())
+					if (PremiumSystemConfig.PREMIUM_SYSTEM_ENABLED && (player != null) && player.hasPremiumStatus())
 					{
-						rateAmount *= Config.PREMIUM_RATE_SPOIL_AMOUNT;
+						rateAmount *= PremiumSystemConfig.PREMIUM_RATE_SPOIL_AMOUNT;
 					}
 					
 					// finally

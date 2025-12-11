@@ -33,17 +33,16 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.instancezone.InstanceTemplate;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestSound;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import instances.AbstractInstance;
 
 /**
  * <b>Castle dungeon</b> instance for quest <b>BladeUnderFoot (512)</b>
  * @author Mobius
  */
-public class CastleDungeon extends AbstractInstance
+public class CastleDungeon extends InstanceScript
 {
 	// NPCs
 	private static final Map<Integer, Integer> NPCS = new HashMap<>();

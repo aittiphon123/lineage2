@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets.dethroneability;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.network.GameClient;
@@ -44,9 +44,9 @@ public class ExHolyFireOpenUI extends ServerPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.EX_HOLY_FIRE_OPEN_UI.writeId(this, buffer);
-		buffer.writeInt(Config.CONQUEST_MAX_SACRED_FIRE_SLOTS_COUNT); // 0 - slots are locked / 1-4 - number of open slots (max ui limit is 4)
+		buffer.writeInt(ConquestConfig.CONQUEST_MAX_SACRED_FIRE_SLOTS_COUNT); // 0 - slots are locked / 1-4 - number of open slots (max ui limit is 4)
 		
-		for (int i = 1; i <= Config.CONQUEST_MAX_SACRED_FIRE_SLOTS_COUNT; i++)
+		for (int i = 1; i <= ConquestConfig.CONQUEST_MAX_SACRED_FIRE_SLOTS_COUNT; i++)
 		{
 			
 			final int currentState = _player.getVariables().getInt("SACRED_FIRE_SLOT_" + i, 0);
@@ -61,9 +61,9 @@ public class ExHolyFireOpenUI extends ServerPacket
 			// Rewards
 			if (rewardState)
 			{
-				buffer.writeInt(Config.CONQUEST_SACRED_FIRE_REWARD_PERSONAL_POINTS); // int nRewardPersonalPoint; 0 - reward disabled
-				buffer.writeInt(Config.CONQUEST_SACRED_FIRE_REWARD_SERVER_POINTS); // int nRewardServerPoint; 0 - reward disabled
-				buffer.writeInt(Config.CONQUEST_SACRED_FIRE_REWARD_FIRE_SOURCE_POINTS); // int nRewardPrimalFirePoint; 0 - reward disabled
+				buffer.writeInt(ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_PERSONAL_POINTS); // int nRewardPersonalPoint; 0 - reward disabled
+				buffer.writeInt(ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_SERVER_POINTS); // int nRewardServerPoint; 0 - reward disabled
+				buffer.writeInt(ConquestConfig.CONQUEST_SACRED_FIRE_REWARD_FIRE_SOURCE_POINTS); // int nRewardPrimalFirePoint; 0 - reward disabled
 			}
 			else
 			{
@@ -75,8 +75,8 @@ public class ExHolyFireOpenUI extends ServerPacket
 			// Common Item Rewards
 			if (rewardState)
 			{
-				buffer.writeInt(Config.CONQUEST_SACRED_FIRE_REWARDS.size()); // rewards array size 0 - rewards disabled
-				for (ItemHolder reward : Config.CONQUEST_SACRED_FIRE_REWARDS)
+				buffer.writeInt(ConquestConfig.CONQUEST_SACRED_FIRE_REWARDS.size()); // rewards array size 0 - rewards disabled
+				for (ItemHolder reward : ConquestConfig.CONQUEST_SACRED_FIRE_REWARDS)
 				{
 					buffer.writeInt(reward.getId());
 					buffer.writeLong(reward.getCount());

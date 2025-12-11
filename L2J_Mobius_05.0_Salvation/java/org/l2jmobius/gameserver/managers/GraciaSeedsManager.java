@@ -23,10 +23,9 @@ package org.l2jmobius.gameserver.managers;
 import java.util.Calendar;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
-import org.l2jmobius.gameserver.managers.tasks.UpdateSoDStateTask;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.config.GraciaSeedsConfig;
+import org.l2jmobius.gameserver.model.script.Quest;
 
 public class GraciaSeedsManager
 {
@@ -109,14 +108,18 @@ public class GraciaSeedsManager
 			{
 				// Conquest Complete state, if too much time is passed than change to defense state
 				final long timePast = System.currentTimeMillis() - _SoDLastStateChangeDate.getTimeInMillis();
-				if (timePast >= Config.SOD_STAGE_2_LENGTH)
+				if (timePast >= GraciaSeedsConfig.SOD_STAGE_2_LENGTH)
 				{
 					// change to Attack state because Defend statet is not implemented
 					setSoDState(1, true);
 				}
 				else
 				{
-					ThreadPool.schedule(new UpdateSoDStateTask(), Config.SOD_STAGE_2_LENGTH - timePast);
+					ThreadPool.schedule(() ->
+					{
+						setSoDState(1, true);
+						updateSodState();
+					}, GraciaSeedsConfig.SOD_STAGE_2_LENGTH - timePast);
 				}
 				break;
 			}
@@ -135,7 +138,7 @@ public class GraciaSeedsManager
 	
 	public void updateSodState()
 	{
-		final Quest quest = QuestManager.getInstance().getQuest(ENERGY_SEEDS);
+		final Quest quest = ScriptManager.getInstance().getScript(ENERGY_SEEDS);
 		if (quest == null)
 		{
 			LOGGER.warning(getClass().getSimpleName() + ": missing EnergySeeds Quest!");
@@ -151,13 +154,13 @@ public class GraciaSeedsManager
 		if (_SoDState == 1)
 		{
 			_SoDTiatKilled++;
-			if (_SoDTiatKilled >= Config.SOD_TIAT_KILL_COUNT)
+			if (_SoDTiatKilled >= GraciaSeedsConfig.SOD_TIAT_KILL_COUNT)
 			{
 				setSoDState(2, false);
 			}
 			
 			saveData(SODTYPE);
-			final Quest esQuest = QuestManager.getInstance().getQuest(ENERGY_SEEDS);
+			final Quest esQuest = ScriptManager.getInstance().getScript(ENERGY_SEEDS);
 			if (esQuest == null)
 			{
 				LOGGER.warning(getClass().getSimpleName() + ": missing EnergySeeds Quest!");
@@ -204,7 +207,7 @@ public class GraciaSeedsManager
 			}
 			case 2:
 			{
-				return ((_SoDLastStateChangeDate.getTimeInMillis() + Config.SOD_STAGE_2_LENGTH) - System.currentTimeMillis());
+				return ((_SoDLastStateChangeDate.getTimeInMillis() + GraciaSeedsConfig.SOD_STAGE_2_LENGTH) - System.currentTimeMillis());
 			}
 			case 3:
 			{

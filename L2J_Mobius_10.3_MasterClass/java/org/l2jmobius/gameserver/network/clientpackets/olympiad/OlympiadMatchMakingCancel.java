@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.olympiad;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
 import org.l2jmobius.gameserver.model.olympiad.OlympiadManager;
@@ -55,7 +55,7 @@ public class OlympiadMatchMakingCancel extends ClientPacket
 		
 		player.sendPacket(new ExOlympiadMatchMakingResult(_cGameRuleType, 0));
 		
-		if (Config.OLYMPIAD_ENABLED && Olympiad.getInstance().inCompPeriod())
+		if (OlympiadConfig.OLYMPIAD_ENABLED && Olympiad.getInstance().inCompPeriod())
 		{
 			player.sendPacket(new ExOlympiadInfo(1));
 		}

@@ -23,8 +23,8 @@ package ai.bosses.Antharas;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
@@ -32,6 +32,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.MountType;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -45,13 +46,11 @@ import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.network.serverpackets.SpecialCamera;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import instances.AbstractInstance;
-
 /**
  * Antharas
  * @author Sero
  */
-public class Antharas extends AbstractInstance
+public class Antharas extends InstanceScript
 {
 	// NPCs
 	private static final int ANTHARAS = 29223; // Antharas
@@ -231,7 +230,7 @@ public class Antharas extends AbstractInstance
 				
 				for (Player players : World.getInstance().getVisibleObjectsInRange(npc, Player.class, 4000))
 				{
-					if (players.isHero())
+					if (players.isHero() && GrandBossConfig.ANTHARAS_RECOGNIZE_HERO)
 					{
 						broadcastPacket(world, new ExShowScreenMessage(NpcStringId.S1_YOU_CANNOT_HOPE_TO_DEFEAT_ME_WITH_YOUR_MEAGER_STRENGTH, 2, 4000, players.getName()));
 						break;
@@ -521,7 +520,7 @@ public class Antharas extends AbstractInstance
 			if ((world != null) && world.isStatus(0))
 			{
 				world.setStatus(1);
-				startQuestTimer("SPAWN_ANTHARAS", Config.ANTHARAS_WAIT_TIME * 60000, null, player);
+				startQuestTimer("SPAWN_ANTHARAS", GrandBossConfig.ANTHARAS_WAIT_TIME * 60000, null, player);
 			}
 		}
 		else // Teleport Cube

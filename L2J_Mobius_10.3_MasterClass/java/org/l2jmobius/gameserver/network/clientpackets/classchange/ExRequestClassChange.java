@@ -24,7 +24,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
@@ -139,7 +139,7 @@ public class ExRequestClassChange extends ClientPacket
 					player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
 				}
 				
-				if (Config.DISABLE_TUTORIAL && !player.getVariables().getBoolean(AWAKE_POWER_REWARDED_VAR, false))
+				if (!PlayerConfig.DISABLE_TUTORIAL && !player.getVariables().getBoolean(AWAKE_POWER_REWARDED_VAR, false))
 				{
 					player.addItem(ItemProcessType.REWARD, VITALITY_MAINTAINING_RUNE, 1, player, true);
 					player.addItem(ItemProcessType.REWARD, CHAOS_POMANDER, 2, player, true);
@@ -172,9 +172,9 @@ public class ExRequestClassChange extends ClientPacket
 				}
 			}
 			
-			if (Config.AUTO_LEARN_SKILLS)
+			if (PlayerConfig.AUTO_LEARN_SKILLS)
 			{
-				player.giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, Config.AUTO_LEARN_FP_SKILLS, true, Config.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
+				player.giveAvailableSkills(PlayerConfig.AUTO_LEARN_FS_SKILLS, PlayerConfig.AUTO_LEARN_FP_SKILLS, true, PlayerConfig.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
 			}
 			
 			player.store(false); // Save player cause if server crashes before this char is saved, he will lose class.
@@ -182,7 +182,7 @@ public class ExRequestClassChange extends ClientPacket
 			player.sendSkillList();
 			player.sendPacket(new PlaySound("ItemSound.quest_fanfare_2"));
 			
-			if (Config.DISABLE_TUTORIAL && !player.isInCategory(CategoryType.SIXTH_CLASS_GROUP) //
+			if (PlayerConfig.DISABLE_TUTORIAL && !player.isInCategory(CategoryType.SIXTH_CLASS_GROUP) //
 				&& ((player.isInCategory(CategoryType.SECOND_CLASS_GROUP) && (playerLevel >= 38)) //
 					|| (player.isInCategory(CategoryType.THIRD_CLASS_GROUP) && (playerLevel >= 76)) //
 					|| (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) && (playerLevel >= 85))))

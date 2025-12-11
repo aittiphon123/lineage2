@@ -20,20 +20,19 @@
  */
 package ai.areas.Conquest.ConquestTeleportDevice;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.ClanMember;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Teleport Device AI.
  * @author CostyKiller
  */
-public class ConquestTeleportDevice extends AbstractNpcAI
+public class ConquestTeleportDevice extends Script
 {
 	// NPCs
 	private static final int DEVICE1 = 34596; // Teleport Device 1 ( Conquest Town Teleporter)
@@ -207,7 +206,7 @@ public class ConquestTeleportDevice extends AbstractNpcAI
 	{
 		final int prevSeasonRank1Id = RankManager.getInstance().getPreviousConquestRankList().get(1) != null ? RankManager.getInstance().getPreviousConquestRankList().get(1).getInt("charId") : 0;
 		final int currentSeasonRank1Id = RankManager.getInstance().getCurrentConquestRankList().get(1) != null ? RankManager.getInstance().getCurrentConquestRankList().get(1).getInt("charId") : 0;
-		if (Config.CONQUEST_TELEPORTS_FOR_ALL)
+		if (ConquestConfig.CONQUEST_TELEPORTS_FOR_ALL)
 		{
 			player.sendMessage("You are free to use this teleport device.");
 			return true;

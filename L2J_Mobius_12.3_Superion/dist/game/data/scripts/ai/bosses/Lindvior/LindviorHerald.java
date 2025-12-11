@@ -24,17 +24,16 @@ import org.l2jmobius.gameserver.managers.WalkingManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Lionel Hunter AI
  * @author Gigi
  * @date 2017-07-23 - [22:54:59]
  */
-public class LindviorHerald extends AbstractNpcAI
+public class LindviorHerald extends Script
 {
 	// Npc
 	private static final int LIONEL_HUNTER = 33886;

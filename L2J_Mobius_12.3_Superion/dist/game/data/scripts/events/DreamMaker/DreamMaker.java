@@ -22,7 +22,8 @@ package events.DreamMaker;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
+import org.l2jmobius.gameserver.model.script.LongTimeEvent;
+import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 
 /**
@@ -178,15 +179,15 @@ public class DreamMaker extends LongTimeEvent
 				{
 					htmltext = "34590-buff-no-level.htm";
 				}
-				else if ((player.getVariables().getLong("DREAM_MAKER_BUFF_DELAY", 0) + 86400000) >= System.currentTimeMillis())
+				else if ((player.getVariables().getLong("DREAM_MAKER_BUFF_DELAY", 0) > 0) && (player.getVariables().getLong("DREAM_MAKER_BUFF_DELAY", 0) <= (System.currentTimeMillis() + 86400000)))
 				{
-					npc.doCast(getRandomEntry(BUFFS).getSkill());
-					player.getVariables().set("DREAM_MAKER_BUFF_DELAY", System.currentTimeMillis());
-					htmltext = "34590-buff-received.htm";
+					htmltext = "34590-buff-already-received.htm";
 				}
 				else
 				{
-					htmltext = "34590-buff-already-received.htm";
+					SkillCaster.triggerCast(npc, player, getRandomEntry(BUFFS).getSkill());
+					player.getVariables().set("DREAM_MAKER_BUFF_DELAY", System.currentTimeMillis());
+					htmltext = "34590-buff-received.htm";
 				}
 				break;
 			}
@@ -199,9 +200,12 @@ public class DreamMaker extends LongTimeEvent
 				else if (player.isAffectedBySkill(BUFFS[0].getSkillId()) || player.isAffectedBySkill(BUFFS[2].getSkillId()) || player.isAffectedBySkill(BUFFS[4].getSkillId()) || player.isAffectedBySkill(BUFFS[6].getSkillId()))
 				{
 					takeItems(player, 57, 5000000);
-					npc.setTarget(player);
-					npc.doCast(getRandomEntry(BUFFS).getSkill());
+					SkillCaster.triggerCast(npc, player, getRandomEntry(BUFFS).getSkill());
 					htmltext = "34590-buff-received.htm";
+				}
+				else
+				{
+					htmltext = "34590-no-buff.htm";
 				}
 				break;
 			}

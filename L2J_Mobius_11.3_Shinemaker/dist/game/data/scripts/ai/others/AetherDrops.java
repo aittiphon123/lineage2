@@ -23,8 +23,8 @@ package ai.others;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -33,14 +33,13 @@ import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Mobius
  */
-public class AetherDrops extends AbstractNpcAI
+public class AetherDrops extends Script
 {
 	// Monsters
 	private static final int[] MONSTERS =
@@ -288,7 +287,7 @@ public class AetherDrops extends AbstractNpcAI
 	public void onKill(Npc npc, Player killer, boolean isSummon)
 	{
 		final Player player = getRandomPartyMember(killer);
-		if ((player.getLevel() >= PLAYER_LEVEL) && (getRandom(100) < CHANCE) && ((player.getParty() == null) || ((player.getParty() != null) && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))))
+		if ((player.getLevel() >= PLAYER_LEVEL) && (getRandom(100) < CHANCE) && ((player.getParty() == null) || ((player.getParty() != null) && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))))
 		{
 			final int count = player.getVariables().getInt(AETHER_DROP_COUNT_VAR, 0);
 			if (count < DROP_DAILY)
@@ -315,7 +314,7 @@ public class AetherDrops extends AbstractNpcAI
 	{
 		// Update data for offline players.
 		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?"))
+			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var = ? AND charId IN (SELECT charId FROM characters WHERE online = 0)"))
 		{
 			ps.setString(1, AETHER_DROP_COUNT_VAR);
 			ps.executeUpdate();

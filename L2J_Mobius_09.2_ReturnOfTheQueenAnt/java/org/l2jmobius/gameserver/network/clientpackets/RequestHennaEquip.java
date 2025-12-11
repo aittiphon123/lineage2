@@ -20,7 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.data.xml.HennaData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -69,7 +70,7 @@ public class RequestHennaEquip extends ClientPacket
 		
 		if (henna.isPremium())
 		{
-			if ((Config.PREMIUM_HENNA_SLOT_ENABLED_FOR_ALL || player.hasPremiumStatus()) && Config.PREMIUM_HENNA_SLOT_ENABLED && (player.getPlayerClass().level() > 1))
+			if ((PremiumSystemConfig.PREMIUM_HENNA_SLOT_ENABLED_FOR_ALL || player.hasPremiumStatus()) && PremiumSystemConfig.PREMIUM_HENNA_SLOT_ENABLED && (player.getPlayerClass().level() > 1))
 			{
 				if (player.getHenna(4) != null)
 				{
@@ -108,7 +109,7 @@ public class RequestHennaEquip extends ClientPacket
 			player.sendPacket(SystemMessageId.THE_SYMBOL_CANNOT_BE_DRAWN);
 			if (!player.isGM() && !henna.isAllowedClass(player.getPlayerClass()))
 			{
-				PunishmentManager.handleIllegalPlayerAction(player, "Exploit attempt: Character " + player.getName() + " of account " + player.getAccountName() + " tryed to add a forbidden henna.", Config.DEFAULT_PUNISH);
+				PunishmentManager.handleIllegalPlayerAction(player, "Exploit attempt: Character " + player.getName() + " of account " + player.getAccountName() + " tryed to add a forbidden henna.", GeneralConfig.DEFAULT_PUNISH);
 			}
 			
 			player.sendPacket(ActionFailed.STATIC_PACKET);

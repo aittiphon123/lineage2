@@ -22,18 +22,17 @@ package ai.others;
 
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.serverpackets.ExCastleState;
-
-import ai.AbstractNpcAI;
 
 /**
  * Shows castle side effect in cities.
  * @author Gigi
  * @date 2019-05-14 - [12:47:33]
  */
-public class CastleSideEffect extends AbstractNpcAI
+public class CastleSideEffect extends Script
 {
 	private static final int[] ZONE_ID =
 	{

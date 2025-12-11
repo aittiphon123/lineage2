@@ -24,17 +24,16 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Tersi's Herald AI.
  * @author St3eT
  */
-public class TersisHerald extends AbstractNpcAI
+public class TersisHerald extends Script
 {
 	// NPCs
 	private static final int HERALD = 4326; // Tersi's Herald
@@ -152,6 +151,12 @@ public class TersisHerald extends AbstractNpcAI
 			getTimers().addTimer("DESPAWN_NPCS", DESPAWN_TIME, null, null);
 			getTimers().addTimer("TEXT_SPAM", 300000, null, null);
 		}
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

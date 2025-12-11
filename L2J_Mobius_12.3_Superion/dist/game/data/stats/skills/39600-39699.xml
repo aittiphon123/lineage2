@@ -264,7 +264,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>99</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 			<condition name="CanUseHuntingTimeIncreaseItem">
 				<zoneId>11</zoneId>
@@ -798,7 +797,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>110</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 			<condition name="CanUseHuntingTimeIncreaseItem">
 				<zoneId>
@@ -1383,7 +1381,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>100</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 			<condition name="CanUseHuntingTimeIncreaseItem">
 				<zoneId>13</zoneId>

@@ -22,13 +22,11 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 
-import ai.AbstractNpcAI;
-
 /**
  * Rotina AI.
  * @author Gladicek
  */
-public class Rotina extends AbstractNpcAI
+public class Rotina extends WalkerAI
 {
 	// NPC
 	private static final int ROTINA = 33027;

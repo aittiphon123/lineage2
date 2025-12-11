@@ -22,7 +22,7 @@ package org.l2jmobius.gameserver.model.effects;
 
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.Skill;
@@ -60,7 +60,7 @@ public abstract class AbstractEffect
 	
 	public double getTicksMultiplier()
 	{
-		return (getTicks() * Config.EFFECT_TICK_RATIO) / 1000f;
+		return (getTicks() * PlayerConfig.EFFECT_TICK_RATIO) / 1000f;
 	}
 	
 	/**

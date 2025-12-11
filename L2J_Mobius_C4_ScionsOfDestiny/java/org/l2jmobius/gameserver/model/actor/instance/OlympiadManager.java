@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -39,9 +39,9 @@ public class OlympiadManager extends Npc
 {
 	private static Logger _logOlymp = Logger.getLogger(OlympiadManager.class.getName());
 	
-	private static final int GATE_PASS = Config.OLYMPIAD_COMP_RITEM;
-	private static final String FEWER_THAN = "Fewer than " + String.valueOf(Config.OLYMPIAD_REG_DISPLAY);
-	private static final String MORE_THAN = "More than " + String.valueOf(Config.OLYMPIAD_REG_DISPLAY);
+	private static final int GATE_PASS = OlympiadConfig.OLYMPIAD_COMP_RITEM;
+	private static final String FEWER_THAN = "Fewer than " + String.valueOf(OlympiadConfig.OLYMPIAD_REG_DISPLAY);
+	private static final String MORE_THAN = "More than " + String.valueOf(OlympiadConfig.OLYMPIAD_REG_DISPLAY);
 	
 	/**
 	 * Creates an olympiad manager.
@@ -104,11 +104,11 @@ public class OlympiadManager extends Npc
 					}
 					
 					html.setFile(player, Olympiad.OLYMPIAD_HTML_PATH + "noble_registered.htm");
-					if (Config.OLYMPIAD_REG_DISPLAY > 0)
+					if (OlympiadConfig.OLYMPIAD_REG_DISPLAY > 0)
 					{
-						html.replace("%listClassed%", classed < Config.OLYMPIAD_REG_DISPLAY ? FEWER_THAN : MORE_THAN);
+						html.replace("%listClassed%", classed < OlympiadConfig.OLYMPIAD_REG_DISPLAY ? FEWER_THAN : MORE_THAN);
 						html.replace("%listNonClassedTeam%", FEWER_THAN);
-						html.replace("%listNonClassed%", nonClassed < Config.OLYMPIAD_REG_DISPLAY ? FEWER_THAN : MORE_THAN);
+						html.replace("%listNonClassed%", nonClassed < OlympiadConfig.OLYMPIAD_REG_DISPLAY ? FEWER_THAN : MORE_THAN);
 					}
 					else
 					{
@@ -181,7 +181,7 @@ public class OlympiadManager extends Npc
 					if (passes > 0)
 					{
 						player.getVariables().remove(Olympiad.UNCLAIMED_OLYMPIAD_PASSES_VAR);
-						player.addItem(ItemProcessType.REWARD, GATE_PASS, passes * Config.OLYMPIAD_GP_PER_POINT, player, true);
+						player.addItem(ItemProcessType.REWARD, GATE_PASS, passes * OlympiadConfig.OLYMPIAD_GP_PER_POINT, player, true);
 					}
 					break;
 				}

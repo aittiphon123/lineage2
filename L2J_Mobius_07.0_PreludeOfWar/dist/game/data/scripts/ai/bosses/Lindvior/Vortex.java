@@ -29,18 +29,17 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.enums.FlyType;
 import org.l2jmobius.gameserver.network.serverpackets.FlyToLocation;
 import org.l2jmobius.gameserver.network.serverpackets.ValidateLocation;
-
-import ai.AbstractNpcAI;
 
 /**
  * Vortex AI
  * @author Gigi
  * @date 2017-07-23 - [10:32:50]
  */
-public class Vortex extends AbstractNpcAI
+public class Vortex extends Script
 {
 	private static final int SMALL_VORTEX = 25898;
 	private static final int BIG_VORTEX = 19427;

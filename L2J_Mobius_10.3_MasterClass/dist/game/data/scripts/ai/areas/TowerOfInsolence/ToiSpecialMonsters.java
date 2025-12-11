@@ -20,11 +20,10 @@
  */
 package ai.areas.TowerOfInsolence;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Tower of Insolence Special Mobs AI.
@@ -32,7 +31,7 @@ import ai.AbstractNpcAI;
  * @author CostyKiller
  * @TODO Find and add fixed spawn locations for elite monsters.
  */
-public class ToiSpecialMonsters extends AbstractNpcAI
+public class ToiSpecialMonsters extends Script
 {
 	// Elite Monsters
 	private static final int ELITE_MONSTER_FLOOR4 = 24863;
@@ -257,7 +256,7 @@ public class ToiSpecialMonsters extends AbstractNpcAI
 	private void giveReward(Npc npc, Player killer)
 	{
 		final Player player = getRandomPartyMember(killer);
-		if ((getRandom(100) < DROP_CHANCE) && ((player.getParty() == null) || ((player.getParty() != null) && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))))
+		if ((getRandom(100) < DROP_CHANCE) && ((player.getParty() == null) || ((player.getParty() != null) && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))))
 		{
 			giveItems(player, ENHANCED_RUNE, 1);
 			player.sendMessage("You obtained an Enhanced Rune from the Elite Monster!"); // Custom message.

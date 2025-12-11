@@ -20,14 +20,14 @@
  */
 package quests.Q10598_WithAllYourMight;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Faction;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
 import quests.Q10597_EscapeToTheShadowOfTheMotherTree.Q10597_EscapeToTheShadowOfTheMotherTree;
@@ -211,7 +211,7 @@ public class Q10598_WithAllYourMight extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(2) && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE) && ArrayUtil.contains(MONSTERS, npc.getId()))
+		if ((qs != null) && qs.isCond(2) && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE) && ArrayUtil.contains(MONSTERS, npc.getId()))
 		{
 			giveItems(player, LITHRAS_CONSIDERATION, 1);
 			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);

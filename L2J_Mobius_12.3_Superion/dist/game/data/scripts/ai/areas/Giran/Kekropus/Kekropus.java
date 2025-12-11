@@ -22,25 +22,25 @@ package ai.areas.Giran.Kekropus;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 
-import ai.AbstractNpcAI;
 import ai.bosses.Helios.Helios;
 
 /**
  * Kekropus AI
  * @author Gigi
  */
-public class Kekropus extends AbstractNpcAI
+public class Kekropus extends Script
 {
 	// NPCs
 	private static final int KEKROPUS = 34222;
@@ -96,8 +96,8 @@ public class Kekropus extends AbstractNpcAI
 					{
 						final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 						packet.setHtml(getHtm(player, "34222-01.html"));
-						packet.replace("%min%", Integer.toString(Config.HELIOS_MIN_PLAYER));
-						packet.replace("%minLevel%", Integer.toString(Config.HELIOS_MIN_PLAYER_LEVEL));
+						packet.replace("%min%", Integer.toString(GrandBossConfig.HELIOS_MIN_PLAYER));
+						packet.replace("%minLevel%", Integer.toString(GrandBossConfig.HELIOS_MIN_PLAYER_LEVEL));
 						player.sendPacket(packet);
 						return null;
 					}
@@ -111,24 +111,24 @@ public class Kekropus extends AbstractNpcAI
 						return "34222-02.html";
 					}
 					
-					if (members.size() < Config.HELIOS_MIN_PLAYER)
+					if (members.size() < GrandBossConfig.HELIOS_MIN_PLAYER)
 					{
 						final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 						packet.setHtml(getHtm(player, "34222-01.html"));
-						packet.replace("%min%", Integer.toString(Config.HELIOS_MIN_PLAYER));
-						packet.replace("%minLevel%", Integer.toString(Config.HELIOS_MIN_PLAYER_LEVEL));
+						packet.replace("%min%", Integer.toString(GrandBossConfig.HELIOS_MIN_PLAYER));
+						packet.replace("%minLevel%", Integer.toString(GrandBossConfig.HELIOS_MIN_PLAYER_LEVEL));
 						player.sendPacket(packet);
 						return null;
 					}
 					
 					for (Player member : members)
 					{
-						if (member.getLevel() < Config.HELIOS_MIN_PLAYER_LEVEL)
+						if (member.getLevel() < GrandBossConfig.HELIOS_MIN_PLAYER_LEVEL)
 						{
 							final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 							packet.setHtml(getHtm(player, "34222-01.html"));
-							packet.replace("%min%", Integer.toString(Config.HELIOS_MIN_PLAYER));
-							packet.replace("%minLevel%", Integer.toString(Config.HELIOS_MIN_PLAYER_LEVEL));
+							packet.replace("%min%", Integer.toString(GrandBossConfig.HELIOS_MIN_PLAYER));
+							packet.replace("%minLevel%", Integer.toString(GrandBossConfig.HELIOS_MIN_PLAYER_LEVEL));
 							player.sendPacket(packet);
 							return null;
 						}
@@ -146,7 +146,7 @@ public class Kekropus extends AbstractNpcAI
 				if (status == ALIVE)
 				{
 					GrandBossManager.getInstance().setStatus(HELIOS, WAITING);
-					heliosAI().startQuestTimer("beginning", Config.HELIOS_WAIT_TIME * 60000, null, null);
+					heliosAI().startQuestTimer("beginning", GrandBossConfig.HELIOS_WAIT_TIME * 60000, null, null);
 				}
 				break;
 			}
@@ -181,7 +181,7 @@ public class Kekropus extends AbstractNpcAI
 	
 	private Quest heliosAI()
 	{
-		return QuestManager.getInstance().getQuest(Helios.class.getSimpleName());
+		return ScriptManager.getInstance().getScript(Helios.class.getSimpleName());
 	}
 	
 	public static void main(String[] args)

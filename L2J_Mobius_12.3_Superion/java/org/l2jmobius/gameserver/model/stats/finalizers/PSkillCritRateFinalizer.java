@@ -22,9 +22,9 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
 import org.l2jmobius.gameserver.model.stats.IStatFunction;
 import org.l2jmobius.gameserver.model.stats.Stat;
@@ -43,11 +43,11 @@ public class PSkillCritRateFinalizer implements IStatFunction
 		if (creature.isPlayer())
 		{
 			// Enchanted legs bonus.W
-			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_LEGS);
+			baseValue += calcEnchantBodyPart(creature, BodyPart.LEGS);
 		}
 		
 		final double strBonus = creature.getSTR() > 0 ? BaseStat.STR.calcBonus(creature) : 1;
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue * strBonus), 0, creature.isPlayable() ? Config.MAX_PSKILLCRIT_RATE : Double.MAX_VALUE);
+		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue * strBonus), 0, creature.isPlayable() ? PlayerConfig.MAX_PSKILLCRIT_RATE : Double.MAX_VALUE);
 	}
 	
 	@Override

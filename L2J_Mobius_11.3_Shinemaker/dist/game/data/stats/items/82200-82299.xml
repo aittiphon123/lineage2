@@ -128,7 +128,6 @@
 	<item id="82203" name="Conquest Rankings' 1st Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P. Atk./ M. Atk./ P. Def./ M. Def. +7%, acquired XP/ SP +5%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -143,7 +142,6 @@
 	<item id="82204" name="Conquest Rankings' 2nd Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P. Atk./ M. Atk./ P. Def./ M. Def. +6%, acquired XP/ SP +5%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -158,7 +156,6 @@
 	<item id="82205" name="Conquest Rankings' 3rd Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P. Atk./ M. Atk./ P. Def./ M. Def. +5%, acquired XP/ SP +5%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -173,7 +170,6 @@
 	<item id="82206" name="Conquest Rankings' 4th Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P. Atk./ M. Atk./ P. Def./ M. Def. +4%, acquired XP/ SP +4%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -188,7 +184,6 @@
 	<item id="82207" name="Conquest Rankings' 5th Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P. Atk./ M. Atk./ P. Def./ M. Def. +3%, acquired XP/ SP +3%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -203,7 +198,6 @@
 	<item id="82208" name="Conquest Rankings' 6th Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P. Atk./ M. Atk./ P. Def./ M. Def. +2%, acquired XP/ SP +3%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -218,7 +212,6 @@
 	<item id="82209" name="Conquest Rankings' 7th Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P. Atk./ M. Atk./ P. Def./ M. Def. +1%, acquired XP/ SP +3%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -233,7 +226,6 @@
 	<item id="82210" name="Conquest Rankings' 8th Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P./ M. Def. +1%, acquired XP/ SP +3%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -248,7 +240,6 @@
 	<item id="82211" name="Conquest Rankings' 9th Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, acquired XP/ SP +3%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -263,7 +254,6 @@
 	<item id="82212" name="Conquest Rankings' 10th Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, acquired XP/ SP +2%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />

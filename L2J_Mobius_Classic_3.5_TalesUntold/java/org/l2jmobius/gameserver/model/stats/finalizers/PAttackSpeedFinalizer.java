@@ -18,7 +18,8 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
 import org.l2jmobius.gameserver.model.stats.IStatFunction;
@@ -34,14 +35,14 @@ public class PAttackSpeedFinalizer implements IStatFunction
 	{
 		throwIfPresent(base);
 		double baseValue = calcWeaponBaseValue(creature, stat);
-		if (Config.CHAMPION_ENABLE && creature.isChampion())
+		if (ChampionMonstersConfig.CHAMPION_ENABLE && creature.isChampion())
 		{
-			baseValue *= Config.CHAMPION_SPD_ATK;
+			baseValue *= ChampionMonstersConfig.CHAMPION_SPD_ATK;
 		}
 		
 		final double dexBonus = creature.getDEX() > 0 ? BaseStat.DEX.calcBonus(creature) : 1;
 		baseValue *= dexBonus;
-		return validateValue(creature, defaultValue(creature, stat, baseValue), 1, creature.isPlayable() ? Config.MAX_PATK_SPEED : Double.MAX_VALUE);
+		return validateValue(creature, defaultValue(creature, stat, baseValue), 1, creature.isPlayable() ? PlayerConfig.MAX_PATK_SPEED : Double.MAX_VALUE);
 	}
 	
 	private double defaultValue(Creature creature, Stat stat, double baseValue)

@@ -23,14 +23,13 @@ package ai.areas.Conquest.ConquestTeleportDevice;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Teleport Device AI.
  * @author CostyKiller
  */
-public class ConquestTeleportDevice extends AbstractNpcAI
+public class ConquestTeleportDevice extends Script
 {
 	// NPCs
 	// private static final int DEVICE1 = 34596; // Teleport Device 1

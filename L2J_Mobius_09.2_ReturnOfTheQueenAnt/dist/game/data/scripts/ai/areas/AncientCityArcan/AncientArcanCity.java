@@ -29,6 +29,7 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.spawns.SpawnGroup;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
@@ -38,13 +39,11 @@ import org.l2jmobius.gameserver.network.serverpackets.Earthquake;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
-import ai.AbstractNpcAI;
-
 /**
  * Ancient Arcan City AI.
  * @author St3eT, Mobius
  */
-public class AncientArcanCity extends AbstractNpcAI
+public class AncientArcanCity extends Script
 {
 	// NPC
 	private static final int CEREMONIAL_CAT = 33093;

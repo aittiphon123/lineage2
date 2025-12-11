@@ -22,16 +22,15 @@ package ai.areas.DragonValley;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Dragon Valley summoner NPC AI
  * @author Gigi, Mobius
  */
-public class DragonValleySummoners extends AbstractNpcAI
+public class DragonValleySummoners extends Script
 {
 	// NPCs
 	private static final int BLOODY_GRAVE_WARRIOR = 23441;

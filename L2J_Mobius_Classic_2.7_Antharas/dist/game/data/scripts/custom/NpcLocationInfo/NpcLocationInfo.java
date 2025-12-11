@@ -24,14 +24,13 @@ import org.l2jmobius.gameserver.data.SpawnTable;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Npc Location Info AI.
  * @author Nyaran
  */
-public class NpcLocationInfo extends AbstractNpcAI
+public class NpcLocationInfo extends Script
 {
 	private static final List<Integer> NPC = new ArrayList<>();
 	static

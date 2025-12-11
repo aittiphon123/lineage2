@@ -23,14 +23,13 @@ package ai.areas.GardenOfSpirits.Eubina;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Faction;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Mobius
  */
-public class Eubina extends AbstractNpcAI
+public class Eubina extends Script
 {
 	// NPC
 	private static final int EUBINA = 34238;

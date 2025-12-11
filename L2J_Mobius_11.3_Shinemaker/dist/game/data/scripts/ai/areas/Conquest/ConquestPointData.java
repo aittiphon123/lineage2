@@ -28,8 +28,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 
 /**
  * Point data parser.
@@ -42,7 +42,7 @@ public class ConquestPointData implements IXmlReader
 	
 	public ConquestPointData()
 	{
-		if (Config.CONQUEST_SYSTEM_ENABLED)
+		if (ConquestConfig.CONQUEST_SYSTEM_ENABLED)
 		{
 			load();
 		}

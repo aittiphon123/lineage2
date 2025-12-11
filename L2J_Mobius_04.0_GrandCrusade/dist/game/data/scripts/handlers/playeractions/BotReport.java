@@ -16,7 +16,7 @@
  */
 package handlers.playeractions;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.BotReportTable;
 import org.l2jmobius.gameserver.handler.IPlayerActionHandler;
 import org.l2jmobius.gameserver.model.ActionDataHolder;
@@ -31,7 +31,7 @@ public class BotReport implements IPlayerActionHandler
 	@Override
 	public void onAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
-		if (Config.BOTREPORT_ENABLE)
+		if (GeneralConfig.BOTREPORT_ENABLE)
 		{
 			BotReportTable.getInstance().reportBot(player);
 		}

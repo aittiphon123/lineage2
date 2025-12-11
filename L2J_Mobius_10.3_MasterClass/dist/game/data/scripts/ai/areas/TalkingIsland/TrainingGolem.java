@@ -17,14 +17,13 @@
 package ai.areas.TalkingIsland;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Training Golem AI.
  * @author Gladicek
  */
-public class TrainingGolem extends AbstractNpcAI
+public class TrainingGolem extends Script
 {
 	// NPCs
 	private static final int TRAINING_GOLEM = 27532;

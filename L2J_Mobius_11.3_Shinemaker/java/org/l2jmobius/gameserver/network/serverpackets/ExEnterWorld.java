@@ -24,8 +24,8 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.zone.ZoneRules;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 
@@ -54,6 +54,6 @@ public class ExEnterWorld extends ServerPacket
 		buffer.writeInt(_epochInSeconds);
 		buffer.writeInt(-_zoneIdOffsetSeconds);
 		buffer.writeInt(_daylight);
-		buffer.writeInt(Config.MAX_FREE_TELEPORT_LEVEL);
+		buffer.writeInt(PlayerConfig.MAX_FREE_TELEPORT_LEVEL);
 	}
 }

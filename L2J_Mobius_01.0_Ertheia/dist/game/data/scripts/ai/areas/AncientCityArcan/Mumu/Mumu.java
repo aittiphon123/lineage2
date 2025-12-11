@@ -18,15 +18,14 @@ package ai.areas.AncientCityArcan.Mumu;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.enums.Movie;
-
-import ai.AbstractNpcAI;
 
 /**
  * Mumu AI.
  * @author St3eT
  */
-public class Mumu extends AbstractNpcAI
+public class Mumu extends Script
 {
 	// NPC
 	private static final int MUMU = 32900; // Mumu
@@ -57,6 +56,12 @@ public class Mumu extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

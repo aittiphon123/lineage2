@@ -20,13 +20,13 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.l2jmobius.gameserver.data.xml.ItemData;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
@@ -111,7 +111,7 @@ public class Q10814_BefittingOfTheStatus extends Quest
 						giveItems(player, GALLADUCI_RODEMAI_CERTIFICATE, 1);
 						qs.exitQuest(false, true);
 						
-						final Quest mainQ = QuestManager.getInstance().getQuest(Q10811_ExaltedOneWhoFacesTheLimit.class.getSimpleName());
+						final Quest mainQ = ScriptManager.getInstance().getScript(Q10811_ExaltedOneWhoFacesTheLimit.class.getSimpleName());
 						if (mainQ != null)
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);

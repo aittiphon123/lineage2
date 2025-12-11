@@ -35,19 +35,18 @@ import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureAt
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
 import org.l2jmobius.gameserver.model.events.holders.instance.OnInstanceStatusChange;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * Kartia Helper Adolph AI.
  * @author flanagak
  */
-public class KartiaHelperAdolph extends AbstractNpcAI
+public class KartiaHelperAdolph extends Script
 {
 	// NPCs
 	private static final int[] KARTIA_ADOLPH =

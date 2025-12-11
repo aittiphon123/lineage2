@@ -23,15 +23,14 @@ package ai.others.DarkJudge;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-
-import ai.AbstractNpcAI;
 
 /**
  * Dark Judge AI.
  * @author St3eT, Mobius
  */
-public class DarkJudge extends AbstractNpcAI
+public class DarkJudge extends Script
 {
 	// NPC
 	private static final int DARK_JUDGE = 30981;

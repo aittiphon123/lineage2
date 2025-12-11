@@ -22,7 +22,7 @@ package instances.MysticTavern.StoryOfFreya;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
@@ -31,20 +31,19 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.FriendlyNpc;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
-import instances.AbstractInstance;
-
 /**
  * Mystic Tavern Freya Instance
  * @author Gigi
  * @date 2019-02-05 - [19:54:29]
  */
-public class StoryOfFreya extends AbstractInstance
+public class StoryOfFreya extends InstanceScript
 {
 	// NPCs
 	private static final int SAYAN = 34172;
@@ -117,7 +116,7 @@ public class StoryOfFreya extends AbstractInstance
 				final List<Player> members = party.getMembers();
 				for (Player member : members)
 				{
-					if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+					if (member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 					{
 						QuestProgress(npc, member);
 					}
@@ -157,7 +156,7 @@ public class StoryOfFreya extends AbstractInstance
 					final List<Player> members = party.getMembers();
 					for (Player member : members)
 					{
-						if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+						if (member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 						{
 							member.teleToLocation(LABIRYNTH_TELEPORT, world.getTemplateId());
 							world.setStatus(1);
@@ -241,7 +240,7 @@ public class StoryOfFreya extends AbstractInstance
 					final List<Player> members = party.getMembers();
 					for (Player member : members)
 					{
-						if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+						if (member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 						{
 							player.teleToLocation(CASTLE_TELEPORT, world.getTemplateId());
 						}
@@ -389,7 +388,7 @@ public class StoryOfFreya extends AbstractInstance
 						final List<Player> members = party.getMembers();
 						for (Player member : members)
 						{
-							if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+							if (member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 							{
 								QuestProgress(npc, member);
 							}
@@ -471,7 +470,7 @@ public class StoryOfFreya extends AbstractInstance
 		// final QuestState qs = player.getQuestState(Q00835_PitiableMelisa.class.getSimpleName());
 		// if ((qs != null) && qs.isStarted())
 		// {
-		// final Quest qs835 = QuestManager.getInstance().getQuest(Q00835_PitiableMelisa.class.getSimpleName());
+		// final Quest qs835 = ScriptManager.getInstance().getScript(Q00835_PitiableMelisa.class.getSimpleName());
 		// if (qs835 != null)
 		// {
 		// qs835.notifyEvent("NOTIFY_Q835", npc, player);

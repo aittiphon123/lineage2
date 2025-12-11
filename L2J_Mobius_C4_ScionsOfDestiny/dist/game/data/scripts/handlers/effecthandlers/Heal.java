@@ -16,16 +16,14 @@
  */
 package handlers.effecthandlers;
 
+import org.l2jmobius.gameserver.config.custom.ClassBalanceConfig;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.conditions.Condition;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.effects.EffectType;
 import org.l2jmobius.gameserver.model.item.enums.ShotType;
-import org.l2jmobius.gameserver.model.item.instance.Item;
-import org.l2jmobius.gameserver.model.item.type.CrystalType;
 import org.l2jmobius.gameserver.model.skill.Skill;
-import org.l2jmobius.gameserver.model.stats.Formulas;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
@@ -70,28 +68,21 @@ public class Heal extends AbstractEffect
 		int mAtkMul = 1;
 		final boolean sps = skill.isMagic() && effector.isChargedShot(ShotType.SPIRITSHOTS);
 		final boolean bss = skill.isMagic() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+		
+		// Player mage or summon using Spiritshots.
 		if (((sps || bss) && (effector.isPlayer() && effector.asPlayer().isMageClass())) || effector.isSummon())
 		{
-			staticShotBonus = skill.getMpConsume(); // static bonus for spiritshots
+			staticShotBonus = skill.getMpConsume();
 			mAtkMul = bss ? 4 : 2;
 			staticShotBonus *= bss ? 2.4 : 1.0;
 		}
-		else if ((sps || bss) && effector.isNpc())
+		else if ((sps || bss) && effector.isNpc()) // NPC using Spiritshots.
 		{
-			staticShotBonus = 2.4 * skill.getMpConsume(); // always blessed spiritshots
+			staticShotBonus = 2.4 * skill.getMpConsume();
 			mAtkMul = 4;
 		}
 		else
 		{
-			// no static bonus
-			// grade dynamic bonus
-			final Item weaponInst = effector.getActiveWeaponInstance();
-			if (weaponInst != null)
-			{
-				mAtkMul = weaponInst.getTemplate().getCrystalType() == CrystalType.S84 ? 4 : weaponInst.getTemplate().getCrystalType() == CrystalType.S80 ? 2 : 1;
-			}
-			
-			// shot dynamic bonus
 			mAtkMul = bss ? mAtkMul * 4 : mAtkMul + 1;
 		}
 		
@@ -100,14 +91,13 @@ public class Heal extends AbstractEffect
 			amount += staticShotBonus + Math.sqrt(mAtkMul * effector.getMAtk(effector, null));
 			amount = effected.calcStat(Stat.HEAL_EFFECT, amount, null, null);
 			
-			// Heal critic, since CT2.3 Gracia Final
-			if (skill.isMagic() && Formulas.calcMCrit(effector.getMCriticalHit(effected, skill)))
+			if (effector.isPlayable() && (skill.getItemConsumeCount() <= 0))
 			{
-				amount *= 3;
+				amount *= ClassBalanceConfig.PLAYER_HEALING_SKILL_MULTIPLIERS[effector.asPlayer().getPlayerClass().getId()];
 			}
 		}
 		
-		// Prevents overheal and negative amount
+		// Prevent overheal and negative amount.
 		amount = Math.max(Math.min(amount, effected.getMaxRecoverableHp() - effected.getCurrentHp()), 0);
 		if (amount != 0)
 		{

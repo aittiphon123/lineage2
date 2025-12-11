@@ -23,14 +23,13 @@ package ai.others.BalthusKnights.Helper.BalthusKnightPaulia;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Balthus Knight Paulia AI
  * @author Kazumi
  */
-public final class BalthusKnightPaulia extends AbstractNpcAI
+public final class BalthusKnightPaulia extends Script
 {
 	// NPCs
 	private static final int PAULIA = 34370;

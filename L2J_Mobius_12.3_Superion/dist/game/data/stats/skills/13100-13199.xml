@@ -689,16 +689,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -714,16 +726,33 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillCriticalDamage">
-				<amount>10</amount>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -734,16 +763,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -759,12 +800,18 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
 			</effect>
 			<effect name="Reuse">
 				<amount>-5</amount>
@@ -790,16 +837,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -815,16 +874,33 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="CriticalDamage">
-				<amount>7</amount>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -835,16 +911,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -860,12 +948,18 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
 			</effect>
 			<effect name="Reuse">
 				<amount>-5</amount>
@@ -891,16 +985,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -916,16 +1022,33 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="CriticalDamage">
-				<amount>7</amount>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -936,16 +1059,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -961,16 +1096,33 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="CriticalDamage">
-				<amount>7</amount>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -981,16 +1133,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -1006,16 +1170,33 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillCriticalDamage">
-				<amount>10</amount>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1026,16 +1207,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -1051,16 +1244,33 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillCriticalDamage">
-				<amount>10</amount>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1071,16 +1281,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -1095,17 +1317,34 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="MagicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalSkillPower">
-				<amount>10</amount>
-				<mode>PER</mode>
+			<effect name="ExpModify">
+				<amount>30</amount>
 			</effect>
-			<effect name="MagicCriticalDamage">
-				<amount>10</amount>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1116,16 +1355,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -1140,17 +1391,34 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="MagicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalSkillPower">
-				<amount>10</amount>
-				<mode>PER</mode>
+			<effect name="ExpModify">
+				<amount>30</amount>
 			</effect>
-			<effect name="MagicCriticalDamage">
-				<amount>10</amount>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1161,16 +1429,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -1185,17 +1465,34 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="MagicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalSkillPower">
-				<amount>10</amount>
-				<mode>PER</mode>
+			<effect name="ExpModify">
+				<amount>30</amount>
 			</effect>
-			<effect name="MagicCriticalDamage">
-				<amount>10</amount>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1206,16 +1503,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -1231,16 +1540,33 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="CriticalDamage">
-				<amount>7</amount>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1251,16 +1577,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -1276,16 +1614,33 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillCriticalDamage">
-				<amount>10</amount>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1296,16 +1651,28 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>30</amount>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>30</amount>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>30</amount>
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -1321,16 +1688,33 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>10</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="CriticalDamage">
-				<amount>7</amount>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
 				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>

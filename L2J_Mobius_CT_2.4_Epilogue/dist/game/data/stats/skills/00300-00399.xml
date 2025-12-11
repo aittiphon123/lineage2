@@ -1929,12 +1929,14 @@
 		<!-- Level 129 (+29 Decrease Penalty): Enables shield defense in all directions and decreases shield P. Def. by 11%. Enchant Decrease Penalty: Decreases the shield defense penalty. -->
 		<!-- Level 130 (+30 Decrease Penalty): Enables shield defense in all directions and decreases shield P. Def. by 10%. Enchant Decrease Penalty: Decreases the shield defense penalty. -->
 		<table name="#ench1sDef">0.61 0.62 0.63 0.64 0.65 0.66 0.67 0.68 0.69 0.7 0.71 0.72 0.73 0.74 0.75 0.76 0.77 0.78 0.79 0.8 0.81 0.82 0.83 0.84 0.85 0.86 0.87 0.88 0.89 0.9</table> <!-- Epilogue Modification -->
+		<table name="#enchMagicLvl">76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85</table>
 		<set name="icon" val="icon.skill0318" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="abnormalVisualEffect" val="NONE" />
 		<set name="magicLevel" val="46" />
 		<set name="mpInitialConsume" val="9" />
+		<enchant1 name="magicLevel" val="#enchMagicLvl" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="sDef" val="0.6" /> <!-- Epilogue Modification -->
@@ -2445,7 +2447,10 @@
 		<set name="power" val="15005" />
 		<set name="reuseDelay" val="1000" />
 		<conditions msgId="113" addName="1">
-			<player SiegeZone="126" /> <!-- TODO: add new condition and ride_state -->
+			<and>
+				<player SiegeZone="126" />
+				<player IsRidingStrider="true" />
+			</and>
 		</conditions>
 		<effects>
 			<effect name="PhysicalDamage" />
@@ -4373,7 +4378,7 @@
 		<set name="activateRate" val="40" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="40" />
-		<set name="effectPoint" val="-1" />
+		<set name="effectPoint" val="-360" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1000" />
 		<set name="isDebuff" val="true" />

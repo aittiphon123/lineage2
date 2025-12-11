@@ -23,14 +23,14 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowQuestMark;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -253,7 +253,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 					String qname = null;
 					QuestState qs = null;
 					
-					final Quest quest = QuestManager.getInstance().getQuest(qnumber);
+					final Quest quest = ScriptManager.getInstance().getQuest(qnumber);
 					if (quest != null)
 					{
 						qname = quest.getName();
@@ -352,7 +352,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 				}
 				case "CREATE":
 				{
-					qs = QuestManager.getInstance().getQuest(Integer.parseInt(val[0])).newQuestState(target);
+					qs = ScriptManager.getInstance().getQuest(Integer.parseInt(val[0])).newQuestState(target);
 					qs.setState(State.STARTED);
 					qs.setCond(1);
 					target.sendPacket(new QuestList(target));
@@ -362,7 +362,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 				}
 				case "CC":
 				{
-					qs = QuestManager.getInstance().getQuest(Integer.parseInt(val[0])).newQuestState(target);
+					qs = ScriptManager.getInstance().getQuest(Integer.parseInt(val[0])).newQuestState(target);
 					qs.exitQuest(QuestType.ONE_TIME);
 					target.sendPacket(new QuestList(target));
 					target.sendPacket(new ExShowQuestMark(qs.getQuest().getId(), qs.getCond()));

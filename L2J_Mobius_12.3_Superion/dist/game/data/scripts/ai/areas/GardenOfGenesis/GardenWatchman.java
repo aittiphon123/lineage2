@@ -25,16 +25,15 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import ai.AbstractNpcAI;
 
 /**
  * Garden Watchman AI
  * @author Gigi
  * @date 2018-08-26 - [12:27:45]
  */
-public class GardenWatchman extends AbstractNpcAI
+public class GardenWatchman extends Script
 {
 	// NPCs
 	private static final int GARDEN_WATCHMAN = 22952;

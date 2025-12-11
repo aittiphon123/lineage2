@@ -20,7 +20,7 @@
  */
 package handlers.usercommandhandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.handler.IUserCommandHandler;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -44,7 +44,7 @@ public class OlympiadStat implements IUserCommandHandler
 	@Override
 	public boolean onCommand(int id, Player player)
 	{
-		if (!Config.OLYMPIAD_ENABLED)
+		if (!OlympiadConfig.OLYMPIAD_ENABLED)
 		{
 			player.sendPacket(SystemMessageId.THE_OLYMPIAD_IS_NOT_HELD_RIGHT_NOW);
 			return false;

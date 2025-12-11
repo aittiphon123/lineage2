@@ -22,8 +22,9 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.ItemCrystallizationData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -73,7 +74,7 @@ public class RequestCrystallizeItem extends ClientPacket
 		
 		if (_count < 1)
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, "[RequestCrystallizeItem] count <= 0! ban! oid: " + _objectId + " owner: " + player.getName(), Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, "[RequestCrystallizeItem] count <= 0! ban! oid: " + _objectId + " owner: " + player.getName(), GeneralConfig.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -99,7 +100,7 @@ public class RequestCrystallizeItem extends ClientPacket
 		if (inventory != null)
 		{
 			final Item item = inventory.getItemByObjectId(_objectId);
-			if ((item == null) || item.isHeroItem() || (!Config.ALT_ALLOW_AUGMENT_DESTROY && item.isAugmented()))
+			if ((item == null) || item.isHeroItem() || (!PlayerConfig.ALT_ALLOW_AUGMENT_DESTROY && item.isAugmented()))
 			{
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return;

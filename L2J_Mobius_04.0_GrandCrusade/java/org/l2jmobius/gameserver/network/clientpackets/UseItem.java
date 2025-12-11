@@ -23,12 +23,12 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.ai.Action;
 import org.l2jmobius.gameserver.ai.CreatureAI;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.ai.NextAction;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.EnchantItemGroupsData;
 import org.l2jmobius.gameserver.handler.AdminCommandHandler;
 import org.l2jmobius.gameserver.handler.IItemHandler;
@@ -154,7 +154,7 @@ public class UseItem extends ClientPacket
 			return;
 		}
 		
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (player.getReputation() < 0))
+		if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (player.getReputation() < 0))
 		{
 			final List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 			if (skills != null)
@@ -221,11 +221,11 @@ public class UseItem extends ClientPacket
 			
 			switch (item.getTemplate().getBodyPart())
 			{
-				case ItemTemplate.SLOT_LR_HAND:
-				case ItemTemplate.SLOT_L_HAND:
-				case ItemTemplate.SLOT_R_HAND:
+				case LR_HAND:
+				case L_HAND:
+				case R_HAND:
 				{
-					// Prevent players to equip weapon while wearing combat flag
+					// Prevent players to equip weapon while wearing combat flag.
 					if ((player.getActiveWeaponItem() != null) && (player.getActiveWeaponItem().getId() == 9819))
 					{
 						player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
@@ -245,7 +245,7 @@ public class UseItem extends ClientPacket
 					}
 					break;
 				}
-				case ItemTemplate.SLOT_DECO:
+				case DECO:
 				{
 					if (!item.isEquipped() && (player.getInventory().getTalismanSlots() == 0))
 					{
@@ -254,7 +254,7 @@ public class UseItem extends ClientPacket
 					}
 					break;
 				}
-				case ItemTemplate.SLOT_BROOCH_JEWEL:
+				case BROOCH_JEWEL:
 				{
 					if (!item.isEquipped() && (player.getInventory().getBroochJewelSlots() == 0))
 					{
@@ -268,19 +268,19 @@ public class UseItem extends ClientPacket
 			}
 			
 			// Over-enchant protection.
-			if (Config.OVER_ENCHANT_PROTECTION && !player.isGM() //
+			if (PlayerConfig.OVER_ENCHANT_PROTECTION && !player.isGM() //
 				&& ((item.isWeapon() && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxWeaponEnchant())) //
 					|| ((item.getTemplate().getType2() == ItemTemplate.TYPE2_ACCESSORY) && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxAccessoryEnchant())) //
 					|| (item.isArmor() && (item.getTemplate().getType2() != ItemTemplate.TYPE2_ACCESSORY) && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxArmorEnchant()))))
 			{
 				PacketLogger.info("Over-enchanted (+" + item.getEnchantLevel() + ") " + item + " has been removed from " + player);
 				player.getInventory().destroyItem(ItemProcessType.DESTROY, item, player, null);
-				if (Config.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE)
+				if (PlayerConfig.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE)
 				{
 					player.sendMessage("[Server]: You have over-enchanted items!");
 					player.sendMessage("[Server]: Respect our server rules.");
 					player.sendPacket(new ExShowScreenMessage("You have over-enchanted items!", 6000));
-					PunishmentManager.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", Config.OVER_ENCHANT_PUNISHMENT);
+					PunishmentManager.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", PlayerConfig.OVER_ENCHANT_PUNISHMENT);
 				}
 				return;
 			}

@@ -26,8 +26,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.PetDataTable;
 import org.l2jmobius.gameserver.data.xml.SkillData;
@@ -69,7 +69,7 @@ public class CharSummonTable
 	
 	public void init()
 	{
-		if (Config.RESTORE_SERVITOR_ON_RECONNECT)
+		if (PlayerConfig.RESTORE_SERVITOR_ON_RECONNECT)
 		{
 			try (Connection con = DatabaseFactory.getConnection();
 				Statement s = con.createStatement();
@@ -86,7 +86,7 @@ public class CharSummonTable
 			}
 		}
 		
-		if (Config.RESTORE_PET_ON_RECONNECT)
+		if (PlayerConfig.RESTORE_PET_ON_RECONNECT)
 		{
 			try (Connection con = DatabaseFactory.getConnection();
 				Statement s = con.createStatement();

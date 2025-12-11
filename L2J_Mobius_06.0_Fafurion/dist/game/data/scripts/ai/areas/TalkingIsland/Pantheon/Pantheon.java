@@ -19,19 +19,19 @@ package ai.areas.TalkingIsland.Pantheon;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import ai.AbstractNpcAI;
 import quests.Q10320_LetsGoToTheCentralSquare.Q10320_LetsGoToTheCentralSquare;
 
 /**
  * Pantheon AI.
  * @author Gladicek
  */
-public class Pantheon extends AbstractNpcAI
+public class Pantheon extends Script
 {
 	// NPC
 	private static final int PANTHEON = 32972;
@@ -92,7 +92,7 @@ public class Pantheon extends AbstractNpcAI
 			showOnScreenMsg(player, NpcStringId.BEGIN_TUTORIAL_QUESTS, ExShowScreenMessage.TOP_CENTER, 4500);
 		}
 		
-		return super.onFirstTalk(npc, player);
+		return npc.getId() + ".html";
 	}
 	
 	@Override

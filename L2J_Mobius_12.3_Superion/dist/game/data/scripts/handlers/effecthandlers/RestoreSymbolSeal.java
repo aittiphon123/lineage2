@@ -23,8 +23,8 @@ package handlers.effecthandlers;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -77,12 +77,12 @@ public class RestoreSymbolSeal extends AbstractEffect
 		{
 			case DIFF:
 			{
-				amount = Math.min(basicAmount, Config.MAX_SYMBOL_SEAL_POINTS - player.getSymbolSealPoints());
+				amount = Math.min(basicAmount, PlayerConfig.MAX_SYMBOL_SEAL_POINTS - player.getSymbolSealPoints());
 				break;
 			}
 			case PER:
 			{
-				amount = Math.min((Config.MAX_SYMBOL_SEAL_POINTS * basicAmount) / 100, Config.MAX_SYMBOL_SEAL_POINTS - player.getSymbolSealPoints());
+				amount = Math.min((PlayerConfig.MAX_SYMBOL_SEAL_POINTS * basicAmount) / 100, PlayerConfig.MAX_SYMBOL_SEAL_POINTS - player.getSymbolSealPoints());
 				break;
 			}
 		}

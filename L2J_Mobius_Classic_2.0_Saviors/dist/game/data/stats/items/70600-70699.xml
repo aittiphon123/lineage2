@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="70600" name="Mysterious Blessed Soulshot (D-grade)" type="EtcItem">
 		<!-- The power of a Soulshot is bestowed upon a weapon, temporarily increasing the power of attack. For D-grade weapons. -->
 		<set name="icon" val="icon.etc_bless_spirit_bullet_blue_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
 		<set name="material" val="PAPER" />
@@ -12,7 +11,6 @@
 	<item id="70601" name="Mysterious Blessed Soulshot (C-grade)" type="EtcItem">
 		<!-- The power of a Soulshot is bestowed upon a weapon, temporarily increasing the power of attack. For C-grade weapons. -->
 		<set name="icon" val="icon.etc_bless_spirit_bullet_green_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
 		<set name="material" val="PAPER" />
@@ -21,7 +19,6 @@
 	<item id="70602" name="Mysterious Blessed Soulshot (B-grade)" type="EtcItem">
 		<!-- The power of a Soulshot is bestowed upon a weapon, temporarily increasing the power of attack. For B-grade weapons. -->
 		<set name="icon" val="icon.etc_bless_spirit_bullet_red_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
 		<set name="material" val="PAPER" />
@@ -30,7 +27,6 @@
 	<item id="70603" name="Mysterious Blessed Soulshot (A-grade)" type="EtcItem">
 		<!-- The power of a Soulshot is bestowed upon a weapon, temporarily increasing the power of attack. For A-grade weapons. -->
 		<set name="icon" val="icon.etc_bless_spirit_bullet_silver_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
 		<set name="material" val="PAPER" />
@@ -39,7 +35,6 @@
 	<item id="70604" name="Mysterious Blessed Spiritshot (A-grade)" type="EtcItem">
 		<!-- The power of a Spiritshot is bestowed upon a weapon, temporarily increasing its magical power. Used with A-grade weapons. -->
 		<set name="icon" val="icon.etc_spell_shot_silver_i01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
 		<set name="material" val="PAPER" />
@@ -129,7 +124,6 @@
 		<!-- Allows to mount a Golden Lion. Cannot be exchanged, dropped or sold, shared within account. Can store in a warehouse. Duration: 7 days. -->
 		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -143,7 +137,6 @@
 		<!-- Allows to mount Princess Ant. Cannot be exchanged, dropped or sold, shared within account. Can store in a warehouse. Duration: 7 days. -->
 		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -216,7 +209,6 @@
 	<item id="70623" name="Lucky Charm" additionalName="1-day" type="EtcItem">
 		<!-- Character doesn't lose items if dies from ordinary monster and has Lucky Charm in his inventory. Cannot be exchanged, dropped or sold, shared within account. Can store in a warehouse. Duration: 1 day. -->
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -237,7 +229,6 @@
 	<item id="70625" name="XP Growth Amulet" additionalName="1-day" type="EtcItem">
 		<!-- If stored in the inventory, acquired XP/ SP +40%. If used with High-grade XP Growth Amulet only the item with higher grade will take effect. Cannot be exchanged, dropped or sold, shared within account. Can store in a warehouse. Duration: 1 day. -->
 		<set name="icon" val="icon.skill19226" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -248,7 +239,6 @@
 	<item id="70626" name="High-grade XP Growth Amulet" additionalName="1-day" type="EtcItem">
 		<!-- If stored in the inventory, acquired XP/ SP +60%. Cannot be exchanged, dropped or sold, shared within account. Can store in a warehouse. Duration: 1 day. -->
 		<set name="icon" val="icon.skill19226" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -277,7 +267,6 @@
 	<item id="70629" name="Fishing XP Growth Amulet" additionalName="1-day" type="EtcItem">
 		<!-- If stored in the inventory during fishing, for 1 day acquired XP/ SP +30%. If used with High-grade Fishing XP Growth Amulet only the item with higher grade will take effect. Cannot be exchanged, dropped or sold, shared within account. Can store in a warehouse. -->
 		<set name="icon" val="icon.fishing_zone_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -288,7 +277,6 @@
 	<item id="70630" name="High-grade Fishing XP Growth Amulet" additionalName="1-day" type="EtcItem">
 		<!-- If stored in the inventory during fishing, acquired XP/ SP +50%. Cannot be exchanged, dropped or sold, shared within account. Can store in a warehouse. Duration: 1 day. -->
 		<set name="icon" val="icon.fishing_zone_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -430,7 +418,6 @@
 	<item id="70644" name="Growth Amulet" additionalName="3-day" type="EtcItem">
 		<!-- If stored in the inventory, acquired XP/ SP +40%. Cannot be exchanged, dropped or sold, shared within account. Can store in a warehouse. Duration: 3 days. -->
 		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="50" />
@@ -569,7 +556,6 @@
 		<!-- Heavy Armor. Cannot be exchanged, dropped or sold, enchanted shared within account. Can store in a warehouse. Duration: 30 days. -->
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="head" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -607,7 +593,6 @@
 		<!-- Heavy Armor. Cannot be exchanged, dropped or sold, enchanted shared within account. Can store in a warehouse. Duration: 30 days. -->
 		<set name="icon" val="icon.armor_t62_g_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -626,7 +611,6 @@
 		<!-- Heavy Armor. Cannot be exchanged, dropped or sold, enchanted shared within account. Can store in a warehouse. Duration: 30 days. -->
 		<set name="icon" val="icon.armor_t62_b_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -645,7 +629,6 @@
 		<!-- Light Armor. Cannot be exchanged, dropped or sold, enchanted shared within account. Can store in a warehouse. Duration: 30 days. -->
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="head" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -683,7 +666,6 @@
 		<!-- Light Armor. Cannot be exchanged, dropped or sold, enchanted shared within account. Can store in a warehouse. Duration: 30 days. -->
 		<set name="icon" val="icon.armor_t45_g_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -702,7 +684,6 @@
 		<!-- Light Armor. Cannot be exchanged, dropped or sold, enchanted shared within account. Can store in a warehouse. Duration: 30 days. -->
 		<set name="icon" val="icon.armor_t45_b_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -721,7 +702,6 @@
 		<!-- Robe. Cannot be exchanged, dropped or sold, enchanted shared within account. Can store in a warehouse. Duration: 30 days. -->
 		<set name="icon" val="icon.armor_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="head" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -780,7 +760,6 @@
 		<!-- Robe. Cannot be exchanged, dropped or sold, enchanted shared within account. Can store in a warehouse. Duration: 30 days. -->
 		<set name="icon" val="icon.armor_t57_g_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -799,7 +778,6 @@
 		<!-- Robe. Cannot be exchanged, dropped or sold, enchanted shared within account. Can store in a warehouse. Duration: 30 days. -->
 		<set name="icon" val="icon.armor_t57_b_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -938,7 +916,6 @@
 		<!-- Special Bracelet for Returning Heroes. Activates 4 Talisman slots. HP/MP/CP +5%. Cannot be exchanged, dropped or sold, shared within account. Can store in a warehouse. -->
 		<set name="icon" val="icon.dimension_bracelet_i05" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="underwear" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -952,7 +929,6 @@
 		<!-- Special Talisman for Returning Heroes. P. Def. +22, M. Def. +11, P. / M. Evasion +1, Max. HP/MP/CP +80, Atk./Casting Spd. +9, Speed +4. Cannot be exchanged, dropped or sold, shared within account. -->
 		<set name="icon" val="icon.npoint_talisman_stat" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="deco1" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
@@ -995,7 +971,6 @@
 	<item id="70678" name="Expertise Rune (C-grade)" additionalName="30-day" type="EtcItem">
 		<!-- When possessed, gives Expertise C Skill. Cannot be exchanged, dropped or sold, shared within account. Can store in a warehouse. Duration: 30 days. -->
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1087,7 +1062,6 @@
 		<!-- Large goggles that protect the eyes. STR+1, INT+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1100,7 +1074,6 @@
 		<!-- Large goggles that protect the eyes. DEX+1, WIT+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1113,7 +1086,6 @@
 		<!-- Large goggles that protect the eyes. CON+1, MEN+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1126,7 +1098,6 @@
 		<!-- Stylish uniform hat. STR+1, INT+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="BranchSys.icon.br_Uniform_Hat_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1139,7 +1110,6 @@
 		<!-- Stylish uniform hat. DEX+1, WIT+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="BranchSys.icon.br_Uniform_Hat_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1152,7 +1122,6 @@
 		<!-- Stylish uniform hat. CON+1, MEN+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="BranchSys.icon.br_Uniform_Hat_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1165,7 +1134,6 @@
 		<!-- Wide-brimmed hat fashioned out of bamboo. STR+1, INT+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1178,7 +1146,6 @@
 		<!-- Wide-brimmed hat fashioned out of bamboo. DEX+1, WIT+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1191,7 +1158,6 @@
 		<!-- Wide-brimmed hat fashioned out of bamboo. CON+1, MEN+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1204,7 +1170,6 @@
 		<!-- The hat with Valkyrie's power in it.STR+1, INT+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1217,7 +1182,6 @@
 		<!-- The hat with Valkyrie's power in it.DEX+1, WIT+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1230,7 +1194,6 @@
 		<!-- The hat with Valkyrie's power in it.CON+1, MEN+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
@@ -1243,7 +1206,6 @@
 		<!-- Gatekeeper Hat. STR+1, INT+1. Occupies 2 Hair Accessory slots. Cannot be dropped or sold in a store. -->
 		<set name="icon" val="BranchSys.icon.br_gatekeeper_of_hat_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />

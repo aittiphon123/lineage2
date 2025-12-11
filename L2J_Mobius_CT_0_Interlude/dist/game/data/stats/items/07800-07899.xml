@@ -1031,7 +1031,7 @@
 		<set name="price" val="76180" />
 		<set name="enchant_enabled" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<conditions msgId="1518">
+		<conditions msgId="1764">
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 		</conditions>
 		<stats>
@@ -1053,7 +1053,7 @@
 		<set name="price" val="330070" />
 		<set name="enchant_enabled" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<conditions msgId="1518">
+		<conditions msgId="1764">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
@@ -1076,7 +1076,7 @@
 		<set name="price" val="50830" />
 		<set name="enchant_enabled" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<conditions msgId="1518">
+		<conditions msgId="1764">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
@@ -1099,7 +1099,7 @@
 		<set name="price" val="50830" />
 		<set name="enchant_enabled" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<conditions msgId="1518">
+		<conditions msgId="1764">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
@@ -1124,7 +1124,7 @@
 		<set name="price" val="247520" />
 		<set name="enchant_enabled" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<conditions msgId="1518">
+		<conditions msgId="1764">
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 		</conditions>
 		<stats>
@@ -1144,7 +1144,7 @@
 		<set name="price" val="50830" />
 		<set name="enchant_enabled" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<conditions msgId="1518">
+		<conditions msgId="1764">
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 		</conditions>
 		<stats>
@@ -1164,7 +1164,7 @@
 		<set name="price" val="50830" />
 		<set name="enchant_enabled" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<conditions msgId="1518">
+		<conditions msgId="1764">
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 		</conditions>
 		<stats>
@@ -1186,7 +1186,7 @@
 		<set name="price" val="247520" />
 		<set name="enchant_enabled" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<conditions msgId="1518">
+		<conditions msgId="1764">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
@@ -1210,7 +1210,7 @@
 		<set name="price" val="50830" />
 		<set name="enchant_enabled" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<conditions msgId="1518">
+		<conditions msgId="1764">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
@@ -1233,7 +1233,7 @@
 		<set name="price" val="50830" />
 		<set name="enchant_enabled" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<conditions msgId="1518">
+		<conditions msgId="1764">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->

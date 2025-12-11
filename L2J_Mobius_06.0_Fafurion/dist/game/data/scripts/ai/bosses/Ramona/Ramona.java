@@ -23,7 +23,7 @@ package ai.bosses.Ramona;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.MapRegionManager;
@@ -35,7 +35,8 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
-import org.l2jmobius.gameserver.model.quest.QuestTimer;
+import org.l2jmobius.gameserver.model.script.QuestTimer;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
@@ -47,14 +48,12 @@ import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * Ramona RB
  * @author Gigi
  * @date 2017-04-09 - [10:22:38]
  */
-public class Ramona extends AbstractNpcAI
+public class Ramona extends Script
 {
 	// Status
 	private enum Status
@@ -169,7 +168,7 @@ public class Ramona extends AbstractNpcAI
 			}
 			case "SPAWN_MS":
 			{
-				if (ZONE.getCharactersInside().size() >= Config.RAMONA_MIN_PLAYER)
+				if (ZONE.getCharactersInside().size() >= GrandBossConfig.RAMONA_MIN_PLAYER)
 				{
 					npc.setInvul(false);
 					cancelQuestTimers("SPAWN_MS");
@@ -406,7 +405,7 @@ public class Ramona extends AbstractNpcAI
 		{
 			case MP_CONTROL:
 			{
-				if (ZONE.getCharactersInside().size() < Config.RAMONA_MIN_PLAYER)
+				if (ZONE.getCharactersInside().size() < GrandBossConfig.RAMONA_MIN_PLAYER)
 				{
 					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WHAT_S_UP_WITH_YOUR_EYES_YOU_NEED_MORE_ENERGY);
 				}
@@ -561,8 +560,8 @@ public class Ramona extends AbstractNpcAI
 			{
 				_boss = Status.DEAD;
 				
-				final long baseIntervalMillis = Config.RAMONA_SPAWN_INTERVAL * 3600000;
-				final long randomRangeMillis = Config.RAMONA_SPAWN_RANDOM * 3600000;
+				final long baseIntervalMillis = GrandBossConfig.RAMONA_SPAWN_INTERVAL * 3600000;
+				final long randomRangeMillis = GrandBossConfig.RAMONA_SPAWN_RANDOM * 3600000;
 				final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 				GlobalVariablesManager.getInstance().set(RAMONA_RESPAWN_VAR, System.currentTimeMillis() + respawnTime);
 				

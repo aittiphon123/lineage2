@@ -256,7 +256,7 @@ public class HeroBookManager
 		ITEMS.put(82378, 10);
 	}
 	
-	public boolean tryEnchant(Player player, Map<Integer, Long> requestedItems)
+	public static boolean tryEnchant(Player player, Map<Integer, Long> requestedItems)
 	{
 		final HeroBookInfoHolder holder = player.getHeroBookProgress();
 		final int nextLevelExp = getExpForNextLevel(holder.getCurrentLevel());
@@ -316,7 +316,7 @@ public class HeroBookManager
 		return true;
 	}
 	
-	public void tryIncreaseLevel(Player player)
+	public static void tryIncreaseLevel(Player player)
 	{
 		final HeroBookInfoHolder holder = player.getHeroBookProgress();
 		final boolean resultStatus;
@@ -359,13 +359,13 @@ public class HeroBookManager
 		player.sendPacket(new ExHeroBookInfo(player.getHeroBookProgress()));
 	}
 	
-	public void saveCurrentPlayerProgress(Player player, HeroBookInfoHolder holder)
+	public static void saveCurrentPlayerProgress(Player player, HeroBookInfoHolder holder)
 	{
 		player.updateHeroBookProgress(holder);
 		player.getVariables().set(PlayerVariables.HERO_BOOK_PROGRESS, holder.getCurrentLevel() + ";" + holder.getCurrentExp());
 	}
 	
-	public HeroBookInfoHolder getCurrentPlayerProgress(Player player)
+	public static HeroBookInfoHolder getCurrentPlayerProgress(Player player)
 	{
 		final String rawValue = player.getVariables().getString(PlayerVariables.HERO_BOOK_PROGRESS, null);
 		if ((rawValue == null) || rawValue.isEmpty())
@@ -385,7 +385,7 @@ public class HeroBookManager
 		return holder;
 	}
 	
-	public void applyLevelEffects(Player player)
+	public static void applyLevelEffects(Player player)
 	{
 		final HeroBookInfoHolder holder = player.getHeroBookProgress();
 		final Set<SkillHolder> applySkills = new HashSet<>();

@@ -18,7 +18,7 @@ package quests.Q10385_RedThreadOfFate;
 
 import java.util.Collection;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -31,9 +31,9 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerSocialAction;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -759,7 +759,7 @@ public class Q10385_RedThreadOfFate extends Quest
 					if (((skill == CLEAREST_WATER_SKILL.getSkill()) && qs.isCond(18)))
 					{
 						qs.setCond(19, true);
-						final Quest instance = QuestManager.getInstance().getQuest(TalkingIslandPast.class.getSimpleName());
+						final Quest instance = ScriptManager.getInstance().getScript(TalkingIslandPast.class.getSimpleName());
 						if (instance != null)
 						{
 							instance.onEvent("enterInstance", npc, player);
@@ -846,7 +846,7 @@ public class Q10385_RedThreadOfFate extends Quest
 						case 20:
 						case 21:
 						{
-							final Quest instance = QuestManager.getInstance().getQuest(TalkingIslandPast.class.getSimpleName());
+							final Quest instance = ScriptManager.getInstance().getScript(TalkingIslandPast.class.getSimpleName());
 							if (instance != null)
 							{
 								instance.onEvent("enterInstance", npc, player);

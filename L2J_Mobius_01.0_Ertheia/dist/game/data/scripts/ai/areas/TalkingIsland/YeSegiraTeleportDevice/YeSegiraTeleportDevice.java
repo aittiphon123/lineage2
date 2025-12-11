@@ -19,7 +19,7 @@ package ai.areas.TalkingIsland.YeSegiraTeleportDevice;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -29,18 +29,18 @@ import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerCreate;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.enums.Movie;
 
-import ai.AbstractNpcAI;
 import quests.Q10365_SeekerEscort.Q10365_SeekerEscort;
 
 /**
  * Ye Segira Teleport Device AI.
  * @author St3eT
  */
-public class YeSegiraTeleportDevice extends AbstractNpcAI
+public class YeSegiraTeleportDevice extends Script
 {
 	// NPCs
 	private static final int[] TELEPORT_DEVICES =
@@ -103,7 +103,7 @@ public class YeSegiraTeleportDevice extends AbstractNpcAI
 				final QuestState qs = player.getQuestState(Q10365_SeekerEscort.class.getSimpleName());
 				if ((qs != null) && qs.isStarted() && qs.isCond(1))
 				{
-					final Quest q10365 = QuestManager.getInstance().getQuest(Q10365_SeekerEscort.class.getSimpleName());
+					final Quest q10365 = ScriptManager.getInstance().getScript(Q10365_SeekerEscort.class.getSimpleName());
 					if (q10365 != null)
 					{
 						q10365.notifyEvent("TELEPORT_TO_NEXT_STAGE", null, player);
@@ -124,6 +124,12 @@ public class YeSegiraTeleportDevice extends AbstractNpcAI
 		{
 			player.getVariables().set(MOVIE_VAR, true);
 		}
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

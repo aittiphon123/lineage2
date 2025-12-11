@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import java.util.Set;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Team;
@@ -98,7 +98,7 @@ public class SummonInfo extends AbstractMaskPacket<NpcInfoType>
 		
 		if (summon.getTeam() != Team.NONE)
 		{
-			if ((Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+			if ((GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null))
 			{
 				addComponentType(NpcInfoType.ABNORMALS);
 			}
@@ -429,7 +429,7 @@ public class SummonInfo extends AbstractMaskPacket<NpcInfoType>
 		
 		if (containsMask(NpcInfoType.ABNORMALS))
 		{
-			final Team team = (Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null) ? _summon.getTeam() : Team.NONE;
+			final Team team = (GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null) ? _summon.getTeam() : Team.NONE;
 			buffer.writeShort(_abnormalVisualEffects.size() + (_summon.isInvisible() ? 1 : 0) + (team != Team.NONE ? 1 : 0));
 			for (AbnormalVisualEffect abnormalVisualEffect : _abnormalVisualEffects)
 			{
@@ -443,14 +443,14 @@ public class SummonInfo extends AbstractMaskPacket<NpcInfoType>
 			
 			if (team == Team.BLUE)
 			{
-				if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)
+				if (GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null)
 				{
-					buffer.writeShort(Config.BLUE_TEAM_ABNORMAL_EFFECT.getClientId());
+					buffer.writeShort(GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT.getClientId());
 				}
 			}
-			else if ((team == Team.RED) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+			else if ((team == Team.RED) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null))
 			{
-				buffer.writeShort(Config.RED_TEAM_ABNORMAL_EFFECT.getClientId());
+				buffer.writeShort(GeneralConfig.RED_TEAM_ABNORMAL_EFFECT.getClientId());
 			}
 		}
 	}

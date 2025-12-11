@@ -30,7 +30,8 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -38,14 +39,13 @@ import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
 import quests.Q10331_StartOfFate.Q10331_StartOfFate;
 
 /**
  * Labyrinth of Belis Instance Zone.
  * @author Gladicek
  */
-public class LabyrinthOfBelis extends AbstractInstance
+public class LabyrinthOfBelis extends InstanceScript
 {
 	// NPCs
 	private static final int SEBION = 32972;

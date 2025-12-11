@@ -22,14 +22,13 @@ package ai.areas.BlackbirdCampsite.SoulSummonStone;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Soul Summon Stone AI.
  * @author NviX
  */
-public class SoulSummonStone extends AbstractNpcAI
+public class SoulSummonStone extends Script
 {
 	// NPCs
 	private static final int SOUL_SUMMON_STONE = 34434;

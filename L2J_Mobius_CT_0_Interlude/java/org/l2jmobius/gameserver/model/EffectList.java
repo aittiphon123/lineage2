@@ -36,8 +36,8 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
@@ -1379,7 +1379,7 @@ public class EffectList
 		{
 			final int totalBuffs = getBuffCount() + getDanceCount();
 			final int maxTotalBuffs = _owner.getStat().getMaxBuffCount();
-			final int maxDances = Config.DANCES_MAX_AMOUNT;
+			final int maxDances = PlayerConfig.DANCES_MAX_AMOUNT;
 			final int currentDances = getDanceCount();
 			if (((totalBuffs >= maxTotalBuffs) && !skill.isHealingPotionSkill()) || (skill.isDance() && (currentDances >= maxDances)))
 			{

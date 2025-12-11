@@ -22,15 +22,14 @@ package ai.others.CastleFlagOfProtection;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Castle Flag of Protection AI.
  * @author CostyKiller
  */
-public class CastleFlagOfProtection extends AbstractNpcAI
+public class CastleFlagOfProtection extends Script
 {
 	// Flag of Protection NPCs
 	private static final int FLAG_GLUDIO = 36741; // 1 Gludio Castle

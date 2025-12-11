@@ -35,8 +35,8 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
@@ -1379,7 +1379,7 @@ public class EffectList
 			int buffsToRemove = -1;
 			if (skill.isDance())
 			{
-				buffsToRemove = getDanceCount() - Config.DANCES_MAX_AMOUNT;
+				buffsToRemove = getDanceCount() - PlayerConfig.DANCES_MAX_AMOUNT;
 			}
 			else if (!skill.isHealingPotionSkill())
 			{

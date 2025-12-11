@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -45,7 +45,7 @@ public class PledgeShowInfoUpdate extends ServerPacket
 		
 		// sending empty data so client will ask all the info in response ;)
 		buffer.writeInt(_clan.getId());
-		buffer.writeInt(Config.SERVER_ID);
+		buffer.writeInt(ServerConfig.SERVER_ID);
 		buffer.writeInt(_clan.getCrestId());
 		buffer.writeInt(_clan.getLevel()); // clan level
 		buffer.writeInt(_clan.getCastleId());

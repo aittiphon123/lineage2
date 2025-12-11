@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.holders.ElementalItemHolder;
 import org.l2jmobius.gameserver.data.xml.ElementalAttributeData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
@@ -135,7 +135,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 			default:
 			{
 				player.removeRequest(request.getClass());
-				PunishmentManager.handleIllegalPlayerAction(player, player + " tried to use enchant Exploit!", Config.DEFAULT_PUNISH);
+				PunishmentManager.handleIllegalPlayerAction(player, player + " tried to use enchant Exploit!", GeneralConfig.DEFAULT_PUNISH);
 				return;
 			}
 		}
@@ -170,7 +170,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 				if (attribute.getType() == opositeElement)
 				{
 					player.removeRequest(request.getClass());
-					PunishmentManager.handleIllegalPlayerAction(player, player + " tried to add oposite attribute to item!", Config.DEFAULT_PUNISH);
+					PunishmentManager.handleIllegalPlayerAction(player, player + " tried to add oposite attribute to item!", GeneralConfig.DEFAULT_PUNISH);
 					return;
 				}
 			}

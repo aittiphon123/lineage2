@@ -33,17 +33,16 @@ import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureAttacked;
 import org.l2jmobius.gameserver.model.events.holders.instance.OnInstanceStatusChange;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * Etina Helper Devianne AI.
  * @author CostyKiller
  */
-public class EtinaHelperDevianne extends AbstractNpcAI
+public class EtinaHelperDevianne extends Script
 {
 	// NPCs
 	private static final int ETINA_HELPER_DEVIANNE = 34472;

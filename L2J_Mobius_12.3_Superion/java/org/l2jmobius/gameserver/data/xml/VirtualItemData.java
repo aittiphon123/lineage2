@@ -30,8 +30,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.IllusoryEquipmentConfig;
 import org.l2jmobius.gameserver.data.holders.VirtualItemHolder;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
@@ -47,7 +47,7 @@ public class VirtualItemData implements IXmlReader
 	
 	protected VirtualItemData()
 	{
-		if (Config.ILLUSORY_EQUIPMENT_ENABLED)
+		if (IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_ENABLED)
 		{
 			load();
 		}
@@ -58,7 +58,7 @@ public class VirtualItemData implements IXmlReader
 	{
 		VIRTUAL_ITEMS.clear();
 		
-		if (Config.ILLUSORY_EQUIPMENT_ENABLED)
+		if (IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_ENABLED)
 		{
 			parseDatapackFile("data/VirtualItemData.xml");
 		}

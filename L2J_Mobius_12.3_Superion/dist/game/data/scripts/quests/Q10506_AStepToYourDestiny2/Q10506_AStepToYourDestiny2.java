@@ -21,16 +21,16 @@
 package quests.Q10506_AStepToYourDestiny2;
 
 import org.l2jmobius.gameserver.data.xml.TeleportListData;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestDialogType;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuest;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuestLocation;
-import org.l2jmobius.gameserver.model.quest.newquestdata.QuestCondType;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestDialogType;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuest;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuestLocation;
+import org.l2jmobius.gameserver.model.script.newquestdata.QuestCondType;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestDialog;
 import org.l2jmobius.gameserver.network.serverpackets.quest.ExQuestNotification;
 
@@ -142,14 +142,14 @@ public class Q10506_AStepToYourDestiny2 extends Quest
 				{
 					questState.exitQuest(false, true);
 					
-					Quest nextQuest = QuestManager.getInstance().getQuest(Q10507_AStepToYourDestiny3.class.getSimpleName());
+					Quest nextQuest = ScriptManager.getInstance().getScript(Q10507_AStepToYourDestiny3.class.getSimpleName());
 					if ((nextQuest != null) && nextQuest.canStartQuest(player))
 					{
 						player.sendPacket(new ExQuestDialog(10507, QuestDialogType.ACCEPT));
 					}
 					else
 					{
-						nextQuest = QuestManager.getInstance().getQuest(Q10508_AStepToYourDestiny3.class.getSimpleName());
+						nextQuest = ScriptManager.getInstance().getScript(Q10508_AStepToYourDestiny3.class.getSimpleName());
 						if ((nextQuest != null) && nextQuest.canStartQuest(player))
 						{
 							player.sendPacket(new ExQuestDialog(10508, QuestDialogType.ACCEPT));

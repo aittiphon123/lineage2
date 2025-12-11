@@ -24,18 +24,17 @@ import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowQuestInfo;
 
-import ai.AbstractNpcAI;
-
 /**
  * Adventure Guildsman AI.
  * @author ChaosPaladin
  */
-public class AdventureGuildsman extends AbstractNpcAI
+public class AdventureGuildsman extends Script
 {
 	// NPC
 	private static final int ADVENTURE_GUILDSMAN = 33946;

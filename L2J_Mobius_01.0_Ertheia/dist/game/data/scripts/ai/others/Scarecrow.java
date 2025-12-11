@@ -21,14 +21,13 @@
 package ai.others;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Scarecrow AI.
  * @author ivantotov, Mobius
  */
-public class Scarecrow extends AbstractNpcAI
+public class Scarecrow extends Script
 {
 	// NPCs
 	private static final int TRAINING_DUMMY = 19546;

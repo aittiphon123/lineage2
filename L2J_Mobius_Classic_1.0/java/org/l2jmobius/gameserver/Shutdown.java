@@ -23,23 +23,29 @@ package org.l2jmobius.gameserver;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.commons.config.DatabaseConfig;
 import org.l2jmobius.commons.database.DatabaseBackup;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.ServerConfig;
+import org.l2jmobius.gameserver.config.custom.AutoPlayConfig;
+import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
+import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.data.BotReportTable;
 import org.l2jmobius.gameserver.data.SchemeBufferTable;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
+import org.l2jmobius.gameserver.data.sql.OfflinePlayTable;
 import org.l2jmobius.gameserver.data.sql.OfflineTraderTable;
 import org.l2jmobius.gameserver.managers.CastleManorManager;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.ItemAuctionManager;
 import org.l2jmobius.gameserver.managers.ItemsOnGroundManager;
 import org.l2jmobius.gameserver.managers.PrecautionaryRestartManager;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.olympiad.Hero;
@@ -213,7 +219,7 @@ public class Shutdown extends Thread
 			_counterInstance.abort();
 		}
 		
-		if (Config.PRECAUTIONARY_RESTART_ENABLED)
+		if (ServerConfig.PRECAUTIONARY_RESTART_ENABLED)
 		{
 			PrecautionaryRestartManager.getInstance().restartEnabled();
 		}
@@ -240,7 +246,7 @@ public class Shutdown extends Thread
 		{
 			_counterInstance.abort();
 			
-			if (Config.PRECAUTIONARY_RESTART_ENABLED)
+			if (ServerConfig.PRECAUTIONARY_RESTART_ENABLED)
 			{
 				PrecautionaryRestartManager.getInstance().restartAborted();
 			}
@@ -280,7 +286,7 @@ public class Shutdown extends Thread
 				{
 					if (LoginServerThread.getInstance().getServerStatus() == ServerStatus.STATUS_DOWN)
 					{
-						LoginServerThread.getInstance().setServerStatus((Config.SERVER_GMONLY) ? ServerStatus.STATUS_GM_ONLY : ServerStatus.STATUS_AUTO);
+						LoginServerThread.getInstance().setServerStatus((GeneralConfig.SERVER_GMONLY) ? ServerStatus.STATUS_GM_ONLY : ServerStatus.STATUS_AUTO);
 					}
 					break;
 				}
@@ -342,7 +348,7 @@ public class Shutdown extends Thread
 		
 		try
 		{
-			if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS && !Config.STORE_OFFLINE_TRADE_IN_REALTIME)
+			if ((OfflineTradeConfig.OFFLINE_TRADE_ENABLE || OfflineTradeConfig.OFFLINE_CRAFT_ENABLE) && OfflineTradeConfig.RESTORE_OFFLINERS && !OfflineTradeConfig.STORE_OFFLINE_TRADE_IN_REALTIME)
 			{
 				OfflineTraderTable.getInstance().storeOffliners();
 				LOGGER.info("Offline Traders Table: Offline shops stored(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
@@ -351,6 +357,19 @@ public class Shutdown extends Thread
 		catch (Throwable t)
 		{
 			LOGGER.log(Level.WARNING, "Error saving offline shops.", t);
+		}
+		
+		try
+		{
+			if ((OfflinePlayConfig.RESTORE_AUTO_PLAY_OFFLINERS && AutoPlayConfig.ENABLE_AUTO_ASSIST))
+			{
+				OfflinePlayTable.getInstance().storeOfflineGroups();
+				LOGGER.info("Offline Play Table: Offline play groups stored(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+			}
+		}
+		catch (Throwable t)
+		{
+			LOGGER.log(Level.WARNING, "Error saving offline play groups.", t);
 		}
 		
 		try
@@ -412,9 +431,9 @@ public class Shutdown extends Thread
 		}
 		
 		// Backup database.
-		if (Config.BACKUP_DATABASE)
+		if (DatabaseConfig.BACKUP_DATABASE)
 		{
-			DatabaseBackup.performBackup();
+			DatabaseBackup.performBackup("game");
 		}
 		
 		LOGGER.info("The server has been successfully shut down in " + (tc1.getEstimatedTime() / 1000) + "seconds.");
@@ -447,7 +466,7 @@ public class Shutdown extends Thread
 		final TimeCounter tc = new TimeCounter();
 		
 		// Save all raidboss and GrandBoss status ^_^
-		DBSpawnManager.getInstance().cleanUp();
+		DatabaseSpawnManager.getInstance().cleanUp();
 		LOGGER.info("RaidBossSpawnManager: All raidboss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		GrandBossManager.getInstance().cleanUp();
 		LOGGER.info("GrandBossManager: All Grand Boss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
@@ -466,15 +485,15 @@ public class Shutdown extends Thread
 		LOGGER.info("Cursed Weapons Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		
 		// Save all manor data
-		if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+		if (!GeneralConfig.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
 			CastleManorManager.getInstance().storeMe();
 			LOGGER.info("Castle Manor Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
 		
 		// Save all global (non-player specific) Quest data that needs to persist after reboot
-		QuestManager.getInstance().save();
-		LOGGER.info("Quest Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		ScriptManager.getInstance().save();
+		LOGGER.info("Script Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		
 		// Save all global variables data
 		GlobalVariablesManager.getInstance().storeMe();
@@ -485,7 +504,7 @@ public class Shutdown extends Thread
 		LOGGER.info("SchemeBufferTable data has been saved.");
 		
 		// Save items on ground before closing
-		if (Config.SAVE_DROPPED_ITEM)
+		if (GeneralConfig.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance().saveInDb();
 			LOGGER.info("Items On Ground Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
@@ -494,7 +513,7 @@ public class Shutdown extends Thread
 		}
 		
 		// Save bot reports to database
-		if (Config.BOTREPORT_ENABLE)
+		if (GeneralConfig.BOTREPORT_ENABLE)
 		{
 			BotReportTable.getInstance().saveReportedCharData();
 			LOGGER.info("Bot Report Table: Successfully saved reports to database!");

@@ -20,8 +20,8 @@
  */
 package ai.others.Tutorial;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
@@ -32,19 +32,18 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerBypass;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerCreate;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.ExTutorialShowId;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialCloseHtml;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
-
-import ai.AbstractNpcAI;
 
 /**
  * Tutorial
  * @author Gigi
  * @date 2019-08-21 - [21:06:44]
  */
-public class Tutorial extends AbstractNpcAI
+public class Tutorial extends Script
 {
 	// Misc
 	private static final String TUTORIAL_VAR = "TUTORIAL";
@@ -108,7 +107,7 @@ public class Tutorial extends AbstractNpcAI
 	public void onPlayerCreate(OnPlayerCreate event)
 	{
 		final Player player = event.getPlayer();
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}

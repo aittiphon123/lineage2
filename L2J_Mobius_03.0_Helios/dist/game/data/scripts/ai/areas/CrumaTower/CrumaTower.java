@@ -24,16 +24,15 @@ import org.l2jmobius.gameserver.model.events.annotations.Id;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDamageReceived;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Cruma Tower AI
  * @author malyelfik
  */
-public class CrumaTower extends AbstractNpcAI
+public class CrumaTower extends Script
 {
 	// NPCs
 	private static final int CARSUS = 30483;

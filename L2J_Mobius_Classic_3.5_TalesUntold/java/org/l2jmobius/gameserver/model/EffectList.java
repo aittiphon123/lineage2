@@ -37,8 +37,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
@@ -686,7 +686,7 @@ public class EffectList
 			{
 				case TRIGGER:
 				{
-					if (_triggerBuffCount.get() > Config.TRIGGERED_BUFFS_MAX_AMOUNT)
+					if (_triggerBuffCount.get() > PlayerConfig.TRIGGERED_BUFFS_MAX_AMOUNT)
 					{
 						return true;
 					}
@@ -694,7 +694,7 @@ public class EffectList
 				}
 				case DANCE:
 				{
-					if (_danceCount.get() > Config.DANCES_MAX_AMOUNT)
+					if (_danceCount.get() > PlayerConfig.DANCES_MAX_AMOUNT)
 					{
 						return true;
 					}

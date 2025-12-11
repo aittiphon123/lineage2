@@ -16,7 +16,8 @@
  */
 package handlers.chathandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.custom.FactionSystemConfig;
 import org.l2jmobius.gameserver.handler.IChatHandler;
 import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.BlockList;
@@ -45,13 +46,13 @@ public class ChatTrade implements IChatHandler
 	@Override
 	public void onChat(ChatType type, Player activeChar, String target, String text, boolean shareLocation)
 	{
-		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.contains(type))
+		if (activeChar.isChatBanned() && GeneralConfig.BAN_CHAT_CHANNELS.contains(type))
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED_IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER);
 			return;
 		}
 		
-		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.isGM())
+		if (GeneralConfig.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.isGM())
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return;
@@ -65,7 +66,7 @@ public class ChatTrade implements IChatHandler
 		
 		if (shareLocation)
 		{
-			if (activeChar.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.SHARING_LOCATION_COST)
+			if (activeChar.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < GeneralConfig.SHARING_LOCATION_COST)
 			{
 				activeChar.sendPacket(SystemMessageId.NOT_ENOUGH_L2_COINS);
 				return;
@@ -77,20 +78,20 @@ public class ChatTrade implements IChatHandler
 				return;
 			}
 			
-			activeChar.destroyItemByItemId(ItemProcessType.FEE, Inventory.LCOIN_ID, Config.SHARING_LOCATION_COST, activeChar, true);
+			activeChar.destroyItemByItemId(ItemProcessType.FEE, Inventory.LCOIN_ID, GeneralConfig.SHARING_LOCATION_COST, activeChar, true);
 		}
 		
 		final CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text, shareLocation);
-		if ((Config.DEFAULT_GLOBAL_CHAT == ChatBroadcastType.ON) || ((Config.DEFAULT_GLOBAL_CHAT == ChatBroadcastType.GM) && activeChar.isGM()))
+		if ((GeneralConfig.DEFAULT_GLOBAL_CHAT == ChatBroadcastType.ON) || ((GeneralConfig.DEFAULT_GLOBAL_CHAT == ChatBroadcastType.GM) && activeChar.isGM()))
 		{
 			final int region = MapRegionManager.getInstance().getMapRegionLocId(activeChar);
 			for (Player player : World.getInstance().getPlayers())
 			{
 				if ((region == MapRegionManager.getInstance().getMapRegionLocId(player)) && !BlockList.isBlocked(player, activeChar) && (player.getInstanceId() == activeChar.getInstanceId()))
 				{
-					if (Config.FACTION_SYSTEM_ENABLED)
+					if (FactionSystemConfig.FACTION_SYSTEM_ENABLED)
 					{
-						if (Config.FACTION_SPECIFIC_CHAT)
+						if (FactionSystemConfig.FACTION_SPECIFIC_CHAT)
 						{
 							if ((activeChar.isGood() && player.isGood()) || (activeChar.isEvil() && player.isEvil()))
 							{
@@ -109,7 +110,7 @@ public class ChatTrade implements IChatHandler
 				}
 			}
 		}
-		else if (Config.DEFAULT_TRADE_CHAT == ChatBroadcastType.GLOBAL)
+		else if (GeneralConfig.DEFAULT_TRADE_CHAT == ChatBroadcastType.GLOBAL)
 		{
 			if (!activeChar.isGM() && !activeChar.getClient().getFloodProtectors().canUseGlobalChat())
 			{
@@ -121,9 +122,9 @@ public class ChatTrade implements IChatHandler
 			{
 				if (!BlockList.isBlocked(player, activeChar))
 				{
-					if (Config.FACTION_SYSTEM_ENABLED)
+					if (FactionSystemConfig.FACTION_SYSTEM_ENABLED)
 					{
-						if (Config.FACTION_SPECIFIC_CHAT)
+						if (FactionSystemConfig.FACTION_SPECIFIC_CHAT)
 						{
 							if ((activeChar.isGood() && player.isGood()) || (activeChar.isEvil() && player.isEvil()))
 							{

@@ -18,16 +18,15 @@ package ai.areas.TalkingIsland;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Banette AI.
  * @author St3eT
  */
-public class Banette extends AbstractNpcAI
+public class Banette extends Script
 {
 	// NPCs
 	private static final int BANETTE = 33114;

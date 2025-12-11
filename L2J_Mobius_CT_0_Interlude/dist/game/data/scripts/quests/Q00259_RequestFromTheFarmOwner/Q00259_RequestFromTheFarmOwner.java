@@ -20,13 +20,13 @@
  */
 package quests.Q00259_RequestFromTheFarmOwner;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 
 public class Q00259_RequestFromTheFarmOwner extends Quest
 {
@@ -146,7 +146,7 @@ public class Q00259_RequestFromTheFarmOwner extends Quest
 							htmltext = "30497-05.htm";
 							takeItems(player, GIANT_SPIDER_SKIN, -1);
 							int reward = count * 25;
-							if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (count >= 10))
+							if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (count >= 10))
 							{
 								reward += 250;
 							}

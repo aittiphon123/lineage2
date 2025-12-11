@@ -28,8 +28,8 @@ import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.holders.player.RankingHistoryDataHolder;
@@ -93,7 +93,7 @@ public class RankingHistory
 				store(); // to update
 			}
 			
-			_nextUpdate = currentTime + Config.CHAR_DATA_STORE_INTERVAL;
+			_nextUpdate = currentTime + GeneralConfig.CHAR_DATA_STORE_INTERVAL;
 			try (Connection con = DatabaseFactory.getConnection();
 				PreparedStatement statement = con.prepareStatement("SELECT * FROM character_ranking_history WHERE charId = ? ORDER BY day DESC"))
 			{

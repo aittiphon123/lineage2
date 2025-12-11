@@ -42,18 +42,18 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.AcquireSkillList;
 import org.l2jmobius.gameserver.network.serverpackets.ExSubjobInfo;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
-import ai.AbstractNpcAI;
 import quests.Q10590_ReawakenedFate.Q10590_ReawakenedFate;
 
 /**
  * @author Mobius
  */
-public class Joachim extends AbstractNpcAI
+public class Joachim extends Script
 {
 	// NPC
 	private static final int JOACHIM = 34513;

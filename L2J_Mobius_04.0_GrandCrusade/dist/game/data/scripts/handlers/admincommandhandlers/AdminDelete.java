@@ -27,7 +27,7 @@ import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.data.xml.SpawnData;
 import org.l2jmobius.gameserver.handler.AdminCommandHandler;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -118,9 +118,9 @@ public class AdminDelete implements IAdminCommandHandler
 			{
 				target.deleteMe();
 				spawn.stopRespawn();
-				if (DBSpawnManager.getInstance().isDefined(spawn.getId()))
+				if (DatabaseSpawnManager.getInstance().isDefined(spawn.getId()))
 				{
-					DBSpawnManager.getInstance().deleteSpawn(spawn, true);
+					DatabaseSpawnManager.getInstance().deleteSpawn(spawn, true);
 				}
 				else
 				{
@@ -163,9 +163,9 @@ public class AdminDelete implements IAdminCommandHandler
 			{
 				target.deleteMe();
 				spawn.stopRespawn();
-				if (DBSpawnManager.getInstance().isDefined(spawn.getId()))
+				if (DatabaseSpawnManager.getInstance().isDefined(spawn.getId()))
 				{
-					DBSpawnManager.getInstance().deleteSpawn(spawn, true);
+					DatabaseSpawnManager.getInstance().deleteSpawn(spawn, true);
 				}
 				else
 				{

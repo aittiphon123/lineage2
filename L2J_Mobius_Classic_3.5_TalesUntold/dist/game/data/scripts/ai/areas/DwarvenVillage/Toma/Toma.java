@@ -23,13 +23,12 @@ package ai.areas.DwarvenVillage.Toma;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Mobius
  */
-public class Toma extends AbstractNpcAI
+public class Toma extends Script
 {
 	// NPC
 	private static final int TOMA = 30556;

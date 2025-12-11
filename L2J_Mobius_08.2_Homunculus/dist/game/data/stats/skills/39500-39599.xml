@@ -724,7 +724,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>100</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 		</conditions>
 		<effects>
@@ -748,7 +747,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>105</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 		</conditions>
 		<effects>
@@ -964,7 +962,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>107</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 		</conditions>
 		<effects>
@@ -1000,7 +997,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>100</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 		</conditions>
 		<effects>
@@ -1024,7 +1020,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>105</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 		</conditions>
 		<effects>
@@ -1048,7 +1043,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>107</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 		</conditions>
 		<effects>

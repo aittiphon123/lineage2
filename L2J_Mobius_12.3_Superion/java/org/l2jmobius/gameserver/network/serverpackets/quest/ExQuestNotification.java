@@ -21,7 +21,7 @@
 package org.l2jmobius.gameserver.network.serverpackets.quest;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;

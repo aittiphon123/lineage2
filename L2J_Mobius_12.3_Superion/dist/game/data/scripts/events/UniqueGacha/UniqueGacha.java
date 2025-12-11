@@ -32,8 +32,8 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.UniqueGachaRank;
-import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.LongTimeEvent;
+import org.l2jmobius.gameserver.model.script.Quest;
 
 public class UniqueGacha extends LongTimeEvent implements IXmlReader
 {

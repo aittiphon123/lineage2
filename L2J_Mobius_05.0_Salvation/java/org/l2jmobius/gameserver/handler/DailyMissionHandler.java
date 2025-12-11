@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionDataHolder;
-import org.l2jmobius.gameserver.scripting.EngineManager;
+import org.l2jmobius.gameserver.scripting.ScriptEngine;
 
 /**
  * @author Sdw
@@ -49,7 +49,7 @@ public class DailyMissionHandler
 	{
 		try
 		{
-			EngineManager.getInstance().executeScript(EngineManager.ONE_DAY_REWARD_MASTER_HANDLER);
+			ScriptEngine.getInstance().executeScript(ScriptEngine.ONE_DAY_REWARD_MASTER_HANDLER);
 		}
 		catch (Exception e)
 		{

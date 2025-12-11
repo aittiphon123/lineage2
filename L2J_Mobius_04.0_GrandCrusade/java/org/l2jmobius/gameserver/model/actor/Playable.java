@@ -37,7 +37,7 @@ import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDe
 import org.l2jmobius.gameserver.model.events.returns.TerminateReturn;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.instance.Item;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.serverpackets.EtcStatusUpdate;
 

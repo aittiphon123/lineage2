@@ -23,14 +23,13 @@ package ai.areas.Heine;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Warp Gate AI.
  * @author Gigi
  */
-public class WrapGate extends AbstractNpcAI
+public class WrapGate extends Script
 {
 	// NPC
 	private static final int WRAP_GATE = 33900;

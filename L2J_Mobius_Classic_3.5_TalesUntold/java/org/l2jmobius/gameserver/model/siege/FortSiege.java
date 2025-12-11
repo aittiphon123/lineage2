@@ -35,9 +35,10 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.OrcFortressConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.xml.SpawnData;
 import org.l2jmobius.gameserver.managers.FortManager;
@@ -804,7 +805,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 					if (checkIfInZone(member))
 					{
 						member.setInSiege(true);
-						member.startFameTask(Config.FORTRESS_ZONE_FAME_TASK_FREQUENCY * 1000, Config.FORTRESS_ZONE_FAME_AQUIRE_POINTS);
+						member.startFameTask(PlayerConfig.FORTRESS_ZONE_FAME_TASK_FREQUENCY * 1000, PlayerConfig.FORTRESS_ZONE_FAME_AQUIRE_POINTS);
 					}
 				}
 				
@@ -836,7 +837,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 					if (checkIfInZone(member))
 					{
 						member.setInSiege(true);
-						member.startFameTask(Config.FORTRESS_ZONE_FAME_TASK_FREQUENCY * 1000, Config.FORTRESS_ZONE_FAME_AQUIRE_POINTS);
+						member.startFameTask(PlayerConfig.FORTRESS_ZONE_FAME_TASK_FREQUENCY * 1000, PlayerConfig.FORTRESS_ZONE_FAME_AQUIRE_POINTS);
 					}
 				}
 				
@@ -1230,7 +1231,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 			return;
 		}
 		
-		if ((_fort.getResidenceId() == FortManager.ORC_FORTRESS) && Config.ORC_FORTRESS_ENABLE)
+		if ((_fort.getResidenceId() == FortManager.ORC_FORTRESS) && OrcFortressConfig.ORC_FORTRESS_ENABLE)
 		{
 			if (_siegeStartTask != null)
 			{
@@ -1240,8 +1241,8 @@ public class FortSiege extends ListenersContainer implements Siegable
 			ThreadPool.execute(new ScheduleSuspiciousMerchantSpawn());
 			
 			final Calendar cal = Calendar.getInstance();
-			cal.set(Calendar.HOUR_OF_DAY, Config.ORC_FORTRESS_HOUR);
-			cal.set(Calendar.MINUTE, Config.ORC_FORTRESS_MINUTE);
+			cal.set(Calendar.HOUR_OF_DAY, OrcFortressConfig.ORC_FORTRESS_HOUR);
+			cal.set(Calendar.MINUTE, OrcFortressConfig.ORC_FORTRESS_MINUTE);
 			cal.set(Calendar.SECOND, 0);
 			cal.set(Calendar.MILLISECOND, 0);
 			if (cal.getTimeInMillis() < Calendar.getInstance().getTimeInMillis())
@@ -1769,13 +1770,13 @@ public class FortSiege extends ListenersContainer implements Siegable
 	@Override
 	public int getFameFrequency()
 	{
-		return Config.FORTRESS_ZONE_FAME_TASK_FREQUENCY;
+		return PlayerConfig.FORTRESS_ZONE_FAME_TASK_FREQUENCY;
 	}
 	
 	@Override
 	public int getFameAmount()
 	{
-		return Config.FORTRESS_ZONE_FAME_AQUIRE_POINTS;
+		return PlayerConfig.FORTRESS_ZONE_FAME_AQUIRE_POINTS;
 	}
 	
 	@Override

@@ -3,7 +3,6 @@
 	<item id="60800" name="Mysterious Pack Lv. 5" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -12,7 +11,6 @@
 	<item id="60801" name="Mysterious Pack Lv. 6" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_silver_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -21,7 +19,6 @@
 	<item id="60802" name="Mysterious Pack Lv. 7" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. Can be used as a material for the server-limited craft that is available at a certain time. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_silver_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -30,7 +27,6 @@
 	<item id="60803" name="Mysterious Pack Lv. 8" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_silver_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -39,7 +35,6 @@
 	<item id="60804" name="Mysterious Pack Lv. 9" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_silver_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -48,7 +43,6 @@
 	<item id="60805" name="Mysterious Pack Lv. 10" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_gold_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -57,7 +51,6 @@
 	<item id="60806" name="Mysterious Pack Lv. 11" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_gold_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -66,7 +59,6 @@
 	<item id="60807" name="Mysterious Pack Lv. 12" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_gold_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -75,7 +67,6 @@
 	<item id="60808" name="Mysterious Pack Lv. 13" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. -->
 		<set name="icon" val="icon.bm_sayha_gold_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -84,7 +75,6 @@
 	<item id="60809" name="Mysterious Crystal" type="EtcItem">
 		<!-- Can be used as a material for compounding Mysterious Packs Lv. 1-12. Also, can be exchanged for various items through the Game Assistant or used as a material for limited craft of soul crystals. -->
 		<set name="icon" val="icon.etc_bm_jewel_piece" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -237,7 +227,6 @@
 	<item id="60816" name="Shiny Magic Wand" type="EtcItem">
 		<!-- Can be added to a collection. -->
 		<set name="icon" val="icon.etc_gateleeper_stick_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -316,7 +305,6 @@
 	<item id="60818" name="Mark of Blessing" type="EtcItem">
 		<!-- A proof that you have received the Worldwide Buff for helping Sefirin. Can be used for the special craft or added to a collection. -->
 		<set name="icon" val="BranchSys2.icon.br_wing_of_sylphide_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />

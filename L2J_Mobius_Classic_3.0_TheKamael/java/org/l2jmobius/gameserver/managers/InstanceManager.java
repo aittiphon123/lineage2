@@ -43,9 +43,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.data.holders.InstanceReenterTimeHolder;
 import org.l2jmobius.gameserver.data.holders.StringStringHolder;
 import org.l2jmobius.gameserver.data.xml.DoorData;
@@ -199,10 +199,10 @@ public class InstanceManager implements IXmlReader
 				case "rates":
 				{
 					final NamedNodeMap attrs = innerNode.getAttributes();
-					template.setExpRate(parseFloat(attrs, "exp", Config.RATE_INSTANCE_XP));
-					template.setSPRate(parseFloat(attrs, "sp", Config.RATE_INSTANCE_SP));
-					template.setExpPartyRate(parseFloat(attrs, "partyExp", Config.RATE_INSTANCE_PARTY_XP));
-					template.setSPPartyRate(parseFloat(attrs, "partySp", Config.RATE_INSTANCE_PARTY_SP));
+					template.setExpRate(parseFloat(attrs, "exp", RatesConfig.RATE_INSTANCE_XP));
+					template.setSPRate(parseFloat(attrs, "sp", RatesConfig.RATE_INSTANCE_SP));
+					template.setExpPartyRate(parseFloat(attrs, "partyExp", RatesConfig.RATE_INSTANCE_PARTY_XP));
+					template.setSPPartyRate(parseFloat(attrs, "partySp", RatesConfig.RATE_INSTANCE_PARTY_SP));
 					break;
 				}
 				case "locations":

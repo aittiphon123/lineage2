@@ -29,7 +29,7 @@ import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.data.SpawnTable;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.Spawn;
@@ -615,9 +615,9 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 		
 		if (_saveInDB)
 		{
-			if (!DBSpawnManager.getInstance().isDefined(_id))
+			if (!DatabaseSpawnManager.getInstance().isDefined(_id))
 			{
-				final Npc spawnedNpc = DBSpawnManager.getInstance().addNewSpawn(spawn, true);
+				final Npc spawnedNpc = DatabaseSpawnManager.getInstance().addNewSpawn(spawn, true);
 				if ((spawnedNpc != null) && spawnedNpc.isMonster() && (_minions != null))
 				{
 					spawnedNpc.asMonster().getMinionList().spawnMinions(_minions);

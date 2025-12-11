@@ -23,6 +23,7 @@ package ai.others.BalthusKnights.Npcs.Tarti;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -30,13 +31,11 @@ import org.l2jmobius.gameserver.network.serverpackets.ExTutorialShowId;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
 
-import ai.AbstractNpcAI;
-
 /**
  * Tarti AI
  * @author Kazumi
  */
-public final class Tarti extends AbstractNpcAI
+public final class Tarti extends Script
 {
 	// NPCs
 	private static final int TARTI = 34359;

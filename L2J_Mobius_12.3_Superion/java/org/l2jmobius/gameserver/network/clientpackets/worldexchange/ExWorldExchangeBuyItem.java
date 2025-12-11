@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.worldexchange;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.WorldExchangeConfig;
 import org.l2jmobius.gameserver.managers.WorldExchangeManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
@@ -41,7 +41,7 @@ public class ExWorldExchangeBuyItem extends ClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (!Config.ENABLE_WORLD_EXCHANGE)
+		if (!WorldExchangeConfig.ENABLE_WORLD_EXCHANGE)
 		{
 			return;
 		}

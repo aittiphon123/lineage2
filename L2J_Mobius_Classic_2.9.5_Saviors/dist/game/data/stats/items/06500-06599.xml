@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="6569" name="Blessed Scroll: Enchant Weapon (A-grade)" type="EtcItem">
 		<!-- When enchanted, P. Atk. +4 for A-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. P. Atk. +5 for two-handed swords, two-handed blunts, dualswords, and two-handed fist weapons. P. Atk. +8 for bows. M. Atk. +3 for all weapons. Starting at +4, P. Atk./M. Atk. bonus doubles. The item will not be crystallized even if enchantment fails, but the enchant value will be reset to 0. -->

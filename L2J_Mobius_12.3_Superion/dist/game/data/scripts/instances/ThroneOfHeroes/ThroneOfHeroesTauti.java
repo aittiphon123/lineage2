@@ -23,15 +23,14 @@ package instances.ThroneOfHeroes;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
-
-import instances.AbstractInstance;
 
 /**
  * @author CostyKiller
  */
-public class ThroneOfHeroesTauti extends AbstractInstance
+public class ThroneOfHeroesTauti extends InstanceScript
 {
 	// NPCs
 	private static final int ROIENTAL = 34571;

@@ -26,14 +26,13 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Balthus Knights AI
  * @author Kazumi
  */
-public final class BalthusKnights extends AbstractNpcAI
+public final class BalthusKnights extends Script
 {
 	// NPCs
 	private static final int BALTHUS_KNIGHT = 34372;

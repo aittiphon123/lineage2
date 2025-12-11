@@ -26,11 +26,10 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
-
-import ai.AbstractNpcAI;
 
 /**
  * Saving the Treasure Dealer<br>
@@ -39,7 +38,7 @@ import ai.AbstractNpcAI;
  * If you save Treasure Dealer Kaysen and then talk to him, there's a low probability of getting an additional reward. However, Kaysen may turn into a monster - Nerva Kaiser.<br>
  * @author Index
  */
-public class Kaysen extends AbstractNpcAI
+public class Kaysen extends Script
 {
 	// NPCs
 	private static final int KAYSEN = 19458;

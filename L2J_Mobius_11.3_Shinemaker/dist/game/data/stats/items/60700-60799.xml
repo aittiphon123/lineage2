@@ -340,7 +340,6 @@
 	<item id="60711" name="Freya's Crystal" type="EtcItem">
 		<!-- Can be exchanged for rare items. -->
 		<set name="icon" val="icon.bm_freya_crystal" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="L" />
 		<set name="material" val="PAPER" />
@@ -795,13 +794,14 @@
 	<item id="60750" name="XP Rune 100%" additionalName="5-hour" type="EtcItem">
 		<!-- When in inventory, acquired XP +100%. -->
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="L" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="300" />
 		<skills>
 			<skill id="26046" level="6" /> <!-- XP Rune 100% -->
 		</skills>
@@ -809,13 +809,14 @@
 	<item id="60751" name="XP Rune 200%" additionalName="5-hour" type="EtcItem">
 		<!-- When in inventory, acquired XP +200%. -->
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="L" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="300" />
 		<skills>
 			<skill id="26046" level="7" /> <!-- XP Rune 200% -->
 		</skills>
@@ -823,7 +824,6 @@
 	<item id="60752" name="Vitality Sustaining Rune" additionalName="1-day" type="EtcItem">
 		<!-- Available for 1 d. When in inventory, maintains the Vitality level. -->
 		<set name="icon" val="icon.ev_charge_run" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="L" />
 		<set name="material" val="PAPER" />
@@ -925,7 +925,6 @@
 	<item id="60757" name="Summer Festival Crystal" additionalName="Event" type="EtcItem">
 		<!-- A special crystal that will help you cool down during hot weather. Can be added to a collection. -->
 		<set name="icon" val="icon.bm_freya_crystal" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1006,7 +1005,6 @@
 	<item id="60761" name="XP Rune 200%" additionalName="7-day" type="EtcItem">
 		<!-- When in inventory, acquired XP +200%. Required level: 1-120. -->
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1323,7 +1321,6 @@
 	<item id="60770" name="Kingdom's Shiny Golden Key" type="EtcItem">
 		<!-- Can be exchanged for various items via the Game Assistant UI on the sidebar or used as a material for time-limited craft. -->
 		<set name="icon" val="icon.bm_dragon_key" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1332,7 +1329,6 @@
 	<item id="60771" name="Active Participant's Mark" type="EtcItem">
 		<!-- A mark for active players who visited both of Japan's offline events in October, 2023. Thank you for your love to Lineage 2! -->
 		<set name="icon" val="icon.etc_ancient_crown_i02" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1503,7 +1499,6 @@
 	<item id="60776" name="Dragon's Golden Coin" type="EtcItem">
 		<!-- A special coin imbued with dragon powers. Can be exchanged for various items or used as a craft material by clicking on the Game Assistant icon in the right part of your screen. -->
 		<set name="icon" val="icon.bm_goblin_coin" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1735,7 +1730,6 @@
 	<item id="60782" name="Ancient Mysterious Pack Lv. 2" type="EtcItem">
 		<!-- Can be used to create Mysterious Chest Lv. 3 with a certain chance through the Special Craft, or exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.etc_marguene_collection_box_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1744,7 +1738,6 @@
 	<item id="60783" name="Ancient Mysterious Pack Lv. 3" type="EtcItem">
 		<!-- Can be used to create Mysterious Chest Lv. 4 with a certain chance through the Special Craft, or exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="icon.etc_elite_marguene_collection_box_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1753,7 +1746,6 @@
 	<item id="60784" name="Ancient Mysterious Pack Lv. 4" type="EtcItem">
 		<!-- Can be exchanged for various items through the Game Assistant. -->
 		<set name="icon" val="BranchIcon.icon.etc_g_bm_godspirit_box" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1762,7 +1754,6 @@
 	<item id="60785" name="Mysterious Crystal" type="EtcItem">
 		<!-- Can be used for creating many valuable items. -->
 		<set name="icon" val="icon.etc_bm_jewel_piece" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1861,7 +1852,6 @@
 	<item id="60792" name="Feather of Blessing - Event" type="EtcItem">
 		<!-- Allows you to resurrect immediately after death at the same spot. -->
 		<set name="icon" val="icon.blessed_feather_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
@@ -1871,14 +1861,12 @@
 	</item>
 	<item id="60793" name="Illusory Equipment Points" type="EtcItem">
 		<set name="icon" val="BranchIcon.icon.g_ev_virtual_point_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 	</item>
 	<item id="60794" name="Attendance Mileage (Time-limited)" type="EtcItem">
 		<!-- A mark of gratitude given to adventurers who continue playing this game. Allows you to get favorite items through the craft system. -->
 		<set name="icon" val="icon.etc_magic_coin_gold_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1889,7 +1877,6 @@
 	<item id="60795" name="Welcome Attendance Mileage (Time-limited)" type="EtcItem">
 		<!-- A mark given to adventurers who only start their journey. Allows you to get favorite items through the craft system. -->
 		<set name="icon" val="icon.etc_magic_coin_silver_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1946,7 +1933,6 @@
 	<item id="60797" name="Mysterious Pack Lv. 2" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1955,7 +1941,6 @@
 	<item id="60798" name="Mysterious Pack Lv. 3" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1964,7 +1949,6 @@
 	<item id="60799" name="Mysterious Pack Lv. 4" type="EtcItem">
 		<!-- <How to use>. Can be used as a material in the special craft. <Upgrade>. Compound with Mysterious Crystal. -->
 		<set name="icon" val="icon.bm_sayha_present" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />

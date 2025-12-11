@@ -16,7 +16,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.ability;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
 import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -80,13 +80,13 @@ public class RequestResetAbilityPoint extends ClientPacket
 			player.sendMessage("You haven't used your ability points yet!");
 			return;
 		}
-		else if (player.getAdena() < Config.ABILITY_POINTS_RESET_ADENA)
+		else if (player.getAdena() < PlayerConfig.ABILITY_POINTS_RESET_ADENA)
 		{
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
 			return;
 		}
 		
-		if (player.reduceAdena(ItemProcessType.FEE, Config.ABILITY_POINTS_RESET_ADENA, player, true))
+		if (player.reduceAdena(ItemProcessType.FEE, PlayerConfig.ABILITY_POINTS_RESET_ADENA, player, true))
 		{
 			for (SkillLearn sk : SkillTreeData.getInstance().getAbilitySkillTree().values())
 			{

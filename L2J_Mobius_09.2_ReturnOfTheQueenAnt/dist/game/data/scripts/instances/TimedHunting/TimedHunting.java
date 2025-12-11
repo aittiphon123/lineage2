@@ -26,13 +26,12 @@ import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import instances.AbstractInstance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 
 /**
  * @author Mobius
  */
-public class TimedHunting extends AbstractInstance
+public class TimedHunting extends InstanceScript
 {
 	// NPCs
 	private static final int PATROL_TELEPORTER = 34568;
@@ -91,6 +90,19 @@ public class TimedHunting extends AbstractInstance
 		}
 		
 		return null;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		final String htmltext = null;
+		if (isInInstance(instance))
+		{
+			return npc.getId() + ".html";
+		}
+		
+		return htmltext;
 	}
 	
 	public static void main(String[] args)

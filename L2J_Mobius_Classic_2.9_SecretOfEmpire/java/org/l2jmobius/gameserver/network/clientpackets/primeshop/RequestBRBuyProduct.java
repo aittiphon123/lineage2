@@ -20,8 +20,9 @@ import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.VipSystemConfig;
 import org.l2jmobius.gameserver.data.xml.PrimeShopData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -126,7 +127,7 @@ public class RequestBRBuyProduct extends ClientPacket
 				else if (paymentId == 0)
 				{
 					player.setPrimePoints(player.getPrimePoints() - (int) price);
-					if (Config.VIP_SYSTEM_PRIME_AFFECT)
+					if (VipSystemConfig.VIP_SYSTEM_PRIME_AFFECT)
 					{
 						player.updateVipPoints(price);
 					}
@@ -172,12 +173,12 @@ public class RequestBRBuyProduct extends ClientPacket
 		if (item == null)
 		{
 			player.sendPacket(new ExBRBuyProduct(ExBrProductReplyType.INVALID_PRODUCT));
-			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to buy invalid brId from Prime", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to buy invalid brId from Prime", GeneralConfig.DEFAULT_PUNISH);
 			return false;
 		}
 		else if ((count < 1) || (count > 99))
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to buy invalid itemcount [" + count + "] from Prime", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to buy invalid itemcount [" + count + "] from Prime", GeneralConfig.DEFAULT_PUNISH);
 			player.sendPacket(new ExBRBuyProduct(ExBrProductReplyType.INVALID_USER_STATE));
 			return false;
 		}
@@ -268,7 +269,7 @@ public class RequestBRBuyProduct extends ClientPacket
 	 */
 	private static boolean canReceiveGift(Player player, PrimeShopGroup item)
 	{
-		if (!Config.VIP_SYSTEM_ENABLED)
+		if (!VipSystemConfig.VIP_SYSTEM_ENABLED)
 		{
 			return false;
 		}

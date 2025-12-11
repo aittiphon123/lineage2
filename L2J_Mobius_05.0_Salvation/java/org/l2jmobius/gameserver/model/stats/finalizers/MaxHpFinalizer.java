@@ -18,12 +18,12 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.EnchantItemHPBonusData;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
@@ -82,7 +82,7 @@ public class MaxHpFinalizer implements IStatFunction
 				
 				mul = creature.getStat().getMul(Stat.HP_LIMIT);
 				add = creature.getStat().getAdd(Stat.HP_LIMIT);
-				return Math.min(maxHp, (Config.MAX_HP * mul) + add);
+				return Math.min(maxHp, (PlayerConfig.MAX_HP * mul) + add);
 			}
 			
 			return maxHp;
@@ -98,8 +98,8 @@ public class MaxHpFinalizer implements IStatFunction
 			// Apply enchanted item bonus HP
 			if (item.isArmor() && item.isEnchanted())
 			{
-				final long bodyPart = item.getTemplate().getBodyPart();
-				if ((bodyPart != ItemTemplate.SLOT_NECK) && (bodyPart != ItemTemplate.SLOT_LR_EAR) && (bodyPart != ItemTemplate.SLOT_LR_FINGER))
+				final BodyPart bodyPart = item.getTemplate().getBodyPart();
+				if ((bodyPart != BodyPart.NECK) && (bodyPart != BodyPart.LR_EAR) && (bodyPart != BodyPart.LR_FINGER))
 				{
 					maxHp += EnchantItemHPBonusData.getInstance().getHPBonus(item);
 				}
@@ -116,7 +116,7 @@ public class MaxHpFinalizer implements IStatFunction
 		{
 			mul = creature.getStat().getMul(Stat.HP_LIMIT);
 			add = creature.getStat().getAdd(Stat.HP_LIMIT);
-			hpLimit = (Config.MAX_HP * mul) + add;
+			hpLimit = (PlayerConfig.MAX_HP * mul) + add;
 		}
 		else
 		{

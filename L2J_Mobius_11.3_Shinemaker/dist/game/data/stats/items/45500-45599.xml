@@ -1596,7 +1596,6 @@
 		<!-- Enhanced Orichalcum arrow with +5% Atk. Spd. Used as arrows for R-grade bows. -->
 		<set name="icon" val="icon.etc_oricalcum_quiver_i00" />
 		<set name="price" val="100" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
@@ -1612,7 +1611,6 @@
 		<!-- Enhanced Orichalcum arrow with +5% P. Atk. Used as arrows for R-grade bows. -->
 		<set name="icon" val="icon.etc_oricalcum_quiver_i00" />
 		<set name="price" val="100" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
@@ -1628,7 +1626,6 @@
 		<!-- Enhanced Orichalcum arrow with Additional Hit. Used as arrows for R-grade bows. -->
 		<set name="icon" val="icon.etc_oricalcum_quiver_i00" />
 		<set name="price" val="100" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
@@ -1644,7 +1641,6 @@
 		<!-- Atk. Spd. +5%. For R-grade crossbows. -->
 		<set name="icon" val="icon.etc_oricalcum_bolt_i00" />
 		<set name="price" val="100" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
@@ -1660,7 +1656,6 @@
 		<!-- P. Atk. +5%. For R-grade crossbows. -->
 		<set name="icon" val="icon.etc_oricalcum_bolt_i00" />
 		<set name="price" val="100" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
@@ -1676,7 +1671,6 @@
 		<!-- Makes an additional hit on an attack. For R-grade crossbows. -->
 		<set name="icon" val="icon.etc_oricalcum_bolt_i00" />
 		<set name="price" val="100" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="BOLT" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />

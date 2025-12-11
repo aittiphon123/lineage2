@@ -20,13 +20,14 @@
  */
 package instances.LurinSecretWorkshop;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.IllusoryEquipmentConfig;
 import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -37,12 +38,10 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
-import instances.AbstractInstance;
-
 /**
  * @author CostyKiller, Tanatos
  */
-public class LurinSecretWorkshop extends AbstractInstance
+public class LurinSecretWorkshop extends InstanceScript
 {
 	// NPC
 	private static final int HESED = 33780;
@@ -461,7 +460,7 @@ public class LurinSecretWorkshop extends AbstractInstance
 		}
 		
 		// TODO: Gives player illusory equipment points until daily mission is working.
-		if (Config.ILLUSORY_EQUIPMENT_ENABLED)
+		if (IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_ENABLED)
 		{
 			killer.getVariables().set(PlayerVariables.ILLUSORY_POINTS_ACQUIRED, killer.getVariables().getInt(PlayerVariables.ILLUSORY_POINTS_ACQUIRED, 0) + ILLUSORY_POINTS_REWARD);
 			killer.sendMessage("You received " + ILLUSORY_POINTS_REWARD + " Illusory equipement points.");

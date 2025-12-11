@@ -18,23 +18,22 @@ package ai.others.MonumentOfHeroes;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.data.xml.ClassListData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.olympiad.Hero;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExHeroList;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
-
-import ai.AbstractNpcAI;
 
 /**
  * Monument of Heroes AI.
  * @author St3eT
  */
-public class MonumentOfHeroes extends AbstractNpcAI
+public class MonumentOfHeroes extends Script
 {
 	// NPCs
 	private static final int[] MONUMENTS =
@@ -70,7 +69,7 @@ public class MonumentOfHeroes extends AbstractNpcAI
 	
 	private MonumentOfHeroes()
 	{
-		if (Config.OLYMPIAD_ENABLED)
+		if (OlympiadConfig.OLYMPIAD_ENABLED)
 		{
 			addStartNpc(MONUMENTS);
 			addFirstTalkId(MONUMENTS);

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="4500" name="Greater INT Dye (INT +1 WIT -2)" type="EtcItem">
 		<!-- Collect 10 units and take them to the Dye Merchant to get a symbol that boosts your abilities. Requirements: warriors and non-healing mages after the 2nd class change. Can be used by Ertheia after the 1st Liberation. The effect remains after the 2nd Liberation. -->

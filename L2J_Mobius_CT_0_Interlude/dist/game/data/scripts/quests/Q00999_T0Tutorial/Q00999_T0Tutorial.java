@@ -23,15 +23,15 @@ package quests.Q00999_T0Tutorial;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
+import org.l2jmobius.gameserver.model.script.State;
 
-public class Q00999_T0Tutorial extends Quest
+public class Q00999_T0Tutorial extends Script
 {
 	// Items
 	private static final int RECOMMENDATION_01 = 1067;
@@ -85,7 +85,6 @@ public class Q00999_T0Tutorial extends Quest
 	
 	public Q00999_T0Tutorial()
 	{
-		super(-1, "");
 		// @formatter:off
 		Event.put("30008_02", new Object[]{"30008-03.htm", -84058, 243239, -3730, RECOMMENDATION_01, 0x00, SOULSHOT_NOVICE, 200, 0x00, 0, 0});
 		Event.put("30008_04", new Object[]{"30008-04.htm", -84058, 243239, -3730, 0, 0x00, 0, 0, 0, 0, 0});
@@ -145,7 +144,7 @@ public class Q00999_T0Tutorial extends Quest
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return null;
 		}
@@ -253,7 +252,7 @@ public class Q00999_T0Tutorial extends Quest
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return null;
 		}

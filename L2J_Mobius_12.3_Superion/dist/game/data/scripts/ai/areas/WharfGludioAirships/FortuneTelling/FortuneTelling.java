@@ -19,14 +19,13 @@ package ai.areas.WharfGludioAirships.FortuneTelling;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Fortune Telling AI.
  * @author Nyaran
  */
-public class FortuneTelling extends AbstractNpcAI
+public class FortuneTelling extends Script
 {
 	// NPC
 	private static final int MINE = 32616;

@@ -23,17 +23,17 @@ package quests.Q10817_ExaltedOneWhoOvercomesTheLimit;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 
 import quests.Q10811_ExaltedOneWhoFacesTheLimit.Q10811_ExaltedOneWhoFacesTheLimit;
@@ -283,7 +283,7 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 	{
 		String htmltext = null;
 		final Race race = player.getRace();
-		final PlayerClass classId = player.getBaseTemplate().getPlayerClass();
+		final PlayerClass playerClass = player.getBaseTemplate().getPlayerClass();
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
 		{
@@ -323,23 +323,23 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 						case ELF:
 						case DARK_ELF:
 						{
-							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, classId.getId()) || (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, classId.getId())))
+							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, playerClass.getId()) || (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, playerClass.getId())))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_M, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_EOLH_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_EOLH_GROUP, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_M, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, classId.getId()) || (player.getPlayerClass() == PlayerClass.TYRR_DUELIST))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, playerClass.getId()) || (player.getPlayerClass() == PlayerClass.TYRR_DUELIST))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
@@ -347,23 +347,23 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_SIGEL_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_SIGEL_GROUP, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_M, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_BOW, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_BOW, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DAGGER, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DAGGER, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DANCE, classId.getId()) || (player.getPlayerClass() == PlayerClass.GLADIATOR))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SUBJOB_GROUP_DANCE, playerClass.getId()) || (player.getPlayerClass() == PlayerClass.GLADIATOR))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
@@ -375,11 +375,11 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.TANKER_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.TANKER_GROUP, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_WARRIOR_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.RECOM_WARRIOR_GROUP, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
@@ -391,11 +391,11 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 						}
 						case DWARF:
 						{
-							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, classId.getId()))
+							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.DWARF_BOUNTY_CLASS, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.DWARF_BOUNTY_CLASS, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
@@ -407,7 +407,7 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 						}
 						case ORC:
 						{
-							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, classId.getId()))
+							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
@@ -423,7 +423,7 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.LIGHT_ARMOR_CLASS, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.LIGHT_ARMOR_CLASS, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
@@ -435,19 +435,19 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 						}
 						case KAMAEL:
 						{
-							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, classId.getId()))
+							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_M, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_WIZARD, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_M, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_ARCHER, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.DIVISION_ARCHER, playerClass.getId()))
 							{
 								giveItems(player, SECOND_EXALTED_QUEST_REWARD_P, 1);
 							}
@@ -527,7 +527,7 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(1) && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+		if ((qs != null) && qs.isCond(1) && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 		{
 			if (getQuestItemsCount(player, PROOF_OF_RESISTANCE) < PROOF_OF_RESISTANCE_NEEDED)
 			{

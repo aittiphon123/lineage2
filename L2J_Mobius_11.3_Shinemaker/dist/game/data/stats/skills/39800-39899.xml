@@ -17,7 +17,116 @@
 		<!-- Level 10: <Requirements>. 1. When equipping an R-grade heavy armor set enchanted to +8 and higher. 2. When equipping an L-grade heavy armor set. <Effect>. P. Def. +1179, Skill Cooldown -4% -->
 		<!-- Level 11: <Requirements>. 1. When equipping an R-grade heavy armor set enchanted to +8 and higher. 2. When equipping an L-grade heavy armor set. <Effect>. P. Def. +1387, Skill Cooldown -5% -->
 		<icon>icon.agathion_masia_guard_1</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipArmor">
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</condition>
+			<condition name="OpCheckSkill">
+				<skillId>13339</skillId> <!-- Enchant +6 R-grade Heavy Armor Set -->
+				<skillLevel>3</skillLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">321</value>
+					<value level="3">377</value>
+					<value level="4">445</value>
+					<value level="5">523</value>
+					<value level="6">615</value>
+					<value level="7">724</value>
+					<value level="8">851</value>
+					<value level="9">1002</value>
+					<value level="10">1179</value>
+					<value level="11">1387</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39802" toLevel="11" name="Paulina's Guard Unique Ability">
 		<!-- Level 1: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. Increases P. Def. and Skill Power. -->
@@ -32,7 +141,56 @@
 		<!-- Level 10: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. P. Def. +1179, Skill Power +4% -->
 		<!-- Level 11: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. P. Def. +1387, Skill Power +5% -->
 		<icon>icon.agathion_pollyne_guard_1</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipArmor">
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</condition>
+			<condition name="OpCheckSkill">
+				<skillId>13340</skillId> <!-- Enchant +6 R-grade Light Armor Set -->
+				<skillLevel>3</skillLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">321</value>
+					<value level="3">377</value>
+					<value level="4">445</value>
+					<value level="5">523</value>
+					<value level="6">615</value>
+					<value level="7">724</value>
+					<value level="8">851</value>
+					<value level="9">1002</value>
+					<value level="10">1179</value>
+					<value level="11">1387</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">1</value>
+					<value level="8">2</value>
+					<value level="9">3</value>
+					<value level="10">4</value>
+					<value level="11">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39803" toLevel="11" name="Tersi's Guard Unique Ability">
 		<!-- Level 1: <Requirements>. 1. When equipping an R-grade robe set enchanted to +8 and higher. 2. When equipping an L-grade robe set. <Effect>. Increases P. Def. and Dagger/ Bow Resistance. -->
@@ -62,7 +220,12 @@
 	<skill id="39806" toLevel="1" name="Vitality Sustaining Rune (1-day)">
 		<!-- When in inventory, sustains Vitality. -->
 		<icon>icon.ev_charge_run</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-100</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39807" toLevel="1" name="Beora's Energy Rune">
 		<!-- When in inventory, Vitality bonus +30%. -->
@@ -142,6 +305,20 @@
 		<!-- Resets cooldown to Spirit Forest, Crystal Prison (Baylor), Ashen Shadow Camp, Nightmare Kamaloka, Krofin's Nest. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>82457</itemConsumeId> <!-- Extra Pass: Party Instance Zone -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<effects>
+			<effect name="ResetInstanceEntry">
+				<instanceId>318;320;319;321;322</instanceId> <!-- Spirit Forest, Crystal Prison (Baylor), Ashen Shadow Camp, Nightmare Kamaloka, Krofin's Nest  -->
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39817" toLevel="1" name="Wishing Stone">
 		<!-- For 30 min., Weapon P./ M. Atk. +150, STR/ INT/ CON +3, Speed +7, acquired XP/ SP +10%. The effect remains after death, after switching to a dual class or entering instance zones. Removed when entering the Olympiad or the Ceremony of Chaos. -->
@@ -195,6 +372,31 @@
 		<!-- Double-click to obtain +6 Fallen Angel's Earring (Cooldown Lv. 3). -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>82479</itemConsumeId> <!-- +6 Fallen Angel's Earring Pack Lv. 3 -->
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100">
+						<item id="82219" count="1" minEnchant="6" maxEnchant="6" /> <!-- Fallen Angel's Earring - Cooldown Lv. 3 -->
+					</item>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39819" toLevel="1" name="Growth Manager's Inspiring Potion">
 		<!-- For 30 min., damage +5%, acquired XP/ SP +20%, received damage -5%. Additionally, acquired XP/ SP +100% if your level < 118. The effect remains after death. Cannot be used in the Olympiad. -->
@@ -218,6 +420,137 @@
 		<!-- Level 14: Double-click to obtain +11 Krishna Dual Blunt Weapons. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>
+			<value level="1">82585</value> <!-- +11 Krishna Shaper Pack (Event) -->
+			<value level="2">82586</value> <!-- +11 Krishna Cutter Pack (Event) -->
+			<value level="3">82587</value> <!-- +11 Krishna Slasher Pack (Event) -->
+			<value level="4">82588</value> <!-- +11 Krishna Avenger Pack (Event) -->
+			<value level="5">82589</value> <!-- +11 Krishna Fighter Pack (Event) -->
+			<value level="6">82590</value> <!-- +11 Krishna Stormer Pack (Event) -->
+			<value level="7">82591</value> <!-- +11 Krishna Thrower Pack (Event) -->
+			<value level="8">82592</value> <!-- +11 Krishna Guardian Pack (Event) -->
+			<value level="9">82593</value> <!-- +11 Krishna Buster Pack (Event) -->
+			<value level="10">82594</value> <!-- +11 Krishna Caster Pack (Event) -->
+			<value level="11">82595</value> <!-- +11 Krishna Retributer Pack (Event) -->
+			<value level="12">82596</value> <!-- +11 Krishna Dual Swords Pack (Event) -->
+			<value level="13">82597</value> <!-- +11 Krishna Dual Daggers Pack (Event) -->
+			<value level="14">82598</value> <!-- +11 Krishna Dual Blunt Weapons Pack (Event) -->
+		</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom" level="1">
+				<items>
+					<item chance="100">
+						<item id="80090" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Shaper -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="2">
+				<items>
+					<item chance="100">
+						<item id="80091" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Cutter -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="3">
+				<items>
+					<item chance="100">
+						<item id="80092" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Slasher -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="4">
+				<items>
+					<item chance="100">
+						<item id="80093" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Avenger -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="5">
+				<items>
+					<item chance="100">
+						<item id="80094" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Fighter -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="6">
+				<items>
+					<item chance="100">
+						<item id="80095" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Stormer -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="7">
+				<items>
+					<item chance="100">
+						<item id="80096" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Thrower -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="8">
+				<items>
+					<item chance="100">
+						<item id="80097" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Guardian -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="9">
+				<items>
+					<item chance="100">
+						<item id="80098" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Buster -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="10">
+				<items>
+					<item chance="100">
+						<item id="80099" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Caster -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="11">
+				<items>
+					<item chance="100">
+						<item id="80100" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Retributer -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="12">
+				<items>
+					<item chance="100">
+						<item id="80101" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Dual Swords -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="13">
+				<items>
+					<item chance="100">
+						<item id="80102" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Dual Daggers -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="14">
+				<items>
+					<item chance="100">
+						<item id="80103" count="1" minEnchant="11" maxEnchant="11" /> <!-- Krishna Dual Blunt Weapons -->
+					</item>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39821" toLevel="14" name="+32 Krishna Dagger Pack">
 		<!-- Level 1: Double-click to obtain +32 Krishna Dagger. -->
@@ -236,6 +569,137 @@
 		<!-- Level 14: Double-click to obtain +32 Krishna Dual Blunt Weapons. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>
+			<value level="1">82557</value> <!-- +32 Krishna Shaper Pack (Event) -->
+			<value level="2">82558</value> <!-- +32 Krishna Cutter Pack (Event) -->
+			<value level="3">82559</value> <!-- +32 Krishna Slasher Pack (Event) -->
+			<value level="4">82560</value> <!-- +32 Krishna Avenger Pack (Event) -->
+			<value level="5">82561</value> <!-- +32 Krishna Fighter Pack (Event) -->
+			<value level="6">82562</value> <!-- +32 Krishna Stormer Pack (Event) -->
+			<value level="7">82563</value> <!-- +32 Krishna Thrower Pack (Event) -->
+			<value level="8">82564</value> <!-- +32 Krishna Guardian Pack (Event) -->
+			<value level="9">82565</value> <!-- +32 Krishna Buster Pack (Event) -->
+			<value level="10">82566</value> <!-- +32 Krishna Caster Pack (Event) -->
+			<value level="11">82567</value> <!-- +32 Krishna Retributer Pack (Event) -->
+			<value level="12">82568</value> <!-- +32 Krishna Dual Swords Pack (Event) -->
+			<value level="13">82569</value> <!-- +32 Krishna Dual Daggers Pack (Event) -->
+			<value level="14">82570</value> <!-- +32 Krishna Dual Blunt Weapons Pack (Event) -->
+		</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom" level="1">
+				<items>
+					<item chance="100">
+						<item id="80090" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Shaper -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="2">
+				<items>
+					<item chance="100">
+						<item id="80091" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Cutter -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="3">
+				<items>
+					<item chance="100">
+						<item id="80092" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Slasher -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="4">
+				<items>
+					<item chance="100">
+						<item id="80093" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Avenger -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="5">
+				<items>
+					<item chance="100">
+						<item id="80094" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Fighter -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="6">
+				<items>
+					<item chance="100">
+						<item id="80095" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Stormer -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="7">
+				<items>
+					<item chance="100">
+						<item id="80096" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Thrower -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="8">
+				<items>
+					<item chance="100">
+						<item id="80097" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Guardian -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="9">
+				<items>
+					<item chance="100">
+						<item id="80098" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Buster -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="10">
+				<items>
+					<item chance="100">
+						<item id="80099" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Caster -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="11">
+				<items>
+					<item chance="100">
+						<item id="80100" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Retributer -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="12">
+				<items>
+					<item chance="100">
+						<item id="80101" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Dual Swords -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="13">
+				<items>
+					<item chance="100">
+						<item id="80102" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Dual Daggers -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="14">
+				<items>
+					<item chance="100">
+						<item id="80103" count="1" minEnchant="32" maxEnchant="32" /> <!-- Krishna Dual Blunt Weapons -->
+					</item>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39822" toLevel="14" name="+32 Supreme Krishna Dagger Pack">
 		<!-- Level 1: Double-click to obtain +32 Supreme Krishna Dagger. -->
@@ -254,6 +718,137 @@
 		<!-- Level 14: Double-click to obtain +32 Supreme Krishna Dual Blunt Weapons. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>
+			<value level="1">82571</value> <!-- +32 Supreme Krishna Shaper Pack (Event) -->
+			<value level="2">82572</value> <!-- +32 Supreme Krishna Cutter Pack (Event) -->
+			<value level="3">82573</value> <!-- +32 Supreme Krishna Slasher Pack (Event) -->
+			<value level="4">82574</value> <!-- +32 Supreme Krishna Avenger Pack (Event) -->
+			<value level="5">82575</value> <!-- +32 Supreme Krishna Fighter Pack (Event) -->
+			<value level="6">82576</value> <!-- +32 Supreme Krishna Stormer Pack (Event) -->
+			<value level="7">82577</value> <!-- +32 Supreme Krishna Thrower Pack (Event) -->
+			<value level="8">82578</value> <!-- +32 Supreme Krishna Guardian Pack (Event) -->
+			<value level="9">82579</value> <!-- +32 Supreme Krishna Buster Pack (Event) -->
+			<value level="10">82580</value> <!-- +32 Supreme Krishna Caster Pack (Event) -->
+			<value level="11">82581</value> <!-- +32 Supreme Krishna Retributer Pack (Event) -->
+			<value level="12">82582</value> <!-- +32 Supreme Krishna Dual Swords Pack (Event) -->
+			<value level="13">82583</value> <!-- +32 Supreme Krishna Dual Daggers Pack (Event) -->
+			<value level="14">82584</value> <!-- +32 Supreme Krishna Dual Blunt Weapons Pack (Event) -->
+		</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom" level="1">
+				<items>
+					<item chance="100">
+						<item id="80175" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Shaper -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="2">
+				<items>
+					<item chance="100">
+						<item id="80176" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Cutter -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="3">
+				<items>
+					<item chance="100">
+						<item id="80177" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Slasher -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="4">
+				<items>
+					<item chance="100">
+						<item id="80178" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Avenger -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="5">
+				<items>
+					<item chance="100">
+						<item id="80179" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Fighter -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="6">
+				<items>
+					<item chance="100">
+						<item id="80180" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Stormer -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="7">
+				<items>
+					<item chance="100">
+						<item id="80181" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Thrower -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="8">
+				<items>
+					<item chance="100">
+						<item id="80182" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Guardian -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="9">
+				<items>
+					<item chance="100">
+						<item id="80183" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Buster -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="10">
+				<items>
+					<item chance="100">
+						<item id="80184" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Caster -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="11">
+				<items>
+					<item chance="100">
+						<item id="80185" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Retributer -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="12">
+				<items>
+					<item chance="100">
+						<item id="80186" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Dual Swords -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="13">
+				<items>
+					<item chance="100">
+						<item id="80187" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Dual Daggers -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" level="14">
+				<items>
+					<item chance="100">
+						<item id="80188" count="1" minEnchant="32" maxEnchant="32" /> <!-- Supreme Krishna Dual Blunt Weapons -->
+					</item>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39823" toLevel="1" name="Birthday Cake">
 		<!-- For 30 min., Weapon P./ M. Atk. +200, P./ M. Def. +20,000, acquired XP/ SP +20%. The effect remains after death, after switching to a dual class or entering instance zones. Removed when entering the Olympiad or the Ceremony of Chaos. -->
@@ -266,6 +861,7 @@
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effectPoint>1</effectPoint>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<itemConsumeCount>1</itemConsumeCount>
@@ -302,7 +898,12 @@
 	<skill id="39829" toLevel="1" name="Vitality Sustaining Rune">
 		<!-- When in inventory, sustains Vitality. -->
 		<icon>icon.ev_charge_run</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-100</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39830" toLevel="1" name="Magic Dumpling Soup">
 		<!-- Warm holiday soup. For 30 min., P. Atk./ M. Atk./ P. Def./ M. Def. +15%, acquired XP/ SP +15%. -->
@@ -495,7 +1096,116 @@
 		<!-- Level 10: <Requirements>. 1. When equipping an R-grade heavy armor set enchanted to +8 and higher. 2. When equipping an L-grade heavy armor set. <Effect>. P. Def. +1179, Skill Cooldown -4% -->
 		<!-- Level 11: <Requirements>. 1. When equipping an R-grade heavy armor set enchanted to +8 and higher. 2. When equipping an L-grade heavy armor set. <Effect>. P. Def. +1387, Skill Cooldown -5% -->
 		<icon>icon.agathion_masia_guard_1</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipArmor">
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</condition>
+			<condition name="OpCheckSkill">
+				<skillId>13339</skillId> <!-- Enchant +6 R-grade Heavy Armor Set -->
+				<skillLevel>3</skillLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">321</value>
+					<value level="3">377</value>
+					<value level="4">445</value>
+					<value level="5">523</value>
+					<value level="6">615</value>
+					<value level="7">724</value>
+					<value level="8">851</value>
+					<value level="9">1002</value>
+					<value level="10">1179</value>
+					<value level="11">1387</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39856" toLevel="11" name="Paulina's Guard Unique Ability">
 		<!-- Level 1: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. Increases P. Def. and Skill Power. -->
@@ -510,7 +1220,56 @@
 		<!-- Level 10: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. P. Def. +1179, Skill Power +4% -->
 		<!-- Level 11: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. P. Def. +1387, Skill Power +5% -->
 		<icon>icon.agathion_pollyne_guard_1</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipArmor">
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</condition>
+			<condition name="OpCheckSkill">
+				<skillId>13340</skillId> <!-- Enchant +6 R-grade Light Armor Set -->
+				<skillLevel>3</skillLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">321</value>
+					<value level="3">377</value>
+					<value level="4">445</value>
+					<value level="5">523</value>
+					<value level="6">615</value>
+					<value level="7">724</value>
+					<value level="8">851</value>
+					<value level="9">1002</value>
+					<value level="10">1179</value>
+					<value level="11">1387</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">1</value>
+					<value level="8">2</value>
+					<value level="9">3</value>
+					<value level="10">4</value>
+					<value level="11">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39857" toLevel="11" name="Tersi's Guard Unique Ability">
 		<!-- Level 1: <Requirements>. 1. When equipping an R-grade robe set enchanted to +8 and higher. 2. When equipping an L-grade robe set. <Effect>. Increases P. Def. and Dagger/ Bow Resistance. -->
@@ -553,10 +1312,60 @@
 	<skill id="39862" toLevel="1" name="High Priest's Grace">
 		<!-- For 30 min., Critical Rate for basic attacks and P./ M. skills +5%, Power of basic attacks and P./ M. skills +5%, P./ M. Def. +5%, acquired XP/ SP +10%. The effect does not stack with Freya's Charisma Potion, Einhasad's Charisma Potion, Freya's Luck Potion and Archangel's Grace. To remove the effect, press Alt + Left Mouse Button. Cooldown: 5 min. The effect remains after death. Cannot be used in the Olympiad. -->
 		<icon>icon.etc_hot_spring_mineral_i00</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>1800</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<coolTime>3000</coolTime>
 		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
 		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>300000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AutoAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>10</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39863" toLevel="1" name="Cool Grape">
 		<!-- Having eaten cool grapes, you feel refreshed and acute. For 30 min., Power of basic attacks and P./ M. skills +10%, P./ M. Def. +10%, acquired XP/ SP +10%, Vitality bonus +10%. The effect remains after death, after switching to a dual class or entering instance zones. Removed when entering the Olympiad or the Ceremony of Chaos. -->

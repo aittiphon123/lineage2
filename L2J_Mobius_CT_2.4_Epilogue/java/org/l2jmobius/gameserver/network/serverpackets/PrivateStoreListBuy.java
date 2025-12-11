@@ -57,7 +57,7 @@ public class PrivateStoreListBuy extends ServerPacket
 			buffer.writeLong(item.getCount()); // give max possible sell amount
 			buffer.writeLong(item.getItem().getReferencePrice());
 			buffer.writeShort(0);
-			buffer.writeInt(item.getItem().getBodyPart());
+			buffer.writeInt(item.getItem().getBodyPart().getMask());
 			buffer.writeShort(item.getItem().getType2());
 			buffer.writeLong(item.getPrice()); // buyers price
 			buffer.writeLong(item.getStoreCount()); // maximum possible tradecount

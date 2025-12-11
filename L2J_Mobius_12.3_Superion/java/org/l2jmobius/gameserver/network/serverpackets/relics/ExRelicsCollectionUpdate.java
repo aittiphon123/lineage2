@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.serverpackets.relics;
 
 import java.util.Collection;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.RelicSystemConfig;
 import org.l2jmobius.gameserver.data.holders.RelicCollectionDataHolder;
 import org.l2jmobius.gameserver.data.holders.RelicDataHolder;
 import org.l2jmobius.gameserver.data.xml.OptionData;
@@ -97,7 +97,7 @@ public class ExRelicsCollectionUpdate extends ServerPacket
 								// Add relic to collection if matches the level needed.
 								if (existingRelic.getRelicLevel() >= neededRelicLevel)
 								{
-									if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+									if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 									{
 										_player.sendMessage("2.Relic id: " + existingRelic.getRelicId() + " with level: " + existingRelic.getRelicLevel() + " needed in collection: " + neededRelicCollectionId);
 									}
@@ -106,7 +106,7 @@ public class ExRelicsCollectionUpdate extends ServerPacket
 									_player.getRelicCollections().add(new PlayerRelicCollectionData(neededRelicCollectionId, existingRelic.getRelicId(), neededRelicLevel, neededRelicIndex));
 									_player.storeRelicCollections();
 									_player.sendPacket(new ExRelicsCollectionInfo(_player));
-									if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+									if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 									{
 										_player.sendMessage("Added Relic Id: " + existingRelic.getRelicId() + " into Collection Id: " + neededRelicCollectionId);
 									}
@@ -130,7 +130,7 @@ public class ExRelicsCollectionUpdate extends ServerPacket
 					if (options != null)
 					{
 						options.apply(_player);
-						if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
+						if (RelicSystemConfig.RELIC_SYSTEM_DEBUG_ENABLED)
 						{
 							_player.sendMessage("Added Skill for complete collection: " + options.getPassiveSkills());
 						}

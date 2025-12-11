@@ -29,17 +29,16 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.instancezone.InstanceTemplate;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestSound;
 import org.l2jmobius.gameserver.model.siege.Fort;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import instances.AbstractInstance;
 
 /**
  * <b>Fortress dungeon</b> instance for quest <b>Awl Under Foot (511)</b>
  * @author malyelfik
  */
-public class FortressDungeon extends AbstractInstance
+public class FortressDungeon extends InstanceScript
 {
 	// NPCs
 	private static final Map<Integer, Integer> NPCS = new HashMap<>();

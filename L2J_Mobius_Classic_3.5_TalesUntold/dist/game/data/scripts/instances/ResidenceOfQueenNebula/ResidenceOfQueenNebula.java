@@ -24,13 +24,12 @@ import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import instances.AbstractInstance;
 
 /**
  * @author RobikBobik
@@ -38,7 +37,7 @@ import instances.AbstractInstance;
  * @TODO: Rewrite code to modern style.
  * @TODO: The less Nebula's HP, the more damage she deals.
  */
-public class ResidenceOfQueenNebula extends AbstractInstance
+public class ResidenceOfQueenNebula extends InstanceScript
 {
 	// NPCs
 	private static final int IRIS = 34046;

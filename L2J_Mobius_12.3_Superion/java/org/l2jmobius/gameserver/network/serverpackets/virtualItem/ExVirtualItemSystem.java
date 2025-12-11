@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.serverpackets.virtualItem;
 
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.IllusoryEquipmentConfig;
 import org.l2jmobius.gameserver.data.holders.VirtualItemHolder;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.data.xml.VirtualItemData;
@@ -74,7 +74,7 @@ public class ExVirtualItemSystem extends ServerPacket
 		{
 			buffer.writeByte(_type); // var int cType;
 			buffer.writeByte(true); // var int cResult;
-			buffer.writeInt(Config.ILLUSORY_EQUIPMENT_EVENT_DURATION * 2592000); // Event ending time (2592000 = 30 days in milis)
+			buffer.writeInt(IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_EVENT_DURATION * 2592000); // Event ending time (2592000 = 30 days in milis)
 			buffer.writeInt(illusoryPointsAcquired); // var int nTotalGetVISPoint;
 			buffer.writeInt(illusoryPointsUsed); // var int nTotalUsedVISPoint;
 			buffer.writeInt(_selectIndexMain); // var int nSelectIndexMain;
@@ -115,10 +115,10 @@ public class ExVirtualItemSystem extends ServerPacket
 			_player.getVariables().set(PlayerVariables.ILLUSORY_POINTS_USED, 0); // Total Illusory Points used
 			buffer.writeByte(_type); // var int cType;
 			buffer.writeByte(true); // var int cResult;
-			buffer.writeInt(Config.ILLUSORY_EQUIPMENT_EVENT_DURATION * 2592000); // Event ending time (2592000 = 30 days in milis)
+			buffer.writeInt(IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_EVENT_DURATION * 2592000); // Event ending time (2592000 = 30 days in milis)
 			buffer.writeInt(illusoryPointsAcquired); // var int nTotalGetVISPoint;
 			buffer.writeInt(illusoryPointsUsed); // var int nTotalUsedVISPoint;
-			buffer.writeInt(Config.ILLUSORY_EQUIPMENT_EVENT_POINTS_LIMIT); // max available points default 600
+			buffer.writeInt(IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_EVENT_POINTS_LIMIT); // max available points default 600
 			
 			buffer.writeInt(3); // equipment array size
 			buffer.writeInt(testIndex); // var int nIndexMain;
@@ -133,7 +133,7 @@ public class ExVirtualItemSystem extends ServerPacket
 		{
 			buffer.writeByte(_type); // var int cType;
 			buffer.writeByte(true); // var int cResult;
-			buffer.writeInt(Config.ILLUSORY_EQUIPMENT_EVENT_DURATION * 2592000); // Event ending time (2592000 = 30 days in milis)
+			buffer.writeInt(IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_EVENT_DURATION * 2592000); // Event ending time (2592000 = 30 days in milis)
 			buffer.writeInt(illusoryPointsAcquired); // var int nTotalGetVISPoint;
 			buffer.writeInt(illusoryPointsUsed); // var int nTotalUsedVISPoint;
 			buffer.writeInt(_selectIndexMain); // var int nSelectIndexMain;
@@ -155,7 +155,7 @@ public class ExVirtualItemSystem extends ServerPacket
 					_player.sendMessage("Item Class: " + virtualItem.getItemId());
 					
 					// Debug.
-					if (Config.ILLUSORY_EQUIPMENT_EVENT_DEBUG_ENABLED)
+					if (IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_EVENT_DEBUG_ENABLED)
 					{
 						_player.sendMessage("ExVirtualItemSystem ----------------------------");
 						_player.sendMessage("cType:" + _type);
@@ -209,6 +209,6 @@ public class ExVirtualItemSystem extends ServerPacket
 		}
 		
 		_player.sendPacket(new ExVirtualItemSystemBaseInfo(_player));
-		_player.sendPacket(new ExVirtualItemSystemPointInfo(_player, Config.ILLUSORY_EQUIPMENT_EVENT_POINTS_LIMIT - _player.getVariables().getInt(PlayerVariables.ILLUSORY_POINTS_USED, 0)));
+		_player.sendPacket(new ExVirtualItemSystemPointInfo(_player, IllusoryEquipmentConfig.ILLUSORY_EQUIPMENT_EVENT_POINTS_LIMIT - _player.getVariables().getInt(PlayerVariables.ILLUSORY_POINTS_USED, 0)));
 	}
 }

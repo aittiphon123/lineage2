@@ -31,13 +31,19 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.ai.Action;
 import org.l2jmobius.gameserver.ai.AttackableAI;
 import org.l2jmobius.gameserver.ai.CreatureAI;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.ai.SiegeGuardAI;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.RatesConfig;
+import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
+import org.l2jmobius.gameserver.config.custom.FakePlayersConfig;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.managers.EventDropManager;
 import org.l2jmobius.gameserver.managers.PcCafePointsManager;
@@ -325,7 +331,7 @@ public class Attackable extends Npc
 			final Monster leader = mob.getLeader();
 			if ((leader != null) && leader.hasMinions())
 			{
-				final int respawnTime = Config.MINIONS_RESPAWN_TIME.containsKey(getId()) ? Config.MINIONS_RESPAWN_TIME.get(getId()) * 1000 : -1;
+				final int respawnTime = NpcConfig.MINIONS_RESPAWN_TIME.containsKey(getId()) ? NpcConfig.MINIONS_RESPAWN_TIME.get(getId()) * 1000 : -1;
 				leader.getMinionList().onMinionDie(mob, respawnTime);
 			}
 			
@@ -399,7 +405,7 @@ public class Attackable extends Npc
 				if (damage > 1)
 				{
 					// Check if damage dealer isn't too far from this (killed monster)
-					if (calculateDistance3D(attacker) > Config.ALT_PARTY_RANGE)
+					if (calculateDistance3D(attacker) > PlayerConfig.ALT_PARTY_RANGE)
 					{
 						continue;
 					}
@@ -470,7 +476,7 @@ public class Attackable extends Npc
 			}
 			
 			final PartyContainer mostDamageParty;
-			damagingParties.sort(Comparator.comparingLong(c -> c.damage));
+			damagingParties.sort(Comparator.comparingLong(c -> -c.damage));
 			mostDamageParty = !damagingParties.isEmpty() ? damagingParties.get(0) : null;
 			
 			// Manage Base, Quests and Sweep drops of the Attackable
@@ -527,10 +533,10 @@ public class Attackable extends Npc
 							double exp = expSp[0];
 							double sp = expSp[1];
 							
-							if (Config.CHAMPION_ENABLE && _champion)
+							if (ChampionMonstersConfig.CHAMPION_ENABLE && _champion)
 							{
-								exp *= Config.CHAMPION_REWARDS_EXP_SP;
-								sp *= Config.CHAMPION_REWARDS_EXP_SP;
+								exp *= ChampionMonstersConfig.CHAMPION_REWARDS_EXP_SP;
+								sp *= ChampionMonstersConfig.CHAMPION_REWARDS_EXP_SP;
 							}
 							
 							exp *= penalty;
@@ -556,8 +562,8 @@ public class Attackable extends Npc
 								// Premium rates
 								if (attacker.hasPremiumStatus())
 								{
-									addExp *= Config.PREMIUM_RATE_XP;
-									addSp *= Config.PREMIUM_RATE_SP;
+									addExp *= PremiumSystemConfig.PREMIUM_RATE_XP;
+									addSp *= PremiumSystemConfig.PREMIUM_RATE_SP;
 								}
 								
 								attacker.addExpAndSp(addExp, addSp, useVitalityRate());
@@ -594,7 +600,7 @@ public class Attackable extends Npc
 							// If the Player is in the Attackable rewards add its damages to party damages
 							if (reward2 != null)
 							{
-								if (calculateDistance3D(partyPlayer) < Config.ALT_PARTY_RANGE)
+								if (calculateDistance3D(partyPlayer) < PlayerConfig.ALT_PARTY_RANGE)
 								{
 									partyDmg += reward2.getDamage(); // Add Player damages to party damages
 									rewardedMembers.add(partyPlayer);
@@ -614,7 +620,7 @@ public class Attackable extends Npc
 								
 								rewards.remove(partyPlayer); // Remove the Player from the Attackable rewards
 							}
-							else if (calculateDistance3D(partyPlayer) < Config.ALT_PARTY_RANGE)
+							else if (calculateDistance3D(partyPlayer) < PlayerConfig.ALT_PARTY_RANGE)
 							{
 								rewardedMembers.add(partyPlayer);
 								if (partyPlayer.getLevel() > partyLvl)
@@ -642,10 +648,10 @@ public class Attackable extends Npc
 						double exp = expSp[0];
 						double sp = expSp[1];
 						
-						if (Config.CHAMPION_ENABLE && _champion)
+						if (ChampionMonstersConfig.CHAMPION_ENABLE && _champion)
 						{
-							exp *= Config.CHAMPION_REWARDS_EXP_SP;
-							sp *= Config.CHAMPION_REWARDS_EXP_SP;
+							exp *= ChampionMonstersConfig.CHAMPION_REWARDS_EXP_SP;
+							sp *= ChampionMonstersConfig.CHAMPION_REWARDS_EXP_SP;
 						}
 						
 						exp *= partyMul;
@@ -701,7 +707,7 @@ public class Attackable extends Npc
 		Creature damageDealer = null;
 		for (AggroInfo info : _aggroList.values())
 		{
-			if ((info != null) && (info.getDamage() > damage) && (calculateDistance3D(info.getAttacker()) < Config.ALT_PARTY_RANGE))
+			if ((info != null) && (info.getDamage() > damage) && (calculateDistance3D(info.getAttacker()) < PlayerConfig.ALT_PARTY_RANGE))
 			{
 				damage = info.getDamage();
 				damageDealer = info.getAttacker();
@@ -768,7 +774,7 @@ public class Attackable extends Npc
 		}
 		
 		// Check if fake players should aggro each other.
-		if (isFakePlayer() && !Config.FAKE_PLAYER_AGGRO_FPC && attacker.isFakePlayer())
+		if (isFakePlayer() && !FakePlayersConfig.FAKE_PLAYER_AGGRO_FPC && attacker.isFakePlayer())
 		{
 			return;
 		}
@@ -1070,7 +1076,7 @@ public class Attackable extends Npc
 		if (player == null)
 		{
 			// unless its a fake player and they can drop items
-			if (mainDamageDealer.isFakePlayer() && Config.FAKE_PLAYER_CAN_DROP_ITEMS)
+			if (mainDamageDealer.isFakePlayer() && FakePlayersConfig.FAKE_PLAYER_CAN_DROP_ITEMS)
 			{
 				final Collection<ItemHolder> deathItems = npcTemplate.calculateDrops(DropType.DROP, this, mainDamageDealer);
 				if (deathItems != null)
@@ -1080,14 +1086,14 @@ public class Attackable extends Npc
 						final ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId());
 						
 						// Check if the autoLoot mode is active
-						if (Config.AUTO_LOOT_ITEM_IDS.contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.AUTO_LOOT) || (_isRaid && Config.AUTO_LOOT_RAIDS))))
+						if (PlayerConfig.AUTO_LOOT_ITEM_IDS.contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && PlayerConfig.AUTO_LOOT) || (_isRaid && PlayerConfig.AUTO_LOOT_RAIDS))))
 						{
 							// do nothing
 						}
 						else
 						{
 							final Item droppedItem = dropItem(mainDamageDealer, drop); // drop the item on the ground
-							if (Config.FAKE_PLAYER_CAN_PICKUP)
+							if (FakePlayersConfig.FAKE_PLAYER_CAN_PICKUP)
 							{
 								mainDamageDealer.getFakePlayerDrops().add(droppedItem);
 							}
@@ -1113,7 +1119,7 @@ public class Attackable extends Npc
 				final ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId());
 				
 				// Check if the autoLoot mode is active
-				if (Config.AUTO_LOOT_ITEM_IDS.contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.AUTO_LOOT) || (_isRaid && Config.AUTO_LOOT_RAIDS))))
+				if (PlayerConfig.AUTO_LOOT_ITEM_IDS.contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && PlayerConfig.AUTO_LOOT) || (_isRaid && PlayerConfig.AUTO_LOOT_RAIDS))))
 				{
 					player.doAutoLoot(this, drop); // Give the item(s) to the Player that has killed the Attackable
 				}
@@ -1376,7 +1382,7 @@ public class Attackable extends Npc
 		double xp = 0;
 		double sp = 0;
 		
-		if ((levelDiff < Config.MONSTER_EXP_MAX_LEVEL_DIFFERENCE) && (levelDiff > -Config.MONSTER_EXP_MAX_LEVEL_DIFFERENCE))
+		if ((levelDiff < RatesConfig.MONSTER_EXP_MAX_LEVEL_DIFFERENCE) && (levelDiff > -RatesConfig.MONSTER_EXP_MAX_LEVEL_DIFFERENCE))
 		{
 			xp = Math.max(0, (getExpReward(charLevel) * damage) / totalDamage);
 			sp = Math.max(0, (getSpReward(charLevel) * damage) / totalDamage);
@@ -1618,7 +1624,7 @@ public class Attackable extends Npc
 			count += diff;
 		}
 		
-		_harvestItem.set(new ItemHolder(_seed.getCropId(), count * Config.RATE_DROP_MANOR));
+		_harvestItem.set(new ItemHolder(_seed.getCropId(), count * RatesConfig.RATE_DROP_MANOR));
 	}
 	
 	/**
@@ -1673,7 +1679,7 @@ public class Attackable extends Npc
 	@Override
 	public boolean hasRandomAnimation()
 	{
-		return ((Config.MAX_MONSTER_ANIMATION > 0) && isRandomAnimationEnabled() && !(this instanceof GrandBoss));
+		return ((GeneralConfig.MAX_MONSTER_ANIMATION > 0) && isRandomAnimationEnabled() && !(this instanceof GrandBoss));
 	}
 	
 	public void setCommandChannelTimer(CommandChannelTimer commandChannelTimer)
@@ -1749,7 +1755,7 @@ public class Attackable extends Npc
 	 */
 	public boolean useVitalityRate()
 	{
-		return !_champion || Config.CHAMPION_ENABLE_VITALITY;
+		return !_champion || ChampionMonstersConfig.CHAMPION_ENABLE_VITALITY;
 	}
 	
 	/** Return True if the Creature is RaidBoss or his minion. */
@@ -1801,7 +1807,7 @@ public class Attackable extends Npc
 	public void setChampion(boolean champ)
 	{
 		_champion = champ;
-		if (Config.SHOW_CHAMPION_AURA)
+		if (ChampionMonstersConfig.SHOW_CHAMPION_AURA)
 		{
 			setTeam(champ ? Team.RED : Team.NONE);
 		}

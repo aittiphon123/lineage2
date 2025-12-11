@@ -3,7 +3,6 @@
 	<item id="61000" name="Fire Dragon's Rune" additionalName="Lv. 3" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +30, P. Def. +1%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -13,7 +12,6 @@
 	<item id="61001" name="Fire Dragon's Rune" additionalName="Lv. 4" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +40, P. Def. +2%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -23,7 +21,6 @@
 	<item id="61002" name="Fire Dragon's Rune" additionalName="Lv. 5" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +50, P. Def. +3%, Skill Power +1%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -33,7 +30,6 @@
 	<item id="61003" name="Fire Dragon's Rune" additionalName="Lv. 6" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +60, P. Def. +4%, Skill Power +2%, received PvP/ PvE damage -1%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -43,7 +39,6 @@
 	<item id="61004" name="Fire Dragon's Rune" additionalName="Lv. 7" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +70, P. Def. +5%, Skill Power +3%, received PvP/ PvE damage -2%, received damage when immobilized -5%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -53,7 +48,6 @@
 	<item id="61005" name="Fire Dragon's Rune" additionalName="Lv. 8" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +80, P. Def. +5%, Skill Power +4%, received PvP/ PvE damage -3%, received damage when immobilized -10%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -63,7 +57,6 @@
 	<item id="61006" name="Fire Dragon's Rune" additionalName="Lv. 9" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +90, P. Def. +5%, Skill Power +5%, received PvP/ PvE damage -4%, received damage when immobilized -15%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -73,7 +66,6 @@
 	<item id="61007" name="Fire Dragon's Rune" additionalName="Lv. 10" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +100, P. Def. +5%, Skill Power +5%, received PvP/ PvE damage -5%, received damage when immobilized -20%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -83,7 +75,6 @@
 	<item id="61008" name="Fire Dragon's Flame" type="EtcItem">
 		<!-- The trembling flame hides the true power of the Fire Dragon. Can be used for crafting special items. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_residual_fire" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -116,7 +107,6 @@
 	<item id="61011" name="Autumn Mood" additionalName="1" type="EtcItem">
 		<!-- A maple leaf that gives out the autumn mood. Can be used for crafting Autumn Leaf Coupon. -->
 		<set name="icon" val="icon.maple_leaf_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -265,7 +255,6 @@
 	<item id="61020" name="Halloween Coin" type="EtcItem">
 		<!-- Can be used for crafting or exchanged for special items. -->
 		<set name="icon" val="icon.bm_goblin_coin" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -334,7 +323,6 @@
 	<item id="61023" name="Fishing Guild's Seal" type="EtcItem">
 		<!-- Required for crafting rare items. -->
 		<set name="icon" val="icon.etc_royal_seal_of_lord_i04" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -435,7 +423,6 @@
 	<item id="61029" name="Mark of Dimensional Victory" type="EtcItem">
 		<!-- A badge of honor for adventurers who have claimed victory in Another Dimension. Can be added to the 'Victory in Another Dimension' collection. -->
 		<set name="icon" val="icon.campaign_public_reward" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -446,7 +433,6 @@
 	<item id="61030" name="Mark of Dimensional Hero" type="EtcItem">
 		<!-- A badge of honor for adventurers who have fought bravely in Another Dimension. Can be added to the 'Adventure in Another Dimension' collection. -->
 		<set name="icon" val="icon.campaign_high_rank_reward" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -457,7 +443,6 @@
 	<item id="61031" name="Mark of Courage" type="EtcItem">
 		<!-- A badge of honor for adventurers who have shown an incredible courage in Another Dimension. When in inventory, acquired XP/ SP +30%. -->
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_flint_will" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -467,7 +452,6 @@
 	<item id="61032" name="Freya's Bloody Rune" additionalName="1-day" type="EtcItem">
 		<!-- When in inventory, PvE damage +15%. -->
 		<set name="icon" val="icon.bm_freya_bloody_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -559,7 +543,6 @@
 	<item id="61040" name="Adventurer's Cube" type="EtcItem">
 		<!-- Double-click to obtain Wondrous Cocktail (3 pcs.) or the items listed below according to the day of use:. 1st day - Nevit's Cloak of Light (30-day). 10th day - Honey Dark Beer (50 pcs.). 20th day - Glowing Dragon's Attribute Potion (50 pcs.). 30th day - Nevit's Shining Gold Hourglass (50 pcs.) -->
 		<set name="icon" val="icon.etc_11th_event_group" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -578,7 +561,6 @@
 	<item id="61042" name="Earth Dragon's Amulet" type="EtcItem">
 		<!-- An amulet imbued with the Earth Dragon's power. Required for crafting and enhancing Earth Dragon's Runes. -->
 		<set name="icon" val="BranchSys2.icon.call_of_fire_dragon" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -589,7 +571,6 @@
 	<item id="61043" name="Earth Dragon's Rune" additionalName="Lv. 1" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +10. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -599,7 +580,6 @@
 	<item id="61044" name="Earth Dragon's Rune" additionalName="Lv. 2" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +20. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -609,7 +589,6 @@
 	<item id="61045" name="Earth Dragon's Rune" additionalName="Lv. 3" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +30, P. Def. +1%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -619,7 +598,6 @@
 	<item id="61046" name="Earth Dragon's Rune" additionalName="Lv. 4" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +40, P. Def. +2%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -629,7 +607,6 @@
 	<item id="61047" name="Earth Dragon's Rune" additionalName="Lv. 5" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +50, P. Def. +3%, Skill Power +1%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -639,7 +616,6 @@
 	<item id="61048" name="Earth Dragon's Rune" additionalName="Lv. 6" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +60, P. Def. +4%, Skill Power +2%, received PvP/ PvE damage -1%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -649,7 +625,6 @@
 	<item id="61049" name="Earth Dragon's Rune" additionalName="Lv. 7" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +70, P. Def. +5%, Skill Power +3%, received PvP/ PvE damage -2%, received damage when immobilized -5%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -659,7 +634,6 @@
 	<item id="61050" name="Earth Dragon's Rune" additionalName="Lv. 8" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +80, P. Def. +5%, Skill Power +4%, received PvP/ PvE damage -3%, received damage when immobilized -10%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -669,7 +643,6 @@
 	<item id="61051" name="Earth Dragon's Rune" additionalName="Lv. 9" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +90, P. Def. +5%, Skill Power +5%, received PvP/ PvE damage -4%, received damage when immobilized -15%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -679,7 +652,6 @@
 	<item id="61052" name="Earth Dragon's Rune" additionalName="Lv. 10" type="EtcItem">
 		<!-- When in inventory, Attribute Resistance +100, P. Def. +5%, Skill Power +5%, received PvP/ PvE damage -5%, received damage when immobilized -20%. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_valakas_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -689,7 +661,6 @@
 	<item id="61053" name="Earth Dragon's Flame" type="EtcItem">
 		<!-- The trembling flame hides the true power of the Earth Dragon. Can be used for crafting special items. -->
 		<set name="icon" val="BranchIcon.icon.g_bm_antaras_residual_fire" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />

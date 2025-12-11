@@ -18,7 +18,9 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
 import org.l2jmobius.gameserver.data.xml.ClanHallData;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.FortManager;
@@ -58,10 +60,10 @@ public class RegenHPFinalizer implements IStatFunction
 		throwIfPresent(base);
 		
 		double baseValue = creature.isPlayer() ? creature.asPlayer().getTemplate().getBaseHpRegen(creature.getLevel()) : creature.getTemplate().getBaseHpReg();
-		baseValue *= creature.isRaid() ? Config.RAID_HP_REGEN_MULTIPLIER : Config.HP_REGEN_MULTIPLIER;
-		if (Config.CHAMPION_ENABLE && creature.isChampion())
+		baseValue *= creature.isRaid() ? NpcConfig.RAID_HP_REGEN_MULTIPLIER : PlayerConfig.HP_REGEN_MULTIPLIER;
+		if (ChampionMonstersConfig.CHAMPION_ENABLE && creature.isChampion())
 		{
-			baseValue *= Config.CHAMPION_HP_REGEN;
+			baseValue *= ChampionMonstersConfig.CHAMPION_HP_REGEN;
 		}
 		
 		if (creature.isPlayer())
@@ -158,7 +160,7 @@ public class RegenHPFinalizer implements IStatFunction
 		}
 		else if (creature.isPet())
 		{
-			baseValue = creature.asPet().getPetLevelData().getPetRegenHP() * Config.PET_HP_REGEN_MULTIPLIER;
+			baseValue = creature.asPet().getPetLevelData().getPetRegenHP() * NpcConfig.PET_HP_REGEN_MULTIPLIER;
 		}
 		
 		return Stat.defaultValue(creature, stat, baseValue);

@@ -379,7 +379,6 @@
 	<item id="82032" name="Shiny Jewel Energy" type="EtcItem">
 		<!-- Required for upgrading Superior jewels through compounding. Can be used with any Superior jewels of Lv. 5+. If compounding fails, the jewel's level remains the same. -->
 		<set name="icon" val="icon.bm_bless_jewel_energy" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -530,7 +529,6 @@
 	<item id="82049" name="Shining Sayha's Energy" type="EtcItem">
 		<!-- Required for compounding with Enhanced Sayha's Talismanr to increase its level. In case of failure, Sayha's Talisman is not destroyed. However, Shining Sayha's Energy is consumed in any case. -->
 		<set name="icon" val="icon.bm_bless_sayhas_talisman_energy" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
 		<set name="is_sellable" val="false" />
@@ -817,7 +815,6 @@
 	<item id="82069" name="Top-grade Growth Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, acquired XP/ SP +20%. Required level: 1-110. -->
 		<set name="icon" val="icon.skill19226" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -828,7 +825,6 @@
 	<item id="82070" name="Conquest Expedition Rune" additionalName="30-day" type="EtcItem">
 		<!-- Sustains Vitality when in inventory. Required level: 1-110. No level restrictions in the Conquest world. -->
 		<set name="icon" val="BranchSys3.icon1.g_rune_of_flint_will" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -908,7 +904,6 @@
 	<item id="82073" name="Iron Gate's Key" additionalName="Event" type="EtcItem">
 		<!-- Required for participating in the Secret Shop's prize draw. -->
 		<set name="icon" val="BranchSys3.icon1.g_luckygame_card_trade_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
 		<set name="is_tradable" val="false" />
@@ -977,7 +972,6 @@
 	<item id="82079" name="Invitation from New World" type="EtcItem">
 		<!-- An invitation from Larra. Take it to Conquest Guide Entropy in the Conquest world. -->
 		<set name="icon" val="icon.etc_letter_envelope_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -989,7 +983,6 @@
 	<item id="82080" name="Conquest Mark" type="EtcItem">
 		<!-- A mark given to you by Conquest Guide Entropy after you gave her the invitation. A proof that you've been to the Conquest world. Take it to Larra. -->
 		<set name="icon" val="icon.etc_permit_card_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1139,7 +1132,6 @@
 	<item id="82095" name="Letter L" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_l_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1150,7 +1142,6 @@
 	<item id="82096" name="Letter I" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_i_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1161,7 +1152,6 @@
 	<item id="82097" name="Letter N" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_n_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1172,7 +1162,6 @@
 	<item id="82098" name="Letter E" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_e_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1183,7 +1172,6 @@
 	<item id="82099" name="Letter A" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_a_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />

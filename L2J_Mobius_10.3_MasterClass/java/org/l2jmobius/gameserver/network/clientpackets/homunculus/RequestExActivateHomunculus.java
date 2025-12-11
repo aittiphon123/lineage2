@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.homunculus;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.homunculus.Homunculus;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
@@ -63,7 +63,7 @@ public class RequestExActivateHomunculus extends ClientPacket
 			return;
 		}
 		
-		for (int i = 0; i < Config.MAX_HOMUNCULUS_COUNT; i++)
+		for (int i = 0; i < PlayerConfig.MAX_HOMUNCULUS_COUNT; i++)
 		{
 			if (size <= i)
 			{

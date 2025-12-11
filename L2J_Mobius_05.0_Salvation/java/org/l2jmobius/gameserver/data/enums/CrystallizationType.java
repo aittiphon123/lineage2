@@ -46,18 +46,25 @@ public enum CrystallizationType
 			return ARMOR;
 		}
 		
-		if ((item.getBodyPart() == ItemTemplate.SLOT_R_EAR) //
-			|| (item.getBodyPart() == ItemTemplate.SLOT_L_EAR) //
-			|| (item.getBodyPart() == ItemTemplate.SLOT_R_FINGER) //
-			|| (item.getBodyPart() == ItemTemplate.SLOT_L_FINGER) //
-			|| (item.getBodyPart() == ItemTemplate.SLOT_NECK) //
-			|| (item.getBodyPart() == ItemTemplate.SLOT_HAIR) //
-			|| (item.getBodyPart() == ItemTemplate.SLOT_HAIR2) //
-			|| (item.getBodyPart() == ItemTemplate.SLOT_HAIRALL))
+		switch (item.getBodyPart())
 		{
-			return ACCESORY;
+			case R_EAR:
+			case L_EAR:
+			case LR_EAR:
+			case R_FINGER:
+			case L_FINGER:
+			case LR_FINGER:
+			case NECK:
+			case HAIR:
+			case HAIR2:
+			case HAIRALL:
+			{
+				return ACCESORY;
+			}
+			default:
+			{
+				return NONE;
+			}
 		}
-		
-		return NONE;
 	}
 }

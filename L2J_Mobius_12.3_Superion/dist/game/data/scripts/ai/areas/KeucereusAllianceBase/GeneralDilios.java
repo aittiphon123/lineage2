@@ -23,16 +23,15 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Dilios AI
  * @author JIV, Sephiroth, Apocalipce
  */
-public class GeneralDilios extends AbstractNpcAI
+public class GeneralDilios extends Script
 {
 	private static final int GENERAL_ID = 32549;
 	private static final int GUARD_ID = 32619;

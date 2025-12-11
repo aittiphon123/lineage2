@@ -2073,7 +2073,7 @@
 		<coolTime>500</coolTime>
 		<hitTime>500</hitTime>
 	</skill>
-		<skill id="18746" toLevel="1" name="Dragon's Attribute Potion">
+	<skill id="18746" toLevel="1" name="Dragon's Attribute Potion">
 		<!-- For 30 min., Attribute Attack +30, Attribute Resistance +30. The effect remains after death. -->
 		<icon>icon.bm_dragon_posion</icon>
 		<operateType>A2</operateType>

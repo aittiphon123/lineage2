@@ -23,12 +23,12 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.interfaces.IParameterized;
 import org.l2jmobius.gameserver.model.interfaces.ITerritorized;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.model.zone.type.BannedSpawnTerritory;
 import org.l2jmobius.gameserver.model.zone.type.SpawnTerritory;
 
@@ -153,7 +153,7 @@ public class SpawnTemplate implements Cloneable, ITerritorized, IParameterized<S
 	{
 		if (_ai != null)
 		{
-			final Quest script = QuestManager.getInstance().getQuest(_ai);
+			final Quest script = ScriptManager.getInstance().getScript(_ai);
 			if (script != null)
 			{
 				event.accept(script);

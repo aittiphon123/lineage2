@@ -24,8 +24,9 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
+import org.l2jmobius.gameserver.config.custom.DualboxCheckConfig;
 import org.l2jmobius.gameserver.data.HeroSkillTable;
 import org.l2jmobius.gameserver.data.SpawnTable;
 import org.l2jmobius.gameserver.data.xml.NpcData;
@@ -498,7 +499,7 @@ class OlympiadGame
 				
 				player.sendSkillList();
 				
-				if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
+				if (DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 				{
 					AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, player);
 				}
@@ -565,12 +566,12 @@ class OlympiadGame
 		{
 			case NON_CLASSED:
 				_div = 5;
-				_gpreward = Config.OLYMPIAD_NONCLASSED_RITEM_C;
+				_gpreward = OlympiadConfig.OLYMPIAD_NONCLASSED_RITEM_C;
 				classed = "no";
 				break;
 			default:
 				_div = 3;
-				_gpreward = Config.OLYMPIAD_CLASSED_RITEM_C;
+				_gpreward = OlympiadConfig.OLYMPIAD_CLASSED_RITEM_C;
 				classed = "yes";
 				break;
 		}
@@ -589,21 +590,21 @@ class OlympiadGame
 		
 		final int playerOnePoints = playerOneStat.getInt(POINTS);
 		final int playerTwoPoints = playerTwoStat.getInt(POINTS);
-		final int pointDiff = Math.min(Math.min(playerOnePoints, playerTwoPoints) / _div, Config.OLYMPIAD_MAX_POINTS);
+		final int pointDiff = Math.min(Math.min(playerOnePoints, playerTwoPoints) / _div, OlympiadConfig.OLYMPIAD_MAX_POINTS);
 		
 		// Check for if a player defaulted before battle started
 		if (_playerOneDefaulted || _playerTwoDefaulted)
 		{
 			if (_playerOneDefaulted)
 			{
-				final int lostPoints = Math.min(playerOnePoints / 3, Config.OLYMPIAD_MAX_POINTS);
+				final int lostPoints = Math.min(playerOnePoints / 3, OlympiadConfig.OLYMPIAD_MAX_POINTS);
 				playerOneStat.set(POINTS, playerOnePoints - lostPoints);
 				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_LOST_S2_POINTS_IN_THE_GRAND_OLYMPIAD_GAMES);
 				sm.addString(_playerOneName);
 				sm.addInt(lostPoints);
 				broadcastMessage(sm, false);
 				
-				if (Config.OLYMPIAD_LOG_FIGHTS)
+				if (OlympiadConfig.OLYMPIAD_LOG_FIGHTS)
 				{
 					final LogRecord record = new LogRecord(Level.INFO, _playerOneName + " default");
 					record.setParameters(new Object[]
@@ -623,14 +624,14 @@ class OlympiadGame
 			
 			if (_playerTwoDefaulted)
 			{
-				final int lostPoints = Math.min(playerTwoPoints / 3, Config.OLYMPIAD_MAX_POINTS);
+				final int lostPoints = Math.min(playerTwoPoints / 3, OlympiadConfig.OLYMPIAD_MAX_POINTS);
 				playerTwoStat.set(POINTS, playerTwoPoints - lostPoints);
 				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_LOST_S2_POINTS_IN_THE_GRAND_OLYMPIAD_GAMES);
 				sm.addString(_playerTwoName);
 				sm.addInt(lostPoints);
 				broadcastMessage(sm, false);
 				
-				if (Config.OLYMPIAD_LOG_FIGHTS)
+				if (OlympiadConfig.OLYMPIAD_LOG_FIGHTS)
 				{
 					final LogRecord record = new LogRecord(Level.INFO, _playerTwoName + " default");
 					record.setParameters(new Object[]
@@ -660,7 +661,7 @@ class OlympiadGame
 					playerOneStat.set(POINTS, playerOnePoints - pointDiff);
 					playerOneStat.set(COMP_LOST, playerOneLost + 1);
 					
-					if (Config.OLYMPIAD_LOG_FIGHTS)
+					if (OlympiadConfig.OLYMPIAD_LOG_FIGHTS)
 					{
 						final LogRecord record = new LogRecord(Level.INFO, _playerOneName + " crash");
 						record.setParameters(new Object[]
@@ -706,7 +707,7 @@ class OlympiadGame
 					playerTwoStat.set(POINTS, playerTwoPoints - pointDiff);
 					playerTwoStat.set(COMP_LOST, playerTwoLost + 1);
 					
-					if (Config.OLYMPIAD_LOG_FIGHTS)
+					if (OlympiadConfig.OLYMPIAD_LOG_FIGHTS)
 					{
 						final LogRecord record = new LogRecord(Level.INFO, _playerTwoName + " crash");
 						record.setParameters(new Object[]
@@ -755,7 +756,7 @@ class OlympiadGame
 					playerTwoStat.set(POINTS, playerTwoPoints - pointDiff);
 					playerTwoStat.set(COMP_LOST, playerTwoLost + 1);
 					
-					if (Config.OLYMPIAD_LOG_FIGHTS)
+					if (OlympiadConfig.OLYMPIAD_LOG_FIGHTS)
 					{
 						final LogRecord record = new LogRecord(Level.INFO, "both crash");
 						record.setParameters(new Object[]
@@ -846,7 +847,7 @@ class OlympiadGame
 				// Save Fight Result
 				saveResults(_playerOneID, _playerTwoID, _playerOneClass, _playerTwoClass, 1, _startTime, fightTime, (_type == CompetitionType.CLASSED ? 1 : 0));
 				
-				final Item item = _playerOne.getInventory().addItem(ItemProcessType.REWARD, Config.OLYMPIAD_BATTLE_REWARD_ITEM, _gpreward, _playerOne, null);
+				final Item item = _playerOne.getInventory().addItem(ItemProcessType.REWARD, OlympiadConfig.OLYMPIAD_BATTLE_REWARD_ITEM, _gpreward, _playerOne, null);
 				final InventoryUpdate iu = new InventoryUpdate();
 				iu.addModifiedItem(item);
 				_playerOne.sendInventoryUpdate(iu);
@@ -889,7 +890,7 @@ class OlympiadGame
 				// Save Fight Result
 				saveResults(_playerOneID, _playerTwoID, _playerOneClass, _playerTwoClass, 2, _startTime, fightTime, (_type == CompetitionType.CLASSED ? 1 : 0));
 				
-				final Item item = _playerTwo.getInventory().addItem(ItemProcessType.REWARD, Config.OLYMPIAD_BATTLE_REWARD_ITEM, _gpreward, _playerTwo, null);
+				final Item item = _playerTwo.getInventory().addItem(ItemProcessType.REWARD, OlympiadConfig.OLYMPIAD_BATTLE_REWARD_ITEM, _gpreward, _playerTwo, null);
 				final InventoryUpdate iu = new InventoryUpdate();
 				iu.addModifiedItem(item);
 				_playerTwo.sendInventoryUpdate(iu);
@@ -917,8 +918,8 @@ class OlympiadGame
 			
 			_sm = new SystemMessage(SystemMessageId.THERE_IS_NO_VICTOR_THE_MATCH_ENDS_IN_A_TIE);
 			broadcastMessage(_sm, true);
-			final int pointOneDiff = Math.min(playerOnePoints / 5, Config.OLYMPIAD_MAX_POINTS);
-			final int pointTwoDiff = Math.min(playerTwoPoints / 5, Config.OLYMPIAD_MAX_POINTS);
+			final int pointOneDiff = Math.min(playerOnePoints / 5, OlympiadConfig.OLYMPIAD_MAX_POINTS);
+			final int pointTwoDiff = Math.min(playerTwoPoints / 5, OlympiadConfig.OLYMPIAD_MAX_POINTS);
 			playerOneStat.set(POINTS, playerOnePoints - pointOneDiff);
 			playerTwoStat.set(POINTS, playerTwoPoints - pointTwoDiff);
 			playerOneStat.set(COMP_DRAWN, playerOneDrawn + 1);
@@ -936,7 +937,7 @@ class OlympiadGame
 		playerOneStat.set(COMP_DONE, playerOnePlayed + 1);
 		playerTwoStat.set(COMP_DONE, playerTwoPlayed + 1);
 		
-		if (Config.OLYMPIAD_LOG_FIGHTS)
+		if (OlympiadConfig.OLYMPIAD_LOG_FIGHTS)
 		{
 			final LogRecord record = new LogRecord(Level.INFO, winner);
 			record.setParameters(new Object[]

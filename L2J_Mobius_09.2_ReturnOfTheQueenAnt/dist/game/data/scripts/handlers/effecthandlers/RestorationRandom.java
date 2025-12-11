@@ -26,8 +26,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.model.ExtractableProductItem;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -116,7 +116,7 @@ public class RestorationRandom extends AbstractEffect
 				continue;
 			}
 			
-			final long itemCount = (long) (createdItem.getCount() * Config.RATE_EXTRACTABLE);
+			final long itemCount = (long) (createdItem.getCount() * RatesConfig.RATE_EXTRACTABLE);
 			final Item newItem = player.addItem(ItemProcessType.REWARD, createdItem.getId(), itemCount, effector, false);
 			
 			if (createdItem.getMaxEnchant() > 0)

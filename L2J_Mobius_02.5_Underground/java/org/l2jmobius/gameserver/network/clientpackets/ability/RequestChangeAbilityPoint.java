@@ -16,7 +16,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.ability;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.AbilityPointsData;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -56,7 +56,7 @@ public class RequestChangeAbilityPoint extends ClientPacket
 			return;
 		}
 		
-		if (player.getAbilityPoints() >= Config.ABILITY_MAX_POINTS)
+		if (player.getAbilityPoints() >= PlayerConfig.ABILITY_MAX_POINTS)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ACQUIRE_ANY_MORE_ABILITY_POINTS);
 			return;

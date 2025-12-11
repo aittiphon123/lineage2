@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import java.util.Set;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.managers.RankManager;
@@ -208,7 +208,7 @@ public class CharInfo extends ServerPacket
 		buffer.writeByte(_player.getTeam().getId()); // Confirmed
 		buffer.writeInt(_player.getClanCrestLargeId());
 		buffer.writeByte(_player.getNobleLevel()); // Confirmed
-		buffer.writeByte(_player.isLegend() ? 4 : _player.isHero() || (_player.isGM() && Config.GM_HERO_AURA) ? 2 : 0); // 152 - Value for enabled changed to 2? 4 = legend
+		buffer.writeByte(_player.isLegend() ? 4 : _player.isHero() || (_player.isGM() && GeneralConfig.GM_HERO_AURA) ? 2 : 0); // 152 - Value for enabled changed to 2? 4 = legend
 		
 		buffer.writeByte(_player.isFishing()); // Confirmed
 		final ILocational baitLocation = _player.getFishing().getBaitLocation();

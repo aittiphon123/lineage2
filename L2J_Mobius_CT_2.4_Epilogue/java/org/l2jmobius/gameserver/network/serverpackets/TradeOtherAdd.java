@@ -44,7 +44,7 @@ public class TradeOtherAdd extends ServerPacket
 		buffer.writeLong(_item.getCount());
 		buffer.writeShort(_item.getItem().getType2()); // item type2
 		buffer.writeShort(_item.getCustomType1());
-		buffer.writeInt(_item.getItem().getBodyPart()); // rev 415 slot 0006-lr.ear 0008-neck 0030-lr.finger 0040-head 0080-?? 0100-l.hand 0200-gloves 0400-chest 0800-pants 1000-feet 2000-?? 4000-r.hand 8000-r.hand
+		buffer.writeInt(_item.getItem().getBodyPart().getMask()); // rev 415 slot 0006-lr.ear 0008-neck 0030-lr.finger 0040-head 0080-?? 0100-l.hand 0200-gloves 0400-chest 0800-pants 1000-feet 2000-?? 4000-r.hand 8000-r.hand
 		buffer.writeShort(_item.getEnchant()); // enchant level
 		buffer.writeShort(0);
 		buffer.writeShort(_item.getCustomType2());

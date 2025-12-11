@@ -254,7 +254,6 @@
 	<item id="81913" name="No Doubt" additionalName="Event" type="EtcItem">
 		<!-- A symbol of those who go only forward without hesitation. When in inventory, maintains your Vitality level. Available for 7 d. -->
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
@@ -381,7 +380,6 @@
 		<!-- The item is not available. -->
 		<set name="icon" val="icon.etc_ertheia2" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="alldress" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
@@ -394,7 +392,6 @@
 		<!-- The item is not available. -->
 		<set name="icon" val="icon.etc_ertheia2" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="alldress" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
@@ -407,7 +404,6 @@
 		<!-- The item is not available. -->
 		<set name="icon" val="icon.etc_ertheia2" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="alldress" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
@@ -420,7 +416,6 @@
 		<!-- The item is not available. -->
 		<set name="icon" val="icon.etc_ertheia2" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="alldress" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
@@ -433,7 +428,6 @@
 		<!-- The item is not available. -->
 		<set name="icon" val="icon.etc_ertheia2" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="alldress" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
@@ -528,7 +522,6 @@
 		<!-- Changes your appearance to that of a Death Knight. -->
 		<set name="icon" val="icon.etc_ertheia2" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="back" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CLOTH" />
@@ -545,7 +538,6 @@
 		<!-- Changes your appearance to that of a Death Knight. -->
 		<set name="icon" val="icon.etc_ertheia2" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="back" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CLOTH" />
@@ -638,7 +630,6 @@
 	<item id="81939" name="Shiny Star Shard" type="EtcItem">
 		<!-- Can be exchanged for Zodiac Agathion's Book of Growth through the Game Assistant. -->
 		<set name="icon" val="icon.bm_star_agathion_mineral" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_sellable" val="false" />
@@ -670,7 +661,6 @@
 		<!-- Changes the armor appearance. Available only for those who has taken the 1st place in the Conquest rankings. -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="alldress" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -1083,7 +1073,6 @@
 		<!-- Changes gloves' appearance to that of Lindvior armor. Available to characters from the Conquest-winning server. -->
 		<set name="icon" val="icon.honors_light_gloves_opt" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="R" />
@@ -1102,7 +1091,6 @@
 		<!-- Changes boots' appearance to that of Lindvior armor. Available to characters from the Conquest-winning server. -->
 		<set name="icon" val="icon.honors_light_shoes_opt" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="R" />
@@ -1121,7 +1109,6 @@
 		<!-- Changes the appearance of characters from the Conquest-winning server. -->
 		<set name="icon" val="icon.cloak_noblesse2_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="back" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CLOTH" />
@@ -1495,7 +1482,6 @@
 	<item id="81979" name="Usurper's Name Change Coupon" type="EtcItem">
 		<!-- Required for changing a name used in the Conquest. In order to do it, use the Conquest UI before entering a Conquest world. -->
 		<set name="icon" val="icon.collection_unite_rune_lv0" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1508,7 +1494,6 @@
 	<item id="81980" name="Soul Orb" type="EtcItem">
 		<!-- At first glance, looks like an ordinary glass bead. However, if you take a closer look, you will see a soul trapped inside. Listen closely, and you will hear its whisper: 'Here, in the depths of darkness filled with horror and despair, one may acquire special powers, and that will let them rule the world.'. It's time to go to the Conquest. -->
 		<set name="icon" val="icon.collection_unite_rune_lv0" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1521,7 +1506,6 @@
 	<item id="81981" name="Dimensional Chain" type="EtcItem">
 		<!-- A chain that connects our world with the Conquest one. Only the Aden Castle lord can open or close the path between the worlds. -->
 		<set name="icon" val="icon.collection_unite_rune_lv0" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1535,7 +1519,6 @@
 		<!-- Changes the cloak appearance. Available only for those who has taken the 1st place in the Conquest rankings. -->
 		<set name="icon" val="icon.cloak_noblesse2_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="NONE" />
 		<set name="bodypart" val="back" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CLOTH" />

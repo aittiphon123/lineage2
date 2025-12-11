@@ -49,6 +49,7 @@ public class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("AddPcCafePoints", AddPcCafePoints::new);
 		EffectHandler.getInstance().registerHandler("AddSkillBySkill", AddSkillBySkill::new);
 		EffectHandler.getInstance().registerHandler("AddTeleportBookmarkSlot", AddTeleportBookmarkSlot::new);
+		EffectHandler.getInstance().registerHandler("ApplySkillEffects", ApplySkillEffects::new);
 		EffectHandler.getInstance().registerHandler("AreaDamage", AreaDamage::new);
 		EffectHandler.getInstance().registerHandler("AttackAttribute", AttackAttribute::new);
 		EffectHandler.getInstance().registerHandler("AttackAttributeAdd", AttackAttributeAdd::new);

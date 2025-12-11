@@ -19,16 +19,16 @@ package ai.others.MysteriousWizard;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 
-import ai.AbstractNpcAI;
 import quests.Q10751_WindsOfFateEncounters.Q10751_WindsOfFateEncounters;
 
 /**
  * Mysterious Wizard AI.
  * @author Gladicek
  */
-public class MysteriousWizard extends AbstractNpcAI
+public class MysteriousWizard extends Script
 {
 	// Npc
 	private static final int MYSTERIOUS_WIZARD = 33980;

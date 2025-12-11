@@ -20,7 +20,7 @@
  */
 package quests.Q10591_NobleMaterial;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.model.Location;
@@ -28,10 +28,10 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -250,7 +250,7 @@ public class Q10591_NobleMaterial extends Quest
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final PlayerClass classId = player.getBaseTemplate().getPlayerClass();
+		final PlayerClass playerClass = player.getBaseTemplate().getPlayerClass();
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
 		switch (qs.getState())
@@ -276,7 +276,7 @@ public class Q10591_NobleMaterial extends Quest
 						
 						if (qs.isCond(1))
 						{
-							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, classId.getId()) || CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, classId.getId()) || CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, classId.getId()))
+							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, playerClass.getId()) || CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, playerClass.getId()) || CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, playerClass.getId()))
 							{
 								htmltext = "34513-04b.htm";
 							}
@@ -368,7 +368,7 @@ public class Q10591_NobleMaterial extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(2) && LocationUtil.checkIfInRange(Config.ALT_PARTY_RANGE, npc, player, false))
+		if ((qs != null) && qs.isCond(2) && LocationUtil.checkIfInRange(PlayerConfig.ALT_PARTY_RANGE, npc, player, false))
 		{
 			if ((getQuestItemsCount(player, FLAME_ENERGY) < 1000) && (getRandom(100) < 90))
 			{

@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.attendance;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.AttendanceRewardsConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
@@ -47,7 +47,7 @@ public class RequestVipAttendanceCheck extends ClientPacket
 			return;
 		}
 		
-		if (Config.PREMIUM_ONLY_ATTENDANCE_REWARDS && !player.hasPremiumStatus())
+		if (AttendanceRewardsConfig.PREMIUM_ONLY_ATTENDANCE_REWARDS && !player.hasPremiumStatus())
 		{
 			player.sendPacket(SystemMessageId.YOUR_VIP_RANK_IS_TOO_LOW_TO_RECEIVE_THE_REWARD);
 			return;

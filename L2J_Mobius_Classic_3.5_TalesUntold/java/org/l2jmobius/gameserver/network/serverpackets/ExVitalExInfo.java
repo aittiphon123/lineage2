@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -44,7 +44,7 @@ public class ExVitalExInfo extends ServerPacket
 		ServerPackets.EX_VITAL_EX_INFO.writeId(this, buffer);
 		buffer.writeInt((int) (_player.getLimitedSayhaGraceEndTime() / 1000)); // currentmilis / 1000, when limited sayha ends
 		buffer.writeInt((int) (_player.getSayhaGraceSupportEndTime() / 1000)); // currentmilis / 1000, when sayha grace suport ends
-		buffer.writeInt((int) (Config.RATE_LIMITED_SAYHA_GRACE_EXP_MULTIPLIER * 100)); // Limited sayha bonus
+		buffer.writeInt((int) (RatesConfig.RATE_LIMITED_SAYHA_GRACE_EXP_MULTIPLIER * 100)); // Limited sayha bonus
 		buffer.writeInt(0x82); // Limited sayha bonus adena (shown as 130%, actually 30%)
 	}
 }

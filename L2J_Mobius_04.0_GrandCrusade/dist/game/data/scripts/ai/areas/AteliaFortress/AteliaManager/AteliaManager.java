@@ -28,7 +28,8 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -37,13 +38,11 @@ import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * URL https://l2wiki.com/Atelia_Fortress
  * @author hlwrave, Stayway, Mobius
  */
-public class AteliaManager extends AbstractNpcAI
+public class AteliaManager extends Script
 {
 	// Npc Devianne
 	private static final int DEVIANNE = 34089;

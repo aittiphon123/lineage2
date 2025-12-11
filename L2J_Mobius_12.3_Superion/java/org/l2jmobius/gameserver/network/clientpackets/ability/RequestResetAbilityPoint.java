@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.ability;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
 import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -83,13 +83,13 @@ public class RequestResetAbilityPoint extends ClientPacket
 			player.sendMessage("You haven't used your ability points yet!");
 			return;
 		}
-		else if (player.getSp() < Config.ABILITY_POINTS_RESET_SP)
+		else if (player.getSp() < PlayerConfig.ABILITY_POINTS_RESET_SP)
 		{
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SP_FOR_THIS);
 			return;
 		}
 		
-		player.setSp(player.getSp() - Config.ABILITY_POINTS_RESET_SP);
+		player.setSp(player.getSp() - PlayerConfig.ABILITY_POINTS_RESET_SP);
 		for (SkillLearn sk : SkillTreeData.getInstance().getAbilitySkillTree().values())
 		{
 			final Skill skill = player.getKnownSkill(sk.getSkillId());

@@ -19,8 +19,8 @@ package instances.MemoryOfDisaster;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
@@ -40,6 +40,7 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerCallTo
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelChanged;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -54,13 +55,11 @@ import org.l2jmobius.gameserver.network.serverpackets.awakening.ExCallToChangeCl
 import org.l2jmobius.gameserver.taskmanagers.DecayTaskManager;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import instances.AbstractInstance;
-
 /**
  * Memory Of Disaster instance zone.
  * @author Sdw
  */
-public class MemoryOfDisaster extends AbstractInstance
+public class MemoryOfDisaster extends InstanceScript
 {
 	// NPCs
 	private static final int INVISIBLE_NPC = 18919;
@@ -994,7 +993,7 @@ public class MemoryOfDisaster extends AbstractInstance
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLogin(OnPlayerLogin event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}
@@ -1014,7 +1013,7 @@ public class MemoryOfDisaster extends AbstractInstance
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
-		if (Config.DISABLE_TUTORIAL)
+		if (PlayerConfig.DISABLE_TUTORIAL)
 		{
 			return;
 		}

@@ -23,14 +23,13 @@ package ai.areas.DragonValley;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Cave Maiden, Keeper AI.
  * @author proGenitor
  */
-public class CaveMaiden extends AbstractNpcAI
+public class CaveMaiden extends Script
 {
 	// NPCs
 	private static final int CAVEMAIDEN = 20134;

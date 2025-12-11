@@ -20,21 +20,20 @@
  */
 package custom.FakePlayers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.custom.FakePlayersConfig;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * Town Fake Player walkers that receive buffs from Adventurer NPC.
  * @author Mobius
  */
-public class RecieveAdventurerBuffs extends AbstractNpcAI
+public class RecieveAdventurerBuffs extends Script
 {
 	// NPCs
 	private static final int[] ADVENTURERS_GUIDE =
@@ -64,7 +63,7 @@ public class RecieveAdventurerBuffs extends AbstractNpcAI
 	
 	private RecieveAdventurerBuffs()
 	{
-		if (Config.FAKE_PLAYERS_ENABLED)
+		if (FakePlayersConfig.FAKE_PLAYERS_ENABLED)
 		{
 			addSpawnId(FAKE_PLAYER_IDS);
 		}

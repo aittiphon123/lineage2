@@ -25,14 +25,13 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author Mobius
  */
-public class DungeonOfAbyssZone extends AbstractNpcAI
+public class DungeonOfAbyssZone extends Script
 {
 	private static final ZoneType ABYSS_WEST_ZONE_1 = ZoneManager.getInstance().getZoneByName("The West Dungeon of Abyss");
 	private static final ZoneType ABYSS_WEST_ZONE_2 = ZoneManager.getInstance().getZoneByName("The West Dungeon of Abyss 2nd");

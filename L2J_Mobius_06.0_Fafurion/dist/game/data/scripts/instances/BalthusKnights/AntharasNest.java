@@ -24,21 +24,21 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
 import quests.Q10555_ChargeAtAntharas.Q10555_ChargeAtAntharas;
 
 /**
  * Antharas Nest instance zone.
  * @author Kazumi
  */
-public final class AntharasNest extends AbstractInstance
+public final class AntharasNest extends InstanceScript
 {
 	// NPCs
 	private static final int STIG_MACH_FRIEND = 34366;

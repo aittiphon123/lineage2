@@ -22,9 +22,9 @@ package ai.bosses.Zaken;
 
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.time.TimeUtil;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.model.StatSet;
@@ -33,18 +33,17 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.zone.type.BossZone;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.taskmanagers.GameTimeTaskManager;
 
-import ai.AbstractNpcAI;
-
 /**
  * Zaken AI
  */
-public class Zaken extends AbstractNpcAI
+public class Zaken extends Script
 {
 	protected static final Logger LOGGER = Logger.getLogger(Zaken.class.getName());
 	
@@ -847,8 +846,8 @@ public class Zaken extends AbstractNpcAI
 			npc.broadcastPacket(new PlaySound(1, "BS02_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 			GrandBossManager.getInstance().setStatus(ZAKEN, DEAD);
 			
-			final long baseIntervalMillis = Config.ZAKEN_SPAWN_INTERVAL * 3600000;
-			final long randomRangeMillis = Config.ZAKEN_SPAWN_RANDOM * 3600000;
+			final long baseIntervalMillis = GrandBossConfig.ZAKEN_SPAWN_INTERVAL * 3600000;
+			final long randomRangeMillis = GrandBossConfig.ZAKEN_SPAWN_RANDOM * 3600000;
 			final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 			
 			// Next respawn time.

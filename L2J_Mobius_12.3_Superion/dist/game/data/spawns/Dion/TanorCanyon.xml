@@ -7,6 +7,7 @@
 			<npc id="31573" x="48816" y="186240" z="-3480" heading="40000" respawnTime="30sec" /> <!-- Monakan - Fishing Guild -->
 			<npc id="32243" x="36180" y="192030" z="-3744" heading="43260" respawnTime="30sec" /> <!-- Cargo Box -->
 			<npc id="32712" x="48158" y="186843" z="-3480" heading="45055" respawnTime="30sec" /> <!-- Somulitan - Zaken Researcher -->
+			<npc id="30979" x="50693" y="158674" z="368" respawnTime="60sec" /> <!-- Holy Ark of Secrecy 3 -->
 		</group>
 	</spawn>
 </list>

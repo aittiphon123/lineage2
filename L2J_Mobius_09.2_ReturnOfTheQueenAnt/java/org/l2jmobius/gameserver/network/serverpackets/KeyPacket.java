@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 
@@ -49,15 +49,15 @@ public class KeyPacket extends ServerPacket
 			buffer.writeByte(_key[i]); // key
 		}
 		
-		buffer.writeInt(Config.PACKET_ENCRYPTION); // use blowfish encryption
-		buffer.writeInt(Config.SERVER_ID); // server id
+		buffer.writeInt(ServerConfig.PACKET_ENCRYPTION); // use blowfish encryption
+		buffer.writeInt(ServerConfig.SERVER_ID); // server id
 		buffer.writeByte(1);
 		buffer.writeInt(0); // obfuscation key
-		if ((Config.SERVER_LIST_TYPE & 0x1000) == 0x1000)
+		if ((ServerConfig.SERVER_LIST_TYPE & 0x1000) == 0x1000)
 		{
 			buffer.writeByte(4); // Aden
 		}
-		else if ((Config.SERVER_LIST_TYPE & 0x400) == 0x400)
+		else if ((ServerConfig.SERVER_LIST_TYPE & 0x400) == 0x400)
 		{
 			buffer.writeByte(1); // Classic
 		}

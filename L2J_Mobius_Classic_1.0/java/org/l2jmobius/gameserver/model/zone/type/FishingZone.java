@@ -18,8 +18,8 @@ package org.l2jmobius.gameserver.model.zone.type;
 
 import java.lang.ref.WeakReference;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.fishing.Fishing;
@@ -43,7 +43,7 @@ public class FishingZone extends ZoneType
 	{
 		if (creature.isPlayer())
 		{
-			if ((Config.ALLOW_FISHING || creature.isGM()) && !creature.isInsideZone(ZoneId.FISHING))
+			if ((GeneralConfig.ALLOW_FISHING || creature.isGM()) && !creature.isInsideZone(ZoneId.FISHING))
 			{
 				final WeakReference<Player> weakPlayer = new WeakReference<>(creature.asPlayer());
 				ThreadPool.execute(new Runnable()

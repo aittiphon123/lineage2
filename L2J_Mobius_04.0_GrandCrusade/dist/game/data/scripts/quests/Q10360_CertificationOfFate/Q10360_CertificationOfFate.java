@@ -16,7 +16,7 @@
  */
 package quests.Q10360_CertificationOfFate;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
@@ -32,10 +32,10 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelChanged;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPressTutorialMark;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowUsm;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowQuestionMark;
@@ -232,10 +232,10 @@ public class Q10360_CertificationOfFate extends Quest
 					}
 					
 					final PlayerClass newClassId = PlayerClass.getPlayerClass(Integer.parseInt(event.replace("classChange;", "")));
-					final PlayerClass currentClassId = player.getPlayerClass();
-					if (currentClassId.childOf(newClassId) || (qs.getCond() < 8))
+					final PlayerClass currentPlayerClass = player.getPlayerClass();
+					if (currentPlayerClass.childOf(newClassId) || (qs.getCond() < 8))
 					{
-						PunishmentManager.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to cheat the 2nd class transfer!", Config.DEFAULT_PUNISH);
+						PunishmentManager.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to cheat the 2nd class transfer!", GeneralConfig.DEFAULT_PUNISH);
 						return null;
 					}
 					

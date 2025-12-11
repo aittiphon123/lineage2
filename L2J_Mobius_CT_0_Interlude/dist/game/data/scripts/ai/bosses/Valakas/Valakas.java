@@ -19,9 +19,9 @@ package ai.bosses.Valakas;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.time.TimeUtil;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
@@ -34,6 +34,7 @@ import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.MountType;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -45,13 +46,11 @@ import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.network.serverpackets.SpecialCamera;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * Valakas' AI.
  * @author Tryskell
  */
-public class Valakas extends AbstractNpcAI
+public class Valakas extends Script
 {
 	// NPC
 	private static final int VALAKAS = 29028;
@@ -127,7 +126,10 @@ public class Valakas extends AbstractNpcAI
 	
 	private Valakas()
 	{
-		registerMobs(VALAKAS);
+		addAttackId(VALAKAS);
+		addKillId(VALAKAS);
+		addSpawnId(VALAKAS);
+		addSpellFinishedId(VALAKAS);
 		
 		final StatSet info = GrandBossManager.getInstance().getStatSet(VALAKAS);
 		final int status = GrandBossManager.getInstance().getStatus(VALAKAS);
@@ -188,7 +190,7 @@ public class Valakas extends AbstractNpcAI
 				// Start timer to lock entry after 30 minutes
 				if (status == WAITING)
 				{
-					startQuestTimer("beginning", Config.VALAKAS_WAIT_TIME * 60000, _valakas, null);
+					startQuestTimer("beginning", GrandBossConfig.VALAKAS_WAIT_TIME * 60000, _valakas, null);
 				}
 			}
 		}
@@ -327,7 +329,7 @@ public class Valakas extends AbstractNpcAI
 				
 				for (Player insidePlayer : BOSS_ZONE.getPlayersInside())
 				{
-					if (insidePlayer.isHero() && Config.VALAKAS_RECOGNIZE_HERO)
+					if (insidePlayer.isHero() && GrandBossConfig.VALAKAS_RECOGNIZE_HERO)
 					{
 						BOSS_ZONE.broadcastPacket(new ExShowScreenMessage(insidePlayer.getName() + "!!!! You cannot hope to defeat me with your meager strength.", 2, 4000));
 						break;
@@ -457,8 +459,8 @@ public class Valakas extends AbstractNpcAI
 		
 		GrandBossManager.getInstance().setStatus(VALAKAS, DEAD);
 		
-		final long baseIntervalMillis = Config.VALAKAS_SPAWN_INTERVAL * 3600000;
-		final long randomRangeMillis = Config.VALAKAS_SPAWN_RANDOM * 3600000;
+		final long baseIntervalMillis = GrandBossConfig.VALAKAS_SPAWN_INTERVAL * 3600000;
+		final long randomRangeMillis = GrandBossConfig.VALAKAS_SPAWN_RANDOM * 3600000;
 		final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 		
 		// Next respawn time.
@@ -471,11 +473,6 @@ public class Valakas extends AbstractNpcAI
 		final StatSet info = GrandBossManager.getInstance().getStatSet(VALAKAS);
 		info.set("respawn_time", System.currentTimeMillis() + respawnTime);
 		GrandBossManager.getInstance().setStatSet(VALAKAS, info);
-	}
-	
-	@Override
-	public void onAggroRangeEnter(Npc npc, Player player, boolean isSummon)
-	{
 	}
 	
 	@Override

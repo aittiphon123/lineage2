@@ -3,7 +3,6 @@
 	<item id="82100" name="Letter G" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_g_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -14,7 +13,6 @@
 	<item id="82101" name="Number II" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_ii_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -25,7 +23,6 @@
 	<item id="82102" name="Letter W" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_w_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -36,7 +33,6 @@
 	<item id="82103" name="Letter D" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_d_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -47,7 +43,6 @@
 	<item id="82104" name="Letter T" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_t_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -58,7 +53,6 @@
 	<item id="82105" name="Letter O" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_o_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -69,7 +63,6 @@
 	<item id="82106" name="Letter H" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_h_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -80,7 +73,6 @@
 	<item id="82107" name="Letter P" additionalName="Event" type="EtcItem">
 		<!-- A letter that can be obtained while hunting monsters on the continent. If you collect a word from such letters, you'll be able to participate in the event and get useful items. -->
 		<set name="icon" val="icon.etc_alphabet_p_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -134,7 +126,6 @@
 	<item id="82111" name="Conquest Rankings' 1st Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P. Atk., M. Atk., P. Def., M. Def., acquired XP/ SP +5%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -145,7 +136,6 @@
 	<item id="82112" name="Conquest Rankings' 2nd Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P. Atk., M. Atk., P. Def., M. Def., acquired XP/ SP +3%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -156,7 +146,6 @@
 	<item id="82113" name="Conquest Rankings' 3rd Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P. Atk./ M. Atk./ P. Def./ M. Def. +1%, acquired XP/ SP +3%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -167,7 +156,6 @@
 	<item id="82114" name="Conquest Rankings' 4th Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, P./ M. Def. +1%, acquired XP/ SP +3%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -178,7 +166,6 @@
 	<item id="82115" name="Conquest Rankings' 5th Place Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, acquired XP/ SP +3%. -->
 		<set name="icon" val="icon.dethrone_tier_1_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -189,7 +176,6 @@
 	<item id="82116" name="Conqueror Server Rune" additionalName="30-day" type="EtcItem">
 		<!-- When in inventory, acquired XP/ SP +5%. -->
 		<set name="icon" val="icon.dethrone_server_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -238,7 +224,6 @@
 	<item id="82119" name="Proof of Traveling to Conquest World" type="EtcItem">
 		<!-- Proves that you've been to the Conquest world. Disappears automatically after returning to your home world. For special purposes. -->
 		<set name="icon" val="icon.etc_paper_blue_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -644,7 +629,6 @@
 	<item id="82153" name="Common Dice Coupon" additionalName="Event" type="EtcItem">
 		<!-- Required for obtaining Common Dice for the 'Aden Adventure' game. -->
 		<set name="icon" val="icon.etc_lottery_card_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
@@ -679,7 +663,6 @@
 	<item id="82156" name="Invitation from New World" type="EtcItem">
 		<!-- An invitation from Conquest Guide Chloe. Go to the Conquest world and take it to Conquest Guide Entropy in the Town of Conquest. -->
 		<set name="icon" val="icon.etc_letter_envelope_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -691,7 +674,6 @@
 	<item id="82157" name="Conquest Mark" type="EtcItem">
 		<!-- A mark given to you by Conquest Guide Entropy after you gave her the invitation. A proof that you've been to the Conquest world. Take it to Conquest Guide Chloe in your home world. -->
 		<set name="icon" val="icon.etc_permit_card_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -978,7 +960,6 @@
 	<item id="82173" name="Accessory Coupon" type="EtcItem">
 		<!-- Required for creating accessories. -->
 		<set name="icon" val="icon.bm_challenger_wp_trade_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1021,7 +1002,6 @@
 	<item id="82176" name="Invitation from the Conquest world" type="EtcItem">
 		<!-- An invitation from the Conquest Guide Chloe. Go to the Conquest World and give it to the Conquest Guide Entropy. -->
 		<set name="icon" val="icon.etc_letter_envelope_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1031,7 +1011,6 @@
 	<item id="82177" name="Luminous Soul Fragment" type="EtcItem">
 		<!-- Evidence of the destruction ot the Luminous Soul, about which Entropy was talking. Take it to the Conquest Guide Entropy to the Town of Conquest. -->
 		<set name="icon" val="icon.etc_broken_crystal_white_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1042,7 +1021,6 @@
 	<item id="82178" name="Soul Flower Petal" type="EtcItem">
 		<!-- Evidence of the destruction ot the Soul Flower, about which Entropy was talking. Take it to the Conquest Guide Entropy to the Town of Conquest. -->
 		<set name="icon" val="icon.etc_herb_red_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1083,7 +1061,6 @@
 	<item id="82180" name="Festival Fairy's Refreshing Watermelon" additionalName="Event" type="EtcItem">
 		<!-- P. Atk./ M. Atk./ P. Def./ M. Def. +15%, Attribute Attack/ Resistance +100, acquired XP/ SP +5%. The effect remains after death, after switching to a dual class or entering instance zones. Removed when entering the Olympiad or the Ceremony of Chaos. -->
 		<set name="icon" val="Icon.ev_buff_bread" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1094,7 +1071,6 @@
 	<item id="82181" name="Lulu's Fortune Box" additionalName="Lv. 1" type="EtcItem">
 		<!-- A box from the Aden Castle imbued with the power of the Angel of Luck. Double-click to obtain 1 useful item (excluding Lulu's Silver Pack). -->
 		<set name="icon" val="icon.bm_freya_2016_gift_box" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1103,7 +1079,6 @@
 	<item id="82182" name="Lulu's Silver Pack" additionalName="Lv. 2" type="EtcItem">
 		<!-- A box from the Aden Castle imbued with the power of the Angel of Luck. Double-click to obtain 1 useful item (excluding Lulu's Golden Pack). -->
 		<set name="icon" val="icon.bm_silver_lure_box" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1114,7 +1089,6 @@
 	<item id="82183" name="Lulu's Golden Pack" additionalName="Lv. 3" type="EtcItem">
 		<!-- A shining Lulu's golden pack. Double-click to obtain 1 rare item. -->
 		<set name="icon" val="icon.bm_gold_lure_box" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1123,7 +1097,6 @@
 	<item id="82184" name="Santiago's Shining Pack" type="EtcItem">
 		<!-- A box made by Santiago in Heine. Double-click to obtain 1 rare item (excluding Scroll: Enchant Superior Seed Bracelet). -->
 		<set name="icon" val="icon.bm_ensoulbox_soul_of_undead" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1132,7 +1105,6 @@
 	<item id="82185" name="Kaliel's Blessing Pack" type="EtcItem">
 		<!-- Double-click to obtain various items (excluding Augmenting Stone: Kaliel's Bracelet). -->
 		<set name="icon" val="icon.bm_freya_2016_gift_box" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1173,7 +1145,6 @@
 	<item id="82186" name="Kaliel's Bracelet Augmenting Stone" type="EtcItem">
 		<!-- A mineral that has been petrified by some kind of physical or magical damage and dimensional anomalies. Key material for augmenting Kaliel's Greater Bracelet and Kaliel's Bracelet. Double-click on the item or speak to a blacksmith to augment what you need. -->
 		<set name="icon" val="icon.bm_renewal_mineral_kalie_rbracelet" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1200,7 +1171,6 @@
 	<item id="82188" name="Chloe's Support Pack" type="EtcItem">
 		<!-- Double-click to obtain 1 rare item. -->
 		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1265,7 +1235,6 @@
 	<item id="82189" name="Blessed Exalted Heavy Armor Set Box" additionalName="Heavy armor" type="EtcItem">
 		<!-- Contains Exalted heavy armor set. Double-click to obtain Blessed Exalted Heavy Armor Set and 5 types of Blessed Exalted Accessories, Blessed Exalted Circlet, Blessed Exalted Seed Bracelet, Augmenting Stone: Exalted Weapon, Exalted Soul Crystal, Exalted Talisman of Longing, Exalted Sayha's Talisman. Can be transferred within the account before being opened. Note!. Supply Pack cannot be obtained. -->
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1276,7 +1245,6 @@
 	<item id="82190" name="Blessed Exalted Light Armor Set Box" additionalName="Light armor" type="EtcItem">
 		<!-- Contains Exalted light armor set. Double-click to obtain Blessed Exalted Light Armor Set and 5 types of Blessed Exalted Accessories, Blessed Exalted Circlet, Blessed Exalted Seed Bracelet, Augmenting Stone: Exalted Weapon, Exalted Soul Crystal, Exalted Talisman of Longing, Exalted Sayha's Talisman. Can be transferred within the account before being opened. Note!. Supply Pack cannot be obtained. -->
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1287,7 +1255,6 @@
 	<item id="82191" name="Blessed Exalted Robe Set Box" additionalName="Robe" type="EtcItem">
 		<!-- Contains Exalted robe set. Double-click to obtain Blessed Exalted Robe Set and 5 types of Blessed Exalted Accessories, Blessed Exalted Circlet, Blessed Exalted Seed Bracelet, Augmenting Stone: Exalted Weapon, Exalted Soul Crystal, Exalted Talisman of Longing, Exalted Sayha's Talisman. Can be transferred within the account before being opened. Note!. Supply Pack cannot be obtained. -->
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1366,7 +1333,6 @@
 	<item id="82196" name="Chuseok Wish Ticket" additionalName="Event" type="EtcItem">
 		<!-- Can be exchanged for Chuseok gifts by the Full Moon Keeper Moon Child at the event stage in every town during the event. -->
 		<set name="icon" val="icon.ev_2021_thanksgiving_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1425,7 +1391,6 @@
 	<item id="82199" name="Proof of Unity" type="EtcItem">
 		<!-- A proof for Eva's Knight Lionel Hunter from Heine who asked you to kill monsters. Bring it to Lionel Hunter. -->
 		<set name="icon" val="icon.etc_belt_deco_i01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />

@@ -26,17 +26,15 @@ import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
-
-import instances.AbstractInstance;
 
 /**
  * @author RobikBobik, Mobius
  * @NOTE: Party instance retail like work.
- * @TODO: Find what all drops from GOLBERG_TREASURE_CHEST
  * @TODO: Golberg skills
  */
-public class GolbergRoom extends AbstractInstance
+public class GolbergRoom extends InstanceScript
 {
 	// NPCs
 	private static final int SORA = 34091;

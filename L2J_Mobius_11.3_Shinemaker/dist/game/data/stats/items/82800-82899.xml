@@ -309,6 +309,42 @@
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="36489" min="1" max="1" chance="3.23" /> <!-- Antharas Shaper - Lv. 3 -->
+			<item id="36490" min="1" max="1" chance="3.23" /> <!-- Antharas Slasher - Lv. 3 -->
+			<item id="36491" min="1" max="1" chance="3.23" /> <!-- Antharas Thrower - Lv. 3 -->
+			<item id="36492" min="1" max="1" chance="3.23" /> <!-- Antharas Buster - Lv. 3 -->
+			<item id="36493" min="1" max="1" chance="3.23" /> <!-- Antharas Cutter - Lv. 3 -->
+			<item id="36494" min="1" max="1" chance="3.23" /> <!-- Antharas Stormer - Lv. 3 -->
+			<item id="36495" min="1" max="1" chance="3.23" /> <!-- Antharas Fighter - Lv. 3 -->
+			<item id="36496" min="1" max="1" chance="3.23" /> <!-- Antharas Avenger - Lv. 3 -->
+			<item id="36497" min="1" max="1" chance="3.23" /> <!-- Antharas Dual Blunt Weapons - Lv. 3 -->
+			<item id="36498" min="1" max="1" chance="3.23" /> <!-- Antharas Dual Swords - Lv. 3 -->
+			<item id="36499" min="1" max="1" chance="3.23" /> <!-- Valakas Shaper - Lv. 3 -->
+			<item id="36500" min="1" max="1" chance="3.23" /> <!-- Valakas Cutter - Lv. 3 -->
+			<item id="36501" min="1" max="1" chance="3.23" /> <!-- Valakas Slasher - Lv. 3 -->
+			<item id="36502" min="1" max="1" chance="3.23" /> <!-- Valakas Thrower - Lv. 3 -->
+			<item id="36503" min="1" max="1" chance="3.23" /> <!-- Valakas Buster - Lv. 3 -->
+			<item id="36504" min="1" max="1" chance="3.23" /> <!-- Valakas Caster - Lv. 3 -->
+			<item id="36505" min="1" max="1" chance="3.23" /> <!-- Valakas Retributer - Lv. 3 -->
+			<item id="36506" min="1" max="1" chance="3.23" /> <!-- Lindvior Shaper - Lv. 3 -->
+			<item id="36507" min="1" max="1" chance="3.22" /> <!-- Lindvior Thrower - Lv. 3 -->
+			<item id="36508" min="1" max="1" chance="3.22" /> <!-- Lindvior Slasher - Lv. 3 -->
+			<item id="36509" min="1" max="1" chance="3.22" /> <!-- Lindvior Caster - Lv. 3 -->
+			<item id="36510" min="1" max="1" chance="3.22" /> <!-- Lindvior Cutter - Lv. 3 -->
+			<item id="36511" min="1" max="1" chance="3.22" /> <!-- Lindvior Guardian - Lv. 3 -->
+			<item id="36512" min="1" max="1" chance="3.22" /> <!-- Lindvior Dual Daggers - Lv. 3 -->
+			<item id="80084" min="1" max="1" chance="3.22" /> <!-- Fafurion Avenger - Lv. 3 -->
+			<item id="80085" min="1" max="1" chance="3.22" /> <!-- Fafurion Fighter - Lv. 3 -->
+			<item id="80086" min="1" max="1" chance="3.22" /> <!-- Fafurion Stormer - Lv. 3 -->
+			<item id="80087" min="1" max="1" chance="3.22" /> <!-- Fafurion Retributer - Lv. 3 -->
+			<item id="80088" min="1" max="1" chance="3.22" /> <!-- Fafurion Dual Blunt Weapons - Lv. 3 -->
+			<item id="80089" min="1" max="1" chance="3.22" /> <!-- Fafurion Dual Swords - Lv. 3 -->
+			<item id="80318" min="1" max="1" chance="3.22" /> <!-- Fafurion Dual Daggers - Lv. 3 -->
+		</capsuled_items>
 	</item>
 	<item id="82815" name="Memory of Spring" additionalName="Event" type="EtcItem">
 		<!-- A fresh wind blows. First you feel a winter chill, but second after second the wind changes becoming warmer and warmer. Its gentle touch is full of spring promises of sun beams and marvelous blossom. You can hear trees, weary of snow and dreaming of warmth and light, they are swinging their branches slightly and murmuring happily. Ah, welcome Spring! We're waiting for you so long. Double-click to obtain various items. (We wish you luck that lasts for whole your life. Lineage 2) -->
@@ -390,7 +426,6 @@
 	<item id="82818" name="Sweet and Sour and Bitter Herbs" additionalName="Event" type="EtcItem">
 		<!-- Special party item. -->
 		<set name="icon" val="BranchSys2.icon.etc_vampiric_rage_herb_i01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="L" />
 		<set name="material" val="PAPER" />
@@ -445,7 +480,6 @@
 	<item id="82820" name="Craft Coupon: La Vie En Rose's Jewel" type="EtcItem">
 		<!-- Double-click to obtain Greater Jewels Lv. 5 through the craft. -->
 		<set name="icon" val="icon.ev_2021_thanksgiving_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="L" />
 		<set name="material" val="LEATHER" />

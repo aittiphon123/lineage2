@@ -35,10 +35,10 @@ import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
-import org.l2jmobius.commons.util.TraceUtil;
 import org.l2jmobius.gameserver.cache.PaperdollCache;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.TransmogConfig;
 import org.l2jmobius.gameserver.data.xml.AgathionData;
 import org.l2jmobius.gameserver.data.xml.AppearanceItemData;
 import org.l2jmobius.gameserver.data.xml.ArmorSetData;
@@ -54,6 +54,7 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerItemUn
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.appearance.AppearanceStone;
 import org.l2jmobius.gameserver.model.item.appearance.AppearanceType;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemLocation;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.enums.ItemSkillType;
@@ -93,7 +94,7 @@ public abstract class Inventory extends ItemContainer
 	public static final int TEMPEST_STONE_ID = 39592;
 	public static final int ELCYUM_CRYSTAL_ID = 36514;
 	
-	public static final long MAX_ADENA = Config.MAX_ADENA;
+	public static final long MAX_ADENA = PlayerConfig.MAX_ADENA;
 	
 	public static final int PAPERDOLL_UNDER = 0;
 	public static final int PAPERDOLL_HEAD = 1;
@@ -170,7 +171,7 @@ public abstract class Inventory extends ItemContainer
 	// used to quickly check for using of items of special type
 	private int _wearedMask;
 	
-	private int _blockedItemSlotsMask;
+	private long _blockedItemSlotsMask;
 	
 	// Recorder of alterations in inventory
 	private static class ChangeRecorder implements PaperdollListener
@@ -585,9 +586,9 @@ public abstract class Inventory extends ItemContainer
 						}
 						
 						// Active, non offensive, skills start with reuse on equip.
-						if (skill.isActive() && !skill.hasNegativeEffect() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+						if (skill.isActive() && !skill.hasNegativeEffect() && !skill.isTransformation() && (PlayerConfig.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 						{
-							player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
+							player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : PlayerConfig.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
 							updateTimestamp = true;
 						}
 					}
@@ -641,9 +642,9 @@ public abstract class Inventory extends ItemContainer
 							}
 							
 							// Active, non offensive, skills start with reuse on equip.
-							if (!skill.hasNegativeEffect() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+							if (!skill.hasNegativeEffect() && !skill.isTransformation() && (PlayerConfig.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 							{
-								player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
+								player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : PlayerConfig.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
 							}
 							
 							updateTimestamp = true;
@@ -704,9 +705,9 @@ public abstract class Inventory extends ItemContainer
 					}
 					
 					// Active, non offensive, skills start with reuse on equip.
-					if (skill.isActive() && !skill.hasNegativeEffect() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+					if (skill.isActive() && !skill.hasNegativeEffect() && !skill.isTransformation() && (PlayerConfig.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 					{
-						player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
+						player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : PlayerConfig.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
 						updateTimestamp = true;
 					}
 				}
@@ -778,7 +779,7 @@ public abstract class Inventory extends ItemContainer
 				player.sendSkillList();
 			}
 			
-			if ((item.getTemplate().getBodyPart() == ItemTemplate.SLOT_BROOCH_JEWEL) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_BROOCH))
+			if ((item.getTemplate().getBodyPart() == BodyPart.BROOCH_JEWEL) || (item.getTemplate().getBodyPart() == BodyPart.BROOCH))
 			{
 				player.updateActiveBroochJewel();
 			}
@@ -827,9 +828,9 @@ public abstract class Inventory extends ItemContainer
 							}
 							
 							// Active, non offensive, skills start with reuse on equip.
-							if (!itemSkill.hasNegativeEffect() && !itemSkill.isTransformation() && (Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+							if (!itemSkill.hasNegativeEffect() && !itemSkill.isTransformation() && (PlayerConfig.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 							{
-								player.addTimeStamp(itemSkill, itemSkill.getReuseDelay() > 0 ? itemSkill.getReuseDelay() : Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE);
+								player.addTimeStamp(itemSkill, itemSkill.getReuseDelay() > 0 ? itemSkill.getReuseDelay() : PlayerConfig.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE);
 							}
 							
 							updateTimeStamp = true;
@@ -936,7 +937,7 @@ public abstract class Inventory extends ItemContainer
 				player.sendSkillList();
 			}
 			
-			if ((item.getTemplate().getBodyPart() == ItemTemplate.SLOT_BROOCH_JEWEL) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_BROOCH))
+			if ((item.getTemplate().getBodyPart() == BodyPart.BROOCH_JEWEL) || (item.getTemplate().getBodyPart() == BodyPart.BROOCH))
 			{
 				player.updateActiveBroochJewel();
 			}
@@ -961,7 +962,7 @@ public abstract class Inventory extends ItemContainer
 				return;
 			}
 			
-			if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_BRACELET)
+			if (item.getTemplate().getBodyPart() == BodyPart.R_BRACELET)
 			{
 				inventory.unEquipItemInSlot(PAPERDOLL_DECO1);
 				inventory.unEquipItemInSlot(PAPERDOLL_DECO2);
@@ -997,7 +998,7 @@ public abstract class Inventory extends ItemContainer
 				return;
 			}
 			
-			if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_BROOCH)
+			if (item.getTemplate().getBodyPart() == BodyPart.BROOCH)
 			{
 				inventory.unEquipItemInSlot(PAPERDOLL_BROOCH_JEWEL1);
 				inventory.unEquipItemInSlot(PAPERDOLL_BROOCH_JEWEL2);
@@ -1033,7 +1034,7 @@ public abstract class Inventory extends ItemContainer
 				return;
 			}
 			
-			if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_L_BRACELET)
+			if (item.getTemplate().getBodyPart() == BodyPart.L_BRACELET)
 			{
 				inventory.unEquipItemInSlot(PAPERDOLL_AGATHION1);
 				inventory.unEquipItemInSlot(PAPERDOLL_AGATHION2);
@@ -1067,7 +1068,7 @@ public abstract class Inventory extends ItemContainer
 				return;
 			}
 			
-			if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_ARTIFACT_BOOK)
+			if (item.getTemplate().getBodyPart() == BodyPart.ARTIFACT_BOOK)
 			{
 				inventory.unEquipItemInSlot(PAPERDOLL_ARTIFACT1);
 				inventory.unEquipItemInSlot(PAPERDOLL_ARTIFACT2);
@@ -1278,151 +1279,30 @@ public abstract class Inventory extends ItemContainer
 		return false;
 	}
 	
-	public static int getPaperdollIndex(long slot)
+	public static int getPaperdollIndex(BodyPart bodyPart)
 	{
-		if (slot == ItemTemplate.SLOT_UNDERWEAR)
+		if (bodyPart == null)
 		{
-			return PAPERDOLL_UNDER;
-		}
-		else if ((slot == ItemTemplate.SLOT_LR_EAR) || (slot == ItemTemplate.SLOT_R_EAR))
-		{
-			return PAPERDOLL_REAR;
-		}
-		else if (slot == ItemTemplate.SLOT_L_EAR)
-		{
-			return PAPERDOLL_LEAR;
-		}
-		else if (slot == ItemTemplate.SLOT_NECK)
-		{
-			return PAPERDOLL_NECK;
-		}
-		else if ((slot == ItemTemplate.SLOT_LR_FINGER) || (slot == ItemTemplate.SLOT_R_FINGER))
-		{
-			return PAPERDOLL_RFINGER;
-		}
-		else if (slot == ItemTemplate.SLOT_L_FINGER)
-		{
-			return PAPERDOLL_LFINGER;
-		}
-		else if (slot == ItemTemplate.SLOT_HEAD)
-		{
-			return PAPERDOLL_HEAD;
-		}
-		else if ((slot == ItemTemplate.SLOT_R_HAND) || (slot == ItemTemplate.SLOT_LR_HAND))
-		{
-			return PAPERDOLL_RHAND;
-		}
-		else if (slot == ItemTemplate.SLOT_L_HAND)
-		{
-			return PAPERDOLL_LHAND;
-		}
-		else if (slot == ItemTemplate.SLOT_GLOVES)
-		{
-			return PAPERDOLL_GLOVES;
-		}
-		else if ((slot == ItemTemplate.SLOT_CHEST) || (slot == ItemTemplate.SLOT_FULL_ARMOR) || (slot == ItemTemplate.SLOT_ALLDRESS))
-		{
-			return PAPERDOLL_CHEST;
-		}
-		else if (slot == ItemTemplate.SLOT_LEGS)
-		{
-			return PAPERDOLL_LEGS;
-		}
-		else if (slot == ItemTemplate.SLOT_FEET)
-		{
-			return PAPERDOLL_FEET;
-		}
-		else if (slot == ItemTemplate.SLOT_BACK)
-		{
-			return PAPERDOLL_CLOAK;
-		}
-		else if ((slot == ItemTemplate.SLOT_HAIR) || (slot == ItemTemplate.SLOT_HAIRALL))
-		{
-			return PAPERDOLL_HAIR;
-		}
-		else if (slot == ItemTemplate.SLOT_HAIR2)
-		{
-			return PAPERDOLL_HAIR2;
-		}
-		else if (slot == ItemTemplate.SLOT_R_BRACELET)
-		{
-			return PAPERDOLL_RBRACELET;
-		}
-		else if (slot == ItemTemplate.SLOT_L_BRACELET)
-		{
-			return PAPERDOLL_LBRACELET;
-		}
-		else if (slot == ItemTemplate.SLOT_DECO)
-		{
-			return PAPERDOLL_DECO1; // return first we deal with it later
-		}
-		else if (slot == ItemTemplate.SLOT_BELT)
-		{
-			return PAPERDOLL_BELT;
-		}
-		else if (slot == ItemTemplate.SLOT_BROOCH)
-		{
-			return PAPERDOLL_BROOCH;
-		}
-		else if (slot == ItemTemplate.SLOT_BROOCH_JEWEL)
-		{
-			return PAPERDOLL_BROOCH_JEWEL1;
-		}
-		else if (slot == ItemTemplate.SLOT_AGATHION)
-		{
-			return PAPERDOLL_AGATHION1;
-		}
-		else if (slot == ItemTemplate.SLOT_ARTIFACT_BOOK)
-		{
-			return PAPERDOLL_ARTIFACT_BOOK;
-		}
-		else if (slot == ItemTemplate.SLOT_ARTIFACT)
-		{
-			return PAPERDOLL_ARTIFACT1;
+			return -1;
 		}
 		
-		return -1;
+		return bodyPart.getPaperdollSlot();
 	}
 	
 	/**
-	 * Returns the item in the paperdoll Item slot
-	 * @param slot identifier
-	 * @return Item
+	 * Gets the paperdoll item in the specified body part slot.
+	 * @param bodyPart the body part
+	 * @return the paperdoll item, or {@code null} if none is equipped
 	 */
-	public Item getPaperdollItemBySlotId(int slot)
+	public Item getPaperdollItemByBodyPart(BodyPart bodyPart)
 	{
-		final int index = getPaperdollIndex(slot);
+		final int index = getPaperdollIndex(bodyPart);
 		if (index == -1)
 		{
 			return null;
 		}
 		
 		return _paperdoll[index];
-	}
-	
-	/**
-	 * Returns the ID of the item in the paperdoll slot
-	 * @param slot : int designating the slot
-	 * @return int designating the ID of the item
-	 */
-	public int getPaperdollItemId(int slot)
-	{
-		final Item item = _paperdoll[slot];
-		if (item != null)
-		{
-			if (Config.ENABLE_TRANSMOG)
-			{
-				final int transmogId = item.getTransmogId();
-				if (transmogId > 0)
-				{
-					return transmogId;
-				}
-			}
-			
-			return item.getId();
-		}
-		
-		return 0;
 	}
 	
 	/**
@@ -1449,12 +1329,37 @@ public abstract class Inventory extends ItemContainer
 	 * @param slot : int designating the slot
 	 * @return int designating the ID of the item
 	 */
+	public int getPaperdollItemId(int slot)
+	{
+		final Item item = _paperdoll[slot];
+		if (item != null)
+		{
+			if (TransmogConfig.ENABLE_TRANSMOG)
+			{
+				final int transmogId = item.getTransmogId();
+				if (transmogId > 0)
+				{
+					return transmogId;
+				}
+			}
+			
+			return item.getId();
+		}
+		
+		return 0;
+	}
+	
+	/**
+	 * Returns the ID of the item in the paperdoll slot
+	 * @param slot : int designating the slot
+	 * @return int designating the ID of the item
+	 */
 	public int getPaperdollItemDisplayId(int slot)
 	{
 		final Item item = _paperdoll[slot];
 		if (item != null)
 		{
-			if (Config.ENABLE_TRANSMOG)
+			if (TransmogConfig.ENABLE_TRANSMOG)
 			{
 				final int transmogId = item.getTransmogId();
 				if (transmogId > 0)
@@ -1701,187 +1606,18 @@ public abstract class Inventory extends ItemContainer
 		return _wearedMask;
 	}
 	
-	public long getSlotFromItem(Item item)
-	{
-		long slot = -1;
-		final int location = item.getLocationSlot();
-		switch (location)
-		{
-			case PAPERDOLL_UNDER:
-			{
-				slot = ItemTemplate.SLOT_UNDERWEAR;
-				break;
-			}
-			case PAPERDOLL_LEAR:
-			{
-				slot = ItemTemplate.SLOT_L_EAR;
-				break;
-			}
-			case PAPERDOLL_REAR:
-			{
-				slot = ItemTemplate.SLOT_R_EAR;
-				break;
-			}
-			case PAPERDOLL_NECK:
-			{
-				slot = ItemTemplate.SLOT_NECK;
-				break;
-			}
-			case PAPERDOLL_RFINGER:
-			{
-				slot = ItemTemplate.SLOT_R_FINGER;
-				break;
-			}
-			case PAPERDOLL_LFINGER:
-			{
-				slot = ItemTemplate.SLOT_L_FINGER;
-				break;
-			}
-			case PAPERDOLL_HAIR:
-			{
-				slot = ItemTemplate.SLOT_HAIR;
-				break;
-			}
-			case PAPERDOLL_HAIR2:
-			{
-				slot = ItemTemplate.SLOT_HAIR2;
-				break;
-			}
-			case PAPERDOLL_HEAD:
-			{
-				slot = ItemTemplate.SLOT_HEAD;
-				break;
-			}
-			case PAPERDOLL_RHAND:
-			{
-				slot = ItemTemplate.SLOT_R_HAND;
-				break;
-			}
-			case PAPERDOLL_LHAND:
-			{
-				slot = ItemTemplate.SLOT_L_HAND;
-				break;
-			}
-			case PAPERDOLL_GLOVES:
-			{
-				slot = ItemTemplate.SLOT_GLOVES;
-				break;
-			}
-			case PAPERDOLL_CHEST:
-			{
-				slot = item.getTemplate().getBodyPart();
-				break;
-			}
-			case PAPERDOLL_LEGS:
-			{
-				slot = ItemTemplate.SLOT_LEGS;
-				break;
-			}
-			case PAPERDOLL_CLOAK:
-			{
-				slot = ItemTemplate.SLOT_BACK;
-				break;
-			}
-			case PAPERDOLL_FEET:
-			{
-				slot = ItemTemplate.SLOT_FEET;
-				break;
-			}
-			case PAPERDOLL_LBRACELET:
-			{
-				slot = ItemTemplate.SLOT_L_BRACELET;
-				break;
-			}
-			case PAPERDOLL_RBRACELET:
-			{
-				slot = ItemTemplate.SLOT_R_BRACELET;
-				break;
-			}
-			case PAPERDOLL_DECO1:
-			case PAPERDOLL_DECO2:
-			case PAPERDOLL_DECO3:
-			case PAPERDOLL_DECO4:
-			case PAPERDOLL_DECO5:
-			case PAPERDOLL_DECO6:
-			{
-				slot = ItemTemplate.SLOT_DECO;
-				break;
-			}
-			case PAPERDOLL_BELT:
-			{
-				slot = ItemTemplate.SLOT_BELT;
-				break;
-			}
-			case PAPERDOLL_BROOCH:
-			{
-				slot = ItemTemplate.SLOT_BROOCH;
-				break;
-			}
-			case PAPERDOLL_BROOCH_JEWEL1:
-			case PAPERDOLL_BROOCH_JEWEL2:
-			case PAPERDOLL_BROOCH_JEWEL3:
-			case PAPERDOLL_BROOCH_JEWEL4:
-			case PAPERDOLL_BROOCH_JEWEL5:
-			case PAPERDOLL_BROOCH_JEWEL6:
-			{
-				slot = ItemTemplate.SLOT_BROOCH_JEWEL;
-				break;
-			}
-			case PAPERDOLL_AGATHION1:
-			case PAPERDOLL_AGATHION2:
-			case PAPERDOLL_AGATHION3:
-			case PAPERDOLL_AGATHION4:
-			case PAPERDOLL_AGATHION5:
-			{
-				slot = ItemTemplate.SLOT_AGATHION;
-				break;
-			}
-			case PAPERDOLL_ARTIFACT_BOOK:
-			{
-				slot = ItemTemplate.SLOT_ARTIFACT_BOOK;
-				break;
-			}
-			case PAPERDOLL_ARTIFACT1:
-			case PAPERDOLL_ARTIFACT2:
-			case PAPERDOLL_ARTIFACT3:
-			case PAPERDOLL_ARTIFACT4:
-			case PAPERDOLL_ARTIFACT5:
-			case PAPERDOLL_ARTIFACT6:
-			case PAPERDOLL_ARTIFACT7:
-			case PAPERDOLL_ARTIFACT8:
-			case PAPERDOLL_ARTIFACT9:
-			case PAPERDOLL_ARTIFACT10:
-			case PAPERDOLL_ARTIFACT11:
-			case PAPERDOLL_ARTIFACT12:
-			case PAPERDOLL_ARTIFACT13:
-			case PAPERDOLL_ARTIFACT14:
-			case PAPERDOLL_ARTIFACT15:
-			case PAPERDOLL_ARTIFACT16:
-			case PAPERDOLL_ARTIFACT17:
-			case PAPERDOLL_ARTIFACT18:
-			case PAPERDOLL_ARTIFACT19:
-			case PAPERDOLL_ARTIFACT20:
-			case PAPERDOLL_ARTIFACT21:
-			{
-				slot = ItemTemplate.SLOT_ARTIFACT;
-			}
-		}
-		
-		return slot;
-	}
-	
 	/**
 	 * Unequips item in body slot and returns alterations.<br>
-	 * <b>If you do not need return value use {@link Inventory#unEquipItemInBodySlot(long)} instead</b>
-	 * @param slot : int designating the slot of the paperdoll
+	 * <b>If you do not need return value use {@link Inventory#unEquipItemInBodySlot(BodyPart)} instead</b>
+	 * @param bodyPart : the body part enum
 	 * @return List<Item> : List of changes
 	 */
-	public List<Item> unEquipItemInBodySlotAndRecord(long slot)
+	public List<Item> unEquipItemInBodySlotAndRecord(BodyPart bodyPart)
 	{
 		final ChangeRecorder recorder = newRecorder();
 		try
 		{
-			unEquipItemInBodySlot(slot);
+			unEquipItemInBodySlot(bodyPart);
 		}
 		finally
 		{
@@ -1923,124 +1659,19 @@ public abstract class Inventory extends ItemContainer
 	}
 	
 	/**
-	 * Unequips item in slot (i.e. equips with default value)
-	 * @param slot : int designating the slot
+	 * Unequips item in body slot
+	 * @param bodyPart the body part enum
 	 * @return {@link Item} designating the item placed in the slot
 	 */
-	public Item unEquipItemInBodySlot(long slot)
+	public Item unEquipItemInBodySlot(BodyPart bodyPart)
 	{
-		int pdollSlot = -1;
-		if (slot == ItemTemplate.SLOT_L_EAR)
-		{
-			pdollSlot = PAPERDOLL_LEAR;
-		}
-		else if (slot == ItemTemplate.SLOT_R_EAR)
-		{
-			pdollSlot = PAPERDOLL_REAR;
-		}
-		else if (slot == ItemTemplate.SLOT_NECK)
-		{
-			pdollSlot = PAPERDOLL_NECK;
-		}
-		else if (slot == ItemTemplate.SLOT_R_FINGER)
-		{
-			pdollSlot = PAPERDOLL_RFINGER;
-		}
-		else if (slot == ItemTemplate.SLOT_L_FINGER)
-		{
-			pdollSlot = PAPERDOLL_LFINGER;
-		}
-		else if (slot == ItemTemplate.SLOT_HAIR)
-		{
-			pdollSlot = PAPERDOLL_HAIR;
-		}
-		else if (slot == ItemTemplate.SLOT_HAIR2)
-		{
-			pdollSlot = PAPERDOLL_HAIR2;
-		}
-		else if (slot == ItemTemplate.SLOT_HAIRALL)
+		// Special handling for HAIRALL.
+		if (bodyPart == BodyPart.HAIRALL)
 		{
 			setPaperdollItem(PAPERDOLL_HAIR, null);
-			pdollSlot = PAPERDOLL_HAIR;
-		}
-		else if (slot == ItemTemplate.SLOT_HEAD)
-		{
-			pdollSlot = PAPERDOLL_HEAD;
-		}
-		else if ((slot == ItemTemplate.SLOT_R_HAND) || (slot == ItemTemplate.SLOT_LR_HAND))
-		{
-			pdollSlot = PAPERDOLL_RHAND;
-		}
-		else if (slot == ItemTemplate.SLOT_L_HAND)
-		{
-			pdollSlot = PAPERDOLL_LHAND;
-		}
-		else if (slot == ItemTemplate.SLOT_GLOVES)
-		{
-			pdollSlot = PAPERDOLL_GLOVES;
-		}
-		else if ((slot == ItemTemplate.SLOT_CHEST) || (slot == ItemTemplate.SLOT_ALLDRESS) || (slot == ItemTemplate.SLOT_FULL_ARMOR))
-		{
-			pdollSlot = PAPERDOLL_CHEST;
-		}
-		else if (slot == ItemTemplate.SLOT_LEGS)
-		{
-			pdollSlot = PAPERDOLL_LEGS;
-		}
-		else if (slot == ItemTemplate.SLOT_BACK)
-		{
-			pdollSlot = PAPERDOLL_CLOAK;
-		}
-		else if (slot == ItemTemplate.SLOT_FEET)
-		{
-			pdollSlot = PAPERDOLL_FEET;
-		}
-		else if (slot == ItemTemplate.SLOT_UNDERWEAR)
-		{
-			pdollSlot = PAPERDOLL_UNDER;
-		}
-		else if (slot == ItemTemplate.SLOT_L_BRACELET)
-		{
-			pdollSlot = PAPERDOLL_LBRACELET;
-		}
-		else if (slot == ItemTemplate.SLOT_R_BRACELET)
-		{
-			pdollSlot = PAPERDOLL_RBRACELET;
-		}
-		else if (slot == ItemTemplate.SLOT_DECO)
-		{
-			pdollSlot = PAPERDOLL_DECO1;
-		}
-		else if (slot == ItemTemplate.SLOT_BELT)
-		{
-			pdollSlot = PAPERDOLL_BELT;
-		}
-		else if (slot == ItemTemplate.SLOT_BROOCH)
-		{
-			pdollSlot = PAPERDOLL_BROOCH;
-		}
-		else if (slot == ItemTemplate.SLOT_BROOCH_JEWEL)
-		{
-			pdollSlot = PAPERDOLL_BROOCH_JEWEL1;
-		}
-		else if (slot == ItemTemplate.SLOT_AGATHION)
-		{
-			pdollSlot = PAPERDOLL_AGATHION1;
-		}
-		else if (slot == ItemTemplate.SLOT_ARTIFACT_BOOK)
-		{
-			pdollSlot = PAPERDOLL_ARTIFACT_BOOK;
-		}
-		else if (slot == ItemTemplate.SLOT_ARTIFACT)
-		{
-			pdollSlot = PAPERDOLL_ARTIFACT1;
-		}
-		else
-		{
-			LOGGER.info("Unhandled slot type: " + slot);
-			LOGGER.info(TraceUtil.getTraceString(Thread.currentThread().getStackTrace()));
 		}
 		
+		final int pdollSlot = BodyPart.getPaperdollIndex(bodyPart);
 		if (pdollSlot >= 0)
 		{
 			return setPaperdollItem(pdollSlot, null);
@@ -2090,203 +1721,246 @@ public abstract class Inventory extends ItemContainer
 			}
 		}
 		
-		final long targetSlot = item.getTemplate().getBodyPart();
+		final BodyPart bodyPart = item.getTemplate().getBodyPart();
 		
 		// Check if player is using Formal Wear and item isn't Wedding Bouquet.
 		final Item formal = getPaperdollItem(PAPERDOLL_CHEST);
-		if ((item.getId() != 21163) && (formal != null) && (formal.getTemplate().getBodyPart() == ItemTemplate.SLOT_ALLDRESS))
+		if ((item.getId() != 21163 /* Wedding Bouquet */) && (formal != null) && (formal.getTemplate().getBodyPart() == BodyPart.ALLDRESS))
 		{
-			// only chest target can pass this
-			if ((targetSlot == ItemTemplate.SLOT_LR_HAND) || (targetSlot == ItemTemplate.SLOT_L_HAND) || (targetSlot == ItemTemplate.SLOT_R_HAND) || (targetSlot == ItemTemplate.SLOT_LEGS) || (targetSlot == ItemTemplate.SLOT_FEET) || (targetSlot == ItemTemplate.SLOT_GLOVES) || (targetSlot == ItemTemplate.SLOT_HEAD))
+			// Only chest target can pass this.
+			switch (bodyPart)
 			{
-				return;
+				case LR_HAND:
+				case L_HAND:
+				case R_HAND:
+				case LEGS:
+				case FEET:
+				case GLOVES:
+				case HEAD:
+				{
+					return;
+				}
 			}
 		}
 		
-		// handle full armor
-		// formal dress
-		if (targetSlot == ItemTemplate.SLOT_LR_HAND)
+		// Handle special cases.
+		switch (bodyPart)
 		{
-			final Item lh = getPaperdollItem(PAPERDOLL_LHAND);
-			if ((lh != null) && lh.isArmor() && (lh.getArmorItem().getItemType() == ArmorType.SHIELD))
+			case LR_HAND:
 			{
-				setPaperdollItem(PAPERDOLL_LHAND, null);
-			}
-			
-			setPaperdollItem(PAPERDOLL_RHAND, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_L_HAND)
-		{
-			final Item rh = getPaperdollItem(PAPERDOLL_RHAND);
-			if ((rh != null) && (rh.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND) && !((rh.getItemType() == WeaponType.FISHINGROD) && (item.getItemType() == EtcItemType.LURE)))
-			{
-				if (!item.isArmor() || (item.getArmorItem().getItemType() != ArmorType.SIGIL))
+				final Item lh = getPaperdollItem(PAPERDOLL_LHAND);
+				if ((lh != null) && lh.isArmor() && (lh.getArmorItem().getItemType() == ArmorType.SHIELD))
 				{
-					setPaperdollItem(PAPERDOLL_RHAND, null);
+					setPaperdollItem(PAPERDOLL_LHAND, null);
 				}
+				
+				setPaperdollItem(PAPERDOLL_RHAND, item);
+				break;
 			}
-			
-			setPaperdollItem(PAPERDOLL_LHAND, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_R_HAND)
-		{
-			setPaperdollItem(PAPERDOLL_RHAND, item);
-		}
-		else if ((targetSlot == ItemTemplate.SLOT_L_EAR) || (targetSlot == ItemTemplate.SLOT_R_EAR) || (targetSlot == ItemTemplate.SLOT_LR_EAR))
-		{
-			if (_paperdoll[PAPERDOLL_LEAR] == null)
+			case L_HAND:
 			{
-				setPaperdollItem(PAPERDOLL_LEAR, item);
+				final Item rh = getPaperdollItem(PAPERDOLL_RHAND);
+				if ((rh != null) && (rh.getTemplate().getBodyPart() == BodyPart.LR_HAND) && !((rh.getItemType() == WeaponType.FISHINGROD) && (item.getItemType() == EtcItemType.LURE)))
+				{
+					if (!item.isArmor() || (item.getArmorItem().getItemType() != ArmorType.SIGIL))
+					{
+						setPaperdollItem(PAPERDOLL_RHAND, null);
+					}
+				}
+				
+				setPaperdollItem(PAPERDOLL_LHAND, item);
+				break;
 			}
-			else if (_paperdoll[PAPERDOLL_REAR] == null)
+			case R_HAND:
 			{
-				setPaperdollItem(PAPERDOLL_REAR, item);
+				setPaperdollItem(PAPERDOLL_RHAND, item);
+				break;
 			}
-			else
+			case L_EAR:
+			case R_EAR:
+			case LR_EAR:
 			{
-				setPaperdollItem(PAPERDOLL_LEAR, item);
+				if (_paperdoll[PAPERDOLL_LEAR] == null)
+				{
+					setPaperdollItem(PAPERDOLL_LEAR, item);
+				}
+				else if (_paperdoll[PAPERDOLL_REAR] == null)
+				{
+					setPaperdollItem(PAPERDOLL_REAR, item);
+				}
+				else
+				{
+					setPaperdollItem(PAPERDOLL_LEAR, item);
+				}
+				break;
 			}
-		}
-		else if ((targetSlot == ItemTemplate.SLOT_L_FINGER) || (targetSlot == ItemTemplate.SLOT_R_FINGER) || (targetSlot == ItemTemplate.SLOT_LR_FINGER))
-		{
-			if (_paperdoll[PAPERDOLL_LFINGER] == null)
+			case L_FINGER:
+			case R_FINGER:
+			case LR_FINGER:
 			{
-				setPaperdollItem(PAPERDOLL_LFINGER, item);
+				if (_paperdoll[PAPERDOLL_LFINGER] == null)
+				{
+					setPaperdollItem(PAPERDOLL_LFINGER, item);
+				}
+				else if (_paperdoll[PAPERDOLL_RFINGER] == null)
+				{
+					setPaperdollItem(PAPERDOLL_RFINGER, item);
+				}
+				else
+				{
+					setPaperdollItem(PAPERDOLL_LFINGER, item);
+				}
+				break;
 			}
-			else if (_paperdoll[PAPERDOLL_RFINGER] == null)
+			case NECK:
 			{
-				setPaperdollItem(PAPERDOLL_RFINGER, item);
+				setPaperdollItem(PAPERDOLL_NECK, item);
+				break;
 			}
-			else
+			case FULL_ARMOR:
 			{
-				setPaperdollItem(PAPERDOLL_LFINGER, item);
+				setPaperdollItem(PAPERDOLL_LEGS, null);
+				setPaperdollItem(PAPERDOLL_CHEST, item);
+				break;
 			}
-		}
-		else if (targetSlot == ItemTemplate.SLOT_NECK)
-		{
-			setPaperdollItem(PAPERDOLL_NECK, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_FULL_ARMOR)
-		{
-			setPaperdollItem(PAPERDOLL_LEGS, null);
-			setPaperdollItem(PAPERDOLL_CHEST, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_CHEST)
-		{
-			setPaperdollItem(PAPERDOLL_CHEST, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_LEGS)
-		{
-			final Item chest = getPaperdollItem(PAPERDOLL_CHEST);
-			if ((chest != null) && (chest.getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR))
+			case CHEST:
 			{
-				setPaperdollItem(PAPERDOLL_CHEST, null);
+				setPaperdollItem(PAPERDOLL_CHEST, item);
+				break;
 			}
-			
-			setPaperdollItem(PAPERDOLL_LEGS, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_FEET)
-		{
-			setPaperdollItem(PAPERDOLL_FEET, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_GLOVES)
-		{
-			setPaperdollItem(PAPERDOLL_GLOVES, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_HEAD)
-		{
-			setPaperdollItem(PAPERDOLL_HEAD, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_HAIR)
-		{
-			final Item hair = getPaperdollItem(PAPERDOLL_HAIR);
-			if ((hair != null) && (hair.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIRALL))
+			case LEGS:
+			{
+				final Item chest = getPaperdollItem(PAPERDOLL_CHEST);
+				if ((chest != null) && (chest.getTemplate().getBodyPart() == BodyPart.FULL_ARMOR))
+				{
+					setPaperdollItem(PAPERDOLL_CHEST, null);
+				}
+				
+				setPaperdollItem(PAPERDOLL_LEGS, item);
+				break;
+			}
+			case FEET:
+			{
+				setPaperdollItem(PAPERDOLL_FEET, item);
+				break;
+			}
+			case GLOVES:
+			{
+				setPaperdollItem(PAPERDOLL_GLOVES, item);
+				break;
+			}
+			case HEAD:
+			{
+				setPaperdollItem(PAPERDOLL_HEAD, item);
+				break;
+			}
+			case HAIR:
+			{
+				final Item hair = getPaperdollItem(PAPERDOLL_HAIR);
+				if ((hair != null) && (hair.getTemplate().getBodyPart() == BodyPart.HAIRALL))
+				{
+					setPaperdollItem(PAPERDOLL_HAIR2, null);
+				}
+				else
+				{
+					setPaperdollItem(PAPERDOLL_HAIR, null);
+				}
+				
+				setPaperdollItem(PAPERDOLL_HAIR, item);
+				break;
+			}
+			case HAIR2:
+			{
+				final Item hair2 = getPaperdollItem(PAPERDOLL_HAIR);
+				if ((hair2 != null) && (hair2.getTemplate().getBodyPart() == BodyPart.HAIRALL))
+				{
+					setPaperdollItem(PAPERDOLL_HAIR, null);
+				}
+				else
+				{
+					setPaperdollItem(PAPERDOLL_HAIR2, null);
+				}
+				
+				setPaperdollItem(PAPERDOLL_HAIR2, item);
+				break;
+			}
+			case HAIRALL:
 			{
 				setPaperdollItem(PAPERDOLL_HAIR2, null);
+				setPaperdollItem(PAPERDOLL_HAIR, item);
+				break;
 			}
-			else
+			case UNDERWEAR:
 			{
-				setPaperdollItem(PAPERDOLL_HAIR, null);
+				setPaperdollItem(PAPERDOLL_UNDER, item);
+				break;
 			}
-			
-			setPaperdollItem(PAPERDOLL_HAIR, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_HAIR2)
-		{
-			final Item hair2 = getPaperdollItem(PAPERDOLL_HAIR);
-			if ((hair2 != null) && (hair2.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIRALL))
+			case BACK:
 			{
-				setPaperdollItem(PAPERDOLL_HAIR, null);
+				setPaperdollItem(PAPERDOLL_CLOAK, item);
+				break;
 			}
-			else
+			case L_BRACELET:
 			{
-				setPaperdollItem(PAPERDOLL_HAIR2, null);
+				setPaperdollItem(PAPERDOLL_LBRACELET, item);
+				break;
 			}
-			
-			setPaperdollItem(PAPERDOLL_HAIR2, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_HAIRALL)
-		{
-			setPaperdollItem(PAPERDOLL_HAIR2, null);
-			setPaperdollItem(PAPERDOLL_HAIR, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_UNDERWEAR)
-		{
-			setPaperdollItem(PAPERDOLL_UNDER, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_BACK)
-		{
-			setPaperdollItem(PAPERDOLL_CLOAK, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_L_BRACELET)
-		{
-			setPaperdollItem(PAPERDOLL_LBRACELET, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_R_BRACELET)
-		{
-			setPaperdollItem(PAPERDOLL_RBRACELET, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_DECO)
-		{
-			equipTalisman(item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_BELT)
-		{
-			setPaperdollItem(PAPERDOLL_BELT, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_ALLDRESS)
-		{
-			setPaperdollItem(PAPERDOLL_LEGS, null);
-			setPaperdollItem(PAPERDOLL_LHAND, null);
-			setPaperdollItem(PAPERDOLL_RHAND, null);
-			setPaperdollItem(PAPERDOLL_HEAD, null);
-			setPaperdollItem(PAPERDOLL_FEET, null);
-			setPaperdollItem(PAPERDOLL_GLOVES, null);
-			setPaperdollItem(PAPERDOLL_CHEST, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_BROOCH)
-		{
-			setPaperdollItem(PAPERDOLL_BROOCH, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_BROOCH_JEWEL)
-		{
-			equipBroochJewel(item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_AGATHION)
-		{
-			equipAgathion(item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_ARTIFACT_BOOK)
-		{
-			setPaperdollItem(PAPERDOLL_ARTIFACT_BOOK, item);
-		}
-		else if (targetSlot == ItemTemplate.SLOT_ARTIFACT)
-		{
-			equipArtifact(item);
-		}
-		else
-		{
-			LOGGER.warning("Unknown body slot " + targetSlot + " for Item ID: " + item.getId());
+			case R_BRACELET:
+			{
+				setPaperdollItem(PAPERDOLL_RBRACELET, item);
+				break;
+			}
+			case DECO:
+			{
+				equipTalisman(item);
+				break;
+			}
+			case BELT:
+			{
+				setPaperdollItem(PAPERDOLL_BELT, item);
+				break;
+			}
+			case ALLDRESS:
+			{
+				setPaperdollItem(PAPERDOLL_LEGS, null);
+				setPaperdollItem(PAPERDOLL_LHAND, null);
+				setPaperdollItem(PAPERDOLL_RHAND, null);
+				setPaperdollItem(PAPERDOLL_HEAD, null);
+				setPaperdollItem(PAPERDOLL_FEET, null);
+				setPaperdollItem(PAPERDOLL_GLOVES, null);
+				setPaperdollItem(PAPERDOLL_CHEST, item);
+				break;
+			}
+			case BROOCH:
+			{
+				setPaperdollItem(PAPERDOLL_BROOCH, item);
+				break;
+			}
+			case BROOCH_JEWEL:
+			{
+				equipBroochJewel(item);
+				break;
+			}
+			case AGATHION:
+			{
+				equipAgathion(item);
+				break;
+			}
+			case ARTIFACT_BOOK:
+			{
+				setPaperdollItem(PAPERDOLL_ARTIFACT_BOOK, item);
+				break;
+			}
+			case ARTIFACT:
+			{
+				equipArtifact(item);
+				break;
+			}
+			default:
+			{
+				LOGGER.warning("Unknown body slot " + bodyPart + " for Item ID: " + item.getId());
+				break;
+			}
 		}
 	}
 	
@@ -2478,7 +2152,7 @@ public abstract class Inventory extends ItemContainer
 		}
 		
 		final int locationSlot = item.getLocationSlot();
-		if ((locationSlot >= PAPERDOLL_ARTIFACT1) && (locationSlot <= PAPERDOLL_ARTIFACT21) && (getPaperdollItemBySlotId(locationSlot) == null))
+		if ((locationSlot >= PAPERDOLL_ARTIFACT1) && (locationSlot <= PAPERDOLL_ARTIFACT21) && (BodyPart.fromPaperdollSlot(locationSlot) == null))
 		{
 			setPaperdollItem(locationSlot, item);
 			item.setItemLocation(ItemLocation.PAPERDOLL, locationSlot);
@@ -2668,37 +2342,38 @@ public abstract class Inventory extends ItemContainer
 	
 	/**
 	 * Blocks the given item slot from being equipped.
-	 * @param itemSlot mask from Item
+	 * @param bodyPart from Item
 	 */
-	public void blockItemSlot(long itemSlot)
+	public void blockItemSlot(BodyPart bodyPart)
 	{
-		_blockedItemSlotsMask |= itemSlot;
+		_blockedItemSlotsMask |= bodyPart.getMask();
 	}
 	
 	/**
 	 * Unblocks the given item slot so it can be equipped.
-	 * @param itemSlot mask from Item
+	 * @param bodyPart from Item
 	 */
-	public void unblockItemSlot(long itemSlot)
+	public void unblockItemSlot(BodyPart bodyPart)
 	{
-		_blockedItemSlotsMask &= ~itemSlot;
+		_blockedItemSlotsMask &= ~bodyPart.getMask();
 	}
 	
 	/**
-	 * @param itemSlot mask from Item
+	 * @param bodyPart from Item
 	 * @return if the given item slot is blocked or not.
 	 */
-	public boolean isItemSlotBlocked(long itemSlot)
+	public boolean isItemSlotBlocked(BodyPart bodyPart)
 	{
-		return (_blockedItemSlotsMask & itemSlot) == itemSlot;
+		final long bodyPartValue = bodyPart.getMask();
+		return (_blockedItemSlotsMask & bodyPartValue) == bodyPartValue;
 	}
 	
 	/**
-	 * @param itemSlotsMask use 0 to unset all blocked item slots.
+	 * @param bodyPart from Item. Use BodyPart.NONE to unset all blocked item slots.
 	 */
-	public void setBlockedItemSlotsMask(int itemSlotsMask)
+	public void setBlockedItemSlotsMask(BodyPart bodyPart)
 	{
-		_blockedItemSlotsMask = itemSlotsMask;
+		_blockedItemSlotsMask = bodyPart.getMask();
 	}
 	
 	/**

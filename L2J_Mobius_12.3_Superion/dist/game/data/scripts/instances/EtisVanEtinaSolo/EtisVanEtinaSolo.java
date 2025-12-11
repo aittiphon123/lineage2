@@ -25,6 +25,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -34,8 +35,6 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import instances.AbstractInstance;
-
 /**
  * @author CostyKiller
  * @URL: https://l2wiki.com/Fall_of_Etina_(Solo)
@@ -43,7 +42,7 @@ import instances.AbstractInstance;
  * @TODO: Add helper npcs skills
  * @TODO: Add instance buff Elikia Emblem
  */
-public class EtisVanEtinaSolo extends AbstractInstance
+public class EtisVanEtinaSolo extends InstanceScript
 {
 	// NPC
 	private static final int LEONA_OUTLET = 34426;

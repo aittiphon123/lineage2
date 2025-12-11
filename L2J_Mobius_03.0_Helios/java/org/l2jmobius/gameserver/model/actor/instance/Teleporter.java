@@ -31,7 +31,7 @@ import org.l2jmobius.gameserver.model.actor.enums.creature.InstanceType;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportType;
 import org.l2jmobius.gameserver.model.actor.holders.npc.TeleporterQuestRecommendationHolder;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.teleporter.TeleportHolder;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;

@@ -62,9 +62,9 @@ public class Folk extends Npc
 	 * Displays Skill Tree for a given player, npc and class Id.
 	 * @param player the active character.
 	 * @param npc the last folk.
-	 * @param classId player's active class id.
+	 * @param playerClass the player's active class identifier as a {@link PlayerClass} enum value
 	 */
-	public static void showSkillList(Player player, Npc npc, PlayerClass classId)
+	public static void showSkillList(Player player, Npc npc, PlayerClass playerClass)
 	{
 		final int npcId = npc.getTemplate().getId();
 		if (npcId == 32611) // Tolonis (Officer)
@@ -92,10 +92,10 @@ public class Folk extends Npc
 		}
 		
 		// Normal skills, No LearnedByFS, no AutoGet skills.
-		final Collection<SkillLearn> skills = SkillTreeData.getInstance().getAvailableSkills(player, classId, false, false);
+		final Collection<SkillLearn> skills = SkillTreeData.getInstance().getAvailableSkills(player, playerClass, false, false);
 		if (skills.isEmpty())
 		{
-			final Map<Long, SkillLearn> skillTree = SkillTreeData.getInstance().getCompleteClassSkillTree(classId);
+			final Map<Long, SkillLearn> skillTree = SkillTreeData.getInstance().getCompleteClassSkillTree(playerClass);
 			final int minLevel = SkillTreeData.getInstance().getMinLevelForNewSkill(player, skillTree);
 			if (minLevel > 0)
 			{

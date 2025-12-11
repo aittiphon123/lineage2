@@ -82,6 +82,15 @@
 			<npc id="20205" x="2107" y="176732" z="-3368" respawnTime="24sec" /> <!-- Dire Wolf -->
 			<npc id="20205" x="1373" y="179866" z="-3704" heading="53381" respawnTime="24sec" /> <!-- Dire Wolf -->
 			<npc id="20205" x="3673" y="177675" z="-3576" heading="4181" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="39454" y="133128" z="-3432" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="39253" y="133484" z="-3424" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="33440" y="138010" z="-3152" heading="15248" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="33869" y="136326" z="-3112" heading="59437" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="33013" y="142774" z="-3248" heading="50640" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="34011" y="134255" z="-3128" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="34615" y="134611" z="-3064" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="36413" y="137032" z="-3296" heading="8902" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="34716" y="134789" z="-3080" respawnTime="24sec" /> <!-- Dire Wolf -->
 			<npc id="20206" x="422" y="168650" z="-3568" respawnTime="29sec" /> <!-- Cardiff Werewolf -->
 			<npc id="20206" x="1127" y="168472" z="-3624" respawnTime="29sec" /> <!-- Cardiff Werewolf -->
 			<npc id="20206" x="1428" y="167938" z="-3624" respawnTime="29sec" /> <!-- Cardiff Werewolf -->

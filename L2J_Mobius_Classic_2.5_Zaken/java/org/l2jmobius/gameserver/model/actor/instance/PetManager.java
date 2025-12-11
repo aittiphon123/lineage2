@@ -24,9 +24,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.logging.Level;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.PetDataTable;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
@@ -234,7 +234,7 @@ public class PetManager extends Merchant
 		final Pet currentPet = pet.asPet();
 		if (currentPet.isAlikeDead())
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to use death pet exploit!", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to use death pet exploit!", GeneralConfig.DEFAULT_PUNISH);
 			return false;
 		}
 		

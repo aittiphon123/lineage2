@@ -25,9 +25,9 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.ConquestConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.model.Location;
@@ -185,7 +185,7 @@ public class ConquestZone extends ZoneType
 			app.setVisibleTitle("");
 			app.setVisibleClanData(0, 0, 0, 0, 0);
 			
-			if (Config.CONQUEST_PVP_ZONE)
+			if (ConquestConfig.CONQUEST_PVP_ZONE)
 			{
 				player.setInsideZone(ZoneId.PVP, true);
 			}
@@ -239,7 +239,7 @@ public class ConquestZone extends ZoneType
 			app.setVisibleTitle(null);
 			app.setVisibleClanData(-1, -1, -1, -1, -1);
 			
-			if (Config.CONQUEST_PVP_ZONE)
+			if (ConquestConfig.CONQUEST_PVP_ZONE)
 			{
 				player.setInsideZone(ZoneId.PVP, false);
 			}
@@ -286,7 +286,7 @@ public class ConquestZone extends ZoneType
 			appearance.setVisibleTitle(null);
 			appearance.setVisibleClanData(-1, -1, -1, -1, -1);
 			
-			if (Config.CONQUEST_PVP_ZONE)
+			if (ConquestConfig.CONQUEST_PVP_ZONE)
 			{
 				player.setInsideZone(ZoneId.PVP, false);
 			}

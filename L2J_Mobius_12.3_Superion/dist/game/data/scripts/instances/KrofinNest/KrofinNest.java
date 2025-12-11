@@ -30,6 +30,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -38,14 +39,12 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import instances.AbstractInstance;
-
 /**
  * @author CostyKiller, NasSeKa, Tanatos
  * @URL https://www.youtube.com/watch?v=0qM7YZ27T-Q
  * @URL https://l2central.info/main/locations/instance_zones/party/krofin_nest/?lang=ru
  */
-public class KrofinNest extends AbstractInstance
+public class KrofinNest extends InstanceScript
 {
 	// NPCs
 	private static final int BENUSTA = 34542;

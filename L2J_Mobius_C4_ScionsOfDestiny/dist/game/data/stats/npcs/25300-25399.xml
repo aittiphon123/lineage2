@@ -997,8 +997,6 @@
 				<group chance="85.3994">
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (Grade A) -->
 				</group>
-				<group chance="50">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -1123,10 +1121,6 @@
 					<item id="6570" min="1" max="1" chance="18.5694" /> <!-- Blessed Scroll: Enchant Armor (Grade A) -->
 					<item id="6578" min="1" max="1" chance="7.42782" /> <!-- Blessed Scroll: Enchant Armor (Grade S) -->
 				</group>
-				<group chance="50">
-				</group>
-				<group chance="100">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -1249,10 +1243,6 @@
 					<item id="5529" min="9" max="27" chance="14.5291" /> <!-- Dragon Slayer Edge -->
 					<item id="730" min="1" max="3" chance="77.2327" /> <!-- Scroll: Enchant Armor (Grade A) -->
 					<item id="6578" min="1" max="1" chance="8.23823" /> <!-- Blessed Scroll: Enchant Armor (Grade S) -->
-				</group>
-				<group chance="75">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>
@@ -1641,8 +1631,6 @@
 					<item id="4615" min="1" max="1" chance="34.2669" /> <!-- Greater Dye of Constitution (Con+4 Str-4) -->
 					<item id="6571" min="1" max="1" chance="0.70974" /> <!-- Blessed Scroll: Enchant Weapon (Grade B) -->
 				</group>
-				<group chance="25">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -1701,10 +1689,6 @@
 					<item id="5538" min="3" max="9" chance="45.2368" /> <!-- Dragon Grinder Edge -->
 					<item id="6577" min="1" max="1" chance="0.42766" /> <!-- Blessed Scroll: Enchant Weapon (Grade S) -->
 					<item id="6578" min="1" max="1" chance="2.85055" /> <!-- Blessed Scroll: Enchant Armor (Grade S) -->
-				</group>
-				<group chance="75">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>

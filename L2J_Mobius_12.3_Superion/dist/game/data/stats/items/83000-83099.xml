@@ -168,7 +168,6 @@
 	<item id="83004" name="Shining Relic Summon Coupon - 11 times" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning a relic lost in the Aden continent. To summon a relic, choose the summoning material in the Summon tab of the Relic UI. Double-click to summon 11 No-grade, D-grade, C-grade or B-grade relics. -->
 		<set name="icon" val="icon.bless_relics_summon_11_ticket_lv1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -180,7 +179,6 @@
 	<item id="83005" name="Shining Relic Summon Coupon - 1 time" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning a relic lost in the Aden continent. To summon a relic, choose the summoning material in the Summon tab of the Relic UI. Double-click to summon 1 No-grade, D-grade, C-grade or B-grade relic. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -192,7 +190,6 @@
 	<item id="83006" name="Relic Summon Coupon - 11 times" type="EtcItem">
 		<!-- A coupon that can be used for summoning a relic lost in the Aden continent. To summon a relic, choose the summoning material in the Summon tab of the Relic UI. Double-click to summon 11 No-grade, D-grade or C-grade relics. -->
 		<set name="icon" val="icon.relics_summon_11_ticket_lv1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -204,7 +201,6 @@
 	<item id="83007" name="Relic Summon Coupon - 1 time" type="EtcItem">
 		<!-- A coupon that can be used for summoning a relic lost in the Aden continent. To summon a relic, choose the summoning material in the Summon tab of the Relic UI. Double-click to summon 1 No-grade, D-grade or C-grade relic. -->
 		<set name="icon" val="icon.relics_summon_1_ticket_lv1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -216,7 +212,6 @@
 	<item id="83008" name="C-grade Relic Ticket - 1 time" type="EtcItem">
 		<!-- A coupon that can be used for summoning a relic lost in the Aden continent. To summon a relic, choose the summoning material in the Summon tab of the Relic UI. Double-click to summon 1 D-grade or C-grade relic. -->
 		<set name="icon" val="icon.relics_summon_1_ticket_lv3" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -228,7 +223,6 @@
 	<item id="83009" name="B-grade Relic Ticket - 1 time" type="EtcItem">
 		<!-- A coupon that can be used for summoning a relic lost in the Aden continent. To summon a relic, choose the summoning material in the Summon tab of the Relic UI. Double-click to summon 1 C-grade or B-grade relic. -->
 		<set name="icon" val="icon.relics_summon_1_ticket_lv4" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -240,7 +234,6 @@
 	<item id="83010" name="A-grade Relic Ticket - 1 time" type="EtcItem">
 		<!-- A coupon that can be used for summoning a relic lost in the Aden continent. To summon a relic, choose the summoning material in the Summon tab of the Relic UI. Double-click to summon 1 B-grade or A-grade relic. -->
 		<set name="icon" val="icon.relics_summon_1_ticket_lv5" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -252,7 +245,6 @@
 	<item id="83011" name="B-grade Relic Shard" type="EtcItem">
 		<!-- A shard that remained after a failed compounding of C-grade relics. Can be used if you have up to 19 C-grade points. When used, grants a C-grade point. -->
 		<set name="icon" val="icon.relics_confirme_summon_ticket_lv4" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
 		<set name="is_tradable" val="false" />
@@ -263,7 +255,6 @@
 	<item id="83012" name="A-grade Relic Shard" type="EtcItem">
 		<!-- A shard that remained after a failed compounding of B-grade relics. Can be used if you have up to 19 B-grade points. When used, grants a B-grade point. -->
 		<set name="icon" val="icon.relics_confirme_summon_ticket_lv5" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
 		<set name="is_tradable" val="false" />
@@ -274,7 +265,6 @@
 	<item id="83013" name="Coatl's Essence" type="EtcItem">
 		<!-- Can be obtained after defeating Coatl. Add to a collection to boost your stats. -->
 		<set name="icon" val="icon.etc_hard_fossil_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
 		<set name="is_sellable" val="false" />
@@ -424,7 +414,6 @@
 	<item id="83021" name="Test item Relic C_A - 11 times" type="EtcItem">
 		<!-- Double-click to obtain 11 relics of grades from C to A. Test. -->
 		<set name="icon" val="icon.xmas_present_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -485,7 +474,6 @@
 	<item id="83024" name="Shining Soul Crystal Craft Book" type="EtcItem">
 		<!-- Can be used for crafting Masia's Soul Crystal - Lv. 1, Pa'agrio's Soul Crystal - Lv. 1, Eva's Soul Crystal - Lv. 1 and Swift Growth Cookie. -->
 		<set name="icon" val="icon.etc_roll_of_paper_red_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
 		<set name="is_sellable" val="false" />
@@ -509,7 +497,6 @@
 	<item id="83026" name="Deceased Parme's Things" type="EtcItem">
 		<!-- Parme's trunk. Fioren from Parnassus has asked to retrieve it. -->
 		<set name="icon" val="icon.etc_grave_goods_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -523,7 +510,6 @@
 	<item id="83027" name="Summoning Sphere" type="EtcItem">
 		<!-- According to rumors, can be used for summoning Daimon the White-eyed. To do it, put it on Daimon's Altar. -->
 		<set name="icon" val="icon.etc_crystal_ball_gold_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -536,7 +522,6 @@
 	<item id="83028" name="Bloodstained Dagger" type="EtcItem">
 		<!-- A weapon that was used to kill Benfel. -->
 		<set name="icon" val="icon.weapon_crystal_dagger_i01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -549,7 +534,6 @@
 	<item id="83029" name="Spirit's Story" type="EtcItem">
 		<!-- A paper piece with a story of an unknown young boy's evil spirit. -->
 		<set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -562,7 +546,6 @@
 	<item id="83030" name="Spirit's Story" type="EtcItem">
 		<!-- A paper piece with a story of an unknown Dwarf's evil spirit. -->
 		<set name="icon" val="icon.etc_piece_of_paper_black_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -575,7 +558,6 @@
 	<item id="83031" name="Spirit's Story" type="EtcItem">
 		<!-- A paper piece with a story of an unknown woman's evil spirit. -->
 		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -588,7 +570,6 @@
 	<item id="83032" name="Saintess' Blood" type="EtcItem">
 		<!-- Blood imbued with great powers. Sprinkle it on the Altar of Evil to summon Ramiya's Familiar Spirit. -->
 		<set name="icon" val="icon.etc_dragons_blood_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -601,7 +582,6 @@
 	<item id="83033" name="Saintess' Blood" type="EtcItem">
 		<!-- Blood imbued with great powers. Sprinkle it on the Altar of Saints to summon unholy creatures. -->
 		<set name="icon" val="icon.etc_dragons_blood_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -614,7 +594,6 @@
 	<item id="83034" name="Yellow Spring Water Bottle" type="EtcItem">
 		<!-- Used for making Special Beer. -->
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i07" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -627,7 +606,6 @@
 	<item id="83035" name="Red Spring Water Bottle" type="EtcItem">
 		<!-- Used for making Special Beer. -->
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i11" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -640,7 +618,6 @@
 	<item id="83036" name="Green Spring Water Bottle" type="EtcItem">
 		<!-- Used for making Special Beer. -->
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i02" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -653,7 +630,6 @@
 	<item id="83037" name="Special Beer" type="EtcItem">
 		<!-- A special beverage made of the Hot Springs' water. -->
 		<set name="icon" val="icon.bm_honey_beer" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -666,7 +642,6 @@
 	<item id="83038" name="Beer Fee" type="EtcItem">
 		<!-- Money collected for delivering Special Beer to Drunkard Kafka. -->
 		<set name="icon" val="icon.etc_coins_gold_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -679,7 +654,6 @@
 	<item id="83039" name="Jinia's Special Hammer" type="Weapon">
 		<!-- A weapon lent by Jinia. Can be used for breaking Ice Statues in the Frozen Labyrinth. -->
 		<set name="icon" val="icon.weapon_bbyong_hammer_a_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
 		<set name="immediate_effect" val="true" />
@@ -877,7 +851,6 @@
 	<item id="83047" name="Stolen Cargo" type="EtcItem">
 		<!-- Cargo stolen in the Neutral Zone, but retrieved since then. -->
 		<set name="icon" val="icon.etc_pouch_yellow_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -891,7 +864,6 @@
 	<item id="83048" name="Hekaton's Necklace" type="EtcItem">
 		<!-- A trophy for slaying Ketra Hero Hekaton. -->
 		<set name="icon" val="icon.etc_ketra_friendship_5_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -904,7 +876,6 @@
 	<item id="83049" name="Horus' Necklace" type="EtcItem">
 		<!-- A trophy for slaying Varka Chief Horus. -->
 		<set name="icon" val="icon.etc_barka_friendship_5_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -969,7 +940,6 @@
 	<item id="83051" name="Evolution Points" type="EtcItem">
 		<!-- Evolution points are given for destroying any homunculus. -->
 		<set name="icon" val="icon.homun_evolution_point" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
@@ -1289,7 +1259,6 @@
 	<item id="83066" name="Sleep Cannonball" type="EtcItem">
 		<!-- A projectile for the Sleep Cannon required for sedating Beast Ravagers. You can get additional Sleep Cannonballs for killing monsters at the Beast Farm. -->
 		<set name="icon" val="icon.etc_medicine_of_growth_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1302,7 +1271,6 @@
 	<item id="83067" name="Karion's Skull" type="EtcItem">
 		<!-- A skull of Antharas' Watcher Karion obtained for killing Bizarre Worm Velask in the Dragon Valley - Watcher's Tomb. -->
 		<set name="icon" val="icon.etc_skull_red_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1316,7 +1284,6 @@
 	<item id="83068" name="Undead's Bones" type="EtcItem">
 		<!-- Bones of the undead collected in the Dragon Valley. -->
 		<set name="icon" val="icon.item_normal05" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1329,7 +1296,6 @@
 	<item id="83069" name="Evil Soul's Core" type="EtcItem">
 		<!-- A reward obtained for killing Schnabel Sergeant, Henker Sergeant or Wailing Zombie in the Execution Grounds. They say, each lost core weakens the Undead. -->
 		<set name="icon" val="icon.etc_evil_soul_core_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1343,7 +1309,6 @@
 	<item id="83070" name="Proof of Glory" type="EtcItem">
 		<!-- A proof of killing monsters, collected for Eva's Knight Lionel Hunter from Heine. Take it to Lionel Hunter. -->
 		<set name="icon" val="icon.etc_belt_deco_i02" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1357,46 +1322,46 @@
 	<item id="83071" name="20th Anniversary Shining Relic Summon Coupon - 11-time" additionalName="Event" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning a relic. Double-click to obtain 1 relic of No-grade/ D-grade/ C-grade/ B-grade. -->
 		<set name="icon" val="icon.bless_relics_summon_11_ticket_lv1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83072" name="20th Anniversary D-grade Relic Summon Coupon - 1-time" additionalName="Event" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning the 20th anniversary relic. Double-click to obtain 1 D-grade relic. You cannot obtain a relic from the Shield of the Kingdom update. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv2" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83073" name="20th Anniversary C-grade Relic Summon Coupon - 1-time" additionalName="Event" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning the 20th anniversary relic. Double-click to obtain 1 C-grade relic. You cannot obtain a relic from the Shield of the Kingdom update. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv3" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83074" name="20th Anniversary B-grade Relic Summon Coupon - 1-time" additionalName="Event" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning the 20th anniversary relic. Double-click to obtain 1 B-grade relic. You cannot obtain a relic from the Shield of the Kingdom update. -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv4" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83075" name="Einhasad's Shining Pack" type="EtcItem">
 		<!-- Double-click to obtain 1 rare item. -->
@@ -1474,7 +1439,6 @@
 	<item id="83077" name="Rose Heart" additionalName="Event" type="EtcItem">
 		<!-- Imbues the Festive Hammer with power. Required for using the 'Heart Attack' skill. -->
 		<set name="icon" val="icon.ev_2018_xmas_heart" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1486,7 +1450,6 @@
 	<item id="83078" name="20th Anniversary Rose" additionalName="Event" type="EtcItem">
 		<!-- A rose blooming in the Garden of Genesis. Its enticing red color is a treat for the eye as well as the heart. <How to use>. Can be exchanged for various items at the Crimson Rose Store through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_red_rose_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1510,7 +1473,6 @@
 	<item id="83080" name="Heart Shard 1" additionalName="Event" type="EtcItem">
 		<!-- Collect all 9 of the Heart Fragments to get Enhanced Rune Stone. <How to use>. Exchange through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_heart_i01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1521,7 +1483,6 @@
 	<item id="83081" name="Heart Shard 2" additionalName="Event" type="EtcItem">
 		<!-- Collect all 9 of the Heart Fragments to get Enhanced Rune Stone. <How to use>. Exchange through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_heart_i02" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1532,7 +1493,6 @@
 	<item id="83082" name="Heart Shard 3" additionalName="Event" type="EtcItem">
 		<!-- Collect all 9 of the Heart Fragments to get Enhanced Rune Stone. <How to use>. Exchange through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_heart_i03" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1543,7 +1503,6 @@
 	<item id="83083" name="Heart Shard 4" additionalName="Event" type="EtcItem">
 		<!-- Collect all 9 of the Heart Fragments to get Enhanced Rune Stone. <How to use>. Exchange through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_heart_i04" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1554,7 +1513,6 @@
 	<item id="83084" name="Heart Shard 5" additionalName="Event" type="EtcItem">
 		<!-- Collect all 9 of the Heart Fragments to get Enhanced Rune Stone. <How to use>. Exchange through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_heart_i05" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1565,7 +1523,6 @@
 	<item id="83085" name="Heart Shard 6" additionalName="Event" type="EtcItem">
 		<!-- Collect all 9 of the Heart Fragments to get Enhanced Rune Stone. <How to use>. Exchange through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_heart_i06" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1576,7 +1533,6 @@
 	<item id="83086" name="Heart Shard 7" additionalName="Event" type="EtcItem">
 		<!-- Collect all 9 of the Heart Fragments to get Enhanced Rune Stone. <How to use>. Exchange through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_heart_i07" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1587,7 +1543,6 @@
 	<item id="83087" name="Heart Shard 8" additionalName="Event" type="EtcItem">
 		<!-- Collect all 9 of the Heart Fragments to get Enhanced Rune Stone. <How to use>. Exchange through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_heart_i08" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1598,7 +1553,6 @@
 	<item id="83088" name="Heart Shard 9" additionalName="Event" type="EtcItem">
 		<!-- Collect all 9 of the Heart Fragments to get Enhanced Rune Stone. <How to use>. Exchange through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_heart_i09" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1609,7 +1563,6 @@
 	<item id="83089" name="20th Anniversary Coin" additionalName="Event" type="EtcItem">
 		<!-- A coin for the Lineage 2 anniversary. <How to use>. Can be exchanged for various items through the Celebrating Anniversary Annie at the Anniversary Coin Store or through the Red Libra Guild merchants. -->
 		<set name="icon" val="icon.etc_11th_token" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1618,7 +1571,6 @@
 	<item id="83090" name="Jackpot King's Golden Coin" additionalName="Event" type="EtcItem">
 		<!-- A medal obtained for breaking the King Pumpkin. <How to use>. Can be exchanged for various items at the Gold Medal Store through the Celebrating Anniversary Annie. -->
 		<set name="icon" val="icon.etc_event_glitter_medal_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1644,7 +1596,6 @@
 	<item id="83092" name="20th Anniversary Toy Hammer Selection Ticket" additionalName="Event" type="EtcItem">
 		<!-- Can be exchanged for Red/ Green/ Blue Festive Hammer (of your choice). -->
 		<set name="icon" val="icon.bm_payback_ticket_01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
@@ -1655,7 +1606,6 @@
 	<item id="83093" name="20th Anniversary Maturity Certificate" additionalName="Event" type="EtcItem">
 		<!-- An ancient scroll with the birthday congratulations written rather unintelligibly. Can be added to a collection. -->
 		<set name="icon" val="icon.ev_20th_collection" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />

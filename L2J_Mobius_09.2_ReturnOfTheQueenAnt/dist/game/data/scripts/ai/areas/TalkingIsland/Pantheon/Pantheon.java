@@ -19,16 +19,15 @@ package ai.areas.TalkingIsland.Pantheon;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Pantheon AI.
  * @author Gladicek
  */
-public class Pantheon extends AbstractNpcAI
+public class Pantheon extends Script
 {
 	// NPC
 	private static final int PANTHEON = 32972;
@@ -84,6 +83,12 @@ public class Pantheon extends AbstractNpcAI
 	public void onSpawn(Npc npc)
 	{
 		startQuestTimer("TEXT_SPAM", 10000, npc, null, true);
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

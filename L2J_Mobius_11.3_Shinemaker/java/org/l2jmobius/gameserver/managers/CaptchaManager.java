@@ -25,8 +25,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.custom.CaptchaConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
@@ -54,7 +55,7 @@ public class CaptchaManager
 	
 	protected CaptchaManager()
 	{
-		if (Config.ENABLE_CAPTCHA)
+		if (CaptchaConfig.ENABLE_CAPTCHA)
 		{
 			Containers.Players().addListener(new ConsumerEventListener(Containers.Players(), EventType.ON_CREATURE_KILLED, _onCreatureKilled, this));
 			LOGGER.info(getClass().getSimpleName() + ": Enabled.");
@@ -63,7 +64,7 @@ public class CaptchaManager
 	
 	public void updateCounter(Creature player, Creature monster)
 	{
-		if (!Config.ENABLE_CAPTCHA)
+		if (!CaptchaConfig.ENABLE_CAPTCHA)
 		{
 			return;
 		}
@@ -75,16 +76,16 @@ public class CaptchaManager
 		
 		// Check if auto-play is enabled and player is auto-playing.
 		final Player killer = player.asPlayer();
-		if (Config.ENABLE_AUTO_PLAY && killer.isAutoPlaying())
+		if (GeneralConfig.ENABLE_AUTO_PLAY && killer.isAutoPlaying())
 		{
 			return; // Don't count kills when auto-play is enabled.
 		}
 		
-		if (Config.KILL_COUNTER_RESET)
+		if (CaptchaConfig.KILL_COUNTER_RESET)
 		{
 			final long currentTime = System.currentTimeMillis();
 			final long previousKillTime = LAST_KILL_TIME.getOrDefault(killer.getObjectId(), currentTime);
-			if ((currentTime - previousKillTime) > Config.KILL_COUNTER_RESET_TIME)
+			if ((currentTime - previousKillTime) > CaptchaConfig.KILL_COUNTER_RESET_TIME)
 			{
 				MONSTER_COUNTER.put(killer.getObjectId(), 0);
 			}
@@ -98,8 +99,8 @@ public class CaptchaManager
 			count = MONSTER_COUNTER.get(killer.getObjectId()) + 1;
 		}
 		
-		final int next = Rnd.get(Config.KILL_COUNTER_RANDOMIZATION);
-		if ((Config.KILL_COUNTER + next) < count)
+		final int next = Rnd.get(CaptchaConfig.KILL_COUNTER_RANDOMIZATION);
+		if ((CaptchaConfig.KILL_COUNTER + next) < count)
 		{
 			MONSTER_COUNTER.remove(killer.getObjectId());
 			

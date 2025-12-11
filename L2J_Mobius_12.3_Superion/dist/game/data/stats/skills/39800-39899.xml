@@ -17,7 +17,116 @@
 		<!-- Level 10: <Requirements>. 1. When equipping an R-grade heavy armor set enchanted to +8 and higher. 2. When equipping an L-grade heavy armor set. <Effect>. P. Def. +1179, Skill Cooldown -4% -->
 		<!-- Level 11: <Requirements>. 1. When equipping an R-grade heavy armor set enchanted to +8 and higher. 2. When equipping an L-grade heavy armor set. <Effect>. P. Def. +1387, Skill Cooldown -5% -->
 		<icon>icon.agathion_masia_guard_1</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipArmor">
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</condition>
+			<condition name="OpCheckSkill">
+				<skillId>13339</skillId> <!-- Enchant +6 R-grade Heavy Armor Set -->
+				<skillLevel>3</skillLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">321</value>
+					<value level="3">377</value>
+					<value level="4">445</value>
+					<value level="5">523</value>
+					<value level="6">615</value>
+					<value level="7">724</value>
+					<value level="8">851</value>
+					<value level="9">1002</value>
+					<value level="10">1179</value>
+					<value level="11">1387</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39802" toLevel="11" name="Paulina's Guard Unique Ability">
 		<!-- Level 1: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. Increases P. Def. and Skill Power. -->
@@ -32,7 +141,56 @@
 		<!-- Level 10: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. P. Def. +1179, Skill Power +4% -->
 		<!-- Level 11: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. P. Def. +1387, Skill Power +5% -->
 		<icon>icon.agathion_pollyne_guard_1</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipArmor">
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</condition>
+			<condition name="OpCheckSkill">
+				<skillId>13340</skillId> <!-- Enchant +6 R-grade Light Armor Set -->
+				<skillLevel>3</skillLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">321</value>
+					<value level="3">377</value>
+					<value level="4">445</value>
+					<value level="5">523</value>
+					<value level="6">615</value>
+					<value level="7">724</value>
+					<value level="8">851</value>
+					<value level="9">1002</value>
+					<value level="10">1179</value>
+					<value level="11">1387</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">1</value>
+					<value level="8">2</value>
+					<value level="9">3</value>
+					<value level="10">4</value>
+					<value level="11">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39803" toLevel="11" name="Tersi's Guard Unique Ability">
 		<!-- Level 1: <Requirements>. 1. When equipping an R-grade robe set enchanted to +8 and higher. 2. When equipping an L-grade robe set. <Effect>. Increases P. Def. and Dagger/ Bow Resistance. -->
@@ -62,7 +220,12 @@
 	<skill id="39806" toLevel="1" name="Vitality Sustaining Rune (1-day)">
 		<!-- When in inventory, sustains Vitality. -->
 		<icon>icon.ev_charge_run</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-100</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39807" toLevel="1" name="Beora's Energy Rune">
 		<!-- When in inventory, Vitality bonus +30%. -->
@@ -735,7 +898,12 @@
 	<skill id="39829" toLevel="1" name="Vitality Sustaining Rune">
 		<!-- When in inventory, sustains Vitality. -->
 		<icon>icon.ev_charge_run</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-100</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39830" toLevel="1" name="Magic Dumpling Soup">
 		<!-- Warm holiday soup. For 30 min., P. Atk./ M. Atk./ P. Def./ M. Def. +15%, acquired XP/ SP +15%. -->
@@ -928,7 +1096,116 @@
 		<!-- Level 10: <Requirements>. 1. When equipping an R-grade heavy armor set enchanted to +8 and higher. 2. When equipping an L-grade heavy armor set. <Effect>. P. Def. +1179, Skill Cooldown -4% -->
 		<!-- Level 11: <Requirements>. 1. When equipping an R-grade heavy armor set enchanted to +8 and higher. 2. When equipping an L-grade heavy armor set. <Effect>. P. Def. +1387, Skill Cooldown -5% -->
 		<icon>icon.agathion_masia_guard_1</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipArmor">
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</condition>
+			<condition name="OpCheckSkill">
+				<skillId>13339</skillId> <!-- Enchant +6 R-grade Heavy Armor Set -->
+				<skillLevel>3</skillLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">321</value>
+					<value level="3">377</value>
+					<value level="4">445</value>
+					<value level="5">523</value>
+					<value level="6">615</value>
+					<value level="7">724</value>
+					<value level="8">851</value>
+					<value level="9">1002</value>
+					<value level="10">1179</value>
+					<value level="11">1387</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-1</value>
+					<value level="8">-2</value>
+					<value level="9">-3</value>
+					<value level="10">-4</value>
+					<value level="11">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39856" toLevel="11" name="Paulina's Guard Unique Ability">
 		<!-- Level 1: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. Increases P. Def. and Skill Power. -->
@@ -943,7 +1220,56 @@
 		<!-- Level 10: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. P. Def. +1179, Skill Power +4% -->
 		<!-- Level 11: <Requirements>. 1. When equipping an R-grade light armor set enchanted to +8 and higher. 2. When equipping an L-grade light armor set. <Effect>. P. Def. +1387, Skill Power +5% -->
 		<icon>icon.agathion_pollyne_guard_1</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipArmor">
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</condition>
+			<condition name="OpCheckSkill">
+				<skillId>13340</skillId> <!-- Enchant +6 R-grade Light Armor Set -->
+				<skillLevel>3</skillLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">321</value>
+					<value level="3">377</value>
+					<value level="4">445</value>
+					<value level="5">523</value>
+					<value level="6">615</value>
+					<value level="7">724</value>
+					<value level="8">851</value>
+					<value level="9">1002</value>
+					<value level="10">1179</value>
+					<value level="11">1387</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">1</value>
+					<value level="8">2</value>
+					<value level="9">3</value>
+					<value level="10">4</value>
+					<value level="11">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39857" toLevel="11" name="Tersi's Guard Unique Ability">
 		<!-- Level 1: <Requirements>. 1. When equipping an R-grade robe set enchanted to +8 and higher. 2. When equipping an L-grade robe set. <Effect>. Increases P. Def. and Dagger/ Bow Resistance. -->
@@ -1367,14 +1693,78 @@
 	<skill id="39891" toLevel="1" name="Special Cocktail">
 		<!-- For 60 min., applies Fever Melody, Drumbeat of Serenity and Fantasia Harmony Lv. 1. To remove the effect, press Alt + Left Mouse Button. -->
 		<icon>icon.cocktail_heaven_i00</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>7</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>COCKTAIL</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<canDoubleCast>false</canDoubleCast>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-2</magicLevel>
 		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-2</specialLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="DispelBySlotProbability">
+				<dispel>BUFF_SPECIAL_CLASS;DITTY;BUFF_SPECIAL_ATTACK;BUFF_SPECIAL_AURA;ARMOR_ELEMENT_ALL</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39893</skillId> <!-- Fever Melody - Special Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39894</skillId> <!-- Drumbeat of Serenity - Special Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39895</skillId> <!-- Fantasia Harmony - Special Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39892" toLevel="1" name="Special Cocktail">
 		<!-- For 60 min., applies Fever Melody, Drumbeat of Serenity and Fantasia Harmony Lv. 1. To remove the effect, press Alt + Left Mouse Button. -->
 		<icon>icon.cocktail_heaven_i00</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>7</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>COCKTAIL</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<canDoubleCast>false</canDoubleCast>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-2</magicLevel>
 		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-2</specialLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="DispelBySlotProbability">
+				<dispel>BUFF_SPECIAL_CLASS;DITTY;BUFF_SPECIAL_ATTACK;BUFF_SPECIAL_AURA;ARMOR_ELEMENT_ALL</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39893</skillId> <!-- Fever Melody - Special Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39894</skillId> <!-- Drumbeat of Serenity - Special Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39895</skillId> <!-- Fantasia Harmony - Special Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39893" toLevel="1" name="Fever Melody - Special Cocktail">
 		<!-- <font color="ECECEC"><Effect></font>. <font color="A3A3A3">Duration:</font> <font color="B09B79">60 min.</font>. P. Atk. +100%. M. Atk. +280%. Attribute Attack +50. Atk. Spd. +150%. Casting Spd. +140%. Critical Rate for basic attacks +150%. M. Skill Critical Rate +107%. Critical Damage for basic attacks +130%. P./ M. Skill Critical Damage 60 min.0 -->
@@ -1785,7 +2175,6 @@
 		<conditions>
 			<condition name="CheckLevel">
 				<minLevel>100</minLevel>
-				<maxLevel>130</maxLevel>
 			</condition>
 			<condition name="CanUseHuntingTimeIncreaseItem">
 				<zoneId>25</zoneId>

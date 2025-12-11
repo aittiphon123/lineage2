@@ -29,7 +29,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.SpawnTable;
 import org.l2jmobius.gameserver.data.xml.NpcData;
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
@@ -38,18 +38,17 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.type.ArenaZone;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author Notorion
  */
-public class Guillotine extends AbstractNpcAI
+public class Guillotine extends Script
 {
 	// NPC
 	private static final int MAIN_BOSS_ID = 29402;
@@ -139,7 +138,7 @@ public class Guillotine extends AbstractNpcAI
 			spawn.setHeading(0);
 			spawn.setRespawnDelay(0);
 			
-			final Npc boss = DBSpawnManager.getInstance().addNewSpawn(spawn, false);
+			final Npc boss = DatabaseSpawnManager.getInstance().addNewSpawn(spawn, false);
 			_spawnedMainBoss = boss;
 			GlobalVariablesManager.getInstance().set("GUILLOTINE_ALIVE", true);
 			

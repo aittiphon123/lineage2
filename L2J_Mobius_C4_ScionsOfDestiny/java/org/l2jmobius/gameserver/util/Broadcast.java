@@ -32,7 +32,6 @@ import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.CharInfo;
 import org.l2jmobius.gameserver.network.serverpackets.CreatureSay;
-import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.RelationChanged;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 
@@ -224,11 +223,6 @@ public class Broadcast
 				player.sendMessage(text);
 			}
 		}
-	}
-	
-	public static void toAllOnlinePlayersOnScreen(String text)
-	{
-		toAllOnlinePlayers(new ExShowScreenMessage(text, 10000));
 	}
 	
 	/**

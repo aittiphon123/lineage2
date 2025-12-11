@@ -76,7 +76,7 @@ public class WareHouseWithdrawalList extends ServerPacket
 			buffer.writeInt(item.getCount());
 			buffer.writeShort(item.getTemplate().getType2());
 			buffer.writeShort(item.getCustomType1());
-			buffer.writeInt(item.getTemplate().getBodyPart());
+			buffer.writeInt(item.getTemplate().getBodyPart().getMask());
 			buffer.writeShort(item.getEnchantLevel());
 			buffer.writeShort(0);
 			buffer.writeShort(item.getCustomType2());

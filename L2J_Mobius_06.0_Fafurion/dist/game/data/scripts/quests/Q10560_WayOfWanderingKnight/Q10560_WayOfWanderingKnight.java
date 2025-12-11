@@ -25,11 +25,11 @@ import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
-import org.l2jmobius.gameserver.model.quest.Faction;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Faction;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -90,7 +90,7 @@ public class Q10560_WayOfWanderingKnight extends Quest
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		final QuestState qs = getQuestState(player, false);
-		final PlayerClass classId = player.getPlayerClass();
+		final PlayerClass playerClass = player.getPlayerClass();
 		
 		if (qs == null)
 		{
@@ -170,15 +170,15 @@ public class Q10560_WayOfWanderingKnight extends Quest
 			}
 			case "32327-03.html":
 			{
-				if (CategoryData.getInstance().isInCategory(CategoryType.MAGE_GROUP, classId.getId()))
+				if (CategoryData.getInstance().isInCategory(CategoryType.MAGE_GROUP, playerClass.getId()))
 				{
 					htmltext = getHtm(player, "32327-03.html").replace("%classbuff%", "Wizard");
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.ATTACKER_GROUP, classId.getId()))
+				else if (CategoryData.getInstance().isInCategory(CategoryType.ATTACKER_GROUP, playerClass.getId()))
 				{
 					htmltext = getHtm(player, "32327-03.html").replace("%classbuff%", "Warrior");
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.TANKER_GROUP, classId.getId()))
+				else if (CategoryData.getInstance().isInCategory(CategoryType.TANKER_GROUP, playerClass.getId()))
 				{
 					htmltext = getHtm(player, "32327-03.html").replace("%classbuff%", "Knight");
 				}

@@ -16,7 +16,7 @@
  */
 package quests.Q10811_ExaltedOneWhoFacesTheLimit;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -24,9 +24,9 @@ import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerAbilityPointsChanged;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.enums.Movie;
 
 /**
@@ -100,7 +100,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 			}
 			case "SUBQUEST_FINISHED_NOTIFY":
 			{
-				if (hasQuestItems(player, ELIKIA_CERTIFICATE, MYSTERIOUS_BUTLER_CERTIFICATE, SIR_ERIC_RODEMAI_CERTIFICATE, GALLADUCI_RODEMAI_CERTIFICATE) && (player.getAbilityPointsUsed() >= Config.ABILITY_MAX_POINTS))
+				if (hasQuestItems(player, ELIKIA_CERTIFICATE, MYSTERIOUS_BUTLER_CERTIFICATE, SIR_ERIC_RODEMAI_CERTIFICATE, GALLADUCI_RODEMAI_CERTIFICATE) && (player.getAbilityPointsUsed() >= PlayerConfig.ABILITY_MAX_POINTS))
 				{
 					qs.setCond(3, true);
 				}

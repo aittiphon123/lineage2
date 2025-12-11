@@ -20,15 +20,15 @@
  */
 package quests.Q10514_NewPathToGlory;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
 import quests.Q10873_ExaltedReachingAnotherLevel.Q10873_ExaltedReachingAnotherLevel;
@@ -148,7 +148,7 @@ public class Q10514_NewPathToGlory extends Quest
 					addExpAndSp(player, 3480527972686L, 0);
 					qs.exitQuest(false, true);
 					
-					final Quest mainQ = QuestManager.getInstance().getQuest(Q10873_ExaltedReachingAnotherLevel.class.getSimpleName());
+					final Quest mainQ = ScriptManager.getInstance().getScript(Q10873_ExaltedReachingAnotherLevel.class.getSimpleName());
 					if (mainQ != null)
 					{
 						mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
@@ -214,7 +214,7 @@ public class Q10514_NewPathToGlory extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(1) && LocationUtil.checkIfInRange(Config.ALT_PARTY_RANGE, npc, player, false))
+		if ((qs != null) && qs.isCond(1) && LocationUtil.checkIfInRange(PlayerConfig.ALT_PARTY_RANGE, npc, player, false))
 		{
 			if ((getQuestItemsCount(player, PROOF_OF_REPUTATION) < PROOF_OF_REPUTATION_NEEDED) && (getRandom(100) < 90))
 			{

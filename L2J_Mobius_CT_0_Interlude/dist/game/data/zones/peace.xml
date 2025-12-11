@@ -714,24 +714,6 @@
 		<node X="155456" Y="-123772" />
 		<node X="152140" Y="-124528" />
 	</zone>
-	<zone name="kamael_town_peace_01" type="PeaceZone" shape="NPoly" minZ="-476" maxZ="3524"> <!-- [16_19] -->
-		<node X="-121018" Y="41512" />
-		<node X="-110806" Y="40264" />
-		<node X="-110741" Y="42402" />
-		<node X="-114245" Y="42558" />
-		<node X="-114338" Y="48473" />
-		<node X="-121194" Y="48608" />
-	</zone>
-	<zone name="kamael_town_peace_02" type="PeaceZone" shape="NPoly" minZ="-412" maxZ="1988"> <!-- [16_19] -->
-		<node X="-121505" Y="38622" />
-		<node X="-123715" Y="38622" />
-		<node X="-123714" Y="39299" />
-		<node X="-126223" Y="39300" />
-		<node X="-126229" Y="36917" />
-		<node X="-123722" Y="36917" />
-		<node X="-123726" Y="37705" />
-		<node X="-121506" Y="37701" />
-	</zone>
 	<zone name="themepark_peace1" type="PeaceZone" shape="NPoly" minZ="-4696" maxZ="3304"> <!-- [17_15] -->
 		<node X="-76662" Y="-77593" />
 		<node X="-65536" Y="-77344" />

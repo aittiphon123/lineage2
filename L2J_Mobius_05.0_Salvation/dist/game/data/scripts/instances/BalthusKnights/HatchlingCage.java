@@ -24,20 +24,20 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.ExTutorialShowId;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 
-import instances.AbstractInstance;
 import quests.Q10553_WhatMattersMoreThanAbility.Q10553_WhatMattersMoreThanAbility;
 
 /**
  * Hatchling Cage instance zone.
  * @author Kazumi
  */
-public final class HatchlingCage extends AbstractInstance
+public final class HatchlingCage extends InstanceScript
 {
 	// MOBs
 	private static final int HATCHLING = 24089;

@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets.relics;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.RelicSystemConfig;
 import org.l2jmobius.gameserver.data.xml.RelicData;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
@@ -59,32 +59,32 @@ public class ExRelicsUpgrade extends ServerPacket
 		{
 			case 1:
 			{
-				itemFeeId = Config.RELIC_ENHANCEMENT_FEE_NO_GRADE.get(0).getId();
-				itemFeeCount = Config.RELIC_ENHANCEMENT_FEE_NO_GRADE.get(0).getCount();
+				itemFeeId = RelicSystemConfig.RELIC_ENHANCEMENT_FEE_NO_GRADE.get(0).getId();
+				itemFeeCount = RelicSystemConfig.RELIC_ENHANCEMENT_FEE_NO_GRADE.get(0).getCount();
 				break;
 			}
 			case 2:
 			{
-				itemFeeId = Config.RELIC_ENHANCEMENT_FEE_D_GRADE.get(0).getId();
-				itemFeeCount = Config.RELIC_ENHANCEMENT_FEE_D_GRADE.get(0).getCount();
+				itemFeeId = RelicSystemConfig.RELIC_ENHANCEMENT_FEE_D_GRADE.get(0).getId();
+				itemFeeCount = RelicSystemConfig.RELIC_ENHANCEMENT_FEE_D_GRADE.get(0).getCount();
 				break;
 			}
 			case 3:
 			{
-				itemFeeId = Config.RELIC_ENHANCEMENT_FEE_C_GRADE.get(0).getId();
-				itemFeeCount = Config.RELIC_ENHANCEMENT_FEE_C_GRADE.get(0).getCount();
+				itemFeeId = RelicSystemConfig.RELIC_ENHANCEMENT_FEE_C_GRADE.get(0).getId();
+				itemFeeCount = RelicSystemConfig.RELIC_ENHANCEMENT_FEE_C_GRADE.get(0).getCount();
 				break;
 			}
 			case 4:
 			{
-				itemFeeId = Config.RELIC_ENHANCEMENT_FEE_B_GRADE.get(0).getId();
-				itemFeeCount = Config.RELIC_ENHANCEMENT_FEE_B_GRADE.get(0).getCount();
+				itemFeeId = RelicSystemConfig.RELIC_ENHANCEMENT_FEE_B_GRADE.get(0).getId();
+				itemFeeCount = RelicSystemConfig.RELIC_ENHANCEMENT_FEE_B_GRADE.get(0).getCount();
 				break;
 			}
 			case 5:
 			{
-				itemFeeId = Config.RELIC_ENHANCEMENT_FEE_A_GRADE.get(0).getId();
-				itemFeeCount = Config.RELIC_ENHANCEMENT_FEE_A_GRADE.get(0).getCount();
+				itemFeeId = RelicSystemConfig.RELIC_ENHANCEMENT_FEE_A_GRADE.get(0).getId();
+				itemFeeCount = RelicSystemConfig.RELIC_ENHANCEMENT_FEE_A_GRADE.get(0).getCount();
 				break;
 			}
 		}

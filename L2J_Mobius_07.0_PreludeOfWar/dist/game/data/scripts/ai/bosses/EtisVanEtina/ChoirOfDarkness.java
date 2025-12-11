@@ -23,18 +23,17 @@ package ai.bosses.EtisVanEtina;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class ChoirOfDarkness extends AbstractNpcAI
+public class ChoirOfDarkness extends Script
 {
 	// NPC
 	private static final int CHOIR_OF_DARKNESS = 24078;
@@ -45,7 +44,8 @@ public class ChoirOfDarkness extends AbstractNpcAI
 	
 	private ChoirOfDarkness()
 	{
-		registerMobs(CHOIR_OF_DARKNESS);
+		addAttackId(CHOIR_OF_DARKNESS);
+		addSpellFinishedId(CHOIR_OF_DARKNESS);
 	}
 	
 	@Override

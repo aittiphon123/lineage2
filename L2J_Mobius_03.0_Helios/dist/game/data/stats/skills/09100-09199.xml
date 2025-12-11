@@ -3596,12 +3596,12 @@
 				<amount>17</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalAttack">
-				<amount>79</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>79</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
@@ -3632,15 +3632,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="TriggerSkillByDamageReceived">
-				<!-- Critical Damage Increase -->
-				<attackerType>Creature</attackerType>
-				<chance>80</chance>
-				<targetType>SELF</targetType>
-				<minDamage>300</minDamage>
-				<skillId>11569</skillId> <!-- Critical Damage Increase -->
-				<skillLevel>1</skillLevel>
-			</effect>
 			<effect name="MaxMp">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -3650,18 +3641,14 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicCriticalRate">
-				<amount>20</amount>
+				<amount>22</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="CriticalDamage">
+			<effect name="CriticalRate">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttack">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttack">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3669,12 +3656,16 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalDefence">
+			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttackSpeed">
+			<effect name="MagicalAttack">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
@@ -3693,12 +3684,21 @@
 				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="TriggerSkillByDamageReceived">
+				<!-- Critical Damage Increase -->
+				<attackerType>Creature</attackerType>
+				<chance>80</chance>
+				<targetType>SELF</targetType>
+				<minDamage>300</minDamage>
+				<skillId>11569</skillId> <!-- Critical Damage Increase -->
+				<skillLevel>1</skillLevel>
+			</effect>
 			<effect name="DispelBySlotProbability">
-				<dispel>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP</dispel>
+				<dispel>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
 				<rate>100</rate>
 			</effect>
 			<effect name="BlockAbnormalSlot">
-				<slot>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP</slot>
+				<slot>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
 			</effect>
 		</effects>
 	</skill>

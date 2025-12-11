@@ -44,7 +44,6 @@
 	<item id="83102" name="Hero's Mark" additionalName="Event" type="EtcItem">
 		<!-- Can be added to a collection. -->
 		<set name="icon" val="icon.seal_lev_85" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -55,7 +54,6 @@
 	<item id="83103" name="Sacred Fire Element" type="EtcItem">
 		<!-- A trophy obtained for defeating Fire Spirit Queen Callor. Can be added to a collection. -->
 		<set name="icon" val="icon.collection_fire_boss" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -66,7 +64,6 @@
 	<item id="83104" name="Sacred Water Element" type="EtcItem">
 		<!-- A trophy obtained for defeating Water Spirit Queen Marea. Can be added to a collection. -->
 		<set name="icon" val="icon.collection_water_boss" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -77,7 +74,6 @@
 	<item id="83105" name="Sacred Wind Element" type="EtcItem">
 		<!-- A trophy obtained for defeating Wind Spirit King Vertex. Can be added to a collection. -->
 		<set name="icon" val="icon.collection_wind_boss" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -88,7 +84,6 @@
 	<item id="83106" name="Sacred Earth Element" type="EtcItem">
 		<!-- A trophy obtained for defeating Earth Spirit King Rufes. Can be added to a collection. -->
 		<set name="icon" val="icon.collection_earth_boss" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -222,35 +217,35 @@
 	<item id="83109" name="20th Anniversary Relic Summon Coupon - Green Toy Hammer (1-time)" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain Green Festive Hammer (1 pc.). -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv2" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83110" name="20th Anniversary Relic Summon Coupon - Blue Toy Hammer (1-time)" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain Blue Festive Hammer (1 pc.). -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv3" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83111" name="20th Anniversary Relic Summon Coupon - Red Toy Hammer (1-time)" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain Red Festive Hammer (1 pc.). -->
 		<set name="icon" val="icon.bless_relics_summon_1_ticket_lv4" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83112" name="Keeper's Treasure Chest" type="EtcItem">
 		<!-- Double-click to obtain 1 rare item. -->
@@ -407,7 +402,6 @@
 	<item id="83119" name="Golden Pie Coupon" additionalName="Event" type="EtcItem">
 		<!-- Can be used as a material in the event server-limited craft. -->
 		<set name="icon" val="icon.ev_2023_winter_ticket1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -416,7 +410,6 @@
 	<item id="83120" name="Appearance Stone Coupon: Winter Outfit" additionalName="Event" type="EtcItem">
 		<!-- Can be exchanged for one of the five Appearance Stone: Winter Outfit (of your choice). -->
 		<set name="icon" val="icon.ev_2023_winter_ticket2" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
@@ -686,7 +679,6 @@
 	<item id="83128" name="Fafurion's Craft Coupon" type="EtcItem">
 		<!-- Obtained from Gold Bar Pack. <How to use>. Common craft -->
 		<set name="icon" val="icon.bm_gold_bar" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -755,6 +747,8 @@
 		</stats>
 		<skills>
 			<skill id="35087" level="1" /> <!-- Agathion's Cute Trick -->
+			<skill id="35635" level="1" type="ON_EQUIP" /> <!-- Summon Greater Agathion Fire Dragon -->
+			<skill id="28064" level="1" type="ON_UNEQUIP" /> <!-- Release Seal -->
 		</skills>
 	</item>
 	<item id="83133" name="Enhanced Sayha's Talisman Lv. 10" additionalName="Event" type="Armor">
@@ -909,7 +903,6 @@
 	<item id="83142" name="Superior Cat's Eye Coupon Lv. 10" additionalName="Event" type="EtcItem">
 		<!-- Can be exchanged for Superior Red Cat's Eye Lv. 10 or Superior Blue Cat's Eye Lv. 10 (of your choice). -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -919,7 +912,6 @@
 	<item id="83143" name="Superior Ruby/ Sapphire Coupon Lv. 10" additionalName="Event" type="EtcItem">
 		<!-- Can be exchanged for Superior Ruby Lv. 10 or Superior Sapphire Lv. 10 (of your choice). -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -985,7 +977,6 @@
 	<item id="83147" name="Blue Draco's Drawing Fragment (1)" additionalName="2" type="EtcItem">
 		<!-- The first fragment of Blue Draco's drawing with New Year wishes. Collect all fragments and read Draco's message to have a lot of luck!. <How to use>. Fragments can be combined and exchanged for rewards in the Blue Draco's Wishes menu. -->
 		<set name="icon" val="icon.ev_2024_newyear_part1" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -994,7 +985,6 @@
 	<item id="83148" name="Blue Draco's Drawing Fragment (2)" additionalName="02" type="EtcItem">
 		<!-- The second fragment of Blue Draco's drawing with New Year wishes. Collect all fragments and read Draco's message to have a lot of luck!. <How to use>. Fragments can be combined and exchanged for rewards in the Blue Draco's Wishes menu. -->
 		<set name="icon" val="icon.ev_2024_newyear_part2" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1003,7 +993,6 @@
 	<item id="83149" name="Blue Draco's Drawing Fragment (3)" additionalName="4" type="EtcItem">
 		<!-- The third fragment of Blue Draco's drawing with New Year wishes. Collect all fragments and read Draco's message to have a lot of luck!. <How to use>. Fragments can be combined and exchanged for rewards in the Blue Draco's Wishes menu. -->
 		<set name="icon" val="icon.ev_2024_newyear_part3" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1012,7 +1001,6 @@
 	<item id="83150" name="Blue Draco's Drawing Fragment (4)" additionalName="H" type="EtcItem">
 		<!-- The fourth fragment of Blue Draco's drawing with New Year wishes. Collect all fragments and read Draco's message to have a lot of luck!. <How to use>. Fragments can be combined and exchanged for rewards in the Blue Draco's Wishes menu. -->
 		<set name="icon" val="icon.ev_2024_newyear_part4" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1021,7 +1009,6 @@
 	<item id="83151" name="Blue Draco's Drawing Fragment (5)" additionalName="APP" type="EtcItem">
 		<!-- The fifth fragment of Blue Draco's drawing with New Year wishes. Collect all fragments and read Draco's message to have a lot of luck!. <How to use>. Fragments can be combined and exchanged for rewards in the Blue Draco's Wishes menu. -->
 		<set name="icon" val="icon.ev_2024_newyear_part5" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1030,7 +1017,6 @@
 	<item id="83152" name="Blue Draco's Drawing Fragment (6)" additionalName="Y" type="EtcItem">
 		<!-- The sixth fragment of Blue Draco's drawing with New Year wishes. Collect all fragments and read Draco's message to have a lot of luck!. <How to use>. Fragments can be combined and exchanged for rewards in the Blue Draco's Wishes menu. -->
 		<set name="icon" val="icon.ev_2024_newyear_part6" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1039,7 +1025,6 @@
 	<item id="83153" name="Blue Draco's Drawing Fragment (7)" additionalName="NE" type="EtcItem">
 		<!-- The seventh fragment of Blue Draco's drawing with New Year wishes. Collect all fragments and read Draco's message to have a lot of luck!. <How to use>. Fragments can be combined and exchanged for rewards in the Blue Draco's Wishes menu. -->
 		<set name="icon" val="icon.ev_2024_newyear_part7" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1048,7 +1033,6 @@
 	<item id="83154" name="Blue Draco's Drawing Fragment (8)" additionalName="W Y" type="EtcItem">
 		<!-- The eighth fragment of Blue Draco's drawing with New Year wishes. Collect all fragments and read Draco's message to have a lot of luck!. <How to use>. Fragments can be combined and exchanged for rewards in the Blue Draco's Wishes menu. -->
 		<set name="icon" val="icon.ev_2024_newyear_part8" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1057,7 +1041,6 @@
 	<item id="83155" name="Blue Draco's Drawing Fragment (9)" additionalName="EAR" type="EtcItem">
 		<!-- The ninth fragment of Blue Draco's drawing with New Year wishes. Collect all fragments and read Draco's message to have a lot of luck!. <How to use>. Fragments can be combined and exchanged for rewards in the Blue Draco's Wishes menu. -->
 		<set name="icon" val="icon.ev_2024_newyear_part9" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1120,7 +1103,6 @@
 	<item id="83160" name="Blue Dragon's Lucky Coin" additionalName="Event" type="EtcItem">
 		<!-- A Lucky Coin given by Blue Dragon during the Yut game. <How to use>. Can be exchanged for various items at the Festival Fairy's shop. -->
 		<set name="icon" val="icon.ev_2024_newyear_coin" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_sellable" val="false" />
@@ -1138,13 +1120,13 @@
 	<item id="83162" name="Radiant Relic Summon Coupon - 11-time" type="EtcItem">
 		<!-- A shining coupon that can be used for summoning a relic lost in the Aden continent. Double-click to obtain 11 relics of No-grade/ D-grade/ C-grade/ B-grade. -->
 		<set name="icon" val="icon.bless_relics_summon_11_ticket_lv1_2" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83163" name="Kit: Radiant Relic" type="EtcItem">
 		<!-- Double-click to obtain Radiant Relic Summon Coupon - 11-time (1 pc.) and Radiant Exchange Coupon (1 pc.). Note!. Items from this kit cannot be sold. -->
@@ -1160,7 +1142,6 @@
 	<item id="83164" name="Radiant Exchange Coupon" type="EtcItem">
 		<!-- Can be exchanged for various items of your choice. <Items for exchange>. A-grade Relic Shard. B-grade Relic Shard. Radiant Relic Summon Coupon - 11-time. Aether. Solaris -->
 		<set name="icon" val="icon.bm_jewel_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
@@ -1172,7 +1153,6 @@
 	<item id="83165" name="Intact Stakato Shell" type="EtcItem">
 		<!-- Usually a dead Stakato's shell is quick to tarnish and disappear, but in certain circumstances it can remain intact. Such shells are highly valued by the Golden Ram Army, as studying them may expose the Stakato's hidden weaknesses. The mercenaries are currently preparing their counterattack and are willing to pay a lot money for these shells. <How to acquire>. Kill monsters in the Swamp of Screams and field raids. -->
 		<set name="icon" val="icon.etc_seed_of_evil_i05" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
 		<set name="is_tradable" val="false" />
@@ -1186,7 +1166,6 @@
 	<item id="83166" name="Golden Ram Army's Reward" type="EtcItem">
 		<!-- A reward given to warriors who took part in the Golden Ram Army's counterattack. <Acquisition>. Awarded for completing the Swamp of Screams: Restoration of Honor side quest. -->
 		<set name="icon" val="icon.event_mahum_memo" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1198,7 +1177,6 @@
 	<item id="83167" name="Seed of Spring" additionalName="Event" type="EtcItem">
 		<!-- A small seed that represents green spring in the world of Aden. <How to use>. Material for crafting the Spring Energy event item. -->
 		<set name="icon" val="icon.etc_seed_green_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -1209,7 +1187,6 @@
 	<item id="83168" name="Spring Energy" additionalName="Event" type="EtcItem">
 		<!-- Spring Energy created from Seeds of Spring. <How to use>. Spring Energy can be used to infuse the Spring Flower Seed in the Giran Garden. -->
 		<set name="icon" val="icon.ev_green_energy" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1326,7 +1303,6 @@
 	<item id="83174" name="Stakato Wing" type="EtcItem">
 		<!-- A trophy obtained during a fight with Stakato. <Acquisition>. Kill monsters and complete the field raid in the Swamp of Screams. -->
 		<set name="icon" val="icon.etc_feather_black_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_stackable" val="true" />
@@ -1488,7 +1464,6 @@
 	<item id="83182" name="Chaos Aether" type="EtcItem">
 		<!-- A crystal that emanates mysterious energy that is neither good nor bad. Can be obtained by killing monsters imbued with Chaos Power. <How to use>. Can be used to craft special items. -->
 		<set name="icon" val="icon.chaotic_ether" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
@@ -1499,7 +1474,6 @@
 	<item id="83183" name="Mysterious Energy Crystal" type="EtcItem">
 		<!-- A crystal obtained by killing angels imbued with Chaos Power at the Tower of Insolence. You can feel strange energy emanating from it. -->
 		<set name="icon" val="icon.chaotic_ether" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
 		<set name="is_tradable" val="false" />
@@ -1512,7 +1486,6 @@
 	<item id="83184" name="Broken Energy Crystal Shard" type="EtcItem">
 		<!-- It used to be filled with energy but now there is almost none left. -->
 		<set name="icon" val="icon.etc_broken_crystal_silver_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
 		<set name="is_tradable" val="false" />
@@ -1612,7 +1585,6 @@
 	<item id="83189" name="Growth Manager Key" additionalName="Event" type="EtcItem">
 		<!-- The key that the Growth Manager lost while traveling around Aden. <How to use>. Can be exchanged for various rewards via the event crafting or weekly limited crafting. -->
 		<set name="icon" val="icon.aphros_key" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1623,7 +1595,6 @@
 	<item id="83190" name="Vitality Sustaining Rune" additionalName="Event" type="EtcItem">
 		<!-- When in inventory, sustains Vitality. -->
 		<set name="icon" val="icon.ev_charge_run" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />

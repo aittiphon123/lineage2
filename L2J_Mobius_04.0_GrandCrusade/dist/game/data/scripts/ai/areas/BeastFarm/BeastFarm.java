@@ -30,12 +30,12 @@ import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.TamedBeast;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.serverpackets.NpcInfo;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
-import ai.AbstractNpcAI;
 import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
 
 /**
@@ -43,7 +43,7 @@ import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
  * Updated to Freya.
  * @author Fulminus, Gigiikun
  */
-public class BeastFarm extends AbstractNpcAI
+public class BeastFarm extends Script
 {
 	private static final int GOLDEN_SPICE = 15474;
 	private static final int CRYSTAL_SPICE = 15475;

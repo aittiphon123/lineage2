@@ -32,7 +32,6 @@ import java.util.logging.Logger;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.xml.NpcData;
-import org.l2jmobius.gameserver.managers.tasks.GrandBossManagerStoreTask;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 
@@ -105,7 +104,7 @@ public class GrandBossManager
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Error while initializing GrandBossManager: " + e.getMessage(), e);
 		}
 		
-		ThreadPool.scheduleAtFixedRate(new GrandBossManagerStoreTask(), 5 * 60 * 1000, 5 * 60 * 1000);
+		ThreadPool.scheduleAtFixedRate(this::storeMe, 5 * 60 * 1000, 5 * 60 * 1000);
 	}
 	
 	public int getStatus(int bossId)

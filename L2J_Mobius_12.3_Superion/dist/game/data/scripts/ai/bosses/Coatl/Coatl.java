@@ -39,18 +39,17 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.type.ArenaZone;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author Notorion
  */
-public class Coatl extends AbstractNpcAI
+public class Coatl extends Script
 {
 	// NPCs
 	private static final int MAIN_BOSS_ID = 29408; // Coatl RaidBoss

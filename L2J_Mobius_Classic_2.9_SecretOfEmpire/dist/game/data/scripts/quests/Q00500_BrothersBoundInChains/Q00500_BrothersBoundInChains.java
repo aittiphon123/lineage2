@@ -33,10 +33,10 @@ import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnAttackableKill;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerSummonAgathion;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerUnsummonAgathion;
 import org.l2jmobius.gameserver.model.events.listeners.ConsumerEventListener;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 

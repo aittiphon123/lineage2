@@ -18,9 +18,11 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
 import org.l2jmobius.gameserver.model.stats.IStatFunction;
 import org.l2jmobius.gameserver.model.stats.Stat;
@@ -40,23 +42,23 @@ public class MAttackFinalizer implements IStatFunction
 		if (creature.isPlayer())
 		{
 			// Enchanted chest bonus
-			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_CHEST, ItemTemplate.SLOT_FULL_ARMOR);
+			baseValue += calcEnchantBodyPart(creature, BodyPart.CHEST, BodyPart.FULL_ARMOR);
 		}
 		
-		if (Config.CHAMPION_ENABLE && creature.isChampion())
+		if (ChampionMonstersConfig.CHAMPION_ENABLE && creature.isChampion())
 		{
-			baseValue *= Config.CHAMPION_ATK;
+			baseValue *= ChampionMonstersConfig.CHAMPION_ATK;
 		}
 		
 		if (creature.isRaid())
 		{
-			baseValue *= Config.RAID_MATTACK_MULTIPLIER;
+			baseValue *= NpcConfig.RAID_MATTACK_MULTIPLIER;
 		}
 		
 		// Calculate modifiers Magic Attack
 		final double physicalBonus = (creature.getStat().getMul(Stat.MAGIC_ATTACK_BY_PHYSICAL_ATTACK, 1) - 1) * creature.getPAtk();
 		baseValue *= Math.pow(BaseStat.INT.calcBonus(creature) * creature.getLevelMod(), 2.2072);
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue + physicalBonus), 0, creature.isPlayable() ? Config.MAX_MATK : Double.MAX_VALUE);
+		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue + physicalBonus), 0, creature.isPlayable() ? PlayerConfig.MAX_MATK : Double.MAX_VALUE);
 	}
 	
 	@Override

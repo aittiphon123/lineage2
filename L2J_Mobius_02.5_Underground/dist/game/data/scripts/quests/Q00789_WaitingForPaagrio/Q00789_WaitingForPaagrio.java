@@ -20,13 +20,13 @@
  */
 package quests.Q00789_WaitingForPaagrio;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 
 import quests.Q00759_TheDwarvenNightmareContinues.Q00759_TheDwarvenNightmareContinues;
 
@@ -125,7 +125,7 @@ public final class Q00789_WaitingForPaagrio extends Quest
 						addExpAndSp(player, 3015185490L, 7236360);
 						giveItems(player, HARPS_REWARD_BOX, 1);
 						
-						final Quest qsMain = QuestManager.getInstance().getQuest(Q00759_TheDwarvenNightmareContinues.class.getSimpleName());
+						final Quest qsMain = ScriptManager.getInstance().getScript(Q00759_TheDwarvenNightmareContinues.class.getSimpleName());
 						if (qsMain != null)
 						{
 							qsMain.notifyEvent("NOTIFY_Q759", npc, player);
@@ -152,7 +152,7 @@ public final class Q00789_WaitingForPaagrio extends Quest
 						addExpAndSp(player, 6030370980L, 14472720);
 						giveItems(player, HARPS_REWARD_BOX, 2);
 						
-						final Quest qsMain = QuestManager.getInstance().getQuest(Q00759_TheDwarvenNightmareContinues.class.getSimpleName());
+						final Quest qsMain = ScriptManager.getInstance().getScript(Q00759_TheDwarvenNightmareContinues.class.getSimpleName());
 						if (qsMain != null)
 						{
 							qsMain.notifyEvent("NOTIFY_Q759", npc, player);
@@ -179,7 +179,7 @@ public final class Q00789_WaitingForPaagrio extends Quest
 						addExpAndSp(player, 9045556470L, 21709080);
 						giveItems(player, HARPS_REWARD_BOX, 3);
 						
-						final Quest qsMain = QuestManager.getInstance().getQuest(Q00759_TheDwarvenNightmareContinues.class.getSimpleName());
+						final Quest qsMain = ScriptManager.getInstance().getScript(Q00759_TheDwarvenNightmareContinues.class.getSimpleName());
 						if (qsMain != null)
 						{
 							qsMain.notifyEvent("NOTIFY_Q759", npc, player);

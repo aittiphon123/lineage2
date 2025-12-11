@@ -33,8 +33,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.data.xml.ClassListData;
@@ -55,18 +55,17 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPressT
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerProfessionChange;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.spawns.SpawnTemplate;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialCloseHtml;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowQuestionMark;
 
-import ai.AbstractNpcAI;
-
 /**
  * Class Master AI.
  * @author Nik, Mobius
  */
-public class ClassMaster extends AbstractNpcAI implements IXmlReader
+public class ClassMaster extends Script implements IXmlReader
 {
 	private static final Logger LOGGER = Logger.getLogger(ClassMaster.class.getName());
 	
@@ -380,9 +379,9 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 						player.setBaseClass(player.getActiveClass());
 					}
 					
-					if (Config.AUTO_LEARN_SKILLS)
+					if (PlayerConfig.AUTO_LEARN_SKILLS)
 					{
-						player.giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, true, Config.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
+						player.giveAvailableSkills(PlayerConfig.AUTO_LEARN_FS_SKILLS, true, PlayerConfig.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
 					}
 					
 					player.store(false); // Save player cause if server crashes before this char is saved, he will lose class and the money payed for class change.
@@ -784,9 +783,9 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 				player.setBaseClass(player.getActiveClass());
 			}
 			
-			if (Config.AUTO_LEARN_SKILLS)
+			if (PlayerConfig.AUTO_LEARN_SKILLS)
 			{
-				player.giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, true, Config.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
+				player.giveAvailableSkills(PlayerConfig.AUTO_LEARN_FS_SKILLS, true, PlayerConfig.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
 			}
 			
 			player.store(false); // Save player cause if server crashes before this char is saved, he will lose class and the money payed for class change.
@@ -813,7 +812,8 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 		}
 	}
 	
-	@RegisterEvent(EventType.ON_PLAYER_PRESS_TUTORIAL_MARK) @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	@RegisterEvent(EventType.ON_PLAYER_PRESS_TUTORIAL_MARK)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerPressTutorialMark(OnPlayerPressTutorialMark event)
 	{
 		final Player player = event.getPlayer();
@@ -842,7 +842,8 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 		}
 	}
 	
-	@RegisterEvent(EventType.ON_PLAYER_BYPASS) @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	@RegisterEvent(EventType.ON_PLAYER_BYPASS)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerBypass(OnPlayerBypass event)
 	{
 		if (event.getCommand().startsWith("Quest ClassMaster "))
@@ -853,19 +854,22 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 		}
 	}
 	
-	@RegisterEvent(EventType.ON_PLAYER_PROFESSION_CHANGE) @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	@RegisterEvent(EventType.ON_PLAYER_PROFESSION_CHANGE)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerProfessionChange(OnPlayerProfessionChange event)
 	{
 		showPopupWindow(event.getPlayer());
 	}
 	
-	@RegisterEvent(EventType.ON_PLAYER_LEVEL_CHANGED) @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	@RegisterEvent(EventType.ON_PLAYER_LEVEL_CHANGED)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
 		showPopupWindow(event.getPlayer());
 	}
 	
-	@RegisterEvent(EventType.ON_PLAYER_LOGIN) @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerLogin(OnPlayerLogin event)
 	{
 		showPopupWindow(event.getPlayer());

@@ -25,9 +25,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.SpawnTable;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -46,6 +46,7 @@ import org.l2jmobius.gameserver.model.events.annotations.Id;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDamageReceived;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
@@ -62,8 +63,6 @@ import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.network.serverpackets.SpecialCamera;
 import org.l2jmobius.gameserver.util.Broadcast;
 
-import ai.AbstractNpcAI;
-
 /**
  * Lindvior Boss
  * @author Gigi
@@ -71,7 +70,7 @@ import ai.AbstractNpcAI;
  *       <p>
  * @VIDEO - https://www.youtube.com/watch?v=VknjOjRO9Cw
  */
-public class Lindvior extends AbstractNpcAI
+public class Lindvior extends Script
 {
 	// Monsters
 	private static final int LINDVIOR_FAKE = 19423;
@@ -890,8 +889,8 @@ public class Lindvior extends AbstractNpcAI
 			
 			GrandBossManager.getInstance().setStatus(LINDVIOR_RAID, DEAD);
 			
-			final long baseIntervalMillis = Config.LINDVIOR_SPAWN_INTERVAL * 3600000;
-			final long randomRangeMillis = Config.LINDVIOR_SPAWN_RANDOM * 3600000;
+			final long baseIntervalMillis = GrandBossConfig.LINDVIOR_SPAWN_INTERVAL * 3600000;
+			final long randomRangeMillis = GrandBossConfig.LINDVIOR_SPAWN_RANDOM * 3600000;
 			final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 			final StatSet info = GrandBossManager.getInstance().getStatSet(LINDVIOR_RAID);
 			info.set("respawn_time", System.currentTimeMillis() + respawnTime);

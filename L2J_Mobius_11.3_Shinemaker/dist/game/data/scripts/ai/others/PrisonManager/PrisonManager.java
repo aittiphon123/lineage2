@@ -26,6 +26,7 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
@@ -34,12 +35,10 @@ import org.l2jmobius.gameserver.network.serverpackets.prison.ExPrisonUserEnter;
 import org.l2jmobius.gameserver.network.serverpackets.prison.ExPrisonUserExit;
 import org.l2jmobius.gameserver.network.serverpackets.prison.ExPrisonUserInfo;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author Fakee
  */
-public class PrisonManager extends AbstractNpcAI
+public class PrisonManager extends Script
 {
 	// NPC
 	private static final int MORENDO = 34637;
@@ -342,6 +341,12 @@ public class PrisonManager extends AbstractNpcAI
 				player.sendPacket(SystemMessageId.GO_MY_LOYAL_SERVANTS_BRING_ME_THOSE_WHO_WALLOW_IN_SHAME_AND_CURSES);
 			}
 		}
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

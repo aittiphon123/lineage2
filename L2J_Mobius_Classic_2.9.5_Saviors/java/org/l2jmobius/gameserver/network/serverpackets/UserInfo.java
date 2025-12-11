@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -315,7 +315,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeByte(_player.getPvpFlag());
 			buffer.writeInt(_player.getReputation()); // Reputation
 			buffer.writeByte(_player.isNoble());
-			buffer.writeByte(_player.isHero() || (_player.isGM() && Config.GM_HERO_AURA) ? 2 : 0); // 152 - Value for enabled changed to 2?
+			buffer.writeByte(_player.isHero() || (_player.isGM() && GeneralConfig.GM_HERO_AURA) ? 2 : 0); // 152 - Value for enabled changed to 2?
 			buffer.writeByte(_player.getPledgeClass());
 			buffer.writeInt(_player.getPkKills());
 			buffer.writeInt(_player.getPvpKills());

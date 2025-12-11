@@ -542,8 +542,6 @@
 					<item id="4605" min="3" max="7" chance="21.7349" /> <!-- Greater Dye of Dexterity (Dex+3 Str-3) -->
 					<item id="4606" min="3" max="9" chance="18.1125" /> <!-- Greater Dye of Dexterity (Dex+3 Con-3) -->
 				</group>
-				<group chance="25">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -669,8 +667,6 @@
 					<item id="4619" min="1" max="3" chance="46.1539" /> <!-- Greater Dye of Intelligence (Int+4 Men-4) -->
 					<item id="4620" min="2" max="4" chance="30.7691" /> <!-- Greater Dye of Intelligence (Int+4 Wit-4) -->
 					<item id="4621" min="2" max="6" chance="23.077" /> <!-- Greater Dye of Mental Strength (Men+4 Int-4) -->
-				</group>
-				<group chance="25">
 				</group>
 			</drop>
 		</dropLists>
@@ -1096,8 +1092,6 @@
 					<item id="4608" min="2" max="4" chance="18.1818" /> <!-- Greater Dye of Intelligence (Int+3 Wit-3) -->
 					<item id="4607" min="1" max="3" chance="27.2727" /> <!-- Greater Dye of Intelligence (Int+3 Men-3) -->
 				</group>
-				<group chance="50">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -1460,10 +1454,6 @@
 					<item id="6577" min="1" max="1" chance="0.92201" /> <!-- Blessed Scroll: Enchant Weapon (Grade S) -->
 					<item id="959" min="1" max="1" chance="5.53145" /> <!-- Scroll: Enchant Weapon (Grade S) -->
 					<item id="960" min="1" max="1" chance="55.3145" /> <!-- Scroll: Enchant Armor (Grade S) -->
-				</group>
-				<group chance="75">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>
@@ -1975,8 +1965,6 @@
 					<item id="4612" min="1" max="1" chance="47.8359" /> <!-- Greater Dye of Wit (Wit+3 Men-3) -->
 					<item id="6574" min="1" max="1" chance="12.3007" /> <!-- Blessed Scroll: Enchant Armor (Grade C) -->
 				</group>
-				<group chance="25">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -2160,8 +2148,6 @@
 					<item id="730" min="1" max="1" chance="87.007" /> <!-- Scroll: Enchant Armor (Grade A) -->
 					<item id="729" min="1" max="1" chance="11.6009" /> <!-- Scroll: Enchant Weapon (Grade A) -->
 					<item id="6569" min="1" max="1" chance="1.39211" /> <!-- Blessed Scroll: Enchant Weapon (Grade A) -->
-				</group>
-				<group chance="50">
 				</group>
 			</drop>
 		</dropLists>
@@ -2413,8 +2399,6 @@
 					<item id="4604" min="2" max="6" chance="10.2041" /> <!-- Greater Dye of Constitution (Con+3 Dex-3) -->
 					<item id="4605" min="3" max="7" chance="8.16332" /> <!-- Greater Dye of Dexterity (Dex+3 Str-3) -->
 					<item id="4606" min="1" max="1" chance="40.8163" /> <!-- Greater Dye of Dexterity (Dex+3 Con-3) -->
-				</group>
-				<group chance="50">
 				</group>
 			</drop>
 		</dropLists>
@@ -2741,8 +2725,6 @@
 					<item id="4591" min="1" max="3" chance="30.6976" /> <!-- Greater Dye of Constitution (Con+2 Str-2) -->
 					<item id="951" min="1" max="1" chance="33.4884" /> <!-- Scroll: Enchant Weapon (Grade C) -->
 				</group>
-				<group chance="50">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -2864,8 +2846,6 @@
 					<item id="4604" min="2" max="6" chance="24.6686" /> <!-- Greater Dye of Constitution (Con+3 Dex-3) -->
 					<item id="4605" min="3" max="7" chance="19.7349" /> <!-- Greater Dye of Dexterity (Dex+3 Str-3) -->
 					<item id="4606" min="3" max="9" chance="16.4458" /> <!-- Greater Dye of Dexterity (Dex+3 Con-3) -->
-				</group>
-				<group chance="25">
 				</group>
 			</drop>
 		</dropLists>
@@ -3111,10 +3091,6 @@
 					<item id="960" min="1" max="1" chance="56.2272" /> <!-- Scroll: Enchant Armor (Grade S) -->
 					<item id="959" min="1" max="1" chance="5.6227" /> <!-- Scroll: Enchant Weapon (Grade S) -->
 					<item id="6577" min="1" max="1" chance="0.93725" /> <!-- Blessed Scroll: Enchant Weapon (Grade S) -->
-				</group>
-				<group chance="75">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>
@@ -3763,8 +3739,6 @@
 					<item id="4618" min="1" max="1" chance="49.3421" /> <!-- Greater Dye of Dexterity (Dex+4 Con-4) -->
 					<item id="6572" min="1" max="1" chance="9.53943" /> <!-- Blessed Scroll: Enchant Armor (Grade B) -->
 				</group>
-				<group chance="50">
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -3890,10 +3864,6 @@
 				<group chance="82.8125">
 					<item id="730" min="1" max="3" chance="63.0824" /> <!-- Scroll: Enchant Armor (Grade A) -->
 					<item id="6578" min="1" max="1" chance="6.72894" /> <!-- Blessed Scroll: Enchant Armor (Grade S) -->
-				</group>
-				<group chance="50">
-				</group>
-				<group chance="100">
 				</group>
 			</drop>
 		</dropLists>

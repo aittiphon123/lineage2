@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.DevelopmentConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.enums.HtmlActionScope;
 import org.l2jmobius.gameserver.network.serverpackets.AbstractHtmlPacket;
@@ -192,7 +192,7 @@ public class HtmlUtil
 				bypass = bypass.substring(0, firstParameterStart + 1);
 			}
 			
-			if (Config.HTML_ACTION_CACHE_DEBUG)
+			if (DevelopmentConfig.HTML_ACTION_CACHE_DEBUG)
 			{
 				LOGGER.info("Cached html bypass(" + scope + "): '" + bypass + "'");
 			}
@@ -236,7 +236,7 @@ public class HtmlUtil
 				continue;
 			}
 			
-			if (Config.HTML_ACTION_CACHE_DEBUG)
+			if (DevelopmentConfig.HTML_ACTION_CACHE_DEBUG)
 			{
 				LOGGER.info("Cached html link(" + scope + "): '" + htmlLink + "'");
 			}
@@ -261,7 +261,7 @@ public class HtmlUtil
 			throw new IllegalArgumentException();
 		}
 		
-		if (Config.HTML_ACTION_CACHE_DEBUG)
+		if (DevelopmentConfig.HTML_ACTION_CACHE_DEBUG)
 		{
 			LOGGER.info("Set html action npc(" + scope + "): " + npcObjId);
 		}

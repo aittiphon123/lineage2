@@ -29,15 +29,15 @@ import java.util.logging.Level;
 
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.handler.IBypassHandler;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.listeners.AbstractEventListener;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -154,7 +154,7 @@ public class QuestLink implements IBypassHandler
 	{
 		String content = null;
 		
-		final Quest q = QuestManager.getInstance().getQuest(questId);
+		final Quest q = ScriptManager.getInstance().getScript(questId);
 		
 		// Get the state of the selected quest
 		final QuestState qs = player.getQuestState(questId);

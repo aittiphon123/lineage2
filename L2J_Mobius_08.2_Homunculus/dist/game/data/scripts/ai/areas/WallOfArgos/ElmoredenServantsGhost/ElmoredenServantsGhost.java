@@ -20,14 +20,13 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Elmoreden Servant's Ghost AI.
  * @author St3eT
  */
-public class ElmoredenServantsGhost extends AbstractNpcAI
+public class ElmoredenServantsGhost extends Script
 {
 	// NPC
 	private static final int GHOST = 31920; // Elmoreden Servant's Ghost
@@ -73,6 +72,12 @@ public class ElmoredenServantsGhost extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

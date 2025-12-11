@@ -20,7 +20,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
@@ -82,7 +82,7 @@ public class RequestEvaluate extends ClientPacket
 			return;
 		}
 		
-		if (!Config.ALT_RECOMMEND && !player.canRecom(target))
+		if (!PlayerConfig.ALT_RECOMMEND && !player.canRecom(target))
 		{
 			player.sendPacket(SystemMessageId.THAT_CHARACTER_HAS_ALREADY_BEEN_RECOMMENDED);
 			return;

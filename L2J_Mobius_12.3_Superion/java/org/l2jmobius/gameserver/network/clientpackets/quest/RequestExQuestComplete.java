@@ -20,9 +20,9 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.quest;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 
 /**
@@ -42,12 +42,12 @@ public class RequestExQuestComplete extends ClientPacket
 	protected void runImpl()
 	{
 		final Player player = getPlayer();
-		if (player == null)
+		if ((player == null) || player.isTeleporting())
 		{
 			return;
 		}
 		
-		final Quest quest = QuestManager.getInstance().getQuest(_questId);
+		final Quest quest = ScriptManager.getInstance().getQuest(_questId);
 		if (quest == null)
 		{
 			return;

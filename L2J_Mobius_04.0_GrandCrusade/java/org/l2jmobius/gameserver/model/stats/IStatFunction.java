@@ -18,11 +18,12 @@ package org.l2jmobius.gameserver.model.stats;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
 import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
 import org.l2jmobius.gameserver.model.item.type.WeaponType;
@@ -42,12 +43,12 @@ public interface IStatFunction
 		}
 	}
 	
-	default double calcEnchantBodyPart(Creature creature, int... slots)
+	default double calcEnchantBodyPart(Creature creature, BodyPart... bodyParts)
 	{
 		double value = 0;
-		for (int slot : slots)
+		for (BodyPart bodyPart : bodyParts)
 		{
-			final Item item = creature.getInventory().getPaperdollItemBySlotId(slot);
+			final Item item = creature.getInventory().getPaperdollItemByBodyPart(bodyPart);
 			if ((item != null) && (item.getEnchantLevel() >= 4) && (item.getTemplate().getCrystalTypePlus() == CrystalType.R))
 			{
 				value += calcEnchantBodyPartBonus(item.getEnchantLevel(), item.getTemplate().isBlessed());
@@ -111,10 +112,10 @@ public interface IStatFunction
 		for (Item equippedItem : creature.getInventory().getPaperdollItems(Item::isEnchanted))
 		{
 			final ItemTemplate item = equippedItem.getTemplate();
-			final int bodypart = item.getBodyPart();
-			if ((bodypart == ItemTemplate.SLOT_HAIR) || //
-				(bodypart == ItemTemplate.SLOT_HAIR2) || //
-				(bodypart == ItemTemplate.SLOT_HAIRALL))
+			final BodyPart bodyPart = item.getBodyPart();
+			if ((bodyPart == BodyPart.HAIR) || //
+				(bodyPart == BodyPart.HAIR2) || //
+				(bodyPart == BodyPart.HAIRALL))
 			{
 				// TODO: Item after enchant shows pDef, but scroll says mDef increase.
 				if ((stat != Stat.PHYSICAL_DEFENCE) && (stat != Stat.MAGICAL_DEFENCE))
@@ -134,16 +135,16 @@ public interface IStatFunction
 			{
 				if (item.isWeapon())
 				{
-					if ((Config.OLYMPIAD_WEAPON_ENCHANT_LIMIT >= 0) && (enchant > Config.OLYMPIAD_WEAPON_ENCHANT_LIMIT))
+					if ((OlympiadConfig.OLYMPIAD_WEAPON_ENCHANT_LIMIT >= 0) && (enchant > OlympiadConfig.OLYMPIAD_WEAPON_ENCHANT_LIMIT))
 					{
-						enchant = Config.OLYMPIAD_WEAPON_ENCHANT_LIMIT;
+						enchant = OlympiadConfig.OLYMPIAD_WEAPON_ENCHANT_LIMIT;
 					}
 				}
 				else
 				{
-					if ((Config.OLYMPIAD_ARMOR_ENCHANT_LIMIT >= 0) && (enchant > Config.OLYMPIAD_ARMOR_ENCHANT_LIMIT))
+					if ((OlympiadConfig.OLYMPIAD_ARMOR_ENCHANT_LIMIT >= 0) && (enchant > OlympiadConfig.OLYMPIAD_ARMOR_ENCHANT_LIMIT))
 					{
-						enchant = Config.OLYMPIAD_ARMOR_ENCHANT_LIMIT;
+						enchant = OlympiadConfig.OLYMPIAD_ARMOR_ENCHANT_LIMIT;
 					}
 				}
 			}
@@ -235,7 +236,7 @@ public interface IStatFunction
 		{
 			case R:
 			{
-				if ((item.getWeaponItem().getBodyPart() == ItemTemplate.SLOT_LR_HAND) && (item.getWeaponItem().getItemType() != WeaponType.POLE))
+				if ((item.getWeaponItem().getBodyPart() == BodyPart.LR_HAND) && (item.getWeaponItem().getItemType() != WeaponType.POLE))
 				{
 					if (item.getWeaponItem().getItemType().isRanged())
 					{
@@ -249,7 +250,7 @@ public interface IStatFunction
 			}
 			case S:
 			{
-				if ((item.getWeaponItem().getBodyPart() == ItemTemplate.SLOT_LR_HAND) && (item.getWeaponItem().getItemType() != WeaponType.POLE))
+				if ((item.getWeaponItem().getBodyPart() == BodyPart.LR_HAND) && (item.getWeaponItem().getItemType() != WeaponType.POLE))
 				{
 					if (item.getWeaponItem().getItemType().isRanged())
 					{
@@ -269,7 +270,7 @@ public interface IStatFunction
 			}
 			case A:
 			{
-				if ((item.getWeaponItem().getBodyPart() == ItemTemplate.SLOT_LR_HAND) && (item.getWeaponItem().getItemType() != WeaponType.POLE))
+				if ((item.getWeaponItem().getBodyPart() == BodyPart.LR_HAND) && (item.getWeaponItem().getItemType() != WeaponType.POLE))
 				{
 					if (item.getWeaponItem().getItemType().isRanged())
 					{
@@ -290,7 +291,7 @@ public interface IStatFunction
 			case B:
 			case C:
 			{
-				if ((item.getWeaponItem().getBodyPart() == ItemTemplate.SLOT_LR_HAND) && (item.getWeaponItem().getItemType() != WeaponType.POLE))
+				if ((item.getWeaponItem().getBodyPart() == BodyPart.LR_HAND) && (item.getWeaponItem().getItemType() != WeaponType.POLE))
 				{
 					if (item.getWeaponItem().getItemType().isRanged())
 					{

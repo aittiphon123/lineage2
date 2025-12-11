@@ -22,17 +22,16 @@ package ai.areas.OrbisTemple;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import ai.AbstractNpcAI;
 
 /**
  * Orbis Temple Statue AI.
  * @author Mobius
  */
-public class OrbisTempleStatues extends AbstractNpcAI
+public class OrbisTempleStatues extends Script
 {
 	// NPCs
 	private static final int VICTIM_1 = 22911;

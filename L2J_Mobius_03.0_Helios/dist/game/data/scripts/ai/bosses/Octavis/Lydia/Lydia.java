@@ -20,14 +20,13 @@ import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Lydia AI.
  * @author St3eT
  */
-public class Lydia extends AbstractNpcAI
+public class Lydia extends Script
 {
 	// NPCs
 	private static final int LYDIA = 32892;

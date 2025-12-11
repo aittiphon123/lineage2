@@ -18,16 +18,15 @@ package ai.areas.TalkingIsland;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Marin Smith AI.
  * @author Gladicek
  */
-public class MarinSmith extends AbstractNpcAI
+public class MarinSmith extends Script
 {
 	// NPCs
 	private static final int MARIN_SMITH = 33285;

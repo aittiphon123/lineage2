@@ -24,6 +24,7 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.model.zone.type.TeleportZone;
@@ -32,13 +33,11 @@ import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
-
 /**
  * Crystal Caverns - Steam Corridor instance zone.
  * @author St3eT
  */
-public class CrystalCavernsSteamCorridor extends AbstractInstance
+public class CrystalCavernsSteamCorridor extends InstanceScript
 {
 	// NPCs
 	private static final int CAVERNS_ENTRACE = 33522;

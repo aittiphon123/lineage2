@@ -33,7 +33,7 @@ import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.SpawnData;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.Spawn;
@@ -588,7 +588,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				return;
 			}
 			
-			DBSpawnManager.getInstance().deleteSpawn(spawn, true);
+			DatabaseSpawnManager.getInstance().deleteSpawn(spawn, true);
 			try
 			{
 				final Spawn spawnDat = new Spawn(target.getId());
@@ -598,7 +598,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				spawnDat.setRespawnMinDelay(43200);
 				spawnDat.setRespawnMaxDelay(129600);
 				
-				DBSpawnManager.getInstance().addNewSpawn(spawnDat, 0, curHP, curMP, true);
+				DatabaseSpawnManager.getInstance().addNewSpawn(spawnDat, 0, curHP, curMP, true);
 			}
 			catch (Exception e)
 			{

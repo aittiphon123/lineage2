@@ -24,9 +24,9 @@ import java.util.Comparator;
 import java.util.concurrent.ScheduledFuture;
 import java.util.stream.Stream;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -191,7 +191,7 @@ public class Cubic extends Creature
 					Stream<Creature> stream;
 					if (party != null)
 					{
-						stream = World.getInstance().getVisibleObjectsInRange(_owner, Creature.class, Config.ALT_PARTY_RANGE, c -> (c.getParty() == party) && _template.validateConditions(this, _owner, c) && cubicSkill.validateConditions(this, _owner, c)).stream();
+						stream = World.getInstance().getVisibleObjectsInRange(_owner, Creature.class, PlayerConfig.ALT_PARTY_RANGE, c -> (c.getParty() == party) && _template.validateConditions(this, _owner, c) && cubicSkill.validateConditions(this, _owner, c)).stream();
 					}
 					else
 					{

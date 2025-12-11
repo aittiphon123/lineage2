@@ -54,6 +54,7 @@ public class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("AddTeleportBookmarkSlot", AddTeleportBookmarkSlot::new);
 		EffectHandler.getInstance().registerHandler("AgathionSlot", AgathionSlot::new);
 		EffectHandler.getInstance().registerHandler("AirBind", AirBind::new);
+		EffectHandler.getInstance().registerHandler("ApplySkillEffects", ApplySkillEffects::new);
 		EffectHandler.getInstance().registerHandler("AreaDamage", AreaDamage::new);
 		EffectHandler.getInstance().registerHandler("AreaOfEffectDamageDefence", AreaOfEffectDamageDefence::new);
 		EffectHandler.getInstance().registerHandler("AreaOfEffectDamageModify", AreaOfEffectDamageModify::new);

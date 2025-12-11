@@ -19,7 +19,8 @@ package org.l2jmobius.gameserver.model.olympiad;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
+import org.l2jmobius.gameserver.config.custom.DualboxCheckConfig;
 import org.l2jmobius.gameserver.managers.AntiFeedManager;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -39,7 +40,7 @@ class OlympiadGameTask implements Runnable
 {
 	protected static final Logger _log = Logger.getLogger(OlympiadGameTask.class.getName());
 	public OlympiadGame _game = null;
-	protected static final long BATTLE_PERIOD = Config.OLYMPIAD_BATTLE; // 6 mins
+	protected static final long BATTLE_PERIOD = OlympiadConfig.OLYMPIAD_BATTLE; // 6 mins
 	
 	// Buffs
 	private static final SkillHolder[] FIGHTER_BUFFS =
@@ -130,11 +131,11 @@ class OlympiadGameTask implements Runnable
 				sm.addPcName(player);
 				defaulted = true;
 			}
-			else if ((Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
+			else if ((DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player, DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 			{
 				final NpcHtmlMessage message = new NpcHtmlMessage(player.getLastHtmlActionOriginId());
 				message.setFile(player, "data/html/mods/OlympiadIPRestriction.htm");
-				message.replace("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
+				message.replace("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, DualboxCheckConfig.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
 				player.sendPacket(message);
 				defaulted = true;
 			}
@@ -265,7 +266,7 @@ class OlympiadGameTask implements Runnable
 		
 		_game.portPlayersToArena();
 		_game.removals();
-		if (Config.OLYMPIAD_ANNOUNCE_GAMES)
+		if (OlympiadConfig.OLYMPIAD_ANNOUNCE_GAMES)
 		{
 			_game.announceGame();
 		}
@@ -385,7 +386,7 @@ class OlympiadGameTask implements Runnable
 		
 		// Waiting for teleport to arena
 		byte step = 60;
-		for (int i = Config.OLYMPIAD_WAIT_TIME; i > 0; i -= step)
+		for (int i = OlympiadConfig.OLYMPIAD_WAIT_TIME; i > 0; i -= step)
 		{
 			sm = new SystemMessage(SystemMessageId.YOU_WILL_BE_MOVED_TO_THE_OLYMPIAD_STADIUM_IN_S1_SECOND_S);
 			sm.addInt(i);

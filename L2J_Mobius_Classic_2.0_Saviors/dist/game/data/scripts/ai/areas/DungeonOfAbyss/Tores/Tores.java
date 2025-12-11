@@ -26,13 +26,12 @@ import java.util.Map;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author QuangNguyen
  */
-public class Tores extends AbstractNpcAI
+public class Tores extends Script
 {
 	// NPC
 	private static final int TORES = 31778;

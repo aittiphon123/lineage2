@@ -27,11 +27,11 @@ import java.util.StringTokenizer;
 import org.l2jmobius.gameserver.cache.HtmCache;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.model.zone.type.NoRestartZone;
 import org.l2jmobius.gameserver.model.zone.type.NoSummonFriendZone;
 import org.l2jmobius.gameserver.model.zone.type.ScriptZone;
@@ -415,17 +415,17 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	
 	private Quest antharasAi()
 	{
-		return QuestManager.getInstance().getQuest(Antharas.class.getSimpleName());
+		return ScriptManager.getInstance().getScript(Antharas.class.getSimpleName());
 	}
 	
 	private Quest baiumAi()
 	{
-		return QuestManager.getInstance().getQuest(Baium.class.getSimpleName());
+		return ScriptManager.getInstance().getScript(Baium.class.getSimpleName());
 	}
 	
 	private Quest traskenAi()
 	{
-		return QuestManager.getInstance().getQuest(Trasken.class.getSimpleName());
+		return ScriptManager.getInstance().getScript(Trasken.class.getSimpleName());
 	}
 	
 	@Override

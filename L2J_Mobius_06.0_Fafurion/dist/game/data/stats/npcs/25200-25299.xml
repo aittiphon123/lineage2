@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="25200" level="71" type="Monster" name="Sheshark's Family" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
@@ -2802,10 +2802,11 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
+		<equipment rhand="8209" /> <!-- rhand: Monster Only (Lidia Von Helmann Sword) -->
 		<acquire exp="5231148" sp="1255" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="397437.211255775" hpRegen="123.216289543832" mp="1507.49250749251" mpRegen="3" />
-			<attack physical="3382.7183999038" magical="653.074768198698" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="3382.7183999038" magical="653.074768198698" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="766.463414634146" magical="550.023864227595" evasion="-18" />
 			<speed>
 				<walk ground="20" />

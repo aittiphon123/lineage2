@@ -29,7 +29,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.xml.NpcData;
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -41,18 +41,17 @@ import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.groups.CommandChannel;
 import org.l2jmobius.gameserver.model.groups.Party;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.type.ArenaZone;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author Notorion
  */
-public class QueenAnt extends AbstractNpcAI
+public class QueenAnt extends Script
 {
 	// NPCs
 	private static final int QUEEN_ANT = 29381;
@@ -158,7 +157,7 @@ public class QueenAnt extends AbstractNpcAI
 			spawn.setHeading(0);
 			spawn.setRespawnDelay(0);
 			
-			final Npc boss = DBSpawnManager.getInstance().addNewSpawn(spawn, false);
+			final Npc boss = DatabaseSpawnManager.getInstance().addNewSpawn(spawn, false);
 			_spawnedMainBoss = (GrandBoss) boss;
 			GrandBossManager.getInstance().setStatus(QUEEN_ANT, 0);
 			LOGGER.info("Queen Ant: Boss spawned successfully at " + SPAWN_LOCATION);

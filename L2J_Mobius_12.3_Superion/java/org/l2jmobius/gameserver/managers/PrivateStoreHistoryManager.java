@@ -32,8 +32,8 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.enums.player.PrivateStoreType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 
@@ -128,7 +128,7 @@ public class PrivateStoreHistoryManager
 			for (ItemHistoryTransaction transaction : tempList)
 			{
 				final int itemId = transaction.getItemId();
-				if (uniqueItemIds.get(itemId) < Config.STORE_REVIEW_LIMIT)
+				if (uniqueItemIds.get(itemId) < GeneralConfig.STORE_REVIEW_LIMIT)
 				{
 					finalList.add(transaction);
 					uniqueItemIds.put(itemId, uniqueItemIds.get(itemId) + 1);

@@ -19,9 +19,8 @@ package ai.others.VillageMasters.ClassTransferTalk;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * This script is not fully retail like because of NCSoft<br>
@@ -30,7 +29,7 @@ import ai.AbstractNpcAI;
  * to copy retail issues/bugs/typos.
  * @author Gladicek
  */
-public class ClassTransferTalk extends AbstractNpcAI
+public class ClassTransferTalk extends Script
 {
 	// NPCs
 	// Talking Island Village (Administrative office)

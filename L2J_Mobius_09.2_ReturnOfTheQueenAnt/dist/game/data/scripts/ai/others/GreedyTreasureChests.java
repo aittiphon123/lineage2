@@ -23,15 +23,14 @@ package ai.others;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Greedy Treasure Chests AI.
  * @URL https://dev.l2central.info/main/articles/355.html
  * @author CostyKiller, NasSeKa
  */
-public class GreedyTreasureChests extends AbstractNpcAI
+public class GreedyTreasureChests extends Script
 {
 	// NPCs
 	private static final int CHEST_LV110 = 8710;

@@ -23,15 +23,14 @@ import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-
-import ai.AbstractNpcAI;
 
 /**
  * Newbie Travel Token AI.
  * @author Plim
  */
-public class NewbieTravelToken extends AbstractNpcAI
+public class NewbieTravelToken extends Script
 {
 	// Item
 	private static final int NEWBIE_TRAVEL_TOKEN = 8542;

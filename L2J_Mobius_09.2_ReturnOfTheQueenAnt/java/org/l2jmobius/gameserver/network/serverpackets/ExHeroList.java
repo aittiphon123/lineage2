@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import java.util.Map;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.olympiad.Hero;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
@@ -56,7 +56,7 @@ public class ExHeroList extends ServerPacket
 			buffer.writeString(hero.getString(Hero.ALLY_NAME, ""));
 			buffer.writeInt(0); // hero.getInt(Hero.ALLY_CREST, 0)
 			buffer.writeInt(hero.getInt(Hero.COUNT));
-			buffer.writeInt(Config.SERVER_ID);
+			buffer.writeInt(ServerConfig.SERVER_ID);
 			buffer.writeByte(0); // 272
 		}
 	}

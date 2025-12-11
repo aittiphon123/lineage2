@@ -23,17 +23,17 @@ package quests.Q00833_DevilsTreasureTauti;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.enums.Movie;
 
 /**
@@ -160,7 +160,7 @@ public class Q00833_DevilsTreasureTauti extends Quest
 		{
 			case FLAME_SCORPION:
 			{
-				if ((qs != null) && qs.isCond(1) && killer.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+				if ((qs != null) && qs.isCond(1) && killer.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 				{
 					int killedScorpion = qs.getInt("killed_" + FLAME_SCORPION);
 					if (killedScorpion < 5)
@@ -180,7 +180,7 @@ public class Q00833_DevilsTreasureTauti extends Quest
 			}
 			case FLAME_GOLEM:
 			{
-				if ((qs != null) && qs.isCond(3) && killer.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+				if ((qs != null) && qs.isCond(3) && killer.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 				{
 					qs.setCond(5, true);
 				}
@@ -188,7 +188,7 @@ public class Q00833_DevilsTreasureTauti extends Quest
 			}
 			case FLAME_SCARAB:
 			{
-				if ((qs != null) && qs.isCond(4) && killer.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+				if ((qs != null) && qs.isCond(4) && killer.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 				{
 					int killedScarab = qs.getInt("killed_" + FLAME_SCARAB);
 					if (killedScarab < 5)
@@ -208,7 +208,7 @@ public class Q00833_DevilsTreasureTauti extends Quest
 			}
 			case SEAL_TOMBSTONE:
 			{
-				if ((qs != null) && qs.isCond(5) && killer.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+				if ((qs != null) && qs.isCond(5) && killer.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 				{
 					qs.setCond(6, true);
 				}

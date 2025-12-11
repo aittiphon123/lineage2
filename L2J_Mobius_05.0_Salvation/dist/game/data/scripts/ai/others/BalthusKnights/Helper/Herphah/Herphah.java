@@ -25,17 +25,17 @@ import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 
-import ai.AbstractNpcAI;
 import quests.Q10555_ChargeAtAntharas.Q10555_ChargeAtAntharas;
 
 /**
  * Herphah AI
  * @author Kazumi
  */
-public final class Herphah extends AbstractNpcAI
+public final class Herphah extends Script
 {
 	// NPCs
 	private static final int HERPHAH = 34367;

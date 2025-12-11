@@ -24,16 +24,15 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.holders.npc.MinionHolder;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Timak Orc Troop Leader AI.
  * @author Mobius
  */
-public class TimakOrcTroopLeader extends AbstractNpcAI
+public class TimakOrcTroopLeader extends Script
 {
 	private static final int TIMAK_ORC_TROOP_LEADER = 20767;
 	private static final NpcStringId[] ON_ATTACK_MSG =

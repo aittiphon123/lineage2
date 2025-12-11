@@ -18,8 +18,8 @@ package org.l2jmobius.gameserver.model.actor.tasks.npc;
 
 import java.util.concurrent.ScheduledFuture;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
@@ -40,7 +40,7 @@ public class MpRewardTask
 		_creature = creature;
 		_count = template.getMpRewardTicks();
 		_value = calculateBaseValue(npc, creature);
-		_task = ThreadPool.scheduleAtFixedRate(this::run, Config.EFFECT_TICK_RATIO, Config.EFFECT_TICK_RATIO);
+		_task = ThreadPool.scheduleAtFixedRate(this::run, PlayerConfig.EFFECT_TICK_RATIO, PlayerConfig.EFFECT_TICK_RATIO);
 	}
 	
 	/**

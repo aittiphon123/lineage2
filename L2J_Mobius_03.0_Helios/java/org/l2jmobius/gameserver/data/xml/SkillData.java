@@ -44,10 +44,10 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.commons.util.TraceUtil;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.handler.EffectHandler;
 import org.l2jmobius.gameserver.handler.SkillConditionHandler;
 import org.l2jmobius.gameserver.model.StatSet;
@@ -137,7 +137,7 @@ public class SkillData implements IXmlReader
 		_maxSkillLevels.clear();
 		
 		parseDatapackDirectory("data/stats/skills/", false);
-		if (Config.CUSTOM_SKILLS_LOAD)
+		if (GeneralConfig.CUSTOM_SKILLS_LOAD)
 		{
 			parseDatapackDirectory("data/stats/skills/custom", false);
 		}

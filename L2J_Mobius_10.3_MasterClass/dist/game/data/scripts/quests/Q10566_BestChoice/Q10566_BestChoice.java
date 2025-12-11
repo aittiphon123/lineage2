@@ -20,13 +20,13 @@
  */
 package quests.Q10566_BestChoice;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 
 /**
  * Best Choice (10566)
@@ -105,7 +105,7 @@ public class Q10566_BestChoice extends Quest
 		{
 			case State.CREATED:
 			{
-				if (Config.PREMIUM_SYSTEM_ENABLED)
+				if (PremiumSystemConfig.PREMIUM_SYSTEM_ENABLED)
 				{
 					htmltext = (player.hasPremiumStatus()) ? "34362-01.htm" : "34362-99.html";
 				}

@@ -91,7 +91,6 @@
 	<item id="60304" name="Hunt Pass - Additional Rewards" type="EtcItem">
 		<!-- Can be purchased once per account. -->
 		<set name="icon" val="BranchIcon.icon.g_pass_hunting_premium_00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
@@ -102,7 +101,6 @@
 	<item id="60305" name="Enchantment Pass - Additional Rewards" type="EtcItem">
 		<!-- Can be purchased once per account. -->
 		<set name="icon" val="BranchIcon.icon.g_pass_advance_premium_00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
@@ -120,14 +118,12 @@
 	</item>
 	<item id="60307" name="Game Assistant's Exchange" type="EtcItem">
 		<set name="icon" val="BranchIcon.icon.g_pass_advance_type_multisell_00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="60308" name="Item Exchange/ Enhancement" type="EtcItem">
 		<set name="icon" val="BranchIcon.icon.g_pass_advance_type_multisell_01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_sellable" val="false" />
@@ -135,7 +131,6 @@
 	<item id="60309" name="Hunt Pass - Additional Reward Coupon" type="EtcItem">
 		<!-- A coupon for the Season Pass. Can be used for activating additional rewards for Hunt Pass. -->
 		<set name="icon" val="BranchIcon.icon.g_pass_hunting_premium_ticket_00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -146,7 +141,6 @@
 	<item id="60310" name="Enchantment Pass - Additional Reward Coupon" type="EtcItem">
 		<!-- A coupon for the Season Pass. Can be used for activating additional rewards for Enchantment Pass. -->
 		<set name="icon" val="BranchIcon.icon.g_pass_advance_premium_ticket_00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -157,7 +151,6 @@
 	<item id="60311" name="Mysterious Crystal" type="EtcItem">
 		<!-- A crystal imbued with powerful magic energy. It seems to have belonged to one of the kingdom's greatest wizards. Can be used in the Craft. -->
 		<set name="icon" val="icon.etc_bm_jewel_piece" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -322,7 +315,6 @@
 	<item id="60318" name="Magic Mark" type="EtcItem">
 		<!-- A mark created by a great wizard. Special bonuses will be available after adding to a collection. -->
 		<set name="icon" val="icon.etc_jewel_red_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
@@ -334,7 +326,6 @@
 	<item id="60319" name="Forgotten Lord's Crystal of Dyes" type="EtcItem">
 		<!-- Forgotten Lord's Dye Lv. 1 can be bought through Dye Merchant in any town. Forgotten Lord's dyes can be upgraded through compounding. -->
 		<set name="icon" val="branchicon.bm_g_dye_stone" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="10" />
@@ -344,7 +335,6 @@
 	<item id="60320" name="Forgotten Lord's Shining Crystal of Dyes" type="EtcItem">
 		<!-- Required for creating Forgotten Lord's dyes. Can be compounded with a dye of Lv. 7+. In case of failure, the dye does not disappear, but its level drops to 7. -->
 		<set name="icon" val="branchicon.bm_g_dye_stone_upgrade" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="10" />
@@ -498,7 +488,6 @@
 	<item id="60333" name="Mark of Lords" type="EtcItem">
 		<!-- A mark that can be received when trading with the local lord. Can be used in Special Craft. -->
 		<set name="icon" val="icon.etc_badge_black_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -605,7 +594,6 @@
 	<item id="60336" name="Collectors' Pennant" type="EtcItem">
 		<!-- A pennant gifted by the local lord. Its special bonuses will be available after you add it to the collection. -->
 		<set name="icon" val="icon.campaign_high_rank_reward" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="price" val="20000" />
@@ -617,7 +605,6 @@
 	<item id="60337" name="Lord's Lucky Ticket" type="EtcItem">
 		<!-- Lets you test your luck in Special Craft. -->
 		<set name="icon" val="icon.ev_2021_thanksgiving_ticket" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="price" val="20000" />
@@ -737,7 +724,6 @@
 	<item id="60344" name="Gableena's Doll's Fragment" additionalName="Event" type="EtcItem">
 		<!-- Can be used in the Special Craft to obtain various items. -->
 		<set name="icon" val="icon.wind_agathion_breath" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1201,7 +1187,6 @@
 	<item id="60369" name="Coral" type="EtcItem">
 		<!-- The Lucky Game's bonus item. Required for crafting various items during the Lucky Game. -->
 		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
@@ -1550,7 +1535,6 @@
 	<item id="60380" name="Anakim's Blessing Rune" additionalName="30-day" type="EtcItem">
 		<!-- An exclusive item that can only be crafted on servers blessed by Anakim. When in inventory, PvE damage +10%. -->
 		<set name="icon" val="icon.bm_freya_bloody_rune" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
@@ -1620,7 +1604,6 @@
 	<item id="60385" name="Soulshot/ Spiritshot Ticket" additionalName="Event" type="EtcItem">
 		<!-- Can be exchanged for 50,000 Soulshots or Spiritshots through the Game Assistant. -->
 		<set name="icon" val="icon.etc_exchange_ticket_i01" />
-		<set name="default_action" val="NONE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />

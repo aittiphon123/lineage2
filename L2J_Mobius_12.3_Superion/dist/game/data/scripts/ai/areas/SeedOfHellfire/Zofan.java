@@ -18,14 +18,13 @@ package ai.areas.SeedOfHellfire;
 
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Zofan AI.
  * @author St3eT
  */
-public class Zofan extends AbstractNpcAI
+public class Zofan extends Script
 {
 	// NPCs
 	private static final int[] ZOFAN =

@@ -23,15 +23,14 @@ import org.l2jmobius.gameserver.managers.AirShipManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.ClanAccess;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.RadarControl;
-
-import ai.AbstractNpcAI;
 
 /**
  * Nottingale AI.
  * @author xban1x
  */
-public class Nottingale extends AbstractNpcAI
+public class Nottingale extends Script
 {
 	// NPC
 	private static final int NOTTINGALE = 32627;
@@ -117,6 +116,12 @@ public class Nottingale extends AbstractNpcAI
 		}
 		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

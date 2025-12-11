@@ -28,13 +28,12 @@ import org.l2jmobius.gameserver.data.xml.MonsterBookData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Mobius
  */
-public class MonsterBook extends AbstractNpcAI
+public class MonsterBook extends Script
 {
 	private static final int MAXIMUM_REWARD_RANGE = 2500;
 	private static final int MINIMUM_PARTY_LEVEL = 99;

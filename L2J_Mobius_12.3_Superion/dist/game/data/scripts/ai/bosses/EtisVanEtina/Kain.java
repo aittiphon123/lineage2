@@ -23,20 +23,19 @@ package ai.bosses.EtisVanEtina;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class Kain extends AbstractNpcAI
+public class Kain extends Script
 {
-	// Npc
+	// NPC
 	private static final int KAIN_VAN_HALTER = 29320;
 	
 	// Skills
@@ -47,7 +46,8 @@ public class Kain extends AbstractNpcAI
 	
 	private Kain()
 	{
-		registerMobs(KAIN_VAN_HALTER);
+		addAttackId(KAIN_VAN_HALTER);
+		addSpellFinishedId(KAIN_VAN_HALTER);
 	}
 	
 	@Override

@@ -25,11 +25,11 @@ import java.util.List;
 
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.data.xml.NewQuestData;
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.newquestdata.NewQuest;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.newquestdata.NewQuest;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
@@ -43,10 +43,10 @@ public class ExQuestAcceptableList extends ServerPacket
 	
 	public ExQuestAcceptableList(Player player)
 	{
-		final QuestManager questManager = QuestManager.getInstance();
+		final ScriptManager scriptManager = ScriptManager.getInstance();
 		for (NewQuest newQuest : NewQuestData.getInstance().getQuests())
 		{
-			final Quest quest = questManager.getQuest(newQuest.getId());
+			final Quest quest = scriptManager.getQuest(newQuest.getId());
 			if ((quest != null) && quest.canStartQuest(player))
 			{
 				final QuestState questState = player.getQuestState(quest.getName());

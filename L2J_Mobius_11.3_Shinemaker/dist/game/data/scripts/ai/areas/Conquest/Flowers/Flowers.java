@@ -26,11 +26,10 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.conquest.OnConquestFlowerCollect;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
-
-import ai.AbstractNpcAI;
 
 /**
  * Conquest Flowers AI.<br>
@@ -40,7 +39,7 @@ import ai.AbstractNpcAI;
  * When you collect Fire Flowers, you may also receive Divine Flower that is needed to enhance the <Flame Spark> Primordial Fire Source ability.
  * @author CostyKiller
  */
-public class Flowers extends AbstractNpcAI
+public class Flowers extends Script
 {
 	// NPCs
 	private static final int FIRE_FLOWER = 34655;

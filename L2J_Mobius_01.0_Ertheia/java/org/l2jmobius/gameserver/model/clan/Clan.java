@@ -36,12 +36,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.communitybbs.BB.Forum;
 import org.l2jmobius.gameserver.communitybbs.Manager.ForumsBBSManager;
+import org.l2jmobius.gameserver.config.FeatureConfig;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.sql.CrestTable;
@@ -503,7 +505,7 @@ public class Clan
 		
 		exMember.saveApprenticeAndSponsor(0, 0);
 		
-		if (Config.REMOVE_CASTLE_CIRCLETS)
+		if (PlayerConfig.REMOVE_CASTLE_CIRCLETS)
 		{
 			CastleManager.getInstance().removeCirclet(exMember, getCastleId());
 		}
@@ -522,7 +524,7 @@ public class Clan
 			if (player.isClanLeader())
 			{
 				SiegeManager.getInstance().removeSiegeSkills(player);
-				player.setClanCreateExpiryTime(System.currentTimeMillis() + (Config.ALT_CLAN_CREATE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
+				player.setClanCreateExpiryTime(System.currentTimeMillis() + (PlayerConfig.ALT_CLAN_CREATE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
 			}
 			
 			// remove Clan skills from Player
@@ -565,7 +567,7 @@ public class Clan
 		}
 		else
 		{
-			removeMemberInDatabase(exMember, clanJoinExpiryTime, getLeaderId() == objectId ? System.currentTimeMillis() + (Config.ALT_CLAN_CREATE_DAYS * 86400000) : 0);
+			removeMemberInDatabase(exMember, clanJoinExpiryTime, getLeaderId() == objectId ? System.currentTimeMillis() + (PlayerConfig.ALT_CLAN_CREATE_DAYS * 86400000) : 0);
 		}
 		
 		// Notify to scripts
@@ -777,7 +779,7 @@ public class Clan
 	private void setLevel(int level)
 	{
 		_level = level;
-		if ((_level >= 2) && (_forum == null) && Config.ENABLE_COMMUNITY_BOARD)
+		if ((_level >= 2) && (_forum == null) && GeneralConfig.ENABLE_COMMUNITY_BOARD)
 		{
 			final Forum forum = ForumsBBSManager.getInstance().getForumByName("ClanRoot");
 			if (forum != null)
@@ -953,7 +955,7 @@ public class Clan
 	 */
 	public void increaseBloodOathCount()
 	{
-		_bloodOathCount += Config.FS_BLOOD_OATH_COUNT;
+		_bloodOathCount += FeatureConfig.FS_BLOOD_OATH_COUNT;
 		updateBloodOathCountInDB();
 	}
 	
@@ -1118,7 +1120,7 @@ public class Clan
 					}
 					
 					setCharPenaltyExpiryTime(clanData.getLong("char_penalty_expiry_time"));
-					if ((_charPenaltyExpiryTime + (Config.ALT_CLAN_JOIN_DAYS * 86400000)) < System.currentTimeMillis()) // 24*60*60*1000 = 86400000
+					if ((_charPenaltyExpiryTime + (PlayerConfig.ALT_CLAN_JOIN_DAYS * 86400000)) < System.currentTimeMillis()) // 24*60*60*1000 = 86400000
 					{
 						setCharPenaltyExpiryTime(0);
 					}
@@ -1904,7 +1906,7 @@ public class Clan
 		
 		// Royal Guard 5000 points per each
 		// Order of Knights 10000 points per each
-		if ((pledgeType != -1) && (((_reputationScore < Config.ROYAL_GUARD_COST) && (pledgeType < SUBUNIT_KNIGHT1)) || ((_reputationScore < Config.KNIGHT_UNIT_COST) && (pledgeType > SUBUNIT_ROYAL2))))
+		if ((pledgeType != -1) && (((_reputationScore < FeatureConfig.ROYAL_GUARD_COST) && (pledgeType < SUBUNIT_KNIGHT1)) || ((_reputationScore < FeatureConfig.KNIGHT_UNIT_COST) && (pledgeType > SUBUNIT_ROYAL2))))
 		{
 			player.sendPacket(SystemMessageId.THE_CLAN_REPUTATION_IS_TOO_LOW);
 			return null;
@@ -1928,11 +1930,11 @@ public class Clan
 				// Order of Knights 10000 points per each
 				if (pledgeType < SUBUNIT_KNIGHT1)
 				{
-					setReputationScore(_reputationScore - Config.ROYAL_GUARD_COST);
+					setReputationScore(_reputationScore - FeatureConfig.ROYAL_GUARD_COST);
 				}
 				else
 				{
-					setReputationScore(_reputationScore - Config.KNIGHT_UNIT_COST);
+					setReputationScore(_reputationScore - FeatureConfig.KNIGHT_UNIT_COST);
 					// TODO: clan lvl9 or more can reinforce knights cheaper if first knight unit already created, use Config.KNIGHT_REINFORCE_COST
 				}
 			}
@@ -2401,7 +2403,7 @@ public class Clan
 			return false;
 		}
 		
-		if (ClanTable.getInstance().getClanAllies(player.getAllyId()).size() >= Config.ALT_MAX_NUM_OF_CLANS_IN_ALLY)
+		if (ClanTable.getInstance().getClanAllies(player.getAllyId()).size() >= PlayerConfig.ALT_MAX_NUM_OF_CLANS_IN_ALLY)
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_LIMIT);
 			return false;
@@ -2549,7 +2551,7 @@ public class Clan
 		setAllyId(0);
 		setAllyName(null);
 		changeAllyCrest(0, false);
-		setAllyPenaltyExpiryTime(currentTime + (Config.ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED * 86400000), PENALTY_TYPE_DISSOLVE_ALLY); // 24*60*60*1000 = 86400000
+		setAllyPenaltyExpiryTime(currentTime + (PlayerConfig.ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED * 86400000), PENALTY_TYPE_DISSOLVE_ALLY); // 24*60*60*1000 = 86400000
 		updateClanInDB();
 	}
 	
@@ -2667,11 +2669,11 @@ public class Clan
 			case 5:
 			{
 				// Upgrade to 6
-				if ((_reputationScore >= Config.CLAN_LEVEL_6_COST) && (_members.size() >= Config.CLAN_LEVEL_6_REQUIREMENT))
+				if ((_reputationScore >= FeatureConfig.CLAN_LEVEL_6_COST) && (_members.size() >= FeatureConfig.CLAN_LEVEL_6_REQUIREMENT))
 				{
-					setReputationScore(_reputationScore - Config.CLAN_LEVEL_6_COST);
+					setReputationScore(_reputationScore - FeatureConfig.CLAN_LEVEL_6_COST);
 					final SystemMessage cr = new SystemMessage(SystemMessageId.S1_POINT_S_HAVE_BEEN_DEDUCTED_FROM_THE_CLAN_S_REPUTATION);
-					cr.addInt(Config.CLAN_LEVEL_6_COST);
+					cr.addInt(FeatureConfig.CLAN_LEVEL_6_COST);
 					player.sendPacket(cr);
 					increaseClanLevel = true;
 				}
@@ -2680,11 +2682,11 @@ public class Clan
 			case 6:
 			{
 				// Upgrade to 7
-				if ((_reputationScore >= Config.CLAN_LEVEL_7_COST) && (_members.size() >= Config.CLAN_LEVEL_7_REQUIREMENT))
+				if ((_reputationScore >= FeatureConfig.CLAN_LEVEL_7_COST) && (_members.size() >= FeatureConfig.CLAN_LEVEL_7_REQUIREMENT))
 				{
-					setReputationScore(_reputationScore - Config.CLAN_LEVEL_7_COST);
+					setReputationScore(_reputationScore - FeatureConfig.CLAN_LEVEL_7_COST);
 					final SystemMessage cr = new SystemMessage(SystemMessageId.S1_POINT_S_HAVE_BEEN_DEDUCTED_FROM_THE_CLAN_S_REPUTATION);
-					cr.addInt(Config.CLAN_LEVEL_7_COST);
+					cr.addInt(FeatureConfig.CLAN_LEVEL_7_COST);
 					player.sendPacket(cr);
 					increaseClanLevel = true;
 				}
@@ -2693,11 +2695,11 @@ public class Clan
 			case 7:
 			{
 				// Upgrade to 8
-				if ((_reputationScore >= Config.CLAN_LEVEL_8_COST) && (_members.size() >= Config.CLAN_LEVEL_8_REQUIREMENT))
+				if ((_reputationScore >= FeatureConfig.CLAN_LEVEL_8_COST) && (_members.size() >= FeatureConfig.CLAN_LEVEL_8_REQUIREMENT))
 				{
-					setReputationScore(_reputationScore - Config.CLAN_LEVEL_8_COST);
+					setReputationScore(_reputationScore - FeatureConfig.CLAN_LEVEL_8_COST);
 					final SystemMessage cr = new SystemMessage(SystemMessageId.S1_POINT_S_HAVE_BEEN_DEDUCTED_FROM_THE_CLAN_S_REPUTATION);
-					cr.addInt(Config.CLAN_LEVEL_8_COST);
+					cr.addInt(FeatureConfig.CLAN_LEVEL_8_COST);
 					player.sendPacket(cr);
 					increaseClanLevel = true;
 				}
@@ -2706,14 +2708,14 @@ public class Clan
 			case 8:
 			{
 				// Upgrade to 9
-				if ((_reputationScore >= Config.CLAN_LEVEL_9_COST) && (player.getInventory().getItemByItemId(9910) != null) && (_members.size() >= Config.CLAN_LEVEL_9_REQUIREMENT))
+				if ((_reputationScore >= FeatureConfig.CLAN_LEVEL_9_COST) && (player.getInventory().getItemByItemId(9910) != null) && (_members.size() >= FeatureConfig.CLAN_LEVEL_9_REQUIREMENT))
 				{
 					// itemId 9910 == Blood Oath
 					if (player.destroyItemByItemId(ItemProcessType.FEE, 9910, 150, player.getTarget(), false))
 					{
-						setReputationScore(_reputationScore - Config.CLAN_LEVEL_9_COST);
+						setReputationScore(_reputationScore - FeatureConfig.CLAN_LEVEL_9_COST);
 						final SystemMessage cr = new SystemMessage(SystemMessageId.S1_POINT_S_HAVE_BEEN_DEDUCTED_FROM_THE_CLAN_S_REPUTATION);
-						cr.addInt(Config.CLAN_LEVEL_9_COST);
+						cr.addInt(FeatureConfig.CLAN_LEVEL_9_COST);
 						player.sendPacket(cr);
 						final SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1_S_DISAPPEARED);
 						sm.addItemName(9910);
@@ -2727,14 +2729,14 @@ public class Clan
 			case 9:
 			{
 				// Upgrade to 10
-				if ((_reputationScore >= Config.CLAN_LEVEL_10_COST) && (player.getInventory().getItemByItemId(9911) != null) && (_members.size() >= Config.CLAN_LEVEL_10_REQUIREMENT))
+				if ((_reputationScore >= FeatureConfig.CLAN_LEVEL_10_COST) && (player.getInventory().getItemByItemId(9911) != null) && (_members.size() >= FeatureConfig.CLAN_LEVEL_10_REQUIREMENT))
 				{
 					// itemId 9911 == Blood Alliance
 					if (player.destroyItemByItemId(ItemProcessType.FEE, 9911, 5, player.getTarget(), false))
 					{
-						setReputationScore(_reputationScore - Config.CLAN_LEVEL_10_COST);
+						setReputationScore(_reputationScore - FeatureConfig.CLAN_LEVEL_10_COST);
 						final SystemMessage cr = new SystemMessage(SystemMessageId.S1_POINT_S_HAVE_BEEN_DEDUCTED_FROM_THE_CLAN_S_REPUTATION);
-						cr.addInt(Config.CLAN_LEVEL_10_COST);
+						cr.addInt(FeatureConfig.CLAN_LEVEL_10_COST);
 						player.sendPacket(cr);
 						final SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1_S_DISAPPEARED);
 						sm.addItemName(9911);
@@ -2748,11 +2750,11 @@ public class Clan
 			case 10:
 			{
 				// Upgrade to 11
-				if ((_reputationScore >= Config.CLAN_LEVEL_11_COST) && (_members.size() >= Config.CLAN_LEVEL_11_REQUIREMENT))
+				if ((_reputationScore >= FeatureConfig.CLAN_LEVEL_11_COST) && (_members.size() >= FeatureConfig.CLAN_LEVEL_11_REQUIREMENT))
 				{
-					setReputationScore(_reputationScore - Config.CLAN_LEVEL_11_COST);
+					setReputationScore(_reputationScore - FeatureConfig.CLAN_LEVEL_11_COST);
 					final SystemMessage cr = new SystemMessage(SystemMessageId.S1_POINT_S_HAVE_BEEN_DEDUCTED_FROM_THE_CLAN_S_REPUTATION);
-					cr.addInt(Config.CLAN_LEVEL_11_COST);
+					cr.addInt(FeatureConfig.CLAN_LEVEL_11_COST);
 					player.sendPacket(cr);
 					increaseClanLevel = true;
 				}
@@ -3157,7 +3159,7 @@ public class Clan
 		int currentMaxOnline = 0;
 		for (ClanMember member : _members.values())
 		{
-			if (member.getOnlineTime() > Config.ALT_CLAN_MEMBERS_TIME_FOR_BONUS)
+			if (member.getOnlineTime() > PlayerConfig.ALT_CLAN_MEMBERS_TIME_FOR_BONUS)
 			{
 				currentMaxOnline++;
 			}
@@ -3259,9 +3261,9 @@ public class Clan
 				if (_vars == null)
 				{
 					_vars = new ClanVariables(_clanId);
-					if (Config.CLAN_VARIABLES_STORE_INTERVAL > 0)
+					if (GeneralConfig.CLAN_VARIABLES_STORE_INTERVAL > 0)
 					{
-						ThreadPool.scheduleAtFixedRate(this::storeVariables, Config.CLAN_VARIABLES_STORE_INTERVAL, Config.CLAN_VARIABLES_STORE_INTERVAL);
+						ThreadPool.scheduleAtFixedRate(this::storeVariables, GeneralConfig.CLAN_VARIABLES_STORE_INTERVAL, GeneralConfig.CLAN_VARIABLES_STORE_INTERVAL);
 					}
 				}
 			}

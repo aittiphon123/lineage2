@@ -25,9 +25,8 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
-
-import ai.AbstractNpcAI;
 
 /**
  * Desert Quarry summoner's AI
@@ -35,7 +34,7 @@ import ai.AbstractNpcAI;
  * @author Bonux, Gigi
  * @date 2017-11-08 - [16:38:56]
  */
-public class QuarryRebel extends AbstractNpcAI
+public class QuarryRebel extends Script
 {
 	// Monsters
 	private static final int FIRE_SLAVE_BRIDGET = 19503;

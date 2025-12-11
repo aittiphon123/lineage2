@@ -22,16 +22,15 @@ package ai.areas.GiantsCave;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
-
-import ai.AbstractNpcAI;
 
 /**
  * Giants Cave Npcs AI
  * @author Gigi
  * @date 2017-03-04 - [17:33:25]
  */
-public class GiantsCave extends AbstractNpcAI
+public class GiantsCave extends Script
 {
 	// NPC
 	private static final int SUMADRIBA = 34217;

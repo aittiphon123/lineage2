@@ -23,14 +23,13 @@ package ai.areas.LairOfAntharas;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Pytan, Knorkiks AI.
  * @author QuangNguyen
  */
-public class Pytan extends AbstractNpcAI
+public class Pytan extends Script
 {
 	// NPCs
 	private static final int PYTAN = 20761;

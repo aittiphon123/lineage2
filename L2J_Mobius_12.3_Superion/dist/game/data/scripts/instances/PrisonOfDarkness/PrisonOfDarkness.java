@@ -16,7 +16,7 @@
  */
 package instances.PrisonOfDarkness;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Attackable;
@@ -24,19 +24,18 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
-
 /**
  * Prison of Darkness instance zone.
  * @author St3eT
  */
-public class PrisonOfDarkness extends AbstractInstance
+public class PrisonOfDarkness extends InstanceScript
 {
 	// NPCs
 	private static final int SPEZION = 25779;
@@ -219,7 +218,7 @@ public class PrisonOfDarkness extends AbstractInstance
 						{
 							for (Player member : player.getParty().getMembers())
 							{
-								if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+								if (member.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 								{
 									member.teleToLocation(ORBIS_LOCATION);
 								}

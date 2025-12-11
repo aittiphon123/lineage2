@@ -18,12 +18,13 @@ package org.l2jmobius.gameserver.model.stats;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
 import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.Weapon;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
 import org.l2jmobius.gameserver.model.item.type.WeaponType;
@@ -43,12 +44,12 @@ public interface IStatFunction
 		}
 	}
 	
-	default double calcEnchantBodyPart(Creature creature, int... slots)
+	default double calcEnchantBodyPart(Creature creature, BodyPart... bodyParts)
 	{
 		double value = 0;
-		for (int slot : slots)
+		for (BodyPart bodyPart : bodyParts)
 		{
-			final Item item = creature.getInventory().getPaperdollItemBySlotId(slot);
+			final Item item = creature.getInventory().getPaperdollItemByBodyPart(bodyPart);
 			if ((item != null) && (item.getEnchantLevel() >= 4) && (item.getTemplate().getCrystalTypePlus() == CrystalType.R))
 			{
 				value += calcEnchantBodyPartBonus(item.getEnchantLevel(), item.getTemplate().isBlessed());
@@ -112,10 +113,10 @@ public interface IStatFunction
 		for (Item equippedItem : creature.getInventory().getPaperdollItems(Item::isEnchanted))
 		{
 			final ItemTemplate item = equippedItem.getTemplate();
-			final int bodypart = item.getBodyPart();
-			if ((bodypart == ItemTemplate.SLOT_HAIR) || //
-				(bodypart == ItemTemplate.SLOT_HAIR2) || //
-				(bodypart == ItemTemplate.SLOT_HAIRALL))
+			final BodyPart bodyPart = item.getBodyPart();
+			if ((bodyPart == BodyPart.HAIR) || //
+				(bodyPart == BodyPart.HAIR2) || //
+				(bodyPart == BodyPart.HAIRALL))
 			{
 				// TODO: Item after enchant shows pDef, but scroll says mDef increase.
 				if ((stat != Stat.PHYSICAL_DEFENCE) && (stat != Stat.MAGICAL_DEFENCE))
@@ -135,16 +136,16 @@ public interface IStatFunction
 			{
 				if (item.isWeapon())
 				{
-					if ((Config.OLYMPIAD_WEAPON_ENCHANT_LIMIT >= 0) && (enchant > Config.OLYMPIAD_WEAPON_ENCHANT_LIMIT))
+					if ((OlympiadConfig.OLYMPIAD_WEAPON_ENCHANT_LIMIT >= 0) && (enchant > OlympiadConfig.OLYMPIAD_WEAPON_ENCHANT_LIMIT))
 					{
-						enchant = Config.OLYMPIAD_WEAPON_ENCHANT_LIMIT;
+						enchant = OlympiadConfig.OLYMPIAD_WEAPON_ENCHANT_LIMIT;
 					}
 				}
 				else
 				{
-					if ((Config.OLYMPIAD_ARMOR_ENCHANT_LIMIT >= 0) && (enchant > Config.OLYMPIAD_ARMOR_ENCHANT_LIMIT))
+					if ((OlympiadConfig.OLYMPIAD_ARMOR_ENCHANT_LIMIT >= 0) && (enchant > OlympiadConfig.OLYMPIAD_ARMOR_ENCHANT_LIMIT))
 					{
-						enchant = Config.OLYMPIAD_ARMOR_ENCHANT_LIMIT;
+						enchant = OlympiadConfig.OLYMPIAD_ARMOR_ENCHANT_LIMIT;
 					}
 				}
 			}
@@ -208,7 +209,7 @@ public interface IStatFunction
 					return (10 * enchant) + (10 * Math.max(0, enchant - 3));
 				}
 				
-				if ((weapon.getBodyPart() == ItemTemplate.SLOT_R_HAND) || (weapon.getItemType() == WeaponType.POLE))
+				if ((weapon.getBodyPart() == BodyPart.R_HAND) || (weapon.getItemType() == WeaponType.POLE))
 				{
 					// P. Atk. increases by 5 for One-Handed Weapons and Poles. Starting at +4, P. Atk. bonus double.
 					return (5 * enchant) + (5 * Math.max(0, enchant - 3));
@@ -226,7 +227,7 @@ public interface IStatFunction
 					return (8 * enchant) + (8 * Math.max(0, enchant - 3));
 				}
 				
-				if ((weapon.getBodyPart() == ItemTemplate.SLOT_R_HAND) || (weapon.getItemType() == WeaponType.POLE))
+				if ((weapon.getBodyPart() == BodyPart.R_HAND) || (weapon.getItemType() == WeaponType.POLE))
 				{
 					// P. Atk. increases by 4 for One-Handed Weapons and Poles. Starting at +4, P. Atk. bonus double.
 					return (4 * enchant) + (4 * Math.max(0, enchant - 3));

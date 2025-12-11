@@ -29,8 +29,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.TransmogConfig;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.model.TradeItem;
 import org.l2jmobius.gameserver.model.TradeList;
@@ -806,7 +807,7 @@ public class PlayerInventory extends Inventory
 				{
 					final int slot = invdata.getInt("loc_data");
 					paperdoll[slot][0] = invdata.getInt("object_id");
-					if (Config.ENABLE_TRANSMOG)
+					if (TransmogConfig.ENABLE_TRANSMOG)
 					{
 						final ItemVariables vars = new ItemVariables(paperdoll[slot][0]);
 						paperdoll[slot][1] = vars.getInt(ItemVariables.TRANSMOG_ID, invdata.getInt("item_id"));
@@ -908,7 +909,7 @@ public class PlayerInventory extends Inventory
 	
 	public boolean validateCapacity(long slots, boolean questItem)
 	{
-		return ((slots == 0) && !Config.AUTO_LOOT_SLOT_LIMIT) || ((getNonQuestSize() + slots) <= _owner.getInventoryLimit());
+		return ((slots == 0) && !PlayerConfig.AUTO_LOOT_SLOT_LIMIT) || ((getNonQuestSize() + slots) <= _owner.getInventoryLimit());
 	}
 	
 	@Override

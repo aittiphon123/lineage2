@@ -18,7 +18,8 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.NpcConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.ClanHallData;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.FortManager;
@@ -53,7 +54,7 @@ public class RegenMPFinalizer implements IStatFunction
 		throwIfPresent(base);
 		
 		double baseValue = creature.isPlayer() ? creature.asPlayer().getTemplate().getBaseMpRegen(creature.getLevel()) : creature.getTemplate().getBaseMpReg();
-		baseValue *= creature.isRaid() ? Config.RAID_MP_REGEN_MULTIPLIER : Config.MP_REGEN_MULTIPLIER;
+		baseValue *= creature.isRaid() ? NpcConfig.RAID_MP_REGEN_MULTIPLIER : PlayerConfig.MP_REGEN_MULTIPLIER;
 		if (creature.isPlayer())
 		{
 			final Player player = creature.asPlayer();
@@ -142,7 +143,7 @@ public class RegenMPFinalizer implements IStatFunction
 		}
 		else if (creature.isPet())
 		{
-			baseValue = creature.asPet().getPetLevelData().getPetRegenMP() * Config.PET_MP_REGEN_MULTIPLIER;
+			baseValue = creature.asPet().getPetLevelData().getPetRegenMP() * NpcConfig.PET_MP_REGEN_MULTIPLIER;
 		}
 		
 		return Stat.defaultValue(creature, stat, baseValue);

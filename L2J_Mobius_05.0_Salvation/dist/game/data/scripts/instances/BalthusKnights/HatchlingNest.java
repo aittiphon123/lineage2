@@ -27,18 +27,18 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
 import quests.Q10552_ChallengeBalthusKnight.Q10552_ChallengeBalthusKnight;
 
 /**
  * Hatchling Nest instance zone.
  * @author Kazumi
  */
-public final class HatchlingNest extends AbstractInstance
+public final class HatchlingNest extends InstanceScript
 {
 	// MOBs
 	private static final int HATCHLING = 24089;

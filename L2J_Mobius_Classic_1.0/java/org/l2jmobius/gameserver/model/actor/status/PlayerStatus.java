@@ -20,8 +20,9 @@
  */
 package org.l2jmobius.gameserver.model.actor.status;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
+import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.data.xml.NpcNameLocalisationData;
 import org.l2jmobius.gameserver.managers.DuelManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -83,7 +84,7 @@ public class PlayerStatus extends PlayableStatus
 		}
 		
 		// If OFFLINE_MODE_NO_DAMAGE is enabled and player is offline and he is in store/craft mode, no damage is taken.
-		if (Config.OFFLINE_MODE_NO_DAMAGE && (player.getClient() != null) && player.getClient().isDetached() && ((Config.OFFLINE_TRADE_ENABLE && ((player.getPrivateStoreType() == PrivateStoreType.SELL) || (player.getPrivateStoreType() == PrivateStoreType.BUY))) || (Config.OFFLINE_CRAFT_ENABLE && (player.isCrafting() || (player.getPrivateStoreType() == PrivateStoreType.MANUFACTURE)))))
+		if (OfflineTradeConfig.OFFLINE_MODE_NO_DAMAGE && (player.getClient() != null) && player.getClient().isDetached() && ((OfflineTradeConfig.OFFLINE_TRADE_ENABLE && ((player.getPrivateStoreType() == PrivateStoreType.SELL) || (player.getPrivateStoreType() == PrivateStoreType.BUY))) || (OfflineTradeConfig.OFFLINE_CRAFT_ENABLE && (player.isCrafting() || (player.getPrivateStoreType() == PrivateStoreType.MANUFACTURE)))))
 		{
 			return;
 		}
@@ -263,7 +264,7 @@ public class PlayerStatus extends PlayableStatus
 				
 				// Localisation related.
 				String targetName = attacker.getName();
-				if (Config.MULTILANG_ENABLE && attacker.isNpc())
+				if (MultilingualSupportConfig.MULTILANG_ENABLE && attacker.isNpc())
 				{
 					final String[] localisation = NpcNameLocalisationData.getInstance().getLocalisation(player.getLang(), attacker.getId());
 					if (localisation != null)

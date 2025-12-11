@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.handler.AdminCommandHandler;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
@@ -68,7 +68,7 @@ public class RequestDestroyItem extends ClientPacket
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DESTROY_IT_BECAUSE_THE_NUMBER_IS_INCORRECT);
 			if (_count < 0)
 			{
-				PunishmentManager.handleIllegalPlayerAction(player, "[RequestDestroyItem] Character " + player.getName() + " of account " + player.getAccountName() + " tried to destroy item with oid " + _objectId + " but has count < 0!", Config.DEFAULT_PUNISH);
+				PunishmentManager.handleIllegalPlayerAction(player, "[RequestDestroyItem] Character " + player.getName() + " of account " + player.getAccountName() + " tried to destroy item with oid " + _objectId + " but has count < 0!", GeneralConfig.DEFAULT_PUNISH);
 			}
 			return;
 		}
@@ -125,7 +125,7 @@ public class RequestDestroyItem extends ClientPacket
 		}
 		
 		final int itemId = itemToRemove.getId();
-		if (!Config.DESTROY_ALL_ITEMS && ((!player.isGM() && !itemToRemove.isDestroyable()) || CursedWeaponsManager.getInstance().isCursed(itemId)))
+		if (!GeneralConfig.DESTROY_ALL_ITEMS && ((!player.isGM() && !itemToRemove.isDestroyable()) || CursedWeaponsManager.getInstance().isCursed(itemId)))
 		{
 			if (itemToRemove.isHeroItem())
 			{
@@ -140,7 +140,7 @@ public class RequestDestroyItem extends ClientPacket
 		
 		if (!itemToRemove.isStackable() && (count > 1))
 		{
-			PunishmentManager.handleIllegalPlayerAction(player, "[RequestDestroyItem] Character " + player.getName() + " of account " + player.getAccountName() + " tried to destroy a non-stackable item with oid " + _objectId + " but has count > 1!", Config.DEFAULT_PUNISH);
+			PunishmentManager.handleIllegalPlayerAction(player, "[RequestDestroyItem] Character " + player.getName() + " of account " + player.getAccountName() + " tried to destroy a non-stackable item with oid " + _objectId + " but has count > 1!", GeneralConfig.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -177,10 +177,10 @@ public class RequestDestroyItem extends ClientPacket
 			}
 		}
 		
-		if (itemToRemove.isTimeLimitedItem())
-		{
-			itemToRemove.endOfLife();
-		}
+		// if (itemToRemove.isTimeLimitedItem())
+		// {
+		// itemToRemove.endOfLife();
+		// }
 		
 		if (itemToRemove.isEquipped())
 		{

@@ -21,7 +21,8 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.custom.FactionSystemConfig;
 import org.l2jmobius.gameserver.handler.IChatHandler;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -50,7 +51,7 @@ public class ChatWorld implements IChatHandler
 	@Override
 	public void onChat(ChatType type, Player activeChar, String target, String text, boolean shareLocation)
 	{
-		if (!Config.ENABLE_WORLD_CHAT)
+		if (!GeneralConfig.ENABLE_WORLD_CHAT)
 		{
 			return;
 		}
@@ -61,17 +62,17 @@ public class ChatWorld implements IChatHandler
 			REUSE.values().removeIf(now::isAfter);
 		}
 		
-		if (activeChar.getLevel() < Config.WORLD_CHAT_MIN_LEVEL)
+		if (activeChar.getLevel() < GeneralConfig.WORLD_CHAT_MIN_LEVEL)
 		{
 			final SystemMessage msg = new SystemMessage(SystemMessageId.YOU_MUST_BE_LV_S1_OR_HIGHER_TO_USE_WORLD_CHAT_YOU_CAN_ALSO_USE_IT_WITH_VIP_BENEFITS);
-			msg.addInt(Config.WORLD_CHAT_MIN_LEVEL);
+			msg.addInt(GeneralConfig.WORLD_CHAT_MIN_LEVEL);
 			activeChar.sendPacket(msg);
 		}
-		else if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.contains(type))
+		else if (activeChar.isChatBanned() && GeneralConfig.BAN_CHAT_CHANNELS.contains(type))
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED_IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER);
 		}
-		else if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.isGM())
+		else if (GeneralConfig.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.isGM())
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 		}
@@ -79,7 +80,7 @@ public class ChatWorld implements IChatHandler
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_USED_WORLD_CHAT_UP_TO_TODAY_S_LIMIT_THE_USAGE_COUNT_OF_WORLD_CHAT_IS_RESET_EVERY_DAY_AT_6_30);
 		}
-		else if (shareLocation && (activeChar.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.SHARING_LOCATION_COST))
+		else if (shareLocation && (activeChar.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < GeneralConfig.SHARING_LOCATION_COST))
 		{
 			activeChar.sendPacket(SystemMessageId.NOT_ENOUGH_L2_COINS);
 		}
@@ -90,7 +91,7 @@ public class ChatWorld implements IChatHandler
 		else
 		{
 			// Verify if player is not spaming.
-			if (Config.WORLD_CHAT_INTERVAL.getSeconds() > 0)
+			if (GeneralConfig.WORLD_CHAT_INTERVAL.getSeconds() > 0)
 			{
 				final Instant instant = REUSE.getOrDefault(activeChar.getObjectId(), null);
 				if ((instant != null) && instant.isAfter(now))
@@ -105,11 +106,11 @@ public class ChatWorld implements IChatHandler
 			
 			if (shareLocation)
 			{
-				activeChar.destroyItemByItemId(ItemProcessType.FEE, Inventory.LCOIN_ID, Config.SHARING_LOCATION_COST, activeChar, true);
+				activeChar.destroyItemByItemId(ItemProcessType.FEE, Inventory.LCOIN_ID, GeneralConfig.SHARING_LOCATION_COST, activeChar, true);
 			}
 			
 			final CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text, shareLocation);
-			if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_SPECIFIC_CHAT)
+			if (FactionSystemConfig.FACTION_SYSTEM_ENABLED && FactionSystemConfig.FACTION_SPECIFIC_CHAT)
 			{
 				if (activeChar.isGood())
 				{
@@ -146,9 +147,9 @@ public class ChatWorld implements IChatHandler
 			
 			activeChar.setWorldChatUsed(activeChar.getWorldChatUsed() + 1);
 			activeChar.sendPacket(new ExWorldChatCnt(activeChar));
-			if (Config.WORLD_CHAT_INTERVAL.getSeconds() > 0)
+			if (GeneralConfig.WORLD_CHAT_INTERVAL.getSeconds() > 0)
 			{
-				REUSE.put(activeChar.getObjectId(), now.plus(Config.WORLD_CHAT_INTERVAL));
+				REUSE.put(activeChar.getObjectId(), now.plus(GeneralConfig.WORLD_CHAT_INTERVAL));
 			}
 		}
 	}

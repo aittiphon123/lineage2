@@ -24,6 +24,7 @@ import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
@@ -31,14 +32,12 @@ import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import ai.AbstractNpcAI;
-
 /**
  * Theorn AI
  * @author Gigi, Mobius
  * @date 2017-10-26 - [22:17:03]
  */
-public class Theorn extends AbstractNpcAI
+public class Theorn extends Script
 {
 	// NPC
 	private static final int THERON = 33897;

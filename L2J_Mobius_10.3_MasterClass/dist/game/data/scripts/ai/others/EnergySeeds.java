@@ -35,18 +35,17 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
 
-import ai.AbstractNpcAI;
-
 /**
  * Energy Seeds AI.
  * @author Gigiikun
  */
-public class EnergySeeds extends AbstractNpcAI
+public class EnergySeeds extends Script
 {
 	// NPCs
 	private static final int TEMPORARY_TELEPORTER = 32602;
@@ -95,7 +94,8 @@ public class EnergySeeds extends AbstractNpcAI
 	
 	public EnergySeeds()
 	{
-		registerMobs(SEED_IDS);
+		addKillId(SEED_IDS);
+		addSkillSeeId(SEED_IDS);
 		addFirstTalkId(SEED_IDS);
 		addFirstTalkId(TEMPORARY_TELEPORTER);
 		addEnterZoneId(SOD_ZONE);
@@ -124,6 +124,70 @@ public class EnergySeeds extends AbstractNpcAI
 		}
 		
 		return true;
+	}
+	
+	@Override
+	public String onEvent(String event, Npc npc, Player player)
+	{
+		if (event.equalsIgnoreCase("StartSoDAi"))
+		{
+			for (int doorId : SEED_OF_DESTRUCTION_DOORS)
+			{
+				final Door doorInstance = DoorData.getInstance().getDoor(doorId);
+				if (doorInstance != null)
+				{
+					doorInstance.openMe();
+				}
+			}
+			
+			startAI(GraciaSeeds.DESTRUCTION);
+		}
+		else if (event.equalsIgnoreCase("StopSoDAi"))
+		{
+			for (int doorId : SEED_OF_DESTRUCTION_DOORS)
+			{
+				final Door doorInstance = DoorData.getInstance().getDoor(doorId);
+				if (doorInstance != null)
+				{
+					doorInstance.closeMe();
+				}
+			}
+			
+			for (Player ch : ZoneManager.getInstance().getZoneById(SOD_ZONE).getPlayersInside())
+			{
+				if (ch != null)
+				{
+					ch.teleToLocation(SOD_EXIT_POINT);
+				}
+			}
+			
+			stopAI(GraciaSeeds.DESTRUCTION);
+		}
+		else if (event.equalsIgnoreCase("DeSpawnTask"))
+		{
+			if (npc.isInCombat())
+			{
+				startQuestTimer("DeSpawnTask", 30000, npc, null);
+			}
+			else
+			{
+				npc.deleteMe();
+			}
+		}
+		
+		return null;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		if (npc.getId() == TEMPORARY_TELEPORTER)
+		{
+			player.teleToLocation(SOD_EXIT_POINT);
+		}
+		
+		player.sendPacket(ActionFailed.STATIC_PACKET);
+		return null;
 	}
 	
 	@Override
@@ -197,70 +261,6 @@ public class EnergySeeds extends AbstractNpcAI
 				seedCollectEvent(caster, npc, spawn._seedId);
 			}
 		}
-	}
-	
-	@Override
-	public String onEvent(String event, Npc npc, Player player)
-	{
-		if (event.equalsIgnoreCase("StartSoDAi"))
-		{
-			for (int doorId : SEED_OF_DESTRUCTION_DOORS)
-			{
-				final Door doorInstance = DoorData.getInstance().getDoor(doorId);
-				if (doorInstance != null)
-				{
-					doorInstance.openMe();
-				}
-			}
-			
-			startAI(GraciaSeeds.DESTRUCTION);
-		}
-		else if (event.equalsIgnoreCase("StopSoDAi"))
-		{
-			for (int doorId : SEED_OF_DESTRUCTION_DOORS)
-			{
-				final Door doorInstance = DoorData.getInstance().getDoor(doorId);
-				if (doorInstance != null)
-				{
-					doorInstance.closeMe();
-				}
-			}
-			
-			for (Player ch : ZoneManager.getInstance().getZoneById(SOD_ZONE).getPlayersInside())
-			{
-				if (ch != null)
-				{
-					ch.teleToLocation(SOD_EXIT_POINT);
-				}
-			}
-			
-			stopAI(GraciaSeeds.DESTRUCTION);
-		}
-		else if (event.equalsIgnoreCase("DeSpawnTask"))
-		{
-			if (npc.isInCombat())
-			{
-				startQuestTimer("DeSpawnTask", 30000, npc, null);
-			}
-			else
-			{
-				npc.deleteMe();
-			}
-		}
-		
-		return null;
-	}
-	
-	@Override
-	public String onFirstTalk(Npc npc, Player player)
-	{
-		if (npc.getId() == TEMPORARY_TELEPORTER)
-		{
-			player.teleToLocation(SOD_EXIT_POINT);
-		}
-		
-		player.sendPacket(ActionFailed.STATIC_PACKET);
-		return null;
 	}
 	
 	@Override

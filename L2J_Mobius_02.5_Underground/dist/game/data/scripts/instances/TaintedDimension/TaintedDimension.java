@@ -22,17 +22,16 @@ import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import instances.AbstractInstance;
 
 /**
  * Tainted Dimension instance zone.
  * @author St3eT
  */
-public class TaintedDimension extends AbstractInstance
+public class TaintedDimension extends InstanceScript
 {
 	// NPCs
 	private static final int MYSTERIOUS_PRIEST = 33361;

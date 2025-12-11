@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.managers.events.LetterCollectorManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.GameClient;
@@ -36,7 +36,7 @@ public class ExLetterCollectorUI extends ServerPacket
 	
 	public ExLetterCollectorUI(Player player)
 	{
-		_minimumLevel = player.getLevel() <= LetterCollectorManager.getInstance().getMaxLevel() ? LetterCollectorManager.getInstance().getMinLevel() : Config.PLAYER_MAXIMUM_LEVEL;
+		_minimumLevel = player.getLevel() <= LetterCollectorManager.getInstance().getMaxLevel() ? LetterCollectorManager.getInstance().getMinLevel() : PlayerConfig.PLAYER_MAXIMUM_LEVEL;
 	}
 	
 	@Override

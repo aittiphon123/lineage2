@@ -19,16 +19,15 @@ package ai.areas.TalkingIsland.GiantSoldiers;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-
-import ai.AbstractNpcAI;
 
 /**
  * Giant's Soldiers AI.
  * @author Gladicek
  */
-public class GiantSoldiers extends AbstractNpcAI
+public class GiantSoldiers extends Script
 {
 	// NPCs
 	private static final int LAKSIAN = 33486;
@@ -142,6 +141,12 @@ public class GiantSoldiers extends AbstractNpcAI
 				break;
 			}
 		}
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

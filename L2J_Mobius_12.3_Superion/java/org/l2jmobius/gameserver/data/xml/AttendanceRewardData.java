@@ -27,8 +27,8 @@ import java.util.logging.Logger;
 
 import org.w3c.dom.Document;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.AttendanceRewardsConfig;
 import org.l2jmobius.gameserver.data.holders.AttendanceItemHolder;
 import org.l2jmobius.gameserver.model.StatSet;
 
@@ -49,7 +49,7 @@ public class AttendanceRewardData implements IXmlReader
 	@Override
 	public void load()
 	{
-		if (Config.ENABLE_ATTENDANCE_REWARDS)
+		if (AttendanceRewardsConfig.ENABLE_ATTENDANCE_REWARDS)
 		{
 			_rewards.clear();
 			parseDatapackFile("data/AttendanceRewards.xml");

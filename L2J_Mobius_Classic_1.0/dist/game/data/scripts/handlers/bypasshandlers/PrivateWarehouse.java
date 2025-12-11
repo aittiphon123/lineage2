@@ -22,7 +22,7 @@ package handlers.bypasshandlers;
 
 import java.util.logging.Level;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.handler.IBypassHandler;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -42,7 +42,7 @@ public class PrivateWarehouse implements IBypassHandler
 	@Override
 	public boolean onCommand(String command, Player player, Creature target)
 	{
-		if (!Config.ALLOW_WAREHOUSE)
+		if (!GeneralConfig.ALLOW_WAREHOUSE)
 		{
 			return false;
 		}

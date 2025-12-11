@@ -34,9 +34,9 @@ import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.xml.DoorData;
 import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.model.Location;
@@ -1050,11 +1050,11 @@ public class Instance
 	
 	/**
 	 * Set instance world to finish state.<br>
-	 * Calls method {@link Instance#finishInstance(int)} with {@link Config#INSTANCE_FINISH_TIME} as argument.
+	 * Calls method {@link Instance#finishInstance(int)} with {@link GeneralConfig#INSTANCE_FINISH_TIME} as argument.
 	 */
 	public void finishInstance()
 	{
-		finishInstance(Config.INSTANCE_FINISH_TIME);
+		finishInstance(GeneralConfig.INSTANCE_FINISH_TIME);
 	}
 	
 	/**
@@ -1196,7 +1196,7 @@ public class Instance
 	public void onPlayerLogout(Player player)
 	{
 		removePlayer(player);
-		if (Config.RESTORE_PLAYER_INSTANCE)
+		if (GeneralConfig.RESTORE_PLAYER_INSTANCE)
 		{
 			player.getVariables().set(PlayerVariables.INSTANCE_RESTORE, _id);
 		}

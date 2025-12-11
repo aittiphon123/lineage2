@@ -26,7 +26,7 @@ import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.model.zone.type.NoRestartZone;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -323,13 +323,13 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	private Quest antharasAi()
 	{
 		return null;
-		// return QuestManager.getInstance().getQuest(Antharas.class.getSimpleName());
+		// return ScriptManager.getInstance().getScript(Antharas.class.getSimpleName());
 	}
 	
 	private Quest baiumAi()
 	{
 		return null;
-		// return QuestManager.getInstance().getQuest(Baium.class.getSimpleName());
+		// return ScriptManager.getInstance().getScript(Baium.class.getSimpleName());
 	}
 	
 	@Override

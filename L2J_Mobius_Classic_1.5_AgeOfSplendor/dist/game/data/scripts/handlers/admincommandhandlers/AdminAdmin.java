@@ -23,9 +23,10 @@ package handlers.admincommandhandlers;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.time.TimeUtil;
 import org.l2jmobius.commons.util.StringUtil;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.data.xml.AdminData;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
 import org.l2jmobius.gameserver.model.World;
@@ -319,17 +320,17 @@ public class AdminAdmin implements IAdminCommandHandler
 				{
 					case "RateXp":
 					{
-						Config.RATE_XP = Float.parseFloat(pValue);
+						RatesConfig.RATE_XP = Float.parseFloat(pValue);
 						break;
 					}
 					case "RateSp":
 					{
-						Config.RATE_SP = Float.parseFloat(pValue);
+						RatesConfig.RATE_SP = Float.parseFloat(pValue);
 						break;
 					}
 					case "RateDropSpoil":
 					{
-						Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER = Float.parseFloat(pValue);
+						RatesConfig.RATE_SPOIL_DROP_CHANCE_MULTIPLIER = Float.parseFloat(pValue);
 						break;
 					}
 				}
@@ -380,9 +381,9 @@ public class AdminAdmin implements IAdminCommandHandler
 					}
 					
 					final Player targetPlayer = target.asPlayer();
-					if (targetPlayer.getLevel() < Config.WORLD_CHAT_MIN_LEVEL)
+					if (targetPlayer.getLevel() < GeneralConfig.WORLD_CHAT_MIN_LEVEL)
 					{
-						activeChar.sendSysMessage("Your target's level is below the minimum: " + Config.WORLD_CHAT_MIN_LEVEL);
+						activeChar.sendSysMessage("Your target's level is below the minimum: " + GeneralConfig.WORLD_CHAT_MIN_LEVEL);
 						break;
 					}
 					
@@ -399,9 +400,9 @@ public class AdminAdmin implements IAdminCommandHandler
 					}
 					
 					final Player targetPlayer = target.asPlayer();
-					if (targetPlayer.getLevel() < Config.WORLD_CHAT_MIN_LEVEL)
+					if (targetPlayer.getLevel() < GeneralConfig.WORLD_CHAT_MIN_LEVEL)
 					{
-						activeChar.sendSysMessage("Your target's level is below the minimum: " + Config.WORLD_CHAT_MIN_LEVEL);
+						activeChar.sendSysMessage("Your target's level is below the minimum: " + GeneralConfig.WORLD_CHAT_MIN_LEVEL);
 						break;
 					}
 					
@@ -420,7 +421,7 @@ public class AdminAdmin implements IAdminCommandHandler
 					
 					activeChar.sendSysMessage(targetPlayer.getName() + ": times used changed from " + targetPlayer.getWorldChatPoints() + " to " + valueToken);
 					targetPlayer.setWorldChatUsed(Integer.parseInt(valueToken));
-					if (Config.ENABLE_WORLD_CHAT)
+					if (GeneralConfig.ENABLE_WORLD_CHAT)
 					{
 						targetPlayer.sendPacket(new ExWorldChatCnt(targetPlayer));
 					}
@@ -517,9 +518,9 @@ public class AdminAdmin implements IAdminCommandHandler
 		replyMSG.append("<center><table width=270><tr><td width=60><button value=\"Main\" action=\"bypass admin_admin\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=150>Config Server Panel</td><td width=60><button value=\"Back\" action=\"bypass admin_admin4\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></center><br>");
 		replyMSG.append("<center><table width=260><tr><td width=140></td><td width=40></td><td width=40></td></tr>");
 		replyMSG.append("<tr><td><font color=\"00AA00\">Drop:</font></td><td></td><td></td></tr>");
-		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate EXP</font> = " + Config.RATE_XP + "</td><td><edit var=\"param1\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateXp $param1\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
-		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate SP</font> = " + Config.RATE_SP + "</td><td><edit var=\"param2\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateSp $param2\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
-		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate Drop Spoil</font> = " + Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER + "</td><td><edit var=\"param4\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateDropSpoil $param4\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate EXP</font> = " + RatesConfig.RATE_XP + "</td><td><edit var=\"param1\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateXp $param1\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate SP</font> = " + RatesConfig.RATE_SP + "</td><td><edit var=\"param2\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateSp $param2\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate Drop Spoil</font> = " + RatesConfig.RATE_SPOIL_DROP_CHANCE_MULTIPLIER + "</td><td><edit var=\"param4\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateDropSpoil $param4\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 		replyMSG.append("<tr><td width=140></td><td width=40></td><td width=40></td></tr>");
 		replyMSG.append("</table></body></html>");
 		adminReply.setHtml(replyMSG.toString());

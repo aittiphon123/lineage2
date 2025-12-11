@@ -442,10 +442,10 @@ public class AdminSkill implements IAdminCommandHandler
 	private void adminAddSkills(Player player)
 	{
 		final List<Race> races = new ArrayList<>();
-		for (PlayerClass classId : PlayerClass.values())
+		for (PlayerClass playerClass : PlayerClass.values())
 		{
-			final Race race = classId.getRace();
-			if ((race != null) && !races.contains(race) /* && !SkillTreeData.getInstance().getCompleteClassSkillTree(classId).isEmpty() */)
+			final Race race = playerClass.getRace();
+			if ((race != null) && !races.contains(race) /* && !SkillTreeData.getInstance().getCompleteClassSkillTree(playerClass).isEmpty() */)
 			{
 				races.add(race);
 			}
@@ -466,19 +466,19 @@ public class AdminSkill implements IAdminCommandHandler
 	private void adminAddRaceSkills(Player player, Race race)
 	{
 		final List<PlayerClass> classes = new ArrayList<>();
-		for (PlayerClass classId : PlayerClass.values())
+		for (PlayerClass playerClass : PlayerClass.values())
 		{
-			if ((classId.getRace() == race) && !SkillTreeData.getInstance().getCompleteClassSkillTree(classId).isEmpty())
+			if ((playerClass.getRace() == race) && !SkillTreeData.getInstance().getCompleteClassSkillTree(playerClass).isEmpty())
 			{
-				classes.add(classId);
+				classes.add(playerClass);
 			}
 		}
 		
 		final StringBuilder sb = new StringBuilder();
-		for (PlayerClass classId : classes)
+		for (PlayerClass playerClass : classes)
 		{
 			final String color;
-			switch (classId.level())
+			switch (playerClass.level())
 			{
 				case 1:
 				{
@@ -507,7 +507,7 @@ public class AdminSkill implements IAdminCommandHandler
 				}
 			}
 			
-			sb.append("<tr><td><Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass admin_skill_class " + classId + "\"><font color=\"" + color + "\">" + ClassListData.getInstance().getClass(classId).getClassName() + "</font></Button></td></tr>");
+			sb.append("<tr><td><Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass admin_skill_class " + playerClass + "\"><font color=\"" + color + "\">" + ClassListData.getInstance().getClass(playerClass).getClassName() + "</font></Button></td></tr>");
 		}
 		
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
@@ -517,23 +517,23 @@ public class AdminSkill implements IAdminCommandHandler
 		player.sendPacket(html);
 	}
 	
-	private void adminAddClassSkills(Player player, PlayerClass classId, int page)
+	private void adminAddClassSkills(Player player, PlayerClass playerClass, int page)
 	{
 		final Set<Skill> skills = new HashSet<>();
-		for (SkillLearn skillLearn : SkillTreeData.getInstance().getCompleteClassSkillTree(classId).values())
+		for (SkillLearn skillLearn : SkillTreeData.getInstance().getCompleteClassSkillTree(playerClass).values())
 		{
 			skills.add(SkillData.getInstance().getSkill(skillLearn.getSkillId(), 1));
 		}
 		
 		int row = 0;
-		final String pageLink = "bypass admin_skill_class " + classId;
+		final String pageLink = "bypass admin_skill_class " + playerClass;
 		final PageResult result = PageBuilder.newBuilder(skills, PAGE_LIMIT, pageLink).currentPage(page).style(ButtonsStyle.INSTANCE).bodyHandler((pages, skill, sb) ->
 		{
 			sb.append((row % 2) == 0 ? "<table width=\"295\" bgcolor=\"000000\">" : "<table width=\"295\">");
 			sb.append("<tr><td height=40 width=40><img src=\"");
 			sb.append(skill.getIcon());
 			sb.append("\" width=32 height=32></td><td width=190><font color=\"B09878\"><a action=\"bypass admin_skill_add_list ");
-			sb.append(classId);
+			sb.append(playerClass);
 			sb.append(" ");
 			sb.append(skill.getId());
 			sb.append("\">");
@@ -545,7 +545,7 @@ public class AdminSkill implements IAdminCommandHandler
 		
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(player, "data/html/admin/charskills_class.htm");
-		html.replace("%classname%", ClassListData.getInstance().getClass(classId).getClassName());
+		html.replace("%classname%", ClassListData.getInstance().getClass(playerClass).getClassName());
 		html.replace("%skilllist%", result.getBodyTemplate().toString());
 		if (result.getPages() > 1)
 		{
@@ -559,10 +559,10 @@ public class AdminSkill implements IAdminCommandHandler
 		player.sendPacket(html);
 	}
 	
-	private void adminAddClassSkillList(Player player, PlayerClass classId, int skillId, int page)
+	private void adminAddClassSkillList(Player player, PlayerClass playerClass, int skillId, int page)
 	{
 		final Map<Integer, Skill> skills = new TreeMap<>();
-		for (SkillLearn skillLearn : SkillTreeData.getInstance().getCompleteClassSkillTree(classId).values())
+		for (SkillLearn skillLearn : SkillTreeData.getInstance().getCompleteClassSkillTree(playerClass).values())
 		{
 			final int id = skillLearn.getSkillId();
 			if (id == skillId)
@@ -573,7 +573,7 @@ public class AdminSkill implements IAdminCommandHandler
 		}
 		
 		int row = 0;
-		final String pageLink = "bypass admin_skill_add_list " + classId + " " + skillId;
+		final String pageLink = "bypass admin_skill_add_list " + playerClass + " " + skillId;
 		final PageResult result = PageBuilder.newBuilder(skills.values(), PAGE_LIMIT, pageLink).currentPage(page).style(ButtonsStyle.INSTANCE).bodyHandler((pages, skill, sb) ->
 		{
 			sb.append((row % 2) == 0 ? "<table width=\"295\" bgcolor=\"000000\">" : "<table width=\"295\">");
@@ -594,7 +594,7 @@ public class AdminSkill implements IAdminCommandHandler
 		html.setFile(player, "data/html/admin/charskills_add_list.htm");
 		html.replace("%skillid%", skillId);
 		html.replace("%skilllist%", result.getBodyTemplate().toString());
-		html.replace("%classId%", classId.toString());
+		html.replace("%classId%", playerClass.toString());
 		if (result.getPages() > 1)
 		{
 			html.replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");

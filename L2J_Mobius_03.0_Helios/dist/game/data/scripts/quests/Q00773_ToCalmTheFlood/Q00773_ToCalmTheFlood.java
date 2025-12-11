@@ -31,12 +31,12 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.groups.Party;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.QuestType;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestType;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
 /**
@@ -125,13 +125,13 @@ public class Q00773_ToCalmTheFlood extends Quest
 						qs.exitQuest(QuestType.DAILY, true);
 						giveAdena(player, 1_448_604, true);
 						addExpAndSp(player, 429526470, 429510);
-						// final Quest qs749 = QuestManager.getInstance().getQuest(Q00749_TiesWithTheGuardians.class.getSimpleName());
+						// final Quest qs749 = ScriptManager.getInstance().getScript(Q00749_TiesWithTheGuardians.class.getSimpleName());
 						// if (qs749 != null)
 						// {
 						// qs749.notifyEvent("NOTIFY_Q749", npc, player);
 						// }
 						
-						// final Quest qs565 = QuestManager.getInstance().getQuest(Q00565_BasicMissionFairySettlementWest.class.getSimpleName());
+						// final Quest qs565 = ScriptManager.getInstance().getScript(Q00565_BasicMissionFairySettlementWest.class.getSimpleName());
 						// if (qs565 != null)
 						// {
 						// qs565.notifyEvent("NOTIFY_Q773", npc, player);

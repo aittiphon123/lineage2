@@ -24,8 +24,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.xml.EnchantItemData;
 import org.l2jmobius.gameserver.data.xml.ItemCrystallizationData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
@@ -188,7 +188,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 						}
 						
 						_result.put(i, "SUCCESS");
-						if (Config.LOG_ITEM_ENCHANTS)
+						if (GeneralConfig.LOG_ITEM_ENCHANTS)
 						{
 							final StringBuilder sb = new StringBuilder();
 							if (enchantItem.getEnchantLevel() > 0)
@@ -209,7 +209,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							// Safe enchant: Remain old value.
 							player.sendPacket(SystemMessageId.ENCHANT_FAILED_THE_ENCHANT_SKILL_FOR_THE_CORRESPONDING_ITEM_WILL_BE_EXACTLY_RETAINED);
 							player.sendPacket(new EnchantResult(EnchantResult.SAFE_FAIL, new ItemHolder(enchantItem.getId(), 1), null, 0));
-							if (Config.LOG_ITEM_ENCHANTS)
+							if (GeneralConfig.LOG_ITEM_ENCHANTS)
 							{
 								final StringBuilder sb = new StringBuilder();
 								if (enchantItem.getEnchantLevel() > 0)
@@ -239,7 +239,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							
 							_result.put(i, "BLESSED_FAIL");
 							enchantItem.updateDatabase();
-							if (Config.LOG_ITEM_ENCHANTS)
+							if (GeneralConfig.LOG_ITEM_ENCHANTS)
 							{
 								final StringBuilder sb = new StringBuilder();
 								if (enchantItem.getEnchantLevel() > 0)
@@ -258,10 +258,10 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							if (player.getInventory().destroyItem(ItemProcessType.DESTROY, enchantItem, player, null) == null)
 							{
 								// Unable to destroy item, cheater?
-								PunishmentManager.handleIllegalPlayerAction(player, "Unable to delete item on enchant failure from " + player + ", possible cheater !", Config.DEFAULT_PUNISH);
+								PunishmentManager.handleIllegalPlayerAction(player, "Unable to delete item on enchant failure from " + player + ", possible cheater !", GeneralConfig.DEFAULT_PUNISH);
 								player.removeRequest(request.getClass());
 								_result.put(i, "ERROR");
-								if (Config.LOG_ITEM_ENCHANTS)
+								if (GeneralConfig.LOG_ITEM_ENCHANTS)
 								{
 									final StringBuilder sb = new StringBuilder();
 									if (enchantItem.getEnchantLevel() > 0)
@@ -323,7 +323,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 								player.sendPacket(new EnchantResult(EnchantResult.FAIL, destroyReward, null, 0));
 							}
 							
-							if (Config.LOG_ITEM_ENCHANTS)
+							if (GeneralConfig.LOG_ITEM_ENCHANTS)
 							{
 								final StringBuilder sb = new StringBuilder();
 								if (enchantItem.getEnchantLevel() > 0)

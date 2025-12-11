@@ -19,7 +19,7 @@ package org.l2jmobius.gameserver.model.olympiad;
 import java.util.List;
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 
 /**
@@ -41,13 +41,13 @@ public class OlympiadGameNonClassed extends OlympiadGameNormal
 	@Override
 	protected final int getDivider()
 	{
-		return Config.OLYMPIAD_DIVIDER_NON_CLASSED;
+		return OlympiadConfig.OLYMPIAD_DIVIDER_NON_CLASSED;
 	}
 	
 	@Override
 	protected final List<ItemHolder> getReward()
 	{
-		return Config.OLYMPIAD_NONCLASSED_REWARD;
+		return OlympiadConfig.OLYMPIAD_NONCLASSED_REWARD;
 	}
 	
 	@Override

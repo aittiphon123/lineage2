@@ -20,14 +20,13 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureAttacked;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Large Cocoon AI.
  * @author St3eT
  */
-public class LargeCocoon extends AbstractNpcAI
+public class LargeCocoon extends Script
 {
 	// NPCs
 	private static final int LARGE_COCOON = 32920;
@@ -73,7 +72,7 @@ public class LargeCocoon extends AbstractNpcAI
 			case "attackPowerful":
 			{
 				// TODO: Quest 466 stuffs
-				// final Quest qs10305 = QuestManager.getInstance().getQuest(Q10305_UnstoppableFutileEfforts.class.getSimpleName());
+				// final Quest qs10305 = ScriptManager.getInstance().getScript(Q10305_UnstoppableFutileEfforts.class.getSimpleName());
 				// if (qs10305 != null)
 				// {
 				// qs10305.notifyEvent("NOTIFY_Q10305", npc, player);
@@ -275,7 +274,7 @@ public class LargeCocoon extends AbstractNpcAI
 		final Playable playable = event.getAttacker().asPlayable();
 		
 		// TODO: Quest 466 stuffs
-		// final Quest qs10305 = QuestManager.getInstance().getQuest(Q10305_UnstoppableFutileEfforts.class.getSimpleName());
+		// final Quest qs10305 = ScriptManager.getInstance().getScript(Q10305_UnstoppableFutileEfforts.class.getSimpleName());
 		// if (qs10305 != null)
 		// {
 		// qs10305.notifyEvent("NOTIFY_Q10305", npc, playable.asPlayer());
@@ -335,6 +334,12 @@ public class LargeCocoon extends AbstractNpcAI
 		}
 		
 		npc.deleteMe();
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	public static void main(String[] args)

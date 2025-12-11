@@ -18,9 +18,9 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
 import org.l2jmobius.gameserver.model.stats.IStatFunction;
 import org.l2jmobius.gameserver.model.stats.Stat;
@@ -39,7 +39,7 @@ public class PCriticalRateFinalizer implements IStatFunction
 		if (creature.isPlayer())
 		{
 			// Enchanted legs bonus
-			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_LEGS);
+			baseValue += calcEnchantBodyPart(creature, BodyPart.LEGS);
 		}
 		
 		final double dexBonus = creature.getDEX() > 0 ? BaseStat.DEX.calcBonus(creature) : 1;
@@ -47,7 +47,7 @@ public class PCriticalRateFinalizer implements IStatFunction
 		final double maxPhysicalCritRate;
 		if (creature.isPlayable())
 		{
-			maxPhysicalCritRate = Config.MAX_PCRIT_RATE + creature.getStat().getValue(Stat.ADD_MAX_PHYSICAL_CRITICAL_RATE, 0);
+			maxPhysicalCritRate = PlayerConfig.MAX_PCRIT_RATE + creature.getStat().getValue(Stat.ADD_MAX_PHYSICAL_CRITICAL_RATE, 0);
 		}
 		else
 		{

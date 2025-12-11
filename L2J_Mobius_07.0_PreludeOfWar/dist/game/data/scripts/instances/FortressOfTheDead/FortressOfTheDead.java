@@ -20,19 +20,19 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
 import quests.Q11026_PathOfDestinyConviction.Q11026_PathOfDestinyConviction;
 
 /**
  * Fortress of the Dead instance zone.
  * @author Gladicek
  */
-public class FortressOfTheDead extends AbstractInstance
+public class FortressOfTheDead extends InstanceScript
 {
 	// NPCs
 	private static final int VAMPIRIC_SOLDIER = 19567;

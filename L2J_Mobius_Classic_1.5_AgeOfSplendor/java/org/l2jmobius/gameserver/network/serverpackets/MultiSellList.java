@@ -106,7 +106,7 @@ public class MultiSellList extends AbstractItemPacket
 				if (template != null)
 				{
 					buffer.writeInt(template.getDisplayId());
-					buffer.writeLong(template.getBodyPart());
+					buffer.writeLong(template.getBodyPart().getMask());
 					buffer.writeShort(template.getType2());
 				}
 				else

@@ -22,8 +22,8 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import java.util.Collection;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.GameClient;
@@ -37,7 +37,7 @@ public class TradeStart extends ServerPacket
 	public TradeStart(Player player)
 	{
 		_player = player;
-		_itemList = _player.getInventory().getAvailableItems(true, (_player.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS), false);
+		_itemList = _player.getInventory().getAvailableItems(true, (_player.isGM() && GeneralConfig.GM_TRADE_RESTRICTED_ITEMS), false);
 	}
 	
 	@Override
@@ -59,7 +59,7 @@ public class TradeStart extends ServerPacket
 			buffer.writeLong(item.getCount());
 			buffer.writeShort(item.getTemplate().getType2()); // item type2
 			buffer.writeShort(0); // ?
-			buffer.writeInt(item.getTemplate().getBodyPart()); // rev 415 slot 0006-lr.ear 0008-neck 0030-lr.finger 0040-head 0080-?? 0100-l.hand 0200-gloves 0400-chest 0800-pants 1000-feet 2000-?? 4000-r.hand 8000-r.hand
+			buffer.writeInt(item.getTemplate().getBodyPart().getMask()); // rev 415 slot 0006-lr.ear 0008-neck 0030-lr.finger 0040-head 0080-?? 0100-l.hand 0200-gloves 0400-chest 0800-pants 1000-feet 2000-?? 4000-r.hand 8000-r.hand
 			buffer.writeShort(item.getEnchantLevel()); // enchant level
 			buffer.writeShort(0);
 			buffer.writeShort(item.getCustomType2());

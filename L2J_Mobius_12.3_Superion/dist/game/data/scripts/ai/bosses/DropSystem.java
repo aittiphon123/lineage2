@@ -33,13 +33,12 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Tanatos
  */
-public class DropSystem extends AbstractNpcAI
+public class DropSystem extends Script
 {
 	// NPCs
 	private static final int STAKATO_CROG = 29426;

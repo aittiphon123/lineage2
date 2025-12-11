@@ -32,10 +32,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.cache.HtmCache;
+import org.l2jmobius.gameserver.config.custom.CommunityBoardConfig;
+import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
@@ -72,14 +73,14 @@ public class HomeBoard implements IParseBoardHandler
 	
 	private static final String[] CUSTOM_COMMANDS =
 	{
-		Config.PREMIUM_SYSTEM_ENABLED && Config.COMMUNITY_PREMIUM_SYSTEM_ENABLED ? "_bbspremium" : null,
-		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsexcmultisell" : null,
-		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsmultisell" : null,
-		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbssell" : null,
-		Config.COMMUNITYBOARD_ENABLE_TELEPORTS ? "_bbsteleport" : null,
-		Config.COMMUNITYBOARD_ENABLE_BUFFS ? "_bbsbuff" : null,
-		Config.COMMUNITYBOARD_ENABLE_HEAL ? "_bbsheal" : null,
-		Config.COMMUNITYBOARD_ENABLE_DELEVEL ? "_bbsdelevel" : null
+		PremiumSystemConfig.PREMIUM_SYSTEM_ENABLED && CommunityBoardConfig.COMMUNITY_PREMIUM_SYSTEM_ENABLED ? "_bbspremium" : null,
+		CommunityBoardConfig.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsexcmultisell" : null,
+		CommunityBoardConfig.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsmultisell" : null,
+		CommunityBoardConfig.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbssell" : null,
+		CommunityBoardConfig.COMMUNITYBOARD_ENABLE_TELEPORTS ? "_bbsteleport" : null,
+		CommunityBoardConfig.COMMUNITYBOARD_ENABLE_BUFFS ? "_bbsbuff" : null,
+		CommunityBoardConfig.COMMUNITYBOARD_ENABLE_HEAL ? "_bbsheal" : null,
+		CommunityBoardConfig.COMMUNITYBOARD_ENABLE_DELEVEL ? "_bbsdelevel" : null
 	};
 	
 	private static final BiPredicate<String, Player> COMBAT_CHECK = (command, player) ->
@@ -97,7 +98,7 @@ public class HomeBoard implements IParseBoardHandler
 		return commandCheck && (player.isCastingNow() || player.isCastingSimultaneouslyNow() || player.isInCombat() || player.isInDuel() || player.isInOlympiadMode() || player.isInsideZone(ZoneId.SIEGE) || player.isInsideZone(ZoneId.PVP) || (player.getPvpFlag() > 0) || player.isAlikeDead() || player.isOnEvent() || player.isInStoreMode());
 	};
 	
-	private static final Predicate<Player> KARMA_CHECK = player -> Config.COMMUNITYBOARD_KARMA_DISABLED && (player.getKarma() > 0);
+	private static final Predicate<Player> KARMA_CHECK = player -> CommunityBoardConfig.COMMUNITYBOARD_KARMA_DISABLED && (player.getKarma() > 0);
 	
 	@Override
 	public String[] getCommandList()
@@ -112,7 +113,7 @@ public class HomeBoard implements IParseBoardHandler
 	public boolean onCommand(String command, Player player)
 	{
 		// Old custom conditions check move to here
-		if (Config.COMMUNITYBOARD_COMBAT_DISABLED && COMBAT_CHECK.test(command, player))
+		if (CommunityBoardConfig.COMMUNITYBOARD_COMBAT_DISABLED && COMBAT_CHECK.test(command, player))
 		{
 			player.sendMessage("You can't use the Community Board right now.");
 			return false;
@@ -124,7 +125,7 @@ public class HomeBoard implements IParseBoardHandler
 			return false;
 		}
 		
-		if (Config.COMMUNITYBOARD_PEACE_ONLY && !player.isInsideZone(ZoneId.PEACE))
+		if (CommunityBoardConfig.COMMUNITYBOARD_PEACE_ONLY && !player.isInsideZone(ZoneId.PEACE))
 		{
 			player.sendMessage("Community Board cannot be used out of peace zone.");
 			return false;
@@ -133,17 +134,17 @@ public class HomeBoard implements IParseBoardHandler
 		String returnHtml = null;
 		String navigation = null;
 		
-		if (Config.CUSTOM_CB_ENABLED)
+		if (CommunityBoardConfig.CUSTOM_CB_ENABLED)
 		{
 			navigation = HtmCache.getInstance().getHtm(player, NAVIGATION_PATH);
 		}
 		
 		if (command.equals("_bbshome") || command.equals("_bbstop"))
 		{
-			final String customPath = Config.CUSTOM_CB_ENABLED ? "Custom/" : "";
+			final String customPath = CommunityBoardConfig.CUSTOM_CB_ENABLED ? "Custom/" : "";
 			CommunityBoardHandler.getInstance().addBypass(player, "Home", command);
 			returnHtml = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/" + customPath + "home.html");
-			if (!Config.CUSTOM_CB_ENABLED)
+			if (!CommunityBoardConfig.CUSTOM_CB_ENABLED)
 			{
 				returnHtml = returnHtml.replace("%fav_count%", Integer.toString(getFavoriteCount(player)));
 				returnHtml = returnHtml.replace("%region_count%", Integer.toString(getRegionCount(player)));
@@ -152,7 +153,7 @@ public class HomeBoard implements IParseBoardHandler
 		}
 		else if (command.startsWith("_bbstop;"))
 		{
-			final String customPath = Config.CUSTOM_CB_ENABLED ? "Custom/" : "";
+			final String customPath = CommunityBoardConfig.CUSTOM_CB_ENABLED ? "Custom/" : "";
 			final String path = command.replace("_bbstop;", "");
 			if ((path.length() > 0) && path.endsWith(".html"))
 			{
@@ -186,18 +187,18 @@ public class HomeBoard implements IParseBoardHandler
 		else if (command.startsWith("_bbsteleport"))
 		{
 			final String teleBuypass = command.replace("_bbsteleport;", "");
-			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < Config.COMMUNITYBOARD_TELEPORT_PRICE)
+			if (player.getInventory().getInventoryItemCount(CommunityBoardConfig.COMMUNITYBOARD_CURRENCY, -1) < CommunityBoardConfig.COMMUNITYBOARD_TELEPORT_PRICE)
 			{
 				player.sendMessage("Not enough currency!");
 			}
-			else if (Config.COMMUNITY_AVAILABLE_TELEPORTS.get(teleBuypass) != null)
+			else if (CommunityBoardConfig.COMMUNITY_AVAILABLE_TELEPORTS.get(teleBuypass) != null)
 			{
 				player.disableAllSkills();
 				player.sendPacket(new ShowBoard());
-				player.destroyItemByItemId(ItemProcessType.FEE, Config.COMMUNITYBOARD_CURRENCY, Config.COMMUNITYBOARD_TELEPORT_PRICE, player, true);
+				player.destroyItemByItemId(ItemProcessType.FEE, CommunityBoardConfig.COMMUNITYBOARD_CURRENCY, CommunityBoardConfig.COMMUNITYBOARD_TELEPORT_PRICE, player, true);
 				player.setIn7sDungeon(false);
 				player.setInstanceId(0);
-				player.teleToLocation(Config.COMMUNITY_AVAILABLE_TELEPORTS.get(teleBuypass), 0);
+				player.teleToLocation(CommunityBoardConfig.COMMUNITY_AVAILABLE_TELEPORTS.get(teleBuypass), 0);
 				ThreadPool.schedule(player::enableAllSkills, 3000);
 			}
 		}
@@ -207,13 +208,13 @@ public class HomeBoard implements IParseBoardHandler
 			final String[] buypassOptions = fullBypass.split(";");
 			final int buffCount = buypassOptions.length - 1;
 			final String page = buypassOptions[buffCount];
-			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < (Config.COMMUNITYBOARD_BUFF_PRICE * buffCount))
+			if (player.getInventory().getInventoryItemCount(CommunityBoardConfig.COMMUNITYBOARD_CURRENCY, -1) < (CommunityBoardConfig.COMMUNITYBOARD_BUFF_PRICE * buffCount))
 			{
 				player.sendMessage("Not enough currency!");
 			}
 			else
 			{
-				player.destroyItemByItemId(ItemProcessType.FEE, Config.COMMUNITYBOARD_CURRENCY, Config.COMMUNITYBOARD_BUFF_PRICE * buffCount, player, true);
+				player.destroyItemByItemId(ItemProcessType.FEE, CommunityBoardConfig.COMMUNITYBOARD_CURRENCY, CommunityBoardConfig.COMMUNITYBOARD_BUFF_PRICE * buffCount, player, true);
 				final Summon pet = player.getSummon();
 				final List<Creature> targets = new ArrayList<>(4);
 				targets.add(player);
@@ -225,7 +226,7 @@ public class HomeBoard implements IParseBoardHandler
 				for (int i = 0; i < buffCount; i++)
 				{
 					final Skill skill = SkillData.getInstance().getSkill(Integer.parseInt(buypassOptions[i].split(",")[0]), Integer.parseInt(buypassOptions[i].split(",")[1]));
-					if (!Config.COMMUNITY_AVAILABLE_BUFFS.contains(skill.getId()))
+					if (!CommunityBoardConfig.COMMUNITY_AVAILABLE_BUFFS.contains(skill.getId()))
 					{
 						continue;
 					}
@@ -233,7 +234,7 @@ public class HomeBoard implements IParseBoardHandler
 					for (Creature target : targets)
 					{
 						skill.applyEffects(player, target);
-						if (Config.COMMUNITYBOARD_CAST_ANIMATIONS)
+						if (CommunityBoardConfig.COMMUNITYBOARD_CAST_ANIMATIONS)
 						{
 							player.sendPacket(new MagicSkillUse(player, target, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
 							
@@ -249,13 +250,13 @@ public class HomeBoard implements IParseBoardHandler
 		else if (command.startsWith("_bbsheal"))
 		{
 			final String page = command.replace("_bbsheal;", "");
-			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < (Config.COMMUNITYBOARD_HEAL_PRICE))
+			if (player.getInventory().getInventoryItemCount(CommunityBoardConfig.COMMUNITYBOARD_CURRENCY, -1) < (CommunityBoardConfig.COMMUNITYBOARD_HEAL_PRICE))
 			{
 				player.sendMessage("Not enough currency!");
 			}
 			else
 			{
-				player.destroyItemByItemId(ItemProcessType.FEE, Config.COMMUNITYBOARD_CURRENCY, Config.COMMUNITYBOARD_HEAL_PRICE, player, true);
+				player.destroyItemByItemId(ItemProcessType.FEE, CommunityBoardConfig.COMMUNITYBOARD_CURRENCY, CommunityBoardConfig.COMMUNITYBOARD_HEAL_PRICE, player, true);
 				player.setCurrentHp(player.getMaxHp());
 				player.setCurrentMp(player.getMaxMp());
 				player.setCurrentCp(player.getMaxCp());
@@ -274,7 +275,7 @@ public class HomeBoard implements IParseBoardHandler
 		}
 		else if (command.equals("_bbsdelevel"))
 		{
-			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < Config.COMMUNITYBOARD_DELEVEL_PRICE)
+			if (player.getInventory().getInventoryItemCount(CommunityBoardConfig.COMMUNITYBOARD_CURRENCY, -1) < CommunityBoardConfig.COMMUNITYBOARD_DELEVEL_PRICE)
 			{
 				player.sendMessage("Not enough currency!");
 			}
@@ -284,7 +285,7 @@ public class HomeBoard implements IParseBoardHandler
 			}
 			else
 			{
-				player.destroyItemByItemId(ItemProcessType.FEE, Config.COMMUNITYBOARD_CURRENCY, Config.COMMUNITYBOARD_DELEVEL_PRICE, player, true);
+				player.destroyItemByItemId(ItemProcessType.FEE, CommunityBoardConfig.COMMUNITYBOARD_CURRENCY, CommunityBoardConfig.COMMUNITYBOARD_DELEVEL_PRICE, player, true);
 				final int newLevel = player.getLevel() - 1;
 				player.setExp(ExperienceData.getInstance().getExpForLevel(newLevel));
 				player.getStat().setLevel((byte) newLevel);
@@ -300,16 +301,16 @@ public class HomeBoard implements IParseBoardHandler
 			final String fullBypass = command.replace("_bbspremium;", "");
 			final String[] buypassOptions = fullBypass.split(",");
 			final int premiumDays = Integer.parseInt(buypassOptions[0]);
-			if ((premiumDays < 1) || (premiumDays > 30) || (player.getInventory().getInventoryItemCount(Config.COMMUNITY_PREMIUM_COIN_ID, -1) < (Config.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays)))
+			if ((premiumDays < 1) || (premiumDays > 30) || (player.getInventory().getInventoryItemCount(CommunityBoardConfig.COMMUNITY_PREMIUM_COIN_ID, -1) < (CommunityBoardConfig.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays)))
 			{
 				player.sendMessage("Not enough currency!");
 			}
 			else
 			{
-				player.destroyItemByItemId(ItemProcessType.FEE, Config.COMMUNITY_PREMIUM_COIN_ID, Config.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays, player, true);
+				player.destroyItemByItemId(ItemProcessType.FEE, CommunityBoardConfig.COMMUNITY_PREMIUM_COIN_ID, CommunityBoardConfig.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays, player, true);
 				PremiumManager.getInstance().addPremiumTime(player.getAccountName(), premiumDays, TimeUnit.DAYS);
 				player.sendMessage("Your account will now have premium status until " + new SimpleDateFormat("dd.MM.yyyy HH:mm").format(PremiumManager.getInstance().getPremiumExpiration(player.getAccountName())) + ".");
-				if (Config.PC_CAFE_RETAIL_LIKE)
+				if (PremiumSystemConfig.PC_CAFE_RETAIL_LIKE)
 				{
 					PcCafePointsManager.getInstance().run(player);
 				}
@@ -320,7 +321,7 @@ public class HomeBoard implements IParseBoardHandler
 		
 		if (returnHtml != null)
 		{
-			if (Config.CUSTOM_CB_ENABLED)
+			if (CommunityBoardConfig.CUSTOM_CB_ENABLED)
 			{
 				returnHtml = returnHtml.replace("%navigation%", navigation);
 			}

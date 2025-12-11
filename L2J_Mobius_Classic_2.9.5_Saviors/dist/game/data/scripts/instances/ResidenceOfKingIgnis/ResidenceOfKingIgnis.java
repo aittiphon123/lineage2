@@ -26,18 +26,17 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 
-import instances.AbstractInstance;
-
 /**
  * @author RobikBobik
  * @NOTE: Retail like working - I get informations from wiki and youtube video.
  */
-public class ResidenceOfKingIgnis extends AbstractInstance
+public class ResidenceOfKingIgnis extends InstanceScript
 {
 	// NPCs
 	private static final int TARA = 34047;

@@ -23,12 +23,12 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.ai.Action;
 import org.l2jmobius.gameserver.ai.CreatureAI;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.ai.NextAction;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.EnchantItemGroupsData;
 import org.l2jmobius.gameserver.handler.AdminCommandHandler;
 import org.l2jmobius.gameserver.handler.IItemHandler;
@@ -155,7 +155,7 @@ public class UseItem extends ClientPacket
 			return;
 		}
 		
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (player.getReputation() < 0))
+		if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (player.getReputation() < 0))
 		{
 			final List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 			if (skills != null)
@@ -220,78 +220,88 @@ public class UseItem extends ClientPacket
 				return;
 			}
 			
-			// Prevent players to equip weapon while wearing combat flag
-			// Don't allow weapon/shield equipment if a cursed weapon is equipped.
-			if ((item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_L_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_HAND))
+			switch (item.getTemplate().getBodyPart())
 			{
-				if ((player.getActiveWeaponItem() != null) && (player.getActiveWeaponItem().getId() == 9819))
+				case LR_HAND:
+				case L_HAND:
+				case R_HAND:
 				{
-					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-					return;
+					// Prevent players to equip weapon while wearing combat flag.
+					if ((player.getActiveWeaponItem() != null) && (player.getActiveWeaponItem().getId() == 9819))
+					{
+						player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
+						return;
+					}
+					
+					if (player.isMounted() || player.isDisarmed())
+					{
+						player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
+						return;
+					}
+					
+					// Don't allow weapon/shield equipment if a cursed weapon is equipped.
+					if (player.isCursedWeaponEquipped())
+					{
+						return;
+					}
+					break;
 				}
-				
-				if (player.isMounted() || player.isDisarmed())
+				case DECO:
 				{
-					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-					return;
+					if (!item.isEquipped() && (player.getInventory().getTalismanSlots() == 0))
+					{
+						player.sendPacket(SystemMessageId.NO_EQUIPMENT_SLOT_AVAILABLE);
+						return;
+					}
+					break;
 				}
-				
-				if (player.isCursedWeaponEquipped())
+				case BROOCH_JEWEL:
 				{
-					return;
+					if (!item.isEquipped() && (player.getInventory().getBroochJewelSlots() == 0))
+					{
+						final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_CANNOT_EQUIP_S1_WITHOUT_EQUIPPING_A_BROOCH);
+						sm.addItemName(item);
+						player.sendPacket(sm);
+						return;
+					}
+					break;
 				}
-			}
-			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_DECO)
-			{
-				if (!item.isEquipped() && (player.getInventory().getTalismanSlots() == 0))
+				case AGATHION:
 				{
-					player.sendPacket(SystemMessageId.NO_EQUIPMENT_SLOT_AVAILABLE);
-					return;
+					if (!item.isEquipped() && (player.getInventory().getAgathionSlots() == 0))
+					{
+						player.sendPacket(SystemMessageId.NO_EQUIPMENT_SLOT_AVAILABLE);
+						return;
+					}
+					break;
 				}
-			}
-			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_BROOCH_JEWEL)
-			{
-				if (!item.isEquipped() && (player.getInventory().getBroochJewelSlots() == 0))
+				case ARTIFACT:
 				{
-					final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_CANNOT_EQUIP_S1_WITHOUT_EQUIPPING_A_BROOCH);
-					sm.addItemName(item);
-					player.sendPacket(sm);
-					return;
-				}
-			}
-			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_AGATHION)
-			{
-				if (!item.isEquipped() && (player.getInventory().getAgathionSlots() == 0))
-				{
-					player.sendPacket(SystemMessageId.NO_EQUIPMENT_SLOT_AVAILABLE);
-					return;
-				}
-			}
-			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_ARTIFACT)
-			{
-				if (!item.isEquipped() && (player.getInventory().getArtifactSlots() == 0))
-				{
-					final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVEN_T_EQUIPPED_AN_ARTIFACT_BOOK_SO_S1_CANNOT_BE_EQUIPPED);
-					sm.addItemName(item);
-					player.sendPacket(sm);
-					return;
+					if (!item.isEquipped() && (player.getInventory().getArtifactSlots() == 0))
+					{
+						final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVEN_T_EQUIPPED_AN_ARTIFACT_BOOK_SO_S1_CANNOT_BE_EQUIPPED);
+						sm.addItemName(item);
+						player.sendPacket(sm);
+						return;
+					}
+					break;
 				}
 			}
 			
 			// Over-enchant protection.
-			if (Config.OVER_ENCHANT_PROTECTION && !player.isGM() //
+			if (PlayerConfig.OVER_ENCHANT_PROTECTION && !player.isGM() //
 				&& ((item.isWeapon() && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxWeaponEnchant())) //
 					|| ((item.getTemplate().getType2() == ItemTemplate.TYPE2_ACCESSORY) && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxAccessoryEnchant())) //
 					|| (item.isArmor() && (item.getTemplate().getType2() != ItemTemplate.TYPE2_ACCESSORY) && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxArmorEnchant()))))
 			{
 				PacketLogger.info("Over-enchanted (+" + item.getEnchantLevel() + ") " + item + " has been removed from " + player);
 				player.getInventory().destroyItem(ItemProcessType.DESTROY, item, player, null);
-				if (Config.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE)
+				if (PlayerConfig.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE)
 				{
 					player.sendMessage("[Server]: You have over-enchanted items!");
 					player.sendMessage("[Server]: Respect our server rules.");
 					player.sendPacket(new ExShowScreenMessage("You have over-enchanted items!", 6000));
-					PunishmentManager.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", Config.OVER_ENCHANT_PUNISHMENT);
+					PunishmentManager.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", PlayerConfig.OVER_ENCHANT_PUNISHMENT);
 				}
 				return;
 			}

@@ -18,6 +18,7 @@ AddPcCafePoints: Increase PcCafe points permanently. (l2jmobius)
 AddSkillBySkill: Add skill when other skill already exists. (l2jmobius)
 AddTeleportBookmarkSlot: Instant effect that increases the amount of My Teleport slots.
 AgathionSlot: Agathion slot modifier. (l2jmobius)
+ApplySkillEffects: Apply skill effects directly on effected without animations. (l2jmobius)
 AreaDamage: Topography (Danger Zone) resistance stat.
 ArtifactSlot: Artifact slot modifier. (l2jmobius)
 AttackAttribute: Stat that increases specific attack attribute.
@@ -280,6 +281,8 @@ ReflectMagic: Deflects magical damage back to the attacker.
 ReflectSkill: Deflects physical/magical debuffs back to the attacker.
 RefuelAirship: Increases Airship's fuel.
 Relax: Sits down and increases HP regeneration until full.
+RemainMpPer: Use's skill after the % of Mp added. (l2jmobius)
+RemainHpPer: Use's skill after the % of Hp added. (l2jmobius)
 ReplaceSkillBySkill: While active replaces a skill with an alternative skill. (l2jmobius)
 ResetInstanceEntry: Resets instance re-entry time. (l2jmobius)
 ResistAbnormalByCategory: Buff/debuff resist stat.

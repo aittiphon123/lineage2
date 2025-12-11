@@ -21,8 +21,8 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 
 /**
@@ -156,7 +156,7 @@ public class MapRegion
 	
 	public Location getSpawnLoc()
 	{
-		if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
+		if (PlayerConfig.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 		{
 			return _spawnLocs.get(Rnd.get(_spawnLocs.size()));
 		}
@@ -168,7 +168,7 @@ public class MapRegion
 	{
 		if (_otherSpawnLocs != null)
 		{
-			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
+			if (PlayerConfig.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 			{
 				return _otherSpawnLocs.get(Rnd.get(_otherSpawnLocs.size()));
 			}
@@ -183,7 +183,7 @@ public class MapRegion
 	{
 		if (_chaoticSpawnLocs != null)
 		{
-			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
+			if (PlayerConfig.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 			{
 				return _chaoticSpawnLocs.get(Rnd.get(_chaoticSpawnLocs.size()));
 			}
@@ -198,7 +198,7 @@ public class MapRegion
 	{
 		if (_banishSpawnLocs != null)
 		{
-			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
+			if (PlayerConfig.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 			{
 				return _banishSpawnLocs.get(Rnd.get(_banishSpawnLocs.size()));
 			}

@@ -37,68 +37,43 @@
 		<effectPoint>1</effectPoint>
 		<hitTime>0</hitTime>
 		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29776</itemConsumeId> <!-- Glowing Dragon's Attribute Potion (XP) -->
 		<reuseDelay>300000</reuseDelay>
 		<stayAfterDeath>true</stayAfterDeath>
 		<effects>
 			<effect name="AttackAttributeAdd">
-				<amount>
-					<value level="1">70</value>
-					<value level="2">100</value>
-				</amount>
+				<amount>70</amount>
 			</effect>
 			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">70</value>
-					<value level="2">100</value>
-				</amount>
+				<amount>70</amount>
 				<attribute>FIRE</attribute>
 			</effect>
 			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">70</value>
-					<value level="2">100</value>
-				</amount>
+				<amount>70</amount>
 				<attribute>WATER</attribute>
 			</effect>
 			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">70</value>
-					<value level="2">100</value>
-				</amount>
+				<amount>70</amount>
 				<attribute>EARTH</attribute>
 			</effect>
 			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">70</value>
-					<value level="2">100</value>
-				</amount>
+				<amount>70</amount>
 				<attribute>WIND</attribute>
 			</effect>
 			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">70</value>
-					<value level="2">100</value>
-				</amount>
+				<amount>70</amount>
 				<attribute>HOLY</attribute>
 			</effect>
 			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">70</value>
-					<value level="2">100</value>
-				</amount>
+				<amount>70</amount>
 				<attribute>DARK</attribute>
 			</effect>
 			<effect name="ExpModify">
-				<amount>
-					<value level="1">30</value>
-					<value level="2">50</value>
-				</amount>
+				<amount>30</amount>
 			</effect>
 			<effect name="SpModify">
-				<amount>
-					<value level="1">30</value>
-					<value level="2">50</value>
-				</amount>
+				<amount>30</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -247,7 +222,45 @@
 	<skill id="29406" toLevel="1" name="Emperor's Special Cocktail">
 		<!-- For 60 min., applies the following effects: Musician's Melody Lv. 5, Fantasia Harmony Lv. 2, Drum Concert, Fantasia Melody, United Resistance. To remove the effect, press Alt + Left Mouse Button. -->
 		<icon>icon.bm_special_cocktail_of_king_p</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>7</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>22</isMagic>
+		<magicLevel>-2</magicLevel>
+		<reuseDelay>300000</reuseDelay>
+		<specialLevel>-2</specialLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="DispelBySlotProbability">
+				<dispel>BUFF_SPECIAL_CLASS;DITTY;BUFF_SPECIAL_ATTACK;BUFF_SPECIAL_AURA;ARMOR_ELEMENT_ALL</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39514</skillId> <!-- Fantasia Harmony - Wondrous Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39517</skillId> <!-- Fantasia Melody - Wondrous Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39766</skillId> <!-- Fever Melody - Wondrous Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39771</skillId> <!-- Drumbeat of Serenity - Wondrous Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>39772</skillId> <!-- United Resistance - Wondrous Cocktail -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29409" toLevel="10" name="Superior Amethyst">
 		<!-- PvP Damage +$s1. Received P. Critical Rate -$s2. -->
@@ -355,6 +368,7 @@
 		<!-- You can feel the powerful energy. This energy might have caused the growth of monsters. For 1 min., P./ M. Atk. +15%, Critical Damage for basic attacks and P./ M. skills +15%, Vitality bonus +50%. -->
 		<icon>icon.bm_soul_of_undead</icon>
 		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
 	</skill>
 	<skill id="29413" toLevel="4" name="Einhasad Overseeing">
 		<!-- Level 1: The massacre has drawn the attention of Einhasad. Now the goddess is keeping an eye on you. P./ M. Def. -5%, Speed -5. -->
@@ -469,6 +483,7 @@
 		<!-- For 5 h., acquired XP/ SP +30%, SP/ Vitality bonus +30%, P. Atk./ P. Def./ M. Atk./ M. Def. +15%. The effect remains after death. Cannot be used in the Olympiad and the Ceremony of Chaos. -->
 		<icon>BranchSys3.g_blessing_of_angel_cat_i00</icon>
 		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="29419" toLevel="1" name="Roa's Support">
 		<!-- When using a melee weapon, P. Atk. +10% for 5 h. With a certain chance, increases Critical Rate for basic attacks and P. Skill Power. The effect remains after death. Cannot be used in the Olympiad and the Ceremony of Chaos. -->
@@ -484,6 +499,7 @@
 		<!-- Attribute Attack +150, PvE damage +10%. -->
 		<icon>Icon.ev_invasion_vp_hub</icon>
 		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
 	</skill>
 	<skill id="29422" toLevel="1" name="Freya's Growth Rune">
 		<!-- Acquired XP/ SP +50%, all basic stats +1, P./ M. Def. +500. Not for pets or servitors. -->
@@ -2614,7 +2630,9 @@
 		<specialLevel>-1</specialLevel>
 		<staticReuse>true</staticReuse>
 		<conditions>
-			<condition name="CanUseVitalityIncreaseItem" />
+			<condition name="CanUseVitalityIncreaseItem">
+				<amount>70000</amount>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="VitalityPointUp">
@@ -2631,11 +2649,26 @@
 		<!-- For 30 min., Vitality bonus +50%, acquired XP/ SP +300%. Required level: 1-117. Cannot be used in the Olympiad. -->
 		<icon>BranchSys.icon.br_valentine_cookie_i00</icon>
 		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="29458" toLevel="1" name="Freya's Super Freezing Spell">
 		<!-- PvE damage +15% -->
 		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29459" toLevel="1" name="Freya's Summer Cooling Spell">
 		<!-- Vitality bonus +15% -->
@@ -2645,7 +2678,13 @@
 	<skill id="29460" toLevel="1" name="Freya's Cooling Spell">
 		<!-- STR/ DEX/ CON/ INT/ WIT/ MEN/ LUC/ CHA +1 -->
 		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR,DEX,CON,INT,WIT,MEN,LUC,CHA</stat>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29461" toLevel="1" name="Freya's Glowing Potion">
 		<!-- For 30 min., acquired XP/ SP +20%, Vitality bonus +15%, P. Atk./ P. Def./ M. Atk./ M. Def. +5%. Cooldown: 5 min. -->
@@ -3703,7 +3742,30 @@
 	<skill id="29481" toLevel="1" name="Freya's Glittering Scroll of Storm">
 		<!-- For 10 min. while hunting, Vitality Consumption +200%, acquired XP/ SP +200%. The effect remains after death. Cooldown: 9 min. -->
 		<icon>icon.bm_freya_storm_scroll</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>600</abnormalTime>
+		<abnormalType>FREYA_SCROLL_VIT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29676</itemConsumeId>
+		<reuseDelay>540000</reuseDelay>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>200</amount>
+			</effect>
+			<effect name="ExpModify">
+				<amount>200</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>200</amount>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>EXP_SPECIAL,-1;PREMIUM_BUFF,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29482" toLevel="1" name="Freya's Glittering Ice Rose">
 		<!-- For 30 min., Max HP/ MP/ CP +30%, P./ M. Atk. and P./ M. Def. +35%, Atk. Spd./ Casting Spd. +10%, Speed +20, Attribute Attack/ Resistance +200, damage +12%, P./ M. Skill Power +12%, acquired XP/ SP +40%, received damage -30 min.0, Skill MP Consumption -30 min.1, all basic stats +2. The effect remains after death. -->
@@ -3883,7 +3945,89 @@
 		<!-- Level 1: For 30 min., Attribute Attack +70, Attribute Resistance +70, acquired XP/ SP +30%. The effect remains after death. -->
 		<!-- Level 2: For 30 min., Attribute Attack +100, Attribute Resistance +100, acquired XP/ SP +50%. The effect remains after death. -->
 		<icon>icon.bm_dragon_posion_special</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>1800</abnormalTime>
+		<abnormalType>GLOWING_DRAGON_POTION</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad> <!-- Unconfirmed -->
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>
+			<value level="1">60186</value> <!-- Glowing Dragon's Attribute Potion (Event) -->
+			<value level="2">60182</value> <!-- Glowing Royal Dragon's Attribute Potion (Event) -->
+		</itemConsumeId>
+		<reuseDelay>300000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="AttackAttributeAdd">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">100</value>
+				</amount>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">100</value>
+				</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">100</value>
+				</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">100</value>
+				</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">100</value>
+				</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">100</value>
+				</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">100</value>
+				</amount>
+				<attribute>DARK</attribute>
+			</effect>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">50</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">50</value>
+				</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29484" toLevel="2" name="Shining Nevit's Gold Hourglass">
 		<!-- Level 1: For 30 min., acquired XP/ SP while hunting +100%. Does not stack with Nevit's Gold Hourglass, Fall of the Dragon, or Dandy's Home Run Ball. Cooldown: 5 min. -->
@@ -3892,7 +4036,108 @@
 			<value level="1">icon.bm_nebit_bonus_time_up</value>
 			<value level="2">icon.bm_dragon_breath</value>
 		</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>1800</abnormalTime>
+		<abnormalType>SHINING_HOURGLASS</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>
+			<value level="1">60187</value>
+			<value level="2">60183</value>
+		</itemConsumeId> <!-- Shining Nevit's Gold Hourglass -->
+		<reuseDelay>
+			<value level="1">300000</value>
+			<value level="2">10000</value>
+		</reuseDelay>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">120</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">120</value>
+				</amount>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>VOTE,1;BUFF_PCCAFE_EXP1,1</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>VOTE;BUFF_PCCAFE_EXP1</slot>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-7</value>
+				</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-7</value>
+				</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>VOTE,1;BUFF_PCCAFE_EXP1,1</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>VOTE;BUFF_PCCAFE_EXP1</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29485" toLevel="1" name="Gran Kain's Scroll: Enchant Weapon">
 		<icon>icon.skill0000</icon>
@@ -3917,12 +4162,50 @@
 	<skill id="29487" toLevel="1" name="Warrior Figurine I">
 		<!-- P. Atk./ M. Atk./ P. Def./ M. Def. +2% -->
 		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29488" toLevel="1" name="Warrior Figurine II">
 		<!-- P. Atk./ M. Atk./ P. Def./ M. Def. +3%. -->
 		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29489" toLevel="1" name="Mysterious and Special Weapon Enchant Scroll">
 		<!-- A Mysterious Weapon Enchant Scroll. If enchantment to the Blessed Enchant Scroll fails, its enchant value will be reset. -->
@@ -3938,42 +4221,216 @@
 	<skill id="29490" toLevel="1" name="Sweet Dalgona">
 		<!-- For 30 min., P. Atk./ M. Atk./ P. Def./ M. Def. +15%, Attribute Attack/ Resistance +100, acquired XP/ SP +5%.The effect remains after death, after switching to a dual class or entering instance zones. Removed when entering the Olympiad or the Ceremony of Chaos. -->
 		<icon>BranchIcon.icon.g_ev_dalgona_i00</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1800</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>702</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackAttributeAdd">
+				<amount>100</amount>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>DARK</attribute>
+			</effect>
+			<effect name="ExpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>5</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29491" toLevel="1" name="Dragon Berserker's Splendor">
 		<!-- P. Atk./ M. Atk./ P. Def./ M. Def. +5%. -->
 		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29492" toLevel="1" name="Attendance Gift Rune: P./ M. Atk.">
 		<!-- P./ M. Atk. +10%. -->
 		<icon>BranchSys3.icon1.g_rune_of_half_power</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29493" toLevel="1" name="Attendance Gift Rune: Acquired XP">
 		<!-- Acquired XP/ SP +30%. -->
 		<icon>icon.bm_sayha_rune</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29494" toLevel="1" name="Attendance Gift Rune: Vitality Bonus">
 		<!-- Vitality bonus +50%. -->
 		<icon>Branchsys2.icon.br_life_rune_i00</icon>
 		<operateType>A1</operateType>
+		<effects>
+			<effect name="VitalityExpRate">
+				<amount>50</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29495" toLevel="1" name="Attendance Gift Rune: PvE">
 		<!-- PvE damage +15%, acquired XP/ SP +30%. -->
 		<icon>icon.gc_rune_of_lucien</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29496" toLevel="1" name="Attendance Gift Rune: P./ M. Def.">
 		<!-- P./ M. Def. +10%. -->
 		<icon>BranchSys3.icon1.g_rune_of_flint_will</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29497" toLevel="1" name="Attendance Gift Rune: All Stats">
 		<!-- STR/ DEX/ CON/ INT/ WIT/ MEN/ CHA/ LUC +1. -->
 		<icon>Branchsys2.icon.br_spirit_rune_i00</icon>
-		<operateType>A1</operateType>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CHA</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>LUC</stat>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29498" toLevel="1" name="Anakim's Scroll: Enchant R-grade Weapon">
 		<icon>icon.skill0000</icon>

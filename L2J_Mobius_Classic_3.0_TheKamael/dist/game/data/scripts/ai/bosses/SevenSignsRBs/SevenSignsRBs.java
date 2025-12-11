@@ -22,7 +22,7 @@ package ai.bosses.SevenSignsRBs;
 
 import java.util.List;
 
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -30,16 +30,15 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.npc.RaidBossStatus;
 import org.l2jmobius.gameserver.model.groups.Party;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.zone.type.NoRestartZone;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author RobikBobik
  * @NOTE: Retail like work
  */
-public class SevenSignsRBs extends AbstractNpcAI
+public class SevenSignsRBs extends Script
 {
 	// NPCs
 	private static final int ANAKIM_GATEKEEPER_SPIRIT = 31089;
@@ -88,7 +87,7 @@ public class SevenSignsRBs extends AbstractNpcAI
 		{
 			case "ANAKIM_ENTER":
 			{
-				if (DBSpawnManager.getInstance().getStatus(ANAKIM) != RaidBossStatus.ALIVE)
+				if (DatabaseSpawnManager.getInstance().getStatus(ANAKIM) != RaidBossStatus.ALIVE)
 				{
 					player.sendMessage("Anakim is not present at the moment");
 					break;
@@ -136,7 +135,7 @@ public class SevenSignsRBs extends AbstractNpcAI
 			}
 			case "LILITH_ENTER":
 			{
-				if (DBSpawnManager.getInstance().getStatus(LILITH) != RaidBossStatus.ALIVE)
+				if (DatabaseSpawnManager.getInstance().getStatus(LILITH) != RaidBossStatus.ALIVE)
 				{
 					player.sendMessage("Lilith is not present at the moment");
 					break;
@@ -223,9 +222,9 @@ public class SevenSignsRBs extends AbstractNpcAI
 			}
 			case "ANAKIM_DEATH_CAST_LILITH_INVUL":
 			{
-				if (DBSpawnManager.getInstance().getStatus(LILITH) == RaidBossStatus.ALIVE)
+				if (DatabaseSpawnManager.getInstance().getStatus(LILITH) == RaidBossStatus.ALIVE)
 				{
-					Npc LILITH_NPC = DBSpawnManager.getInstance().getNpcs().get(LILITH);
+					Npc LILITH_NPC = DatabaseSpawnManager.getInstance().getNpcs().get(LILITH);
 					LILITH_NPC.setInvul(true);
 					LILITH_NPC.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.INVINCIBILITY);
 					startQuestTimer("LILITH_INVUL_END", 300000, null, player);
@@ -235,9 +234,9 @@ public class SevenSignsRBs extends AbstractNpcAI
 			}
 			case "LILITH_DEATH_CAST_ANAKIM_INVUL":
 			{
-				if (DBSpawnManager.getInstance().getStatus(ANAKIM) == RaidBossStatus.ALIVE)
+				if (DatabaseSpawnManager.getInstance().getStatus(ANAKIM) == RaidBossStatus.ALIVE)
 				{
-					Npc ANAKIM_NPC = DBSpawnManager.getInstance().getNpcs().get(ANAKIM);
+					Npc ANAKIM_NPC = DatabaseSpawnManager.getInstance().getNpcs().get(ANAKIM);
 					ANAKIM_NPC.setInvul(true);
 					ANAKIM_NPC.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.INVINCIBILITY);
 					startQuestTimer("ANAKIM_INVUL_END", 300000, null, player);
@@ -246,14 +245,14 @@ public class SevenSignsRBs extends AbstractNpcAI
 			}
 			case "LILITH_INVUL_END":
 			{
-				Npc LILITH_NPC = DBSpawnManager.getInstance().getNpcs().get(LILITH);
+				Npc LILITH_NPC = DatabaseSpawnManager.getInstance().getNpcs().get(LILITH);
 				LILITH_NPC.setInvul(false);
 				LILITH_NPC.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.INVINCIBILITY);
 				break;
 			}
 			case "ANAKIM_INVUL_END":
 			{
-				Npc ANAKIM_NPC = DBSpawnManager.getInstance().getNpcs().get(ANAKIM);
+				Npc ANAKIM_NPC = DatabaseSpawnManager.getInstance().getNpcs().get(ANAKIM);
 				ANAKIM_NPC.setInvul(false);
 				ANAKIM_NPC.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.INVINCIBILITY);
 				break;

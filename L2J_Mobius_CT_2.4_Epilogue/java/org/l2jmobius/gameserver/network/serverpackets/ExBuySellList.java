@@ -20,8 +20,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.RatesConfig;
+import org.l2jmobius.gameserver.config.custom.MerchantZeroSellPriceConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.buylist.BuyListHolder;
 import org.l2jmobius.gameserver.model.buylist.Product;
@@ -107,7 +108,7 @@ public class ExBuySellList extends ServerPacket
 			buffer.writeShort(0); // ?
 			if (item.getItem().getType1() != ItemTemplate.TYPE1_ITEM_QUESTITEM_ADENA)
 			{
-				buffer.writeInt(item.getItem().getBodyPart());
+				buffer.writeInt(item.getItem().getBodyPart().getMask());
 				buffer.writeShort(0); // item enchant level
 				buffer.writeShort(0); // ?
 				buffer.writeShort(0);
@@ -122,7 +123,7 @@ public class ExBuySellList extends ServerPacket
 			
 			if ((item.getItemId() >= 3960) && (item.getItemId() <= 4026))
 			{
-				buffer.writeLong((long) (item.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE));
+				buffer.writeLong((long) (item.getPrice() * RatesConfig.RATE_SIEGE_GUARDS_PRICE));
 			}
 			else
 			{
@@ -151,11 +152,11 @@ public class ExBuySellList extends ServerPacket
 				buffer.writeLong(item.getCount());
 				buffer.writeShort(item.getTemplate().getType2());
 				buffer.writeShort(0);
-				buffer.writeInt(item.getTemplate().getBodyPart());
+				buffer.writeInt(item.getTemplate().getBodyPart().getMask());
 				buffer.writeShort(item.getEnchantLevel());
 				buffer.writeShort(0);
 				buffer.writeShort(0);
-				buffer.writeLong(Config.MERCHANT_ZERO_SELL_PRICE ? 0 : item.getTemplate().getReferencePrice() / 2);
+				buffer.writeLong(MerchantZeroSellPriceConfig.MERCHANT_ZERO_SELL_PRICE ? 0 : item.getTemplate().getReferencePrice() / 2);
 				
 				// T1
 				buffer.writeShort(item.getAttackElementType());
@@ -188,7 +189,7 @@ public class ExBuySellList extends ServerPacket
 				buffer.writeShort(0); // ?
 				buffer.writeShort(item.getEnchantLevel());
 				buffer.writeShort(0); // ?
-				buffer.writeLong(Config.MERCHANT_ZERO_SELL_PRICE ? 0 : (item.getTemplate().getReferencePrice() / 2) * item.getCount());
+				buffer.writeLong(MerchantZeroSellPriceConfig.MERCHANT_ZERO_SELL_PRICE ? 0 : (item.getTemplate().getReferencePrice() / 2) * item.getCount());
 				
 				// T1
 				buffer.writeShort(item.getAttackElementType());

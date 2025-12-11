@@ -20,14 +20,13 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Stakato Nest Teleport AI.
  * @author Charus
  */
-public class StakatoNestTeleporter extends AbstractNpcAI
+public class StakatoNestTeleporter extends Script
 {
 	// Locations
 	private static final Location[] LOCS =

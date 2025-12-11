@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.network.serverpackets.ranking;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -99,7 +99,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 								buffer.writeInt(id);
 							}
 							
-							buffer.writeInt(Config.SERVER_ID); // server id
+							buffer.writeInt(ServerConfig.SERVER_ID); // server id
 							buffer.writeInt(player.getInt("level")); // level
 							buffer.writeInt(player.getInt("classId")); // class id
 							buffer.writeInt(player.getInt("clanLevel")); // clan level
@@ -152,7 +152,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 										buffer.writeInt(id2);
 									}
 									
-									buffer.writeInt(Config.SERVER_ID);
+									buffer.writeInt(ServerConfig.SERVER_ID);
 									buffer.writeInt(plr.getInt("level"));
 									buffer.writeInt(plr.getInt("classId"));
 									buffer.writeInt(plr.getInt("clanLevel")); // clan level
@@ -224,7 +224,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 									buffer.writeInt(i);
 								}
 								
-								buffer.writeInt(Config.SERVER_ID);
+								buffer.writeInt(ServerConfig.SERVER_ID);
 								buffer.writeInt(player.getInt("level"));
 								buffer.writeInt(player.getInt("classId"));
 								buffer.writeInt(player.getInt("clanLevel")); // clan level
@@ -276,7 +276,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 									buffer.writeSizedString(plr.getString("clanName"));
 									buffer.writeInt(id2); // class rank
 									buffer.writeInt(id2);
-									buffer.writeInt(Config.SERVER_ID);
+									buffer.writeInt(ServerConfig.SERVER_ID);
 									buffer.writeInt(player.getInt("level"));
 									buffer.writeInt(player.getInt("classId"));
 									buffer.writeInt(player.getInt("clanLevel")); // clan level

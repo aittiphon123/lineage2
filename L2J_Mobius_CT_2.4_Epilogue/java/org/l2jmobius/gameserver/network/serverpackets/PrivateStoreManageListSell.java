@@ -67,7 +67,7 @@ public class PrivateStoreManageListSell extends ServerPacket
 			buffer.writeShort(0);
 			buffer.writeShort(item.getEnchant()); // enchant level
 			buffer.writeShort(item.getCustomType2());
-			buffer.writeInt(item.getItem().getBodyPart());
+			buffer.writeInt(item.getItem().getBodyPart().getMask());
 			buffer.writeLong(item.getPrice()); // store price
 			
 			// T1
@@ -95,7 +95,7 @@ public class PrivateStoreManageListSell extends ServerPacket
 			buffer.writeShort(0);
 			buffer.writeShort(item.getEnchant()); // enchant level
 			buffer.writeShort(0);
-			buffer.writeInt(item.getItem().getBodyPart());
+			buffer.writeInt(item.getItem().getBodyPart().getMask());
 			buffer.writeLong(item.getPrice()); // your price
 			buffer.writeLong(item.getItem().getReferencePrice()); // store price
 			

@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.DoorData;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.managers.ZoneBuildManager;
@@ -73,7 +73,7 @@ public class MoveToLocation extends ClientPacket
 			return;
 		}
 		
-		if ((Config.PLAYER_MOVEMENT_BLOCK_TIME > 0) && !player.isGM() && (player.getNotMoveUntil() > System.currentTimeMillis()))
+		if ((PlayerConfig.PLAYER_MOVEMENT_BLOCK_TIME > 0) && !player.isGM() && (player.getNotMoveUntil() > System.currentTimeMillis()))
 		{
 			player.sendMessage("You cannot move while speaking to an NPC. One moment please.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -118,7 +118,7 @@ public class MoveToLocation extends ClientPacket
 		}
 		else // 0
 		{
-			if (!Config.ENABLE_KEYBOARD_MOVEMENT)
+			if (!PlayerConfig.ENABLE_KEYBOARD_MOVEMENT)
 			{
 				return;
 			}

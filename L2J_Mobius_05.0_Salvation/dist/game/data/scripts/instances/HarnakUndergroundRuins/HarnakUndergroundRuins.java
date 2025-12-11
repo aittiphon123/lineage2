@@ -29,7 +29,8 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
@@ -39,14 +40,13 @@ import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
 
 /**
  * Harnak Underground Ruins Instance Zone.
  * @author Sdw
  */
-public class HarnakUndergroundRuins extends AbstractInstance
+public class HarnakUndergroundRuins extends InstanceScript
 {
 	// NPCs
 	private static final int HADEL = 33344;
@@ -99,26 +99,13 @@ public class HarnakUndergroundRuins extends AbstractInstance
 	public HarnakUndergroundRuins()
 	{
 		super(TEMPLATE_ID);
-		registerMobs(KRAKIA_BATHUS, KRAKIA_CARCASS, KRAKIA_LOTUS, RAKZAN, WEISS_KHAN, BAMONTI, SEKNUS, WEISS_ELE, HARNAKS_WRAITH);
+		addKillId(KRAKIA_BATHUS, KRAKIA_CARCASS, KRAKIA_LOTUS, RAKZAN, WEISS_KHAN, BAMONTI, SEKNUS, WEISS_ELE, HARNAKS_WRAITH);
+		addAttackId(KRAKIA_BATHUS, KRAKIA_CARCASS, KRAKIA_LOTUS, RAKZAN, WEISS_KHAN, BAMONTI, SEKNUS, WEISS_ELE, HARNAKS_WRAITH);
 		addCreatureSeeId(POWER_SOURCES);
 		addEnterZoneId(ZONE_ROOM_2, ZONE_ROOM_3);
 		addFirstTalkId(SEAL_CONTROL_DEVICE);
 		addTalkId(HADEL);
 		addStartNpc(HADEL);
-	}
-	
-	@Override
-	protected void onEnter(Player player, Instance instance, boolean firstEnter)
-	{
-		super.onEnter(player, instance, firstEnter);
-		if (firstEnter)
-		{
-			startQuestTimer("fail_instance", 1260000, null, player);
-			startQuestTimer("message1", 2500, null, player);
-			startQuestTimer("message2", 5000, null, player);
-			startQuestTimer("message3", 8500, null, player);
-			startQuestTimer("spawn_npc1", 10000, null, player);
-		}
 	}
 	
 	@Override
@@ -692,6 +679,20 @@ public class HarnakUndergroundRuins extends AbstractInstance
 			{
 				startQuestTimer("whisper_to_player", 2000, npc, player);
 			}
+		}
+	}
+	
+	@Override
+	protected void onEnter(Player player, Instance instance, boolean firstEnter)
+	{
+		super.onEnter(player, instance, firstEnter);
+		if (firstEnter)
+		{
+			startQuestTimer("fail_instance", 1260000, null, player);
+			startQuestTimer("message1", 2500, null, player);
+			startQuestTimer("message2", 5000, null, player);
+			startQuestTimer("message3", 8500, null, player);
+			startQuestTimer("spawn_npc1", 10000, null, player);
 		}
 	}
 	

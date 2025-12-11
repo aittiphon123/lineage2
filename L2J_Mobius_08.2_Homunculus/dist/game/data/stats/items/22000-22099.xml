@@ -1338,7 +1338,6 @@
 	<item id="22067" name="Bone Arrow" type="EtcItem">
 		<!-- Arrow made of bone that was sharpened at the tip. Can be used with a D-grade bow. It is very light. -->
 		<set name="icon" val="br_cashtex.item.br_cash_bone_arrow_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
@@ -1354,7 +1353,6 @@
 	<item id="22068" name="Steel Arrow" type="EtcItem">
 		<!-- Powerful arrow made of steel. Can be used with a C-grade bow. It is very light. -->
 		<set name="icon" val="br_cashtex.item.br_cash_fine_steel_arrow_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
@@ -1370,7 +1368,6 @@
 	<item id="22069" name="Silver Arrow" type="EtcItem">
 		<!-- Steel arrow plated with silver. Can be used with a B-grade bow. It is very light. -->
 		<set name="icon" val="br_cashtex.item.br_cash_silver_arrow_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
@@ -1386,7 +1383,6 @@
 	<item id="22070" name="Mithril Arrow" type="EtcItem">
 		<!-- Steel arrow plated with mithril. Can be used with an A-grade bow. It is very light. -->
 		<set name="icon" val="br_cashtex.item.br_cash_mithril_arrow_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
@@ -1402,7 +1398,6 @@
 	<item id="22071" name="Arrow of Light" type="EtcItem">
 		<!-- The strongest arrow. Materials are unknown. It is very light. -->
 		<set name="icon" val="br_cashtex.item.br_cash_shining_arrow_i00" />
-		<set name="default_action" val="NONE" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />

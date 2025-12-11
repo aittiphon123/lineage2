@@ -34,15 +34,14 @@ import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
 import org.l2jmobius.gameserver.model.effects.EffectType;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
-import ai.AbstractNpcAI;
-
-public class MonasteryOfSilence extends AbstractNpcAI
+public class MonasteryOfSilence extends Script
 {
 	static final int[] mobs1 =
 	{
@@ -66,10 +65,16 @@ public class MonasteryOfSilence extends AbstractNpcAI
 	
 	private MonasteryOfSilence()
 	{
-		registerMobs(mobs1);
-		registerMobs(mobs2);
 		addNpcHateId(mobs1);
 		addNpcHateId(mobs2);
+		addAggroRangeEnterId(mobs1);
+		addAggroRangeEnterId(mobs2);
+		addSkillSeeId(mobs1);
+		addSkillSeeId(mobs2);
+		addSpellFinishedId(mobs1);
+		addSpellFinishedId(mobs2);
+		addSpawnId(mobs1);
+		addSpawnId(mobs2);
 	}
 	
 	@Override
@@ -134,6 +139,17 @@ public class MonasteryOfSilence extends AbstractNpcAI
 	}
 	
 	@Override
+	public void onSpellFinished(Npc npc, Player player, Skill skill)
+	{
+		if (ArrayUtil.contains(mobs1, npc.getId()) && (skill.getId() == 4589))
+		{
+			npc.setRunning();
+			npc.asAttackable().addDamageHate(player, 0, 999);
+			npc.getAI().setIntention(Intention.ATTACK, player);
+		}
+	}
+	
+	@Override
 	public void onSpawn(Npc npc)
 	{
 		if (ArrayUtil.contains(mobs1, npc.getId()))
@@ -180,17 +196,6 @@ public class MonasteryOfSilence extends AbstractNpcAI
 					}
 				}
 			}
-		}
-	}
-	
-	@Override
-	public void onSpellFinished(Npc npc, Player player, Skill skill)
-	{
-		if (ArrayUtil.contains(mobs1, npc.getId()) && (skill.getId() == 4589))
-		{
-			npc.setRunning();
-			npc.asAttackable().addDamageHate(player, 0, 999);
-			npc.getAI().setIntention(Intention.ATTACK, player);
 		}
 	}
 	

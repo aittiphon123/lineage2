@@ -85,7 +85,7 @@
 	<zone name="jamoa_wasteland" type="TimedHuntingZone" shape="NPoly" minZ="-5000" maxZ="100">
 		<stat name="instanceId" val="1006" />
 		<node X="-16442" Y="212753" />
-		<node X="-58308" Y="117223" />
+		<node X="-58308" Y="177223" />
 		<node X="-35484" Y="161974" />
 		<node X="-7625" Y="170696" />
 		<node X="-121" Y="184914" />

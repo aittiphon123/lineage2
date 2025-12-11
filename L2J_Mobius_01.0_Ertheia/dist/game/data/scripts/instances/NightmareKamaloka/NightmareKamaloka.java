@@ -25,16 +25,15 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
-
-import instances.AbstractInstance;
 
 /**
  * Nightmare Kamaloka instance zone.
  * @author St3eT
  */
-public class NightmareKamaloka extends AbstractInstance
+public class NightmareKamaloka extends InstanceScript
 {
 	// NPCs
 	private static final int KURTIZ = 30870;

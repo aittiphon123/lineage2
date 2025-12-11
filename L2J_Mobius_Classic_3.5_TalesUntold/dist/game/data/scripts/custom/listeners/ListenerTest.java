@@ -35,16 +35,15 @@ import org.l2jmobius.gameserver.model.events.holders.sieges.OnCastleSiegeStart;
 import org.l2jmobius.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2jmobius.gameserver.model.events.returns.TerminateReturn;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.scripting.annotations.Disabled;
-
-import ai.AbstractNpcAI;
 
 /**
  * An example usage of Listeners.
  * @author UnAfraid
  */
 @Disabled
-public class ListenerTest extends AbstractNpcAI
+public class ListenerTest extends Script
 {
 	private static final int[] ELPIES =
 	{

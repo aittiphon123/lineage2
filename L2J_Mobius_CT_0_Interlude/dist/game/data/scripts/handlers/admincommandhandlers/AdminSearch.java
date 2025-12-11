@@ -173,14 +173,6 @@ public class AdminSearch implements IAdminCommandHandler
 			{
 				return "<font name=\\\"hs8\\\" color=ae9977 size=-1>S</font>";
 			}
-			case S80:
-			{
-				return "<font name=\\\"hs8\\\" color=ae9977 size=-1>S80</font>";
-			}
-			case S84:
-			{
-				return "<font name=\\\"hs8\\\" color=ae9977 size=-1>S84</font>";
-			}
 			default:
 			{
 				return String.valueOf(item.getItemGrade());

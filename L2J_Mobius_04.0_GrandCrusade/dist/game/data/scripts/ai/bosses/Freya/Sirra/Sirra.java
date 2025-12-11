@@ -19,14 +19,13 @@ package ai.bosses.Freya.Sirra;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * Sirra AI.
  * @author St3eT
  */
-public class Sirra extends AbstractNpcAI
+public class Sirra extends Script
 {
 	// NPC
 	private static final int SIRRA = 32762;

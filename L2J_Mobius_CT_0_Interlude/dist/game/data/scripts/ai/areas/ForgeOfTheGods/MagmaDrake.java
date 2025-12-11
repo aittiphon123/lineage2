@@ -25,13 +25,12 @@ import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * @author Mobius
  */
-public class MagmaDrake extends AbstractNpcAI
+public class MagmaDrake extends Script
 {
 	// NPCs
 	private static final int MAGMA_DRAKE = 21657;

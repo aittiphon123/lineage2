@@ -33,9 +33,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.xml.DoorData;
 import org.l2jmobius.gameserver.managers.CastleManager;
@@ -506,7 +506,7 @@ public class Castle extends AbstractResidence
 				if (_formerOwner == null)
 				{
 					_formerOwner = oldOwner;
-					if (Config.REMOVE_CASTLE_CIRCLETS)
+					if (PlayerConfig.REMOVE_CASTLE_CIRCLETS)
 					{
 						CastleManager.getInstance().removeCirclet(_formerOwner, getResidenceId());
 					}
@@ -543,7 +543,7 @@ public class Castle extends AbstractResidence
 		if (clan != null)
 		{
 			_formerOwner = clan;
-			if (Config.REMOVE_CASTLE_CIRCLETS)
+			if (PlayerConfig.REMOVE_CASTLE_CIRCLETS)
 			{
 				CastleManager.getInstance().removeCirclet(_formerOwner, getResidenceId());
 			}

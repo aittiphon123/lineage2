@@ -16,8 +16,8 @@
  */
 package org.l2jmobius.gameserver.model.zone.type;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.custom.SayuneForAllConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -57,7 +57,7 @@ public class SayuneZone extends ZoneType
 	@Override
 	protected void onEnter(Creature creature)
 	{
-		if (creature.isPlayer() && (creature.isInCategory(CategoryType.SIXTH_CLASS_GROUP) || Config.FREE_JUMPS_FOR_ALL) && !creature.isTransformed())
+		if (creature.isPlayer() && (creature.isInCategory(CategoryType.SIXTH_CLASS_GROUP) || SayuneForAllConfig.FREE_JUMPS_FOR_ALL) && !creature.isTransformed())
 		{
 			final Player player = creature.asPlayer();
 			if (!player.isMounted())

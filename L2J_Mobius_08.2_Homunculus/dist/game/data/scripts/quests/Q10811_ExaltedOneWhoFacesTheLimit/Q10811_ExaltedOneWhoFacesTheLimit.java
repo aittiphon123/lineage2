@@ -19,17 +19,17 @@ package quests.Q10811_ExaltedOneWhoFacesTheLimit;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 
@@ -233,7 +233,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		final Race race = player.getRace();
-		final PlayerClass classId = player.getBaseTemplate().getPlayerClass();
+		final PlayerClass playerClass = player.getBaseTemplate().getPlayerClass();
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
 		{
@@ -273,37 +273,37 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 						case ELF:
 						case DARK_ELF:
 						{
-							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, classId.getId()))
+							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, playerClass.getId()))
 							{
 								giveItems(player, EXALTED_BUSTER, 1);
 								giveItems(player, EXALTED_ROBE_PACK, 1);
 								giveItems(player, FIRST_EXALTED_QUEST_REWARD_MAGIC, 1);
 							}
-							else if ((CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, classId.getId())))
+							else if ((CategoryData.getInstance().isInCategory(CategoryType.SIXTH_WYNN_GROUP, playerClass.getId())))
 							{
 								giveItems(player, EXALTED_RETRIBUTER, 1);
 								giveItems(player, EXALTED_ROBE_PACK, 1);
 								giveItems(player, FIRST_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_EOLH_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_EOLH_GROUP, playerClass.getId()))
 							{
 								giveItems(player, EXALTED_CASTER, 1);
 								giveItems(player, EXALTED_ROBE_PACK, 1);
 								giveItems(player, FIRST_EXALTED_QUEST_REWARD_MAGIC, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, playerClass.getId()))
 							{
 								giveItems(player, EXALTED_DUAL_DAGGERS, 1);
 								giveItems(player, EXALTED_LIGHT_ARMOR_PACK, 1);
 								giveItems(player, FIRST_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, playerClass.getId()))
 							{
 								giveItems(player, EXALTED_THROWER, 1);
 								giveItems(player, EXALTED_LIGHT_ARMOR_PACK, 1);
 								giveItems(player, FIRST_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, classId.getId()) || (player.getPlayerClass() == PlayerClass.TYRR_DUELIST))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, playerClass.getId()) || (player.getPlayerClass() == PlayerClass.TYRR_DUELIST))
 							{
 								giveItems(player, EXALTED_DUAL_SWORDS, 1);
 								giveItems(player, EXALTED_HEAVY_ARMOR_PACK, 1);
@@ -315,7 +315,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 								giveItems(player, EXALTED_HEAVY_ARMOR_PACK, 1);
 								giveItems(player, FIRST_EXALTED_QUEST_REWARD_PHYSICAL, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_SIGEL_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_SIGEL_GROUP, playerClass.getId()))
 							{
 								giveItems(player, EXALTED_CUTTER, 1);
 								giveItems(player, EXALTED_HEAVY_ARMOR_PACK, 1);
@@ -325,7 +325,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 						}
 						case DWARF:
 						{
-							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, classId.getId()))
+							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_OTHEL_GROUP, playerClass.getId()))
 							{
 								giveItems(player, EXALTED_DUAL_DAGGERS, 1);
 								giveItems(player, EXALTED_LIGHT_ARMOR_PACK, 1);
@@ -341,7 +341,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 						}
 						case ORC:
 						{
-							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, classId.getId()))
+							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_IS_GROUP, playerClass.getId()))
 							{
 								giveItems(player, EXALTED_DUAL_SWORDS, 1);
 								giveItems(player, EXALTED_HEAVY_ARMOR_PACK, 1);
@@ -363,13 +363,13 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 						}
 						case KAMAEL:
 						{
-							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, classId.getId()))
+							if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_FEOH_GROUP, playerClass.getId()))
 							{
 								giveItems(player, EXALTED_BUSTER, 1);
 								giveItems(player, EXALTED_ROBE_PACK, 1);
 								giveItems(player, FIRST_EXALTED_QUEST_REWARD_MAGIC, 1);
 							}
-							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, classId.getId()))
+							else if (CategoryData.getInstance().isInCategory(CategoryType.SIXTH_YR_GROUP, playerClass.getId()))
 							{
 								giveItems(player, EXALTED_SHOOTER, 1);
 								giveItems(player, EXALTED_LIGHT_ARMOR_PACK, 1);
@@ -461,7 +461,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 	public void actionForEachPlayer(Player player, Npc npc, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(2) && player.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
+		if ((qs != null) && qs.isCond(2) && player.isInsideRadius3D(npc, PlayerConfig.ALT_PARTY_RANGE))
 		{
 			if (getQuestItemsCount(player, SLAYERS_PROOF) < SLAYERS_PROOF_NEEDED)
 			{

@@ -23,18 +23,17 @@ package ai.bosses.EtisVanEtina;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.util.MathUtil;
 
-import ai.AbstractNpcAI;
-
 /**
  * @author NviX
  */
-public class TempleDarkWizard extends AbstractNpcAI
+public class TempleDarkWizard extends Script
 {
 	// Npc
 	private static final int TEMPLE_DARK_WIZARD = 24083;
@@ -45,7 +44,8 @@ public class TempleDarkWizard extends AbstractNpcAI
 	
 	private TempleDarkWizard()
 	{
-		registerMobs(TEMPLE_DARK_WIZARD);
+		addAttackId(TEMPLE_DARK_WIZARD);
+		addSpellFinishedId(TEMPLE_DARK_WIZARD);
 	}
 	
 	@Override

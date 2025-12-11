@@ -465,15 +465,12 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</slot>
-			</effect>
 			<effect name="PhysicalAttack">
 				<amount>17</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttack">
@@ -484,9 +481,12 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalDefence">
-				<amount>15</amount>
-				<mode>PER</mode>
+			<effect name="DispelBySlotProbability">
+				<dispel>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>IMPROVE_PA_PD_UP;PA_UP;PD_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -497,7 +497,7 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<castRange>400</castRange>
 		<effectPoint>687</effectPoint>
@@ -505,6 +505,58 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>1</magicLevel>
 		<effects>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="TriggerSkillByDamageDealt">
 				<!-- Guess: Same as clan hall one -->
 				<!-- Critical Damage Increase -->
@@ -523,58 +575,6 @@
 			<effect name="BlockAbnormalSlot">
 				<slot>MULTI_BUFF;COUNTER_CRITICAL;CRITICAL_PROB_UP;CRITICAL_DMG_UP;MAGIC_CRITICAL_UP;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
 			</effect>
-			<effect name="PhysicalAttack">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttack">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="Speed">
-				<amount>-15</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="HpRegen">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceCriticalDamage">
-				<amount>30</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="ResistAbnormalByCategory">
-				<amount>-10</amount>
-				<slot>DEBUFF</slot>
-			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>20</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</effects>
 	</skill>
 	<skill id="15644" toLevel="1" name="Pipe Organ Melody (Adventurer)">
@@ -592,13 +592,6 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
-			</effect>
 			<effect name="MaxHp">
 				<amount>37</amount>
 				<mode>PER</mode>
@@ -615,6 +608,13 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>MULTI_BUFF;IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="15645" toLevel="1" name="Guitar Melody (Adventurer)">
@@ -624,7 +624,7 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<castRange>400</castRange>
 		<effectPoint>687</effectPoint>
@@ -632,19 +632,12 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;CHEAP_MAGIC;MULTI_BUFF;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;CHEAP_MAGIC;MULTI_BUFF;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
+			<effect name="CriticalRate">
+				<amount>32</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalRate">
-				<amount>32</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicCriticalRate">
@@ -652,14 +645,14 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicMpCost">
-				<amount>-10</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-			<effect name="MagicMpCost">
 				<amount>-20</amount>
 				<mode>PER</mode>
 				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>-20</amount>
@@ -670,6 +663,13 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 				<magicType>22</magicType>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;CHEAP_MAGIC;MULTI_BUFF;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>ATTACK_TIME_DOWN;CASTING_TIME_DOWN;SPEED_UP;CHEAP_MAGIC;MULTI_BUFF;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP;HIT_UP;T_CRT_DMG_DOWN;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_SPEED_AVOID_UP;MAX_BREATH_UP;HOLY_ATTACK;AVOID_UP;DECREASE_WEIGHT_PENALTY;RESIST_HOLY_UNHOLY</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -688,22 +688,11 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
-			</effect>
-			<effect name="Speed">
-				<amount>34</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalEvasion">
+			<effect name="Accuracy">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="Accuracy">
+			<effect name="PhysicalEvasion">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -711,9 +700,20 @@
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="Speed">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="DefenceCriticalDamage">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -732,17 +732,6 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</slot>
-			</effect>
-			<effect name="VampiricAttack">
-				<amount>9</amount>
-				<chance>30</chance>
-			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
 				<mode>PER</mode>
@@ -750,6 +739,17 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>31</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="VampiricAttack">
+				<amount>9</amount>
+				<chance>30</chance>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN;MULTI_BUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -768,15 +768,16 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
-			</effect>
 			<effect name="PhysicalAttack">
 				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
@@ -787,17 +788,16 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="CriticalDamage">
-				<amount>35</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="ShieldDefence">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="CriticalRate">
-				<amount>100</amount>
-				<mode>PER</mode>
+			<effect name="DispelBySlotProbability">
+				<dispel>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -816,31 +816,8 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
-				<rate>100</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
-			</effect>
 			<effect name="PhysicalAttack">
 				<amount>35</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttack">
-				<amount>16</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="Speed">
-				<amount>8</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
@@ -850,6 +827,29 @@
 			<effect name="CriticalRate">
 				<amount>100</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>16</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -868,19 +868,24 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DispelBySlotProbability">
-				<dispel>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
-				<rate>100</rate>
+			<effect name="MagicalAttack">
+				<amount>40</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="BlockAbnormalSlot">
-				<slot>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
+			<effect name="MagicCriticalRate">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttack">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalAttack">
-				<amount>40</amount>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="Speed">
@@ -891,20 +896,8 @@
 				<amount>14</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="MpRegen">
 				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicMpCost">
@@ -936,6 +929,13 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 				<magicType>22</magicType>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>MULTI_BUFF;DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</slot>
 			</effect>
 		</effects>
 	</skill>

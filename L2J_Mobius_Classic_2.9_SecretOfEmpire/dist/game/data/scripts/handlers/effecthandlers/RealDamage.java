@@ -20,7 +20,7 @@
  */
 package handlers.effecthandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.custom.FakePlayersConfig;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
@@ -69,7 +69,7 @@ public class RealDamage extends AbstractEffect
 		}
 		
 		// Check if fake players should aggro each other.
-		if (effector.isFakePlayer() && !Config.FAKE_PLAYER_AGGRO_FPC && effected.isFakePlayer())
+		if (effector.isFakePlayer() && !FakePlayersConfig.FAKE_PLAYER_AGGRO_FPC && effected.isFakePlayer())
 		{
 			return;
 		}

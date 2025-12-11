@@ -23,16 +23,15 @@ package instances.DimensionalWrap;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import ai.AbstractNpcAI;
 
 /**
  * Dimensional Trap's AI
  * @author Gigi
  * @date 2018-09-07 - [17:39:04]
  */
-public class DimensionalTrap extends AbstractNpcAI
+public class DimensionalTrap extends Script
 {
 	private static final int DIMENSIONAL_DEBUFF_TRAP_1 = 19556; // Debuff trap, power 1
 	private static final int DIMENSIONAL_DEBUFF_TRAP_2 = 19557; // Debuff trap, power 2

@@ -25,8 +25,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.fishing.FishingBait;
 import org.l2jmobius.gameserver.model.fishing.FishingCatch;
 import org.l2jmobius.gameserver.model.fishing.FishingRod;
@@ -99,7 +99,7 @@ public class FishingData implements IXmlReader
 									final int itemId = parseInteger(attrs, "itemId");
 									final int level = parseInteger(attrs, "level", 1);
 									final int minPlayerLevel = parseInteger(attrs, "minPlayerLevel");
-									final int maxPlayerLevel = parseInteger(attrs, "maxPlayerLevel", Config.PLAYER_MAXIMUM_LEVEL);
+									final int maxPlayerLevel = parseInteger(attrs, "maxPlayerLevel", PlayerConfig.PLAYER_MAXIMUM_LEVEL);
 									final double chance = parseDouble(attrs, "chance");
 									final int timeMin = parseInteger(attrs, "timeMin");
 									final int timeMax = parseInteger(attrs, "timeMax", timeMin);

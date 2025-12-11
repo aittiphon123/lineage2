@@ -23,16 +23,16 @@ package instances.BalthusKnights.PowerOfCranigg;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 
-import instances.AbstractInstance;
 import quests.Q10556_ForgottenPowerStartOfFate.Q10556_ForgottenPowerStartOfFate;
 
 /**
  * Power of Cranigg instance zone.
  * @author Kazumi
  */
-public final class PowerOfCranigg extends AbstractInstance
+public final class PowerOfCranigg extends InstanceScript
 {
 	// NPCs
 	private static final int BOW_MASTER = 34389;

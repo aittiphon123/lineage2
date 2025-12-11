@@ -34,6 +34,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -42,15 +43,13 @@ import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
 
-import instances.AbstractInstance;
-
 /**
  * Instance Altar of Shilen
  * @URL https://l2wiki.com/Altar_of_Shilen
  * @author Gigi
  * @date 2018-04-13 - [23:27:28]
  */
-public class AltarOfShilen extends AbstractInstance
+public class AltarOfShilen extends InstanceScript
 {
 	// NPCs
 	private static final int LOGART_VAN_DYKE = 34331;

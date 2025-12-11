@@ -18,16 +18,16 @@ package ai.areas.Parnassus.EntrancePortalToCrystalCaverns;
 
 import java.util.Calendar;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.Quest;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
-import ai.AbstractNpcAI;
 import instances.CrystalCaverns.CrystalCavernsCoralGarden;
 import instances.CrystalCaverns.CrystalCavernsEmeraldSquare;
 import instances.CrystalCaverns.CrystalCavernsSteamCorridor;
@@ -36,7 +36,7 @@ import instances.CrystalCaverns.CrystalCavernsSteamCorridor;
  * Entrance Portal to Crystal Caverns AI.
  * @author St3eT
  */
-public class EntrancePortalToCrystalCaverns extends AbstractNpcAI
+public class EntrancePortalToCrystalCaverns extends Script
 {
 	// NPCs
 	private static final int CAVERNS_ENTRACE = 33522;
@@ -71,17 +71,17 @@ public class EntrancePortalToCrystalCaverns extends AbstractNpcAI
 			{
 				case EMERALD_SQUARE_TEMPLATE_ID:
 				{
-					instanceScript = QuestManager.getInstance().getQuest(CrystalCavernsEmeraldSquare.class.getSimpleName());
+					instanceScript = ScriptManager.getInstance().getScript(CrystalCavernsEmeraldSquare.class.getSimpleName());
 					break;
 				}
 				case STEAM_CORRIDOR_TEMPLATE_ID:
 				{
-					instanceScript = QuestManager.getInstance().getQuest(CrystalCavernsSteamCorridor.class.getSimpleName());
+					instanceScript = ScriptManager.getInstance().getScript(CrystalCavernsSteamCorridor.class.getSimpleName());
 					break;
 				}
 				case CORAL_GARDEN_TEMPLATE_ID:
 				{
-					instanceScript = QuestManager.getInstance().getQuest(CrystalCavernsCoralGarden.class.getSimpleName());
+					instanceScript = ScriptManager.getInstance().getScript(CrystalCavernsCoralGarden.class.getSimpleName());
 					break;
 				}
 			}

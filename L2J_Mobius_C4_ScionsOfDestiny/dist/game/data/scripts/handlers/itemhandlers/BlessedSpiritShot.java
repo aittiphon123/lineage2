@@ -22,7 +22,7 @@ package handlers.itemhandlers;
 
 import java.util.logging.Level;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.handler.IItemHandler;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -58,7 +58,7 @@ public class BlessedSpiritShot implements IItemHandler
 		}
 		
 		// Disable Blessed SpiritShots in Olympiad.
-		if (player.isInOlympiadMode() && Config.OLYMPIAD_DISABLE_BLESSED_SPIRITSHOTS)
+		if (player.isInOlympiadMode() && OlympiadConfig.OLYMPIAD_DISABLE_BLESSED_SPIRITSHOTS)
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
 			return false;

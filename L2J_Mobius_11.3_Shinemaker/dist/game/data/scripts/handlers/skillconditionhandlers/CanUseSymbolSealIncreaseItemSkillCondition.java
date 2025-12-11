@@ -20,7 +20,7 @@
  */
 package handlers.skillconditionhandlers;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -42,6 +42,6 @@ public class CanUseSymbolSealIncreaseItemSkillCondition implements ISkillConditi
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return caster.isPlayer() && ((caster.asPlayer().getSymbolSealPoints() + ((Config.MAX_SYMBOL_SEAL_POINTS * _amount) / 100)) <= Config.MAX_SYMBOL_SEAL_POINTS);
+		return caster.isPlayer() && ((caster.asPlayer().getSymbolSealPoints() + ((PlayerConfig.MAX_SYMBOL_SEAL_POINTS * _amount) / 100)) <= PlayerConfig.MAX_SYMBOL_SEAL_POINTS);
 	}
 }

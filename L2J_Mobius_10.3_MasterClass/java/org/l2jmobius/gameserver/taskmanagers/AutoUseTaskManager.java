@@ -25,8 +25,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.xml.ActionData;
 import org.l2jmobius.gameserver.data.xml.PetSkillData;
 import org.l2jmobius.gameserver.handler.IItemHandler;
@@ -113,7 +113,7 @@ public class AutoUseTaskManager
 				
 				final boolean isInPeaceZone = player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.SAYUNE);
 				
-				if (Config.ENABLE_AUTO_ITEM && !isInPeaceZone)
+				if (GeneralConfig.ENABLE_AUTO_ITEM && !isInPeaceZone)
 				{
 					ITEMS: for (Integer itemId : player.getAutoUseSettings().getAutoSupplyItems())
 					{
@@ -169,7 +169,7 @@ public class AutoUseTaskManager
 					}
 				}
 				
-				if (Config.ENABLE_AUTO_POTION && !isInPeaceZone && (player.getCurrentHpPercent() < player.getAutoPlaySettings().getAutoPotionPercent()))
+				if (GeneralConfig.ENABLE_AUTO_POTION && !isInPeaceZone && (player.getCurrentHpPercent() < player.getAutoPlaySettings().getAutoPotionPercent()))
 				{
 					final int itemId = player.getAutoUseSettings().getAutoPotionItem();
 					if (itemId > 0)
@@ -204,7 +204,7 @@ public class AutoUseTaskManager
 					}
 				}
 				
-				if (Config.ENABLE_AUTO_SKILL)
+				if (GeneralConfig.ENABLE_AUTO_SKILL)
 				{
 					BUFFS: for (Integer skillId : player.getAutoUseSettings().getAutoBuffs())
 					{

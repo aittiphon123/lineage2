@@ -16,14 +16,14 @@
  */
 package quests.Q10740_NeverForget;
 
-import org.l2jmobius.gameserver.managers.QuestManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
@@ -93,7 +93,7 @@ public class Q10740_NeverForget extends Quest
 			{
 				if (qs.isCond(2) && (getQuestItemsCount(player, UNNAMED_RELICS) >= 20))
 				{
-					final Quest q = QuestManager.getInstance().getQuest(RemembranceTower.class.getSimpleName());
+					final Quest q = ScriptManager.getInstance().getScript(RemembranceTower.class.getSimpleName());
 					if (q != null)
 					{
 						q.notifyEvent("action", npc, null);

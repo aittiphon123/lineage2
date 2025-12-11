@@ -22,13 +22,11 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 
-import ai.AbstractNpcAI;
-
 /**
  * Remons AI.
  * @author Gladicek
  */
-public class Remons extends AbstractNpcAI
+public class Remons extends WalkerAI
 {
 	// NPC
 	private static final int REMONS = 33570;

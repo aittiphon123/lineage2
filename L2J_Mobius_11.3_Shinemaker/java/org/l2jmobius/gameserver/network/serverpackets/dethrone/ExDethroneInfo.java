@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.network.serverpackets.dethrone;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -101,20 +101,20 @@ public class ExDethroneInfo extends ServerPacket
 		buffer.writeLong(_serverDethronePoint); // nServerDethronePoint
 		
 		// Terr. Owner
-		buffer.writeInt(Config.SERVER_ID); // nConquerorWorldID (Server Id of the conqueror player)
+		buffer.writeInt(ServerConfig.SERVER_ID); // nConquerorWorldID (Server Id of the conqueror player)
 		buffer.writeSizedString(_topRankerName); // sTopRankerName; // conquest char name
 		
 		// Conqueror Server
-		buffer.writeInt(Config.SERVER_ID); // nOccupyingServerWorldID
+		buffer.writeInt(ServerConfig.SERVER_ID); // nOccupyingServerWorldID
 		
 		// Conquest Status
 		// set from SeasonInfo Packet
 		
 		// Rank 1
-		buffer.writeInt(Config.SERVER_ID); // nTopRankerWorldID
+		buffer.writeInt(ServerConfig.SERVER_ID); // nTopRankerWorldID
 		buffer.writeSizedString(_topRankerName); // sTopRankerName; // conquest char name
 		
-		buffer.writeInt(Config.SERVER_ID); // Leading Server nTopServerWorldID
+		buffer.writeInt(ServerConfig.SERVER_ID); // Leading Server nTopServerWorldID
 		buffer.writeLong(_topServerDethronePoint); // Server Points nTopServerDethronePoint
 	}
 }

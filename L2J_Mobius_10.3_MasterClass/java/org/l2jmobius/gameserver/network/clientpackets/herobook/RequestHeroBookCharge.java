@@ -68,7 +68,7 @@ public class RequestHeroBookCharge extends ClientPacket
 			return;
 		}
 		
-		final boolean isSuccess = new HeroBookManager().tryEnchant(player, _items);
+		final boolean isSuccess = HeroBookManager.tryEnchant(player, _items);
 		player.sendPacket(new ExHeroBookCharge(isSuccess));
 		player.sendPacket(new ExHeroBookInfo(player.getHeroBookProgress()));
 	}

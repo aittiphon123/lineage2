@@ -32,6 +32,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.events.holders.sieges.OnCastleSiegeFinish;
 import org.l2jmobius.gameserver.model.events.holders.sieges.OnCastleSiegeStart;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -39,13 +40,11 @@ import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 
-import ai.AbstractNpcAI;
-
 /**
  * Venom AI on Rune Castle.
  * @author nonom, MELERIX
  */
-public class Venom extends AbstractNpcAI
+public class Venom extends Script
 {
 	private static final int CASTLE = 8; // Rune
 	
@@ -121,6 +120,12 @@ public class Venom extends AbstractNpcAI
 		{
 			_prisonIsOpen = true;
 		}
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	@Override

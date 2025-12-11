@@ -18,9 +18,9 @@ package org.l2jmobius.gameserver.model.stats.finalizers;
 
 import java.util.OptionalDouble;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
 import org.l2jmobius.gameserver.model.stats.IStatFunction;
 import org.l2jmobius.gameserver.model.stats.Stat;
@@ -39,7 +39,7 @@ public class MCritRateFinalizer implements IStatFunction
 		if (creature.isPlayer())
 		{
 			// Enchanted legs bonus
-			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_LEGS);
+			baseValue += calcEnchantBodyPart(creature, BodyPart.LEGS);
 		}
 		
 		final double witBonus = creature.getWIT() > 0 ? BaseStat.WIT.calcBonus(creature) : 1;
@@ -47,7 +47,7 @@ public class MCritRateFinalizer implements IStatFunction
 		final double maxMagicalCritRate;
 		if (creature.isPlayable())
 		{
-			maxMagicalCritRate = Config.MAX_MCRIT_RATE + creature.getStat().getValue(Stat.ADD_MAX_MAGIC_CRITICAL_RATE, 0);
+			maxMagicalCritRate = PlayerConfig.MAX_MCRIT_RATE + creature.getStat().getValue(Stat.ADD_MAX_MAGIC_CRITICAL_RATE, 0);
 		}
 		else
 		{

@@ -48,16 +48,15 @@ import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.residences.Bidder;
 import org.l2jmobius.gameserver.model.residences.ClanHall;
 import org.l2jmobius.gameserver.model.residences.ClanHallAuction;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
-
-import ai.AbstractNpcAI;
 
 /**
  * Clan Hall Auctioneer AI.
  * @author Sdw, Mobius
  */
-public class ClanHallAuctioneer extends AbstractNpcAI
+public class ClanHallAuctioneer extends Script
 {
 	// NPC
 	private static final int AUCTIONEER = 30767; // Auctioneer

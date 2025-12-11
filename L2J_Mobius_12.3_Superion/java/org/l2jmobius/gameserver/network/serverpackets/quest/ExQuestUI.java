@@ -20,33 +20,36 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets.quest;
 
-import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 
 /**
- * @author Magik
+ * @author Mobius
  */
 public class ExQuestUI extends ServerPacket
 {
-	private final Player _player;
-	private final Collection<QuestState> _allQuestStates;
+	private final List<QuestState> _questStates = new LinkedList<>();
 	private int _activeQuestCount = 0;
 	
 	public ExQuestUI(Player player)
 	{
-		_player = player;
-		_allQuestStates = player.getAllQuestStates();
-		for (QuestState questState : _allQuestStates)
+		for (QuestState questState : player.getAllQuestStates())
 		{
-			if (questState.isStarted() && !questState.isCompleted())
+			if (questState.getQuest() != null)
 			{
-				_activeQuestCount++;
+				_questStates.add(questState);
+				
+				if (questState.isStarted() && !questState.isCompleted())
+				{
+					_activeQuestCount++;
+				}
 			}
 		}
 	}
@@ -54,28 +57,16 @@ public class ExQuestUI extends ServerPacket
 	@Override
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
-		if (_player == null)
+		ServerPackets.EX_QUEST_UI.writeId(this, buffer);
+		
+		buffer.writeInt(_questStates.size());
+		for (QuestState questState : _questStates)
 		{
-			return;
+			buffer.writeInt(questState.getQuest().getId());
+			buffer.writeInt(questState.getCount());
+			buffer.writeByte(questState.getState());
 		}
 		
-		ServerPackets.EX_QUEST_UI.writeId(this, buffer);
-		if (!_allQuestStates.isEmpty())
-		{
-			buffer.writeInt(_allQuestStates.size());
-			for (QuestState questState : _allQuestStates)
-			{
-				buffer.writeInt(questState.getQuest().getId());
-				buffer.writeInt(questState.getCount());
-				buffer.writeByte(questState.getState());
-			}
-			
-			buffer.writeInt(_activeQuestCount);
-		}
-		else
-		{
-			buffer.writeInt(0);
-			buffer.writeInt(0);
-		}
+		buffer.writeInt(_activeQuestCount);
 	}
 }

@@ -24,8 +24,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -81,7 +81,7 @@ public class ExRankingCharRankers extends ServerPacket
 							final StatSet player = _playerList.get(id);
 							buffer.writeSizedString(player.getString("name"));
 							buffer.writeSizedString(player.getString("clanName"));
-							buffer.writeInt(Config.SERVER_ID);
+							buffer.writeInt(ServerConfig.SERVER_ID);
 							buffer.writeInt(player.getInt("level"));
 							buffer.writeInt(player.getInt("classId"));
 							buffer.writeInt(player.getInt("race"));
@@ -132,7 +132,7 @@ public class ExRankingCharRankers extends ServerPacket
 									final StatSet plr = _playerList.get(id2);
 									buffer.writeSizedString(plr.getString("name"));
 									buffer.writeSizedString(plr.getString("clanName"));
-									buffer.writeInt(Config.SERVER_ID);
+									buffer.writeInt(ServerConfig.SERVER_ID);
 									buffer.writeInt(plr.getInt("level"));
 									buffer.writeInt(plr.getInt("classId"));
 									buffer.writeInt(plr.getInt("race"));
@@ -184,7 +184,7 @@ public class ExRankingCharRankers extends ServerPacket
 							{
 								buffer.writeSizedString(player.getString("name"));
 								buffer.writeSizedString(player.getString("clanName"));
-								buffer.writeInt(Config.SERVER_ID);
+								buffer.writeInt(ServerConfig.SERVER_ID);
 								buffer.writeInt(player.getInt("level"));
 								buffer.writeInt(player.getInt("classId"));
 								buffer.writeInt(player.getInt("race"));
@@ -262,7 +262,7 @@ public class ExRankingCharRankers extends ServerPacket
 									final StatSet plr = raceList.get(id2);
 									buffer.writeSizedString(plr.getString("name"));
 									buffer.writeSizedString(plr.getString("clanName"));
-									buffer.writeInt(Config.SERVER_ID);
+									buffer.writeInt(ServerConfig.SERVER_ID);
 									buffer.writeInt(plr.getInt("level"));
 									buffer.writeInt(plr.getInt("classId"));
 									buffer.writeInt(plr.getInt("race"));
@@ -304,7 +304,7 @@ public class ExRankingCharRankers extends ServerPacket
 							final StatSet player = clanList.get(id);
 							buffer.writeSizedString(player.getString("name"));
 							buffer.writeSizedString(player.getString("clanName"));
-							buffer.writeInt(Config.SERVER_ID);
+							buffer.writeInt(ServerConfig.SERVER_ID);
 							buffer.writeInt(player.getInt("level"));
 							buffer.writeInt(player.getInt("classId"));
 							buffer.writeInt(player.getInt("race"));
@@ -364,7 +364,7 @@ public class ExRankingCharRankers extends ServerPacket
 							{
 								buffer.writeSizedString(player.getString("name"));
 								buffer.writeSizedString(player.getString("clanName"));
-								buffer.writeInt(Config.SERVER_ID);
+								buffer.writeInt(ServerConfig.SERVER_ID);
 								buffer.writeInt(player.getInt("level"));
 								buffer.writeInt(player.getInt("classId"));
 								buffer.writeInt(player.getInt("race"));
@@ -405,7 +405,7 @@ public class ExRankingCharRankers extends ServerPacket
 							buffer.writeSizedString("");
 						}
 						
-						buffer.writeInt(Config.SERVER_ID);
+						buffer.writeInt(ServerConfig.SERVER_ID);
 						buffer.writeInt(_player.getStat().getBaseLevel());
 						buffer.writeInt(_player.getBaseClass());
 						buffer.writeInt(_player.getRace().ordinal());
@@ -455,7 +455,7 @@ public class ExRankingCharRankers extends ServerPacket
 							{
 								buffer.writeSizedString(player.getString("name"));
 								buffer.writeSizedString(player.getString("clanName"));
-								buffer.writeInt(Config.SERVER_ID);
+								buffer.writeInt(ServerConfig.SERVER_ID);
 								buffer.writeInt(player.getInt("level"));
 								buffer.writeInt(player.getInt("classId"));
 								buffer.writeInt(player.getInt("race"));
@@ -534,7 +534,7 @@ public class ExRankingCharRankers extends ServerPacket
 									final StatSet plr = classList.get(id2);
 									buffer.writeSizedString(plr.getString("name"));
 									buffer.writeSizedString(plr.getString("clanName"));
-									buffer.writeInt(Config.SERVER_ID);
+									buffer.writeInt(ServerConfig.SERVER_ID);
 									buffer.writeInt(plr.getInt("level"));
 									buffer.writeInt(plr.getInt("classId"));
 									buffer.writeInt(plr.getInt("race"));

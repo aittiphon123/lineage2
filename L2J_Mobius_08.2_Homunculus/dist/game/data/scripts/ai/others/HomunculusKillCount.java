@@ -20,7 +20,7 @@
  */
 package ai.others;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -29,15 +29,14 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnAttackableKill;
 import org.l2jmobius.gameserver.model.groups.Party;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.serverpackets.homunculus.ExHomunculusPointInfo;
-
-import ai.AbstractNpcAI;
 
 /**
  * @author CostyKiller
  */
-public class HomunculusKillCount extends AbstractNpcAI
+public class HomunculusKillCount extends Script
 {
 	private static final int LEVEL_DIFFERENCE = 9;
 	
@@ -56,7 +55,7 @@ public class HomunculusKillCount extends AbstractNpcAI
 					final Party party = player.getParty();
 					for (Player member : party.getMembers())
 					{
-						if (member.isInsideRadius3D(creature, Config.ALT_PARTY_RANGE))
+						if (member.isInsideRadius3D(creature, PlayerConfig.ALT_PARTY_RANGE))
 						{
 							final int killedMobs = member.getVariables().getInt(PlayerVariables.HOMUNCULUS_KILLED_MOBS, 0);
 							if (killedMobs < 500)

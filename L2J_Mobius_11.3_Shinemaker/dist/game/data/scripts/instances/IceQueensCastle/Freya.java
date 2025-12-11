@@ -28,6 +28,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -36,14 +37,12 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
-
 /**
  * @author Tanatos
  * @URL https://www.youtube.com/watch?v=3l9JuxM5lk0&t
  * @URL https://l2central.info/main/locations/instance_zones/party/ice_queen_castle/
  */
-public class Freya extends AbstractInstance
+public class Freya extends InstanceScript
 {
 	// NPCs
 	private static final int BENUSTA = 34542;

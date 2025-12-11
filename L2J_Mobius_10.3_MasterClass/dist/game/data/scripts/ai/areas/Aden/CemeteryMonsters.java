@@ -22,19 +22,18 @@ package ai.areas.Aden;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
-
-import ai.AbstractNpcAI;
 
 /**
  * Cemetery Monsters AI
  * @author Gigi
  * @date 2018-07-10 - [20:17:37]
  */
-public class CemeteryMonsters extends AbstractNpcAI
+public class CemeteryMonsters extends Script
 {
 	private static final int CHIEF_QUARTERMASTER = 23296;
 	private static final int ROYAL_QUARTERMASTER = 23298;

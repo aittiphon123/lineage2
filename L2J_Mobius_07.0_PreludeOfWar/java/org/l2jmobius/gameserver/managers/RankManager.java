@@ -32,9 +32,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.model.StatSet;
@@ -136,7 +136,7 @@ public class RankManager
 					final int olympiadPoints = result.getInt("olympiad_points");
 					final int clanLevel = (clanId > 0) ? ClanTable.getInstance().getClan(clanId).getLevel() : 0;
 					final boolean isTopHero = isFirstHero;
-					_mainHeroList.add(new HeroInfo(charName, clanName, Config.SERVER_ID, race, isMale, baseClass, level, legendCount, competitionsWon, competitionsLost, olympiadPoints, clanLevel, isTopHero));
+					_mainHeroList.add(new HeroInfo(charName, clanName, ServerConfig.SERVER_ID, race, isMale, baseClass, level, legendCount, competitionsWon, competitionsLost, olympiadPoints, clanLevel, isTopHero));
 					isFirstHero = false;
 				}
 			}
@@ -263,7 +263,7 @@ public class RankManager
 					final int olympiadPoints = result.getInt("olympiad_points");
 					final int clanLevel = (clanId > 0) ? ClanTable.getInstance().getClan(clanId).getLevel() : 0;
 					final boolean isTopHero = isFirstHero;
-					_mainHeroList.add(new HeroInfo(charName, clanName, Config.SERVER_ID, race, isMale, baseClass, level, legendCount, competitionsWon, competitionsLost, olympiadPoints, clanLevel, isTopHero));
+					_mainHeroList.add(new HeroInfo(charName, clanName, ServerConfig.SERVER_ID, race, isMale, baseClass, level, legendCount, competitionsWon, competitionsLost, olympiadPoints, clanLevel, isTopHero));
 					isFirstHero = false;
 				}
 			}

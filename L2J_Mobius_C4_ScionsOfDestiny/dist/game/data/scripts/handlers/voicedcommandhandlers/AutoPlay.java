@@ -26,9 +26,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.cache.HtmCache;
+import org.l2jmobius.gameserver.config.custom.AutoPlayConfig;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.data.xml.PetSkillData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
@@ -73,15 +73,15 @@ public class AutoPlay implements IVoicedCommandHandler
 	
 	private static final Consumer<OnPlayerLogin> ON_PLAYER_LOGIN = event ->
 	{
-		if (!Config.ENABLE_AUTO_PLAY)
+		if (!AutoPlayConfig.ENABLE_AUTO_PLAY)
 		{
 			return;
 		}
 		
 		final Player player = event.getPlayer();
-		if (!Config.AUTO_PLAY_LOGIN_MESSAGE.isEmpty())
+		if (!AutoPlayConfig.AUTO_PLAY_LOGIN_MESSAGE.isEmpty())
 		{
-			player.sendPacket(new CreatureSay(null, ChatType.ANNOUNCEMENT, "AutoPlay", Config.AUTO_PLAY_LOGIN_MESSAGE));
+			player.sendPacket(new CreatureSay(null, ChatType.ANNOUNCEMENT, "AutoPlay", AutoPlayConfig.AUTO_PLAY_LOGIN_MESSAGE));
 		}
 		
 		player.getVariables().getIntegerList(PlayerVariables.AUTO_USE_ACTIONS).forEach(id -> player.getAutoUseSettings().getAutoActions().add(id));
@@ -97,7 +97,7 @@ public class AutoPlay implements IVoicedCommandHandler
 		}
 		
 		final int options = settings.get(0);
-		final boolean active = Config.RESUME_AUTO_PLAY && (settings.get(1) == 1);
+		final boolean active = AutoPlayConfig.RESUME_AUTO_PLAY && (settings.get(1) == 1);
 		final boolean pickUp = settings.get(2) == 1;
 		final int nextTargetMode = settings.get(3);
 		final boolean shortRange = settings.get(4) == 1;
@@ -119,7 +119,7 @@ public class AutoPlay implements IVoicedCommandHandler
 	
 	private static final Consumer<OnPlayerLogout> ON_PLAYER_LOGOUT = event ->
 	{
-		if (!Config.ENABLE_AUTO_PLAY)
+		if (!AutoPlayConfig.ENABLE_AUTO_PLAY)
 		{
 			return;
 		}
@@ -160,12 +160,12 @@ public class AutoPlay implements IVoicedCommandHandler
 	@Override
 	public boolean onCommand(String command, Player player, String params)
 	{
-		if (!Config.ENABLE_AUTO_PLAY || (player == null))
+		if (!AutoPlayConfig.ENABLE_AUTO_PLAY || (player == null))
 		{
 			return false;
 		}
 		
-		if (Config.AUTO_PLAY_PREMIUM && !player.hasPremiumStatus())
+		if (AutoPlayConfig.AUTO_PLAY_PREMIUM && !player.hasPremiumStatus())
 		{
 			player.sendPacket(new ExShowScreenMessage("This command is only available to premium players.", 5000));
 			player.sendMessage("This command is only available to premium players.");
@@ -265,9 +265,9 @@ public class AutoPlay implements IVoicedCommandHandler
 				content = content.replace("%mode2%", player.getAutoPlaySettings().getNextTargetMode() == 2 ? "L2UI_CH3.radiobutton2" : "L2UI_CH3.radiobutton1");
 				content = content.replace("%mode3%", player.getAutoPlaySettings().getNextTargetMode() == 3 ? "L2UI_CH3.radiobutton2" : "L2UI_CH3.radiobutton1");
 				
-				content = content.replace("%skill_button%", Config.ENABLE_AUTO_SKILL ? "<br><table width=295><tr><td height=31><center><button action=\"bypass voice .playskills\" value=\"Skills\" width=95 height=21 back=\"bigbutton_over\" fore=\"bigbutton\"></center></td></tr></table>" : "");
-				content = content.replace("%item_button%", Config.ENABLE_AUTO_ITEM ? "<br><table width=295><tr><td height=31><center><button action=\"bypass voice .playitems\" value=\"Supply Items\" width=95 height=21 back=\"bigbutton_over\" fore=\"bigbutton\"></center></td></tr></table>" : "");
-				content = content.replace("%potion_button%", Config.ENABLE_AUTO_POTION ? "<br><table><tr><td height=31><center><button action=\"bypass voice .playpotion\" value=\"Healing Potion\" width=95 height=21 back=\"bigbutton_over\" fore=\"bigbutton\"></center></td></tr></table><table width=295><tr><td height=31><center><table width=150><tr><td width=120><font color=\"CDB67F\">HP Percent (%percent%)</font></td><td><edit var=\"percentbox\" width=30 height=13></td><td><button value=\"Apply\" action=\"bypass voice .play percent $percentbox\" width=65 height=21 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td></tr></table></center></td></tr></table>" : "");
+				content = content.replace("%skill_button%", AutoPlayConfig.ENABLE_AUTO_SKILL ? "<br><table width=295><tr><td height=31><center><button action=\"bypass voice .playskills\" value=\"Skills\" width=95 height=21 back=\"bigbutton_over\" fore=\"bigbutton\"></center></td></tr></table>" : "");
+				content = content.replace("%item_button%", AutoPlayConfig.ENABLE_AUTO_ITEM ? "<br><table width=295><tr><td height=31><center><button action=\"bypass voice .playitems\" value=\"Supply Items\" width=95 height=21 back=\"bigbutton_over\" fore=\"bigbutton\"></center></td></tr></table>" : "");
+				content = content.replace("%potion_button%", AutoPlayConfig.ENABLE_AUTO_POTION ? "<br><table><tr><td height=31><center><button action=\"bypass voice .playpotion\" value=\"Healing Potion\" width=95 height=21 back=\"bigbutton_over\" fore=\"bigbutton\"></center></td></tr></table><table width=295><tr><td height=31><center><table width=150><tr><td width=120><font color=\"CDB67F\">HP Percent (%percent%)</font></td><td><edit var=\"percentbox\" width=30 height=13></td><td><button value=\"Apply\" action=\"bypass voice .play percent $percentbox\" width=65 height=21 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td></tr></table></center></td></tr></table>" : "");
 				content = content.replace("%percent%", String.valueOf(player.getAutoPlaySettings().getAutoPotionPercent()));
 				
 				if (player.isAutoPlaying())
@@ -305,7 +305,7 @@ public class AutoPlay implements IVoicedCommandHandler
 				
 				for (Skill skill : player.getAllSkills())
 				{
-					if (!siegeSkills.contains(skill) && !skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !Config.DISABLED_AUTO_SKILLS.contains(skill.getId()))
+					if (!siegeSkills.contains(skill) && !skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !AutoPlayConfig.DISABLED_AUTO_SKILLS.contains(skill.getId()))
 					{
 						skills.add(skill);
 					}
@@ -316,7 +316,7 @@ public class AutoPlay implements IVoicedCommandHandler
 					final Summon summon = player.getSummon();
 					for (Skill skill : summon.getAllSkills())
 					{
-						if (!skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !Config.DISABLED_AUTO_SKILLS.contains(skill.getId()))
+						if (!skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !AutoPlayConfig.DISABLED_AUTO_SKILLS.contains(skill.getId()))
 						{
 							skills.add(skill);
 						}
@@ -324,7 +324,7 @@ public class AutoPlay implements IVoicedCommandHandler
 					
 					for (Skill skill : PetSkillData.getInstance().getKnownSkills(summon))
 					{
-						if (!skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !Config.DISABLED_AUTO_SKILLS.contains(skill.getId()))
+						if (!skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !AutoPlayConfig.DISABLED_AUTO_SKILLS.contains(skill.getId()))
 						{
 							skills.add(skill);
 						}
@@ -369,7 +369,7 @@ public class AutoPlay implements IVoicedCommandHandler
 						}
 					}
 					
-					if (Config.ENABLE_AUTO_SKILL && (knownSkill != null) && skills.contains(knownSkill))
+					if (AutoPlayConfig.ENABLE_AUTO_SKILL && (knownSkill != null) && skills.contains(knownSkill))
 					{
 						if (knownSkill.hasNegativeEffect())
 						{
@@ -466,7 +466,7 @@ public class AutoPlay implements IVoicedCommandHandler
 				ITEM_SEARCH: for (Item item : player.getInventory().getItems())
 				{
 					final ItemTemplate template = item.getTemplate();
-					if (item.isEtcItem() && template.hasSkills() && !Config.DISABLED_AUTO_ITEMS.contains(item.getId()))
+					if (item.isEtcItem() && template.hasSkills() && !AutoPlayConfig.DISABLED_AUTO_ITEMS.contains(item.getId()))
 					{
 						for (SkillHolder holder : template.getSkills())
 						{
@@ -485,7 +485,7 @@ public class AutoPlay implements IVoicedCommandHandler
 				if (paramArray.length > 1)
 				{
 					final int itemId = Integer.parseInt(paramArray[1]);
-					if (Config.ENABLE_AUTO_ITEM && items.contains(ItemData.getInstance().getTemplate(itemId)))
+					if (AutoPlayConfig.ENABLE_AUTO_ITEM && items.contains(ItemData.getInstance().getTemplate(itemId)))
 					{
 						if (player.getAutoUseSettings().getAutoSupplyItems().contains(itemId))
 						{
@@ -568,7 +568,7 @@ public class AutoPlay implements IVoicedCommandHandler
 				POTION_SEARCH: for (Item item : player.getInventory().getItems())
 				{
 					final ItemTemplate template = item.getTemplate();
-					if (item.isEtcItem() && template.hasSkills() && !Config.DISABLED_AUTO_ITEMS.contains(item.getId()))
+					if (item.isEtcItem() && template.hasSkills() && !AutoPlayConfig.DISABLED_AUTO_ITEMS.contains(item.getId()))
 					{
 						for (SkillHolder holder : template.getSkills())
 						{
@@ -587,7 +587,7 @@ public class AutoPlay implements IVoicedCommandHandler
 				if (paramArray.length > 1)
 				{
 					final int itemId = Integer.parseInt(paramArray[1]);
-					if (Config.ENABLE_AUTO_POTION && items.contains(ItemData.getInstance().getTemplate(itemId)))
+					if (AutoPlayConfig.ENABLE_AUTO_POTION && items.contains(ItemData.getInstance().getTemplate(itemId)))
 					{
 						if (player.getAutoUseSettings().getAutoPotionItem() == itemId)
 						{

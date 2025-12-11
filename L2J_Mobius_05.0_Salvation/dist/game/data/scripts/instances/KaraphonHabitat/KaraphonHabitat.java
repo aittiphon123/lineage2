@@ -19,16 +19,16 @@ package instances.KaraphonHabitat;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.model.script.QuestState;
 
-import instances.AbstractInstance;
 import quests.Q10745_TheSecretIngredients.Q10745_TheSecretIngredients;
 
 /**
  * Karaphon Habitat instance.
  * @author Sdw
  */
-public class KaraphonHabitat extends AbstractInstance
+public class KaraphonHabitat extends InstanceScript
 {
 	// NPCs
 	private static final int DOLKIN = 33954;
@@ -71,6 +71,12 @@ public class KaraphonHabitat extends AbstractInstance
 		}
 		
 		return null;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
 	}
 	
 	@Override

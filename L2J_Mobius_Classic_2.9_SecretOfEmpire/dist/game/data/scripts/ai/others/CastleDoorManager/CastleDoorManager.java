@@ -21,16 +21,15 @@ import java.util.StringTokenizer;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.ClanAccess;
+import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-
-import ai.AbstractNpcAI;
 
 /**
  * Castle Door Manager AI.
  * @author St3eT
  */
-public class CastleDoorManager extends AbstractNpcAI
+public class CastleDoorManager extends Script
 {
 	// NPCs
 	// @formatter:off

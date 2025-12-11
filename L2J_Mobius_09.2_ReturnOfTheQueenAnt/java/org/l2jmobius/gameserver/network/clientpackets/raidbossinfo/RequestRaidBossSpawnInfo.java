@@ -23,7 +23,7 @@ package org.l2jmobius.gameserver.network.clientpackets.raidbossinfo;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2jmobius.gameserver.managers.DBSpawnManager;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.enums.npc.RaidBossStatus;
@@ -50,10 +50,10 @@ public class RequestRaidBossSpawnInfo extends ClientPacket
 			final GrandBoss boss = GrandBossManager.getInstance().getBoss(bossId);
 			if (boss == null)
 			{
-				final RaidBossStatus status = DBSpawnManager.getInstance().getStatus(bossId);
+				final RaidBossStatus status = DatabaseSpawnManager.getInstance().getStatus(bossId);
 				if (status != RaidBossStatus.UNDEFINED)
 				{
-					final Npc npc = DBSpawnManager.getInstance().getNpc(bossId);
+					final Npc npc = DatabaseSpawnManager.getInstance().getNpc(bossId);
 					if ((npc != null) && npc.isInCombat())
 					{
 						_statuses.put(bossId, RaidBossStatus.COMBAT);

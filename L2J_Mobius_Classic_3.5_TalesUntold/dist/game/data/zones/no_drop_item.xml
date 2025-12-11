@@ -93,4 +93,14 @@
 		<node X="-56370" Y="-61896" />
 		<node X="-58565" Y="-61904" />
 	</zone>
+	<!-- Goldbergs Room -->
+	<zone name="goldberg_pve" type="ConditionZone" shape="NPoly" minZ="-12099" maxZ="-10099">
+		<stat name="NoItemDrop" val="true" />
+		<!-- <stat name="expPenaltyPercent" val="100" /> -->
+		<stat name="instanceId" val="207" />
+		<node X="9413" Y="-88170" />
+		<node X="14089" Y="-88133" />
+		<node X="14123" Y="-84633" />
+		<node X="9390" Y="-84627" />
+	</zone>
 </list>

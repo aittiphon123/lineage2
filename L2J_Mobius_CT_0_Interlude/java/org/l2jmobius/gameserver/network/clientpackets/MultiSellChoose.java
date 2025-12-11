@@ -23,7 +23,8 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
 import org.l2jmobius.gameserver.model.Augmentation;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -71,7 +72,7 @@ public class MultiSellChoose extends ClientPacket
 			return;
 		}
 		
-		if ((_amount < 1) || (_amount > Config.MULTISELL_AMOUNT_LIMIT))
+		if ((_amount < 1) || (_amount > GeneralConfig.MULTISELL_AMOUNT_LIMIT))
 		{
 			player.setMultiSell(null);
 			return;
@@ -211,7 +212,7 @@ public class MultiSellChoose extends ClientPacket
 					{
 						// if this is not a list that maintains enchantment, check the count of all items that have the given id.
 						// otherwise, check only the count of items with exactly the needed enchantment level
-						final int required = ((Config.ALT_BLACKSMITH_USE_RECIPES || !e.getMaintainIngredient()) ? (e.getItemCount() * _amount) : e.getItemCount());
+						final int required = ((PlayerConfig.ALT_BLACKSMITH_USE_RECIPES || !e.getMaintainIngredient()) ? (e.getItemCount() * _amount) : e.getItemCount());
 						if (inv.getInventoryItemCount(e.getItemId(), (list.getMaintainEnchantment() || (e.getEnchantLevel() > 0)) ? e.getEnchantLevel() : -1, false) < required)
 						{
 							player.sendMessage(required + " unit(s) of the item " + e.getTemplate().getName() + " is/are required.");
@@ -249,7 +250,7 @@ public class MultiSellChoose extends ClientPacket
 						// return;
 						// }
 						
-						if (Config.ALT_BLACKSMITH_USE_RECIPES || !e.getMaintainIngredient())
+						if (PlayerConfig.ALT_BLACKSMITH_USE_RECIPES || !e.getMaintainIngredient())
 						{
 							// if it's a stackable item, just reduce the amount from the first (only) instance that is found in the inventory
 							if (itemToTake.isStackable())

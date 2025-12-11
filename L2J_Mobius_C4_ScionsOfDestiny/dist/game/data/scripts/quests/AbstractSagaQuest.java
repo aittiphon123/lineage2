@@ -25,16 +25,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
-import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
@@ -588,7 +588,7 @@ public abstract class AbstractSagaQuest extends Quest
 					for (Player player1 : party.getMembers())
 					{
 						final QuestState st1 = findQuest(player1);
-						if ((st1 != null) && st1.isCond(15) && player1.isInsideRadius2D(player, Config.ALT_PARTY_RANGE))
+						if ((st1 != null) && st1.isCond(15) && player1.isInsideRadius2D(player, PlayerConfig.ALT_PARTY_RANGE))
 						{
 							partyQuestMembers.add(st1);
 						}
@@ -993,23 +993,21 @@ public abstract class AbstractSagaQuest extends Quest
 						if (player.getLevel() >= 76)
 						{
 							htmltext = "0-09.htm";
-							if ((getPlayerClass(player) < 131) || (getPlayerClass(player) > 135)) // in Kamael quests, npc wants to chat for a bit before changing class
+							
+							st.exitQuest(false);
+							addExpAndSp(player, 2299404, 0);
+							giveAdena(player, 5000000, true);
+							giveItems(player, 6622, 1); // XXX rewardItems?
+							final int playerClass = getPlayerClass(player);
+							final int prevClass = getPrevClass(player);
+							player.setPlayerClass(playerClass);
+							if (!player.isSubClassActive() && (player.getBaseClass() == prevClass))
 							{
-								st.exitQuest(false);
-								addExpAndSp(player, 2299404, 0);
-								giveAdena(player, 5000000, true);
-								giveItems(player, 6622, 1); // XXX rewardItems?
-								final int playerClass = getPlayerClass(player);
-								final int prevClass = getPrevClass(player);
-								player.setPlayerClass(playerClass);
-								if (!player.isSubClassActive() && (player.getBaseClass() == prevClass))
-								{
-									player.setBaseClass(playerClass);
-								}
-								
-								player.broadcastUserInfo();
-								cast(npc, player, 4339, 1);
+								player.setBaseClass(playerClass);
 							}
+							
+							player.broadcastUserInfo();
+							cast(npc, player, 4339, 1);
 						}
 						else
 						{

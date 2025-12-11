@@ -23,17 +23,16 @@ package instances.ResidenceOfKingProcella;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
-
-import instances.AbstractInstance;
 
 /**
  * @author RobikBobik, Mobius
  * @NOTE: Retail like working
  * @TODO: Rewrite code to modern style.
  */
-public class ResidenceOfKingProcella extends AbstractInstance
+public class ResidenceOfKingProcella extends InstanceScript
 {
 	// NPCs
 	private static final int WIRI = 34048;

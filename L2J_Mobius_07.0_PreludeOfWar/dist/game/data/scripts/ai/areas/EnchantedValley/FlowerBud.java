@@ -25,15 +25,14 @@ import java.util.List;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-
-import ai.AbstractNpcAI;
+import org.l2jmobius.gameserver.model.script.Script;
 
 /**
  * AI from Flower Bud in Enchanted Valley, after kill random spawn<br>
  * [Nymph Rose (Elegant), Nymph Lily (Elegant), Nymph Tulip (Elegant), Nymph Cosmos (Elegant)]
  * @author Gigi
  */
-public class FlowerBud extends AbstractNpcAI
+public class FlowerBud extends Script
 {
 	// NPCs
 	private static final int FLOWER_BUD = 19600;
