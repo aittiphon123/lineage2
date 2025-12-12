@@ -185,27 +185,27 @@ Even if someone argued that some elements were copyrightable (which we dispute),
 Fair use considers four factors:
 
 ### 1. Purpose and Character of Use
-✓ **Educational** - Teaching server architecture, networking, programming.
-✓ **Research** - Academic study of game systems.
-✓ **Preservation** - Maintaining access to legacy game versions.
-✓ **Transformative** - Used for learning and research, not just playing.
-✓ **Non-commercial** - Open-source project with no profit motive.
+✓ **Educational** - Teaching server architecture, networking, programming.  
+✓ **Research** - Academic study of game systems.  
+✓ **Preservation** - Maintaining access to legacy game versions.  
+✓ **Transformative** - Used for learning and research, not just playing.  
+✓ **Non-commercial** - Open-source project with no profit motive.  
 
 ### 2. Nature of Copyrighted Work
-✓ **Highly functional** - Server software is functional, not creative.
-✓ **Published** - Game is publicly available.
-✓ **Less protection** - Functional works get less copyright protection.
+✓ **Highly functional** - Server software is functional, not creative.  
+✓ **Published** - Game is publicly available.  
+✓ **Less protection** - Functional works get less copyright protection.  
 
 ### 3. Amount Used
-✓ **No verbatim copying** - We copy zero actual code.
-✓ **Only functional specs** - Just what's necessary for compatibility.
-✓ **Original implementation** - Everything is rewritten from scratch.
+✓ **No verbatim copying** - We copy zero actual code.  
+✓ **Only functional specs** - Just what's necessary for compatibility.  
+✓ **Original implementation** - Everything is rewritten from scratch.  
 
 ### 4. Market Effect
-✓ **No substitution** - Users still need legitimate game client.
-✓ **Potential benefits** - Extends product life, maintains community.
-✓ **No harm to current sales** - Often used for deprecated versions.
-✓ **Competition is lawful** - Courts have said competition through interoperability is legal, not infringement.
+✓ **No substitution** - Users still need legitimate game client.  
+✓ **Potential benefits** - Extends product life, maintains community.  
+✓ **No harm to current sales** - Often used for deprecated versions.  
+✓ **Competition is lawful** - Courts have said competition through interoperability is legal, not infringement.  
 
 **Legal precedent:** Courts have consistently found that reverse engineering for compatibility has minimal market impact and is protected.
 
