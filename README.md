@@ -162,9 +162,9 @@ All of these projects are legal because they follow the same principles L2jMobiu
 
 ### EULA Violations Are NOT Copyright Infringement
 
-- **Contract vs. Copyright:** Breaking a contract (EULA) is different from breaking copyright law
-- **Who it applies to:** EULAs only bind people who agreed to them
-- **What it means:** Publishers can ban your accounts, but that's not a criminal matter
+- **Contract vs. Copyright:** Breaking a contract (EULA) is different from breaking copyright law.
+- **Who it applies to:** EULAs only bind people who agreed to them.
+- **What it means:** Publishers can ban your accounts, but that's not a criminal matter.
 
 ### The Law Overrides Contracts in Many Places
 
