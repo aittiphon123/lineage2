@@ -16,26 +16,26 @@
 
 ## Introduction
 
-L2jMobius is a fully independent, open-source server emulator created entirely from scratch by volunteer contributors. Every line of code is original work—we have never copied, decompiled, or used any proprietary server code.
+L2jMobius is a fully independent, open-source server emulator created entirely from scratch by volunteer contributors. Every line of code is original work. We have never copied, decompiled, or used any proprietary server code.
 
 **Development Model:**
 L2jMobius operates on an open-source development model with public releases made available three times per year. Contributors who actively share code improvements receive early access to ongoing development work. Voluntary donations support project infrastructure and development, with donors receiving temporary early access as a thank-you gesture. This model is common in open-source projects (similar to early access for Patreon supporters) and does not constitute commercial software sales.
 
 **Important Distinction:**
-- **The L2jMobius project itself is legal** - Creating and sharing server emulator code through reverse engineering
-- **How individuals use the software varies** - Operating public game servers may have different legal considerations depending on jurisdiction and how they're run
+- **The L2jMobius project itself is legal** - Creating and sharing server emulator code through reverse engineering.
+- **How individuals use the software varies** - Operating public game servers may have different legal considerations depending on jurisdiction and how they're run.
 
 **What we provide:**
-- Original source code for server functionality
-- Educational resources about server architecture
-- A collaborative development community
+- Original source code for server functionality.
+- Educational resources about server architecture.
+- A collaborative development community.
 
 **What we do NOT provide:**
-- Game client software
-- Game assets (models, textures, sounds, artwork)
-- Any copyrighted content from the original game
-- Links to download copyrighted materials
-- Legal advice for server operators
+- Game client software.
+- Game assets (models, textures, sounds, artwork).
+- Any copyrighted content from the original game.
+- Links to download copyrighted materials.
+- Legal advice for server operators.
 
 **Transitioning to MIT License:** We are moving to the MIT License to provide maximum legal clarity and align with industry standards for open-source software.
 
@@ -46,10 +46,10 @@ L2jMobius operates on an open-source development model with public releases made
 ### 1. We Write 100% Original Code
 
 Every single line of code in L2jMobius is written from scratch by our contributors. This means:
-- We own the copyright to our own code
-- We never copied proprietary server code
-- We never decompiled the original servers
-- All our work is independent creation
+- We own the copyright to our own code.
+- We never copied proprietary server code.
+- We never decompiled the original servers.
+- All our work is independent creation.
 
 **Legal principle:** You can't infringe copyright on something you created yourself. Original code is legally distinct from the original game's code, even if it produces similar results.
 
@@ -58,22 +58,22 @@ Every single line of code in L2jMobius is written from scratch by our contributo
 Clean-room engineering is a well-established legal method used throughout the software industry:
 
 **How it works:**
-1. **Observe:** We watch how the client and server communicate (network packets, protocols)
-2. **Document:** We write down what we observe (data formats, message structures)
-3. **Implement:** We write completely new code based only on our observations
+1. **Observe:** We watch how the client and server communicate (network packets, protocols).
+2. **Document:** We write down what we observe (data formats, message structures).
+3. **Implement:** We write completely new code based only on our observations.
 
 **What we DON'T do:**
-- Access or look at proprietary source code
-- Decompile server binaries
-- Use leaked or stolen code
-- Copy any existing implementation
+- Access or look at proprietary source code.
+- Decompile server binaries.
+- Use leaked or stolen code.
+- Copy any existing implementation.
 
 **Legal precedent:** This exact method has been upheld in courts for over 30 years.
 
 ### 3. The Law Explicitly Protects Reverse Engineering for Interoperability
 
 **United States - 17 U.S.C. § 1201(f):**
-Congress wrote into law that you CAN reverse engineer software to figure out how to make programs work together (interoperability). This is not illegal—it's explicitly permitted.
+Congress wrote into law that you CAN reverse engineer software to figure out how to make programs work together (interoperability). This is not illegal. It's explicitly permitted.
 
 **European Union - Software Directive Article 6:**
 EU law states that reverse engineering to achieve interoperability is legal and contracts cannot take away this right.
@@ -83,11 +83,11 @@ EU law states that reverse engineering to achieve interoperability is legal and 
 ### 4. Network Protocols and Functional Elements Aren't Copyrightable
 
 Copyright law protects creative expression, NOT:
-- How things work (methods and processes)
-- Network communication protocols
-- Data formats and structures
-- Game rules and mechanics
-- System interfaces
+- How things work (methods and processes).
+- Network communication protocols.
+- Data formats and structures.
+- Game rules and mechanics.
+- System interfaces.
 
 **Example:** You can't copyright the rules of chess, only a specific book explaining chess. Similarly, you can't copyright how a server communicates with a client, only the specific code that does it.
 
@@ -98,31 +98,31 @@ Copyright law protects creative expression, NOT:
 Legal server emulators and reimplementations are everywhere:
 
 **Operating Systems:**
-- **FreeBSD/OpenBSD** - Unix-like systems
-- **Linux** - Reimplemented Unix functionality
-- **ReactOS** - Reimplements Windows (20+ years of development)
+- **FreeBSD/OpenBSD** - Unix-like systems.
+- **Linux** - Reimplemented Unix functionality.
+- **ReactOS** - Reimplements Windows (20+ years of development).
 
 **Compatibility Software:**
-- **Samba** - Windows network compatibility for Linux
-- **Wine** - Runs Windows programs on Linux (30+ years)
+- **Samba** - Windows network compatibility for Linux.
+- **Wine** - Runs Windows programs on Linux (30+ years).
 
 **Programming Environments:**
-- **Mono** - Open-source .NET implementation
-- **OpenJDK** - Open-source Java (now the official version!)
+- **Mono** - Open-source .NET implementation.
+- **OpenJDK** - Open-source Java (now the official version!).
 
 **Game Emulators:**
-- **Dolphin** - GameCube/Wii emulator
-- **PCSX2** - PlayStation 2 emulator
-- **RPCS3** - PlayStation 3 emulator
+- **Dolphin** - GameCube/Wii emulator.
+- **PCSX2** - PlayStation 2 emulator.
+- **RPCS3** - PlayStation 3 emulator.
 
 **Game Engine Reimplementations:**
-- **OpenMW** - Morrowind engine
-- **OpenTTD** - Transport Tycoon engine
-- **ScummVM** - LucasArts adventure games
+- **OpenMW** - Morrowind engine.
+- **OpenTTD** - Transport Tycoon engine.
+- **ScummVM** - LucasArts adventure games.
 
 **Other MMORPG Server Emulators:**
-- **EQEmu** - EverQuest
-- **MaNGOS/TrinityCore** - World of Warcraft
+- **EQEmu** - EverQuest (published by Sony Online Entertainment).
+- **MaNGOS/TrinityCore** - World of Warcraft (published by Blizzard Entertainment).
 - **Various others** - Ultima Online, RuneScape, etc.
 
 All of these projects are legal because they follow the same principles L2jMobius does.
@@ -174,9 +174,9 @@ All of these projects are legal because they follow the same principles L2jMobiu
 
 ### Not Everyone Agreed to the EULA
 
-- Contributors who never played the game are not bound by its EULA
-- Observing network traffic doesn't require agreeing to terms
-- Information obtained lawfully by non-parties is not "tainted"
+- Contributors who never played the game are not bound by its EULA.
+- Observing network traffic doesn't require agreeing to terms.
+- Information obtained lawfully by non-parties is not "tainted".
 
 ### The Law Overrides Contracts in Many Places
 
@@ -185,27 +185,27 @@ Even if someone argued that some elements were copyrightable (which we dispute),
 Fair use considers four factors:
 
 ### 1. Purpose and Character of Use
-✓ **Educational** - Teaching server architecture, networking, programming  
-✓ **Research** - Academic study of game systems  
-✓ **Preservation** - Maintaining access to legacy game versions  
-✓ **Transformative** - Used for learning and research, not just playing  
-✓ **Non-commercial** - Open-source project with no profit motive
+✓ **Educational** - Teaching server architecture, networking, programming.
+✓ **Research** - Academic study of game systems.
+✓ **Preservation** - Maintaining access to legacy game versions.
+✓ **Transformative** - Used for learning and research, not just playing.
+✓ **Non-commercial** - Open-source project with no profit motive.
 
 ### 2. Nature of Copyrighted Work
-✓ **Highly functional** - Server software is functional, not creative  
-✓ **Published** - Game is publicly available  
-✓ **Less protection** - Functional works get less copyright protection
+✓ **Highly functional** - Server software is functional, not creative.
+✓ **Published** - Game is publicly available.
+✓ **Less protection** - Functional works get less copyright protection.
 
 ### 3. Amount Used
-✓ **No verbatim copying** - We copy zero actual code  
-✓ **Only functional specs** - Just what's necessary for compatibility  
-✓ **Original implementation** - Everything is rewritten from scratch
+✓ **No verbatim copying** - We copy zero actual code.
+✓ **Only functional specs** - Just what's necessary for compatibility.
+✓ **Original implementation** - Everything is rewritten from scratch.
 
 ### 4. Market Effect
-✓ **No substitution** - Users still need legitimate game client  
-✓ **Potential benefits** - Extends product life, maintains community  
-✓ **No harm to current sales** - Often used for deprecated versions  
-✓ **Competition is lawful** - Courts have said competition through interoperability is legal, not infringement
+✓ **No substitution** - Users still need legitimate game client.
+✓ **Potential benefits** - Extends product life, maintains community.
+✓ **No harm to current sales** - Often used for deprecated versions.
+✓ **Competition is lawful** - Courts have said competition through interoperability is legal, not infringement.
 
 **Legal precedent:** Courts have consistently found that reverse engineering for compatibility has minimal market impact and is protected.
 
@@ -216,22 +216,22 @@ Fair use considers four factors:
 We maintain **strict separation** between our code and copyrighted game content:
 
 **We NEVER provide:**
-- Game client software
-- 3D models or textures
-- Sounds or music
-- Artwork or animations
-- Proprietary data files
-- Links to download any of the above
+- Game client software.
+- 3D models or textures.
+- Sounds or music.
+- Artwork or animations.
+- Proprietary data files.
+- Links to download any of the above.
 
 **Users must:**
-- Obtain a legitimate copy of the game client themselves
-- Accept responsibility for their own compliance with the client's license
-- Understand that they may be violating Terms of Service by connecting to unofficial servers
+- Obtain a legitimate copy of the game client themselves.
+- Accept responsibility for their own compliance with the client's license.
+- Understand that they may be violating Terms of Service by connecting to unofficial servers.
 
 **This separation is exactly like:**
-- Emulators requiring users to provide their own game ROMs
-- Linux requiring users to provide proprietary firmware
-- Wine requiring users to provide Windows software
+- Emulators requiring users to provide their own game ROMs.
+- Linux requiring users to provide proprietary firmware.
+- Wine requiring users to provide Windows software.
 
 **Legal principle:** The emulator itself doesn't infringe. Users must comply with licenses for the client software they independently obtain.
 
@@ -242,22 +242,22 @@ We maintain **strict separation** between our code and copyrighted game content:
 L2jMobius serves important purposes protected by law:
 
 **Educational Uses:**
-- Teaching server architecture and design
-- Learning network programming and protocols
-- Studying database design and optimization
-- Understanding client-server architectures
-- Training in multi-threaded programming
+- Teaching server architecture and design.
+- Learning network programming and protocols.
+- Studying database design and optimization.
+- Understanding client-server architectures.
+- Training in multi-threaded programming.
 
 **Research Uses:**
-- Academic study of MMORPG mechanics
-- Research into virtual economies
-- Security research and analysis
-- Network protocol documentation
+- Academic study of MMORPG mechanics.
+- Research into virtual economies.
+- Security research and analysis.
+- Network protocol documentation.
 
 **Preservation:**
-- Maintaining knowledge of legacy systems
-- Documenting game version history
-- Preserving cultural heritage of digital entertainment
+- Maintaining knowledge of legacy systems.
+- Documenting game version history.
+- Preserving cultural heritage of digital entertainment.
 
 **Legal protection:** Copyright law explicitly protects educational and research uses. U.S. law lists "teaching, scholarship, or research" as examples of fair use.
 
@@ -267,21 +267,21 @@ L2jMobius serves important purposes protected by law:
 
 ### What We Do to Stay Legal
 
-1. **Code Audits:** Regular reviews to ensure no proprietary code in our repository
-2. **No Asset Distribution:** Strict policy against distributing copyrighted assets
-3. **Educational Focus:** Emphasizing research, education and preservation
-4. **Transparency:** Fully open-source with public development
-5. **Responsive:** We address legitimate legal concerns promptly
-6. **Clean-Room Documentation:** We maintain records of our development process
+1. **Code Audits:** Regular reviews to ensure no proprietary code in our repository.
+2. **No Asset Distribution:** Strict policy against distributing copyrighted assets.
+3. **Educational Focus:** Emphasizing research, education and preservation.
+4. **Transparency:** Fully open-source with public development.
+5. **Responsive:** We address legitimate legal concerns promptly.
+6. **Clean-Room Documentation:** We maintain records of our development process.
 
 ### Community Standards
 
 We expect all contributors and users to:
-- Never distribute copyrighted game assets
-- Respect intellectual property rights
-- Use the software responsibly and legally
-- Report any compliance concerns
-- Contribute in good faith
+- Never distribute copyrighted game assets.
+- Respect intellectual property rights.
+- Use the software responsibly and legally.
+- Report any compliance concerns.
+- Contribute in good faith.
 
 ---
 
@@ -290,22 +290,22 @@ We expect all contributors and users to:
 ### Strong Legal Protection Countries
 
 **United States:**
-- DMCA § 1201(f) explicitly protects reverse engineering
-- Fair use doctrine
-- First Amendment protections for code
-- Strong precedent (Sega, Sony, Google cases)
+- DMCA § 1201(f) explicitly protects reverse engineering.
+- Fair use doctrine.
+- First Amendment protections for code.
+- Strong precedent (Sega, Sony, Google cases).
 
 **European Union:**
-- Software Directive mandatory exceptions
-- Contracts cannot override interoperability rights
-- Competition law supports compatibility
-- Recent court decisions expanding protections
+- Software Directive mandatory exceptions.
+- Contracts cannot override interoperability rights.
+- Competition law supports compatibility.
+- Recent court decisions expanding protections.
 
 **Other Countries with Good Protection:**
-- Canada - Strong reverse engineering rights
-- Australia - Copyright Act protections
-- Japan - Interoperability exceptions
-- South Korea - Legal reverse engineering framework
+- Canada - Strong reverse engineering rights.
+- Australia - Copyright Act protections.
+- Japan - Interoperability exceptions.
+- South Korea - Legal reverse engineering framework.
 
 ### Countries with Less Clear Laws
 
@@ -347,38 +347,38 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 We welcome contributions from the community!
 
 **Our Development Model:**
-- **Public releases** - Code made publicly available three times per year
-- **Active development** - Ongoing work accessible to contributors and supporters
-- **Contributor access** - Those who share code improvements get early access to development
-- **Supporter access** - Voluntary donations support infrastructure; donors receive temporary early access as appreciation
-- **Always eventually free** - All code becomes publicly available
+- **Public releases** - Code made publicly available three times per year.
+- **Active development** - Ongoing work accessible to contributors and supporters.
+- **Contributor access** - Those who share code improvements get early access to development.
+- **Supporter access** - Voluntary donations support infrastructure; donors receive temporary early access as appreciation.
+- **Always eventually free** - All code becomes publicly available.
 
 This model is common in open-source projects (WordPress plugins, Blender add-ons, etc.) and helps sustain development while keeping the project open.
 
 **How to contribute:**
-- Report bugs and issues on our forum
-- Submit code improvements and bug fixes
-- Help with documentation and testing
-- Share your knowledge with other developers
+- Report bugs and issues on our forum.
+- Submit code improvements and bug fixes.
+- Help with documentation and testing.
+- Share your knowledge with other developers.
 
 **Remember - All contributions must be original code. Never submit:**
-- Decompiled or reverse-engineered proprietary code
-- Leaked server files
-- Copyrighted game assets
+- Decompiled or reverse-engineered proprietary code.
+- Leaked server files.
+- Copyrighted game assets.
 
 **For server operators:**
-- Understand that operating public servers may violate game Terms of Service
-- This is a separate issue from the legality of the emulator code itself
-- Commercial server operation carries additional legal considerations
-- You are responsible for your own compliance with local laws
-- L2jMobius developers are not responsible for how users deploy the software
+- Understand that operating public servers may violate game Terms of Service.
+- This is a separate issue from the legality of the emulator code itself.
+- Commercial server operation carries additional legal considerations.
+- You are responsible for your own compliance with local laws.
+- L2jMobius developers are not responsible for how users deploy the software.
 
 **Project policy:** We do not encourage or support commercial server operation. Our project exists for education, research, preservation and collaborative development.
 
 ## Support & Community
 
-- **Forum:** Get help, share ideas and discuss development
-- **Discord:** Real-time chat with developers and users
+- **Forum:** Get help, share ideas and discuss development.
+- **Discord:** Real-time chat with developers and users.
 
 ---
 
@@ -389,32 +389,32 @@ This model is common in open-source projects (WordPress plugins, Blender add-ons
 This software is provided "as is" without warranty of any kind. 
 
 **About the L2jMobius Code:**
-- The L2jMobius emulator code is created through legal reverse engineering methods
-- We believe the code itself is legal based on established precedent and statutory protections
-- We distribute only original code, never copyrighted game assets
+- The L2jMobius emulator code is created through legal reverse engineering methods.
+- We believe the code itself is legal based on established precedent and statutory protections.
+- We distribute only original code, never copyrighted game assets.
 
 **About Using This Software:**
 Users are responsible for ensuring their use complies with applicable laws in their jurisdiction. 
 
 **Important distinctions:**
-- **Creating emulator code** (what L2jMobius does) is protected by reverse engineering laws
-- **Operating game servers** (what a user can do) may violate Terms of Service and raise different legal issues
-- **Commercial server operation** is particularly legally complex and not encouraged by this project
+- **Creating emulator code** (what L2jMobius does) is protected by reverse engineering laws.
+- **Operating game servers** (what a user can do) may violate Terms of Service and raise different legal issues.
+- **Commercial server operation** is particularly legally complex and not encouraged by this project.
 
 **The developers and contributors:**
-- Make no guarantees about legality in all jurisdictions
-- Are not responsible for how third parties use this software
-- Disclaim all liability for legal consequences of server operation
-- Do not encourage commercial server operation
-- Recommend this software for educational, research and preservation purposes
-- Strongly recommend consulting qualified legal counsel before operating any public servers
+- Make no guarantees about legality in all jurisdictions.
+- Are not responsible for how third parties use this software.
+- Disclaim all liability for legal consequences of server operation.
+- Do not encourage commercial server operation.
+- Recommend this software for educational, research and preservation purposes.
+- Strongly recommend consulting qualified legal counsel before operating any public servers.
 
 **If you operate servers:**
-- Understand you may be violating game Terms of Service (contract issue)
-- Terms of Service violations can result in account bans
-- Commercial operation may face additional legal scrutiny
-- You accept all legal risks and responsibilities
-- Consult an attorney in your jurisdiction
+- Understand you may be violating game Terms of Service (contract issue).
+- Terms of Service violations can result in account bans.
+- Commercial operation may face additional legal scrutiny.
+- You accept all legal risks and responsibilities.
+- Consult an attorney in your jurisdiction.
 
 Laws vary by country and state. **When in doubt, consult a qualified attorney in your jurisdiction.**
 
