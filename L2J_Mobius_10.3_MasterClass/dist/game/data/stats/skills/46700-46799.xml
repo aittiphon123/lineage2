@@ -1240,6 +1240,7 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
+		<abnormalType>DERANGEMENT</abnormalType>
 		<activateRate>100</activateRate>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>MAGIC</basicProperty>

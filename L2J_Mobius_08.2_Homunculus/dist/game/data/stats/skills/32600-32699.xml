@@ -1047,7 +1047,9 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effects>
-			<!-- TODO p_abnormal_rate_limit -->
+			<effect name="BlockAbnormalSlot">
+				<slot>BODY_DESTRUCTION;SPEED_DOWN;AIRBIND;DERANGEMENT;CHANGEBODY;SLEEP;PARALYZE;KNOCKDOWN;TURN_STONE;STUN;SILENCE;SHILLIEN_STUN;SAYHAS_RING;SILENCE_PHYSICAL;FREEZE;FREEZE_SLOW;ATTACK_TIME_UP;ROOT_MAGICALLY</slot>
+			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 				<DERANGEMENT>100</DERANGEMENT>
