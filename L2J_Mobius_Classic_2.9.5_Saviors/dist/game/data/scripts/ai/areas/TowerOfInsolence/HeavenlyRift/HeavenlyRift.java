@@ -24,7 +24,6 @@ import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
-import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Playable;
@@ -488,7 +487,7 @@ public class HeavenlyRift extends Script
 				}
 				else
 				{
-					World.getInstance().forEachVisibleObjectInRange((WorldObject) npc, Playable.class, 200, creature ->
+					World.getInstance().forEachVisibleObjectInRange(npc, Playable.class, 200, creature ->
 					{
 						if ((creature != null) && !creature.isDead())
 						{
