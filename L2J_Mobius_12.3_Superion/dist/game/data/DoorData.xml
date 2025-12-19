@@ -16647,7 +16647,7 @@
 		</nodes>
 		<location x="189480" y="-108511" z="-964" />
 		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
-		<status showHp="false" />
+		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="3600" />
 	</door>
 	<door id="25140006" name="Godad_Dragoncave_S.1F_UP.Godad_DC_door">
@@ -16659,7 +16659,7 @@
 		</nodes>
 		<location x="191458" y="-108107" z="-962" />
 		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
-		<status showHp="false" />
+		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="3600" />
 	</door>
 	

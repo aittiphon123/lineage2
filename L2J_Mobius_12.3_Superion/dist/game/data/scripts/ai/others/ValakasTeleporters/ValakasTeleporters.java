@@ -1,189 +1,224 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package ai.others.ValakasTeleporters;
 
-import org.l2jmobius.gameserver.config.GrandBossConfig;
-import org.l2jmobius.gameserver.data.xml.DoorData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.ScriptManager;
+import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
-import org.l2jmobius.gameserver.model.script.Quest;
-import org.l2jmobius.gameserver.model.script.QuestState;
+import org.l2jmobius.gameserver.model.groups.CommandChannel;
 import org.l2jmobius.gameserver.model.script.Script;
+import org.l2jmobius.gameserver.model.zone.ZoneType;
+import org.l2jmobius.gameserver.network.NpcStringId;
+import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
 import ai.bosses.Valakas.Valakas;
 
 /**
- * Grand Bosses teleport AI.<br>
- * Original python script by Emperorc.
- * @author Plim
+ * Valakas Teleporters AI<br>
+ * - Boromir: Direct Teleport to Hall.<br>
+ * - Heart: CC Entry Only with strict checks.
+ * @author Notorion
  */
 public class ValakasTeleporters extends Script
 {
 	// NPCs
-	private static final int[] NPCs =
-	{
-		31384, // Gatekeeper of Fire Dragon : Opening some doors
-		31385, // Heart of Volcano : Teleport into Lair of Valakas
-		31540, // Watcher of Valakas Klein : Teleport into Hall of Flames
-		31686, // Gatekeeper of Fire Dragon : Opens doors to Heart of Volcano
-		31687, // Gatekeeper of Fire Dragon : Opens doors to Heart of Volcano
-		31759, // Teleportation Cubic : Teleport out of Lair of Valakas
-	};
+	private static final int BOROMIR = 34745;
+	private static final int HEART_OF_VOLCANO = 31385;
+	private static final int TELEPORT_CUBIC = 31759;
+	private static final int VALAKAS_ID = 29415;
 	
-	// Items
-	private static final int VACUALITE_FLOATING_STONE = 7267;
-	private static final Location ENTER_HALL_OF_FLAMES = new Location(183813, -115157, -3303);
-	private static final Location TELEPORT_INTO_VALAKAS_LAIR = new Location(204328, -111874, 70);
+	// Locations
+	private static final Location ENTER_HALL_OF_FLAMES = new Location(190400, -107501, -1016);
+	private static final Location TELEPORT_INTO_VALAKAS_LAIR = new Location(210604, -114980, -1662);
 	private static final Location TELEPORT_OUT_OF_VALAKAS_LAIR = new Location(150037, -57720, -2976);
 	
-	private static int playerCount = 0;
+	// Configs
+	private static final int MIN_CC_MEMBERS = 49; // 49 players
+	private static final int MAX_GLOBAL_PLAYERS = 200;
+	private static final int CHECK_RADIUS = 2500;
+	private static final int MIN_LEVEL = 120;
+	private static final int VALAKAS_WAIT_TIME = 10; // 20min
+	private static final int VALAKAS_ZONE_ID = 12010;
+	
+	private static final Object ENTRY_LOCK = new Object();
 	
 	private ValakasTeleporters()
 	{
-		addStartNpc(NPCs);
-		addTalkId(NPCs);
+		addStartNpc(BOROMIR, HEART_OF_VOLCANO, TELEPORT_CUBIC);
+		addTalkId(BOROMIR, HEART_OF_VOLCANO, TELEPORT_CUBIC);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		String htmltext = "";
-		final QuestState qs = getQuestState(player, false);
-		if (hasQuestItems(player, VACUALITE_FLOATING_STONE))
+		if (event.equals("teleport_hall"))
 		{
 			player.teleToLocation(ENTER_HALL_OF_FLAMES);
-			qs.set("allowEnter", "1");
+			return null;
 		}
-		else
+		else if (event.equals("teleport_lair"))
 		{
-			htmltext = "31540-06.htm";
+			synchronized (ENTRY_LOCK)
+			{
+				// 1. Boss Status Check.
+				final int status = GrandBossManager.getInstance().getStatus(VALAKAS_ID);
+				if (status == 2) // In battle
+				{
+					return "31385-02.htm";
+				}
+				
+				if (status >= 3) // Dead / Cooldown
+				{
+					return "31385-04.htm";
+				}
+				
+				// 2. Command Channel Check.
+				final CommandChannel cc = player.getCommandChannel();
+				if ((cc == null) || (cc.getMemberCount() < MIN_CC_MEMBERS))
+				{
+					playSound(player, "ItemSound3.sys_impossible");
+					return "31385-01.htm";
+				}
+				
+				// Only the CC leader can request entry.
+				if (!cc.getLeader().equals(player))
+				{
+					playSound(player, "ItemSound3.sys_impossible");
+					player.sendMessage("Only the Command Channel Leader can attempt entry.");
+					return null;
+				}
+				
+				// 3. Dynamic Player Count (Fix ZoneManager).
+				int playersInside = 0;
+				final ZoneType zone = ZoneManager.getInstance().getZoneById(VALAKAS_ZONE_ID);
+				if (zone != null)
+				{
+					playersInside = zone.getPlayersInside().size();
+				}
+				
+				// Check global limit of 200.
+				if ((playersInside + cc.getMemberCount()) > MAX_GLOBAL_PLAYERS)
+				{
+					playSound(player, "ItemSound3.sys_impossible");
+					return "31385-03.htm";
+				}
+				
+				// 4. Verification.
+				for (Player member : cc.getMembers())
+				{
+					if ((member == null) || !member.isOnline())
+					{
+						continue;
+					}
+					
+					if (!member.isInsideRadius3D(npc, CHECK_RADIUS) || (member.getLevel() < MIN_LEVEL))
+					{
+						playSound(player, "ItemSound3.sys_impossible");
+						player.sendMessage("Entry failed. The member " + member.getName() + " is too far away or below level " + MIN_LEVEL + ".");
+						return null;
+					}
+				}
+				
+				if (cc.getMemberCount() < MIN_CC_MEMBERS)
+				{
+					playSound(player, "ItemSound3.sys_impossible");
+					return "31385-01.htm";
+				}
+				
+				// 5. Start Spawn if first entry.
+				if (status == 0)
+				{
+					GrandBossManager.getInstance().setStatus(VALAKAS_ID, 1);
+					
+					final ExShowScreenMessage screenMsg = new ExShowScreenMessage(NpcStringId.WHO_DARES_CHALLENGE_VALAKAS_FOOLISH_FANCIES_I_M_UNBEATABLE, ExShowScreenMessage.TOP_CENTER, 7000);
+					npc.broadcastPacket(screenMsg);
+					
+					for (Player member : cc.getMembers())
+					{
+						if (member != null)
+						{
+							member.sendPacket(screenMsg);
+						}
+					}
+					
+					final Script valakasAi = (Script) ScriptManager.getInstance().getScript(Valakas.class.getSimpleName());
+					if (valakasAi != null)
+					{
+						final GrandBoss valakasBoss = GrandBossManager.getInstance().getBoss(VALAKAS_ID);
+						valakasAi.startQuestTimer("beginning", VALAKAS_WAIT_TIME * 60000, valakasBoss, null);
+					}
+				}
+				
+				// 6. Teleport CC members.
+				for (Player member : cc.getMembers())
+				{
+					if ((member != null) && member.isOnline())
+					{
+						member.teleToLocation(TELEPORT_INTO_VALAKAS_LAIR, true);
+					}
+				}
+			}
+			return null;
 		}
 		
-		return htmltext;
+		return null;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		String htmltext = "";
-		final QuestState qs = getQuestState(player, true);
-		
 		switch (npc.getId())
 		{
-			case 31385:
+			case BOROMIR:
 			{
-				if (valakasAI() != null)
+				return "34745.htm";
+			}
+			case HEART_OF_VOLCANO:
+			{
+				final int status = GrandBossManager.getInstance().getStatus(VALAKAS_ID);
+				if ((status == 0) || (status == 1))
 				{
-					final int status = GrandBossManager.getInstance().getStatus(29028);
-					if ((status == 0) || (status == 1))
-					{
-						if (playerCount >= 200)
-						{
-							htmltext = "31385-03.htm";
-						}
-						else if (qs.getInt("allowEnter") == 1)
-						{
-							qs.unset("allowEnter");
-							player.teleToLocation(TELEPORT_INTO_VALAKAS_LAIR.getX() + getRandom(600), TELEPORT_INTO_VALAKAS_LAIR.getY() + getRandom(600), TELEPORT_INTO_VALAKAS_LAIR.getZ());
-							playerCount++;
-							
-							if (status == 0)
-							{
-								final GrandBoss valakas = GrandBossManager.getInstance().getBoss(29028);
-								valakasAI().startQuestTimer("beginning", GrandBossConfig.VALAKAS_WAIT_TIME * 60000, valakas, null);
-								GrandBossManager.getInstance().setStatus(29028, 1);
-							}
-						}
-						else
-						{
-							htmltext = "31385-04.htm";
-						}
-					}
-					else if (status == 2)
-					{
-						htmltext = "31385-02.htm";
-					}
-					else
-					{
-						htmltext = "31385-01.htm";
-					}
+					return "31385.htm";
+				}
+				else if (status == 2)
+				{
+					return "31385-02.htm";
 				}
 				else
 				{
-					htmltext = "31385-01.htm";
+					return "31385-04.htm";
 				}
-				break;
 			}
-			case 31384:
+			case TELEPORT_CUBIC:
 			{
-				DoorData.getInstance().getDoor(25140004).openMe();
-				break;
-			}
-			case 31686:
-			{
-				DoorData.getInstance().getDoor(25140005).openMe();
-				break;
-			}
-			case 31687:
-			{
-				DoorData.getInstance().getDoor(25140006).openMe();
-				break;
-			}
-			case 31540:
-			{
-				if (playerCount < 50)
-				{
-					htmltext = "31540-01.htm";
-				}
-				else if (playerCount < 100)
-				{
-					htmltext = "31540-02.htm";
-				}
-				else if (playerCount < 150)
-				{
-					htmltext = "31540-03.htm";
-				}
-				else if (playerCount < 200)
-				{
-					htmltext = "31540-04.htm";
-				}
-				else
-				{
-					htmltext = "31540-05.htm";
-				}
-				break;
-			}
-			case 31759:
-			{
-				player.teleToLocation(TELEPORT_OUT_OF_VALAKAS_LAIR.getX() + getRandom(500), TELEPORT_OUT_OF_VALAKAS_LAIR.getY() + getRandom(500), TELEPORT_OUT_OF_VALAKAS_LAIR.getZ());
-				break;
+				player.teleToLocation(TELEPORT_OUT_OF_VALAKAS_LAIR, true);
+				return null;
 			}
 		}
 		
-		return htmltext;
-	}
-	
-	private Quest valakasAI()
-	{
-		return ScriptManager.getInstance().getScript(Valakas.class.getSimpleName());
+		return super.onTalk(npc, player);
 	}
 	
 	public static void main(String[] args)

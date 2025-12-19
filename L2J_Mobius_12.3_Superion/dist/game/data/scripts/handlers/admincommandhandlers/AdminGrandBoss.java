@@ -82,7 +82,7 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	private static final int TRASKEN = 29197; // Trasken
 	private static final int TRASKEN_ZONE = 12108; // Trasken Nest
 	
-	private static final int VALAKAS = 29028; // Valakas
+	private static final int VALAKAS = 29415; // Valakas
 	private static final int VALAKAS_ZONE = 12010; // Valakas Nest
 	
 	private static final String[] ADMIN_COMMANDS =

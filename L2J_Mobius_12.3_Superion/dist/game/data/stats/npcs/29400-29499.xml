@@ -649,8 +649,7 @@
 			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
 		</skillList>
 	</npc>
-	<npc id="29415" level="130" type="RaidBoss" name="Valakas" title="Fire Dragon">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+	<npc id="29415" level="130" type="GrandBoss" name="Valakas" title="Fire Dragon">
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire exp="27965221655" sp="25168699" />
@@ -669,6 +668,11 @@
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="MAGE" aggroRange="2500" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>VALAKAS</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="190" />
 			<height normal="335" />
@@ -684,6 +688,7 @@
 			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
 			<skill id="34820" level="9" /> <!-- Received Damage Resistance -->
 		</skillList>
+		<corpseTime>21</corpseTime>
 		<dropLists>
 			<drop>
 				<group chance="100">

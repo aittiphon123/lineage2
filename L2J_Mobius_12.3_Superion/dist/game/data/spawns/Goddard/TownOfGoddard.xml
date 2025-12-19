@@ -95,6 +95,7 @@
 			<npc id="33587" x="148524" y="-56315" z="-2776" heading="21672" respawnTime="60sec" /> <!-- Mentor Guide - Mentoring Manager -->
 			<npc id="33685" x="147385" y="-55290" z="-2728" heading="51838" respawnTime="60sec" /> <!-- Mysterious Butler - Ceremony of Chaos -->
 			<npc id="33946" x="148632" y="-56392" z="-2782" heading="7037" respawnTime="60sec" /> <!-- Adventure Guildsman -->
+			<npc id="34745" x="147422" y="-57392" z="-2807" heading="11351" respawnTime="60sec" /> <!-- Boromir - Taking Revenge on Valakas -->
 			<npc id="35366" x="145704" y="-57104" z="-2976" heading="39000" respawnTime="60sec" /> <!-- Manor Manager - Goddard -->
 			<npc id="35461" x="146416" y="-55568" z="-2760" heading="32000" respawnTime="60sec" /> <!-- Aida - Clan Hall Manager -->
 			<npc id="35462" x="146488" y="-55432" z="-2776" heading="1000" respawnTime="60sec" /> <!-- Kalmer - Clan Hall Gatekeeper -->

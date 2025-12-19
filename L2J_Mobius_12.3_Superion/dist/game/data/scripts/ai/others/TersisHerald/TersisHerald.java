@@ -38,7 +38,7 @@ public class TersisHerald extends Script
 	// NPCs
 	private static final int HERALD = 4326; // Tersi's Herald
 	private static final int ANTHARAS = 29068;
-	private static final int VALAKAS = 29028;
+	private static final int VALAKAS = 29415; // Valakas Lv.130
 	private static final int LINDVIOR = 29240;
 	
 	// Skills

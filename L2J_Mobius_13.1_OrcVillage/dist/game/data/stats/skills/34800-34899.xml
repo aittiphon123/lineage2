@@ -996,109 +996,396 @@
 	<skill id="34862" toLevel="1" name="Valakas">
 		<!-- One of the six dragon children of Shillien. Valakas is the Fire Dragon who commands hot flames and summons fire storms. After taking severe wounds in the war against the gods, he has hidden away in the Forge of Gods. He is waiting for Shillien's call to end his long slumber. Due to Power of Flames, Anomaly Atk. Rate +200, P./ M. Accuracy +200. Additionally, Debilitation Resistance +1100. -->
 		<icon>icon.skillboss</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="Accuracy">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34863" toLevel="1" name="Valakas: Trample">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<castRange>600</castRange>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>600</affectRange>
+		<affectScope>RANGE</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2000</attributeValue>
+		<castRange>300</castRange>
 		<coolTime>1000</coolTime>
+		<effectPoint>-100</effectPoint>
+		<effectRange>300</effectRange>
 		<hitTime>1000</hitTime>
 		<isMagic>6</isMagic>
+		<magicLevel>130</magicLevel>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.090</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+			</effect>
+		</effects>
 	</skill>
-	<skill id="34864" toLevel="1" name="Valakas: Trample">
+		<skill id="34864" toLevel="1" name="Valakas: Trample">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<castRange>600</castRange>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>600</affectRange>
+		<affectScope>RANGE</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2000</attributeValue>
+		<castRange>300</castRange>
 		<coolTime>1000</coolTime>
+		<effectPoint>-100</effectPoint>
+		<effectRange>300</effectRange>
 		<hitTime>1000</hitTime>
 		<isMagic>6</isMagic>
+		<magicLevel>130</magicLevel>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.090</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+			</effect>
+		</effects>
 	</skill>
-	<skill id="34865" toLevel="1" name="Valakas Tail Rash">
+		<skill id="34865" toLevel="1" name="Valakas Tail Rash">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SQUARE</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2000</attributeValue>
 		<coolTime>1000</coolTime>
+		<effectPoint>-100</effectPoint>
+		<fanRange>0;180;1500;600</fanRange>
 		<hitTime>1500</hitTime>
+		<reuseDelay>500</reuseDelay>
 		<isMagic>6</isMagic>
+		<magicLevel>130</magicLevel>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.190</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34866" toLevel="1" name="Valakas: Dragon Breath">
 		<!-- Breathes fire, dealing heavy magic damage and setting the target on fire for 20 sec. Inflicted status: Debilitation. Affected by Anomaly Resistance. Not affected by immunity. -->
 		<icon>icon.skill4683</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>DRAGON_BREATH</abnormalType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SQUARE</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2000</attributeValue>
+		<castRange>900</castRange>
 		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<fanRange>0;0;2500;900</fanRange>
 		<hitTime>3000</hitTime>
+		<reuseDelay>10000</reuseDelay> <!-- Test - No Exist Reuse -->
 		<isDebuff>true</isDebuff>
-		<isMagic>7</isMagic>
+		<isMagic>7</isMagic> <!-- Magic Skill -->
+		<magicLevel>130</magicLevel>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>115550</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>20000</power>
+				<ticks>4</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34867" toLevel="1" name="Valakas: Tail Strike">
 		<!-- Hits the target with tail, knocking them down and dealing heavy damage. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). Affected by Anomaly Resistance. Not affected by immunity. -->
 		<icon>icon.skill4688</icon>
-		<operateType>A1</operateType>
-		<coolTime>500</coolTime>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SQUARE</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2000</attributeValue>
+		<coolTime>1000</coolTime>
+		<effectPoint>-100</effectPoint>
+		<fanRange>0;180;1500;600</fanRange>
 		<hitTime>1500</hitTime>
-		<isDebuff>true</isDebuff>
+		<reuseDelay>1000</reuseDelay>
 		<isMagic>6</isMagic>
+		<magicLevel>130</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.270</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+			</effect>
+			<effect name="BlockActions" />
+		</effects>
 	</skill>
 	<skill id="34868" toLevel="1" name="Valakas: Fear">
 		<!-- Thunderous roar terrifies all the surrounding enemies. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). Affected by Anomaly Resistance. Not affected by immunity. -->
 		<icon>icon.skill4689</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>600</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
 		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>7</isMagic>
+		<magicLevel>130</magicLevel>
+		<trait>DERANGEMENT</trait>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+		</effects>
 	</skill>
 	<skill id="34869" toLevel="1" name="Valakas: Fury">
 		<!-- Valakas' destructive force rushes outward dealing heavy AoE damage. After 3 sec., terrifies enemies reducing their attack and defense capabilities. -->
 		<icon>icon.skill0325</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>1200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2500</attributeValue>
+		<basicProperty>NONE</basicProperty>
+		<castRange>1200</castRange>
 		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<isMagic>6</isMagic>
+		<magicLevel>130</magicLevel>
+		<reuseDelay>6000</reuseDelay>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>350000</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34870" toLevel="1" name="Valakas: Earthquake">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>POINT_BLANK</affectScope>
+		<castRange>1200</castRange>
 		<coolTime>500</coolTime>
 		<hitTime>10000</hitTime>
 		<isMagic>6</isMagic>
+		<reuseDelay>15000</reuseDelay>
 	</skill>
 	<skill id="34871" toLevel="1" name="Fire Energy Earthquake">
 		<!-- Sudden Death -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>1200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2500</attributeValue>
+		<basicProperty>NONE</basicProperty>
+		<castRange>1200</castRange>
 		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>10000</hitTime>
+		<magicLevel>130</magicLevel>
 		<isMagic>6</isMagic>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>4534255</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34872" toLevel="1" name="Valakas: Meteor Storm">
 		<!-- Knocks the target down with a powerful blow. Not affected by immunity. The effect cannot be removed. -->
 		<icon>icon.skill3080</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2500</attributeValue>
+		<basicProperty>NONE</basicProperty>
+		<coolTime>1</coolTime>
+		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>130</magicLevel>
 		<isMagic>6</isMagic>
+		<reuseDelay>5000</reuseDelay>
+		<trait>KNOCKDOWN</trait>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>150000</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34873" toLevel="1" name="Valakas: Berserk">
 		<!-- Valakas' power reaches its limit and erupts from his body with flames and fire. Dealt damage is significantly increased, received damage - decreased. -->
 		<icon>icon.skill1062</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>30</abnormalTime>
+		<abnormalVisualEffect>V_BOSS_VALA_BERSERK_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>100</effectPoint>
 		<coolTime>500</coolTime>
+		<hitCancelTime>1.0</hitCancelTime>
 		<hitTime>2000</hitTime>
-		<isMagic>6</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>130</magicLevel>
+		<isMagic>7</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+            <amount>30</amount>
+            <mode>PER</mode>
+        </effect>
+        <effect name="MagicalDefence">
+            <amount>50</amount>
+            <mode>PER</mode>
+        </effect>
+        <effect name="PhysicalDefence">
+            <amount>50</amount>
+            <mode>PER</mode>
+        </effect>
+		</effects>
 	</skill>
 	<skill id="34874" toLevel="1" name="Valakas: Weakness">
 		<!-- The fire loses its power for some time. Dealt damage is significantly decreased, received damage - increased. -->
 		<icon>icon.skill1235</icon>
-		<operateType>A1</operateType>
-		<isDebuff>true</isDebuff>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>PD_DOWN</abnormalType>
+		<abnormalVisualEffect>V_BOSS_PERION_CHAIN_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>100</effectPoint>
 		<isMagic>7</isMagic>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+        <effects>
+			<effect name="PhysicalAttack">
+				<amount>-70</amount>
+ 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>-70</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-100</amount> 
+ 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-100</amount>
+ 				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34875" toLevel="1" name="Valakas: Barrier">
 		<!-- Valakas is surrounded by fire energy. A successful attack against the barrier makes Valakas weaker. <Valakas: Weakness>. The fire loses its power for some time. Dealt damage is significantly decreased, received damage - increased. -->
 		<icon>icon.skill32540</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>INVINCIBILITY_SPECIAL</abnormalType>
+		<abnormalVisualEffect>H_VALAKAS_RE_BARRIER_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>100</effectPoint>
 		<isMagic>7</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DispelByCategory">
+				<slot>DEBUFF</slot>
+				<rate>100</rate>
+				<max>30</max>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<DERANGEMENT>100</DERANGEMENT>
+				<CHANGEBODY>100</CHANGEBODY>
+				<PARALYZE>100</PARALYZE>
+				<SHOCK>100</SHOCK>
+				<KNOCKBACK>100</KNOCKBACK>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<AIRBIND>100</AIRBIND>
+				<TURN_STONE>100</TURN_STONE>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>INVINCIBILITY_SPECIAL</slot>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-100</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34876" toLevel="1" name="Valakas: Barrier Break">
 		<!-- Animation skill. -->
@@ -1110,11 +1397,39 @@
 	<skill id="34877" toLevel="1" name="Valakas: Inhale">
 		<!-- Pulls and stuns the target. Not affected by immunity. The effect cannot be removed. -->
 		<icon>icon.skill5012</icon>
-		<operateType>A1</operateType>
-		<coolTime>500</coolTime>
-		<hitTime>1000</hitTime>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>1200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2500</attributeValue>
+		<effectPoint>-5000</effectPoint>
+		<hitTime>1500</hitTime>
+		<activateRate>100</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>2000</castRange>
 		<isDebuff>true</isDebuff>
-		<isMagic>6</isMagic>
+		<lvlBonusRate>200</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>130</magicLevel>
+		<reuseDelay>5000</reuseDelay>
+		<trait>PULL</trait>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+				<perfectionRate>95</perfectionRate>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34878" toLevel="1" name="Valakas' Mark">
 		<!-- A long time ago Valakas' Breath made Boromir immortal, and now he's gathering troops to exact vengeance on the Fire Dragon. -->

@@ -1317,21 +1317,56 @@
 		<node X="214340" Y="-114148" />
 	</zone>
 	<zone name="valakas_lava_6" type="EffectZone" shape="NPoly" minZ="-1768" maxZ="-1568"> <!-- [26_14] -->
-		<stat name="skillIdLvl" val="4150-7;" /> <!-- s_area_fire7 -->
+		<stat name="skillIdLvl" val="4150-10;" /> <!-- s_area_fire10 -->
 		<stat name="chance" val="50" />
 		<!-- stat name="unitTick" val="9" / -->
 		<stat name="initialDelay" val="1000" />
 		<stat name="default_enabled" val="true" />
-		<stat name="reuse" val="6000" /> <!-- Guess -->
-		<node X="213916" Y="-115660" />
-		<node X="214220" Y="-114648" />
-		<node X="213392" Y="-113112" />
-		<node X="212100" Y="-113460" />
-		<node X="211292" Y="-115164" />
-		<node X="211948" Y="-115196" />
-		<node X="211976" Y="-115628" />
-		<node X="212696" Y="-116036" />
-		<node X="213200" Y="-116136" />
+		<stat name="reuse" val="5000" />
+		<node X="213762" Y="-114276" />
+		<node X="213737" Y="-113960" />
+		<node X="213645" Y="-113733" />
+		<node X="213712" Y="-113591" />
+		<node X="213749" Y="-113526" />
+		<node X="213780" Y="-113424" />
+		<node X="213704" Y="-113316" />
+		<node X="213492" Y="-113246" />
+		<node X="213376" Y="-113129" />
+		<node X="213247" Y="-113056" />
+		<node X="213075" Y="-113111" />
+		<node X="213030" Y="-113292" />
+		<node X="212926" Y="-113315" />
+		<node X="212721" Y="-113271" />
+		<node X="212264" Y="-113378" />
+		<node X="212071" Y="-113418" />
+		<node X="211977" Y="-113568" />
+		<node X="211961" Y="-113710" />
+		<node X="212028" Y="-113844" />
+		<node X="211988" Y="-113969" />
+		<node X="211631" Y="-114246" />
+		<node X="211559" Y="-114667" />
+		<node X="211372" Y="-114937" />
+		<node X="211386" Y="-115144" />
+		<node X="211843" Y="-115247" />
+		<node X="211937" Y="-115416" />
+		<node X="211947" Y="-115586" />
+		<node X="212028" Y="-115743" />
+		<node X="212286" Y="-115809" />
+		<node X="212625" Y="-116022" />
+		<node X="213021" Y="-116141" />
+		<node X="213243" Y="-116083" />
+		<node X="213482" Y="-115984" />
+		<node X="213634" Y="-115757" />
+		<node X="213867" Y="-115739" />
+		<node X="213998" Y="-115689" />
+		<node X="214094" Y="-115406" />
+		<node X="214185" Y="-115172" />
+		<node X="214183" Y="-114874" />
+		<node X="214209" Y="-114749" />
+		<node X="214062" Y="-114641" />
+		<node X="213911" Y="-114531" />
+		<node X="213822" Y="-114585" />
+		<node X="213751" Y="-114509" />
 	</zone>
 	<zone name="valakas_lava_7" type="EffectZone" shape="NPoly" minZ="-1764" maxZ="-1564"> <!-- [26_14] -->
 		<stat name="skillIdLvl" val="4150-7;" /> <!-- s_area_fire7 -->
@@ -2645,5 +2680,12 @@
 		<node X="59794" Y="-45617" />
 		<node X="58487" Y="-45550" />
 		<node X="58407" Y="-45289" />
+	</zone>
+	<zone name="Valakas Local Danger" type="EffectZone" shape="NPoly" minZ="-2572" maxZ="5428">
+		<stat name="showDangerIcon" val="true" />
+		<node X="196866" Y="-130845" />
+		<node X="229289" Y="-130860" />
+		<node X="229176" Y="-98508" />
+		<node X="196880" Y="-98498" />
 	</zone>
 </list>

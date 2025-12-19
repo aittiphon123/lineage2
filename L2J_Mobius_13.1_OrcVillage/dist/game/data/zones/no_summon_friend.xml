@@ -304,4 +304,17 @@
 		<node X="-87121" Y="211950" />
 		<node X="-82180" Y="211846" />
 	</zone>
+	<zone name="Hall_of_Flame_no_summon" type="NoSummonFriendZone" shape="NPoly" minZ="-2532" maxZ="-1">
+		<node X="191598" Y="-108117" />
+		<node X="192990" Y="-106747" />
+		<node X="193653" Y="-105007" />
+		<node X="193000" Y="-103673" />
+		<node X="188027" Y="-103765" />
+		<node X="187921" Y="-105401" />
+		<node X="187661" Y="-106560" />
+		<node X="188090" Y="-107559" />
+		<node X="188760" Y="-108727" />
+		<node X="189865" Y="-108827" />
+		<node X="192009" Y="-108228" />
+	</zone>
 </list>
