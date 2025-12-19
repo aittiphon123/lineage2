@@ -1512,7 +1512,7 @@
 		<magicLevel>99</magicLevel>
 		<effects>
 			<effect name="Hp">
-				<amount>-99</amount>
+				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1542,7 +1542,7 @@
 		<magicLevel>99</magicLevel>
 		<effects>
 			<effect name="Mp">
-				<amount>-99</amount>
+				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1585,10 +1585,14 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>80</magicLevel>
-		<mpConsume>60</mpConsume>
-		<mpInitialConsume>15</mpInitialConsume>
 		<reuseDelay>4000</reuseDelay>
 		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5866" toLevel="10" name="Soul Worm">
 		<!-- Level 1: The mental blow decreases your MP and MP Recovery. You are poisoned and continuously lose HP. Effect 8. Inflicted status: Infection (Bleed, Poison). -->

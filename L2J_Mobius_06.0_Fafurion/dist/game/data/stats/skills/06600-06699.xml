@@ -2763,8 +2763,15 @@
 		<effectRange>1500</effectRange>
 		<hitTime>2000</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>99</magicLevel>
+		<magicLevel>118</magicLevel> <!-- Lavassaurus Lv.118 v.Fafurion+ -->
 		<mpConsume>83</mpConsume>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>5534255</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6657" toLevel="1" name="Lavasaurus Alpha Heal">
 		<icon>icon.skill0000</icon>

@@ -1393,7 +1393,7 @@
 			<skill id="4071" level="2" /> <!-- Bow/ Crossbow Resistance -->
 			<skill id="14804" level="10" /> <!-- Damage Reflection Attack Resistance -->
 			<skill id="4679" level="1" /> <!-- Valakas -->
-			<skill id="4680" level="1" /> <!-- Valakas Lava Skin -->
+			<!-- <skill id="4680" level="1" /> --> <!-- Valakas Lava Skin -->
 		</skillList>
 		<corpseTime>21</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1559,10 +1559,10 @@
 	</npc>
 	<npc id="29029" level="118" type="Monster" name="Lavasaurus Alpha">
 		<parameters>
-			<param name="SkillRange" value="500" />
+			<param name="SkillRange" value="1200" />
 			<skill name="DDMagic" id="6656" level="1" />
 			<skill name="DDMagic2" id="6675" level="1" />
-			<skill name="Skill_Heal" id="6657" level="1" />
+			<!-- <skill name="Skill_Heal" id="6657" level="1" /> -->
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -1581,7 +1581,7 @@
 			</attribute>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" noSleepMode="true" />
+		<status attackable="true" noSleepMode="true" undying="false" canMove="false" targetable="true" />
 		<skillList>
 			<skill id="4416" level="2" /> <!-- Magical Creatures -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
@@ -1595,11 +1595,11 @@
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="10" /> <!-- Bow -->
 			<skill id="32675" level="1" /> <!-- Status Effect Resistance -->
-			<skill id="16516" level="7" /> <!-- Party Archer Monster -->
+			<!-- <skill id="16516" level="7" /> --> <!-- Party Archer Monster -->
 			<skill id="6656" level="1" /> <!-- Lavasaurus Firstborn Attack -->
-			<skill id="6657" level="1" /> <!-- Lavasaurus Firstborn Heal -->
+			<!-- <skill id="6657" level="1" /> --> <!-- Lavasaurus Firstborn Heal -->
 			<skill id="6675" level="1" /> <!-- Lavasaurus Firstborn Attack -->
-			<skill id="4607" level="1" /> <!-- Magma Attack -->
+			<!-- <skill id="4607" level="1" /> --> <!-- Magma Attack -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">

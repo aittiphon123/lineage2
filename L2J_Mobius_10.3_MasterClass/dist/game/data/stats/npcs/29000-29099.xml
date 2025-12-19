@@ -1220,7 +1220,7 @@
 			<skill id="4071" level="2" /> <!-- Bow/ Crossbow Resistance -->
 			<skill id="14804" level="10" /> <!-- Damage Reflection Resistance -->
 			<skill id="4679" level="1" /> <!-- Valakas -->
-			<skill id="4680" level="1" /> <!-- Valakas Lava Skin -->
+			<!-- <skill id="4680" level="1" /> --> <!-- Valakas Lava Skin -->
 		</skillList>
 		<corpseTime>21</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1355,7 +1355,7 @@
 			</attribute>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" noSleepMode="true" />
+		<status attackable="true" noSleepMode="true" undying="false" canMove="false" targetable="true" />
 		<skillList>
 			<skill id="4416" level="2" /> <!-- Magical Creatures -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
@@ -1369,11 +1369,11 @@
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="10" /> <!-- Bow -->
 			<skill id="32675" level="1" /> <!-- Improved Immunity -->
-			<skill id="16516" level="7" /> <!-- Party Archer Monster -->
+			<!-- <skill id="16516" level="7" /> --> <!-- Party Archer Monster -->
 			<skill id="6656" level="1" /> <!-- Lavasaurus Firstborn Attack -->
-			<skill id="6657" level="1" /> <!-- Lavasaurus Firstborn Heal -->
+			<!-- <skill id="6657" level="1" /> --> <!-- Lavasaurus Firstborn Heal -->
 			<skill id="6675" level="1" /> <!-- Lavasaurus Firstborn Attack -->
-			<skill id="4607" level="1" /> <!-- Magma Attack -->
+			<!-- <skill id="4607" level="1" /> --> <!-- Magma Attack -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">

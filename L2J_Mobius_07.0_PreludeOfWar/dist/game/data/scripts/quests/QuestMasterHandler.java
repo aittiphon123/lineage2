@@ -83,7 +83,6 @@ import quests.Q00595_SpecialMissionRaidersCrossroads.Q00595_SpecialMissionRaider
 import quests.Q00596_SpecialMissionDefeatBaylor.Q00596_SpecialMissionDefeatBaylor;
 import quests.Q00599_DemonsAndDimensionalEnergy.Q00599_DemonsAndDimensionalEnergy;
 import quests.Q00600_KeyToTheRefiningProcess.Q00600_KeyToTheRefiningProcess;
-import quests.Q00618_IntoTheFlame.Q00618_IntoTheFlame;
 import quests.Q00620_FourGoblets.Q00620_FourGoblets;
 import quests.Q00665_BasicTrainingForHunterGuildMember.Q00665_BasicTrainingForHunterGuildMember;
 import quests.Q00666_HunterGuildMembersKnowledge.Q00666_HunterGuildMembersKnowledge;
@@ -408,7 +407,6 @@ public class QuestMasterHandler
 		Q00596_SpecialMissionDefeatBaylor.class,
 		Q00599_DemonsAndDimensionalEnergy.class,
 		Q00600_KeyToTheRefiningProcess.class,
-		Q00618_IntoTheFlame.class,
 		Q00620_FourGoblets.class,
 		Q00655_AGrandPlanForTamingWildBeasts.class, // TODO: Not done.
 		Q00665_BasicTrainingForHunterGuildMember.class,
