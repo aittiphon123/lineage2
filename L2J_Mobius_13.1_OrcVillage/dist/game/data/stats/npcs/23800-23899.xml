@@ -4881,7 +4881,7 @@
 		<acquire exp="1593179" sp="1434" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1097508" hpRegen="7.5" mp="3190" mpRegen="2.7" />
-			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="600" distance="600" width="120" />
 			<defence physical="753240" magical="364523" />
 			<speed>
 				<walk ground="33" />
@@ -4895,6 +4895,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="MAGE" aggroRange="600" isAggressive="true" />
 		<skillList>
 			<skill id="4416" level="6" /> <!-- Humanoids -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -4905,6 +4906,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="62153" level="1" /> <!-- Kasha's Chaos Magic Burst -->
 		</skillList>
 		<collision>
 			<radius normal="18" />
@@ -4954,7 +4956,7 @@
 		<acquire exp="1593179" sp="1434" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1097508" hpRegen="6.5" mp="3190" mpRegen="2.4" />
-			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="BOW" range="600" distance="600" width="120" />
 			<defence physical="753240" magical="364523" />
 			<speed>
 				<walk ground="47" />
@@ -4968,6 +4970,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" aggroRange="600" isAggressive="true" />
 		<skillList>
 			<skill id="4416" level="8" /> <!-- Angels -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -4977,7 +4980,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4415" level="9" /> <!-- Bow -->
+			<skill id="62151" level="1" /> <!-- Kasha Sniper's Power Shot -->
 		</skillList>
 		<collision>
 			<radius normal="18" />
@@ -5027,7 +5031,7 @@
 		<acquire exp="1593179" sp="1434" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1097508" hpRegen="7.5" mp="3190" mpRegen="2.7" />
-			<attack physical="1599215" magical="145753" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<attack physical="1599215" magical="145753" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="753240" magical="364523" />
 			<speed>
 				<walk ground="33" />
@@ -5041,6 +5045,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" />
 		<skillList>
 			<skill id="4416" level="8" /> <!-- Angels -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5050,7 +5055,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="9" /> <!-- Bow -->
+			<skill id="4415" level="7" /> <!-- Dagger -->
+			<skill id="62211" level="1" /> <!-- Kasha's Grave Attack -->
 		</skillList>
 		<collision>
 			<radius normal="14.4" />
@@ -5114,6 +5120,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" />
 		<skillList>
 			<skill id="4416" level="8" /> <!-- Angels -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5124,6 +5131,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="5" /> <!-- One-handed Blunt Weapon -->
+			<skill id="62152" level="1" /> <!-- Kasha's Grave Destruction -->
 		</skillList>
 		<collision>
 			<radius normal="21.6" />
@@ -5187,6 +5195,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" />
 		<skillList>
 			<skill id="4416" level="8" /> <!-- Angels -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5197,6 +5206,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="5" /> <!-- One-handed Blunt Weapon -->
+			<skill id="62211" level="1" /> <!-- Kasha's Grave Attack -->
 		</skillList>
 		<collision>
 			<radius normal="27" />
@@ -5260,6 +5270,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" />
 		<skillList>
 			<skill id="4416" level="8" /> <!-- Angels -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5270,6 +5281,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="62211" level="1" /> <!-- Kasha's Grave Attack -->
 		</skillList>
 		<collision>
 			<radius normal="27" />
@@ -5319,7 +5331,7 @@
 		<acquire exp="2227517" sp="2005" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1919548" hpRegen="7.5" mp="3190" mpRegen="2.7" />
-			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="600" distance="600" width="120" />
 			<defence physical="753240" magical="364523" />
 			<speed>
 				<walk ground="33" />
@@ -5333,6 +5345,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="MAGE" aggroRange="600" isAggressive="true" />
 		<skillList>
 			<skill id="4416" level="1" /> <!-- Undead -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5343,6 +5356,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="62156" level="1" /> <!-- Kasha's Enchanted Chaos Magic Burst -->
 		</skillList>
 		<collision>
 			<radius normal="18" />
@@ -5392,7 +5406,7 @@
 		<acquire exp="2227517" sp="2005" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1919548" hpRegen="7.5" mp="3190" mpRegen="2.7" />
-			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="BOW" range="600" distance="600" width="120" />
 			<defence physical="753240" magical="364523" />
 			<speed>
 				<walk ground="50" />
@@ -5406,6 +5420,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" aggroRange="600" isAggressive="true" />
 		<skillList>
 			<skill id="4416" level="1" /> <!-- Undead -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5416,6 +5431,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="62154" level="1" /> <!-- Kasha Sniper's Enchanted Power Shot -->
 		</skillList>
 		<collision>
 			<radius normal="18" />
@@ -5479,6 +5495,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" />
 		<skillList>
 			<skill id="4416" level="1" /> <!-- Undead -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5489,6 +5506,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="5" /> <!-- One-handed Blunt Weapon -->
+			<skill id="62223" level="1" /> <!-- Kasha's Enchanted Grave Attack -->
 		</skillList>
 		<collision>
 			<radius normal="18" />
@@ -5552,6 +5570,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" />
 		<skillList>
 			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5562,6 +5581,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="5" /> <!-- One-handed Blunt Weapon -->
+			<skill id="62223" level="1" /> <!-- Kasha's Enchanted Grave Attack -->
 		</skillList>
 		<collision>
 			<radius normal="18" />
@@ -5625,6 +5645,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" />
 		<skillList>
 			<skill id="4416" level="1" /> <!-- Undead -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5635,6 +5656,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="62223" level="1" /> <!-- Kasha's Enchanted Grave Attack -->
 		</skillList>
 		<collision>
 			<radius normal="21.6" />
@@ -5697,6 +5719,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" />
 		<skillList>
 			<skill id="4416" level="3" /> <!-- Beasts -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5707,6 +5730,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="62155" level="1" /> <!-- Kasha's Enchanted Grave Destruction -->
 		</skillList>
 		<collision>
 			<radius normal="22.5" />
@@ -5769,6 +5793,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" />
 		<skillList>
 			<skill id="4416" level="4" /> <!-- Animals -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5779,6 +5804,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="62223" level="1" /> <!-- Kasha's Enchanted Grave Attack -->
 		</skillList>
 		<collision>
 			<radius normal="25.2" />
@@ -5842,6 +5868,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" passableDoor="true" />
+		<ai type="BALANCED" />
 		<skillList>
 			<skill id="4416" level="4" /> <!-- Animals -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -5852,6 +5879,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="5" /> <!-- One-handed Blunt Weapon -->
+			<skill id="62223" level="1" /> <!-- Kasha's Enchanted Grave Attack -->
 		</skillList>
 		<collision>
 			<radius normal="27" />

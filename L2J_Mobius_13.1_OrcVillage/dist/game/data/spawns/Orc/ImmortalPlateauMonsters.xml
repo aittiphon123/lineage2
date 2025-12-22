@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
-	<spawn name="ImmortalPlateau_Monsters_01">
-		<territories>
-			<territory shape="Cylinder" minZ="-2092" maxZ="-2042" rad="500">
-				<node x="-17947" y="-73144" />
-			</territory>
-		</territories>
-		<npc id="23882" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+	<spawn name="ImmortalPlateau_01_001" ai="NoRandomActivity">
+		<parameters>
+			<param name="disableRandomWalk" value="true" />
+		</parameters>
+		<group name="ImmortalPlateau_01_001_group">
+			<npc id="23885" x="-17476" y="-72981" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Pikeman -->
+			<npc id="23886" x="-17750" y="-72965" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Kasha Orc Special Support Warrior -->
+			<npc id="23887" x="-18025" y="-72948" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Kasha Orc Support Berserker -->
+			<npc id="23884" x="-18298" y="-72932" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Reservist -->
+			<npc id="23882" x="-18573" y="-72915" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Magus -->
+			<npc id="23886" x="-17505" y="-73479" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Kasha Orc Special Support Warrior -->
+			<npc id="23887" x="-17780" y="-73463" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Kasha Orc Support Berserker -->
+			<npc id="23884" x="-18054" y="-73447" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Reservist -->
+			<npc id="23885" x="-18328" y="-73431" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Pikeman -->
+			<npc id="23882" x="-18603" y="-73415" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Magus -->
+			<npc id="23887" x="-17535" y="-73979" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Kasha Orc Support Berserker -->
+			<npc id="23884" x="-17810" y="-73962" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Reservist -->
+			<npc id="23885" x="-18083" y="-73946" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Pikeman -->
+			<npc id="23882" x="-18632" y="-73913" z="-2048" heading="32143" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Magus -->
+			<npc id="23883" x="-17339" y="-73272" z="-2061" heading="32767" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Scout -->
+			<npc id="23883" x="-17373" y="-73731" z="-2050" heading="32031" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Scout -->
+			<npc id="23883" x="-17950" y="-74061" z="-2094" heading="47629" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Nerva Orc Scout -->
+		</group>
+	</spawn>
+	<spawn name="ImmortalPlateau_bonfire_01" ai="NoRandomActivity">
+		<parameters>
+			<param name="disableRandomWalk" value="true" />
+		</parameters>
+		<group name="ImmortalPlateau_bonfire_01_group">
+			<npc id="23882" x="-13789" y="-80059" z="-3357" heading="39321" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magnus -->
+			<npc id="23887" x="-13699" y="-80136" z="-3357" heading="41595" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+			<npc id="23885" x="-13629" y="-80194" z="-3357" heading="42100" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+			<npc id="23883" x="-13746" y="-80426" z="-3357" heading="8562" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+			<npc id="23886" x="-13824" y="-80333" z="-3357" heading="8287" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+			<npc id="23884" x="-13934" y="-80216" z="-3357" heading="57167" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		</group>
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_02">
 		<territories>
@@ -19,12 +43,12 @@
 				<node x="-14461" y="-73752" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_03">
 		<territories>
@@ -32,12 +56,12 @@
 				<node x="-11729" y="-74934" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_04">
 		<territories>
@@ -45,12 +69,12 @@
 				<node x="-6386" y="-77519" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_05">
 		<territories>
@@ -58,12 +82,12 @@
 				<node x="-3606" y="-73827" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_06">
 		<territories>
@@ -71,12 +95,12 @@
 				<node x="-2291" y="-78167" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_07">
 		<territories>
@@ -84,12 +108,12 @@
 				<node x="-2238" y="-93194" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_08">
 		<territories>
@@ -97,12 +121,12 @@
 				<node x="-9939" y="-96371" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_09">
 		<territories>
@@ -110,12 +134,12 @@
 				<node x="-7072" y="-93853" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_10">
 		<territories>
@@ -123,12 +147,12 @@
 				<node x="-10869" y="-92409" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_11">
 		<territories>
@@ -136,12 +160,12 @@
 				<node x="-13779" y="-92626" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_12">
 		<territories>
@@ -149,12 +173,12 @@
 				<node x="-15177" y="-97374" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_13">
 		<territories>
@@ -162,12 +186,12 @@
 				<node x="-14389" y="-94708" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_14">
 		<territories>
@@ -175,12 +199,12 @@
 				<node x="-20964" y="-96474" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_15">
 		<territories>
@@ -188,12 +212,12 @@
 				<node x="-24507" y="-97693" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_16">
 		<territories>
@@ -201,12 +225,12 @@
 				<node x="-27091" y="-95563" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_17">
 		<territories>
@@ -214,12 +238,12 @@
 				<node x="-27737" y="-93411" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_18">
 		<territories>
@@ -227,12 +251,12 @@
 				<node x="-27416" y="-89601" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_19">
 		<territories>
@@ -240,12 +264,12 @@
 				<node x="-26961" y="-86833" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_20">
 		<territories>
@@ -253,12 +277,12 @@
 				<node x="-23886" y="-89210" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_21">
 		<territories>
@@ -266,12 +290,12 @@
 				<node x="-23579" y="-86730" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_22">
 		<territories>
@@ -279,12 +303,12 @@
 				<node x="-26301" y="-82485" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_23">
 		<territories>
@@ -292,12 +316,12 @@
 				<node x="-24862" y="-80115" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_24">
 		<territories>
@@ -305,12 +329,12 @@
 				<node x="-21342" y="-80132" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_25">
 		<territories>
@@ -318,12 +342,12 @@
 				<node x="-21802" y="-88176" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_26">
 		<territories>
@@ -331,12 +355,12 @@
 				<node x="-20178" y="-90653" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_27">
 		<territories>
@@ -344,12 +368,12 @@
 				<node x="-21912" y="-93082" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_28">
 		<territories>
@@ -357,12 +381,12 @@
 				<node x="-24324" y="-92334" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_29">
 		<territories>
@@ -370,12 +394,12 @@
 				<node x="-23960" y="-94767" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_30">
 		<territories>
@@ -383,12 +407,12 @@
 				<node x="-16660" y="-89043" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_31">
 		<territories>
@@ -396,12 +420,12 @@
 				<node x="-15513" y="-86132" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_32">
 		<territories>
@@ -409,12 +433,12 @@
 				<node x="-11220" y="-86064" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_33">
 		<territories>
@@ -422,12 +446,12 @@
 				<node x="-7582" y="-84332" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_34">
 		<territories>
@@ -435,12 +459,12 @@
 				<node x="-6591" y="-80168" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_35">
 		<territories>
@@ -448,12 +472,12 @@
 				<node x="-1950" y="-85308" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_36">
 		<territories>
@@ -461,12 +485,12 @@
 				<node x="-1677" y="-87825" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_37">
 		<territories>
@@ -474,12 +498,12 @@
 				<node x="-1531" y="-90184" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_38">
 		<territories>
@@ -487,12 +511,12 @@
 				<node x="-3815" y="-86936" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_39">
 		<territories>
@@ -500,12 +524,12 @@
 				<node x="-5110" y="-90070" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_40">
 		<territories>
@@ -513,12 +537,12 @@
 				<node x="-9115" y="-89167" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_41">
 		<territories>
@@ -526,12 +550,12 @@
 				<node x="-6495" y="-86117" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_42">
 		<territories>
@@ -539,12 +563,12 @@
 				<node x="-4962" y="-84035" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_43">
 		<territories>
@@ -552,12 +576,12 @@
 				<node x="-12269" y="-89012" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_44">
 		<territories>
@@ -565,12 +589,12 @@
 				<node x="-14222" y="-87906" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_45">
 		<territories>
@@ -578,12 +602,12 @@
 				<node x="-18078" y="-84838" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_46">
 		<territories>
@@ -591,12 +615,12 @@
 				<node x="-18432" y="-87897" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_47">
 		<territories>
@@ -604,12 +628,12 @@
 				<node x="-15614" y="-82602" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_48">
 		<territories>
@@ -617,25 +641,12 @@
 				<node x="-17838" y="-80439" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
-	</spawn>
-	<spawn name="ImmortalPlateau_Monsters_49">
-		<territories>
-			<territory shape="Cylinder" minZ="-3383" maxZ="-3333" rad="300">
-				<node x="-13873" y="-80473" />
-			</territory>
-		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_50">
 		<territories>
@@ -643,12 +654,12 @@
 				<node x="-15347" y="-77955" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_51">
 		<territories>
@@ -656,12 +667,12 @@
 				<node x="-21060" y="-77487" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_52">
 		<territories>
@@ -669,12 +680,12 @@
 				<node x="2178" y="-76587" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_53">
 		<territories>
@@ -682,12 +693,12 @@
 				<node x="1720" y="-74664" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_54">
 		<territories>
@@ -695,12 +706,12 @@
 				<node x="3120" y="-83635" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_55">
 		<territories>
@@ -708,12 +719,12 @@
 				<node x="4486" y="-85801" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_56">
 		<territories>
@@ -721,12 +732,12 @@
 				<node x="4838" y="-89599" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_57">
 		<territories>
@@ -734,12 +745,12 @@
 				<node x="13401" y="-93436" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_58">
 		<territories>
@@ -747,12 +758,12 @@
 				<node x="14953" y="-96078" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_59">
 		<territories>
@@ -760,12 +771,12 @@
 				<node x="7219" y="-89103" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_60">
 		<territories>
@@ -773,12 +784,12 @@
 				<node x="7414" y="-91366" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_61">
 		<territories>
@@ -786,12 +797,12 @@
 				<node x="5464" y="-92769" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_62">
 		<territories>
@@ -799,12 +810,12 @@
 				<node x="6926" y="-95200" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_63">
 		<territories>
@@ -812,12 +823,12 @@
 				<node x="2906" y="-90757" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_64">
 		<territories>
@@ -825,12 +836,12 @@
 				<node x="991" y="-81629" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_65">
 		<territories>
@@ -838,12 +849,12 @@
 				<node x="900" y="-84867" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_66">
 		<territories>
@@ -851,12 +862,12 @@
 				<node x="894" y="-87281" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_67">
 		<territories>
@@ -864,12 +875,12 @@
 				<node x="702" y="-78460" />
 			</territory>
 		</territories>
-		<npc id="23882" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_68">
 		<territories>
@@ -877,12 +888,12 @@
 				<node x="2460" y="-93927" />
 			</territory>
 		</territories>
-		<npc id="23882" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 	<spawn name="ImmortalPlateau_Monsters_69">
 		<territories>
@@ -890,11 +901,11 @@
 				<node x="-23729" y="-84216" />
 			</territory>
 		</territories>
-		<npc id="23882" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
-		<npc id="23883" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
-		<npc id="23884" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23885" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
-		<npc id="23886" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
-		<npc id="23887" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
+		<npc id="23882" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Magus -->
+		<npc id="23883" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Scout -->
+		<npc id="23884" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23885" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Pikeman -->
+		<npc id="23886" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Special Support Warrior -->
+		<npc id="23887" count="3" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Support Berserker -->
 	</spawn>
 </list>

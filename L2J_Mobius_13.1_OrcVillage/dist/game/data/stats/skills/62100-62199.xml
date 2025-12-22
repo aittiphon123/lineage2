@@ -380,47 +380,119 @@
 	</skill>
 	<skill id="62151" toLevel="1" name="Kasha Sniper's Power Shot">
 		<operateType>A1</operateType>
-		<castRange>1500</castRange>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>500</hitTime>
+		<reuseDelay>10</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.020</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62152" toLevel="1" name="Kasha's Grave Destruction">
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>500</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>80</castRange>
-		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<coolTime>500</coolTime>
 		<hitTime>1500</hitTime>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.025</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62153" toLevel="1" name="Kasha's Chaos Magic Burst">
 		<operateType>A1</operateType>
-		<castRange>1500</castRange>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>500</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>600</castRange>
 		<effectPoint>-115</effectPoint>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>130</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10</reuseDelay>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>20000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62154" toLevel="1" name="Kasha Sniper's Enchanted Power Shot">
 		<operateType>A1</operateType>
-		<castRange>1500</castRange>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>500</hitTime>
+		<reuseDelay>10</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.030</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62155" toLevel="1" name="Kasha's Enchanted Grave Destruction">
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>500</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>80</castRange>
-		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<coolTime>500</coolTime>
 		<hitTime>1500</hitTime>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.035</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62156" toLevel="1" name="Kasha's Enchanted Chaos Magic Burst">
 		<operateType>A1</operateType>
-		<castRange>1500</castRange>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>500</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>600</castRange>
 		<effectPoint>-115</effectPoint>
 		<hitTime>1500</hitTime>
-		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<magicLevel>126</magicLevel>
+		<isMagic>1</isMagic>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>15000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62157" toLevel="1" name="Kasha Sniper's Critical Power Shot">
 		<operateType>A1</operateType>

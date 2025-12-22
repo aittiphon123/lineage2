@@ -117,10 +117,21 @@
 	</skill>
 	<skill id="62211" toLevel="1" name="Kasha's Grave Attack">
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>80</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-115</effectPoint>
 		<hitTime>500</hitTime>
+		<isMagic>1</isMagic>
+		<magicLevel>126</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>15000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62212" toLevel="1" name="Kasha's Enchanted Grave Attack">
 		<operateType>A1</operateType>
@@ -215,10 +226,21 @@
 	</skill>
 	<skill id="62223" toLevel="1" name="Kasha's Enchanted Grave Attack">
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>80</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-115</effectPoint>
-		<hitTime>500</hitTime>
+		<hitTime>1500</hitTime>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.025</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62224" toLevel="1" name="Kasha's Avatar Atrus">
 		<!-- Once of the High Orcs, Atrus lost his way tempted by the Chaos Power. Now he knows only one master - Kasha. <Bonus stats>. Max received damage is fixed at 2,000,000. Received damage from basic attacks -30%, Accuracy/ Evasion +200. <Spawn requirements>. Spawns in Kasha Orc Fortress at 21:00 every Wednesday and Saturday, and disappears in 20 min. <Reward requirements>. The defeat contribution reward is only given to 200 top-damage characters. The damage dealt by a character has to be at least 0.1% of the boss' Max HP. The first/ last hit reward is given to characters who have fulfilled the requirements for the defeat contribution reward as well as have delivered the first/ last blow. The top-damage reward is given to characters who have fulfilled the requirements for the defeat contribution reward as well as have achieved the 1st-10th rank in the damage rank list. -->

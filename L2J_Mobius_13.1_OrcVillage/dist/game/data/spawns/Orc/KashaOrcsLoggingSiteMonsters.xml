@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="kashaorcsloggingsite_01_001" ai="NoRandomActivity">
+		<parameters>
+			<param name="disableRandomWalk" value="true" />
+		</parameters>
+		<group name="kashaorcsloggingsite_01_001_group">
+			<npc id="23889" x="19022" y="-149100" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="30sec" /> <!-- Nerva Orc Bloodhound -->
+			<npc id="23895" x="19032" y="-148775" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="20sec" /> <!-- Kasha Orc Training Mentor -->
+			<npc id="23894" x="19041" y="-148450" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="20sec" /> <!-- Nerva Orc Commander -->
+			<npc id="23895" x="19051" y="-148127" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="20sec" /> <!-- Kasha Orc Training Mentor -->
+			<npc id="23888" x="19061" y="-147802" z="-240" heading="32456" respawnRandom="0sec" chaseRange="900" respawnTime="10sec" /> <!-- Nerva Orc Priest -->
+			<npc id="23888" x="18523" y="-149085" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="10sec" /> <!-- Nerva Orc Priest -->
+			<npc id="23892" x="18533" y="-148760" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="35sec" /> <!-- Nerva Orc Footman -->
+			<npc id="23892" x="18542" y="-148436" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="35sec" /> <!-- Nerva Orc Footman -->
+			<npc id="23892" x="18551" y="-148112" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="35sec" /> <!-- Nerva Orc Footman -->
+			<npc id="23889" x="18561" y="-147787" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="30sec" /> <!-- Nerva Orc Bloodhound -->
+			<npc id="23891" x="18797" y="-148440" z="-250" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="30sec" /> <!-- Nerva Orc Reservist-->
+			<npc id="23889" x="18023" y="-149070" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="30sec" /> <!-- Nerva Orc Bloodhound -->
+			<npc id="23893" x="18033" y="-148745" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="20sec" /> <!-- Nerva Orc Woodcutter -->
+			<npc id="23893" x="18043" y="-148422" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="20sec" /> <!-- Nerva Orc Woodcutter -->
+			<npc id="23893" x="18052" y="-148097" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="20sec" /> <!-- Nerva Orc Woodcutter -->
+			<npc id="23888" x="18062" y="-147772" z="-240" heading="16072" respawnRandom="0sec" chaseRange="900" respawnTime="10sec" /> <!-- Nerva Orc Priest -->
+			<npc id="23890" x="18806" y="-148116" z="-264" heading="32456" respawnRandom="0sec" chaseRange="900" respawnTime="40sec" /> <!-- Nerva Orc Fanatic -->
+			<npc id="23890" x="18815" y="-148783" z="-264" heading="32456" respawnRandom="0sec" chaseRange="900" respawnTime="40sec" /> <!-- Nerva Orc Fanatic -->
+		</group>
+	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_01">
 		<territories>
 			<territory shape="Cylinder" minZ="-725" maxZ="-675" rad="300">
 				<node x="4509" y="-140483" />
 			</territory>
 		</territories>
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_02">
 		<territories>
@@ -19,12 +44,12 @@
 				<node x="5063" y="-138667" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_03">
 		<territories>
@@ -32,12 +57,12 @@
 				<node x="7045" y="-140165" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_04">
 		<territories>
@@ -45,12 +70,12 @@
 				<node x="9568" y="-138522" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_05">
 		<territories>
@@ -58,12 +83,12 @@
 				<node x="9373" y="-136206" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_06">
 		<territories>
@@ -71,12 +96,12 @@
 				<node x="5657" y="-135557" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_07">
 		<territories>
@@ -84,12 +109,12 @@
 				<node x="8222" y="-134159" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_08">
 		<territories>
@@ -97,12 +122,12 @@
 				<node x="12318" y="-134501" />
 			</territory>
 		</territories>
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_09">
 		<territories>
@@ -110,12 +135,12 @@
 				<node x="13277" y="-132433" />
 			</territory>
 		</territories>
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_10">
 		<territories>
@@ -123,12 +148,12 @@
 				<node x="12720" y="-136349" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_11">
 		<territories>
@@ -136,12 +161,12 @@
 				<node x="14959" y="-135216" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_12">
 		<territories>
@@ -149,12 +174,12 @@
 				<node x="13896" y="-138749" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_13">
 		<territories>
@@ -162,12 +187,12 @@
 				<node x="12164" y="-140307" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_14">
 		<territories>
@@ -175,12 +200,12 @@
 				<node x="10270" y="-141651" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_15">
 		<territories>
@@ -188,12 +213,12 @@
 				<node x="7382" y="-142856" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_16">
 		<territories>
@@ -201,12 +226,12 @@
 				<node x="11986" y="-143192" />
 			</territory>
 		</territories>
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_17">
 		<territories>
@@ -214,12 +239,12 @@
 				<node x="14402" y="-140840" />
 			</territory>
 		</territories>
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_18">
 		<territories>
@@ -227,12 +252,12 @@
 				<node x="14095" y="-143389" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_19">
 		<territories>
@@ -240,12 +265,12 @@
 				<node x="8536" y="-144235" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_20">
 		<territories>
@@ -253,12 +278,12 @@
 				<node x="8008" y="-146513" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_21">
 		<territories>
@@ -266,12 +291,12 @@
 				<node x="8074" y="-148581" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_22">
 		<territories>
@@ -279,12 +304,12 @@
 				<node x="10113" y="-147321" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_23">
 		<territories>
@@ -292,12 +317,12 @@
 				<node x="11085" y="-145615" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_24">
 		<territories>
@@ -305,12 +330,12 @@
 				<node x="15771" y="-146487" />
 			</territory>
 		</territories>
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_25">
 		<territories>
@@ -318,12 +343,12 @@
 				<node x="15887" y="-149470" />
 			</territory>
 		</territories>
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_26">
 		<territories>
@@ -331,12 +356,12 @@
 				<node x="17935" y="-143483" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_27">
 		<territories>
@@ -344,12 +369,12 @@
 				<node x="20307" y="-144331" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_28">
 		<territories>
@@ -357,12 +382,12 @@
 				<node x="19297" y="-141158" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_29">
 		<territories>
@@ -370,12 +395,12 @@
 				<node x="21597" y="-142014" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_30">
 		<territories>
@@ -383,12 +408,12 @@
 				<node x="21979" y="-145057" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_31">
 		<territories>
@@ -396,12 +421,12 @@
 				<node x="24091" y="-143556" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_32">
 		<territories>
@@ -409,12 +434,12 @@
 				<node x="23605" y="-146424" />
 			</territory>
 		</territories>
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_33">
 		<territories>
@@ -422,12 +447,12 @@
 				<node x="25267" y="-145019" />
 			</territory>
 		</territories>
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_34">
 		<territories>
@@ -435,12 +460,12 @@
 				<node x="21211" y="-139566" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_35">
 		<territories>
@@ -448,12 +473,12 @@
 				<node x="23570" y="-140075" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_36">
 		<territories>
@@ -461,12 +486,12 @@
 				<node x="25391" y="-140789" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_37">
 		<territories>
@@ -474,12 +499,12 @@
 				<node x="25116" y="-138432" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_38">
 		<territories>
@@ -487,12 +512,12 @@
 				<node x="23407" y="-136604" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_39">
 		<territories>
@@ -500,12 +525,12 @@
 				<node x="21803" y="-134316" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_40">
 		<territories>
@@ -513,12 +538,12 @@
 				<node x="19943" y="-136370" />
 			</territory>
 		</territories>
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_41">
 		<territories>
@@ -526,12 +551,12 @@
 				<node x="19182" y="-138528" />
 			</territory>
 		</territories>
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_42">
 		<territories>
@@ -539,12 +564,12 @@
 				<node x="17570" y="-136706" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23891" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23891" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_43">
 		<territories>
@@ -552,12 +577,12 @@
 				<node x="16345" y="-138220" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23892" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23892" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 	<spawn name="KashaOrcsLoggingSite_Monsters_44">
 		<territories>
@@ -565,26 +590,11 @@
 				<node x="16992" y="-141678" />
 			</territory>
 		</territories>
-		<npc id="23888" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23893" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="1" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
-	</spawn>
-	<spawn name="KashaOrcsLoggingSite_Monsters_45">
-		<territories>
-			<territory shape="Cylinder" minZ="-250" maxZ="-200" rad="500">
-				<node x="18591" y="-148490" />
-			</territory>
-		</territories>
-		<npc id="23888" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
-		<npc id="23889" count="3" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
-		<npc id="23890" count="2" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
-		<npc id="23891" count="2" respawnTime="10sec" chaseRange="900" /> <!-- Nerva Orc Reservist -->
-		<npc id="23892" count="2" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Footman -->
-		<npc id="23893" count="2" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
-		<npc id="23894" count="2" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
-		<npc id="23895" count="2" respawnTime="10sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
+		<npc id="23888" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Priest -->
+		<npc id="23889" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Bloodhound -->
+		<npc id="23890" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Nerva Orc Famatic -->
+		<npc id="23893" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Woodcutter -->
+		<npc id="23894" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Commander -->
+		<npc id="23895" count="1" respawnTime="2sec" chaseRange="900" /> <!-- Kasha Orc Training Mentor -->
 	</spawn>
 </list>
