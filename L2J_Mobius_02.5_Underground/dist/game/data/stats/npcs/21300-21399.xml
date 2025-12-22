@@ -7575,7 +7575,7 @@
 		<acquire exp="105414" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="3044.05888538381" hpRegen="8.823" mp="1812.65206812652" mpRegen="3.111" />
-			<attack physical="394.302304481945" magical="654.837912317486" random="5" critical="8" accuracy="5" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<attack physical="394.302304481945" magical="654.837912317486" random="5" critical="8" accuracy="5" attackSpeed="253" reuseDelay="1500" type="BOW" range="100" distance="10" width="0" />
 			<defence physical="294.069395455664" magical="298.859514734334" evasion="5" />
 			<speed>
 				<walk ground="1" />
@@ -7584,7 +7584,7 @@
 			<hitTime>480</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status undying="false" canBeSown="true" />
+		<status undying="false" canMove="false" canBeSown="true" />
 		<skillList>
 			<skill id="4009" level="3" /> <!-- Fire Resistance -->
 			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
@@ -7604,7 +7604,7 @@
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="true">
 			<clanList>
 				<clan>FIRE</clan>
 			</clanList>

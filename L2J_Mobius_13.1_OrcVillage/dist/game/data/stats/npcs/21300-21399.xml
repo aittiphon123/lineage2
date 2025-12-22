@@ -6635,7 +6635,7 @@
 		<acquire exp="11" sp="1" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="15224.61" hpRegen="8.823" mp="1812.948" mpRegen="3.111" />
-			<attack physical="985.66600746" magical="699.2575207596" random="5" critical="8" accuracy="5" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<attack physical="985.66600746" magical="699.2575207596" random="5" critical="8" accuracy="5" attackSpeed="253" type="BOW" range="100" distance="10" width="0" />
 			<defence physical="367.3536375" magical="253.534464" />
 			<speed>
 				<walk ground="1" />
@@ -6644,7 +6644,7 @@
 			<hitTime>480</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" canMove="false" canBeSown="true" />
 		<skillList>
 			<skill id="4416" level="2" /> <!-- Magical Creatures -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -6663,7 +6663,7 @@
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="true">
 			<clanList>
 				<clan>FIRE</clan>
 			</clanList>
