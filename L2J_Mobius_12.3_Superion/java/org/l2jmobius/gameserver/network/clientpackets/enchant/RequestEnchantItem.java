@@ -29,7 +29,6 @@ import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.EnchantItemData;
 import org.l2jmobius.gameserver.data.xml.ItemCrystallizationData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
-import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
@@ -400,7 +399,7 @@ public class RequestEnchantItem extends ClientPacket
 								return;
 							}
 							
-							World.getInstance().removeObject(item);
+							// World.getInstance().removeObject(item);
 							
 							int count = 0;
 							if (item.getTemplate().isCrystallizable())
