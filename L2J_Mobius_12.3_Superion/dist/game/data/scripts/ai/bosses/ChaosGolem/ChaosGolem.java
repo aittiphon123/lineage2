@@ -22,10 +22,15 @@ package ai.bosses.ChaosGolem;
 
 import java.util.Calendar;
 
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.time.TimeUtil;
+import org.l2jmobius.gameserver.data.xml.NpcData;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.model.Location;
+import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 
@@ -67,13 +72,55 @@ public class ChaosGolem extends Script
 		{
 			case "spawnGolem17":
 			{
-				addSpawn(GOLEM_17, GOLEM_17_SPAWN_LOC.getX(), GOLEM_17_SPAWN_LOC.getY(), GOLEM_17_SPAWN_LOC.getZ(), 0, false, DESPAWN_DELAY, false);
+				try
+				{
+					final NpcTemplate template = NpcData.getInstance().getTemplate(GOLEM_17);
+					final Spawn spawn = new Spawn(template);
+					spawn.setXYZ(GOLEM_17_SPAWN_LOC);
+					spawn.setHeading(0);
+					spawn.setRespawnDelay(0);
+					final Npc golem = DatabaseSpawnManager.getInstance().addNewSpawn(spawn, false);
+					ThreadPool.schedule(() ->
+					{
+						if ((golem != null) && !golem.isDead())
+						{
+							DatabaseSpawnManager.getInstance().deleteSpawn(spawn, false);
+							golem.deleteMe();
+						}
+					}, DESPAWN_DELAY);
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+				
 				scheduleGolem17();
 				break;
 			}
 			case "spawnGolem18":
 			{
-				addSpawn(GOLEM_18, GOLEM_18_SPAWN_LOC.getX(), GOLEM_18_SPAWN_LOC.getY(), GOLEM_18_SPAWN_LOC.getZ(), 0, false, DESPAWN_DELAY, false);
+				try
+				{
+					final NpcTemplate template = NpcData.getInstance().getTemplate(GOLEM_18);
+					final Spawn spawn = new Spawn(template);
+					spawn.setXYZ(GOLEM_18_SPAWN_LOC);
+					spawn.setHeading(0);
+					spawn.setRespawnDelay(0);
+					final Npc golem = DatabaseSpawnManager.getInstance().addNewSpawn(spawn, false);
+					ThreadPool.schedule(() ->
+					{
+						if ((golem != null) && !golem.isDead())
+						{
+							DatabaseSpawnManager.getInstance().deleteSpawn(spawn, false);
+							golem.deleteMe();
+						}
+					}, DESPAWN_DELAY);
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+				
 				scheduleGolem18();
 				break;
 			}

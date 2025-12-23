@@ -2,18 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn name="PavelRuinsMonsters">
 		<group>
-			<npc id="22801" x="86946" y="-120376" z="-4384" heading="28181" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="85875" y="-120523" z="-4368" heading="34713" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="86483" y="-120751" z="-4384" heading="18485" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="86229" y="-121546" z="-4384" heading="3086" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="86110" y="-122276" z="-4384" heading="54840" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="86209" y="-122144" z="-4376" heading="46704" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="87296" y="-122062" z="-4400" heading="45231" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="86575" y="-121414" z="-4392" heading="47714" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="85033" y="-121822" z="-4376" heading="4651" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="85106" y="-122204" z="-4392" heading="56230" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="85511" y="-123018" z="-4392" heading="31764" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22801" x="84727" y="-122906" z="-4392" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
 			<npc id="22801" x="91627" y="-129291" z="-4232" heading="1356" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
 			<npc id="22801" x="91023" y="-127425" z="-4256" heading="38646" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
 			<npc id="22801" x="90539" y="-127121" z="-4272" heading="43195" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
@@ -26,18 +14,6 @@
 			<npc id="22801" x="93051" y="-128393" z="-4320" heading="52086" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
 			<npc id="22801" x="92229" y="-126531" z="-4280" heading="47538" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
 			<npc id="22801" x="92225" y="-126335" z="-4280" heading="33388" respawnTime="60sec" chaseRange="2500" /> <!-- Cruel Pincer Golem -->
-			<npc id="22804" x="86109" y="-119749" z="-4384" heading="35335" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="87004" y="-120578" z="-4384" heading="59984" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="87162" y="-121251" z="-4344" heading="11111" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="86396" y="-121676" z="-4384" heading="34441" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="86692" y="-121251" z="-4392" heading="8502" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="85843" y="-121409" z="-4392" heading="56123" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="87379" y="-122034" z="-4392" heading="30701" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="85015" y="-120964" z="-4376" heading="61959" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="85094" y="-122021" z="-4384" heading="26318" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="85903" y="-121542" z="-4392" heading="62981" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="84963" y="-122581" z="-4392" heading="26016" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
-			<npc id="22804" x="84501" y="-122829" z="-4392" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
 			<npc id="22804" x="91400" y="-129270" z="-4272" heading="5056" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
 			<npc id="22804" x="90704" y="-127284" z="-4248" heading="57841" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
 			<npc id="22804" x="91092" y="-128439" z="-4280" heading="62257" respawnTime="60sec" chaseRange="2500" /> <!-- Horrifying Jackhammer Golem -->
@@ -57,25 +33,8 @@
 			<npc id="22807" x="89486" y="-114859" z="-3328" heading="18502" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
 			<npc id="22807" x="89984" y="-115112" z="-3336" heading="38998" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
 			<npc id="22807" x="87178" y="-117171" z="-3472" heading="56691" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="86877" y="-120689" z="-4376" heading="41147" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="86014" y="-119852" z="-4384" heading="19511" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="86120" y="-120577" z="-4384" heading="2807" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
 			<npc id="22807" x="87063" y="-116490" z="-3472" heading="7047" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
 			<npc id="22807" x="87517" y="-116846" z="-3464" heading="7474" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="84795" y="-120253" z="-4400" heading="11763" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="84908" y="-120858" z="-4384" heading="1787" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="86080" y="-121800" z="-4392" heading="11850" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="87909" y="-121710" z="-4368" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="87766" y="-121327" z="-4360" heading="64741" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="87559" y="-121091" z="-4352" heading="63738" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="86649" y="-121048" z="-4392" heading="39981" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="86005" y="-121705" z="-4392" heading="13915" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="85159" y="-121989" z="-4384" heading="14856" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="85105" y="-122917" z="-4392" heading="16554" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="84644" y="-121421" z="-4392" heading="20969" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="86050" y="-123204" z="-4384" heading="63418" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="84614" y="-122906" z="-4392" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
-			<npc id="22807" x="85539" y="-123120" z="-4392" heading="57298" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
 			<npc id="22807" x="88788" y="-124622" z="-3792" heading="6169" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
 			<npc id="22807" x="89009" y="-124711" z="-3832" heading="5583" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
 			<npc id="22807" x="87568" y="-125048" z="-3712" respawnTime="60sec" chaseRange="2500" /> <!-- Scout-type Golem No. 28 -->
