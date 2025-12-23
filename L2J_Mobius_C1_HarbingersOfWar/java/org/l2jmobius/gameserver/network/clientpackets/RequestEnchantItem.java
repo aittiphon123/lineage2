@@ -26,7 +26,6 @@ import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.EnchantItemData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
-import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.enchant.EnchantResultType;
@@ -75,8 +74,9 @@ public class RequestEnchantItem extends ClientPacket
 		
 		if (player.isProcessingTransaction() || player.isInStoreMode())
 		{
-			player.sendMessage("You cannot practice enchanting while operating a private store or private manufacturing workshop.");
 			player.setActiveEnchantItemId(Player.ID_NONE);
+			player.sendPacket(new EnchantResult(0));
+			player.sendMessage("You cannot practice enchanting while operating a private store or private manufacturing workshop.");
 			return;
 		}
 		
@@ -85,8 +85,8 @@ public class RequestEnchantItem extends ClientPacket
 		if ((item == null) || (scroll == null))
 		{
 			player.setActiveEnchantItemId(Player.ID_NONE);
-			player.sendPacket(SystemMessageId.THE_SCROLL_OF_ENCHANT_CANNOT_BE_CANCELLED);
 			player.sendPacket(new EnchantResult(0));
+			player.sendPacket(SystemMessageId.THE_SCROLL_OF_ENCHANT_CANNOT_BE_CANCELLED);
 			return;
 		}
 		
@@ -102,8 +102,9 @@ public class RequestEnchantItem extends ClientPacket
 		// first validation check - also over enchant check
 		if (!scrollTemplate.isValid(item) || (PlayerConfig.DISABLE_OVER_ENCHANTING && (item.getEnchantLevel() == scrollTemplate.getMaxEnchantLevel())))
 		{
-			player.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
 			player.setActiveEnchantItemId(Player.ID_NONE);
+			player.sendPacket(new EnchantResult(0));
+			player.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
 			return;
 		}
 		
@@ -111,9 +112,10 @@ public class RequestEnchantItem extends ClientPacket
 		scroll = player.getInventory().destroyItem(ItemProcessType.FEE, scroll.getObjectId(), 1, player, item);
 		if (scroll == null)
 		{
+			player.setActiveEnchantItemId(Player.ID_NONE);
+			player.sendPacket(new EnchantResult(0));
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to enchant with a scroll he doesn't have", GeneralConfig.DEFAULT_PUNISH);
-			player.setActiveEnchantItemId(Player.ID_NONE);
 			return;
 		}
 		
@@ -123,8 +125,9 @@ public class RequestEnchantItem extends ClientPacket
 			// last validation check
 			if ((item.getOwnerId() != player.getObjectId()) || !item.isEnchantable())
 			{
-				player.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
 				player.setActiveEnchantItemId(Player.ID_NONE);
+				player.sendPacket(new EnchantResult(0));
+				player.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
 				return;
 			}
 			
@@ -133,9 +136,9 @@ public class RequestEnchantItem extends ClientPacket
 			{
 				case ERROR:
 				{
-					player.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
 					player.setActiveEnchantItemId(Player.ID_NONE);
 					player.sendPacket(new EnchantResult(0));
+					player.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
 					break;
 				}
 				case SUCCESS:
@@ -212,8 +215,9 @@ public class RequestEnchantItem extends ClientPacket
 					if (scrollTemplate.isSafe())
 					{
 						// safe enchant - remain old value
-						player.sendMessage("Enchant failed. The enchant level for the corresponding item will be exactly retained.");
 						player.sendPacket(new EnchantResult(0));
+						player.sendMessage("Enchant failed. The enchant level for the corresponding item will be exactly retained.");
+						
 						if (GeneralConfig.LOG_ITEM_ENCHANTS)
 						{
 							final StringBuilder sb = new StringBuilder();
@@ -310,8 +314,6 @@ public class RequestEnchantItem extends ClientPacket
 								}
 								return;
 							}
-							
-							World.getInstance().removeObject(item);
 							
 							final int crystalId = item.getTemplate().getCrystalItemId();
 							if ((crystalId != 0) && item.getTemplate().isCrystallizable())
