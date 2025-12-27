@@ -113,7 +113,7 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 						htmltext = "30566-06.htm";
 					}
 					
-					int reward = (black * 5) + (red * 50);
+					int reward = (black * 3) + (red * 10);
 					if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD)
 					{
 						reward += ((black >= 10) ? ((red >= 1) ? 1800 : 1500) : 0);

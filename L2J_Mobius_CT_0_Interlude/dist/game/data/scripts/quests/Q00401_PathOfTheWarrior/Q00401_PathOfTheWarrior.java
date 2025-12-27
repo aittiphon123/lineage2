@@ -206,14 +206,18 @@ public class Q00401_PathOfTheWarrior extends Quest
 			{
 				if (st.isCond(2) && (getRandom(10) < 4))
 				{
-					giveItems(player, RUSTED_BRONZE_SWORD_1, 1);
 					if (getQuestItemsCount(player, RUSTED_BRONZE_SWORD_1) < 10)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(3, true);
+						giveItems(player, RUSTED_BRONZE_SWORD_1, 1);
+						
+						if (getQuestItemsCount(player, RUSTED_BRONZE_SWORD_1) >= 10)
+						{
+							st.setCond(3, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;
@@ -223,14 +227,18 @@ public class Q00401_PathOfTheWarrior extends Quest
 			{
 				if (st.isCond(5) && (player.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND) == RUSTED_BRONZE_SWORD_3))
 				{
-					giveItems(player, POISON_SPIDER_LEG, 1);
 					if (getQuestItemsCount(player, POISON_SPIDER_LEG) < 20)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(6, true);
+						giveItems(player, POISON_SPIDER_LEG, 1);
+						
+						if (getQuestItemsCount(player, POISON_SPIDER_LEG) >= 20)
+						{
+							st.setCond(6, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;

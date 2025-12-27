@@ -215,14 +215,18 @@ public class Q00410_PathOfThePalusKnight extends Quest
 			{
 				if (st.isCond(1))
 				{
-					giveItems(player, LYCANTHROPE_SKULL, 1);
 					if (getQuestItemsCount(player, LYCANTHROPE_SKULL) < 13)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(2, true);
+						giveItems(player, LYCANTHROPE_SKULL, 1);
+						
+						if (getQuestItemsCount(player, LYCANTHROPE_SKULL) >= 13)
+						{
+							st.setCond(2, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;
@@ -231,18 +235,25 @@ public class Q00410_PathOfThePalusKnight extends Quest
 			{
 				if (st.isCond(4))
 				{
-					giveItems(player, ARACHNID_TRACKER_SILK, 1);
 					if (getQuestItemsCount(player, ARACHNID_TRACKER_SILK) < 5)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else if (hasQuestItems(player, PREDATOR_CARAPACE))
-					{
-						st.setCond(5, true);
-					}
-					else
-					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, ARACHNID_TRACKER_SILK, 1);
+						
+						if (getQuestItemsCount(player, ARACHNID_TRACKER_SILK) >= 5)
+						{
+							if (hasQuestItems(player, PREDATOR_CARAPACE))
+							{
+								st.setCond(5, true);
+							}
+							else
+							{
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							}
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;
@@ -251,14 +262,18 @@ public class Q00410_PathOfThePalusKnight extends Quest
 			{
 				if (st.isCond(4))
 				{
-					giveItems(player, PREDATOR_CARAPACE, 1);
-					if (getQuestItemsCount(player, ARACHNID_TRACKER_SILK) >= 5)
+					if (!hasQuestItems(player, PREDATOR_CARAPACE))
 					{
-						st.setCond(5, true);
-					}
-					else
-					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, PREDATOR_CARAPACE, 1);
+						
+						if (getQuestItemsCount(player, ARACHNID_TRACKER_SILK) >= 5)
+						{
+							st.setCond(5, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;

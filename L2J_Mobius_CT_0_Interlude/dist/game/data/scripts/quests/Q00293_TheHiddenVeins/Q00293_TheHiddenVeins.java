@@ -150,10 +150,18 @@ public class Q00293_TheHiddenVeins extends Quest
 								htmltext = "30535-05.htm";
 							}
 							
-							int reward = (chrysoliteOres * 10) + (hiddenVeinMaps * 1000);
-							if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (chrysoliteOres >= 10))
+							int reward = (chrysoliteOres * 5) + (hiddenVeinMaps * 500);
+							if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD)
 							{
-								reward += 2000;
+								if (chrysoliteOres >= 10)
+								{
+									reward += 2000;
+								}
+								
+								if (hiddenVeinMaps >= 10)
+								{
+									reward += 2000;
+								}
 							}
 							
 							takeItems(player, CHRYSOLITE_ORE, -1);

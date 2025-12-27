@@ -154,25 +154,18 @@ public class Q00414_PathOfTheOrcRaider extends Quest
 					{
 						if (cond == 3)
 						{
-							htmltext = "30501-01.htm";
+							htmltext = hasQuestItems(player, HEAD_OF_BETRAYER) ? "30501-02.htm" : "30501-01.htm";
 						}
 						else if (cond == 4)
 						{
-							if (getQuestItemsCount(player, HEAD_OF_BETRAYER) == 1)
-							{
-								htmltext = "30501-02.htm";
-							}
-							else
-							{
-								htmltext = "30501-03.htm";
-								takeItems(player, BETRAYER_REPORT_1, 1);
-								takeItems(player, BETRAYER_REPORT_2, 1);
-								takeItems(player, HEAD_OF_BETRAYER, -1);
-								giveItems(player, MARK_OF_RAIDER, 1);
-								addExpAndSp(player, 3200, 2360);
-								player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
-								st.exitQuest(true, true);
-							}
+							htmltext = "30501-03.htm";
+							takeItems(player, BETRAYER_REPORT_1, 1);
+							takeItems(player, BETRAYER_REPORT_2, 1);
+							takeItems(player, HEAD_OF_BETRAYER, -1);
+							giveItems(player, MARK_OF_RAIDER, 1);
+							addExpAndSp(player, 3200, 2360);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(true, true);
 						}
 						break;
 					}
@@ -216,28 +209,36 @@ public class Q00414_PathOfTheOrcRaider extends Quest
 			{
 				if (st.isCond(1))
 				{
-					giveItems(player, KURUKA_RATMAN_TOOTH, 1);
 					if (getQuestItemsCount(player, KURUKA_RATMAN_TOOTH) < 10)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(2, true);
+						giveItems(player, KURUKA_RATMAN_TOOTH, 1);
+						
+						if (getQuestItemsCount(player, KURUKA_RATMAN_TOOTH) >= 10)
+						{
+							st.setCond(2, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;
 			}
 			case UMBAR_ORC:
 			{
-				if ((st.isCond(3) || st.isCond(4)) && (getQuestItemsCount(player, HEAD_OF_BETRAYER) < 2) && (getRandom(10) < 2))
+				if (st.isCond(3) && (getQuestItemsCount(player, HEAD_OF_BETRAYER) < 2) && (getRandom(10) < 2))
 				{
-					if (st.isCond(3))
+					giveItems(player, HEAD_OF_BETRAYER, 1);
+					
+					if (getQuestItemsCount(player, HEAD_OF_BETRAYER) >= 2)
 					{
 						st.setCond(4, true);
 					}
-					
-					giveItems(player, HEAD_OF_BETRAYER, 1);
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
 				}
 				break;
 			}

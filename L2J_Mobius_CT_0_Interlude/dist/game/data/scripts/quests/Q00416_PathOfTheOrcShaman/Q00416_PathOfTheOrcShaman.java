@@ -438,14 +438,18 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 			{
 				if (st.isCond(6))
 				{
-					giveItems(player, GRIZZLY_BLOOD, 1);
 					if (getQuestItemsCount(player, GRIZZLY_BLOOD) < 3)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(7, true);
+						giveItems(player, GRIZZLY_BLOOD, 1);
+						
+						if (getQuestItemsCount(player, GRIZZLY_BLOOD) >= 3)
+						{
+							st.setCond(7, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;

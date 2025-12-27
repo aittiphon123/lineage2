@@ -89,7 +89,7 @@ public class Q00317_CatchTheWind extends Quest
 					htmltext = "30361-07.htm";
 					takeItems(player, WIND_SHARD, -1);
 					
-					int reward = 30 * shards;
+					int reward = 40 * shards;
 					if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (shards >= 10))
 					{
 						reward += 2988;

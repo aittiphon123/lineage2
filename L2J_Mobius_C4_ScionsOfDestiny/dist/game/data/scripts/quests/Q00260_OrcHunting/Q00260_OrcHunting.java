@@ -120,7 +120,7 @@ public class Q00260_OrcHunting extends Quest
 				{
 					htmltext = "30221-05.htm";
 					
-					int reward = (amulet * 5) + (necklace * 15);
+					int reward = (amulet * 12) + (necklace * 30);
 					if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && ((amulet + necklace) >= 10))
 					{
 						reward += 1000;

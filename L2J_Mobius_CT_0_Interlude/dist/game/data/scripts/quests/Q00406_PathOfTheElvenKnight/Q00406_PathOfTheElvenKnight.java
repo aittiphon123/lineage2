@@ -195,14 +195,18 @@ public class Q00406_PathOfTheElvenKnight extends Quest
 			{
 				if (st.isCond(1) && (getRandom(10) < 7))
 				{
-					giveItems(player, TOPAZ_PIECE, 1);
 					if (getQuestItemsCount(player, TOPAZ_PIECE) < 20)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(2, true);
+						giveItems(player, TOPAZ_PIECE, 1);
+						
+						if (getQuestItemsCount(player, TOPAZ_PIECE) >= 20)
+						{
+							st.setCond(2, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;
@@ -211,14 +215,18 @@ public class Q00406_PathOfTheElvenKnight extends Quest
 			{
 				if (st.isCond(4) && (getRandom(10) < 5))
 				{
-					giveItems(player, EMERALD_PIECE, 1);
 					if (getQuestItemsCount(player, EMERALD_PIECE) < 20)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(5, true);
+						giveItems(player, EMERALD_PIECE, 1);
+						
+						if (getQuestItemsCount(player, EMERALD_PIECE) >= 20)
+						{
+							st.setCond(5, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;

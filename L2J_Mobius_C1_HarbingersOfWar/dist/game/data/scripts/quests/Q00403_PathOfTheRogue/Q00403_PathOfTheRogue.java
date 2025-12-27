@@ -213,14 +213,18 @@ public class Q00403_PathOfTheRogue extends Quest
 			{
 				if (st.isCond(2) && (getRandom(10) < 2))
 				{
-					giveItems(player, SPARTOI_BONES, 1);
 					if (getQuestItemsCount(player, SPARTOI_BONES) < 10)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(3, true);
+						giveItems(player, SPARTOI_BONES, 1);
+						
+						if (getQuestItemsCount(player, SPARTOI_BONES) >= 10)
+						{
+							st.setCond(3, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;
@@ -229,14 +233,18 @@ public class Q00403_PathOfTheRogue extends Quest
 			{
 				if (st.isCond(2) && (getRandom(10) < 3))
 				{
-					giveItems(player, SPARTOI_BONES, 1);
 					if (getQuestItemsCount(player, SPARTOI_BONES) < 10)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(3, true);
+						giveItems(player, SPARTOI_BONES, 1);
+						
+						if (getQuestItemsCount(player, SPARTOI_BONES) >= 10)
+						{
+							st.setCond(3, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;
@@ -246,14 +254,18 @@ public class Q00403_PathOfTheRogue extends Quest
 			{
 				if (st.isCond(2) && (getRandom(10) < 8))
 				{
-					giveItems(player, SPARTOI_BONES, 1);
 					if (getQuestItemsCount(player, SPARTOI_BONES) < 10)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(3, true);
+						giveItems(player, SPARTOI_BONES, 1);
+						
+						if (getQuestItemsCount(player, SPARTOI_BONES) >= 10)
+						{
+							st.setCond(3, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;

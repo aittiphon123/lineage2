@@ -26,6 +26,7 @@ import java.util.Map;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
 import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.script.State;
 
@@ -59,10 +60,12 @@ public class Q00038_DragonFangs extends Quest
 	static
 	{
 		// @formatter:off
-		DROPLIST.put(21100, new int[]{1, FEATHER_ORNAMENT, 1000000, 2});
-		DROPLIST.put(20357, new int[]{1, FEATHER_ORNAMENT, 1000000, 2});
-		DROPLIST.put(21101, new int[]{6, TOOTH_OF_DRAGON, 500000, 1});
-		DROPLIST.put(20356, new int[]{6, TOOTH_OF_DRAGON, 500000, 1});
+		
+		DROPLIST.put(21100, new int[]{1, FEATHER_ORNAMENT, 100, 1000000});
+		DROPLIST.put(20357, new int[]{1, FEATHER_ORNAMENT, 100, 1000000});
+		
+		DROPLIST.put(21101, new int[]{6, TOOTH_OF_DRAGON, 50, 500000});
+		DROPLIST.put(20356, new int[]{6, TOOTH_OF_DRAGON, 50, 500000});
 		// @formatter:on
 	}
 	
@@ -234,9 +237,22 @@ public class Q00038_DragonFangs extends Quest
 		}
 		
 		final int[] droplist = DROPLIST.get(npc.getId());
-		if (st.isCond(droplist[0]) && giveItemRandomly(st.getPlayer(), droplist[1], 1, droplist[2], droplist[3] / 1000000d, true))
+		if ((droplist != null) && st.isCond(droplist[0]))
 		{
-			st.setCond(droplist[0] + 1, true);
+			final int itemId = droplist[1];
+			final int amount = droplist[2];
+			final int chance = droplist[3];
+			
+			if (getRandom(1000000) < chance)
+			{
+				giveItems(player, itemId, 1);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				
+				if (getQuestItemsCount(player, itemId) >= amount)
+				{
+					st.setCond(droplist[0] + 1, true);
+				}
+			}
 		}
 	}
 }

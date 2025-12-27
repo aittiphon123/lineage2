@@ -109,7 +109,7 @@ public class Q00316_DestroyPlagueCarriers extends Quest
 					takeItems(player, WERERAT_FANG, -1);
 					takeItems(player, VAROOL_FOULCLAW_FANG, -1);
 					
-					int reward = (ratFangs * 60) + (varoolFangs * 10000);
+					int reward = (ratFangs * 30) + (varoolFangs * 10000);
 					if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (ratFangs >= 10))
 					{
 						reward += 5000;

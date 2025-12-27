@@ -459,14 +459,18 @@ public class Q00417_PathOfTheScavenger extends Quest
 			{
 				if (st.isCond(5) && (npc.asAttackable().getSpoilerObjectId() == player.getObjectId()))
 				{
-					giveItems(player, HONEY_JAR, 1);
-					if ((getQuestItemsCount(player, HONEY_JAR) < 5))
+					if (getQuestItemsCount(player, HONEY_JAR) < 5)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(6, true);
+						giveItems(player, HONEY_JAR, 1);
+						
+						if (getQuestItemsCount(player, HONEY_JAR) >= 5)
+						{
+							st.setCond(6, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;
@@ -476,14 +480,18 @@ public class Q00417_PathOfTheScavenger extends Quest
 			{
 				if (st.isCond(7) && (npc.asAttackable().getSpoilerObjectId() == player.getObjectId()) && (getRandom(100) < (npc.getId() == HUNTER_TARANTULA ? 33 : 60)))
 				{
-					giveItems(player, BEAD, 1);
-					if ((getQuestItemsCount(player, BEAD) < 20))
+					if (getQuestItemsCount(player, BEAD) < 20)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(8, true);
+						giveItems(player, BEAD, 1);
+						
+						if (getQuestItemsCount(player, BEAD) >= 20)
+						{
+							st.setCond(8, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;

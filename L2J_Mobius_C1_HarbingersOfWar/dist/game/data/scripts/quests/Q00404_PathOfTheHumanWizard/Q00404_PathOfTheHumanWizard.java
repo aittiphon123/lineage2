@@ -287,14 +287,18 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 			{
 				if (st.isCond(8) && (getRandom(10) < 8))
 				{
-					giveItems(player, SPARKLE_PEBBLE, 1);
 					if (getQuestItemsCount(player, SPARKLE_PEBBLE) < 2)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
-						st.setCond(9, true);
+						giveItems(player, SPARKLE_PEBBLE, 1);
+						
+						if (getQuestItemsCount(player, SPARKLE_PEBBLE) >= 2)
+						{
+							st.setCond(9, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
 					}
 				}
 				break;

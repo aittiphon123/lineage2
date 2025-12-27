@@ -334,7 +334,7 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 					}
 					else
 					{
-						st.setCond(5);
+						st.setCond(5, true);
 						takeItems(player, KASHA_BLADE_SPIDER_TALON, -1);
 						takeItems(player, LEATHER_POUCH_2, 1);
 						giveItems(player, LEATHER_POUCH_FULL_2, 1);
@@ -365,8 +365,12 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 			{
 				if (st.isCond(11))
 				{
-					giveItems(player, FELIM_LIZARDMAN_TOOTH, 1);
-					if ((getQuestItemsCount(player, FELIM_LIZARDMAN_TOOTH) >= 3) && (getQuestItemsCount(player, RATMAN_FANG) == 3) && (getQuestItemsCount(player, LANG_KLIZARDMAN_TOOTH) == 3) && (getQuestItemsCount(player, VUKU_ORC_TUSK) == 3))
+					if (getQuestItemsCount(player, FELIM_LIZARDMAN_TOOTH) < 3)
+					{
+						giveItems(player, FELIM_LIZARDMAN_TOOTH, 1);
+					}
+					
+					if ((getQuestItemsCount(player, FELIM_LIZARDMAN_TOOTH) >= 3) && (getQuestItemsCount(player, RATMAN_FANG) >= 3) && (getQuestItemsCount(player, LANG_KLIZARDMAN_TOOTH) >= 3) && (getQuestItemsCount(player, VUKU_ORC_TUSK) >= 3))
 					{
 						st.setCond(12, true);
 						takeItems(player, VUKU_ORC_TUSK, -1);
@@ -387,8 +391,12 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 			{
 				if (st.isCond(11))
 				{
-					giveItems(player, VUKU_ORC_TUSK, 1);
-					if ((getQuestItemsCount(player, VUKU_ORC_TUSK) >= 3) && (getQuestItemsCount(player, RATMAN_FANG) == 3) && (getQuestItemsCount(player, LANG_KLIZARDMAN_TOOTH) == 3) && (getQuestItemsCount(player, FELIM_LIZARDMAN_TOOTH) == 3))
+					if (getQuestItemsCount(player, VUKU_ORC_TUSK) < 3)
+					{
+						giveItems(player, VUKU_ORC_TUSK, 1);
+					}
+					
+					if ((getQuestItemsCount(player, VUKU_ORC_TUSK) >= 3) && (getQuestItemsCount(player, RATMAN_FANG) >= 3) && (getQuestItemsCount(player, LANG_KLIZARDMAN_TOOTH) >= 3) && (getQuestItemsCount(player, FELIM_LIZARDMAN_TOOTH) >= 3))
 					{
 						st.setCond(12, true);
 						takeItems(player, VUKU_ORC_TUSK, -1);
@@ -409,8 +417,12 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 			{
 				if (st.isCond(11))
 				{
-					giveItems(player, LANG_KLIZARDMAN_TOOTH, 1);
-					if ((getQuestItemsCount(player, LANG_KLIZARDMAN_TOOTH) >= 3) && (getQuestItemsCount(player, RATMAN_FANG) == 3) && (getQuestItemsCount(player, FELIM_LIZARDMAN_TOOTH) == 3) && (getQuestItemsCount(player, VUKU_ORC_TUSK) == 3))
+					if (getQuestItemsCount(player, LANG_KLIZARDMAN_TOOTH) < 3)
+					{
+						giveItems(player, LANG_KLIZARDMAN_TOOTH, 1);
+					}
+					
+					if ((getQuestItemsCount(player, LANG_KLIZARDMAN_TOOTH) >= 3) && (getQuestItemsCount(player, RATMAN_FANG) >= 3) && (getQuestItemsCount(player, FELIM_LIZARDMAN_TOOTH) >= 3) && (getQuestItemsCount(player, VUKU_ORC_TUSK) >= 3))
 					{
 						st.setCond(12, true);
 						takeItems(player, VUKU_ORC_TUSK, -1);
@@ -431,8 +443,12 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 			{
 				if (st.isCond(11))
 				{
-					giveItems(player, RATMAN_FANG, 1);
-					if ((getQuestItemsCount(player, RATMAN_FANG) >= 3) && (getQuestItemsCount(player, LANG_KLIZARDMAN_TOOTH) == 3) && (getQuestItemsCount(player, FELIM_LIZARDMAN_TOOTH) == 3) && (getQuestItemsCount(player, VUKU_ORC_TUSK) == 3))
+					if (getQuestItemsCount(player, RATMAN_FANG) < 3)
+					{
+						giveItems(player, RATMAN_FANG, 1);
+					}
+					
+					if ((getQuestItemsCount(player, RATMAN_FANG) >= 3) && (getQuestItemsCount(player, LANG_KLIZARDMAN_TOOTH) >= 3) && (getQuestItemsCount(player, FELIM_LIZARDMAN_TOOTH) >= 3) && (getQuestItemsCount(player, VUKU_ORC_TUSK) >= 3))
 					{
 						st.setCond(12, true);
 						takeItems(player, VUKU_ORC_TUSK, -1);

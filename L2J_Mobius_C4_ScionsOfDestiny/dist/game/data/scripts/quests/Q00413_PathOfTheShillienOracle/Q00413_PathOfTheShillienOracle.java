@@ -226,29 +226,36 @@ public class Q00413_PathOfTheShillienOracle extends Quest
 		{
 			if (st.isCond(2))
 			{
-				takeItems(player, BLANK_SHEET, 1);
-				
-				giveItems(player, BLOODY_RUNE, 1);
 				if (getQuestItemsCount(player, BLOODY_RUNE) < 5)
 				{
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				}
-				else
-				{
-					st.setCond(3, true);
+					takeItems(player, BLANK_SHEET, 1);
+					giveItems(player, BLOODY_RUNE, 1);
+					
+					if (getQuestItemsCount(player, BLOODY_RUNE) >= 5)
+					{
+						st.setCond(3, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
 				}
 			}
 		}
 		else if (st.isCond(5))
 		{
-			giveItems(player, ASHEN_BONES, 1);
 			if (getQuestItemsCount(player, ASHEN_BONES) < 10)
 			{
-				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			}
-			else
-			{
-				st.setCond(6, true);
+				giveItems(player, ASHEN_BONES, 1);
+				
+				if (getQuestItemsCount(player, ASHEN_BONES) >= 10)
+				{
+					st.setCond(6, true);
+				}
+				else
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
 			}
 		}
 	}

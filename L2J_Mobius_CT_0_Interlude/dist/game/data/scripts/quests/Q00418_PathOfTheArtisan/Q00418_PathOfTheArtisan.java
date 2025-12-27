@@ -335,7 +335,11 @@ public class Q00418_PathOfTheArtisan extends Quest
 			{
 				if (st.isCond(1) && (getRandom(10) < 7))
 				{
-					giveItems(player, BOOGLE_RATMAN_TOOTH, 1);
+					if (getQuestItemsCount(player, BOOGLE_RATMAN_TOOTH) < 10)
+					{
+						giveItems(player, BOOGLE_RATMAN_TOOTH, 1);
+					}
+					
 					if ((getQuestItemsCount(player, BOOGLE_RATMAN_TOOTH) >= 10) && (getQuestItemsCount(player, BOOGLE_RATMAN_LEADER_TOOTH) >= 2))
 					{
 						st.setCond(2, true);
@@ -351,7 +355,11 @@ public class Q00418_PathOfTheArtisan extends Quest
 			{
 				if (st.isCond(1) && (getRandom(10) < 5))
 				{
-					giveItems(player, BOOGLE_RATMAN_LEADER_TOOTH, 1);
+					if (getQuestItemsCount(player, BOOGLE_RATMAN_LEADER_TOOTH) < 2)
+					{
+						giveItems(player, BOOGLE_RATMAN_LEADER_TOOTH, 1);
+					}
+					
 					if ((getQuestItemsCount(player, BOOGLE_RATMAN_LEADER_TOOTH) >= 2) && (getQuestItemsCount(player, BOOGLE_RATMAN_TOOTH) >= 10))
 					{
 						st.setCond(2, true);

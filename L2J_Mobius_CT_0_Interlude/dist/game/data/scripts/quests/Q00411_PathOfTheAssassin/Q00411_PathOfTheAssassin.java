@@ -236,14 +236,18 @@ public class Q00411_PathOfTheAssassin extends Quest
 		{
 			if (st.isCond(3))
 			{
-				giveItems(player, MOONSTONE_BEAST_MOLAR, 1);
 				if (getQuestItemsCount(player, MOONSTONE_BEAST_MOLAR) < 10)
 				{
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				}
-				else
-				{
-					st.setCond(4, true);
+					giveItems(player, MOONSTONE_BEAST_MOLAR, 1);
+					
+					if (getQuestItemsCount(player, MOONSTONE_BEAST_MOLAR) >= 10)
+					{
+						st.setCond(4, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
 				}
 			}
 		}

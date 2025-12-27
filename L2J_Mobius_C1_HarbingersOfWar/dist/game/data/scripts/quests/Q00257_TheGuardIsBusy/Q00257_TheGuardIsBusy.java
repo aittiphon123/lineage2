@@ -103,7 +103,7 @@ public class Q00257_TheGuardIsBusy extends Quest
 				{
 					htmltext = "30039-07.htm";
 					
-					int reward = (5 * amulets) + (10 * fangs) + (15 * necklaces);
+					int reward = (10 * amulets) + (20 * fangs) + (20 * necklaces);
 					if (!GeneralConfig.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && ((amulets + necklaces + fangs) >= 10))
 					{
 						reward += 1000;
