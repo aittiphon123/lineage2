@@ -496,25 +496,62 @@
 	</skill>
 	<skill id="62157" toLevel="1" name="Kasha Sniper's Critical Power Shot">
 		<operateType>A1</operateType>
-		<castRange>1500</castRange>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
-		<hitTime>500</hitTime>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<magicLevel>126</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.025</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62158" toLevel="1" name="Kasha's Critical Grave Destruction">
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>80</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1500</hitTime>
+		<reuseDelay>10</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.125</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62159" toLevel="1" name="Kasha's Critical Chaos Magic Burst">
 		<operateType>A1</operateType>
-		<castRange>1500</castRange>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>500</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>600</castRange>
 		<effectPoint>-115</effectPoint>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>130</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10</reuseDelay>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>40000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62160" toLevel="1" name="Get Gift">
 		<icon>icon.ev_21th_logo</icon>
