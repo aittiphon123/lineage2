@@ -20,10 +20,12 @@
  */
 package ai.bosses.Coatl;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
@@ -32,13 +34,17 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.data.SpawnTable;
+import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
+import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
+import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
@@ -47,6 +53,7 @@ import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.type.ArenaZone;
 
 /**
+ * Coatl AI
  * @author Notorion
  */
 public class Coatl extends Script
@@ -73,46 +80,47 @@ public class Coatl extends Script
 	private static final Location WATER_TOTEM_LOCATION = new Location(-84415, 209044, -5258, 49298);
 	private static final Location INVISIBLE_COATL_LOCATION = new Location(-84416, 209860, -5254);
 	private static final Location SPAWN_LOCATION = new Location(-84416, 209860, -5254);
-	// private static final Location GLUDIO_LOCATION_OUTSIDE_ARENA = new Location(-12847, 121707, -2969); // Optional, teleport for attackers from outside
-	// private static final Location GLUDIO_LOCATION_PLAYER_EXIT = new Location(-14575, 121425, -3011); // Optional, Teleport for those who left the arena
+	private static final Location GLUDIO_EXIT = new Location(-14575, 121425, -3011); // Kick player loc
+	
 	// Skills
-	// private static final SkillHolder KILL_PLAYERS_SKILL = new SkillHolder(34796, 1);
-	private static final SkillHolder WATER_TOTEM_SKILL = new SkillHolder(34807, 1);
-	// private static final SkillHolder FLAME_TOTEM_SKILL = new SkillHolder(34806, 1);
-	private static final SkillHolder EARTH_TOTEM_SKILL = new SkillHolder(34808, 1);
-	private static final SkillHolder KASHA_TOTEM_SKILL = new SkillHolder(34809, 1);
-	private static final int FLAME_TOTEM_SKILL_ID = 34806;
-	// private static final SkillHolder TOTEMS_SKILL = new SkillHolder(34810, 1);
-	private static final SkillHolder FLAME_EXPLOSION_SKILL = new SkillHolder(34805, 1);
-	private static final SkillHolder EARTH_EXPLOSION_SKILL = new SkillHolder(34811, 1);
-	private static final SkillHolder KASHA_EXPLOSION_SKILL = new SkillHolder(34812, 1);
-	private static final SkillHolder WATER_EXPLOSION_SKILL = new SkillHolder(34813, 1);
+	private static final SkillHolder WATER_TOTEM_SKILL = new SkillHolder(34807, 1); // Totem Protection - Water
+	private static final SkillHolder EARTH_TOTEM_SKILL = new SkillHolder(34808, 1); // Totem Protection - Ice
+	private static final SkillHolder KASHA_TOTEM_SKILL = new SkillHolder(34809, 1); // Totem Protection - Kasha
+	private static final int FLAME_TOTEM_SKILL_ID = 34806; // Totem Protection - Fire
+	private static final SkillHolder FLAME_EXPLOSION_SKILL = new SkillHolder(34805, 1); // Coatl's Rage - Fire
+	private static final SkillHolder EARTH_EXPLOSION_SKILL = new SkillHolder(34811, 1); // Coatl's Rage - Ice
+	private static final SkillHolder KASHA_EXPLOSION_SKILL = new SkillHolder(34812, 1); // Coatl's Rage - Kasha
+	private static final SkillHolder WATER_EXPLOSION_SKILL = new SkillHolder(34813, 1); // Coatl's Rage - Water
 	private static final SkillHolder SKILL_WATER = new SkillHolder(34807, 1);
 	private static final SkillHolder SKILL_KASHA = new SkillHolder(34809, 1);
 	private static final SkillHolder SKILL_EARTH = new SkillHolder(34808, 1);
 	private static final SkillHolder SKILL_FLAME = new SkillHolder(34806, 1);
-	private static final SkillHolder SKILL_1 = new SkillHolder(34789, 1);
-	private static final SkillHolder SKILL_2 = new SkillHolder(34790, 1);
-	private static final SkillHolder SKILL_3 = new SkillHolder(34791, 1);
-	private static final SkillHolder SKILL_4 = new SkillHolder(34792, 1);
-	private static final SkillHolder LIMIT_BARRIER = new SkillHolder(29515, 1);
+	private static final SkillHolder SKILL_1 = new SkillHolder(34789, 1); // Coatl Skill - Coatl's Fireball
+	private static final SkillHolder SKILL_2 = new SkillHolder(34790, 1); // Coatl Skill - Coatl's Stone Throw
+	private static final SkillHolder SKILL_3 = new SkillHolder(34791, 1); // Coatl Skill - Coatl's Kasha Wave
+	private static final SkillHolder SKILL_4 = new SkillHolder(34792, 1); // Coatl Skill - Coatl's Frozen Field
+	
+	private static final SkillHolder BARRIER_INITIAL = new SkillHolder(29518, 1); // Barrier 1
+	private static final SkillHolder BARRIER_TIMED = new SkillHolder(29515, 1); // Barrier 2
+	
+	private static final int HITS_TO_BREAK = 2000; // 2000 hits
+	private static final long TIME_RESET_INACTIVITY = 10 * 60000; // 10 Minutes reset HP
 	
 	// Misc
 	private static final ArenaZone ARENA_ZONE = ZoneManager.getInstance().getZoneByName("Coatls_Lair", ArenaZone.class);
-	private static final int HIT_COUNT = 2000; // 2000 hits to break the barrier.
-	private static final int BARRIER_DURATION_MILLIS = 600000; // 10 minutes barrier duration.
-	private static final int HIT_COUNT_RENEW = 500; // 500 hits in 20 seconds to continue without the barrier.
-	private static final int RENEW_DURATION_MILLIS = 20000; // 20 seconds of Coatl vulnerability, requires 500 hits in 20 seconds.
 	
 	private final Set<Integer> _involvedPlayers = new HashSet<>();
 	private final Map<Creature, Integer> _aggroList = new ConcurrentHashMap<>();
-	private final Map<Npc, Integer> _coatlHits = new ConcurrentHashMap<>();
 	private final Map<String, Object[]> _timerParameters = new HashMap<>();
 	private final Queue<Runnable> _specialMechanicsQueue = new LinkedList<>();
 	
+	private boolean _isInitialBarrier = false;
+	private boolean _isTimedBarrier = false;
+	private final Map<Npc, Integer> _hitCounter = new ConcurrentHashMap<>();
+	private long _lastAction;
+	
+	private boolean _combatLoopStarted = false;
 	private boolean _specialMechanicsActive = false;
-	private boolean _vulnerablePhase = false;
-	private boolean _barrierActivated = false;
 	private boolean _hp76Triggered = false;
 	private boolean _hp70Triggered = false;
 	private boolean _hp50Triggered = false;
@@ -140,8 +148,7 @@ public class Coatl extends Script
 		calendar.set(Calendar.MINUTE, 0);
 		calendar.set(Calendar.SECOND, 0);
 		
-		// Spawn Coatl
-		if ((currentTime > calendar.getTimeInMillis()) && (SpawnTable.getInstance().getAnySpawn(MAIN_BOSS_ID) == null) && GlobalVariablesManager.getInstance().getBoolean("COATL_ALIVE", true))
+		if (GlobalVariablesManager.getInstance().getBoolean("COATL_ALIVE", true))
 		{
 			spawnCoatl();
 		}
@@ -151,15 +158,39 @@ public class Coatl extends Script
 			calendar.add(Calendar.WEEK_OF_YEAR, 1);
 		}
 		
-		ThreadPool.scheduleAtFixedRate(this::spawnCoatl, calendar.getTimeInMillis() - currentTime, 604800000); // 604800000 milissegundos = 1 week
+		ThreadPool.scheduleAtFixedRate(this::spawnCoatl, calendar.getTimeInMillis() - currentTime, 604800000);
 		startQuestTimer("check_arena", 10000, null, null, true);
 	}
 	
 	private void spawnCoatl()
 	{
-		_spawnedMainBoss = addSpawn(MAIN_BOSS_ID, SPAWN_LOCATION);
+		final Spawn oldSpawn = SpawnTable.getInstance().getAnySpawn(MAIN_BOSS_ID);
+		if (oldSpawn != null)
+		{
+			if (oldSpawn.getLastSpawn() != null)
+			{
+				oldSpawn.getLastSpawn().deleteMe();
+			}
+			
+			SpawnTable.getInstance().removeSpawn(oldSpawn);
+		}
+		
+		try
+		{
+			final NpcTemplate template = NpcData.getInstance().getTemplate(MAIN_BOSS_ID);
+			final Spawn spawn = new Spawn(template);
+			spawn.setXYZ(SPAWN_LOCATION);
+			spawn.setHeading(0);
+			spawn.setRespawnDelay(0);
+			_spawnedMainBoss = DatabaseSpawnManager.getInstance().addNewSpawn(spawn, false);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 		
 		GlobalVariablesManager.getInstance().set("COATL_ALIVE", true);
+		// System.out.println("Coatl Manager: Coatl (29408) spawned successfully.");
 		
 		// Spawn.
 		_invisibleCoatl = addSpawn(INVISIBLE_COATL_ID, INVISIBLE_COATL_LOCATION);
@@ -172,7 +203,11 @@ public class Coatl extends Script
 		_earthTotem.setImmobilized(true);
 		_waterTotem = addSpawn(WATER_TOTEM_ID, WATER_TOTEM_LOCATION);
 		_waterTotem.setImmobilized(true);
-		// startQuestTimer("dispel_boss_buffs", 250, null, null, true);
+		
+		applyInitialBarrier(_spawnedMainBoss);
+		
+		_lastAction = System.currentTimeMillis();
+		startQuestTimer("check_activity_task", 60000, null, null);
 	}
 	
 	@Override
@@ -189,21 +224,75 @@ public class Coatl extends Script
 				}
 				break;
 			}
-			case "activate_barrier":
+			case "check_activity_task":
 			{
-				_barrierActivated = true;
-				LIMIT_BARRIER.getSkill().applyEffects(_spawnedMainBoss, _spawnedMainBoss);
-				npc.setInvul(true);
-				_vulnerablePhase = false;
-				startQuestTimer("remove_barrier", BARRIER_DURATION_MILLIS, npc, null);
-				_coatlHits.put(npc, 0);
+				if ((_lastAction + TIME_RESET_INACTIVITY) < System.currentTimeMillis())
+				{
+					if ((_spawnedMainBoss != null) && !_spawnedMainBoss.isDead())
+					{
+						if (_spawnedMainBoss.getCurrentHp() < _spawnedMainBoss.getMaxHp())
+						{
+							resetCoatl(_spawnedMainBoss);
+						}
+					}
+				}
+				else
+				{
+					startQuestTimer("check_activity_task", 60000, null, null);
+				}
 				break;
 			}
-			case "remove_barrier":
+			case "SKILL_LOOP":
 			{
-				_barrierActivated = false;
-				npc.stopSkillEffects(LIMIT_BARRIER.getSkill());
-				_coatlHits.put(npc, 0);
+				if ((_spawnedMainBoss != null) && !_spawnedMainBoss.isDead())
+				{
+					if (!_specialMechanicsActive && !_spawnedMainBoss.isCastingNow())
+					{
+						manageSkills(_spawnedMainBoss);
+					}
+					
+					boolean playersInZone = false;
+					if ((ARENA_ZONE != null) && !ARENA_ZONE.getCharactersInside().isEmpty())
+					{
+						for (Creature c : ARENA_ZONE.getCharactersInside())
+						{
+							if (c.isPlayer() && !c.isDead())
+							{
+								playersInZone = true;
+								break;
+							}
+						}
+					}
+					
+					if (playersInZone)
+					{
+						startQuestTimer("SKILL_LOOP", 250, _spawnedMainBoss, null);
+					}
+					else
+					{
+						_combatLoopStarted = false;
+					}
+				}
+				else
+				{
+					_combatLoopStarted = false;
+				}
+				break;
+			}
+			case "END_VULNERABILITY":
+			{
+				if ((npc != null) && !npc.isDead())
+				{
+					applyTimedBarrier(npc);
+				}
+				break;
+			}
+			case "END_TIMED_BARRIER":
+			{
+				if ((npc != null) && !npc.isDead() && _isTimedBarrier)
+				{
+					applyTimedBarrier(npc);
+				}
 				break;
 			}
 			case "castWaterTotemSkill":
@@ -365,16 +454,20 @@ public class Coatl extends Script
 	
 	private void manageSkills(Npc npc)
 	{
-		if (npc.isCastingNow())
+		if (npc.isCastingNow() || npc.isCoreAIDisabled())
 		{
 			return;
 		}
 		
-		// Optional.
-		// if (npc.isCastingNow() || npc.isCoreAIDisabled() || !npc.isInCombat())
-		// {
-		// return;
-		// }
+		if (_specialMechanicsActive)
+		{
+			return;
+		}
+		
+		if (npc.isAttackingNow())
+		{
+			npc.abortAttack();
+		}
 		
 		_aggroList.forEach((attacker, aggro) ->
 		{
@@ -384,32 +477,45 @@ public class Coatl extends Script
 			}
 		});
 		
-		final Creature topAttacker = _aggroList.entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(null);
-		if ((topAttacker != null) && !_specialMechanicsActive)
+		final Creature target = getTargetLogic(npc);
+		if ((target == null) || target.isDead())
 		{
-			SkillHolder skillToCast = null;
-			final int randomSkill = getRandom(100);
-			if (randomSkill < 49)
-			{
-				skillToCast = SKILL_4;
-			}
-			else if (randomSkill < 50)
-			{
-				skillToCast = SKILL_1;
-			}
-			else if (randomSkill < 70)
-			{
-				skillToCast = SKILL_2;
-			}
-			else
-			{
-				skillToCast = SKILL_3;
-			}
-			
-			if (SkillCaster.checkUseConditions(npc, skillToCast.getSkill()))
-			{
-				npc.doCast(skillToCast.getSkill());
-			}
+			return;
+		}
+		
+		npc.setTarget(target);
+		
+		SkillHolder skillToCast = null;
+		final int randomSkill = getRandom(100);
+		
+		if (randomSkill < 20)
+		{
+			skillToCast = SKILL_4; // 20%
+		}
+		else if (randomSkill < 40)
+		{
+			skillToCast = SKILL_3; // 20%
+		}
+		else if (randomSkill < 70)
+		{
+			skillToCast = SKILL_2; // 30%
+		}
+		else
+		{
+			skillToCast = SKILL_1; // 30%
+		}
+		
+		if (SkillCaster.checkUseConditions(npc, skillToCast.getSkill()))
+		{
+			npc.doCast(skillToCast.getSkill());
+		}
+		else if (SkillCaster.checkUseConditions(npc, SKILL_2.getSkill()))
+		{
+			npc.doCast(SKILL_2.getSkill());
+		}
+		else if (SkillCaster.checkUseConditions(npc, SKILL_1.getSkill()))
+		{
+			npc.doCast(SKILL_1.getSkill());
 		}
 	}
 	
@@ -425,7 +531,7 @@ public class Coatl extends Script
 	{
 		for (Creature creature : ARENA_ZONE.getCharactersInside())
 		{
-			if (!creature.isPlayer())
+			if (!creature.isPlayer() && !creature.isSummon())
 			{
 				continue;
 			}
@@ -476,39 +582,34 @@ public class Coatl extends Script
 	
 	private void checkPlayersInArena()
 	{
-		for (Creature creature : ARENA_ZONE.getCharactersInside())
+		if ((_spawnedMainBoss != null) && !ARENA_ZONE.isInsideZone(_spawnedMainBoss))
 		{
-			if (!creature.isPlayer())
+			_spawnedMainBoss.stopMove(null);
+			_spawnedMainBoss.setXYZ(SPAWN_LOCATION.getX(), SPAWN_LOCATION.getY(), SPAWN_LOCATION.getZ());
+			_spawnedMainBoss.setCurrentHp(_spawnedMainBoss.getMaxHp());
+			_spawnedMainBoss.broadcastPacket(new org.l2jmobius.gameserver.network.serverpackets.ValidateLocation(_spawnedMainBoss));
+		}
+		
+		if (ARENA_ZONE != null)
+		{
+			for (Creature creature : ARENA_ZONE.getCharactersInside())
 			{
-				continue;
-			}
-			
-			if (ARENA_ZONE.isInsideZone(creature))
-			{
-				if (!_involvedPlayers.contains(creature.getObjectId()))
+				if (!creature.isPlayer())
 				{
-					_involvedPlayers.add(creature.getObjectId());
+					continue;
 				}
-			}
-			// else if (involvedPlayers.contains(creature.getObjectId()))
-			// {
-			// creature.teleToLocation(GLUDIO_LOCATION_PLAYER_EXIT, false);
-			// involvedPlayers.remove(creature.getObjectId());
-			// }
-			
-			// if (!ARENA_ZONE.isInsideZone(player) && (creature.getTarget() == _spawnedMainBoss))
-			// {
-			// creature.teleToLocation(GLUDIO_LOCATION_OUTSIDE_ARENA, false);
-			// }
-			
-			if ((_spawnedMainBoss != null) && !ARENA_ZONE.isInsideZone(_spawnedMainBoss))
-			{
-				// Teleporting Coatl to spawn location if leaving arena. Officially Coatl runs to spawn.
-				_spawnedMainBoss.stopMove(null);
-				_spawnedMainBoss.setXYZ(SPAWN_LOCATION.getX(), SPAWN_LOCATION.getY(), SPAWN_LOCATION.getZ());
-				
-				// Restores HP to 100%
-				_spawnedMainBoss.setCurrentHp(_spawnedMainBoss.getMaxHp());
+				if ((creature.getTarget() == _spawnedMainBoss) && !ARENA_ZONE.isInsideZone(creature))
+				{
+					creature.teleToLocation(GLUDIO_EXIT, true);
+					continue;
+				}
+				if (ARENA_ZONE.isInsideZone(creature))
+				{
+					if (!_involvedPlayers.contains(creature.getObjectId()))
+					{
+						_involvedPlayers.add(creature.getObjectId());
+					}
+				}
 			}
 		}
 	}
@@ -516,63 +617,52 @@ public class Coatl extends Script
 	@Override
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
 	{
-		if (!_barrierActivated)
+		_lastAction = System.currentTimeMillis();
+		
+		if ((attacker != null) && (ARENA_ZONE != null) && !ARENA_ZONE.isInsideZone(attacker))
 		{
-			_barrierActivated = true;
-			LIMIT_BARRIER.getSkill().applyEffects(_spawnedMainBoss, _spawnedMainBoss);
-			npc.setInvul(true);
-			startQuestTimer("remove_barrier", BARRIER_DURATION_MILLIS, npc, null);
-			_coatlHits.put(npc, 0);
+			if (isSummon)
+			{
+				for (org.l2jmobius.gameserver.model.actor.Summon summon : attacker.getServitors().values())
+				{
+					if (summon != null)
+					{
+						summon.unSummon(attacker);
+					}
+				}
+			}
+			attacker.teleToLocation(GLUDIO_EXIT, true);
+			return;
 		}
 		
-		if (_vulnerablePhase)
+		if (npc.getId() == MAIN_BOSS_ID)
 		{
-			final int hits = _coatlHits.getOrDefault(npc, 0) + 1;
-			_coatlHits.put(npc, hits);
-			
-			if (hits >= HIT_COUNT_RENEW)
+			if (!_combatLoopStarted)
 			{
-				cancelQuestTimer("activate_barrier", npc, null);
-				startQuestTimer("activate_barrier", RENEW_DURATION_MILLIS, npc, null);
-				_coatlHits.put(npc, 0);
+				_combatLoopStarted = true;
+				startQuestTimer("SKILL_LOOP", 1000, npc, null);
 			}
-		}
-		else
-		{
-			final int hits = _coatlHits.getOrDefault(npc, 0) + 1;
-			_coatlHits.put(npc, hits);
 			
-			if (hits >= HIT_COUNT)
+			if (_isInitialBarrier || _isTimedBarrier)
 			{
-				npc.stopSkillEffects(LIMIT_BARRIER.getSkill());
-				npc.setInvul(false);
-				cancelQuestTimer("remove_barrier", npc, null);
-				_vulnerablePhase = true;
-				startQuestTimer("activate_barrier", RENEW_DURATION_MILLIS, npc, null);
-				_coatlHits.put(npc, 0);
+				int hits = _hitCounter.merge(npc, 1, Integer::sum);
+				if (hits >= HITS_TO_BREAK)
+				{
+					enterVulnerableState(npc);
+				}
 			}
 		}
 		
 		checkBossHP();
 		addAggro(attacker, damage);
-		manageSkills(npc);
-		
-		// if (!ARENA_ZONE.isInsideZone(attacker))
-		// {
-		// attacker.teleToLocation(GLUDIO_LOCATION_OUTSIDE_ARENA, false);
-		// }
-		
-		manageSkills(npc);
 	}
 	
 	private void checkBossHP()
 	{
 		if (_spawnedMainBoss != null)
 		{
-			manageSkills(_spawnedMainBoss);
-			
 			final double currentHP = _spawnedMainBoss.getCurrentHp();
-			final long maxHP = _spawnedMainBoss.getMaxHp(); // Corrigido para long
+			final long maxHP = _spawnedMainBoss.getMaxHp();
 			final int currentHPPercentage = (int) ((currentHP / maxHP) * 100);
 			if (currentHPPercentage <= 0)
 			{
@@ -667,7 +757,8 @@ public class Coatl extends Script
 		if (_flameTotem != null)
 		{
 			_flameTotem.setTarget(_flameTotem);
-			Skill flameTotemSkill = SkillData.getInstance().getSkill(FLAME_TOTEM_SKILL_ID, 1);
+			
+			final Skill flameTotemSkill = SkillData.getInstance().getSkill(FLAME_TOTEM_SKILL_ID, 1);
 			if (flameTotemSkill != null)
 			{
 				_flameTotem.doCast(flameTotemSkill);
@@ -744,6 +835,7 @@ public class Coatl extends Script
 			waterBuffId,
 			effectSkillId
 		});
+		
 		startQuestTimer("waterTotemMechanicsEnd", 9000L, _spawnedMainBoss, null);
 		startQuestTimer("castWaterExplosionSkill", 9000L, _invisibleCoatl, null);
 	}
@@ -823,6 +915,7 @@ public class Coatl extends Script
 			earthBuffId,
 			effectSkillId
 		});
+		
 		startQuestTimer("earthTotemMechanicsEnd", 9000L, _spawnedMainBoss, null);
 		startQuestTimer("castEarthExplosionSkill", 9000L, _invisibleCoatl, null);
 	}
@@ -862,6 +955,7 @@ public class Coatl extends Script
 			flameBuffId,
 			effectSkillId
 		});
+		
 		startQuestTimer("flameTotemMechanicsEnd", 9000L, _spawnedMainBoss, null);
 		startQuestTimer("castFlameExplosionSkill", 9000L, _invisibleCoatl, null);
 	}
@@ -871,10 +965,14 @@ public class Coatl extends Script
 	{
 		cancelQuestTimers("check_arena");
 		cancelQuestTimer("remove_barrier", npc, null);
+		cancelQuestTimer("check_activity_task", npc, null);
+		cancelQuestTimer("END_VULNERABILITY", npc, null);
+		cancelQuestTimer("END_TIMED_BARRIER", npc, null);
 		
+		_combatLoopStarted = false;
 		_spawnedMainBoss = null;
 		GlobalVariablesManager.getInstance().set("COATL_ALIVE", false);
-		
+		// System.out.println("RaidBoss: Coatl(29408) status is 2 (Dead)");
 		_invisibleCoatl.deleteMe();
 		_flameTotem.deleteMe();
 		_kashaTotem.deleteMe();
@@ -894,12 +992,135 @@ public class Coatl extends Script
 	{
 		if (npc == _spawnedMainBoss)
 		{
-			cancelQuestTimers("check_arena");
-			cancelQuestTimer("remove_barrier", npc, null);
-			_spawnedMainBoss = null;
+			onKill(npc, null, false);
+			
 			_involvedPlayers.clear();
-			_invisibleCoatl.setInvul(true);
+			if (_invisibleCoatl != null)
+			{
+				_invisibleCoatl.setInvul(true);
+			}
 		}
+	}
+	
+	private void applyInitialBarrier(Npc npc)
+	{
+		cleanBarriers(npc);
+		_isInitialBarrier = true;
+		_isTimedBarrier = false;
+		_hitCounter.put(npc, 0);
+		
+		npc.setInvul(true);
+		if (BARRIER_INITIAL.getSkill() != null)
+		{
+			BARRIER_INITIAL.getSkill().applyEffects(npc, npc);
+		}
+		
+		cancelQuestTimer("END_VULNERABILITY", npc, null);
+		cancelQuestTimer("END_TIMED_BARRIER", npc, null);
+	}
+	
+	private void applyTimedBarrier(Npc npc)
+	{
+		cleanBarriers(npc);
+		_isInitialBarrier = false;
+		_isTimedBarrier = true;
+		_hitCounter.put(npc, 0);
+		
+		npc.setInvul(true);
+		if (BARRIER_TIMED.getSkill() != null)
+		{
+			BARRIER_TIMED.getSkill().applyEffects(npc, npc);
+		}
+		
+		startQuestTimer("END_TIMED_BARRIER", 600000, npc, null);
+	}
+	
+	private void enterVulnerableState(Npc npc)
+	{
+		cleanBarriers(npc);
+		_isInitialBarrier = false;
+		_isTimedBarrier = false;
+		_hitCounter.put(npc, 0);
+		
+		npc.setInvul(false);
+		
+		final long randomTime = Rnd.get(20000, 60000);
+		startQuestTimer("END_VULNERABILITY", randomTime, npc, null);
+	}
+	
+	private void cleanBarriers(Npc npc)
+	{
+		if (BARRIER_INITIAL.getSkill() != null)
+		{
+			npc.stopSkillEffects(BARRIER_INITIAL.getSkill());
+		}
+		
+		if (BARRIER_TIMED.getSkill() != null)
+		{
+			npc.stopSkillEffects(BARRIER_TIMED.getSkill());
+		}
+		
+		npc.setInvul(false);
+	}
+	
+	private void resetCoatl(Npc npc)
+	{
+		npc.setCurrentHp(npc.getMaxHp());
+		npc.setCurrentMp(npc.getMaxMp());
+		npc.teleToLocation(SPAWN_LOCATION, true);
+		npc.stopAllEffects();
+		cancelQuestTimer("SKILL_LOOP", npc, null);
+		_combatLoopStarted = false;
+		
+		if (npc.isAttackable())
+		{
+			npc.asAttackable().clearAggroList();
+		}
+		
+		applyInitialBarrier(npc);
+		_lastAction = System.currentTimeMillis();
+		startQuestTimer("check_activity_task", 60000, null, null);
+	}
+	
+	private Creature getTargetLogic(Npc npc)
+	{
+		Creature target = _aggroList.entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(null);
+		
+		if (Rnd.get(100) < 30)
+		{
+			final List<Player> validTargets = new ArrayList<>();
+			if (ARENA_ZONE != null)
+			{
+				for (Player p : ARENA_ZONE.getPlayersInside())
+				{
+					if ((p != null) && !p.isDead() && !p.isInvul() && p.isSpawned() && (npc.calculateDistance3D(p) <= 1000))
+					{
+						validTargets.add(p);
+					}
+				}
+			}
+			
+			if (!validTargets.isEmpty())
+			{
+				target = validTargets.get(Rnd.get(validTargets.size()));
+			}
+		}
+		
+		if ((target == null) || target.isDead())
+		{
+			target = (Creature) npc.getTarget();
+		}
+		
+		if ((target != null) && target.isSummon())
+		{
+			Player owner = target.asSummon().getOwner();
+			if ((owner != null) && !owner.isDead() && (ARENA_ZONE != null) && ARENA_ZONE.isInsideZone(owner))
+			{
+				target = owner;
+			}
+		}
+		
+		return target;
 	}
 	
 	public boolean isCoatlActive()

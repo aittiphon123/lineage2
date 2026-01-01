@@ -359,12 +359,12 @@
 		<node X="-117944" Y="-85155" />
 	</zone>
 	<zone name="coatls_lair_no_restart" type="NoRestartZone" shape="NPoly" minZ="-5900" maxZ="-3964">
-		<stat name="restartTime" val="1800" />
+		<stat name="restartTime" val="600" />
 		<stat name="restartAllowedTime" val="600" />
-		<node X="-82040" Y="207704" />
+		<node X="-82111" Y="207719" />
 		<node X="-87131" Y="207832" />
 		<node X="-87121" Y="211950" />
-		<node X="-82180" Y="211846" />
+		<node X="-82074" Y="212025" />
 	</zone>
 	<zone name="fight_antharas_no_restart" type="NoRestartZone" shape="NPoly" minZ="-14131" maxZ="-7065"> <!-- 23_21 -->
 		<stat name="restartTime" val="1800" />

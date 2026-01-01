@@ -351,8 +351,8 @@
 				<defence fire="2600" water="2650" wind="2650" earth="2650" holy="2650" dark="2650" />
 			</attribute>
 		</stats>
-		<status attackable="true" noSleepMode="true" />
-		<ai type="MAGE" />
+		<status attackable="true" noSleepMode="true"/>
+		<ai type="MAGE" isAggressive="false" />
 		<collision>
 			<radius normal="40" />
 			<height normal="139" />

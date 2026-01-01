@@ -299,9 +299,9 @@
 		<node X="-7370" Y="186216" />
 	</zone>
 	<zone name="coatls_lair_no_summon" type="NoSummonFriendZone" shape="NPoly" minZ="-5900" maxZ="-3964">
-		<node X="-82040" Y="207704" />
+		<node X="-82111" Y="207719" />
 		<node X="-87131" Y="207832" />
 		<node X="-87121" Y="211950" />
-		<node X="-82180" Y="211846" />
+		<node X="-82074" Y="212025" />
 	</zone>
 </list>
