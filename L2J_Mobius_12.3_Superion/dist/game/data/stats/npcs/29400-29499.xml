@@ -65,7 +65,7 @@
 		<acquire exp="5337882368" sp="4804094" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="359319614" hpRegen="13.4" mp="68076" mpRegen="30" />
-			<attack physical="639686" magical="583012" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="100" distance="80" width="120" />
+			<attack physical="639686" magical="583012" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="100" distance="2000" width="120" />
 			<defence physical="301296" magical="1458092" />
 			<speed>
 				<walk ground="90" />
@@ -78,6 +78,11 @@
 			</attribute>
 		</stats>
 		<status attackable="true" canMove="false" />
+		<ai type="MAGE" aggroRange="1500" isAggressive="false" clanHelpRange="1000">
+			<clanList>
+				<clan>GUILLOTINE</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="60" />
 			<height normal="124.5" />
@@ -93,11 +98,6 @@
 			<skill id="34460" level="1" /> <!-- Fatal Slash -->
 			<skill id="34461" level="1" /> <!-- Soul Decay -->
 		</skillList>
-		<ai type="MAGE" aggroRange="1500" isAggressive="false" clanHelpRange="1000">
-			<clanList>
-				<clan>GUILLOTINE</clan>
-			</clanList>
-		</ai>
 		<dropLists>
 			<drop>
 				<group chance="100">
@@ -187,7 +187,7 @@
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="30904734" hpRegen="13.4" mp="68076" mpRegen="30" />
-			<attack physical="319843" magical="291506" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="319843" magical="291506" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="1500" width="120" />
 			<defence physical="150648" magical="729046" />
 			<speed>
 				<walk ground="80" />
@@ -199,7 +199,12 @@
 				<defence fire="2500" water="2500" wind="2500" earth="2500" holy="2450" dark="2500" />
 			</attribute>
 		</stats>
-		<status attackable="true" undying="true" canMove="false" targetable="false" />
+		<status attackable="true" canMove="false" />	
+		<ai type="MAGE" aggroRange="1500" isAggressive="false" clanHelpRange="1000">
+			<clanList>
+				<clan>GUILLOTINE</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="23" />
 			<height normal="64" />
@@ -213,11 +218,6 @@
 			<skill id="34462" level="1" /> <!-- Fatal Slash -->
 			<skill id="34463" level="1" /> <!-- Soul Decay -->
 		</skillList>
-		<ai type="MAGE" aggroRange="1500" isAggressive="true" clanHelpRange="1500">
-			<clanList>
-				<clan>GUILLOTINE</clan>
-			</clanList>
-		</ai>
 	</npc>
 	<npc id="29404" level="127" type="Monster" name="Guillotine's Slave">
 		<race>ETC</race>

@@ -809,8 +809,27 @@
 	<skill id="34458" toLevel="1" name="Vicious Killing Strike">
 		<!-- Guillotine's Attack -->
 		<icon>icon.skill33915</icon>
+		<basicProperty>PHYSICAL</basicProperty>
+		<affectRange>1000</affectRange>
 		<operateType>A1</operateType>
-		<effectPoint>-100</effectPoint>
+		<castRange>1300</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-716</effectPoint>
+		<effectRange>2500</effectRange>
+		<targetType>ENEMY</targetType>
+		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<fanRange>0;0;1300;500</fanRange>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.085</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34459" toLevel="1" name="Death Charge">
 		<!-- Demoralizes the enemy. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
@@ -822,43 +841,333 @@
 		<!-- A frontal conelike attack. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<effectPoint>-1</effectPoint>
+		<reuseDelay>5000</reuseDelay>
+		<castRange>900</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic> 
+		<effectPoint>-352</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<fanRange>0;0;900;120</fanRange>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.24</pAtkMod>
+				<pDefMod>0.008</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34461" toLevel="1" name="Soul Decay">
 		<!-- A magic attack on the target and nearby enemies. -->
 		<icon>icon.skill0000</icon>
+		<affectRange>200</affectRange>
+		<basicProperty>MAGIC</basicProperty> 
+		<attributeType>DARK</attributeType>
+		<attributeValue>580</attributeValue>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicLevel>127</magicLevel>
 		<operateType>A1</operateType>
-		<effectPoint>-1</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<castRange>1500</castRange>
+		<hitTime>1500</hitTime>
+		<effectPoint>-307</effectPoint>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>155360</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34462" toLevel="1" name="Fatal Slash">
 		<!-- A frontal conelike attack. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<effectPoint>-1</effectPoint>
+		<reuseDelay>5000</reuseDelay>
+		<castRange>500</castRange>
+		<hitTime>1500</hitTime>
+		<effectPoint>-352</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<fanRange>0;0;500;120</fanRange>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.06</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34463" toLevel="1" name="Soul Decay">
 		<!-- A magic attack on the target and nearby enemies. -->
 		<icon>icon.skill0000</icon>
+		<affectRange>200</affectRange>
+		<basicProperty>MAGIC</basicProperty> 
+		<attributeType>DARK</attributeType>
+		<attributeValue>580</attributeValue>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicLevel>126</magicLevel>
 		<operateType>A1</operateType>
-		<effectPoint>-1</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<castRange>1500</castRange>
+		<hitTime>1500</hitTime>
+		<effectPoint>-307</effectPoint>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>35360</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34464" toLevel="1" name="Scream of Pain">
 		<!-- A zombie sacrifices itself on the order from Guillotine, inflicting Shock on you. The effect cannot be removed or resisted. -->
 		<icon>icon.skill16204</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<hitTime>500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<isDebuff>true</isDebuff>
 		<effectPoint>-100</effectPoint>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>4</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<affectRange>300</affectRange>
+		<attributeType>DARK</attributeType>
+		<attributeValue>180</attributeValue>
+		<magicLevel>126</magicLevel>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<trait>SHOCK</trait>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.12</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<SHOCK>100</SHOCK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<DERANGEMENT>100</DERANGEMENT>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34465" toLevel="1" name="Scream of Pain">
 		<!-- A zombie sacrifices itself on the order from Guillotine, inflicting Fear on you. The effect cannot be removed or resisted. -->
 		<icon>icon.skill0092</icon>
-		<operateType>A1</operateType>
-		<effectPoint>-100</effectPoint>
+		<operateType>A2</operateType>
+		<abnormalLevel>5</abnormalLevel>
+		<abnormalTime>8</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<affectRange>150</affectRange>
+		<activateRate>90</activateRate>
+		<basicProperty>NONE</basicProperty>
+		<trait>DERANGEMENT</trait>
+		<attributeType>DARK</attributeType>
+		<attributeValue>580</attributeValue>
+		<operateType>A2</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>500</hitTime>
+		<effectPoint>-150</effectPoint>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+		<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.12</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34466" toLevel="1" name="Scream of Pain">
 		<!-- A zombie sacrifices itself on the order from Guillotine, knocking you down. The effect cannot be removed or resisted. -->
 		<icon>icon.skill0092</icon>
-		<operateType>A1</operateType>
-		<effectPoint>-100</effectPoint>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>200</affectRange>
+		<activateRate>50</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<attributeType>DARK</attributeType>
+		<attributeValue>580</attributeValue>
+		<lvlBonusRate>30</lvlBonusRate>
+		<operateType>A2</operateType>
+		<mpConsume>1</mpConsume>
+		<magicCriticalRate>45</magicCriticalRate>
+		<magicLevel>126</magicLevel>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<isDebuff>true</isDebuff>
+		<trait>KNOCKDOWN</trait>
+		<effectPoint>-130</effectPoint>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.12</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="KnockBack">
+				<speed>400</speed>
+				<distance>25</distance>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<DERANGEMENT>100</DERANGEMENT>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="34465" toLevel="1" name="Scream of Pain">
+		<!-- A zombie sacrifices itself on the order from Guillotine, inflicting Fear on you. The effect cannot be removed or resisted. -->
+		<icon>icon.skill0092</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>5</abnormalLevel>
+		<abnormalTime>8</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<affectRange>150</affectRange>
+		<activateRate>90</activateRate>
+		<basicProperty>NONE</basicProperty>
+		<magicLevel>-1</magicLevel>
+		<isMagic>2</isMagic>
+		<trait>DERANGEMENT</trait>
+		<attributeType>DARK</attributeType>
+		<attributeValue>580</attributeValue>
+		<operateType>A2</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>500</hitTime>
+		<effectPoint>-150</effectPoint>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+		<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.12</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="MagicalAttack">
+				<power>18000</power>
+				<criticalChance>50</criticalChance>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="34466" toLevel="1" name="Scream of Pain">
+		<!-- A zombie sacrifices itself on the order from Guillotine, knocking you down. The effect cannot be removed or resisted. -->
+		<icon>icon.skill0092</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>200</affectRange>
+		<activateRate>50</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<attributeType>DARK</attributeType>
+		<attributeValue>580</attributeValue>
+		<lvlBonusRate>30</lvlBonusRate>
+		<operateType>A2</operateType>
+		<mpConsume>1</mpConsume>
+		<magicCriticalRate>45</magicCriticalRate>
+		<magicLevel>126</magicLevel>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<isDebuff>true</isDebuff>
+		<trait>KNOCKDOWN</trait>
+		<effectPoint>-130</effectPoint>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.12</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="KnockBack">
+				<speed>400</speed>
+				<distance>25</distance>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<DERANGEMENT>100</DERANGEMENT>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34467" toLevel="1" name="Sel Mahum's Flame Hammer">
 		<!-- Physical attack -->

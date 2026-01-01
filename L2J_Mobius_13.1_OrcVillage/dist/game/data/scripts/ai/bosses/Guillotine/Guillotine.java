@@ -18,7 +18,7 @@
  * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
  * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package ai.areas.ExecutionGrounds;
+package ai.bosses.Guillotine;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -46,6 +46,7 @@ import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
+ * Guillotine AI
  * @author Notorion
  */
 public class Guillotine extends Script
@@ -101,10 +102,10 @@ public class Guillotine extends Script
 	
 	public Guillotine()
 	{
-		addKillId(MAIN_BOSS_ID);
-		addKillId(SLAVE1_NPC_ID, SLAVE2_NPC_ID, SLAVE3_NPC_ID);
 		addAttackId(SLAVE1_NPC_ID, SLAVE2_NPC_ID, SLAVE3_NPC_ID);
+		addKillId(SLAVE1_NPC_ID, SLAVE2_NPC_ID, SLAVE3_NPC_ID);
 		addAttackId(MAIN_BOSS_ID);
+		addKillId(MAIN_BOSS_ID);
 		
 		final long currentTime = System.currentTimeMillis();
 		final Calendar calendarGuillotineStart = Calendar.getInstance();
@@ -115,7 +116,7 @@ public class Guillotine extends Script
 		calendarGuillotineStart.set(Calendar.MINUTE, 0);
 		calendarGuillotineStart.set(Calendar.SECOND, 0);
 		
-		if ((currentTime > calendarGuillotineStart.getTimeInMillis()) && (SpawnTable.getInstance().getAnySpawn(MAIN_BOSS_ID) == null) && GlobalVariablesManager.getInstance().getBoolean("GUILLOTINE_ALIVE", true))
+		if (GlobalVariablesManager.getInstance().getBoolean("GUILLOTINE_ALIVE", true))
 		{
 			spawnGuillotine();
 		}
@@ -130,6 +131,16 @@ public class Guillotine extends Script
 	
 	private void spawnGuillotine()
 	{
+		final Spawn oldSpawn = SpawnTable.getInstance().getAnySpawn(MAIN_BOSS_ID);
+		if (oldSpawn != null)
+		{
+			if (oldSpawn.getLastSpawn() != null)
+			{
+				oldSpawn.getLastSpawn().deleteMe();
+			}
+			
+			SpawnTable.getInstance().removeSpawn(oldSpawn);
+		}
 		try
 		{
 			final NpcTemplate template = NpcData.getInstance().getTemplate(MAIN_BOSS_ID);
@@ -137,10 +148,10 @@ public class Guillotine extends Script
 			spawn.setXYZ(SPAWN_LOCATION);
 			spawn.setHeading(0);
 			spawn.setRespawnDelay(0);
-			
 			final Npc boss = DatabaseSpawnManager.getInstance().addNewSpawn(spawn, false);
 			_spawnedMainBoss = boss;
 			GlobalVariablesManager.getInstance().set("GUILLOTINE_ALIVE", true);
+			// System.out.println("Guillotine Manager: Guillotine (29402) spawned successfully.");
 			
 			// Barrier
 			LIMIT_BARRIER.getSkill().applyEffects(_spawnedMainBoss, _spawnedMainBoss);
@@ -148,10 +159,11 @@ public class Guillotine extends Script
 			_barrierActivated = true;
 			startQuestTimer("guillotine_barrier_start", 1000, _spawnedMainBoss, null);
 			
-			startQuestTimer("check_arena", 10000, null, null, true); // Verification every 10 seconds.
+			startQuestTimer("check_arena", 10000, null, null, true);
 		}
 		catch (Exception e)
 		{
+			e.printStackTrace();
 		}
 	}
 	
@@ -204,7 +216,6 @@ public class Guillotine extends Script
 			final double currentHp = npc.getCurrentHp();
 			final double maxHp = npc.getMaxHp();
 			final double hpPercentage = (currentHp / maxHp) * 100;
-			
 			if (currentHp <= 1)
 			{
 				npc.setCurrentHp(2);
@@ -261,15 +272,13 @@ public class Guillotine extends Script
 		}
 	}
 	
-	// Modification of reappearance values ​​can cause bug, test before starting.
 	private void checkBossHP()
 	{
 		if (_spawnedMainBoss != null)
 		{
 			final double currentHP = _spawnedMainBoss.getCurrentHp();
-			final int maxHP = _spawnedMainBoss.getMaxHp();
+			final long maxHP = _spawnedMainBoss.getMaxHp();
 			final int currentHPPercentage = (int) ((currentHP / maxHP) * 100);
-			
 			if ((currentHPPercentage <= 97) && !_spawningClones95)
 			{
 				_spawningClones95 = true;
@@ -518,7 +527,7 @@ public class Guillotine extends Script
 			
 			_spawnedMainBoss = null;
 			GlobalVariablesManager.getInstance().set("GUILLOTINE_ALIVE", false);
-			
+			// System.out.println("RaidBoss: Guillotine(29402) status is 2 (Dead)");
 			_spawningClones95 = false;
 			_spawningClones75 = false;
 			_spawningClones50 = false;

@@ -150,9 +150,6 @@
 		<npc id="25887" x="43207" y="144814" z="-3120" heading="0" dbSave="true" dbName="Crook the Mad" respawnTime="24hour" respawnRandom="12hour" chaseRange="2500" /> <!-- Crook the Mad - Raid Boss -->
 	</spawn>
 	<spawn>
-		<npc id="25888" x="44967" y="155944" z="-1048" heading="0" dbSave="true" dbName="Execution Grounds Watchman Guillotine" respawnTime="24hour" respawnRandom="12hour" /> <!-- Execution Grounds Watchman Guillotine - Raid Boss -->
-	</spawn>
-	<spawn>
 		<npc id="25902" x="-103142" y="48418" z="-31528" heading="13361" dbSave="true" dbName="Gigantic Golem" respawnTime="24hour" respawnRandom="12hour" /> <!-- Gigantic Golem - Raid Boss -->
 	</spawn>
 	<spawn>
