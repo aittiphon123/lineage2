@@ -32,6 +32,8 @@ import org.l2jmobius.gameserver.util.MathUtil;
 
 /**
  * @author NviX
+ * @URL https://web.archive.org/web/20170314173542/http://boards.lineage2.com/showpost.php?p=3386784&postcount=6 <br>
+ * @video https://www.youtube.com/watch?v=H3MuIwUjjD4
  */
 public class LilithBoss extends Script
 {

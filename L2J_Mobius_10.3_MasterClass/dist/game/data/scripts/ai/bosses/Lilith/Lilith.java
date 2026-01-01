@@ -22,10 +22,10 @@ package ai.bosses.Lilith;
 
 import java.util.Calendar;
 import java.util.Collection;
-import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2jmobius.gameserver.ai.Intention;
-import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -38,20 +38,16 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
-import org.l2jmobius.gameserver.model.groups.Party;
-import org.l2jmobius.gameserver.model.script.QuestTimer;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.Skill;
+import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
-import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
 /**
- * Lilith AI
- * @author LasTravel, NviX
- * @URL http://boards.lineage2.com/showpost.php?p=3386784&postcount=6<br>
- * @video https://www.youtube.com/watch?v=H3MuIwUjjD4
+ * Lilith Manager AI - version 2023
+ * @author Notorion
  */
 public class Lilith extends Script
 {
@@ -64,6 +60,11 @@ public class Lilith extends Script
 	private static final int LILITH = 29336;
 	private static final int EXIST_CUBIC = 31124;
 	private static final int LILITH_CUBIC = 31118;
+	
+	// General Configs
+	private static final int MIN_LEVEL_TO_ATTACK = 110;
+	
+	// Minions
 	// @formatter:off
 	private static final int[] LILITH_MINIONS = {29337, 29338, 29339};
 	// @formatter:on
@@ -72,17 +73,36 @@ public class Lilith extends Script
 		LILITH,
 		LILITH_MINIONS[0],
 		LILITH_MINIONS[1],
+		LILITH_MINIONS[2]
 	};
 	
-	// Misc
-	private static final Location ENTER_LILITH_LOC = new Location(184449, -9032, -5499);
-	private static final ZoneType BOSS_ZONE = ZoneManager.getInstance().getZoneById(12005);
-	private static final ZoneType PRE_LILITH_ZONE = ZoneManager.getInstance().getZoneById(12006);
+	// Locations
+	private static final Location ENTER_LILITH_LOC = new Location(-6687, 21271, -5488);
+	private static final Location SPAWN_LOC = new Location(-6682, 22181, -5488, 49151);
+	private static final Location KICK_LOC = new Location(-14051, 22195, -3616);
 	
-	// Others
+	private static final ZoneType BOSS_ZONE = ZoneManager.getInstance().getZoneById(12005);
+	
+	// Barrier Skills
+	private static final SkillHolder BARRIER_INITIAL = new SkillHolder(29518, 1);
+	private static final SkillHolder BARRIER_TIMED = new SkillHolder(29515, 1);
+	
+	// Barrier Configuration
+	private static final int HITS_TO_BREAK_INITIAL = 2000; // Hits to break immunity
+	private static final int HITS_TO_BREAK_TIMED = 2000; // Hits to break timed barrier
+	private static final long TIME_VULNERABLE = 3 * 60000; // Vulnerable duration (3 min)
+	private static final long TIME_BARRIER_LIMIT = 10 * 60000; // Max barrier duration (10 min)
+	private static final long TIME_RESET_INACTIVITY = 10 * 60000; // Reset if inactive
+	
+	// Variables
 	private static long _lastAction;
 	private static Npc _lilithBoss;
-	private GrandBoss _tempLilith = null;
+	
+	// Barrier Controls
+	private boolean _isInitialBarrier = false;
+	private boolean _isTimedBarrier = false;
+	private final Map<Npc, Integer> _hitCounter = new ConcurrentHashMap<>();
+	private long _lastHitTime = 0;
 	
 	public Lilith()
 	{
@@ -93,29 +113,55 @@ public class Lilith extends Script
 		addKillId(ALL_MOBS);
 		addSkillSeeId(ALL_MOBS);
 		
-		// Unlock
 		final StatSet info = GrandBossManager.getInstance().getStatSet(LILITH);
 		final int status = GrandBossManager.getInstance().getStatus(LILITH);
 		if (status == DEAD)
 		{
-			final long time = info.getLong("respawn_time") - System.currentTimeMillis();
-			if (time > 0)
+			long respawnTime = info.getLong("respawn_time");
+			if (respawnTime == 0)
 			{
-				startQuestTimer("unlock_lilith", time, null, null);
+				respawnTime = getNextRespawnTime();
+				info.set("respawn_time", respawnTime);
+				GrandBossManager.getInstance().setStatSet(LILITH, info);
+			}
+			
+			final long delay = respawnTime - System.currentTimeMillis();
+			if (delay > 0)
+			{
+				startQuestTimer("unlock_lilith", delay, null, null);
+				// System.out.println("GrandBossManager: Lilith spawn scheduled in " + (delay / 60000) + " minutes.");
 			}
 			else
 			{
-				_tempLilith = (GrandBoss) addSpawn(LILITH, -126920, -234182, -15563, 0, false, 0);
-				GrandBossManager.getInstance().addBoss(_tempLilith);
-				GrandBossManager.getInstance().setStatus(LILITH, ALIVE);
+				spawnLilith();
 			}
 		}
 		else
 		{
-			_tempLilith = (GrandBoss) addSpawn(LILITH, -126920, -234182, -15563, 0, false, 0);
-			GrandBossManager.getInstance().addBoss(_tempLilith);
-			GrandBossManager.getInstance().setStatus(LILITH, ALIVE);
+			spawnLilith();
 		}
+	}
+	
+	private void spawnLilith()
+	{
+		GrandBossManager.getInstance().setStatus(LILITH, ALIVE);
+		
+		if ((_lilithBoss != null) && !_lilithBoss.isDead())
+		{
+			return;
+		}
+		
+		_lilithBoss = addSpawn(LILITH, SPAWN_LOC, false, 0);
+		GrandBossManager.getInstance().addBoss((GrandBoss) _lilithBoss);
+		
+		// Immobilize Boss
+		_lilithBoss.setRandomWalking(false);
+		_lilithBoss.setRandomAnimation(false);
+		
+		applyInitialBarrier(_lilithBoss);
+		
+		_lastAction = System.currentTimeMillis();
+		startQuestTimer("check_activity_task", 60000, null, null);
 	}
 	
 	@Override
@@ -125,68 +171,60 @@ public class Lilith extends Script
 		{
 			case "unlock_lilith":
 			{
-				_tempLilith = (GrandBoss) addSpawn(LILITH, -126920, -234182, -15563, 0, false, 0);
-				GrandBossManager.getInstance().addBoss(_tempLilith);
-				GrandBossManager.getInstance().setStatus(LILITH, ALIVE);
+				spawnLilith();
 				break;
 			}
 			case "check_activity_task":
 			{
-				if ((_lastAction + 900000) < System.currentTimeMillis())
+				// Reset logic
+				if ((_lastAction + TIME_RESET_INACTIVITY) < System.currentTimeMillis())
 				{
-					GrandBossManager.getInstance().setStatus(LILITH, ALIVE);
-					for (Creature creature : BOSS_ZONE.getCharactersInside())
+					if ((_lilithBoss != null) && !_lilithBoss.isDead())
 					{
-						if (creature != null)
+						final boolean isFighting = GrandBossManager.getInstance().getStatus(LILITH) == FIGHTING;
+						final boolean isDamaged = _lilithBoss.getCurrentHp() < _lilithBoss.getMaxHp();
+						if (isFighting || isDamaged)
 						{
-							if (creature.isNpc())
-							{
-								creature.deleteMe();
-							}
-							else if (creature.isPlayer())
-							{
-								creature.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(creature, TeleportWhereType.TOWN));
-							}
+							resetLilith(_lilithBoss);
 						}
 					}
-					
-					startQuestTimer("end_lilith", 2000, null, null);
 				}
 				else
 				{
+					// Minion Logic
+					final boolean isBossAlive = ((_lilithBoss != null) && !_lilithBoss.isDead());
+					final boolean isNotFighting = GrandBossManager.getInstance().getStatus(LILITH) != FIGHTING;
+					final boolean hasPlayers = ((BOSS_ZONE != null) && !BOSS_ZONE.getPlayersInside().isEmpty());
+					if (isBossAlive && isNotFighting && hasPlayers)
+					{
+						manageMinions(_lilithBoss);
+					}
+					
 					startQuestTimer("check_activity_task", 60000, null, null);
+				}
+				break;
+			}
+			case "END_VULNERABILITY":
+			{
+				if ((npc != null) && !npc.isDead())
+				{
+					applyTimedBarrier(npc);
+				}
+				break;
+			}
+			case "END_TIMED_BARRIER":
+			{
+				if ((npc != null) && !npc.isDead() && _isTimedBarrier)
+				{
+					applyTimedBarrier(npc);
 				}
 				break;
 			}
 			case "cancel_timers":
 			{
-				QuestTimer activityTimer = getQuestTimer("check_activity_task", null, null);
-				if (activityTimer != null)
-				{
-					activityTimer.cancel();
-				}
-				
-				QuestTimer forceEnd = getQuestTimer("end_lilith", null, null);
-				if (forceEnd != null)
-				{
-					forceEnd.cancel();
-				}
-				break;
-			}
-			case "end_lilith":
-			{
-				notifyEvent("cancel_timers", null, null);
-				if (_lilithBoss != null)
-				{
-					_lilithBoss.deleteMe();
-				}
-				
-				BOSS_ZONE.oustAllPlayers();
-				PRE_LILITH_ZONE.oustAllPlayers();
-				if (GrandBossManager.getInstance().getStatus(LILITH) != DEAD)
-				{
-					GrandBossManager.getInstance().setStatus(LILITH, ALIVE);
-				}
+				cancelQuestTimer("check_activity_task", null, null);
+				cancelQuestTimers("END_VULNERABILITY");
+				cancelQuestTimers("END_TIMED_BARRIER");
 				break;
 			}
 			case "exist":
@@ -195,99 +233,151 @@ public class Lilith extends Script
 				break;
 			}
 		}
-		
 		return super.onEvent(event, npc, player);
+	}
+	
+	private void manageMinions(Npc boss)
+	{
+		if (BOSS_ZONE == null)
+		{
+			return;
+		}
+		
+		for (Creature c : BOSS_ZONE.getCharactersInside())
+		{
+			if ((c != null) && c.isNpc() && !c.isDead())
+			{
+				if (ArrayUtil.contains(LILITH_MINIONS, c.getId()))
+				{
+					// Blink Effect
+					int x = boss.getX() + getRandom(-150, 150);
+					int y = boss.getY() + getRandom(-150, 150);
+					c.teleToLocation(x, y, boss.getZ());
+				}
+			}
+		}
+	}
+	
+	private void resetLilith(Npc npc)
+	{
+		if (GrandBossManager.getInstance().getStatus(LILITH) != ALIVE)
+		{
+			GrandBossManager.getInstance().setStatus(LILITH, ALIVE);
+		}
+		
+		npc.setCurrentHp(npc.getMaxHp());
+		npc.setCurrentMp(npc.getMaxMp());
+		npc.teleToLocation(SPAWN_LOC, true);
+		npc.stopAllEffects();
+		
+		if (npc.isAttackable())
+		{
+			npc.asAttackable().clearAggroList();
+		}
+		
+		if (BOSS_ZONE != null)
+		{
+			for (Creature c : BOSS_ZONE.getCharactersInside())
+			{
+				if ((c != null) && c.isPlayer())
+				{
+					c.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(c, TeleportWhereType.TOWN));
+				}
+			}
+		}
+		
+		applyInitialBarrier(npc);
+		_lastAction = System.currentTimeMillis();
+		startQuestTimer("check_activity_task", 60000, null, null);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final int _lilithStatus = GrandBossManager.getInstance().getStatus(LILITH);
-		if ((npc.getId() == LILITH_CUBIC) && (_lilithStatus > ALIVE))
+		if (npc.getId() == LILITH_CUBIC)
 		{
-			return "31118-01.html";
-		}
-		
-		if (!player.isInParty())
-		{
-			final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
-			packet.setHtml(getHtm(player, "31118-02.html"));
-			packet.replace("%min%", Integer.toString(GrandBossConfig.LILITH_MIN_PLAYERS));
-			player.sendPacket(packet);
+			player.teleToLocation(ENTER_LILITH_LOC, true);
 			return null;
-		}
-		
-		final Party party = player.getParty();
-		final boolean isInCC = party.isInCommandChannel();
-		final List<Player> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
-		final boolean isPartyLeader = (isInCC) ? party.getCommandChannel().isLeader(player) : party.isLeader(player);
-		if (!isPartyLeader)
-		{
-			return "31118-03.html";
-		}
-		
-		if ((members.size() < GrandBossConfig.LILITH_MIN_PLAYERS) || (members.size() > GrandBossConfig.LILITH_MAX_PLAYERS))
-		{
-			final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
-			packet.setHtml(getHtm(player, "31118-02.html"));
-			packet.replace("%min%", Integer.toString(GrandBossConfig.LILITH_MIN_PLAYERS));
-			player.sendPacket(packet);
-			return null;
-		}
-		
-		for (Player member : members)
-		{
-			if (member.getLevel() < GrandBossConfig.LILITH_MIN_PLAYER_LEVEL)
-			{
-				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
-				packet.setHtml(getHtm(player, "31118-04.html"));
-				packet.replace("%minLevel%", Integer.toString(GrandBossConfig.LILITH_MIN_PLAYER_LEVEL));
-				player.sendPacket(packet);
-				return null;
-			}
-		}
-		
-		for (Player member : members)
-		{
-			if (member.isInsideRadius3D(npc, 1000) && (npc.getId() == LILITH_CUBIC))
-			{
-				member.teleToLocation(ENTER_LILITH_LOC, true);
-			}
-		}
-		
-		if ((_lilithStatus == ALIVE) && (npc.getId() == LILITH_CUBIC))
-		{
-			GrandBossManager.getInstance().setStatus(LILITH, FIGHTING);
-			
-			// Spawn the rb
-			_lilithBoss = addSpawn(LILITH, 185062, -9605, -5499, 15640, false, 0);
-			GrandBossManager.getInstance().addBoss((GrandBoss) _lilithBoss);
-			_lastAction = System.currentTimeMillis();
-			startQuestTimer("check_activity_task", 60000, null, null, true);
-			startQuestTimer("end_lilith", 60 * 60000, null, null); // 1h
 		}
 		
 		return super.onTalk(npc, player);
 	}
 	
 	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".html";
+	}
+	
+	@Override
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isPet)
 	{
 		_lastAction = System.currentTimeMillis();
-		if (npc.isMinion() || npc.isRaid()) // Lilith and minions
+		
+		// Level Check
+		if (attacker.getLevel() < MIN_LEVEL_TO_ATTACK)
 		{
-			// Anti BUGGERS
-			if (!BOSS_ZONE.isInsideZone(attacker)) // Character attacking out of zone
+			attacker.teleToLocation(KICK_LOC, true);
+			return;
+		}
+		
+		if (npc.getId() == LILITH)
+		{
+			if (GrandBossManager.getInstance().getStatus(LILITH) != FIGHTING)
+			{
+				GrandBossManager.getInstance().setStatus(LILITH, FIGHTING);
+			}
+			
+			// Wake up Minions
+			if (BOSS_ZONE != null)
+			{
+				for (Creature c : BOSS_ZONE.getCharactersInside())
+				{
+					if ((c != null) && c.isNpc() && !c.isDead())
+					{
+						if (ArrayUtil.contains(LILITH_MINIONS, c.getId()))
+						{
+							c.asAttackable().addDamageHate(attacker, 0, 999);
+							c.getAI().setIntention(Intention.ATTACK, attacker);
+						}
+					}
+				}
+			}
+			
+			if (_isInitialBarrier || _isTimedBarrier)
+			{
+				if ((System.currentTimeMillis() - _lastHitTime) > 60000)
+				{
+					_hitCounter.put(npc, 0);
+				}
+				_lastHitTime = System.currentTimeMillis();
+				
+				final int hits = _hitCounter.merge(npc, 1, Integer::sum);
+				final int required = _isInitialBarrier ? HITS_TO_BREAK_INITIAL : HITS_TO_BREAK_TIMED;
+				if (hits >= required)
+				{
+					enterVulnerableState(npc);
+				}
+			}
+		}
+		
+		// Anti-Kite
+		if (npc.isMinion() || npc.isRaid())
+		{
+			if ((BOSS_ZONE != null) && !BOSS_ZONE.isInsideZone(attacker))
 			{
 				attacker.doDie(null);
 			}
-			
-			if (!BOSS_ZONE.isInsideZone(npc)) // Npc moved out of the zone
+			if ((BOSS_ZONE != null) && !BOSS_ZONE.isInsideZone(npc))
 			{
-				Spawn spawn = npc.getSpawn();
+				final Spawn spawn = npc.getSpawn();
 				if (spawn != null)
 				{
 					npc.teleToLocation(spawn.getX(), spawn.getY(), spawn.getZ());
+				}
+				else
+				{
+					npc.teleToLocation(SPAWN_LOC, true);
 				}
 			}
 		}
@@ -299,16 +389,20 @@ public class Lilith extends Script
 		if (npc.getId() == LILITH)
 		{
 			notifyEvent("cancel_timers", null, null);
-			addSpawn(EXIST_CUBIC, 185062, -9605, -5499, 15640, false, 900000); // 15min
+			
+			// Fix: Spawn Cubic at Boss location
+			addSpawn(EXIST_CUBIC, npc.getLocation(), false, 900000);
 			
 			GrandBossManager.getInstance().setStatus(LILITH, DEAD);
-			final long respawnTime = getRespawnTime();
+			
+			final long respawnTime = getNextRespawnTime();
 			final StatSet info = GrandBossManager.getInstance().getStatSet(LILITH);
-			info.set("respawn_time", System.currentTimeMillis() + respawnTime);
+			info.set("respawn_time", respawnTime);
 			GrandBossManager.getInstance().setStatSet(LILITH, info);
 			
-			startQuestTimer("unlock_lilith", respawnTime, null, null);
-			startQuestTimer("end_lilith", 900000, null, null);
+			startQuestTimer("unlock_lilith", respawnTime - System.currentTimeMillis(), null, null);
+			
+			_lilithBoss = null;
 		}
 	}
 	
@@ -330,47 +424,84 @@ public class Lilith extends Script
 		}
 	}
 	
-	private int getRespawnTime()
+	private void applyInitialBarrier(Npc npc)
 	{
-		return (int) calcReuseFromDays(0, 21, Calendar.THURSDAY, 0, 14, Calendar.SATURDAY);
+		cleanBarriers(npc);
+		_isInitialBarrier = true;
+		_isTimedBarrier = false;
+		_hitCounter.put(npc, 0);
+		
+		npc.setInvul(true);
+		if (BARRIER_INITIAL.getSkill() != null)
+		{
+			BARRIER_INITIAL.getSkill().applyEffects(npc, npc);
+		}
+		
+		cancelQuestTimer("END_VULNERABILITY", npc, null);
+		cancelQuestTimer("END_TIMED_BARRIER", npc, null);
 	}
 	
-	private long calcReuseFromDays(int day1Minute, int day1Hour, int day1Day, int day2Minute, int day2Hour, int day2Day)
+	private void applyTimedBarrier(Npc npc)
 	{
-		Calendar now = Calendar.getInstance();
-		Calendar day1 = (Calendar) now.clone();
-		day1.set(Calendar.MINUTE, day1Minute);
-		day1.set(Calendar.HOUR_OF_DAY, day1Hour);
-		day1.set(Calendar.DAY_OF_WEEK, day1Day);
+		cleanBarriers(npc);
+		_isInitialBarrier = false;
+		_isTimedBarrier = true;
+		_hitCounter.put(npc, 0);
 		
-		Calendar day2 = (Calendar) day1.clone();
-		day2.set(Calendar.MINUTE, day2Minute);
-		day2.set(Calendar.HOUR_OF_DAY, day2Hour);
-		day2.set(Calendar.DAY_OF_WEEK, day2Day);
-		
-		if (now.after(day1))
+		npc.setInvul(true);
+		if (BARRIER_TIMED.getSkill() != null)
 		{
-			day1.add(Calendar.WEEK_OF_MONTH, 1);
+			BARRIER_TIMED.getSkill().applyEffects(npc, npc);
 		}
 		
-		if (now.after(day2))
-		{
-			day2.add(Calendar.WEEK_OF_MONTH, 1);
-		}
-		
-		Calendar reenter = day1;
-		if (day2.before(day1))
-		{
-			reenter = day2;
-		}
-		
-		return reenter.getTimeInMillis() - System.currentTimeMillis();
+		startQuestTimer("END_TIMED_BARRIER", TIME_BARRIER_LIMIT, npc, null);
 	}
 	
-	@Override
-	public String onFirstTalk(Npc npc, Player player)
+	private void enterVulnerableState(Npc npc)
 	{
-		return npc.getId() + ".html";
+		cleanBarriers(npc);
+		_isInitialBarrier = false;
+		_isTimedBarrier = false;
+		_hitCounter.put(npc, 0);
+		
+		npc.setInvul(false);
+		startQuestTimer("END_VULNERABILITY", TIME_VULNERABLE, npc, null);
+	}
+	
+	private void cleanBarriers(Npc npc)
+	{
+		if (BARRIER_INITIAL.getSkill() != null)
+		{
+			npc.stopSkillEffects(BARRIER_INITIAL.getSkill());
+		}
+		
+		if (BARRIER_TIMED.getSkill() != null)
+		{
+			npc.stopSkillEffects(BARRIER_TIMED.getSkill());
+		}
+		
+		npc.setInvul(false);
+	}
+	
+	// NEW SCHEDULE: Saturday 20:00
+	private long getNextRespawnTime()
+	{
+		final Calendar now = Calendar.getInstance();
+		
+		// Set to Saturday 20:00
+		final Calendar nextSpawn = (Calendar) now.clone();
+		nextSpawn.set(Calendar.HOUR_OF_DAY, 20);
+		nextSpawn.set(Calendar.MINUTE, 0);
+		nextSpawn.set(Calendar.SECOND, 0);
+		nextSpawn.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
+		
+		// If Saturday 20:00 already passed this week, move to next week
+		if (nextSpawn.getTimeInMillis() < System.currentTimeMillis())
+		{
+			nextSpawn.add(Calendar.WEEK_OF_YEAR, 1);
+		}
+		
+		return nextSpawn.getTimeInMillis();
 	}
 	
 	public static void main(String[] args)

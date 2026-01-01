@@ -54,20 +54,16 @@
 		<node X="65720" Y="23000" />
 	</zone>
 	<zone name="lilith_pvp" type="ArenaZone" shape="NPoly" minZ="-3752" maxZ="-9000"> <!-- Lilith -->
-		<node X="-5510" Y="20236" />
-		<node X="-5538" Y="20297" />
-		<node X="-5483" Y="22637" />
-		<node X="-5497" Y="22638" />
-		<node X="-7906" Y="22602" />
-		<node X="-7892" Y="22626" />
-		<node X="-7773" Y="20268" />
-		<node X="-7857" Y="20321" />
+		<node X="-5576" Y="22609" />
+		<node X="-7796" Y="22618" />
+		<node X="-7814" Y="20382" />
+		<node X="-5585" Y="20334" />
 	</zone>
 	<zone name="anakim_pvp" type="ArenaZone" shape="NPoly" minZ="-6000" maxZ="-4000"> <!-- Anakim -->
-		<node X="183938" Y="-13697" />
-		<node X="186190" Y="-13692" />
-		<node X="186176" Y="-8513" />
-		<node X="183920" Y="-8513" />
+		<node X="183738" Y="-13897" />
+		<node X="186390" Y="-13892" />
+		<node X="186376" Y="-8713" />
+		<node X="183720" Y="-8713" />
 	</zone>
 	<zone name="ishka_pvp" type="ArenaZone" shape="NPoly" minZ="-3000" maxZ="-9000"> <!-- Lord Ishka -->
 		<node X="127449" Y="112036" />
@@ -89,12 +85,12 @@
 		<node X="44957" Y="18160" />
 		<node X="44496" Y="18627" />
 		<node X="44148" Y="18801" />
-		<node X="43546" Y="19048" /> 
+		<node X="43546" Y="19048" />
 		<node X="42888" Y="19040" />
 		<node X="42144" Y="18856" />
 		<node X="41491" Y="18268" />
 		<node X="41413" Y="17074" />
-		<node X="41429" Y="16582" /> 
+		<node X="41429" Y="16582" />
 		<node X="41738" Y="15964" />
 		<node X="41912" Y="15727" />
 		<node X="42058" Y="15486" />

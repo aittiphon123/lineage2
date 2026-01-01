@@ -993,11 +993,11 @@
 		<node X="213068" Y="114628" />
 		<node X="213058" Y="115891" />
 	</zone>
-	<zone name="Anakim" id="12003" type="ScriptZone" shape="NPoly" minZ="-5500" maxZ="-4600">
-		<node X="183904" Y="-13884" />
-		<node X="186265" Y="-13884" />
-		<node X="186245" Y="-11263" />
-		<node X="183944" Y="-11283" />
+	<zone name="Anakim_12003" id="12003" type="ScriptZone" shape="NPoly" minZ="-6500" maxZ="-4600">
+		<node X="183738" Y="-13897" />
+		<node X="186390" Y="-13892" />
+		<node X="186376" Y="-8713" />
+		<node X="183720" Y="-8713" />
 	</zone>
 	<zone name="Pre Anakim" id="12004" type="ScriptZone" shape="NPoly" minZ="-4950" maxZ="-4420">
 		<node X="172102" Y="-18083" />
@@ -1005,11 +1005,11 @@
 		<node X="183544" Y="-6702" />
 		<node X="171976" Y="-6743" />
 	</zone>
-	<zone name="Lilith" id="12005" type="ScriptZone" shape="NPoly" minZ="-5500" maxZ="-4600">
-		<node X="183904" Y="-10883" />
-		<node X="186245" Y="-10903" />
-		<node X="186265" Y="-8223" />
-		<node X="183924" Y="-8203" />
+	<zone name="Lilith" id="12005" type="ScriptZone" shape="NPoly" minZ="-6500" maxZ="-4600">
+		<node X="-5576" Y="22609" />
+		<node X="-7796" Y="22618" />
+		<node X="-7814" Y="20382" />
+		<node X="-5585" Y="20334" />
 	</zone>
 	<zone name="Pre Lilith" id="12006" type="ScriptZone" shape="NPoly" minZ="-5000" maxZ="-4300">
 		<node X="-19545" Y="12943" />

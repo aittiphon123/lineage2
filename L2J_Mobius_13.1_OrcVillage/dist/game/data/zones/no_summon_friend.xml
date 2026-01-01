@@ -195,17 +195,17 @@
 		<node X="128248" Y="116984" />
 		<node X="126248" Y="115736" />
 	</zone>
-	<zone name="Lilith_pvp" type="NoSummonFriendZone" shape="NPoly" minZ="-3752" maxZ="-9000"> <!-- Lilith -->
-		<node X="-5776" Y="22409" />
-		<node X="-7596" Y="22418" />
-		<node X="-7614" Y="20582" />
-		<node X="-5785" Y="20534" />
+	<zone name="Lilith_NoSummonFriendZone" type="NoSummonFriendZone" shape="NPoly" minZ="-3752" maxZ="-9000"> <!-- Lilith -->
+		<node X="-5576" Y="22609" />
+		<node X="-7796" Y="22618" />
+		<node X="-7814" Y="20382" />
+		<node X="-5585" Y="20334" />
 	</zone>
-	<zone name="Anakim_pvp" type="NoSummonFriendZone" shape="NPoly" minZ="-3752" maxZ="-9000"> <!-- Lilith -->
-		<node X="186046" Y="-13548" />
-		<node X="186055" Y="-11686" />
-		<node X="184163" Y="-11640" />
-		<node X="184082" Y="-13600" />
+	<zone name="Anakim_NoSummonFriendZone" type="NoSummonFriendZone" shape="NPoly" minZ="-3752" maxZ="-9000"> <!-- Anakim -->
+		<node X="183738" Y="-13897" />
+		<node X="186390" Y="-13892" />
+		<node X="186376" Y="-8713" />
+		<node X="183720" Y="-8713" />
 	</zone>
 	<zone name="Orfen_zone_no_summon_friend" type="NoSummonFriendZone" shape="NPoly" minZ="-3000" maxZ="-9000"> <!-- Orfen -->
 		<node X="47013" Y="18796" />
