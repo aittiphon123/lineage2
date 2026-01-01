@@ -3446,6 +3446,8 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>110</magicLevel>
 		<mpConsume>270</mpConsume>
+		<itemConsumeCount>2</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<reuseDelay>20000</reuseDelay>
 		<reuseDelayGroup>31302</reuseDelayGroup>
 		<conditions>
@@ -5432,6 +5434,8 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>110</magicLevel>
 		<mpConsume>270</mpConsume>
+		<itemConsumeCount>2</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<reuseDelay>20000</reuseDelay>
 		<reuseDelayGroup>31302</reuseDelayGroup>
 		<conditions>

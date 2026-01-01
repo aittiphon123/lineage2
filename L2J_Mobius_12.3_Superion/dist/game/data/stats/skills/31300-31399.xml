@@ -569,6 +569,8 @@
 		<hitTime>7000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<mpConsume>270</mpConsume>
+		<itemConsumeCount>2</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<reuseDelay>20000</reuseDelay>
 		<reuseDelayGroup>31302</reuseDelayGroup>
 	</skill>
