@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/skillTrees.xsd">
-	<skillTree type="certificationSkillTree">		
+	<skillTree type="certificationSkillTree">
 		<skill skillName="Dye of War" skillId="51271" skillLevel="1" getLevel="1" learnedByNpc="true">
 			<item id="91481" count="3" /> <!-- Soul Crystal -->
 		</skill>

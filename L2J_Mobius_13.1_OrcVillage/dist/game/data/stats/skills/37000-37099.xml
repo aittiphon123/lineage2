@@ -1511,7 +1511,7 @@
 					<value level="30">15</value>
 				</amount>
 				<mode>PER</mode>
-			</effect>		
+			</effect>
 			<effect name="MagicalSkillPower">
 				<amount>
 					<value level="1">0.1</value>
@@ -2681,7 +2681,7 @@
 			<effect name="AutoAttackDamageBonus">
 				<amount>3</amount>
 				<mode>PER</mode>
-			</effect>		
+			</effect>
 			<effect name="MagicalSkillPower">
 				<amount>3</amount>
 				<mode>PER</mode>

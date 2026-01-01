@@ -119,19 +119,19 @@
 	</option>
 	<option id="37136" name="Collection_7_487">
 		<!-- P. Atk./ M. Atk./ P. Def./ M. Def. +5%, acquired XP/ SP +5% -->
-		<passive_skill id="37098" level="1" />		
+		<passive_skill id="37098" level="1" />
 	</option>
 	<option id="37137" name="Collection_6_488">
 		<!-- All attack power +3%, P./ M. Def. +3%, acquired XP/ SP +5% -->
-		<passive_skill id="37099" level="1" />		
+		<passive_skill id="37099" level="1" />
 	</option>
 	<option id="37138" name="Collection_6_489">
 		<!-- All attack power +3%, P./ M. Def. +3%, acquired XP/ SP +5% -->
-		<passive_skill id="37100" level="1" />		
+		<passive_skill id="37100" level="1" />
 	</option>
 	<option id="37139" name="Collection_6_490">
 		<!-- All attack power +3%, P./ M. Def. +3%, acquired XP/ SP +5% -->
-		<passive_skill id="37101" level="1" />		
+		<passive_skill id="37101" level="1" />
 	</option>
 	<option id="37140" name="option_id_37140">
 		<!-- Damage +4%, received damage -4% -->

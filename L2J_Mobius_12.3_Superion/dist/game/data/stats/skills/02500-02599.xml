@@ -2389,7 +2389,7 @@
 				<amount>
 					<value level="1">10000</value>
 					<value level="2">20000</value>
-				</amount>		
+				</amount>
 			</condition>
 		</conditions>
 		<effects>

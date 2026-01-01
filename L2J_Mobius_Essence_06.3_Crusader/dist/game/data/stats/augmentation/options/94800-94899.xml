@@ -730,263 +730,263 @@
 	</option>
 	<option id="94859" name="option_id_94859">
 		<!-- Received damage -3.5% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-3.5</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-3.5</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-3.5</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-3.5</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94860" name="option_id_94860">
 		<!-- Received damage -3.7% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-3.7</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-3.7</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-3.7</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-3.7</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94861" name="option_id_94861">
 		<!-- Received damage -3.9% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-3.9</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-3.9</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-3.9</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-3.9</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94862" name="option_id_94862">
 		<!-- Received damage -4.1% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-4.1</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-4.1</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-4.1</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-4.1</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94863" name="option_id_94863">
 		<!-- Received damage -4.4% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-4.4</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-4.4</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-4.4</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-4.4</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94864" name="option_id_94864">
 		<!-- Received damage -4.7% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-4.7</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-4.7</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-4.7</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-4.7</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94865" name="option_id_94865">
 		<!-- Received damage -5% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-5</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-5</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-5</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-5</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94866" name="option_id_94866">
 		<!-- Received damage -5.3% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-5.3</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-5.3</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-5.3</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-5.3</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94867" name="option_id_94867">
 		<!-- Received damage -5.6% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-5.6</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-5.6</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-5.6</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-5.6</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94868" name="option_id_94868">
 		<!-- Received damage -6% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-6</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-6</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-6</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-6</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94869" name="option_id_94869">
 		<!-- Received damage -6.4% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-6.4</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-6.4</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-6.4</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-6.4</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94870" name="option_id_94870">
 		<!-- Received damage -6.8% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-6.8</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-6.8</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-6.8</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-6.8</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94871" name="option_id_94871">
 		<!-- Received damage -7.2% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-7.2</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-7.2</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-7.2</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-7.2</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94872" name="option_id_94872">
 		<!-- Received damage -8% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-8</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-8</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-8</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-8</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94873" name="option_id_94873">
 		<!-- Received damage -8.2% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-8.2</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-8.2</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-8.2</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-8.2</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94874" name="option_id_94874">
 		<!-- Received damage -8.4% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-8.4</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-8.4</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-8.4</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-8.4</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94875" name="option_id_94875">
 		<!-- Received damage -8.6% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-8.6</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-8.6</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-8.6</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-8.6</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94876" name="option_id_94876">
 		<!-- Received damage -8.8% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-8.8</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-8.8</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-8.8</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-8.8</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94877" name="option_id_94877">
 		<!-- Received damage -9.2% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-9.2</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-9.2</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-9.2</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-9.2</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94878" name="option_id_94878">
 		<!-- Received damage -10% -->
-	<effects>
-		<effect name="DamageByAttack">
-			<amount>-10</amount>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-10</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="DamageByAttack">
-			<amount>-10</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-10</amount>
 				<type>PK</type>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</option>
 	<option id="94879" name="P./ M. Atk. +50, P./ M. Def. +70, acquired XP/ SP +5%, Skill MP Consumption -1%">
 		<effects>

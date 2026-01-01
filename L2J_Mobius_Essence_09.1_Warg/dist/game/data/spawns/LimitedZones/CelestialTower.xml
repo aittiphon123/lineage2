@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
-	 <spawn name="Celestial_tower_npcs">
-      <group>
-         <npc id="34431" x="147276" y="56018" z="-13798" heading="52507" respawnTime="20sec" /> <!-- General Store -->     
-         <npc id="34432" x="147576" y="56222" z="-13760" heading="50874" respawnTime="20sec" /> <!-- Celestial Tower Manager -->   
-      </group>
-   </spawn>
-   <spawn name="Celestial_tower_mobs">
+	<spawn name="Celestial_tower_npcs">
+		<group>
+			<npc id="34431" x="147276" y="56018" z="-13798" heading="52507" respawnTime="20sec" /> <!-- General Store -->
+			<npc id="34432" x="147576" y="56222" z="-13760" heading="50874" respawnTime="20sec" /> <!-- Celestial Tower Manager -->
+		</group>
+	</spawn>
+	<spawn name="Celestial_tower_mobs">
 		<group>
 			<npc id="22903" x="145375" y="53728" z="-14046" heading="41572" respawnTime="60sec" /> <!-- Apostle - Heavenly Saint -->
 			<npc id="22773" x="145606" y="54065" z="-14047" heading="10116" respawnTime="60sec" /> <!-- Divine Mage -->

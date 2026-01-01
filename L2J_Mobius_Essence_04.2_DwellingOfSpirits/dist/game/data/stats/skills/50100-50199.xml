@@ -230,9 +230,9 @@
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-50</amount>
-					<mode>PER</mode>
+				<mode>PER</mode>
 			</effect>
-		</effects>	
+		</effects>
 	</skill>
 	<skill id="50124" toLevel="1" name="Lord Ishka's Assassin">
 		<!-- Combat characteristics of the player who killed Lord Ishka are increased. -->

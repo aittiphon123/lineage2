@@ -79,7 +79,7 @@
 			<npc id="31126" x="81305" y="150754" z="-3536" respawnTime="60sec" /> <!-- Blacksmith of Mammon -->
 			<npc id="31092" x="81309" y="150575" z="-3536" respawnTime="60sec" /> <!-- Black Marketeer of Mammon -->
 			<npc id="30767" x="81376" y="149794" z="-3472" heading="49730" respawnTime="60sec"> <!-- Auctioneer -->
-			<parameters>
+				<parameters>
 					<param name="fnAgitMap" value="giran" />
 				</parameters>
 			</npc>

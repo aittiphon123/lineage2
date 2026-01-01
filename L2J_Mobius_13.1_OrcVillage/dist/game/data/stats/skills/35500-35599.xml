@@ -4205,7 +4205,7 @@
 		<effects>
 			<!-- StatUp Handled by hennaList.xml -->
 			<effect name="MagicalSkillPower">
-					<amount>
+				<amount>
 					<value level="1">0</value>
 					<value level="2">0</value>
 					<value level="3">0</value>

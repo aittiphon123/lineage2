@@ -1879,7 +1879,7 @@
 			</effect>
 			<effect name="VitalityExpRate">
 				<amount>25</amount>
-			</effect>			
+			</effect>
 			<effect name="PveMagicalSkillDefenceBonus">
 				<amount>10</amount>
 				<mode>PER</mode>

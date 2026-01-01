@@ -605,6 +605,6 @@
 		<skill skillName="Accuracy Bonus" skillId="62204" skillLevel="4" getLevel="124" autoGet="true" />
 		<skill skillName="Accuracy Bonus" skillId="62204" skillLevel="5" getLevel="126" autoGet="true" />
 		<skill skillName="Accuracy Bonus" skillId="62204" skillLevel="6" getLevel="128" autoGet="true" />
-		<skill skillName="Accuracy Bonus" skillId="62204" skillLevel="7" getLevel="130" autoGet="true" />	
+		<skill skillName="Accuracy Bonus" skillId="62204" skillLevel="7" getLevel="130" autoGet="true" />
 	</skillTree>
 </list>

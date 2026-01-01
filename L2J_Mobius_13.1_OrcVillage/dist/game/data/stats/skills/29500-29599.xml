@@ -1960,7 +1960,7 @@
 	</skill>
 	<skill id="29595" toLevel="3" name="+10 Radiant Knight's Circlet Box">
 		<icon>icon.skill0000</icon>
- 		<operateType>A1</operateType>
+		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<coolTime>500</coolTime>
@@ -2089,7 +2089,7 @@
 			<effect name="StatUp">
 				<amount>3</amount>
 				<stat>STR,INT,CON</stat>
-			</effect>		
+			</effect>
 			<effect name="ExpModify">
 				<amount>10</amount>
 			</effect>

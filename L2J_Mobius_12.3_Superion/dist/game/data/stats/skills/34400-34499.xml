@@ -28,16 +28,16 @@
 			<effect name="SpModify">
 				<amount>10</amount>
 			</effect>
-		<effect name="ExpModify">
-    			<amount>50</amount>
-    			<minLevel>1</minLevel>
-    			<maxLevel>123</maxLevel>
-		</effect>
-		<effect name="SpModify">
- 			   <amount>50</amount>
- 			   <minLevel>1</minLevel>
-			   <maxLevel>123</maxLevel>
-		</effect>
+			<effect name="ExpModify">
+				<amount>50</amount>
+				<minLevel>1</minLevel>
+				<maxLevel>123</maxLevel>
+			</effect>
+			<effect name="SpModify">
+				<amount>50</amount>
+				<minLevel>1</minLevel>
+				<maxLevel>123</maxLevel>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="34401" toLevel="1" name="Sweet Smell of Blood">
@@ -768,7 +768,7 @@
 		<castRange>900</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
-		<isMagic>1</isMagic> 
+		<isMagic>1</isMagic>
 		<effectPoint>-352</effectPoint>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
@@ -787,7 +787,7 @@
 		<!-- A magic attack on the target and nearby enemies. -->
 		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
-		<basicProperty>MAGIC</basicProperty> 
+		<basicProperty>MAGIC</basicProperty>
 		<attributeType>DARK</attributeType>
 		<attributeValue>580</attributeValue>
 		<lvlBonusRate>1</lvlBonusRate>
@@ -832,7 +832,7 @@
 		<!-- A magic attack on the target and nearby enemies. -->
 		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
-		<basicProperty>MAGIC</basicProperty> 
+		<basicProperty>MAGIC</basicProperty>
 		<attributeType>DARK</attributeType>
 		<attributeValue>580</attributeValue>
 		<lvlBonusRate>1</lvlBonusRate>
@@ -918,7 +918,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
-		<effect name="PhysicalDamage">
+			<effect name="PhysicalDamage">
 				<power>100</power>
 				<pAtkMod>0.12</pAtkMod>
 				<pDefMod>0.01</pDefMod>
@@ -1015,7 +1015,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
-		<effect name="PhysicalDamage">
+			<effect name="PhysicalDamage">
 				<power>100</power>
 				<pAtkMod>0.12</pAtkMod>
 				<pDefMod>0.01</pDefMod>
@@ -1104,7 +1104,7 @@
 		<effectRange>100</effectRange>
 		<hitTime>1000</hitTime>
 		<effects>
-			<effect name="PhysicalDamage"> 
+			<effect name="PhysicalDamage">
 				<power>58833</power>
 			</effect>
 		</effects>
@@ -1121,7 +1121,7 @@
 		<effectRange>100</effectRange>
 		<hitTime>1000</hitTime>
 		<effects>
-			<effect name="PhysicalDamage"> 
+			<effect name="PhysicalDamage">
 				<power>58833</power>
 			</effect>
 		</effects>
@@ -1138,7 +1138,7 @@
 		<effectRange>100</effectRange>
 		<hitTime>1000</hitTime>
 		<effects>
-			<effect name="MagicalDamage"> 
+			<effect name="MagicalDamage">
 				<power>58833</power>
 			</effect>
 		</effects>

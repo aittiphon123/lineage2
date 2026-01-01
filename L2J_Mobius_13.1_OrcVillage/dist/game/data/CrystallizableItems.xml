@@ -1835,7 +1835,7 @@
 		</crystallizable_item>
 		<crystallizable_item id="37522"> <!-- Frintezza's Soul Necklace -->
 			<item id="47494" count="10" chance="100.00" /> <!-- Selenite -->
-		</crystallizable_item>		
+		</crystallizable_item>
 		<crystallizable_item id="47469"> <!-- Frintezza's Soul Necklace (Body) -->
 			<item id="47494" count="10" chance="100.00" /> <!-- Selenite -->
 		</crystallizable_item>
@@ -2396,7 +2396,7 @@
 			<item id="82903" count="35" chance="100.00" /> <!-- Solaris -->
 		</crystallizable_item>
 	</items>
-	<itemsOnEnchantFailure>	
+	<itemsOnEnchantFailure>
 		<armor>
 			<!-- Amber Shard -->
 			<item id="83357" enchant="0" chance="100.00" amountR="1" targetIds="83352,83353,83354" />

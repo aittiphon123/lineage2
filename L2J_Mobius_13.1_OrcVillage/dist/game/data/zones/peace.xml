@@ -1030,7 +1030,7 @@
 		<node X="81399" Y="226477" />
 	</zone>
 	<!-- Tower of Insolence -->
-	<zone name="tower_of_insolence_1-3" type="PeaceZone" shape="Cylinder" minZ="-16000" maxZ="-9000" rad="400"> 
+	<zone name="tower_of_insolence_1-3" type="PeaceZone" shape="Cylinder" minZ="-16000" maxZ="-9000" rad="400">
 		<stat name="instanceId" val="1020" />
 		<node X="-82016" Y="16156" />
 	</zone>
@@ -1058,7 +1058,7 @@
 		<node X="-69560" Y="211768" />
 		<node X="-69591" Y="211993" />
 	</zone>
-	<zone name="tower_of_insolence_4-6" type="PeaceZone" shape="NPoly" minZ="-15000" maxZ="-8000"> 
+	<zone name="tower_of_insolence_4-6" type="PeaceZone" shape="NPoly" minZ="-15000" maxZ="-8000">
 		<stat name="instanceId" val="1020" />
 		<node X="-148278" Y="20728" />
 		<node X="-146945" Y="20679" />
@@ -1066,15 +1066,15 @@
 		<node X="-147646" Y="21973" />
 		<node X="-148298" Y="21894" />
 	</zone>
-	<zone name="tower_of_insolence_spawn" type="PeaceZone" shape="Cylinder" minZ="-6000" maxZ="-4000" rad="400"> 
+	<zone name="tower_of_insolence_spawn" type="PeaceZone" shape="Cylinder" minZ="-6000" maxZ="-4000" rad="400">
 		<stat name="instanceId" val="1020" />
 		<node X="114665" Y="10653" />
 	</zone>
-	<zone name="ancient_battleground_west" type="PeaceZone" shape="Cylinder" minZ="-4000" maxZ="-2000" rad="400"> 
+	<zone name="ancient_battleground_west" type="PeaceZone" shape="Cylinder" minZ="-4000" maxZ="-2000" rad="400">
 		<stat name="instanceId" val="1020" />
 		<node X="105074" Y="-3596" />
 	</zone>
-	<zone name="ancient_battleground_east" type="PeaceZone" shape="Cylinder" minZ="-5000" maxZ="-3000" rad="400"> 
+	<zone name="ancient_battleground_east" type="PeaceZone" shape="Cylinder" minZ="-5000" maxZ="-3000" rad="400">
 		<stat name="instanceId" val="1020" />
 		<node X="131618" Y="-8673" />
 	</zone>

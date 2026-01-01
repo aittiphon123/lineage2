@@ -1028,7 +1028,7 @@
 			</effect>
 		</effects>
 	</skill>
-		<skill id="34864" toLevel="1" name="Valakas: Trample">
+	<skill id="34864" toLevel="1" name="Valakas: Trample">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1052,7 +1052,7 @@
 			</effect>
 		</effects>
 	</skill>
-		<skill id="34865" toLevel="1" name="Valakas Tail Rash">
+	<skill id="34865" toLevel="1" name="Valakas Tail Rash">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1287,17 +1287,17 @@
 		<specialLevel>-1</specialLevel>
 		<effects>
 			<effect name="PhysicalAttack">
-            <amount>30</amount>
-            <mode>PER</mode>
-        </effect>
-        <effect name="MagicalDefence">
-            <amount>50</amount>
-            <mode>PER</mode>
-        </effect>
-        <effect name="PhysicalDefence">
-            <amount>50</amount>
-            <mode>PER</mode>
-        </effect>
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="34874" toLevel="1" name="Valakas: Weakness">
@@ -1315,22 +1315,22 @@
 		<isMagic>7</isMagic>
 		<reuseDelay>10000</reuseDelay>
 		<specialLevel>-1</specialLevel>
-        <effects>
+		<effects>
 			<effect name="PhysicalAttack">
 				<amount>-70</amount>
- 				<mode>PER</mode>
+				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttack">
 				<amount>-70</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
-				<amount>-100</amount> 
- 				<mode>PER</mode>
+				<amount>-100</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-100</amount>
- 				<mode>PER</mode>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

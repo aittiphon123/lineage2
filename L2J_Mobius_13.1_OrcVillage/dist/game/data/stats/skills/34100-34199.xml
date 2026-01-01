@@ -123,7 +123,7 @@
 		<hitTime>1300</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>127</magicLevel>
-		<reuseDelay>1000</reuseDelay> 
+		<reuseDelay>1000</reuseDelay>
 		<effects>
 			<effect name="MagicalDamage">
 				<power>28000</power>
@@ -207,7 +207,7 @@
 		<magicLevel>127</magicLevel>
 		<reuseDelay>5000</reuseDelay>
 		<trait>SHOCK</trait>
-			<effects>
+		<effects>
 			<effect name="PhysicalDamage">
 				<power>9800000</power>
 				<overHit>true</overHit>
@@ -305,7 +305,7 @@
 			<effect name="KnockBack">
 				<speed>400</speed>
 				<distance>150</distance>
-			<knockDown>true</knockDown>
+				<knockDown>true</knockDown>
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>

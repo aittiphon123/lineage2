@@ -152,7 +152,7 @@
 				<amount>2</amount>
 			</effect>
 			<effect name="SpModify">
-			<amount>2</amount>
+				<amount>2</amount>
 			</effect>
 		</effects>
 	</skill>

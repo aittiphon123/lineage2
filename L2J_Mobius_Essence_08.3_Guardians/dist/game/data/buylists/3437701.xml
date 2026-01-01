@@ -50,11 +50,11 @@
 	<item id="95495" price="28000000" /> <!-- Spellbook: Divine Inspiration Lv. 1 - Sealed -->
 	<item id="95496" price="28000000" /> <!-- Spellbook: Divine Inspiration Lv. 2 - Sealed -->
 	<item id="94185" price="2800000" /> <!-- Dim Life Stone Lv. 1 - Weapon -->
- 	<item id="94187" price="1080000" /> <!-- Dim Life Stone Lv. 1 - Armor -->
- 	<item id="93099" price="1380000" /> <!-- Dim Life Stone Lv. 1 - Shield/ Sigil -->
- 	<item id="2132" price="8000" /> <!-- B-grade Gemstone -->
- 	<item id="2133" price="75000" /> <!-- A-grade Gemstone -->
- 	<item id="5126" price="561600" /> <!-- Dual Swords Crafting Stamp -->
+	<item id="94187" price="1080000" /> <!-- Dim Life Stone Lv. 1 - Armor -->
+	<item id="93099" price="1380000" /> <!-- Dim Life Stone Lv. 1 - Shield/ Sigil -->
+	<item id="2132" price="8000" /> <!-- B-grade Gemstone -->
+	<item id="2133" price="75000" /> <!-- A-grade Gemstone -->
+	<item id="5126" price="561600" /> <!-- Dual Swords Crafting Stamp -->
 	<item id="1831" price="105" /> <!-- Antidote -->
 	<item id="1832" price="252" /> <!-- Greater Antidote -->
 	<item id="1833" price="105" /> <!-- Bandage -->

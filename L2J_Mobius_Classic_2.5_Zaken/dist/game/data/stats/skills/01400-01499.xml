@@ -769,7 +769,7 @@
 			<value level="2">22</value>
 			<value level="3">24</value>
 			<value level="4">26</value>
-		</mpInitialConsume>		
+		</mpInitialConsume>
 		<reuseDelay>10000</reuseDelay>
 		<effects>
 			<effect name="MaxCp">

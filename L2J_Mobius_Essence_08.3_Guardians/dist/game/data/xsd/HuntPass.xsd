@@ -6,10 +6,10 @@
 					<xs:complexType>
 						<xs:simpleContent>
 							<xs:extension base="xs:string">
-								<xs:attribute type="xs:int" name="id" use="required"/>
-								<xs:attribute type="xs:int" name="count" use="required"/>
-								<xs:attribute type="xs:int" name="premiumId" use="optional"/>
-								<xs:attribute type="xs:int" name="premiumCount" use="optional"/>
+								<xs:attribute type="xs:int" name="id" use="required" />
+								<xs:attribute type="xs:int" name="count" use="required" />
+								<xs:attribute type="xs:int" name="premiumId" use="optional" />
+								<xs:attribute type="xs:int" name="premiumCount" use="optional" />
 							</xs:extension>
 						</xs:simpleContent>
 					</xs:complexType>

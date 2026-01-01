@@ -109,7 +109,7 @@
 	<reward id="1110" name="Hunting in Jamoa's Camp" requiredCompletion="800" isOneTime="false">
 		<!-- Kill 800 monsters in Jamoa's Camp. -->
 		<handler name="monster">
-			<param name="ids">24436,24437,24438,24439,24440,24441,24920,24921,24922,24923,24924,24925,24951,24952,24953,24954,24955,24956</param>			
+			<param name="ids">24436,24437,24438,24439,24440,24441,24920,24921,24922,24923,24924,24925,24951,24952,24953,24954,24955,24956</param>
 			<param name="minLevel">105</param>
 			<param name="maxLevel">255</param>
 		</handler>
@@ -1473,7 +1473,7 @@
 	<reward id="4112" name="Hunting in Ravaged Innadril" requiredCompletion="1400" isOneTime="false">
 		<!-- Kill 1400 monsters in the Ravaged Innadril. -->
 		<handler name="monster">
-		<param name="ids">24598,24599,24600,24603,24604,24605,24957,24958,24959,24960</param>
+			<param name="ids">24598,24599,24600,24603,24604,24605,24957,24958,24959,24960</param>
 			<param name="minLevel">105</param>
 			<param name="maxLevel">255</param>
 		</handler>
@@ -1525,7 +1525,7 @@
 	<reward id="4116" name="Hunt of 3 Session Zones" requiredCompletion="1000" isOneTime="false">
 		<!-- Kill 1000 monsters in Fioren's Crystal Prison, Jamoa's Camp and Pantheon's Museum. -->
 		<handler name="monster">
-		<param name="ids">24427,24428,24429,24430,24431,24432,24914,24915,24916,24917,24918,24919,24945,24946,24947,24948,24949,24950,24436,24437,24438,24439,24440,24441,24920,24921,24922,24923,24924,24925,24951,24952,24953,24954,24955,24956,24470,24471,24472,24473,24474,24475,24837,24838,24839,24840,24841,24842,24939,24940,24941,24942,24943,24944</param>
+			<param name="ids">24427,24428,24429,24430,24431,24432,24914,24915,24916,24917,24918,24919,24945,24946,24947,24948,24949,24950,24436,24437,24438,24439,24440,24441,24920,24921,24922,24923,24924,24925,24951,24952,24953,24954,24955,24956,24470,24471,24472,24473,24474,24475,24837,24838,24839,24840,24841,24842,24939,24940,24941,24942,24943,24944</param>
 			<param name="minLevel">105</param>
 			<param name="maxLevel">255</param>
 		</handler>

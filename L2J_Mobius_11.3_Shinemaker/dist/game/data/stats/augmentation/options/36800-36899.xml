@@ -62,51 +62,51 @@
 	</option>
 	<option id="36815" name="option_id_36815">
 		<!-- Weapon M. Atk. +5 -->
-		<passive_skill id="36647" level="1" /> <!-- Relic_Collection_D_8 Lv1 -->	
+		<passive_skill id="36647" level="1" /> <!-- Relic_Collection_D_8 Lv1 -->
 	</option>
 	<option id="36816" name="option_id_36816">
 		<!-- Weapon P. Atk. +5 -->
-		<passive_skill id="36648" level="1" /> <!-- Relic_Collection_D_9 Lv1 -->	
+		<passive_skill id="36648" level="1" /> <!-- Relic_Collection_D_9 Lv1 -->
 	</option>
 	<option id="36817" name="option_id_36817">
 		<!-- All received Critical Rate -1%% -->
-		<passive_skill id="36649" level="1" /> <!-- Relic_Collection_D_10 Lv1 -->	
+		<passive_skill id="36649" level="1" /> <!-- Relic_Collection_D_10 Lv1 -->
 	</option>
 	<option id="36818" name="option_id_36818">
 		<!-- All received Critical Damage -1%% -->
-		<passive_skill id="36650" level="1" /> <!-- Relic_Collection_D_11 Lv1 -->	
+		<passive_skill id="36650" level="1" /> <!-- Relic_Collection_D_11 Lv1 -->
 	</option>
 	<option id="36819" name="option_id_36819">
 		<!-- All Critical Damage +1%% -->
-		<passive_skill id="36651" level="1" /> <!-- Relic_Collection_D_12 Lv1 -->	
+		<passive_skill id="36651" level="1" /> <!-- Relic_Collection_D_12 Lv1 -->
 	</option>
 	<option id="36820" name="option_id_36820">
 		<!-- All Critical Damage +1%% -->
-		<passive_skill id="36652" level="1" /> <!-- Relic_Collection_D_13 Lv1 -->	
+		<passive_skill id="36652" level="1" /> <!-- Relic_Collection_D_13 Lv1 -->
 	</option>
 	<option id="36821" name="option_id_36821">
 		<!-- All Critical Damage +1%% -->
-		<passive_skill id="36653" level="1" /> <!-- Relic_Collection_D_14 Lv1 -->	
+		<passive_skill id="36653" level="1" /> <!-- Relic_Collection_D_14 Lv1 -->
 	</option>
 	<option id="36822" name="option_id_36822">
 		<!-- All Critical Damage +1%% -->
-		<passive_skill id="36654" level="1" /> <!-- Relic_Collection_D_15 Lv1 -->	
+		<passive_skill id="36654" level="1" /> <!-- Relic_Collection_D_15 Lv1 -->
 	</option>
 	<option id="36823" name="option_id_36823">
 		<!-- CON +1 -->
-		<passive_skill id="36655" level="1" /> <!-- Relic_Collection_C_1 Lv1 -->	
+		<passive_skill id="36655" level="1" /> <!-- Relic_Collection_C_1 Lv1 -->
 	</option>
 	<option id="36824" name="option_id_36824">
 		<!-- MEN +1 -->
-		<passive_skill id="36656" level="1" /> <!-- Relic_Collection_C_2 Lv1 -->	
+		<passive_skill id="36656" level="1" /> <!-- Relic_Collection_C_2 Lv1 -->
 	</option>
 	<option id="36825" name="option_id_36825">
 		<!-- STR +1 -->
-		<passive_skill id="36657" level="1" /> <!-- Relic_Collection_C_3 Lv1 -->	
+		<passive_skill id="36657" level="1" /> <!-- Relic_Collection_C_3 Lv1 -->
 	</option>
 	<option id="36826" name="option_id_36826">
 		<!-- INT +1 -->
-		<passive_skill id="36658" level="1" /> <!-- Relic_Collection_C_4 Lv1 -->	
+		<passive_skill id="36658" level="1" /> <!-- Relic_Collection_C_4 Lv1 -->
 	</option>
 	<option id="36827" name="option_id_36827">
 		<!-- LUC +1 -->
@@ -114,27 +114,27 @@
 	</option>
 	<option id="36828" name="option_id_36828">
 		<!-- CHA +1 -->
-		<passive_skill id="36748" level="1" /> <!-- Relic_Collection_C_6 Lv1 -->	
+		<passive_skill id="36748" level="1" /> <!-- Relic_Collection_C_6 Lv1 -->
 	</option>
 	<option id="36829" name="option_id_36829">
 		<!-- M. Def. +1%% -->
-		<passive_skill id="36749" level="1" /> <!-- Relic_Collection_C_7 Lv1 -->	
+		<passive_skill id="36749" level="1" /> <!-- Relic_Collection_C_7 Lv1 -->
 	</option>
 	<option id="36830" name="option_id_36830">
 		<!-- P. Def. +1%% -->
-		<passive_skill id="36750" level="1" /> <!-- Relic_Collection_C_8 Lv1 -->	
+		<passive_skill id="36750" level="1" /> <!-- Relic_Collection_C_8 Lv1 -->
 	</option>
 	<option id="36831" name="option_id_36831">
 		<!-- P. Atk. +1%% -->
-		<passive_skill id="36751" level="1" /> <!-- Relic_Collection_C_9 Lv1 -->	
+		<passive_skill id="36751" level="1" /> <!-- Relic_Collection_C_9 Lv1 -->
 	</option>
 	<option id="36832" name="option_id_36832">
 		<!-- M. Atk. +1%% -->
-		<passive_skill id="36752" level="1" /> <!-- Relic_Collection_C_10 Lv1 -->	
+		<passive_skill id="36752" level="1" /> <!-- Relic_Collection_C_10 Lv1 -->
 	</option>
 	<option id="36833" name="option_id_36833">
 		<!-- Acquired XP/ SP +1%% -->
-		<passive_skill id="36753" level="1" /> <!-- Relic_Collection_C_11 Lv1 -->	
+		<passive_skill id="36753" level="1" /> <!-- Relic_Collection_C_11 Lv1 -->
 	</option>
 	<option id="36834" name="option_id_36834">
 		<!-- Attribute Attack +20 -->

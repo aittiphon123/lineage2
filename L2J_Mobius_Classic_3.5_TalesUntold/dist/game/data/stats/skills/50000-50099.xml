@@ -845,7 +845,7 @@
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<affectObject>NOT_FRIEND</affectObject>		
+		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>950</affectRange>
 		<affectScope>POINT_BLANK</affectScope>
 		<coolTime>500</coolTime>
@@ -867,7 +867,7 @@
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<affectRange>250</affectRange>		
+		<affectRange>250</affectRange>
 		<affectScope>POINT_BLANK</affectScope>
 		<effectPoint>100</effectPoint>
 		<hitTime>1500</hitTime>
@@ -888,7 +888,7 @@
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>DEATH_CLACK</abnormalType>
-		<affectScope>SINGLE</affectScope>		
+		<affectScope>SINGLE</affectScope>
 		<canBeDispelled>false</canBeDispelled>
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
@@ -959,7 +959,7 @@
 			<effect name="PhysicalDamage">
 				<power>
 					<value level="1">10000</value>
-					<value level="2"></value>
+					<value level="2" />
 				</power>
 			</effect>
 		</effects>
@@ -1006,7 +1006,7 @@
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_A</abnormalType>
-		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>		
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<affectScope>SINGLE</affectScope>
 		<canBeDispelled>false</canBeDispelled>
 		<castRange>600</castRange>

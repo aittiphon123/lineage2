@@ -208,35 +208,35 @@
 					<value level="2">90</value>
 				</amount>
 				<mode>PER</mode>
-			</effect>	
+			</effect>
 			<effect name="DefenceCriticalRate">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceMagicCriticalRate">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefencePhysicalSkillCriticalRate">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceCriticalDamage">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceMagicCriticalDamage">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefencePhysicalSkillCriticalDamage">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceAttribute">
@@ -557,35 +557,35 @@
 					<value level="2">90</value>
 				</amount>
 				<mode>PER</mode>
-			</effect>	
+			</effect>
 			<effect name="DefenceCriticalRate">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceMagicCriticalRate">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefencePhysicalSkillCriticalRate">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceCriticalDamage">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceMagicCriticalDamage">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefencePhysicalSkillCriticalDamage">
-				    <value level="1">15</value>
-					<value level="2">25</value>
+				<value level="1">15</value>
+				<value level="2">25</value>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceAttribute">

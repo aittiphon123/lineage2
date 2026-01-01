@@ -15,13 +15,13 @@
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<effects>
 			<effect name="IgnoreReduceDamage">
- 				<amount>
- 					<value level="1">200</value>
- 					<value level="2">800</value>
- 				</amount>
- 				<mode>DIFF</mode>
- 			</effect>
- 		</effects>
+				<amount>
+					<value level="1">200</value>
+					<value level="2">800</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="50601" toLevel="15" name="Rabbit Doll's Sorcery">
 		<!-- Level 6: PvE damage +1%. P. Atk. +5. M. Atk. +5. P. Def. +10. M. Def. +10. Acquired XP/ SP +1%. MEN +1 -->

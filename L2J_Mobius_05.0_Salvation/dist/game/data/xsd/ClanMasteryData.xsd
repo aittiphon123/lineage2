@@ -6,19 +6,19 @@
 					<xs:complexType>
 						<xs:simpleContent>
 							<xs:extension base="xs:string">
-								<xs:attribute type="xs:int" name="mastery" use="required"/>
-								<xs:attribute type="xs:int" name="skill1Id" use="required"/>
-								<xs:attribute type="xs:int" name="skill1Level" use="required"/>
-								<xs:attribute type="xs:int" name="skill2Id" use="optional"/>
-								<xs:attribute type="xs:int" name="skill2Level" use="optional"/>
-								<xs:attribute type="xs:int" name="skill3Id" use="optional"/>
-								<xs:attribute type="xs:int" name="skill3Level" use="optional"/>
-								<xs:attribute type="xs:int" name="skill4Id" use="optional"/>
-								<xs:attribute type="xs:int" name="skill4Level" use="optional"/>
-								<xs:attribute type="xs:int" name="clanLevel" use="required"/>
-								<xs:attribute type="xs:int" name="clanReputation" use="required"/>
-								<xs:attribute type="xs:int" name="previousMastery" use="optional"/>
-								<xs:attribute type="xs:int" name="previousMasteryAlt" use="optional"/>
+								<xs:attribute type="xs:int" name="mastery" use="required" />
+								<xs:attribute type="xs:int" name="skill1Id" use="required" />
+								<xs:attribute type="xs:int" name="skill1Level" use="required" />
+								<xs:attribute type="xs:int" name="skill2Id" use="optional" />
+								<xs:attribute type="xs:int" name="skill2Level" use="optional" />
+								<xs:attribute type="xs:int" name="skill3Id" use="optional" />
+								<xs:attribute type="xs:int" name="skill3Level" use="optional" />
+								<xs:attribute type="xs:int" name="skill4Id" use="optional" />
+								<xs:attribute type="xs:int" name="skill4Level" use="optional" />
+								<xs:attribute type="xs:int" name="clanLevel" use="required" />
+								<xs:attribute type="xs:int" name="clanReputation" use="required" />
+								<xs:attribute type="xs:int" name="previousMastery" use="optional" />
+								<xs:attribute type="xs:int" name="previousMasteryAlt" use="optional" />
 							</xs:extension>
 						</xs:simpleContent>
 					</xs:complexType>

@@ -575,7 +575,7 @@
 		<passiveConditions>
 			<condition name="OpNotOlympiad" />
 		</passiveConditions>
-		<effects>	
+		<effects>
 			<effect name="ExpModify">
 				<amount>20</amount>
 			</effect>
@@ -645,7 +645,7 @@
 		<passiveConditions>
 			<condition name="OpNotOlympiad" />
 		</passiveConditions>
-		<effects>	
+		<effects>
 			<effect name="VitalityExpRate">
 				<amount>10</amount>
 			</effect>

@@ -97,7 +97,7 @@
 		<skill skillName="Twinkle Time" skillId="31306" skillLevel="4" getLevel="107" levelUpSp="126271" />
 		<skill skillName="Twinkle Time" skillId="31306" skillLevel="5" getLevel="112" levelUpSp="436393" />
 		<skill skillName="Twinkle Time" skillId="31306" skillLevel="6" getLevel="117" levelUpSp="436393">
-				<item id="39738,81887" count="32" /> <!-- Rune Stone -->
+			<item id="39738,81887" count="32" /> <!-- Rune Stone -->
 		</skill>
 		<skill skillName="Bright Jump" skillId="31281" skillLevel="2" getLevel="105" levelUpSp="87688" />
 		<skill skillName="Sparkling Jump" skillId="31282" skillLevel="2" getLevel="105" levelUpSp="87688" />

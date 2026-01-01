@@ -124,7 +124,7 @@
 		<production id="38846" count="1" /> <!-- Genuine Lindvior Dual Dagger -->
 	</item>
 	<item>
-		<ingredient id="57" count="500000" /> <!-- Adena --> 
-		<production id="36415" count="1" /> <!-- Dragon Blood --> 
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="36415" count="1" /> <!-- Dragon Blood -->
 	</item>
 </list>

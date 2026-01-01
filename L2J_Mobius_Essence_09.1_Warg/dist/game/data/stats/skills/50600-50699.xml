@@ -5389,7 +5389,7 @@
 			<value level="7">3-2</value>
 			<value level="8">4-2</value>
 		</affectLimit>
-		<affectObject>NOT_FRIEND</affectObject>	
+		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>200</affectRange>
 		<affectScope>RANGE</affectScope>
 		<basicProperty>NONE</basicProperty>

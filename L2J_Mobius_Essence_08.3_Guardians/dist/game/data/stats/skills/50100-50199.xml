@@ -255,7 +255,7 @@
 			</effect>
 			<effect name="Speed">
 				<amount>10</amount>
-			<mode>DIFF</mode>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

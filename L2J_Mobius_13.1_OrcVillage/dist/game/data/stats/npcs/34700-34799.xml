@@ -835,7 +835,7 @@
 			<attack physical="6745.74369699808" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
 			<defence physical="525.700347194163" magical="304.76927121016" />
 		</stats>
-		<status attackable="false" />	
+		<status attackable="false" />
 		<ai type="FIGHTER">
 			<clanList>
 				<clan>SEL_MAHUM</clan>

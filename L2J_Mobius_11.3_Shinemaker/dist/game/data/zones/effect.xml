@@ -4,17 +4,17 @@
 	<!-- Zone Orfen Effect -->
 	<zone name="spore_orfen_poison_zone" type="EffectZone" shape="NPoly" minZ="-3096" maxZ="-7996"> <!-- [21_18] -->
 		<stat name="skillIdLvl" val="32494-1;" /> <!-- Decreases_Atk_Spd_Casting_Spd_by_20% -->
-		<stat name="reuse" val="1000" /> 
+		<stat name="reuse" val="1000" />
 		<stat name="default_enabled" val="false" />
 		<node X="44957" Y="18160" />
 		<node X="44496" Y="18627" />
 		<node X="44148" Y="18801" />
-		<node X="43546" Y="19048" /> 
+		<node X="43546" Y="19048" />
 		<node X="42888" Y="19040" />
 		<node X="42144" Y="18856" />
 		<node X="41491" Y="18268" />
 		<node X="41413" Y="17074" />
-		<node X="41429" Y="16582" /> 
+		<node X="41429" Y="16582" />
 		<node X="41738" Y="15964" />
 		<node X="41912" Y="15727" />
 		<node X="42058" Y="15486" />

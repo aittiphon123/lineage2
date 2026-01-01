@@ -10553,7 +10553,7 @@
 			<condition name="CanSummonCubic" />
 		</conditions>
 		<effects>
-		<effect name="IgnoreDeath" />
+			<effect name="IgnoreDeath" />
 			<effect name="TriggerSkillByDeathBlow">
 				<chance>100</chance>
 				<skillId>19562</skillId> <!-- Reborn From Ashes -->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance id="2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
-<time duration="30" empty="0" />
+	<time duration="30" empty="0" />
 	<locations>
 		<enter type="FIXED">
 			<location x="68960" y="243667" z="-8728" />
@@ -96,7 +96,7 @@
 			<npc id="19109" x="70940" y="243459" z="-9179" heading="23786" respawnTime="10sec" /> <!-- Slime -->
 			<npc id="19108" x="71309" y="243459" z="-9182" respawnTime="10sec" /> <!-- Troop Chief -->
 		</group>
-			<group name="Stage2" spawnByDefault="false">
+		<group name="Stage2" spawnByDefault="false">
 			<npc id="19111" x="72020" y="242581" z="-8427" heading="56943" respawnTime="10sec" /> <!-- Water Breath -->
 			<npc id="19108" x="71972" y="242480" z="-8425" heading="41797" respawnTime="10sec" /> <!-- Troop Chief -->
 			<npc id="19111" x="71377" y="242154" z="-8426" heading="32855" respawnTime="10sec" /> <!-- Water Breath -->
@@ -126,8 +126,8 @@
 			<npc id="19111" x="71290" y="243396" z="-8425" heading="35114" respawnTime="10sec" /> <!-- Water Breath -->
 			<npc id="19110" x="71103" y="243455" z="-8425" heading="30212" respawnTime="10sec" /> <!-- Undine -->
 		</group>
-			<group name="ErosionPriest" spawnByDefault="false">
-           <npc id="19114" x="70743" y="242506" z="-6920" heading="49638" /> <!-- Erosion Priest -->
+		<group name="ErosionPriest" spawnByDefault="false">
+			<npc id="19114" x="70743" y="242506" z="-6920" heading="49638" /> <!-- Erosion Priest -->
 			<npc id="19114" x="70773" y="242360" z="-6920" heading="51696" /> <!-- Erosion Priest -->
 			<npc id="19114" x="70879" y="242149" z="-6920" heading="55071" /> <!-- Erosion Priest -->
 			<npc id="19114" x="70958" y="242126" z="-6920" heading="1611" /> <!-- Erosion Priest -->
@@ -135,8 +135,8 @@
 			<npc id="19114" x="73226" y="242195" z="-6918" heading="23799" /> <!-- Erosion Priest -->
 			<npc id="19114" x="73349" y="242076" z="-6918" heading="24575" /> <!-- Erosion Priest -->
 			<npc id="19114" x="73264" y="242126" z="-6918" heading="27221" /> <!-- Erosion Priest -->
-		</group>			
-			<group name="Stage3" spawnByDefault="false">
+		</group>
+		<group name="Stage3" spawnByDefault="false">
 			<npc id="19112" x="72163" y="242514" z="-7654" heading="58441" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
 			<npc id="19113" x="72643" y="242323" z="-7651" heading="63670" respawnTime="10sec" /> <!-- Temple Wizard -->
 			<npc id="19112" x="72944" y="242782" z="-7651" heading="16307" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->

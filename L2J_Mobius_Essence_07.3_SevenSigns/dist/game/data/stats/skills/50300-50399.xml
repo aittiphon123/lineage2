@@ -1193,8 +1193,8 @@
 		<icon>icon.absolute_revenge</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
- 		<isMagic>5</isMagic>
- 		<reuseDelay>8000</reuseDelay>
+		<isMagic>5</isMagic>
+		<reuseDelay>8000</reuseDelay>
 		<abnormalTime>4</abnormalTime>
 		<affectScope>SINGLE</affectScope>
 		<effectPoint>1</effectPoint>
@@ -1233,8 +1233,8 @@
 		<icon>icon.berserker_revival</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
- 		<isMagic>5</isMagic>
- 		<reuseDelay>15000</reuseDelay>
+		<isMagic>5</isMagic>
+		<reuseDelay>15000</reuseDelay>
 		<abnormalTime>10</abnormalTime>
 		<abnormalVisualEffect>H_R_BERSERKER_SHIELD_BUFF_AVE</abnormalVisualEffect>
 		<affectScope>SINGLE</affectScope>

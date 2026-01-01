@@ -3378,8 +3378,8 @@
 			</drop>
 			<spoil>
 				<item id="1874" min="1" max="1" chance="12.246" /> <!-- Oriharukon Ore -->
-					<item id="1875" min="1" max="1" chance="12.246" /> <!-- Stone of Purity -->
-					<item id="3035" min="1" max="1" chance="0.2449" /> <!-- Recipe: Spiritshot A -->
+				<item id="1875" min="1" max="1" chance="12.246" /> <!-- Stone of Purity -->
+				<item id="3035" min="1" max="1" chance="0.2449" /> <!-- Recipe: Spiritshot A -->
 			</spoil>
 		</dropLists>
 		<collision>
@@ -3989,7 +3989,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="true">
-		<clanList>
+			<clanList>
 				<clan>GIANT</clan>
 			</clanList>
 		</ai>

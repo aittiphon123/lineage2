@@ -10163,7 +10163,7 @@
 			</condition>
 		</conditions>
 		<effects>
-		    <effect name="TriggerSkill">
+			<effect name="TriggerSkill">
 				<skillId>31324</skillId> <!-- Gash -->
 				<skillLevel>2</skillLevel>
 				<targetType>SELF</targetType>

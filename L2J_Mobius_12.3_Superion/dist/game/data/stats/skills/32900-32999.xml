@@ -515,7 +515,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<effects>
 			<effect name="PhysicalDamage">
-				<power>28833</power> 
+				<power>28833</power>
 				<overHit>true</overHit>
 			</effect>
 		</effects>

@@ -38,7 +38,7 @@
 				<walk ground="40" />
 				<run ground="120" />
 			</speed>
-		</stats>	
+		</stats>
 		
 		<status attackable="false" showName="true" canMove="false" />
 		<collision>
@@ -57,7 +57,7 @@
 				<walk ground="40" />
 				<run ground="120" />
 			</speed>
-		</stats>	
+		</stats>
 		<status attackable="false" showName="true" canMove="false" />
 		<collision>
 			<radius normal="10" />

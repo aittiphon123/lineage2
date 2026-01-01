@@ -2110,7 +2110,7 @@
 			<value level="7">icon.dimension_bracelet_i06</value>
 			<value level="8">icon.dimension_bracelet_i07</value>
 			<value level="9">icon.dimension_bracelet_i08</value>
-			<value level="10">icon.dimension_bracelet_i09</value>			
+			<value level="10">icon.dimension_bracelet_i09</value>
 		</icon>
 		<operateType>P</operateType>
 		<effects>

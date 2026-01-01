@@ -2,7 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/AdenLaboratoryData.xsd">
 	<boss index="1" specialSlotsCount="4"> <!-- Queen Ant -->
 		<game type="NORMAL">
-		<!--
+			<!--
 		 - Success rate: 1.0 = 100% !!! Cannot be lower than 0.0000001% !!! Max 7 digits after the decimal
 		 - Index: slotID in the client.
 		 -->

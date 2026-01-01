@@ -984,8 +984,8 @@
 		<icon>icon.star_scrl_of_ench_ag</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
- 		<isMagic>4</isMagic>
- 		<reuseDelay>60000</reuseDelay>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<affectScope>SINGLE</affectScope>

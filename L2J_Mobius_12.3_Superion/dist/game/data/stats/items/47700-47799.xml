@@ -828,7 +828,7 @@
 			<skill id="18739" level="3" /> <!-- Capsule: +8 Eternal Robe -->
 		</skills>
 	</item>
-		<item id="47754" name="Dragon's Treasure Chest" type="EtcItem">
+	<item id="47754" name="Dragon's Treasure Chest" type="EtcItem">
 		<!-- Double-click to obtain a random item. -->
 		<set name="icon" val="icon.bm_dragon_present" />
 		<set name="default_action" val="PEEL" />
@@ -842,7 +842,7 @@
 		<capsuled_items>
 			<item id="19447" min="1" max="1" chance="3.846153" /> <!-- Blessed Scroll: Enchant R-grade Weapon -->
 			<item id="19448" min="1" max="1" chance="3.846153" /> <!-- Blessed Scroll: Enchant R-grade Armor -->
-			<item id="24343" min="1" max="1" chance="3.846153" /> <!-- Package: Blessed Stone: Enchant R-grade Weapon -->			
+			<item id="24343" min="1" max="1" chance="3.846153" /> <!-- Package: Blessed Stone: Enchant R-grade Weapon -->
 			<item id="24345" min="1" max="1" chance="3.846153" /> <!-- Package: Blessed Stone: Enchant R-grade Armor -->
 			<item id="24347" min="1" max="1" chance="3.846153" /> <!-- Package: Scroll: Enchant R-grade Weapon -->
 			<item id="24348" min="1" max="1" chance="3.846153" /> <!-- Package: Scroll: Enchant R-grade Armor -->

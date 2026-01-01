@@ -95,8 +95,8 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-        <set name="is_stackable" val="true" />
-        <set name="handler" val="HomunculusHourglass" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="HomunculusHourglass" />
 	</item>
 	<item id="82905" name="Shining Crystal of Determination Pack" type="EtcItem">
 		<!-- Double-click to obtain Crystal of Determination (1 pc.) and 1 useful item. -->

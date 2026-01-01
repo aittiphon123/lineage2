@@ -419,7 +419,7 @@
 			</effect>
 		</effects>
 	</option>
-	<option id="90233" name="Received M. Skill Critical Damage"> 
+	<option id="90233" name="Received M. Skill Critical Damage">
 		<effects>
 			<effect name="DefenceMagicCriticalDamage">
 				<amount>0.5</amount>
@@ -427,7 +427,7 @@
 			</effect>
 		</effects>
 	</option>
-	<option id="90234" name="Received M. Skill Critical Damage"> 
+	<option id="90234" name="Received M. Skill Critical Damage">
 		<effects>
 			<effect name="DefenceMagicCriticalDamage">
 				<amount>0.5</amount>
@@ -435,7 +435,7 @@
 			</effect>
 		</effects>
 	</option>
-	<option id="90235" name="Received M. Skill Critical Damage"> 
+	<option id="90235" name="Received M. Skill Critical Damage">
 		<effects>
 			<effect name="DefenceMagicCriticalDamage">
 				<amount>0.5</amount>
@@ -443,7 +443,7 @@
 			</effect>
 		</effects>
 	</option>
-	<option id="90236" name="Received M. Skill Critical Damage"> 
+	<option id="90236" name="Received M. Skill Critical Damage">
 		<effects>
 			<effect name="DefenceMagicCriticalDamage">
 				<amount>0.5</amount>
@@ -451,7 +451,7 @@
 			</effect>
 		</effects>
 	</option>
-	<option id="90237" name="Received M. Skill Critical Damage"> 
+	<option id="90237" name="Received M. Skill Critical Damage">
 		<effects>
 			<effect name="DefenceMagicCriticalDamage">
 				<amount>0.5</amount>
@@ -459,7 +459,7 @@
 			</effect>
 		</effects>
 	</option>
-	<option id="90238" name="Received M. Skill Critical Damage"> 
+	<option id="90238" name="Received M. Skill Critical Damage">
 		<effects>
 			<effect name="DefenceMagicCriticalDamage">
 				<amount>0.5</amount>
@@ -1048,16 +1048,16 @@
 	<option id="90299" name="option_id_90299">
 		<!-- MP Consumption -2% -->
 		<effects>
-		<effect name="MagicMpCost">
-			<amount>2</amount>
-			<mode>PER</mode>
-			<magicType>1</magicType>
-		</effect>
-		<effect name="MagicMpCost">
-			<amount>2</amount>
-			<mode>PER</mode>
-			<magicType>0</magicType>
-		</effect>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</option>
 </list>

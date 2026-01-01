@@ -965,7 +965,7 @@
 			<value level="39">82</value>
 			<value level="40">83</value>
 			<value level="41">84</value>
-			<value level="42">90</value> 
+			<value level="42">90</value>
 			<value level="43">93</value>
 			<value level="44">95</value>
 		</magicLevel>
@@ -1161,7 +1161,7 @@
 			<value level="40">830</value>
 			<value level="41">840</value>
 			<value level="42">850</value>
-			<value level="43">860</value> 
+			<value level="43">860</value>
 			<value level="44">870</value>
 		</effectPoint>
 		<effectRange>1200</effectRange>

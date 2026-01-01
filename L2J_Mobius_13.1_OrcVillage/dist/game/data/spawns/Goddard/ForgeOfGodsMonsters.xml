@@ -3,31 +3,31 @@
 	<spawn name="ForgeOfGodsMonsters">
 		<group>
 			<!-- <npc id="21392" x="191675" y="-117374" z="-1848" heading="25506" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
-            <!-- <npc id="21392" x="191713" y="-117641" z="-1856" heading="52989" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
-            <!-- <npc id="21392" x="191501" y="-117473" z="-1856" heading="26042" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
-            <!-- <npc id="21392" x="191493" y="-117263" z="-1856" heading="16747" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
-            <!-- <npc id="21392" x="191661" y="-117042" z="-1856" heading="9584" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
-            <!-- <npc id="21392" x="191850" y="-116991" z="-1856" heading="63401" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
-            <!-- <npc id="21392" x="191956" y="-117163" z="-1856" heading="55038" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
-            <!-- <npc id="21392" x="191985" y="-117380" z="-1856" heading="54481" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
-            <!-- <npc id="21392" x="191877" y="-117536" z="-1856" heading="44735" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
-            <!-- <npc id="21392" x="191493" y="-117719" z="-1856" heading="3040" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
+			<!-- <npc id="21392" x="191713" y="-117641" z="-1856" heading="52989" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
+			<!-- <npc id="21392" x="191501" y="-117473" z="-1856" heading="26042" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
+			<!-- <npc id="21392" x="191493" y="-117263" z="-1856" heading="16747" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
+			<!-- <npc id="21392" x="191661" y="-117042" z="-1856" heading="9584" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
+			<!-- <npc id="21392" x="191850" y="-116991" z="-1856" heading="63401" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
+			<!-- <npc id="21392" x="191956" y="-117163" z="-1856" heading="55038" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
+			<!-- <npc id="21392" x="191985" y="-117380" z="-1856" heading="54481" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
+			<!-- <npc id="21392" x="191877" y="-117536" z="-1856" heading="44735" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
+			<!-- <npc id="21392" x="191493" y="-117719" z="-1856" heading="3040" respawnTime="604800sec" /> --> <!-- Blazing Ifrit -->
 			<!-- <npc id="21395" x="189755" y="-107185" z="-816" heading="44382" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="189487" y="-107308" z="-824" heading="46111" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="189181" y="-107338" z="-816" heading="60882" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="191463" y="-106633" z="-808" heading="44735" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="191232" y="-106769" z="-816" heading="47930" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="190984" y="-106861" z="-816" heading="48425" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="190774" y="-106901" z="-816" heading="41881" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="188989" y="-107302" z="-808" heading="56143" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="192610" y="-113739" z="-1376" heading="48327" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="192499" y="-113584" z="-1360" heading="29163" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="193639" y="-114174" z="-1376" heading="49449" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="193468" y="-114212" z="-1392" heading="54788" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="193269" y="-114204" z="-1400" heading="50191" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="193047" y="-114160" z="-1400" heading="50306" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="192898" y="-114041" z="-1400" heading="54660" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
-            <!-- <npc id="21395" x="192750" y="-113926" z="-1392" heading="50449" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="189487" y="-107308" z="-824" heading="46111" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="189181" y="-107338" z="-816" heading="60882" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="191463" y="-106633" z="-808" heading="44735" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="191232" y="-106769" z="-816" heading="47930" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="190984" y="-106861" z="-816" heading="48425" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="190774" y="-106901" z="-816" heading="41881" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="188989" y="-107302" z="-808" heading="56143" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="192610" y="-113739" z="-1376" heading="48327" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="192499" y="-113584" z="-1360" heading="29163" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="193639" y="-114174" z="-1376" heading="49449" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="193468" y="-114212" z="-1392" heading="54788" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="193269" y="-114204" z="-1400" heading="50191" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="193047" y="-114160" z="-1400" heading="50306" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="192898" y="-114041" z="-1400" heading="54660" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
+			<!-- <npc id="21395" x="192750" y="-113926" z="-1392" heading="50449" respawnTime="604800sec" /> --> <!-- Elder Lavasaurus -->
 			<npc id="22634" x="181484" y="-120301" z="-3672" heading="11624" respawnTime="110sec" chaseRange="8000" /> <!-- Scarlet Stakato Worker -->
 			<npc id="22634" x="181323" y="-120629" z="-3672" heading="1610" respawnTime="110sec" chaseRange="8000" /> <!-- Scarlet Stakato Worker -->
 			<npc id="22634" x="181021" y="-120676" z="-3664" heading="50880" respawnTime="110sec" chaseRange="8000" /> <!-- Scarlet Stakato Worker -->

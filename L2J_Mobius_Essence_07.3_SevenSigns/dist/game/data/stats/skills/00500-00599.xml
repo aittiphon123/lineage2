@@ -1646,7 +1646,7 @@
 			<effect name="TransferDamageToPlayer">
 				<amount>90</amount>
 			</effect>
-		</selfEffects>		
+		</selfEffects>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>2700</amount>

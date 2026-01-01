@@ -1842,7 +1842,7 @@
 		<!-- Level 4: Double-click to obtain Bloody Eternal robe set enchanted to +10. -->
 		<!-- Level 5: Double-click to obtain 12 Bloody Zodiac Agathion Charms enchanted to +10. -->
 		<icon>icon.skill0000</icon>
- 		<operateType>A1</operateType>
+		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<coolTime>500</coolTime>

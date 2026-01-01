@@ -13867,12 +13867,12 @@
 					<node x="-15013" y="74873" />
 				</territory>
 			</territories>
-			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->			
+			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->
 			<npc id="27592" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27593" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27594" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27595" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Commander -->
-		</group>	
+		</group>
 	</spawn>
 	<spawn>
 		<group name="Q20101_Monsters_Group_2">
@@ -13881,12 +13881,12 @@
 					<node x="-20404" y="85806" />
 				</territory>
 			</territories>
-			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->			
+			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->
 			<npc id="27592" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27593" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27594" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27595" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Commander -->
-		</group>	
+		</group>
 	</spawn>
 	<spawn>
 		<group name="Q20101_Monsters_Group_3">
@@ -13895,12 +13895,12 @@
 					<node x="-15724" y="86707" />
 				</territory>
 			</territories>
-			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->			
+			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->
 			<npc id="27592" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27593" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27594" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27595" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Commander -->
-		</group>	
+		</group>
 	</spawn>
 	<spawn>
 		<group name="Q20101_Monsters_Group_4">
@@ -13909,12 +13909,12 @@
 					<node x="-1357" y="81520" />
 				</territory>
 			</territories>
-			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->			
+			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->
 			<npc id="27592" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27593" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27594" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27595" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Commander -->
-		</group>	
+		</group>
 	</spawn>
 	<spawn>
 		<group name="Q20101_Monsters_Group_5">
@@ -13923,12 +13923,12 @@
 					<node x="-4109" y="81900" />
 				</territory>
 			</territories>
-			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->			
+			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->
 			<npc id="27592" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27593" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27594" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27595" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Commander -->
-		</group>	
+		</group>
 	</spawn>
 	<spawn>
 		<group name="Q20101_Monsters_Group_6">
@@ -13937,11 +13937,11 @@
 					<node x="-2200" y="78512" />
 				</territory>
 			</territories>
-			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->			
+			<npc id="34746" count="1" /> <!-- Broken Supply Wagon -->
 			<npc id="27592" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27593" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27594" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Member -->
 			<npc id="27595" count="1" respawnTime="30sec" chaseRange="900" /> <!-- Tel Mahum Raider Squad Commander -->
-		</group>	
+		</group>
 	</spawn>
 </list>

@@ -789,9 +789,9 @@
 					<node x="-83465" y="11566" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_06">
 			<territories>
@@ -799,9 +799,9 @@
 					<node x="-84779" y="12348" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_07">
 			<territories>
@@ -809,9 +809,9 @@
 					<node x="-85705" y="13401" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_08">
 			<territories>
@@ -819,9 +819,9 @@
 					<node x="-86678" y="14565" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_09">
 			<territories>
@@ -829,9 +829,9 @@
 					<node x="-86813" y="17614" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_10">
 			<territories>
@@ -839,9 +839,9 @@
 					<node x="-86124" y="19014" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_11">
 			<territories>
@@ -849,9 +849,9 @@
 					<node x="-84929" y="20115" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_12">
 			<territories>
@@ -859,9 +859,9 @@
 					<node x="-83690" y="20862" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_13">
 			<territories>
@@ -869,9 +869,9 @@
 					<node x="-80372" y="20996" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_14">
 			<territories>
@@ -879,9 +879,9 @@
 					<node x="-79091" y="19837" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_15">
 			<territories>
@@ -889,9 +889,9 @@
 					<node x="-78057" y="18890" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_16">
 			<territories>
@@ -899,9 +899,9 @@
 					<node x="-77196" y="17646" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_17">
 			<territories>
@@ -909,9 +909,9 @@
 					<node x="-77354" y="14625" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_18">
 			<territories>
@@ -919,9 +919,9 @@
 					<node x="-77977" y="13172" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_19">
 			<territories>
@@ -929,9 +929,9 @@
 					<node x="-78996" y="12117" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_20">
 			<territories>
@@ -939,9 +939,9 @@
 					<node x="-80502" y="11373" />
 				</territory>
 			</territories>
-			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->	
-			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->	
-			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->	
+			<npc id="23853" count="2" respawnTime="7sec" /> <!-- Warrior of Radiance -->
+			<npc id="23854" count="3" respawnTime="7sec" /> <!-- Shooter of Radiance -->
+			<npc id="23855" count="3" respawnTime="7sec" /> <!-- Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_1st_relics">
 			<npc id="19900" respawnTime="1sec"> <!-- Fallen Angel's Relic Box -->
@@ -1060,9 +1060,9 @@
 					<node x="-83465" y="11566" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->	
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_06">
 			<territories>
@@ -1070,9 +1070,9 @@
 					<node x="-84779" y="12348" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->	
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_07">
 			<territories>
@@ -1080,9 +1080,9 @@
 					<node x="-85705" y="13401" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_08">
 			<territories>
@@ -1090,9 +1090,9 @@
 					<node x="-86678" y="14565" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->	
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_09">
 			<territories>
@@ -1100,9 +1100,9 @@
 					<node x="-86813" y="17614" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->	
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_10">
 			<territories>
@@ -1110,9 +1110,9 @@
 					<node x="-86124" y="19014" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_11">
 			<territories>
@@ -1120,9 +1120,9 @@
 					<node x="-84929" y="20115" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_12">
 			<territories>
@@ -1130,9 +1130,9 @@
 					<node x="-83690" y="20862" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_13">
 			<territories>
@@ -1140,9 +1140,9 @@
 					<node x="-80372" y="20996" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_14">
 			<territories>
@@ -1150,9 +1150,9 @@
 					<node x="-79091" y="19837" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_15">
 			<territories>
@@ -1160,9 +1160,9 @@
 					<node x="-78057" y="18890" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->	
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_16">
 			<territories>
@@ -1170,9 +1170,9 @@
 					<node x="-77196" y="17646" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_17">
 			<territories>
@@ -1180,9 +1180,9 @@
 					<node x="-77354" y="14625" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_18">
 			<territories>
@@ -1190,9 +1190,9 @@
 					<node x="-77977" y="13172" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_19">
 			<territories>
@@ -1200,9 +1200,9 @@
 					<node x="-78996" y="12117" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_20">
 			<territories>
@@ -1210,9 +1210,9 @@
 					<node x="-80502" y="11373" />
 				</territory>
 			</territories>
-			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->	
-			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->	
-			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->		
+			<npc id="23857" count="2" respawnTime="7sec" /> <!-- Elite Warrior of Radiance -->
+			<npc id="23858" count="3" respawnTime="7sec" /> <!-- Elite Shooter of Radiance -->
+			<npc id="23859" count="3" respawnTime="7sec" /> <!-- Elite Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_2nd_relics">
 			<npc id="19901" respawnTime="1sec"> <!-- Fallen Angel's Relic Box -->
@@ -1353,9 +1353,9 @@
 					<node x="-84779" y="12348" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->	
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_07">
 			<territories>
@@ -1363,9 +1363,9 @@
 					<node x="-85705" y="13401" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->		
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_08">
 			<territories>
@@ -1373,9 +1373,9 @@
 					<node x="-86678" y="14565" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->	
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_09">
 			<territories>
@@ -1383,9 +1383,9 @@
 					<node x="-86813" y="17614" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->	
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_10">
 			<territories>
@@ -1393,9 +1393,9 @@
 					<node x="-86124" y="19014" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->		
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_11">
 			<territories>
@@ -1403,9 +1403,9 @@
 					<node x="-84929" y="20115" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->		
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_12">
 			<territories>
@@ -1413,9 +1413,9 @@
 					<node x="-83690" y="20862" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->		
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_13">
 			<territories>
@@ -1423,9 +1423,9 @@
 					<node x="-80372" y="20996" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->		
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_14">
 			<territories>
@@ -1433,9 +1433,9 @@
 					<node x="-79091" y="19837" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->		
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_15">
 			<territories>
@@ -1443,9 +1443,9 @@
 					<node x="-78057" y="18890" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->	
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_16">
 			<territories>
@@ -1453,9 +1453,9 @@
 					<node x="-77196" y="17646" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->	
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_17">
 			<territories>
@@ -1463,9 +1463,9 @@
 					<node x="-77354" y="14625" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->		
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_18">
 			<territories>
@@ -1473,9 +1473,9 @@
 					<node x="-77977" y="13172" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->		
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_19">
 			<territories>
@@ -1483,9 +1483,9 @@
 					<node x="-78996" y="12117" />
 				</territory>
 			</territories>
-			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->	
-			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->	
-			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->		
+			<npc id="23861" count="2" respawnTime="7sec" /> <!-- Divine Warrior of Radiance -->
+			<npc id="23862" count="3" respawnTime="7sec" /> <!-- Divine Shooter of Radiance -->
+			<npc id="23863" count="3" respawnTime="7sec" /> <!-- Divine Servitor of Radiance -->
 		</group>
 		<group name="tower_of_insolence_3rd_relics">
 			<npc id="19902" respawnTime="1sec"> <!-- Fallen Angel's Relic Box -->

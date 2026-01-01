@@ -1106,7 +1106,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-		<item id="81771" name="Einhasad's Blue Box" type="EtcItem">
+	<item id="81771" name="Einhasad's Blue Box" type="EtcItem">
 		<!-- A box prepared on the occasion of minting of Einhasad's Golden Coins. Double-click to obtain one rare item with a certain chance. -->
 		<set name="icon" val="icon.bm_dragon_present_5" />
 		<set name="default_action" val="PEEL" />

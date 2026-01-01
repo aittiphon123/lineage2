@@ -250,7 +250,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</effects>	
+		</effects>
 	</skill>
 	<skill id="50124" toLevel="1" name="Defeater of Lord Ishka">
 		<!-- Buff given to those who defeat Lord Ishka. Increases battle ability. -->

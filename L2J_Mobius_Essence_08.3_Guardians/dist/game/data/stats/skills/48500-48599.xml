@@ -725,7 +725,7 @@
 	</skill>
 	<skill id="48561" toLevel="1" name="Scroll of Escape: Morgos' Military Base's Central Barracks">
 		<icon>icon.skill0000</icon>
-		 <operateType>A1</operateType>
+		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<hitTime>0</hitTime>

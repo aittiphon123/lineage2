@@ -2,7 +2,7 @@
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
 	<!-- No Restart Zones -->
 	<zone name="kuka_no_restart" type="NoRestartZone" shape="NPoly" minZ="-2500" maxZ="-2000">
-        <stat name="restartAllowedTime" val="600" />
+		<stat name="restartAllowedTime" val="600" />
 		<node X="-60884" Y="138448" />
 		<node X="-61224" Y="136376" />
 		<node X="-57288" Y="134872" />

@@ -616,7 +616,7 @@
 			<item id="81453,82356" count="1" /> <!-- Enhanced Rune Stone -->
 		</skill>
 		
-			<!-- Orc Village -->
+		<!-- Orc Village -->
 		<skill skillName="Sagittarius' Falling Star" skillId="31384" skillLevel="1" getLevel="120" levelUpSp="436393">
 			<item id="81453" count="2" /> <!-- Enhanced Rune Stone -->
 		</skill>

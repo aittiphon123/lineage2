@@ -1404,7 +1404,7 @@
 				<items>
 					<item chance="100">
 						<item id="17430" count="1" minEnchant="8" maxEnchant="8" /> <!-- Eternal Helmet - Heavy armor -->
-					</item>	
+					</item>
 					<item chance="100">
 						<item id="17431" count="1" minEnchant="8" maxEnchant="8" /> <!-- Eternal Breastplate - Heavy armor -->
 					</item>

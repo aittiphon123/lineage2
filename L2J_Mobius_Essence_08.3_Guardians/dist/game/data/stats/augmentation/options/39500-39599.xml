@@ -535,117 +535,117 @@
 	</option>
 	<option id="39539" name="White Valentine's Day">
 		<!-- Acquired XP/ SP +5%, P./ M. Def. +50, Atk. Spd./ Casting Spd. +5, PvE damage +2%, received PvE damage -5% -->
-	 <effects>
-		<effect name="ExpModify">
-			<amount>5</amount>
-		</effect>
-		<effect name="SpModify">
-			<amount>5</amount>
-		</effect>
-		<effect name="PhysicalDefence">
-			<amount>50</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MagicalDefence">
-			<amount>50</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="PhysicalAttackSpeed">
-			<amount>5</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MagicalAttackSpeed">
-			<amount>5</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="PveMagicalSkillDamageBonus">
-			<amount>2</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvePhysicalAttackDamageBonus">
-			<amount>2</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvePhysicalSkillDamageBonus">
-			<amount>2</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PveMagicalSkillDefenceBonus">
-			<amount>5</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvePhysicalAttackDefenceBonus">
-			<amount>5</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvePhysicalSkillDefenceBonus">
-			<amount>5</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PveRaidMagicalSkillDefenceBonus">
-			<amount>5</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PveRaidPhysicalAttackDefenceBonus">
-			<amount>5</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PveRaidPhysicalSkillDefenceBonus">
-			<amount>5</amount>
-			<mode>PER</mode>
-		</effect>
-	 </effects>
+		<effects>
+			<effect name="ExpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</option>
 	<option id="39540" name="Dark Valentine's Day">
 		<!-- Acquired XP/ SP +10%, P./ M. Def. +100, Atk. Spd./ Casting Spd. +10, PvP damage +2%, received PvP damage -5% -->
-	 <effects>
-		<effect name="ExpModify">
-			<amount>10</amount>
-		</effect>
-		<effect name="SpModify">
-			<amount>10</amount>
-		</effect>
-		<effect name="PhysicalDefence">
-			<amount>100</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MagicalDefence">
-			<amount>100</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="PhysicalAttackSpeed">
-			<amount>10</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MagicalAttackSpeed">
-			<amount>10</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="PvpMagicalSkillDamageBonus">
-			<amount>2</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvpPhysicalAttackDamageBonus">
-			<amount>2</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvpPhysicalSkillDamageBonus">
-			<amount>2</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvpMagicalSkillDefenceBonus">
-			<amount>5</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvpPhysicalAttackDefenceBonus">
-			<amount>5</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvpPhysicalSkillDefenceBonus">
-			<amount>5</amount>
-			<mode>PER</mode>
-		</effect>
-	 </effects>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</option>
 	<option id="39541" name="option_id_39541">
 	</option>
@@ -715,159 +715,159 @@
 	</option>
 	<option id="39574" name="Aden Power Collection">
 		<!-- Acquired XP/ SP +10%, Max HP/ MP/ CP +300, Speed +2, All received Critical Rate -2%, All received Critical Damage -2% -->
-	 <effects>
-		<effect name="ExpModify">
-			<amount>10</amount>
-		</effect>
-		<effect name="SpModify">
-			<amount>10</amount>
-		</effect>
-		<effect name="MaxHp">
-			<amount>300</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MaxMp">
-			<amount>300</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MaxCp">
-			<amount>300</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="Speed">
-			<amount>2</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="DefenceCriticalDamage">
-			<amount>2</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="DefenceCriticalRate">
-			<amount>2</amount>
-			<mode>PER</mode>
-		</effect>			
-	 </effects>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</option>
 	<option id="39575" name="Aden Attack Collection">
 		<!-- Acquired XP/ SP +3%, Max HP/ MP/ CP +125, Atk. Spd./ Casting Spd. +10, All Critical Rate +1%, All Critical Damage +1% -->
-	 <effects>
-		<effect name="ExpModify">
-			<amount>3</amount>
-		</effect>
-		<effect name="SpModify">
-			<amount>3</amount>
-		</effect>
-		<effect name="MaxHp">
-			<amount>125</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MaxMp">
-			<amount>125</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MaxCp">
-			<amount>125</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="PhysicalAttackSpeed">
-			<amount>10</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MagicalAttackSpeed">
-			<amount>10</amount>
-			<mode>DIFF</mode>
-		</effect>			
-		<effect name="CriticalRate">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="MagicCriticalRate">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PhysicalSkillCriticalRate">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>			
-		<effect name="CriticalDamage">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="MagicCriticalDamage">
-			<amount>1</amount>
-			<mode>PER</mode>			
-		</effect>
-		<effect name="PhysicalSkillCriticalDamage">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>			
-	 </effects>
+		<effects>
+			<effect name="ExpModify">
+				<amount>3</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>3</amount>
+			</effect>
+			<effect name="MaxHp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</option>
 	<option id="39576" name="Aden Defense Collection">
 		<!-- Acquired XP/ SP +2%, Max HP/ MP/ CP +75, Atk. Spd./ Casting Spd. +5, PvE damage +1%, received PvE damage -1% -->
-	 <effects>
-		<effect name="ExpModify">
-			<amount>2</amount>
-		</effect>
-		<effect name="SpModify">
-			<amount>2</amount>
-		</effect>
-		<effect name="MaxHp">
-			<amount>75</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MaxMp">
-			<amount>75</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MaxCp">
-			<amount>75</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="PhysicalAttackSpeed">
-			<amount>5</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MagicalAttackSpeed">
-			<amount>5</amount>
-			<mode>DIFF</mode>
-		</effect>			
-		<effect name="PveMagicalSkillDamageBonus">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvePhysicalAttackDamageBonus">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvePhysicalSkillDamageBonus">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PveMagicalSkillDefenceBonus">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvePhysicalAttackDefenceBonus">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PvePhysicalSkillDefenceBonus">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PveRaidMagicalSkillDefenceBonus">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PveRaidPhysicalAttackDefenceBonus">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>
-		<effect name="PveRaidPhysicalSkillDefenceBonus">
-			<amount>1</amount>
-			<mode>PER</mode>
-		</effect>		
-	 </effects>
+		<effects>
+			<effect name="ExpModify">
+				<amount>2</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>2</amount>
+			</effect>
+			<effect name="MaxHp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</option>
 </list>

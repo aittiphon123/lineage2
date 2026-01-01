@@ -199,7 +199,7 @@
 				<defence fire="2500" water="2500" wind="2500" earth="2500" holy="2450" dark="2500" />
 			</attribute>
 		</stats>
-		<status attackable="true" canMove="false" />	
+		<status attackable="true" canMove="false" />
 		<ai type="MAGE" aggroRange="1500" isAggressive="false" clanHelpRange="1000">
 			<clanList>
 				<clan>GUILLOTINE</clan>
@@ -365,7 +365,7 @@
 				<defence fire="2600" water="2650" wind="2650" earth="2650" holy="2650" dark="2650" />
 			</attribute>
 		</stats>
-		<status attackable="true" noSleepMode="true"/>
+		<status attackable="true" noSleepMode="true" />
 		<ai type="MAGE" isAggressive="false" />
 		<collision>
 			<radius normal="40" />
@@ -1553,9 +1553,9 @@
 	</npc>
 	<npc id="29427" level="122" type="RaidBoss" name="Demonic Venom" title="Raid Boss">
 		<parameters>
-			<skill name="SkillID1" id="62056" level="1" /> 
-			<skill name="SkillID2" id="62063" level="1" /> 
-			<param name="SkillID1_Probablity" value="400" /> 
+			<skill name="SkillID1" id="62056" level="1" />
+			<skill name="SkillID2" id="62063" level="1" />
+			<param name="SkillID1_Probablity" value="400" />
 			<param name="SkillID2_Probablity" value="400" />
 		</parameters>
 		<race>DEMONIC</race>
@@ -1577,7 +1577,7 @@
 			</attribute>
 		</stats>
 		<status attackable="true" noSleepMode="true" canMove="false" />
-		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
+		<ai type="MAGE" aggroRange="1000" isAggressive="false" />
 		<collision>
 			<radius normal="27" />
 			<height normal="70.5" />
@@ -1599,9 +1599,9 @@
 	</npc>
 	<npc id="29428" level="124" type="RaidBoss" name="Avenger Graff" title="Raid Boss">
 		<parameters>
-			<skill name="SkillID1" id="62058" level="1" /> 
-			<skill name="SkillID2" id="62060" level="1" /> 
-			<param name="SkillID1_Probablity" value="400" /> 
+			<skill name="SkillID1" id="62058" level="1" />
+			<skill name="SkillID2" id="62060" level="1" />
+			<param name="SkillID1_Probablity" value="400" />
 			<param name="SkillID3_Probablity" value="400" />
 		</parameters>
 		<race>UNDEAD</race>
@@ -1622,7 +1622,7 @@
 			</attribute>
 		</stats>
 		<status attackable="true" noSleepMode="true" canMove="false" />
-		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
+		<ai type="MAGE" aggroRange="1000" isAggressive="false" />
 		<collision>
 			<radius normal="34" />
 			<height normal="85.4" />
@@ -1645,8 +1645,8 @@
 	<npc id="29429" level="126" type="RaidBoss" name="Mad Cullan" title="Raid Boss">
 		<parameters>
 			<skill name="SkillID1" id="62059" level="1" />
-			<skill name="SkillID2" id="62062" level="1" /> 
-			<param name="SkillID1_Probablity" value="400" /> 
+			<skill name="SkillID2" id="62062" level="1" />
+			<param name="SkillID1_Probablity" value="400" />
 			<param name="SkillID2_Probablity" value="400" />
 		</parameters>
 		<race>DWARF</race>
@@ -1667,7 +1667,7 @@
 			</attribute>
 		</stats>
 		<status attackable="true" noSleepMode="true" canMove="false" />
-		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
+		<ai type="MAGE" aggroRange="1000" isAggressive="false" />
 		<collision>
 			<radius normal="35" />
 			<height normal="64.5" />
@@ -1689,9 +1689,9 @@
 	</npc>
 	<npc id="29430" level="128" type="RaidBoss" name="Arrogant Lebruum" title="Raid Boss">
 		<parameters>
-			<skill name="SkillID1" id="62058" level="1" /> 
-			<skill name="SkillID2" id="62060" level="1" /> 
-			<param name="SkillID1_Probablity" value="400" /> 
+			<skill name="SkillID1" id="62058" level="1" />
+			<skill name="SkillID2" id="62060" level="1" />
+			<param name="SkillID1_Probablity" value="400" />
 			<param name="SkillID3_Probablity" value="400" />
 		</parameters>
 		<race>DEMONIC</race>
@@ -1712,7 +1712,7 @@
 			</attribute>
 		</stats>
 		<status attackable="true" noSleepMode="true" canMove="false" />
-		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
+		<ai type="MAGE" aggroRange="1000" isAggressive="false" />
 		<collision>
 			<radius normal="40" />
 			<height normal="84.197" />

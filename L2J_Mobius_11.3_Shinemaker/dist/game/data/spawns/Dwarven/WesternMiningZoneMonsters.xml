@@ -20,7 +20,7 @@
 			<npc id="20526" x="130609" y="-190738" z="-3384" respawnTime="20sec" /> <!-- Obsidian Golem -->
 			<npc id="20526" x="129348" y="-187736" z="-3248" respawnTime="20sec" /> <!-- Obsidian Golem -->
 			<npc id="20526" x="129544" y="-188152" z="-3280" respawnTime="20sec" /> <!-- Obsidian Golem -->
-			<npc id="20526" x="129544" y="-187736" z="-3288" heading="55574" respawnTime="20sec" /> <!-- Obsidian Golem -->			
+			<npc id="20526" x="129544" y="-187736" z="-3288" heading="55574" respawnTime="20sec" /> <!-- Obsidian Golem -->
 			<npc id="20510" x="132421" y="-202126" z="-3560" heading="14557" respawnTime="20sec" /> <!-- Crystal Puma -->
 			<npc id="20510" x="132404" y="-201981" z="-3536" respawnTime="20sec" /> <!-- Crystal Puma -->
 			<npc id="20510" x="131922" y="-205864" z="-3528" heading="10207" respawnTime="20sec" /> <!-- Crystal Puma -->

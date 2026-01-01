@@ -2777,7 +2777,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</effects>		
+		</effects>
 	</skill>
 	<skill id="47261" toLevel="3" name="Divine Recovery">
 		<!-- Level 1: Consumes the target's soul and recovers MP. Recovers 45 MP on killing monsters. Recovers 1000 MP on killing in PvP. Trigger cooldown: 15 sec. PvE damage +3% -->

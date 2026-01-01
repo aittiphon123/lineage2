@@ -843,7 +843,7 @@
 	<skill id="86071" toLevel="1" name="Past Glory I">
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
-				<effects>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>60</amount>
 				<mode>DIFF</mode>

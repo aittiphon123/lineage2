@@ -5,8 +5,8 @@
 		<set name="hungry_limit" val="50" />
 		<set name="load" val="45540" />
 		<skills>
-			<skill skillId="49061" skillLevel="1" minLevel="1" /> 
-			<skill skillId="49063" skillLevel="1" minLevel="1" /> 
+			<skill skillId="49061" skillLevel="1" minLevel="1" />
+			<skill skillId="49063" skillLevel="1" minLevel="1" />
 		</skills>
 		<stats>
 			<stat level="1">

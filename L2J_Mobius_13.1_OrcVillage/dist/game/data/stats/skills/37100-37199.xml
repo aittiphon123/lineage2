@@ -7,7 +7,7 @@
 			<effect name="AutoAttackDamageBonus">
 				<amount>3</amount>
 				<mode>PER</mode>
-			</effect>		
+			</effect>
 			<effect name="MagicalSkillPower">
 				<amount>3</amount>
 				<mode>PER</mode>
@@ -39,7 +39,7 @@
 			<effect name="AutoAttackDamageBonus">
 				<amount>3</amount>
 				<mode>PER</mode>
-			</effect>		
+			</effect>
 			<effect name="MagicalSkillPower">
 				<amount>3</amount>
 				<mode>PER</mode>
@@ -1432,17 +1432,17 @@
 					<item>23892</item> <!-- Kasha Orc Footman -->
 					<item>23893</item> <!-- Kasha Orc Woodcutter -->
 					<item>23894</item> <!-- Kasha Orc Commander -->
-					<item>23895</item> <!-- Kasha Orc Training Mentor -->		
+					<item>23895</item> <!-- Kasha Orc Training Mentor -->
 					<item>23896</item> <!-- Nerva Orc Shaman -->
 					<item>23897</item> <!-- Nerva Orc Destroyer -->
 					<item>23898</item> <!-- Nerva Orc Combatant -->
-					<item>23899</item> <!-- Nerva Orc Berserker -->	
-					<item>23900</item> <!-- Kasha Orc Spearman -->		
+					<item>23899</item> <!-- Nerva Orc Berserker -->
+					<item>23900</item> <!-- Kasha Orc Spearman -->
 					<item>23901</item> <!-- Kasha Orc Elite Shaman -->
 					<item>23902</item> <!-- Kasha Orc Elite Destroyer -->
 					<item>23903</item> <!-- Kasha Orc Elite Combatant -->
 					<item>23904</item> <!-- Kasha Orc Elite Berserker -->
-					<item>23905</item> <!-- Kasha Orc Elite Spearman -->			
+					<item>23905</item> <!-- Kasha Orc Elite Spearman -->
 				</npcIds>
 				<range>1000</range>
 				<isAround>true</isAround>
@@ -1542,7 +1542,7 @@
 					<value level="5">10</value>
 				</amount>
 				<mode>PER</mode>
-			</effect>		
+			</effect>
 			<effect name="MagicalSkillPower">
 				<amount>
 					<value level="3">5</value>

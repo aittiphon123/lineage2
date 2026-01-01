@@ -656,7 +656,7 @@
 			<item itemId="82546" /> <!-- Blessed Fallen Angel's Earring -->
 			<item itemId="82547" /> <!-- Blessed Fallen Angel's Earring (Cooldown Decrease Lv. 1) -->
 			<item itemId="82548" /> <!-- Blessed Fallen Angel's Earring (Cooldown Decrease Lv. 2) -->
-			<item itemId="82549" /> <!-- Blessed Fallen Angel's Earring (Cooldown Decrease Lv. 3) -->			
+			<item itemId="82549" /> <!-- Blessed Fallen Angel's Earring (Cooldown Decrease Lv. 3) -->
 		</enchantRate>
 		<!-- Greater Agathion Charm -->
 		<enchantRate group="GREATER_AGATHION_CHARM">

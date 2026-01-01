@@ -11,7 +11,7 @@
 	<spawn name="Prison2">
 		<group name="Prison_1" spawnByDefault="true">
 			<territories>
-				<territory shape="NPoly" minZ="-3200" maxZ="-2800">					
+				<territory shape="NPoly" minZ="-3200" maxZ="-2800">
 					<node x="59028" y="-42001" />
 					<node x="58509" y="-42541" />
 					<node x="58556" y="-43280" />
@@ -28,7 +28,7 @@
 	<spawn name="Prison1">
 		<group name="Prison_2" spawnByDefault="true">
 			<territories>
-				<territory shape="NPoly" minZ="-3200" maxZ="-2800">					
+				<territory shape="NPoly" minZ="-3200" maxZ="-2800">
 					<node x="58607" y="-45418" />
 					<node x="59882" y="-45411" />
 					<node x="59815" y="-44863" />

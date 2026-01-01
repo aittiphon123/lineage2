@@ -9,12 +9,12 @@
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
-											<xs:attribute type="xs:byte" name="id" use="required"/>
-											<xs:attribute type="xs:short" name="atk" use="required"/>
-											<xs:attribute type="xs:short" name="def" use="required"/>
-											<xs:attribute type="xs:byte" name="critRate" use="required"/>
-											<xs:attribute type="xs:byte" name="critDam" use="required"/>
-											<xs:attribute type="xs:long" name="maxExp" use="required"/>
+											<xs:attribute type="xs:byte" name="id" use="required" />
+											<xs:attribute type="xs:short" name="atk" use="required" />
+											<xs:attribute type="xs:short" name="def" use="required" />
+											<xs:attribute type="xs:byte" name="critRate" use="required" />
+											<xs:attribute type="xs:byte" name="critDam" use="required" />
+											<xs:attribute type="xs:long" name="maxExp" use="required" />
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>
@@ -23,8 +23,8 @@
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
-											<xs:attribute type="xs:int" name="id" use="optional"/>
-											<xs:attribute type="xs:int" name="count" use="optional"/>
+											<xs:attribute type="xs:int" name="id" use="optional" />
+											<xs:attribute type="xs:int" name="count" use="optional" />
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>
@@ -33,19 +33,19 @@
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
-											<xs:attribute type="xs:int" name="id" use="required"/>
-											<xs:attribute type="xs:short" name="experience" use="required"/>
+											<xs:attribute type="xs:int" name="id" use="required" />
+											<xs:attribute type="xs:short" name="experience" use="required" />
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
-						<xs:attribute type="xs:string" name="name" use="required"/>
-						<xs:attribute type="xs:byte" name="type" use="required"/>
-						<xs:attribute type="xs:byte" name="stage" use="required"/>
-						<xs:attribute type="xs:short" name="npcId" use="required"/>
-						<xs:attribute type="xs:int" name="extractItem" use="required"/>
-						<xs:attribute type="xs:byte" name="maxCharacteristics" use="required"/>
+						<xs:attribute type="xs:string" name="name" use="required" />
+						<xs:attribute type="xs:byte" name="type" use="required" />
+						<xs:attribute type="xs:byte" name="stage" use="required" />
+						<xs:attribute type="xs:short" name="npcId" use="required" />
+						<xs:attribute type="xs:int" name="extractItem" use="required" />
+						<xs:attribute type="xs:byte" name="maxCharacteristics" use="required" />
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>

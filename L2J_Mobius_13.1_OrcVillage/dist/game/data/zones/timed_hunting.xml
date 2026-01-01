@@ -194,27 +194,27 @@
 		<node X="125000" Y="-205000" />
 	</zone>
 	<!-- Tower of Insolence -->
-	<zone name="tower_of_insolence_1-3" type="TimedHuntingZone" shape="NPoly" minZ="-16000" maxZ="-9000"> 
+	<zone name="tower_of_insolence_1-3" type="TimedHuntingZone" shape="NPoly" minZ="-16000" maxZ="-9000">
 		<stat name="instanceId" val="1020" />
 		<node X="-74950" Y="9480" />
 		<node X="-74950" Y="23290" />
 		<node X="-88890" Y="23290" />
 		<node X="-88890" Y="9480" />
 	</zone>
-	<zone name="tower_of_insolence_4-6" type="TimedHuntingZone" shape="NPoly" minZ="-15000" maxZ="-8000"> 
+	<zone name="tower_of_insolence_4-6" type="TimedHuntingZone" shape="NPoly" minZ="-15000" maxZ="-8000">
 		<stat name="instanceId" val="1020" />
 		<node X="-154520" Y="23280" />
 		<node X="-154520" Y="9470" />
 		<node X="-140580" Y="9470" />
 		<node X="-140580" Y="23280" />
 	</zone>
-	<zone name="ancient_battleground" type="TimedHuntingZone" shape="Cuboid" minZ="-7000" maxZ="1000"> 
+	<zone name="ancient_battleground" type="TimedHuntingZone" shape="Cuboid" minZ="-7000" maxZ="1000">
 		<stat name="instanceId" val="1020" />
 		<node X="136831" Y="-18172" />
 		<node X="98307" Y="24986" />
 	</zone>
 	<!-- War Fortress Superion -->
-	<zone name="war_fortress_superion" type="TimedHuntingZone" shape="Cuboid" minZ="-12000" maxZ="-8000"> 
+	<zone name="war_fortress_superion" type="TimedHuntingZone" shape="Cuboid" minZ="-12000" maxZ="-8000">
 		<stat name="instanceId" val="1025" />
 		<node X="65536" Y="163840" />
 		<node X="98303" Y="196607" />

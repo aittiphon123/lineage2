@@ -3262,73 +3262,73 @@
 		<effects>
 			<effect name="PhysicalSkillCriticalDamage">
 				<amount>
-				<value level="1">5</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">5</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">5</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">5</value>
+					<value level="1">5</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">5</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">5</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">5</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalSkillCriticalRate">
 				<amount>
-				<value level="1">0</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">3</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">6</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">10</value>
+					<value level="1">0</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">3</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">6</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">10</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalSkillDamageBonus">
 				<amount>
-				<value level="1">5</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+					<value level="1">5</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveMagicalSkillDamageBonus">
 				<amount>
-				<value level="1">5</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+					<value level="1">5</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalAttackDamageBonus">
 				<amount>
-				<value level="1">5</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+					<value level="1">5</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidMagicalSkillDamageBonus">
 				<amount>
-				<value level="1">5</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+					<value level="1">5</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidPhysicalAttackDamageBonus">
 				<amount>
-				<value level="1">5</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+					<value level="1">5</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidPhysicalSkillDamageBonus">
 				<amount>
-				<value level="1">5</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
-				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+					<value level="1">5</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+					<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

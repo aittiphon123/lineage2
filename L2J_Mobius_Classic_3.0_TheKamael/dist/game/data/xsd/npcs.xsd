@@ -293,10 +293,10 @@
 														<xs:complexType>
 															<xs:simpleContent>
 																<xs:extension base="xs:string">
-																	<xs:attribute type="xs:int" name="id" use="required"/>
-																	<xs:attribute type="xs:long" name="min" use="required"/>
-																	<xs:attribute type="xs:long" name="max" use="required"/>
-																	<xs:attribute type="xs:double" name="chance" use="required"/>
+																	<xs:attribute type="xs:int" name="id" use="required" />
+																	<xs:attribute type="xs:long" name="min" use="required" />
+																	<xs:attribute type="xs:long" name="max" use="required" />
+																	<xs:attribute type="xs:double" name="chance" use="required" />
 																</xs:extension>
 															</xs:simpleContent>
 														</xs:complexType>
@@ -308,16 +308,16 @@
 																	<xs:complexType>
 																		<xs:simpleContent>
 																			<xs:extension base="xs:string">
-																				<xs:attribute type="xs:int" name="id" use="required"/>
-																				<xs:attribute type="xs:long" name="min" use="required"/>
-																				<xs:attribute type="xs:long" name="max" use="required"/>
-																				<xs:attribute type="xs:double" name="chance" use="required"/>
+																				<xs:attribute type="xs:int" name="id" use="required" />
+																				<xs:attribute type="xs:long" name="min" use="required" />
+																				<xs:attribute type="xs:long" name="max" use="required" />
+																				<xs:attribute type="xs:double" name="chance" use="required" />
 																			</xs:extension>
 																		</xs:simpleContent>
 																	</xs:complexType>
 																</xs:element>
 															</xs:sequence>
-															<xs:attribute type="xs:double" name="chance" use="optional"/>
+															<xs:attribute type="xs:double" name="chance" use="optional" />
 														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
@@ -330,10 +330,10 @@
 														<xs:complexType>
 															<xs:simpleContent>
 																<xs:extension base="xs:string">
-																	<xs:attribute type="xs:int" name="id" use="optional"/>
-																	<xs:attribute type="xs:long" name="min" use="optional"/>
-																	<xs:attribute type="xs:long" name="max" use="optional"/>
-																	<xs:attribute type="xs:double" name="chance" use="optional"/>
+																	<xs:attribute type="xs:int" name="id" use="optional" />
+																	<xs:attribute type="xs:long" name="min" use="optional" />
+																	<xs:attribute type="xs:long" name="max" use="optional" />
+																	<xs:attribute type="xs:double" name="chance" use="optional" />
 																</xs:extension>
 															</xs:simpleContent>
 														</xs:complexType>
@@ -348,10 +348,10 @@
 														<xs:complexType>
 															<xs:simpleContent>
 																<xs:extension base="xs:string">
-																	<xs:attribute type="xs:int" name="id" use="optional"/>
-																	<xs:attribute type="xs:long" name="min" use="optional"/>
-																	<xs:attribute type="xs:long" name="max" use="optional"/>
-																	<xs:attribute type="xs:double" name="chance" use="optional"/>
+																	<xs:attribute type="xs:int" name="id" use="optional" />
+																	<xs:attribute type="xs:long" name="min" use="optional" />
+																	<xs:attribute type="xs:long" name="max" use="optional" />
+																	<xs:attribute type="xs:double" name="chance" use="optional" />
 																</xs:extension>
 															</xs:simpleContent>
 														</xs:complexType>

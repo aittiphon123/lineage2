@@ -34,8 +34,8 @@
 						<xs:sequence minOccurs="1" maxOccurs="unbounded">
 							<xs:element name="reset" minOccurs="1" maxOccurs="unbounded">
 								<xs:complexType>
-									<xs:attribute type="xs:int" name="itemid" use="required"/>
-									<xs:attribute type="xs:int" name="count" use="required"/>
+									<xs:attribute type="xs:int" name="itemid" use="required" />
+									<xs:attribute type="xs:int" name="count" use="required" />
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>

@@ -20,13 +20,13 @@
 		<!-- P. Atk./ M. Atk./ P. Def./ M. Def. +3% -->
 		<passive_skill id="35955" level="1" /> <!-- Art of Tenacity -->
 	</option>
-	<option id="35905" name="collection"> 
+	<option id="35905" name="collection">
 		<!-- P. Atk./ M. Atk./ P. Def./ M. Def. +5% -->
 		<passive_skill id="35956" level="1" /> <!-- 17th Anniversary Congratulations -->
 	</option>
-	<option id="35906" name="collection"> 
+	<option id="35906" name="collection">
 	</option>
-	<option id="35907" name="collection"> 
+	<option id="35907" name="collection">
 		<!-- Vitality bonus +5%, Attribute Attack/ Resistance +30 -->
 		<passive_skill id="35960" level="1" /> <!-- PA Cheering Bonus -->
 	</option>

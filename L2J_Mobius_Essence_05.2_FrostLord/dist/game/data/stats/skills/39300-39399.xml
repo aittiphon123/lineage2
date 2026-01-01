@@ -461,7 +461,7 @@
 				<amount>16</amount>
 				<mode>PER</mode>
 			</effect>
-				<effect name="MaxMp">
+			<effect name="MaxMp">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>

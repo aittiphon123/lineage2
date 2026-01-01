@@ -152,7 +152,7 @@
 					<value level="3">100</value>
 				</amount>
 				<mode>DIFF</mode>
-			</effect>			
+			</effect>
 			<effect name="PveMagicalSkillDamageBonus">
 				<amount>
 					<value level="1">-5</value>
@@ -200,7 +200,7 @@
 					<value level="3">-15</value>
 				</amount>
 				<mode>PER</mode>
-			</effect>			
+			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
 				<amount>
 					<value level="1">-5</value>

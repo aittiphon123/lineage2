@@ -39,13 +39,13 @@
 							</xs:element>
 							<xs:element name="skill" minOccurs="0" maxOccurs="unbounded">
 								<xs:complexType>
-									<xs:attribute type="xs:positiveInteger" name="id" use="required"/>
-									<xs:attribute type="xs:positiveInteger" name="level" use="required"/>
+									<xs:attribute type="xs:positiveInteger" name="id" use="required" />
+									<xs:attribute type="xs:positiveInteger" name="level" use="required" />
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="classId" minOccurs="0" maxOccurs="unbounded">
 								<xs:simpleType>
-									<xs:restriction base="xs:string"/>
+									<xs:restriction base="xs:string" />
 								</xs:simpleType>
 							</xs:element>
 						</xs:sequence>

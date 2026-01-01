@@ -853,8 +853,8 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalSkillDefenceBonus">
-			<amount>1.7</amount>
-			<mode>PER</mode>
+				<amount>1.7</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDefenceBonus">
 				<amount>1.7</amount>
@@ -882,8 +882,8 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalSkillDefenceBonus">
-			<amount>1.8</amount>
-			<mode>PER</mode>
+				<amount>1.8</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDefenceBonus">
 				<amount>1.8</amount>

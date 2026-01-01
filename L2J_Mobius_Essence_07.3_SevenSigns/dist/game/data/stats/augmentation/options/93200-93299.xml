@@ -430,8 +430,8 @@
 		</effects>
 	</option>
 	<option id="93233" name="option_id_93233">
-	<!-- Received Skill Critical Damage -168 -->
-	<effects>
+		<!-- Received Skill Critical Damage -168 -->
+		<effects>
 			<effect name="DefencePhysicalSkillCriticalDamage">
 				<amount>-168</amount>
 				<mode>DIFF</mode>

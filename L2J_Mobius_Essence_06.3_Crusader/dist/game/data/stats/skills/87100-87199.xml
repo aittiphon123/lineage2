@@ -447,7 +447,7 @@
 		<icon>icon.s_stigma_of_sodmz</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
-        	<isTriggeredSkill>true</isTriggeredSkill>
+		<isTriggeredSkill>true</isTriggeredSkill>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>8</abnormalTime>
 		<abnormalType>SM_STIGMA</abnormalType>
@@ -760,51 +760,51 @@
 	<skill id="87121" toLevel="1" name="Music Mastery Lv. 1">
 		<!-- Gives additional effects according to STR. <STR 68 - 80>. The number of targets affected the following skills +2. - Song of Hunter. - Song of Earth. - Song of Wind -->
 		<icon>icon.s_sodmz_mastery</icon>
-	        <operateType>A2</operateType>
-	        <targetType>SELF</targetType>
-	        <abnormalLevel>1</abnormalLevel>
-	        <abnormalTime>-1</abnormalTime>
-	        <affectScope>SINGLE</affectScope>
-	        <canBeDispelled>false</canBeDispelled>
-	        <irreplaceableBuff>true</irreplaceableBuff>
-	        <isMagic>4</isMagic>
-	        <isTriggeredSkill>true</isTriggeredSkill>
-	        <magicCriticalRate>5</magicCriticalRate>
-	        <stayAfterDeath>true</stayAfterDeath>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<stayAfterDeath>true</stayAfterDeath>
 	</skill>
 	<skill id="87122" toLevel="1" name="Music Mastery Lv. 2">
 		<!-- Gives additional effects according to STR. <STR 81 - 94>. Hold Atk. Rate +5%. The number of targets affected the following skills +4. - Song of Hunter. - Song of Earth. - Song of Wind -->
 		<icon>icon.s_sodmz_mastery</icon>
-	        <operateType>A2</operateType>
-	        <targetType>SELF</targetType>
-	        <abnormalLevel>1</abnormalLevel>
-	        <abnormalTime>-1</abnormalTime>
-	        <affectScope>SINGLE</affectScope>
-	        <canBeDispelled>false</canBeDispelled>
-	        <irreplaceableBuff>true</irreplaceableBuff>
-	        <isMagic>4</isMagic>
-	        <isTriggeredSkill>true</isTriggeredSkill>
-	        <magicCriticalRate>5</magicCriticalRate>
-	        <stayAfterDeath>true</stayAfterDeath>
-	        <effects>
-	            <effect name="AttackTrait">
-	                <HOLD>5</HOLD>
-	            </effect>
-	        </effects>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="AttackTrait">
+				<HOLD>5</HOLD>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="87123" toLevel="1" name="Music Mastery Lv. 3">
 		<!-- Gives additional effects according to STR. <STR 95+>. P. Atk. +400. Hold/ Silence/ Paralysis Atk. Rate +5%. The number of targets affected the following skills +10. - Song of Hunter. - Song of Earth. - Song of Wind -->
 		<icon>icon.s_sodmz_mastery</icon>
-	        <operateType>A2</operateType>
-	        <targetType>SELF</targetType>
-	        <abnormalLevel>1</abnormalLevel>
-	        <abnormalTime>-1</abnormalTime>
-	        <canBeDispelled>false</canBeDispelled>
-	        <irreplaceableBuff>true</irreplaceableBuff>
-	        <isMagic>4</isMagic>
-	        <isTriggeredSkill>true</isTriggeredSkill>
-	        <magicCriticalRate>5</magicCriticalRate>
-	        <stayAfterDeath>true</stayAfterDeath>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<canBeDispelled>false</canBeDispelled>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<stayAfterDeath>true</stayAfterDeath>
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
@@ -880,17 +880,17 @@
 	<skill id="87126" toLevel="1" name="Dance Mastery Lv. 1">
 		<!-- Gives additional effects according to STR. <STR 68 - 80>. The number of targets affected the following skills +2. - Dance of Fury. - Dance of Fire. - Dance of Warrior -->
 		<icon>icon.s_sptdan_mastery</icon>
-	        <operateType>A2</operateType>
-	        <targetType>SELF</targetType>
-	        <abnormalLevel>2</abnormalLevel>
-	        <abnormalTime>-1</abnormalTime>
-	        <affectScope>SINGLE</affectScope>
-	        <canBeDispelled>false</canBeDispelled>
-	        <irreplaceableBuff>true</irreplaceableBuff>
-	        <isMagic>4</isMagic>
-	        <isTriggeredSkill>true</isTriggeredSkill>
-	        <magicCriticalRate>5</magicCriticalRate>
-	        <stayAfterDeath>true</stayAfterDeath>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<stayAfterDeath>true</stayAfterDeath>
 		<abnormalType>DANCE_MASTERY</abnormalType>
 	</skill>
 	<skill id="87127" toLevel="1" name="Dance Mastery Lv. 2">
@@ -912,7 +912,7 @@
 			<effect name="AttackTrait">
 				<HOLD>5</HOLD>
 			</effect>
-        	</effects>
+		</effects>
 	</skill>
 	<skill id="87128" toLevel="1" name="Dance Mastery Lv. 3">
 		<!-- Gives additional effects according to STR. <STR 95+>. P. Atk. +400. Hold/ Imprisonment/ Sleep Atk. Rate +5%. The number of targets affected the following skills +10. - Dance of Fury. - Dance of Fire. - Dance of Warrior -->
@@ -937,7 +937,7 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="AttackTrait">
-	   			<HOLD>5</HOLD>
+				<HOLD>5</HOLD>
 				<PARALYZE>5</PARALYZE>
 				<DERANGEMENT>5</DERANGEMENT>
 			</effect>

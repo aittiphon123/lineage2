@@ -13,7 +13,7 @@
 											<xs:complexType>
 												<xs:attribute name="id" type="xs:positiveInteger" />
 												<xs:attribute name="count" type="xs:long" />
-												<xs:attribute name="adenaFee" type="xs:long" use="optional"/>
+												<xs:attribute name="adenaFee" type="xs:long" use="optional" />
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="dailyCount" minOccurs="1" maxOccurs="1" />
@@ -35,8 +35,8 @@
 						<xs:sequence minOccurs="1" maxOccurs="unbounded">
 							<xs:element name="reset" minOccurs="1" maxOccurs="unbounded">
 								<xs:complexType>
-									<xs:attribute type="xs:int" name="itemid" use="required"/>
-									<xs:attribute type="xs:int" name="count" use="required"/>
+									<xs:attribute type="xs:int" name="itemid" use="required" />
+									<xs:attribute type="xs:int" name="count" use="required" />
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>

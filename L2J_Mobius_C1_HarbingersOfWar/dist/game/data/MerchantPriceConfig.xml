@@ -33,7 +33,7 @@
 	<priceConfig id="21" name="Oren Castle" baseTax="10" castleId="4" zoneId="11203" />
 	<priceConfig id="22" name="Aden Castle" baseTax="10" castleId="5" zoneId="11204" />
 	<priceConfig id="23" name="Innadril Castle" baseTax="10" castleId="3" zoneId="11205" />
-	<priceConfig id="24" name="Goddard Castle" baseTax="10" castleId="5" zoneId="11206" />  <!-- castleId Goddard (7) -> Aden (5) -->
+	<priceConfig id="24" name="Goddard Castle" baseTax="10" castleId="5" zoneId="11206" /> <!-- castleId Goddard (7) -> Aden (5) -->
 	<priceConfig id="25" name="Giran Castle" baseTax="10" castleId="3" zoneId="11207" /> <!-- castleId Rune (8) -> Giran (3) -->
 	<priceConfig id="26" name="Goddard Castle" baseTax="10" castleId="7" zoneId="11208" /> <!-- castleId Schuttgart (9) -> Goddard (7) -->
 </merchantPriceConfig>

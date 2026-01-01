@@ -760,7 +760,7 @@
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
-		<abnormalVisualEffect>V_DUAL_CONTENDER_MASTER_AVE</abnormalVisualEffect>			
+		<abnormalVisualEffect>V_DUAL_CONTENDER_MASTER_AVE</abnormalVisualEffect>
 		<affectScope>SINGLE</affectScope>
 		<effectPoint>100</effectPoint>
 		<effects>

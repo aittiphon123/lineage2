@@ -1448,8 +1448,8 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>TURN_STONE</abnormalType>
-		<abnormalVisualEffect>WA_UNBREAKABLE_SONIC_AVE</abnormalVisualEffect>		
-		<activateRate>80</activateRate>		
+		<abnormalVisualEffect>WA_UNBREAKABLE_SONIC_AVE</abnormalVisualEffect>
+		<activateRate>80</activateRate>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>600</castRange>
@@ -1465,7 +1465,7 @@
 		</effectPoint>
 		<effectRange>1200</effectRange>
 		<hitTime>2500</hitTime>
-		<isDebuff>true</isDebuff>				
+		<isDebuff>true</isDebuff>
 		<isMagic>0</isMagic>
 		<lvlBonusRate>20</lvlBonusRate>
 		<magicLevel>
@@ -1522,7 +1522,7 @@
 				<amount>-100</amount>
 				<mode>PER</mode>
 			</effect>
-		</effects>	
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>45500</skillId> <!-- Indestructible Seal -->
@@ -1549,7 +1549,7 @@
 					<value level="7">7</value>
 				</skillLevel>
 			</effect>
-		</endEffects>	
+		</endEffects>
 	</skill>
 	<skill id="1625" toLevel="4" name="Throwing Spear">
 		<!-- Level 1: <Hold skill>. Attacks the enemy with 801 power. Holds for 5 sec. Ignores Shield Defense. -->

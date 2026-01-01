@@ -1164,7 +1164,7 @@
 		<!-- Hold Resistance +0.5% -->
 		<effects>
 			<effect name="DefenceTrait">
-			<HOLD>0.5</HOLD>
+				<HOLD>0.5</HOLD>
 			</effect>
 		</effects>
 	</option>
@@ -1212,10 +1212,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>-0.5</amount>
 			</effect>
-				<effect name="MaxHp">
-					<amount>500</amount>
-					<mode>DIFF</mode>
-				</effect>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</option>
 	<option id="96593" name="option_id_96593">

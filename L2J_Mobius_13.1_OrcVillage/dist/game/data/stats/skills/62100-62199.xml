@@ -1201,7 +1201,7 @@
 	</skill>
 	<skill id="62197" toLevel="1" name="Chaos Sigma">
 		<!-- A basic magic attack on a single target. -->
-		<icon>icon.skill0096</icon>		
+		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>

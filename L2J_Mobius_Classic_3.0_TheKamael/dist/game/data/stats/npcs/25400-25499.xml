@@ -3573,14 +3573,14 @@
 					<item id="288" min="1" max="1" chance="4.2" /> <!-- Carnage Bow -->
 					<item id="289" min="1" max="1" chance="4.2" /> <!-- Soul Bow -->
 					<item id="305" min="1" max="1" chance="4.2" /> <!-- Tallum Glaive -->
-					<item id="2500" min="1" max="1" chance="4.2" /> <!-- Dark Legion's Edge -->				
+					<item id="2500" min="1" max="1" chance="4.2" /> <!-- Dark Legion's Edge -->
 					<item id="2504" min="1" max="1" chance="4.1" /> <!-- Meteor Shower -->
 					<item id="7884" min="1" max="1" chance="4.1" /> <!-- Infernal Master -->
 					<item id="7894" min="1" max="1" chance="4.1" /> <!-- Spiritual Eye -->
 					<item id="7895" min="1" max="1" chance="4.1" /> <!-- Flaming Dragon Skull -->
-					<item id="7899" min="1" max="1" chance="4.1" /> <!-- Destroyer Hammer -->				
+					<item id="7899" min="1" max="1" chance="4.1" /> <!-- Destroyer Hammer -->
 					<item id="91903" min="1" max="1" chance="4.1" /> <!-- Lacerator -->
-					<item id="91888" min="1" max="1" chance="4.1" /> <!-- Undertaker -->				
+					<item id="91888" min="1" max="1" chance="4.1" /> <!-- Undertaker -->
 					<item id="7902" min="1" max="1" chance="4.1" /> <!-- Doom Crusher -->
 				</group>
 				<group chance="80">
@@ -3772,14 +3772,14 @@
 					<item id="288" min="1" max="1" chance="4.2" /> <!-- Carnage Bow -->
 					<item id="289" min="1" max="1" chance="4.2" /> <!-- Soul Bow -->
 					<item id="305" min="1" max="1" chance="4.2" /> <!-- Tallum Glaive -->
-					<item id="2500" min="1" max="1" chance="4.2" /> <!-- Dark Legion's Edge -->				
+					<item id="2500" min="1" max="1" chance="4.2" /> <!-- Dark Legion's Edge -->
 					<item id="2504" min="1" max="1" chance="4.1" /> <!-- Meteor Shower -->
 					<item id="7884" min="1" max="1" chance="4.1" /> <!-- Infernal Master -->
 					<item id="7894" min="1" max="1" chance="4.1" /> <!-- Spiritual Eye -->
 					<item id="7895" min="1" max="1" chance="4.1" /> <!-- Flaming Dragon Skull -->
-					<item id="7899" min="1" max="1" chance="4.1" /> <!-- Destroyer Hammer -->				
+					<item id="7899" min="1" max="1" chance="4.1" /> <!-- Destroyer Hammer -->
 					<item id="91903" min="1" max="1" chance="4.1" /> <!-- Lacerator -->
-					<item id="91888" min="1" max="1" chance="4.1" /> <!-- Undertaker -->				
+					<item id="91888" min="1" max="1" chance="4.1" /> <!-- Undertaker -->
 					<item id="7902" min="1" max="1" chance="4.1" /> <!-- Doom Crusher -->
 				</group>
 				<group chance="80">

@@ -194,28 +194,28 @@
 		<node X="125000" Y="-205000" />
 	</zone>
 	<!-- Tower of Insolence -->
-	<zone name="tower_of_insolence_1" type="TimedHuntingZone" shape="NPoly" minZ="-17000" maxZ="10000"> 
+	<zone name="tower_of_insolence_1" type="TimedHuntingZone" shape="NPoly" minZ="-17000" maxZ="10000">
 		<stat name="instanceId" val="1020" />
 		<node X="-74950" Y="9480" />
 		<node X="-74950" Y="23290" />
 		<node X="-88890" Y="23290" />
 		<node X="-88890" Y="9480" />
 	</zone>
-	<zone name="tower_of_insolence_2" type="TimedHuntingZone" shape="NPoly" minZ="-17000" maxZ="10000"> 
+	<zone name="tower_of_insolence_2" type="TimedHuntingZone" shape="NPoly" minZ="-17000" maxZ="10000">
 		<stat name="instanceId" val="1020" />
 		<node X="-154520" Y="23280" />
 		<node X="-154520" Y="9470" />
 		<node X="-140580" Y="9470" />
 		<node X="-140580" Y="23280" />
 	</zone>
-	<zone name="tower_of_insolence_3" type="TimedHuntingZone" shape="NPoly" minZ="-17000" maxZ="10000"> 
+	<zone name="tower_of_insolence_3" type="TimedHuntingZone" shape="NPoly" minZ="-17000" maxZ="10000">
 		<stat name="instanceId" val="1020" />
 		<node X="-140490" Y="56120" />
 		<node X="-154420" Y="56120" />
 		<node X="-154420" Y="42180" />
 		<node X="-140490" Y="42180" />
 	</zone>
-	<zone name="tower_of_insolence_baium" type="TimedHuntingZone" shape="Cylinder" minZ="10000" maxZ="10500" rad="10000"> 
+	<zone name="tower_of_insolence_baium" type="TimedHuntingZone" shape="Cylinder" minZ="10000" maxZ="10500" rad="10000">
 		<stat name="instanceId" val="1020" />
 		<node X="114611" Y="116091" />
 	</zone>

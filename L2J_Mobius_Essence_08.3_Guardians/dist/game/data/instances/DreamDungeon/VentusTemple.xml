@@ -95,7 +95,7 @@
 			<npc id="22401" x="211002" y="54831" z="-8675" heading="60" respawnTime="3700sec" /> <!-- Ancient Guard -->
 			<npc id="22401" x="211002" y="54690" z="-8675" heading="65305" respawnTime="3700sec" /> <!-- Ancient Guard -->
 			<npc id="22401" x="211005" y="54550" z="-8675" heading="546" respawnTime="3700sec" /> <!-- Ancient Guard -->
-		<!--
+			<!--
 		</group>
 		<group name="VentusDreamMonsters" spawnByDefault="false" >
 		-->
@@ -112,7 +112,7 @@
 			<npc id="22402" x="216990" y="50300" z="-8528" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
 			<npc id="22402" x="218010" y="49410" z="-8528" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
 			<npc id="22402" x="218010" y="50300" z="-8528" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
-		<!--
+			<!--
 		</group>
 		<group name="VentusDreamMonsters_02" spawnByDefault="false" >
 		-->
@@ -120,7 +120,7 @@
 			<npc id="22402" x="216990" y="52350" z="-8593" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
 			<npc id="22402" x="218010" y="52120" z="-8593" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
 			<npc id="22402" x="218010" y="52350" z="-8593" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
-		<!--
+			<!--
 		</group>
 		<group name="VentusDreamMonsters_03" spawnByDefault="false" >
 		-->
@@ -130,13 +130,13 @@
 			<npc id="22402" x="214300" y="55070" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
 			<npc id="22402" x="215080" y="55070" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
 			<npc id="22402" x="215080" y="54280" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
-		<!--
+			<!--
 		</group>
 		<group name="VentusDreamMonsters_04" spawnByDefault="false" >
 		-->
 			<npc id="22402" x="212480" y="54655" z="-8685" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
 			<npc id="22402" x="213216" y="54655" z="-8685" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
-		<!--
+			<!--
 		</group>
 		<group name="VentusDreamMonsters_05" spawnByDefault="false" >
 		-->

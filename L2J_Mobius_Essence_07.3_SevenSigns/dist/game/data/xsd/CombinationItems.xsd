@@ -20,7 +20,7 @@
 						<xs:attribute type="xs:byte" name="enchantTwo" use="optional" />
 						<xs:attribute type="xs:long" name="commission" use="optional" />
 						<xs:attribute type="xs:float" name="chance" use="optional" />
-						<xs:attribute type="xs:boolean" name="announce" use="optional"/>
+						<xs:attribute type="xs:boolean" name="announce" use="optional" />
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>

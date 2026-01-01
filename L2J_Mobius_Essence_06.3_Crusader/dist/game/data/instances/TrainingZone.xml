@@ -274,35 +274,35 @@
 			<npc id="22567" x="-51549" y="6098" z="-251" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
 			<npc id="22566" x="-51470" y="6029" z="-251" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
 			<npc id="22568" x="-51555" y="5840" z="-248" respawnTime="10sec" /> <!-- Decayed Archer -->
- 			<npc id="22566" x="-51769" y="5791" z="-249" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22566" x="-51769" y="5791" z="-249" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
 			<npc id="22565" x="-51798" y="5934" z="-251" respawnTime="10sec" /> <!-- Decayed Warrior -->
 			<npc id="22567" x="-51389" y="5900" z="-249" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
 			<npc id="22566" x="-51306" y="6065" z="-249" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
 			<npc id="22568" x="-51428" y="6211" z="-249" respawnTime="10sec" /> <!-- Decayed Archer -->
- 			<npc id="22565" x="-51572" y="6234" z="-247" respawnTime="10sec" /> <!-- Decayed Warrior -->
+			<npc id="22565" x="-51572" y="6234" z="-247" respawnTime="10sec" /> <!-- Decayed Warrior -->
 			<npc id="22567" x="-51500" y="6411" z="-247" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
 			<npc id="22566" x="-51391" y="6379" z="-247" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
 			<npc id="22565" x="-51235" y="6280" z="-247" respawnTime="10sec" /> <!-- Decayed Warrior -->
 			<npc id="22567" x="-51219" y="6441" z="-248" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
 			<npc id="22568" x="-51194" y="6697" z="-249" respawnTime="10sec" /> <!-- Decayed Archer -->
- 			<npc id="22568" x="-51283" y="6682" z="-251" respawnTime="10sec" /> <!-- Decayed Archer -->
- 			<npc id="22567" x="-51333" y="6629" z="-250" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22568" x="-51283" y="6682" z="-251" respawnTime="10sec" /> <!-- Decayed Archer -->
+			<npc id="22567" x="-51333" y="6629" z="-250" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
 			<npc id="22565" x="-51612" y="6470" z="-246" respawnTime="10sec" /> <!-- Decayed Warrior -->
 			<npc id="22567" x="-51690" y="6351" z="-246" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
 			<npc id="22566" x="-51775" y="6314" z="-246" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
 			<npc id="22568" x="-51825" y="6131" z="-246" respawnTime="10sec" /> <!-- Decayed Archer -->
- 			<npc id="22568" x="-51966" y="6131" z="-246" respawnTime="10sec" /> <!-- Decayed Archer -->
- 			<npc id="22565" x="-52145" y="6105" z="-246" respawnTime="10sec" /> <!-- Decayed Warrior -->
+			<npc id="22568" x="-51966" y="6131" z="-246" respawnTime="10sec" /> <!-- Decayed Archer -->
+			<npc id="22565" x="-52145" y="6105" z="-246" respawnTime="10sec" /> <!-- Decayed Warrior -->
 			<npc id="22567" x="-52364" y="6070" z="-246" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
 			<npc id="22566" x="-52457" y="5862" z="-251" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
 			<npc id="22568" x="-52279" y="5810" z="-251" respawnTime="10sec" /> <!-- Decayed Archer -->
- 			<npc id="22567" x="-52194" y="5927" z="-251" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22567" x="-52194" y="5927" z="-251" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
 			<npc id="22566" x="-52051" y="5890" z="-251" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
 			<npc id="22565" x="-52006" y="5805" z="-250" respawnTime="10sec" /> <!-- Decayed Warrior -->
 			<npc id="22565" x="-52002" y="5624" z="-250" respawnTime="10sec" /> <!-- Decayed Warrior -->
 			<npc id="22568" x="-51844" y="5427" z="-249" respawnTime="10sec" /> <!-- Decayed Archer -->
- 			<npc id="22568" x="-51633" y="5501" z="-247" respawnTime="10sec" /> <!-- Decayed Archer -->
- 			<npc id="22567" x="-51706" y="5628" z="-247" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22568" x="-51633" y="5501" z="-247" respawnTime="10sec" /> <!-- Decayed Archer -->
+			<npc id="22567" x="-51706" y="5628" z="-247" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
 			<npc id="22566" x="-51463" y="5708" z="-247" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
 			<npc id="22565" x="-51389" y="5623" z="-247" respawnTime="10sec" /> <!-- Decayed Warrior -->
 			<npc id="22567" x="-51299" y="5731" z="-247" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
@@ -319,7 +319,7 @@
 			<npc id="22565" x="-51809" y="5527" z="-249" respawnTime="10sec" /> <!-- Decayed Warrior -->
 			<npc id="22567" x="-51921" y="5952" z="-247" respawnTime="10sec" /> <!-- Decayed Royal Guard -->
 			<npc id="22568" x="-51682" y="5899" z="-248" respawnTime="10sec" /> <!-- Decayed Archer -->
- 			<npc id="22566" x="-51971" y="6230" z="-246" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22566" x="-51971" y="6230" z="-246" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
 			<npc id="22565" x="-51437" y="6295" z="-251" respawnTime="10sec" /> <!-- Decayed Warrior -->
 			<npc id="22566" x="-51568" y="5724" z="-248" respawnTime="10sec" /> <!-- Decayed Evil Hound -->
 		</group>
@@ -977,19 +977,19 @@
 		<group name="RAID_16" spawnByDefault="false">
 			<npc id="25963" x="-51827" y="5870" z="-245" heading="41000" respawnTime="60sec" /> <!-- Chel -->
 		</group>
-			<group name="RAID_17" spawnByDefault="false">
+		<group name="RAID_17" spawnByDefault="false">
 			<npc id="25963" x="-42679" y="8918" z="1140" heading="41000" respawnTime="60sec" /> <!-- Chel -->
 		</group>
-			<group name="RAID_18" spawnByDefault="false">
+		<group name="RAID_18" spawnByDefault="false">
 			<npc id="25963" x="-42679" y="8918" z="1140" heading="41000" respawnTime="60sec" /> <!-- Chel -->
 		</group>
-			<group name="RAID_19" spawnByDefault="false">
+		<group name="RAID_19" spawnByDefault="false">
 			<npc id="25963" x="-42679" y="8918" z="1140" heading="41000" respawnTime="60sec" /> <!-- Chel -->
 		</group>
-			<group name="RAID_20" spawnByDefault="false">
+		<group name="RAID_20" spawnByDefault="false">
 			<npc id="25963" x="-42679" y="8918" z="1140" heading="41000" respawnTime="60sec" /> <!-- Chel -->
 		</group>
-			<group name="RAID_21" spawnByDefault="false">
+		<group name="RAID_21" spawnByDefault="false">
 			<npc id="25963" x="-42679" y="8918" z="1140" heading="41000" respawnTime="60sec" /> <!-- Chel -->
 		</group>
 	</spawnlist>

@@ -2,34 +2,34 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
 	<option id="39466" name="option_id_39466">
 		<!-- Acquired XP/ SP +5%, P./ M. Def. +50, Atk. Spd./ Casting Spd. +10 -->
-	 <effects>
-		<effect name="ExpModify">
-			<amount>5</amount>
-		</effect>
-		<effect name="SpModify">
-			<amount>5</amount>
-		</effect>
-		<effect name="PhysicalDefence">
-			<amount>50</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MagicalDefence">
-			<amount>50</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="PhysicalAttackSpeed">
-			<amount>10</amount>
-			<mode>DIFF</mode>
-		</effect>
-		<effect name="MagicalAttackSpeed">
-			<amount>10</amount>
-			<mode>DIFF</mode>
-		</effect>
-	 </effects>
+		<effects>
+			<effect name="ExpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</option>
 	<option id="39467" name="option_id_39467">
 		<!-- Acquired XP/ SP +10%, P./ M. Def. +50, Atk. Spd./ Casting Spd. +15, P./ M. Atk. +50 -->
-		 <effects>
+		<effects>
 			<effect name="ExpModify">
 				<amount>10</amount>
 			</effect>
@@ -52,7 +52,7 @@
 				<amount>15</amount>
 				<mode>DIFF</mode>
 			</effect>
-				<effect name="PhysicalAttack">
+			<effect name="PhysicalAttack">
 				<amount>50</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -60,7 +60,7 @@
 				<amount>50</amount>
 				<mode>DIFF</mode>
 			</effect>
-		 </effects>
+		</effects>
 	</option>
 	<option id="39468" name="Dark Elven Ancestor">
 		<!-- P. Def. +33 -->

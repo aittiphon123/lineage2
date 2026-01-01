@@ -593,7 +593,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<effects>
 			<effect name="MagicalDamage">
-				<power></power>
+				<power />
 			</effect>
 		</effects>
 	</skill>

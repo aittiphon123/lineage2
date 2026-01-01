@@ -312,7 +312,7 @@
 		<npc id="24845" count="1" respawnTime="2sec" respawnRandom="0sec" /> <!-- Royal Field Officer -->
 		<npc id="24846" count="1" respawnTime="2sec" respawnRandom="0sec" /> <!-- Commander of Operations -->
 	</spawn>
-		<spawn name="CemeterySpotAden_001" ai="NoRandomActivity">
+	<spawn name="CemeterySpotAden_001" ai="NoRandomActivity">
 		<parameters>
 			<param name="disableRandomWalk" value="true" />
 		</parameters>
@@ -663,7 +663,7 @@
 			<npc id="24843" x="168969" y="15019" z="-3328" heading="25958" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Royal Guardsman -->
 		</group>
 	</spawn>
-	<spawn name="CemeterySpotAden_028" >
+	<spawn name="CemeterySpotAden_028">
 		<group name="CemeterySpotAden_028_group">
 			<npc id="24847" x="174245" y="14133" z="-3312" heading="52361" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Elite Wizard -->
 			<npc id="24848" x="174349" y="14275" z="-3312" heading="52361" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Great Mage -->

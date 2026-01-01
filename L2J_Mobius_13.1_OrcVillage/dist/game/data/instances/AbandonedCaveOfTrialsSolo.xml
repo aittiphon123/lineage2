@@ -59,7 +59,7 @@
 	</doorlist>
 	<spawnlist>
 		<group name="ENTRY_NPCS" spawnByDefault="true">
-			<npc id="33700" x="12545" y="-112400" z="-2984" heading="31328" respawnTime="60sec" /> <!-- Dokara - Tracker -->		
+			<npc id="33700" x="12545" y="-112400" z="-2984" heading="31328" respawnTime="60sec" /> <!-- Dokara - Tracker -->
 		</group>
 		<group name="PRISONERS" spawnByDefault="true">
 			<npc id="33701" x="21414" y="-110880" z="-3304" heading="17797" respawnTime="0sec" /> <!-- Kronin - Prisoner -->
@@ -86,7 +86,7 @@
 			<npc id="26547" x="18877" y="-111857" z="-3240" heading="529" respawnTime="0sec" /> <!-- Kasha Orc Warder -->
 			<npc id="26547" x="18661" y="-112495" z="-3240" heading="6370" respawnTime="0sec" /> <!-- Kasha Orc Warder -->
 			<npc id="26546" x="19268" y="-113067" z="-3240" heading="15562" respawnTime="0sec" /> <!-- Kasha Orc Warder -->
-			<npc id="26547" x="19785" y="-112067" z="-3240" heading="23296" respawnTime="0sec" /> <!-- Kasha Orc Warder -->		
+			<npc id="26547" x="19785" y="-112067" z="-3240" heading="23296" respawnTime="0sec" /> <!-- Kasha Orc Warder -->
 		</group>
 		<group name="STAGE2_WARDERS_ASSISTANTS" spawnByDefault="false">
 			<npc id="26548" x="19465" y="-111666" z="-3240" heading="47746" respawnTime="0sec" /> <!-- Kasha Orc Warder's Assistant -->
@@ -98,7 +98,7 @@
 			<npc id="26547" x="21892" y="-115986" z="-3304" heading="24952" respawnTime="0sec" /> <!-- Kasha Orc Warder -->
 			<npc id="26547" x="20732" y="-115484" z="-3304" heading="12641" respawnTime="0sec" /> <!-- Kasha Orc Warder -->
 			<npc id="26546" x="21839" y="-115465" z="-3304" heading="29130" respawnTime="0sec" /> <!-- Kasha Orc Warder -->
-			<npc id="26546" x="21304" y="-114931" z="-3304" heading="35000" respawnTime="0sec" /> <!-- Kasha Orc Warder -->	
+			<npc id="26546" x="21304" y="-114931" z="-3304" heading="35000" respawnTime="0sec" /> <!-- Kasha Orc Warder -->
 		</group>
 		<group name="STAGE3_WARDERS_ASSISTANTS" spawnByDefault="false">
 			<npc id="26548" x="20874" y="-114702" z="-3304" heading="54360" respawnTime="0sec" /> <!-- Kasha Orc Warder's Assistant -->

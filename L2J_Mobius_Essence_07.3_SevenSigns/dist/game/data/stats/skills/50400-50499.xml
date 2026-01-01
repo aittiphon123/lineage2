@@ -2576,7 +2576,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DamageByAttack">						   
+			<effect name="DamageByAttack">
 				<amount>
 					<value level="1">-2</value>
 					<value level="2">-4</value>
@@ -2588,7 +2588,7 @@
 				</amount>
 				<type>ENEMY_ALL</type>
 			</effect>
-			<effect name="DamageByAttack">					   
+			<effect name="DamageByAttack">
 				<amount>
 					<value level="1">-2</value>
 					<value level="2">-4</value>

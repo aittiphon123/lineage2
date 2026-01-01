@@ -55,7 +55,7 @@
 			<xs:element type="rollType" name="roll" />
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="RarityType" final="restriction" >
+	<xs:simpleType name="RarityType" final="restriction">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="RANK_UR" />
 			<xs:enumeration value="RANK_SR" />

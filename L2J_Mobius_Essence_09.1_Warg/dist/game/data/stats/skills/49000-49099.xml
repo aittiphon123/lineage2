@@ -2617,7 +2617,7 @@
 					<value level="12">12</value>
 					<value level="13">13</value>
 					<value level="14">14</value>
-					<value level="15">15</value> 
+					<value level="15">15</value>
 				</skillLevel>
 			</effect>
 		</effects>
@@ -2746,7 +2746,7 @@
 					<value level="4">4</value>
 					<value level="5">5</value>
 					<value level="6">6</value>
-					<value level="7">7</value> 
+					<value level="7">7</value>
 					<value level="8">8</value>
 					<value level="9">9</value>
 					<value level="10">10</value>
@@ -2924,7 +2924,7 @@
 					<value level="3">10</value>
 					<value level="4">10</value>
 					<value level="5">10</value>
-					<value level="6">10</value> 
+					<value level="6">10</value>
 					<value level="7">10</value>
 					<value level="8">10</value>
 				</amount>
@@ -2937,7 +2937,7 @@
 					<value level="3">150</value>
 					<value level="4">180</value>
 					<value level="5">200</value>
-					<value level="6">200</value> 
+					<value level="6">200</value>
 					<value level="7">200</value>
 					<value level="8">200</value>
 				</amount>

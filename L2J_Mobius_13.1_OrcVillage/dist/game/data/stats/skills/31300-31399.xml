@@ -6568,9 +6568,9 @@
 		</conditions>
 		<selfEffects>
 			<effect name="CallSkill">
-                <skillId>31398</skillId> <!-- Moon Shot - Cooldown Reduction -->
-                <skillLevel>1</skillLevel>
-            </effect>
+				<skillId>31398</skillId> <!-- Moon Shot - Cooldown Reduction -->
+				<skillLevel>1</skillLevel>
+			</effect>
 		</selfEffects>
 		<effects>
 			<effect name="PhysicalDamage">
@@ -6609,9 +6609,9 @@
 		</conditions>
 		<selfEffects>
 			<effect name="CallSkill">
-                <skillId>31400</skillId> <!-- Sagittarius' Falling Star - Cooldown Reduction -->
-                <skillLevel>1</skillLevel>
-            </effect>
+				<skillId>31400</skillId> <!-- Sagittarius' Falling Star - Cooldown Reduction -->
+				<skillLevel>1</skillLevel>
+			</effect>
 		</selfEffects>
 		<effects>
 			<effect name="PhysicalDamage">
@@ -6797,7 +6797,7 @@
 		<magicLevel>120</magicLevel>
 		<mpConsume>64</mpConsume>
 		<removedOnUnequipWeapon>true</removedOnUnequipWeapon>
-		<reuseDelay>300000</reuseDelay>	
+		<reuseDelay>300000</reuseDelay>
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
@@ -6838,7 +6838,7 @@
 		<magicLevel>120</magicLevel>
 		<mpConsume>64</mpConsume>
 		<removedOnUnequipWeapon>true</removedOnUnequipWeapon>
-		<reuseDelay>300000</reuseDelay>	
+		<reuseDelay>300000</reuseDelay>
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
@@ -6884,7 +6884,7 @@
 		<magicLevel>120</magicLevel>
 		<mpConsume>64</mpConsume>
 		<removedOnUnequipWeapon>true</removedOnUnequipWeapon>
-		<reuseDelay>300000</reuseDelay>	
+		<reuseDelay>300000</reuseDelay>
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
@@ -7178,7 +7178,7 @@
 		<magicLevel>120</magicLevel>
 		<mpConsume>64</mpConsume>
 		<removedOnUnequipWeapon>true</removedOnUnequipWeapon>
-		<reuseDelay>300000</reuseDelay>	
+		<reuseDelay>300000</reuseDelay>
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>

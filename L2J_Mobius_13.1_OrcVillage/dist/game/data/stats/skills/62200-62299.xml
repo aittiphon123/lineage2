@@ -247,18 +247,18 @@
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<effects>
-		<effect name="GetDamageLimit">
-			<amount>2000000</amount>
-		</effect>
-		<effect name="DamageByAttack">
+			<effect name="GetDamageLimit">
+				<amount>2000000</amount>
+			</effect>
+			<effect name="DamageByAttack">
 				<amount>-30</amount>
 				<type>ENEMY_ALL</type>
-		</effect>
-		<effect name="Accuracy">
+			</effect>
+			<effect name="Accuracy">
 				<amount>200</amount>
 				<mode>DIFF</mode>
-		</effect>
-	</effects>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62225" toLevel="1" name="Kasha's Destruction (Blunt Weapon)">
 		<operateType>A1</operateType>
@@ -273,7 +273,7 @@
 		<hitTime>1500</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-		<effect name="PhysicalDamage">
+			<effect name="PhysicalDamage">
 				<power>100</power>
 				<pAtkMod>0.20</pAtkMod>
 				<pDefMod>0.006</pDefMod>
@@ -308,7 +308,7 @@
 		<isMagic>6</isMagic>
 		<trait>SHOCK</trait>
 		<effects>
-		<effect name="PhysicalDamage">
+			<effect name="PhysicalDamage">
 				<power>100</power>
 				<pAtkMod>0.25</pAtkMod>
 				<pDefMod>0.005</pDefMod>
@@ -384,7 +384,7 @@
 		<reuseDelay>7000</reuseDelay>
 		<trait>KNOCKDOWN</trait>
 		<effects>
-		<effect name="PhysicalDamage">
+			<effect name="PhysicalDamage">
 				<power>100</power>
 				<pAtkMod>0.20</pAtkMod>
 				<pDefMod>0.005</pDefMod>
@@ -430,7 +430,7 @@
 		<isMagic>6</isMagic>
 		<trait>SHOCK</trait>
 		<effects>
-		<effect name="PhysicalDamage">
+			<effect name="PhysicalDamage">
 				<power>100</power>
 				<pAtkMod>0.25</pAtkMod>
 				<pDefMod>0.005</pDefMod>
@@ -472,7 +472,7 @@
 		<reuseDelay>700</reuseDelay>
 		<trait>KNOCKDOWN</trait>
 		<effects>
-		<effect name="PhysicalDamage">
+			<effect name="PhysicalDamage">
 				<power>100</power>
 				<pAtkMod>0.52</pAtkMod>
 				<pDefMod>0.003</pDefMod>
@@ -498,7 +498,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>100</affectRange>
 		<affectScope>RANGE</affectScope>
-		<basicProperty>PHYSICAL</basicProperty> 
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>2000</castRange>
 		<effectPoint>-100</effectPoint>
 		<coolTime>500</coolTime>
@@ -507,11 +507,11 @@
 		<lvlBonusRate>1</lvlBonusRate>
 		<effects>
 			<effect name="PhysicalDamage">
-        <power>100</power>
-        <pAtkMod>0.92</pAtkMod>
-        <pDefMod>0.01</pDefMod>
-        <ignoreShieldDefence>true</ignoreShieldDefence>
-        <overHit>true</overHit>
+				<power>100</power>
+				<pAtkMod>0.92</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<overHit>true</overHit>
 			</effect>
 		</effects>
 	</skill>
@@ -540,7 +540,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<trait>KNOCKDOWN</trait>
 		<effects>
-		<effect name="PhysicalDamage">
+			<effect name="PhysicalDamage">
 				<power>100</power>
 				<pAtkMod>0.22</pAtkMod>
 				<pDefMod>0.005</pDefMod>
@@ -589,7 +589,7 @@
 		</effects>
 	</skill>
 	<skill id="62234" toLevel="1" name="Chaos Cure">
-	<!-- effect visual to script -->
+		<!-- effect visual to script -->
 		<operateType>CA1</operateType>
 		<targetType>TARGET</targetType>
 		<affectRange>3000</affectRange>
@@ -598,7 +598,7 @@
 		<channelingStart>1.2</channelingStart>
 		<channelingTickInterval>1</channelingTickInterval>
 		<effectPoint>-714</effectPoint>
-		<effectRange>3000</effectRange> 
+		<effectRange>3000</effectRange>
 		<coolTime>500</coolTime>
 		<hitTime>10000</hitTime>
 		<isDebuff>true</isDebuff>
@@ -819,10 +819,10 @@
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<effects>
-		<effect name="GetDamageLimit">
-			<amount>2000000</amount>
-		</effect>
-	</effects>
+			<effect name="GetDamageLimit">
+				<amount>2000000</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62242" toLevel="1" name="Freya's Breath">
 		<!-- Freya's Garden is filled with the Queen's icy breath and power. Skill cooldown -99%. Note!. The effect is only active in Freya's Garden. -->

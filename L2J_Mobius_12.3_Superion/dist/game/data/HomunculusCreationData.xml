@@ -134,7 +134,7 @@
 		<itemFees>
 			<item id="82904" count="1" /> <!-- Homunculus' Shiny Hourglass -->
 			<item id="57" count="2000000" />
-		</itemFees>		
+		</itemFees>
 		<chance>
 			<homunculus id="2" creationChance="7.65924" />
 			<homunculus id="3" creationChance="0.03076" />

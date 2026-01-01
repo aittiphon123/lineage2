@@ -762,7 +762,7 @@
 		<virtualItemStat slot="4096" indexSub="11" itemId="80219" enchant="10" costVISPoint="10" />
 		<virtualItemStat slot="4096" indexSub="12" itemId="80219" enchant="11" costVISPoint="8" />
 		<virtualItemStat slot="4096" indexSub="13" itemId="80219" enchant="12" costVISPoint="8" />
-	</virtualItem>	
+	</virtualItem>
 	<!-- CLOAKS -->
 	<virtualItem indexMain="36">
 		<virtualItemStat slot="8192" indexSub="1" itemId="28585" enchant="0" costVISPoint="12" />
@@ -1195,5 +1195,5 @@
 		<virtualItemStat slot="4" indexSub="8" itemId="82216" enchant="7" costVISPoint="30" />
 		<virtualItemStat slot="4" indexSub="9" itemId="82216" enchant="8" costVISPoint="50" />
 		<virtualItemStat slot="4" indexSub="10" itemId="82216" enchant="9" costVISPoint="60" />
-	</virtualItem>	
+	</virtualItem>
 </list>

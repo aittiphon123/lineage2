@@ -233,16 +233,16 @@
 		</conditions>
 		<effects>
 			<attachSkillList>
-			<item>
-				<requiredSkillId>45197</requiredSkillId> <!-- Grand Master's Transcendent Blessing -->
-				<skillId>47095</skillId> <!-- Transcendent Triple Blow -->
-			</item>
+				<item>
+					<requiredSkillId>45197</requiredSkillId> <!-- Grand Master's Transcendent Blessing -->
+					<skillId>47095</skillId> <!-- Transcendent Triple Blow -->
+				</item>
 			</attachSkillList>
 			<effect name="TriggerSkillByDualRange">
 				<closeSkill>47003</closeSkill>
 				<rangeSkill>47004</rangeSkill>
 				<distance>120</distance>
-			</effect>		
+			</effect>
 			<effect name="CallSkill">
 				<skillId>47473</skillId> <!-- Giant's Ring -->
 				<skillLevel>

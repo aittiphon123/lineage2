@@ -3105,7 +3105,7 @@
 		</group>
 		<group name="TOI_07-09" spawnByDefault="true">
 			<!-- 7th Floor -->
-						<npc id="24896" x="-146513" y="53252" z="-14640" heading="47175" respawnTime="60sec" /> <!-- Heaven's Palace Watcher -->
+			<npc id="24896" x="-146513" y="53252" z="-14640" heading="47175" respawnTime="60sec" /> <!-- Heaven's Palace Watcher -->
 			<npc id="24897" x="-146550" y="53128" z="-14640" heading="46127" respawnTime="60sec" /> <!-- Heaven's Palace Pilgrim -->
 			<npc id="24898" x="-146536" y="53017" z="-14640" heading="50460" respawnTime="60sec" /> <!-- Heaven's Palace Guardian -->
 			<npc id="24899" x="-146455" y="52982" z="-14640" heading="61281" respawnTime="60sec" /> <!-- Heaven's Palace Herald -->
@@ -3685,7 +3685,7 @@
 			<npc id="24903" x="-147835" y="48998" z="-12144" heading="36502" respawnTime="60sec" /> <!-- Divine Pilgrim -->
 			<npc id="24904" x="-147550" y="48618" z="-12144" heading="60918" respawnTime="60sec" /> <!-- Divine Protector -->
 			<npc id="24905" x="-147242" y="48827" z="-12144" heading="17517" respawnTime="60sec" /> <!-- Divine Herald -->
-			<npc id="24906" x="-147549" y="48925" z="-12144" heading="29545" respawnTime="60sec" /> <!-- Divine Judge -->		
+			<npc id="24906" x="-147549" y="48925" z="-12144" heading="29545" respawnTime="60sec" /> <!-- Divine Judge -->
 			<!-- 9th Floor -->
 			<npc id="24908" x="-146514" y="53235" z="-9520" heading="41814" respawnTime="60sec" /> <!-- Sealed Watcher -->
 			<npc id="24909" x="-146524" y="53078" z="-9520" heading="48488" respawnTime="60sec" /> <!-- Sealed Pilgrim -->
@@ -3986,7 +3986,7 @@
 			<npc id="24909" x="-147739" y="48655" z="-9520" heading="43643" respawnTime="60sec" /> <!-- Sealed Pilgrim -->
 			<npc id="24910" x="-147376" y="48680" z="-9520" heading="21220" respawnTime="60sec" /> <!-- Sealed Guardian -->
 			<npc id="24911" x="-147280" y="49025" z="-9520" heading="49552" respawnTime="60sec" /> <!-- Sealed Herald -->
-			<npc id="24912" x="-147546" y="48922" z="-9520" heading="36621" respawnTime="60sec" /> <!-- Sealed Judge -->			
+			<npc id="24912" x="-147546" y="48922" z="-9520" heading="36621" respawnTime="60sec" /> <!-- Sealed Judge -->
 		</group>
 		<group name="bathin" spawnByDefault="false">
 			<npc id="26445" x="-147656" y="10993" z="-9418" /> <!-- Bathin -->

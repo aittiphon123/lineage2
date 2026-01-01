@@ -4239,7 +4239,7 @@
 				<defence fire="2650" water="2600" wind="2650" earth="2650" holy="2650" dark="2650" />
 			</attribute>
 		</stats>
-		<status attackable="true" randomWalk="false" />		
+		<status attackable="true" randomWalk="false" />
 		<ai type="FIGHTER" aggroRange="300" clanHelpRange="400" isAggressive="true">
 			<clanList>
 				<clan>SEL_MAHUM</clan>

@@ -254,7 +254,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</pveEffects>	
+		</pveEffects>
 	</skill>
 	<skill id="49308" toLevel="5" name="Quick Jump">
 		<icon>icon.pet_fast_dive</icon>

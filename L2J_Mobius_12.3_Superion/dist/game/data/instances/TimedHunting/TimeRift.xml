@@ -38,10 +38,10 @@
 					<node x="109419" y="-246970" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_02">
 			<territories>
@@ -50,10 +50,10 @@
 					<node x="111280" y="-246527" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_03">
 			<territories>
@@ -62,10 +62,10 @@
 					<node x="113518" y="-247028" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_04">
 			<territories>
@@ -74,10 +74,10 @@
 					<node x="112253" y="-248984" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_05">
 			<territories>
@@ -86,10 +86,10 @@
 					<node x="109407" y="-249431" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_06">
 			<territories>
@@ -98,10 +98,10 @@
 					<node x="111423" y="-251555" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_07">
 			<territories>
@@ -110,10 +110,10 @@
 					<node x="112178" y="-250160" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_08">
 			<territories>
@@ -122,10 +122,10 @@
 					<node x="114655" y="-250997" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_09">
 			<territories>
@@ -134,10 +134,10 @@
 					<node x="116100" y="-251546" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_10">
 			<territories>
@@ -146,10 +146,10 @@
 					<node x="115664" y="-249682" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_11">
 			<territories>
@@ -158,10 +158,10 @@
 					<node x="117020" y="-247844" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_12">
 			<territories>
@@ -170,10 +170,10 @@
 					<node x="118117" y="-248732" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_13">
 			<territories>
@@ -182,10 +182,10 @@
 					<node x="119294" y="-248798" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_14">
 			<territories>
@@ -194,10 +194,10 @@
 					<node x="120295" y="-245188" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_15">
 			<territories>
@@ -206,10 +206,10 @@
 					<node x="118437" y="-245611" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_16">
 			<territories>
@@ -218,10 +218,10 @@
 					<node x="116203" y="-245138" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_17">
 			<territories>
@@ -230,10 +230,10 @@
 					<node x="117489" y="-243170" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_18">
 			<territories>
@@ -242,10 +242,10 @@
 					<node x="120315" y="-242724" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_19">
 			<territories>
@@ -254,10 +254,10 @@
 					<node x="118277" y="-240588" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_20">
 			<territories>
@@ -266,10 +266,10 @@
 					<node x="117531" y="-241976" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_21">
 			<territories>
@@ -278,10 +278,10 @@
 					<node x="115068" y="-242035" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_22">
 			<territories>
@@ -290,10 +290,10 @@
 					<node x="112765" y="-240606" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_23">
 			<territories>
@@ -302,10 +302,10 @@
 					<node x="114073" y="-242456" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_24">
 			<territories>
@@ -314,10 +314,10 @@
 					<node x="115059" y="-245676" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_25">
 			<territories>
@@ -326,10 +326,10 @@
 					<node x="113580" y="-244699" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_26">
 			<territories>
@@ -338,10 +338,10 @@
 					<node x="111995" y="-242556" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_27">
 			<territories>
@@ -350,10 +350,10 @@
 					<node x="111175" y="-240582" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_28">
 			<territories>
@@ -362,10 +362,10 @@
 					<node x="109039" y="-242625" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<group name="catacomb_of_apostates_29">
 			<territories>
@@ -374,10 +374,10 @@
 					<node x="110435" y="-243350" />
 				</territory>
 			</territories>
-			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->	
+			<npc id="23818" count="4" respawnTime="7sec" /> <!-- Nephilim Priest -->
 			<npc id="23819" count="2" respawnTime="7sec" /> <!-- Nephilim Watchman -->
-			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->	
-			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->	
+			<npc id="23820" count="2" respawnTime="7sec" /> <!-- Nephilim Swordsman -->
+			<npc id="23821" count="4" respawnTime="7sec" /> <!-- Giant Fighter -->
 		</group>
 		<!-- Patriot's Necropolis -->
 		<group name="patriots_necropolis_01">
@@ -387,10 +387,10 @@
 					<node x="109611" y="-218441" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_02">
 			<territories>
@@ -399,10 +399,10 @@
 					<node x="112871" y="-217528" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_03">
 			<territories>
@@ -411,10 +411,10 @@
 					<node x="114357" y="-216658" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_04">
 			<territories>
@@ -423,10 +423,10 @@
 					<node x="114681" y="-214397" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_05">
 			<territories>
@@ -435,10 +435,10 @@
 					<node x="116031" y="-214728" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_06">
 			<territories>
@@ -447,10 +447,10 @@
 					<node x="117537" y="-217575" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_07">
 			<territories>
@@ -459,10 +459,10 @@
 					<node x="117536" y="-218603" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_08">
 			<territories>
@@ -471,10 +471,10 @@
 					<node x="120044" y="-217651" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_09">
 			<territories>
@@ -483,10 +483,10 @@
 					<node x="118176" y="-216961" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_10">
 			<territories>
@@ -495,10 +495,10 @@
 					<node x="116737" y="-214678" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_11">
 			<territories>
@@ -507,10 +507,10 @@
 					<node x="119131" y="-214881" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_12">
 			<territories>
@@ -519,10 +519,10 @@
 					<node x="117203" y="-212441" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_13">
 			<territories>
@@ -531,10 +531,10 @@
 					<node x="119180" y="-211417" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_14">
 			<territories>
@@ -543,10 +543,10 @@
 					<node x="120206" y="-211425" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_15">
 			<territories>
@@ -555,10 +555,10 @@
 					<node x="118555" y="-209879" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_16">
 			<territories>
@@ -567,10 +567,10 @@
 					<node x="119264" y="-208038" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_17">
 			<territories>
@@ -579,10 +579,10 @@
 					<node x="116873" y="-208942" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_18">
 			<territories>
@@ -591,10 +591,10 @@
 					<node x="116282" y="-210955" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_19">
 			<territories>
@@ -603,10 +603,10 @@
 					<node x="114112" y="-211760" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_20">
 			<territories>
@@ -615,10 +615,10 @@
 					<node x="112561" y="-215517" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_21">
 			<territories>
@@ -627,10 +627,10 @@
 					<node x="111587" y="-217464" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_22">
 			<territories>
@@ -639,10 +639,10 @@
 					<node x="109156" y="-215052" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_23">
 			<territories>
@@ -651,10 +651,10 @@
 					<node x="110180" y="-215061" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_24">
 			<territories>
@@ -663,10 +663,10 @@
 					<node x="112553" y="-214040" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_25">
 			<territories>
@@ -675,10 +675,10 @@
 					<node x="112623" y="-211799" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_26">
 			<territories>
@@ -687,10 +687,10 @@
 					<node x="110614" y="-211595" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_27">
 			<territories>
@@ -699,10 +699,10 @@
 					<node x="109317" y="-208818" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_28">
 			<territories>
@@ -711,10 +711,10 @@
 					<node x="111438" y="-209523" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_29">
 			<territories>
@@ -723,10 +723,10 @@
 					<node x="112235" y="-207488" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<group name="patriots_necropolis_30">
 			<territories>
@@ -735,10 +735,10 @@
 					<node x="113094" y="-208509" />
 				</territory>
 			</territories>
-			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->	
-			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->	
+			<npc id="23822" count="4" respawnTime="7sec" /> <!-- Lilim's Magus -->
+			<npc id="23823" count="2" respawnTime="7sec" /> <!-- Lilim's Butcher -->
 			<npc id="23824" count="2" respawnTime="7sec" /> <!-- Lilim's Guardian -->
-			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->	
+			<npc id="23825" count="4" respawnTime="7sec" /> <!-- Lith Warrior -->
 		</group>
 		<!-- Catacomb of the Forbidden Path -->
 		<group name="catacomb_of_the_forbidden_path_01">
@@ -748,10 +748,10 @@
 					<node x="110555" y="-251404" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_02">
 			<territories>
@@ -760,10 +760,10 @@
 					<node x="113032" y="-250395" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_03">
 			<territories>
@@ -772,10 +772,10 @@
 					<node x="115760" y="-251401" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_04">
 			<territories>
@@ -784,10 +784,10 @@
 					<node x="115333" y="-249554" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_05">
 			<territories>
@@ -796,10 +796,10 @@
 					<node x="115814" y="-247306" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_06">
 			<territories>
@@ -808,10 +808,10 @@
 					<node x="117795" y="-248587" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_07">
 			<territories>
@@ -820,10 +820,10 @@
 					<node x="118239" y="-251426" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_08">
 			<territories>
@@ -832,10 +832,10 @@
 					<node x="119986" y="-249398" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_09">
 			<territories>
@@ -844,10 +844,10 @@
 					<node x="118968" y="-247777" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_10">
 			<territories>
@@ -856,10 +856,10 @@
 					<node x="118920" y="-246173" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_11">
 			<territories>
@@ -868,10 +868,10 @@
 					<node x="120349" y="-243861" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_12">
 			<territories>
@@ -880,10 +880,10 @@
 					<node x="118504" y="-245173" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_13">
 			<territories>
@@ -892,10 +892,10 @@
 					<node x="116653" y="-244690" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_14">
 			<territories>
@@ -904,10 +904,10 @@
 					<node x="118419" y="-242713" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_15">
 			<territories>
@@ -916,10 +916,10 @@
 					<node x="120376" y="-241380" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_16">
 			<territories>
@@ -928,10 +928,10 @@
 					<node x="118332" y="-240147" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_17">
 			<territories>
@@ -940,10 +940,10 @@
 					<node x="116690" y="-241558" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_18">
 			<territories>
@@ -952,10 +952,10 @@
 					<node x="113120" y="-240532" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_19">
 			<territories>
@@ -964,10 +964,10 @@
 					<node x="114429" y="-243265" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_20">
 			<territories>
@@ -976,10 +976,10 @@
 					<node x="113941" y="-244623" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_21">
 			<territories>
@@ -988,10 +988,10 @@
 					<node x="111972" y="-242471" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_22">
 			<territories>
@@ -1000,10 +1000,10 @@
 					<node x="110642" y="-240519" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_23">
 			<territories>
@@ -1012,10 +1012,10 @@
 					<node x="109401" y="-242548" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_24">
 			<territories>
@@ -1024,10 +1024,10 @@
 					<node x="110797" y="-244162" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_25">
 			<territories>
@@ -1036,10 +1036,10 @@
 					<node x="110848" y="-245765" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_26">
 			<territories>
@@ -1048,10 +1048,10 @@
 					<node x="109408" y="-248074" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_27">
 			<territories>
@@ -1060,10 +1060,10 @@
 					<node x="112143" y="-246767" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_28">
 			<territories>
@@ -1072,10 +1072,10 @@
 					<node x="113504" y="-247248" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_29">
 			<territories>
@@ -1084,10 +1084,10 @@
 					<node x="115290" y="-245777" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_30">
 			<territories>
@@ -1096,10 +1096,10 @@
 					<node x="111355" y="-249224" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<group name="catacomb_of_the_forbidden_path_31">
 			<territories>
@@ -1108,10 +1108,10 @@
 					<node x="109396" y="-250560" />
 				</territory>
 			</territories>
-			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->	
+			<npc id="23826" count="4" respawnTime="7sec" /> <!-- Nephilim Bishop -->
 			<npc id="23827" count="2" respawnTime="7sec" /> <!-- Nephilim Guardsman -->
-			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->	
-			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->	
+			<npc id="23828" count="2" respawnTime="7sec" /> <!-- Nephilim Commander -->
+			<npc id="23829" count="4" respawnTime="7sec" /> <!-- Giant Follower -->
 		</group>
 		<!-- Saint's Necropolis -->
 		<group name="saints_necropolis_01">
@@ -1121,10 +1121,10 @@
 					<node x="111383" y="-212926" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_02">
 			<territories>
@@ -1133,10 +1133,10 @@
 					<node x="109438" y="-215708" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_03">
 			<territories>
@@ -1145,10 +1145,10 @@
 					<node x="110072" y="-214832" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_04">
 			<territories>
@@ -1157,10 +1157,10 @@
 					<node x="110386" y="-218613" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_05">
 			<territories>
@@ -1169,10 +1169,10 @@
 					<node x="111473" y="-216359" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_06">
 			<territories>
@@ -1181,10 +1181,10 @@
 					<node x="114237" y="-214909" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_07">
 			<territories>
@@ -1193,10 +1193,10 @@
 					<node x="112771" y="-217314" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_08">
 			<territories>
@@ -1205,10 +1205,10 @@
 					<node x="115604" y="-214486" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_09">
 			<territories>
@@ -1217,10 +1217,10 @@
 					<node x="113618" y="-213264" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_10">
 			<territories>
@@ -1229,10 +1229,10 @@
 					<node x="112434" y="-214209" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_11">
 			<territories>
@@ -1241,10 +1241,10 @@
 					<node x="117498" y="-217354" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_12">
 			<territories>
@@ -1253,10 +1253,10 @@
 					<node x="117504" y="-218375" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_13">
 			<territories>
@@ -1265,10 +1265,10 @@
 					<node x="118144" y="-216343" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_14">
 			<territories>
@@ -1277,10 +1277,10 @@
 					<node x="120399" y="-217424" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_15">
 			<territories>
@@ -1289,10 +1289,10 @@
 					<node x="118221" y="-215048" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_16">
 			<territories>
@@ -1301,10 +1301,10 @@
 					<node x="116697" y="-214447" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_17">
 			<territories>
@@ -1313,10 +1313,10 @@
 					<node x="116280" y="-212284" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_18">
 			<territories>
@@ -1325,10 +1325,10 @@
 					<node x="119141" y="-210386" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_19">
 			<territories>
@@ -1337,10 +1337,10 @@
 					<node x="120551" y="-211275" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_20">
 			<territories>
@@ -1349,10 +1349,10 @@
 					<node x="118130" y="-209739" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_21">
 			<territories>
@@ -1361,10 +1361,10 @@
 					<node x="119216" y="-207489" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_22">
 			<territories>
@@ -1373,10 +1373,10 @@
 					<node x="116839" y="-209665" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_23">
 			<territories>
@@ -1385,10 +1385,10 @@
 					<node x="116243" y="-211193" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_24">
 			<territories>
@@ -1397,10 +1397,10 @@
 					<node x="113999" y="-211611" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_25">
 			<territories>
@@ -1409,10 +1409,10 @@
 					<node x="112106" y="-208746" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_26">
 			<territories>
@@ -1421,10 +1421,10 @@
 					<node x="112108" y="-207719" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_27">
 			<territories>
@@ -1433,10 +1433,10 @@
 					<node x="111442" y="-209758" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_28">
 			<territories>
@@ -1445,10 +1445,10 @@
 					<node x="112908" y="-211611" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_29">
 			<territories>
@@ -1457,10 +1457,10 @@
 					<node x="109213" y="-208663" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 		<group name="saints_necropolis_30">
 			<territories>
@@ -1469,10 +1469,10 @@
 					<node x="111396" y="-211048" />
 				</territory>
 			</territories>
-			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->	
+			<npc id="23830" count="4" respawnTime="7sec" /> <!-- Lilim's Great Magus -->
 			<npc id="23831" count="2" respawnTime="7sec" /> <!-- Lilim's Assassi -->
-			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->	
-			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->	
+			<npc id="23832" count="2" respawnTime="7sec" /> <!-- Lilim's Troop Knight -->
+			<npc id="23833" count="4" respawnTime="7sec" /> <!-- Risha's Follower -->
 		</group>
 	</spawnlist>
 </instance>

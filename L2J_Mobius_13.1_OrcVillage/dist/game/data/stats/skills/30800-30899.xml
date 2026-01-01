@@ -6050,10 +6050,10 @@
 			</effect>
 			<effect name="CallSkillOnActionTime">
 				<skillId>30850</skillId> <!-- Superior Provoke Aura -->
-					<skillLevel>
-						<value level="1">1</value>
-						<value level="2">2</value>
-					</skillLevel>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
 				<ticks>1</ticks>
 			</effect>
 			<effect name="TriggerSkillByDamageReceived">

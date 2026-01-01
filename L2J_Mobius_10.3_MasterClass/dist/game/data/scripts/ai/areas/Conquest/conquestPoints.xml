@@ -17,9 +17,9 @@
 	<npc id="27710" personalPoints="30" serverPoints="30" /> <!-- Craigo Phran -->
 	<npc id="27711" personalPoints="6" serverPoints="6" /> <!-- Kiku Phran -->
 	<npc id="27712" personalPoints="6" serverPoints="6" /> <!-- Floato Phran -->
-	<npc id="19817" personalPoints="6" serverPoints="6" /> <!-- Soul Flower -->	
+	<npc id="19817" personalPoints="6" serverPoints="6" /> <!-- Soul Flower -->
 
-	<!-- Asa Area 1 (Lv. 116) -->	
+	<!-- Asa Area 1 (Lv. 116) -->
 	<npc id="27713" personalPoints="9" serverPoints="9" zonePoints="19" zoneId="1" /> <!-- Daril Asa Ar -->
 	<npc id="27714" personalPoints="30" serverPoints="30" zonePoints="19" zoneId="1" /> <!-- Seo Asa Ar -->
 	<npc id="27715" personalPoints="9" serverPoints="9" zonePoints="19" zoneId="1" /> <!-- Floato Asa Ar -->
@@ -39,7 +39,7 @@
 	<npc id="27725" personalPoints="11" serverPoints="11" zonePoints="22" zoneId="1" /> <!-- Asa Mide Blader -->
 	<npc id="19819" personalPoints="55" serverPoints="55" zonePoints="110" zoneId="1" /> <!-- Soul Flower -->
 	
-	<!-- Asa Area 3 (Lv. 124) -->	
+	<!-- Asa Area 3 (Lv. 124) -->
 	<npc id="27726" personalPoints="16" serverPoints="16" zonePoints="32" zoneId="1" /> <!-- Atron Asa Telro -->
 	<npc id="27727" personalPoints="16" serverPoints="16" zonePoints="32" zoneId="1" /> <!-- Craigo Asa Telro -->
 	<npc id="27728" personalPoints="16" serverPoints="16" zonePoints="32" zoneId="1" /> <!-- Beor Asa Telro -->
@@ -54,7 +54,7 @@
 	<npc id="19827" personalPoints="462" serverPoints="2314" zonePoints="13888" zoneId="1" /> <!-- Soul Tree -->
 	<npc id="19820" personalPoints="80" serverPoints="80" zonePoints="160" zoneId="1" /> <!-- Soul Flower -->
 
-	<!-- Anima Area 1 (Lv. 116) -->	
+	<!-- Anima Area 1 (Lv. 116) -->
 	<npc id="27755" personalPoints="9" serverPoints="9" zonePoints="19" zoneId="2" /> <!-- Daril Anima Ar -->
 	<npc id="27756" personalPoints="30" serverPoints="30" zonePoints="19" zoneId="2" /> <!-- Seo Anima Ar -->
 	<npc id="27757" personalPoints="9" serverPoints="9" zonePoints="19" zoneId="2" /> <!-- Floato Anima Ar -->
@@ -74,7 +74,7 @@
 	<npc id="27767" personalPoints="11" serverPoints="11" zonePoints="22" zoneId="2" /> <!-- Anima Mide Blader -->
 	<npc id="19825" personalPoints="55" serverPoints="55" zonePoints="110" zoneId="2" /> <!-- Soul Flower -->
 	
-	<!-- Anima Area 3 (Lv. 124) -->	
+	<!-- Anima Area 3 (Lv. 124) -->
 	<npc id="27768" personalPoints="16" serverPoints="16" zonePoints="32" zoneId="2" /> <!-- Atron Anima Telro -->
 	<npc id="27769" personalPoints="16" serverPoints="16" zonePoints="32" zoneId="2" /> <!-- Craigo Anima Telro -->
 	<npc id="27770" personalPoints="16" serverPoints="16" zonePoints="32" zoneId="2" /> <!-- Beor Anima Telro -->
@@ -89,7 +89,7 @@
 	<npc id="19829" personalPoints="462" serverPoints="2314" zonePoints="13888" zoneId="2" /> <!-- Soul Tree -->
 	<npc id="19826" personalPoints="80" serverPoints="80" zonePoints="160" zoneId="2" /> <!-- Soul Flower -->
 	
-	<!-- Nox Area 1 (Lv. 116) -->	
+	<!-- Nox Area 1 (Lv. 116) -->
 	<npc id="27734" personalPoints="9" serverPoints="9" zonePoints="19" zoneId="3" /> <!-- Daril Nox Ar -->
 	<npc id="27735" personalPoints="30" serverPoints="30" zonePoints="19" zoneId="3" /> <!-- Seo Nox Ar -->
 	<npc id="27736" personalPoints="9" serverPoints="9" zonePoints="19" zoneId="3" /> <!-- Floato Nox Ar -->
@@ -109,7 +109,7 @@
 	<npc id="27746" personalPoints="11" serverPoints="11" zonePoints="22" zoneId="3" /> <!-- Nox Mide Blader -->
 	<npc id="19822" personalPoints="55" serverPoints="55" zonePoints="110" zoneId="3" /> <!-- Soul Flower -->
 	
-	<!-- Nox Area 3 (Lv. 124) -->	
+	<!-- Nox Area 3 (Lv. 124) -->
 	<npc id="27747" personalPoints="16" serverPoints="16" zonePoints="32" zoneId="3" /> <!-- Atron Nox Telro -->
 	<npc id="27748" personalPoints="16" serverPoints="16" zonePoints="32" zoneId="3" /> <!-- Craigo Nox Telro -->
 	<npc id="27749" personalPoints="16" serverPoints="16" zonePoints="32" zoneId="3" /> <!-- Beor Nox Telro -->
@@ -145,5 +145,5 @@
 	<player level="127" personalPoints="66" serverPoints="32" bloodyCoins="100" /> <!-- Player level 127 -->
 	<player level="128" personalPoints="66" serverPoints="32" bloodyCoins="100" /> <!-- Player level 128 -->
 	<player level="129" personalPoints="66" serverPoints="32" bloodyCoins="100" /> <!-- Player level 129 -->
-	<player level="130" personalPoints="66" serverPoints="32" bloodyCoins="100" /> <!-- Player level 130 -->		
+	<player level="130" personalPoints="66" serverPoints="32" bloodyCoins="100" /> <!-- Player level 130 -->
 </list>

@@ -205,7 +205,7 @@
 			<group grade="RARE" chance="11" />
 		</chanceGroups>
 		<disabledDolls>
-		<disabled id="121" /> <!-- Common Vulcan Doll -->
+			<disabled id="121" /> <!-- Common Vulcan Doll -->
 			<disabled id="127" /> <!-- Common Aztacan Doll -->
 			<disabled id="122" /> <!-- Enhanced Vulcan Doll -->
 			<disabled id="128" /> <!-- Enhanced Aztacan Doll -->
@@ -229,7 +229,7 @@
 			<group grade="COMMON" chance="100" />
 		</chanceGroups>
 		<disabledDolls>
-		<disabled id="121" /> <!-- Common Vulcan Doll -->
+			<disabled id="121" /> <!-- Common Vulcan Doll -->
 			<disabled id="127" /> <!-- Common Aztacan Doll -->
 		</disabledDolls>
 	</coupon>

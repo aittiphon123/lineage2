@@ -1131,16 +1131,16 @@
 	<option id="90299" name="option_id_90299">
 		<!-- MP Consumption -2% -->
 		<effects>
-		<effect name="MagicMpCost">
-			<amount>2</amount>
-			<mode>PER</mode>
-			<magicType>1</magicType>
-		</effect>
-		<effect name="MagicMpCost">
-			<amount>2</amount>
-			<mode>PER</mode>
-			<magicType>0</magicType>
-		</effect>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</option>
 </list>

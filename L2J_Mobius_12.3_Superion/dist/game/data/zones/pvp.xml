@@ -129,7 +129,7 @@
 		<node X="47988" Y="155578" />
 	</zone>
 	<!-- War Fortress Superion -->
-	<zone name="war_fortress_superion" type="ArenaZone" shape="Cuboid" minZ="-12000" maxZ="-8000"> 
+	<zone name="war_fortress_superion" type="ArenaZone" shape="Cuboid" minZ="-12000" maxZ="-8000">
 		<stat name="instanceId" val="1025" />
 		<node X="65536" Y="163840" />
 		<node X="98303" Y="196607" />

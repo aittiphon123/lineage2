@@ -84,7 +84,7 @@
 	<reward id="1110" name="Hunt in Jamoa's Camp" requiredCompletion="800" isOneTime="false">
 		<!-- Kill 800 monsters in Jamoa's Camp. -->
 		<handler name="monster">
-			<param name="ids">24436,24437,24438,24439,24440,24441,24920,24921,24922,24923,24924,24925,24951,24952,24953,24954,24955,24956</param>			
+			<param name="ids">24436,24437,24438,24439,24440,24441,24920,24921,24922,24923,24924,24925,24951,24952,24953,24954,24955,24956</param>
 			<param name="minLevel">105</param>
 		</handler>
 		<items>
@@ -145,7 +145,7 @@
 	<reward id="2101" name="Field Boss I" requiredCompletion="3" isOneTime="false">
 		<!-- Defeat any of the field raid bosses 3 times: Orfen Lilith Anakim Lord Ishka Queen Ant Guillotine -->
 		<handler name="boss">
-			<param name="ids">29325,29336,29348,29379,29402</param>	
+			<param name="ids">29325,29336,29348,29379,29402</param>
 			<param name="minLevel">100</param>
 		</handler>
 		<items>
@@ -1310,7 +1310,7 @@
 	<reward id="4112" name="Hunt in the Ravaged Innadril" requiredCompletion="1400" isOneTime="false">
 		<!-- Kill 1400 monsters in the Ravaged Innadril. -->
 		<handler name="monster">
-		<param name="ids">24598,24599,24600,24603,24604,24605,24957,24958,24959,24960</param>
+			<param name="ids">24598,24599,24600,24603,24604,24605,24957,24958,24959,24960</param>
 			<param name="minLevel">105</param>
 		</handler>
 		<items>

@@ -115,7 +115,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>500</affectRange>
 		<affectScope>RANGE</affectScope>
-		<basicProperty>PHYSICAL</basicProperty> 
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>2000</castRange>
 		<effectPoint>-507</effectPoint>
 		<hitTime>3600</hitTime>
@@ -479,7 +479,7 @@
 		<channelingStart>1.2</channelingStart>
 		<channelingTickInterval>1</channelingTickInterval>
 		<effectPoint>-714</effectPoint>
-		<effectRange>3000</effectRange> 
+		<effectRange>3000</effectRange>
 		<coolTime>500</coolTime>
 		<hitTime>30000</hitTime>
 		<isDebuff>true</isDebuff>
@@ -495,7 +495,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>100</affectRange>
 		<affectScope>RANGE</affectScope>
-		<basicProperty>PHYSICAL</basicProperty> 
+		<basicProperty>PHYSICAL</basicProperty>
 		<coolTime>500</coolTime>
 		<castRange>300</castRange>
 		<effectPoint>-507</effectPoint>
@@ -706,7 +706,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>100</affectRange>
 		<affectScope>RANGE</affectScope>
-		<basicProperty>PHYSICAL</basicProperty> 
+		<basicProperty>PHYSICAL</basicProperty>
 		<attributeType>HOLY</attributeType>
 		<attributeValue>2500</attributeValue>
 		<coolTime>500</coolTime>
@@ -784,7 +784,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>300</affectRange>
 		<affectScope>RANGE</affectScope>
-		<basicProperty>PHYSICAL</basicProperty> 
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>900</castRange>
 		<effectPoint>-507</effectPoint>
 		<hitTime>2000</hitTime>
@@ -812,7 +812,7 @@
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitCancelTime>0</hitCancelTime>
-		<isMagic>2</isMagic> 
+		<isMagic>2</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<reuseDelay>60000</reuseDelay>
@@ -835,7 +835,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<affectRange>150</affectRange>
 		<affectScope>RANGE</affectScope>
-		<basicProperty>PHYSICAL</basicProperty> 
+		<basicProperty>PHYSICAL</basicProperty>
 		<attributeType>HOLY</attributeType>
 		<attributeValue>2500</attributeValue>
 		<coolTime>500</coolTime>
@@ -1133,7 +1133,7 @@
 		<hitTime>1500</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>127</magicLevel>
-		<reuseDelay>0</reuseDelay> 
+		<reuseDelay>0</reuseDelay>
 		<effects>
 			<effect name="MagicalDamage">
 				<power>999</power>
@@ -1216,7 +1216,7 @@
 		<magicLevel>127</magicLevel>
 		<reuseDelay>0</reuseDelay>
 		<trait>SHOCK</trait>
-			<effects>
+		<effects>
 			<effect name="PhysicalDamage">
 				<power>999</power>
 				<overHit>true</overHit>

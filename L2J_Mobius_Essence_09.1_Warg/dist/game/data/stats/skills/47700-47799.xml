@@ -766,7 +766,7 @@
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
-		<abnormalVisualEffect>V_DUAL_CONTENDER_MASTER_AVE</abnormalVisualEffect>			
+		<abnormalVisualEffect>V_DUAL_CONTENDER_MASTER_AVE</abnormalVisualEffect>
 		<affectScope>SINGLE</affectScope>
 		<effectPoint>100</effectPoint>
 		<effects>
@@ -1354,7 +1354,7 @@
 					<value level="12">220</value>
 				</power>
 			</effect>
-		<effect name="MagicalDamageRange">
+			<effect name="MagicalDamageRange">
 				<power>
 					<value level="1">88</value>
 					<value level="2">99</value>
@@ -1462,7 +1462,7 @@
 					<value level="12">220</value>
 				</power>
 			</effect>
-		<effect name="MagicalDamageRange">
+			<effect name="MagicalDamageRange">
 				<power>
 					<value level="1">88</value>
 					<value level="2">99</value>
@@ -1478,7 +1478,7 @@
 					<value level="12">220</value>
 				</power>
 			</effect>
-		<effect name="MagicalDamageRange">
+			<effect name="MagicalDamageRange">
 				<power>
 					<value level="1">88</value>
 					<value level="2">99</value>

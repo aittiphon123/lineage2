@@ -20,7 +20,7 @@
 						<xs:attribute type="xs:int" name="optionId" use="optional" />
 						<xs:attribute type="xs:byte" name="category" use="optional" />
 						<xs:attribute type="xs:byte" name="completeCount" use="optional" />
- 						<xs:attribute type="xs:int" name="combatPower" use="optional" />
+						<xs:attribute type="xs:int" name="combatPower" use="optional" />
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>

@@ -2205,7 +2205,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
 		<set name="material" val="GOLD" />
-		<set name="price" val="20000000" />	
+		<set name="price" val="20000000" />
 		<set name="etcitem_type" val="ARROW" />
 		<set name="is_infinite" val="true" />
 		<set name="is_tradable" val="false" />

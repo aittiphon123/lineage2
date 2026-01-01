@@ -4044,7 +4044,7 @@
 					<value level="5">28</value>
 					<value level="6">30</value>
 				</amount>
-			<mode>PER</mode>
+				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
 				<amount>
@@ -4055,7 +4055,7 @@
 					<value level="5">28</value>
 					<value level="6">30</value>
 				</amount>
-			<mode>PER</mode>
+				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceTrait" fromLevel="1" toLevel="1">
 				<BOW>10</BOW>
@@ -4090,7 +4090,7 @@
 					<value level="5">15</value>
 					<value level="6">20</value>
 				</amount>
-			<mode>PER</mode>
+				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttack">
 				<amount>
@@ -4101,7 +4101,7 @@
 					<value level="5">15</value>
 					<value level="6">20</value>
 				</amount>
-			<mode>PER</mode>
+				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>

@@ -793,483 +793,483 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>KNOCKDOWN</trait>
 		<effects>
-		<!-- Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1001 (+1% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1002 (+2% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1003 (+3% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1004 (+4% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1005 (+5% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1006 (+6% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1007 (+7% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1008 (+8% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1009 (+9% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1010 (+10% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1011 (+11% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1012 (+12% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1013 (+13% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1014 (+14% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1015 (+15% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1016 (+16% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1017 (+17% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1018 (+18% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1019 (+19% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1020 (+20% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2001 (+1% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2002 (+2% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2003 (+3% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2004 (+4% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2005 (+5% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2006 (+6% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2007 (+7% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2008 (+8% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2009 (+9% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2010 (+10% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2011 (+11% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2012 (+12% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2013 (+13% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2014 (+14% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2015 (+15% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2016 (+16% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2017 (+17% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2018 (+18% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2019 (+19% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2020 (+20% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3001 (+1% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3002 (+2% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3003 (+3% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3004 (+4% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3005 (+5% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3006 (+6% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3007 (+7% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3008 (+8% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3009 (+9% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3010 (+10% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3011 (+11% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3012 (+12% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3013 (+13% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3014 (+14% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3015 (+15% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3016 (+16% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3017 (+17% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3018 (+18% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3019 (+19% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3020 (+20% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1001 (+1% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1002 (+2% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1003 (+3% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1004 (+4% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1005 (+5% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1006 (+6% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1007 (+7% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1008 (+8% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1009 (+9% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1010 (+10% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1011 (+11% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1012 (+12% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1013 (+13% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1014 (+14% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1015 (+15% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1016 (+16% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1017 (+17% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1018 (+18% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1019 (+19% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1020 (+20% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2001 (+1% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2002 (+2% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2003 (+3% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2004 (+4% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2005 (+5% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2006 (+6% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2007 (+7% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2008 (+8% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2009 (+9% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2010 (+10% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2011 (+11% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2012 (+12% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2013 (+13% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2014 (+14% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2015 (+15% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2016 (+16% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2017 (+17% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2018 (+18% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2019 (+19% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2020 (+20% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3001 (+1% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3002 (+2% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3003 (+3% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3004 (+4% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3005 (+5% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3006 (+6% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3007 (+7% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3008 (+8% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3009 (+9% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3010 (+10% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3011 (+11% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3012 (+12% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3013 (+13% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3014 (+14% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3015 (+15% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3016 (+16% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3017 (+17% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3018 (+18% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3019 (+19% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3020 (+20% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
 			<effect name="BlockAbnormalSlot">
 				<slot>HIDE</slot>
-		<!-- Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1001 (+1% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1002 (+2% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1003 (+3% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1004 (+4% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1005 (+5% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1006 (+6% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1007 (+7% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1008 (+8% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1009 (+9% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1010 (+10% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1011 (+11% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1012 (+12% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1013 (+13% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1014 (+14% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1015 (+15% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1016 (+16% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1017 (+17% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1018 (+18% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1019 (+19% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1020 (+20% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2001 (+1% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2002 (+2% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2003 (+3% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2004 (+4% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2005 (+5% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2006 (+6% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2007 (+7% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2008 (+8% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2009 (+9% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2010 (+10% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2011 (+11% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2012 (+12% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2013 (+13% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2014 (+14% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2015 (+15% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2016 (+16% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2017 (+17% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2018 (+18% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2019 (+19% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2020 (+20% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3001 (+1% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3002 (+2% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3003 (+3% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3004 (+4% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3005 (+5% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3006 (+6% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3007 (+7% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3008 (+8% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3009 (+9% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3010 (+10% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3011 (+11% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3012 (+12% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3013 (+13% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3014 (+14% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3015 (+15% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3016 (+16% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3017 (+17% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3018 (+18% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3019 (+19% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3020 (+20% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1001 (+1% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1002 (+2% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1003 (+3% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1004 (+4% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1005 (+5% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1006 (+6% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1007 (+7% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1008 (+8% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1009 (+9% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1010 (+10% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1011 (+11% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1012 (+12% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1013 (+13% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1014 (+14% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1015 (+15% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1016 (+16% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1017 (+17% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1018 (+18% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1019 (+19% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1020 (+20% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2001 (+1% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2002 (+2% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2003 (+3% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2004 (+4% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2005 (+5% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2006 (+6% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2007 (+7% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2008 (+8% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2009 (+9% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2010 (+10% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2011 (+11% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2012 (+12% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2013 (+13% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2014 (+14% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2015 (+15% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2016 (+16% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2017 (+17% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2018 (+18% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2019 (+19% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2020 (+20% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3001 (+1% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3002 (+2% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3003 (+3% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3004 (+4% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3005 (+5% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3006 (+6% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3007 (+7% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3008 (+8% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3009 (+9% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3010 (+10% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3011 (+11% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3012 (+12% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3013 (+13% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3014 (+14% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3015 (+15% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3016 (+16% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3017 (+17% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3018 (+18% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3019 (+19% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3020 (+20% Focus): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
 			</effect>
 			<effect name="Speed">
 				<amount>-100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		<!-- Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1001 (+1% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1002 (+2% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1003 (+3% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1004 (+4% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1005 (+5% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1006 (+6% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1007 (+7% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1008 (+8% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1009 (+9% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1010 (+10% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1011 (+11% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1012 (+12% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1013 (+13% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1014 (+14% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1015 (+15% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1016 (+16% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1017 (+17% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1018 (+18% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1019 (+19% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1020 (+20% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2001 (+1% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2002 (+2% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2003 (+3% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2004 (+4% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2005 (+5% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2006 (+6% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2007 (+7% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2008 (+8% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2009 (+9% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2010 (+10% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2011 (+11% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2012 (+12% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2013 (+13% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2014 (+14% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2015 (+15% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2016 (+16% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2017 (+17% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2018 (+18% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2019 (+19% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2020 (+20% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3001 (+1% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3002 (+1.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3003 (+1.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3004 (+2.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3005 (+2.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3006 (+3% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3007 (+3.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3008 (+3.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3009 (+4.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3010 (+4.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3011 (+5% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3012 (+5.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3013 (+5.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3014 (+6.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3015 (+6.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3016 (+7% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3017 (+7.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3018 (+7.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3019 (+8.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3020 (+8.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1001 (+1% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1002 (+2% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1003 (+3% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1004 (+4% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1005 (+5% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1006 (+6% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1007 (+7% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1008 (+8% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1009 (+9% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1010 (+10% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1011 (+11% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1012 (+12% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1013 (+13% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1014 (+14% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1015 (+15% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1016 (+16% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1017 (+17% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1018 (+18% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1019 (+19% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 1020 (+20% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2001 (+1% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2002 (+2% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2003 (+3% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2004 (+4% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2005 (+5% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2006 (+6% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2007 (+7% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2008 (+8% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2009 (+9% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2010 (+10% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2011 (+11% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2012 (+12% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2013 (+13% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2014 (+14% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2015 (+15% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2016 (+16% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2017 (+17% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2018 (+18% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2019 (+19% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 2020 (+20% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3001 (+1% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3002 (+1.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3003 (+1.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3004 (+2.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3005 (+2.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3006 (+3% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3007 (+3.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3008 (+3.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3009 (+4.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3010 (+4.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3011 (+5% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3012 (+5.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3013 (+5.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3014 (+6.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3015 (+6.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3016 (+7% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3017 (+7.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3018 (+7.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3019 (+8.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+			<!-- Level 1 - SubLevel 3020 (+8.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
 			<effect name="DefenceTrait">
-		<!-- A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1001 (+1% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1002 (+2% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1003 (+3% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1004 (+4% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1005 (+5% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1006 (+6% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1007 (+7% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1008 (+8% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1009 (+9% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1010 (+10% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1011 (+11% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1012 (+12% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1013 (+13% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1014 (+14% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1015 (+15% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1016 (+16% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1017 (+17% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1018 (+18% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1019 (+19% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1020 (+20% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2001 (+1% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2002 (+2% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2003 (+3% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2004 (+4% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2005 (+5% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2006 (+6% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2007 (+7% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2008 (+8% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2009 (+9% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2010 (+10% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2011 (+11% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2012 (+12% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2013 (+13% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2014 (+14% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2015 (+15% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2016 (+16% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2017 (+17% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2018 (+18% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2019 (+19% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2020 (+20% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3001 (+1% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3002 (+1.6% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3003 (+2.2% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3004 (+2.8% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3005 (+3.4% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3006 (+4% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3007 (+4.6% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3008 (+5.2% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3009 (+5.8% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3010 (+6.4% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3011 (+7% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3012 (+7.6% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3013 (+8.2% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3014 (+8.8% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3015 (+9.4% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3016 (+10% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3017 (+10.6% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3018 (+11.2% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3019 (+11.8% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3020 (+12.4% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1001 (+1% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1002 (+2% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1003 (+3% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1004 (+4% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1005 (+5% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1006 (+6% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1007 (+7% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1008 (+8% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1009 (+9% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1010 (+10% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1011 (+11% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1012 (+12% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1013 (+13% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1014 (+14% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1015 (+15% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1016 (+16% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1017 (+17% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1018 (+18% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1019 (+19% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1020 (+20% Power): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2001 (+1% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2002 (+2% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2003 (+3% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2004 (+4% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2005 (+5% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2006 (+6% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2007 (+7% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2008 (+8% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2009 (+9% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2010 (+10% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2011 (+11% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2012 (+12% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2013 (+13% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2014 (+14% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2015 (+15% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2016 (+16% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2017 (+17% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2018 (+18% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2019 (+19% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2020 (+20% Chance): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3001 (+1% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3002 (+1.6% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3003 (+2.2% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3004 (+2.8% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3005 (+3.4% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3006 (+4% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3007 (+4.6% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3008 (+5.2% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3009 (+5.8% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3010 (+6.4% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3011 (+7% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3012 (+7.6% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3013 (+8.2% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3014 (+8.8% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3015 (+9.4% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3016 (+10% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3017 (+10.6% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3018 (+11.2% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3019 (+11.8% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3020 (+12.4% Break): A powerful blow knocks down. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
 				<KNOCKDOWN>100</KNOCKDOWN>
-		<!-- Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1001 (+1% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1002 (+2% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1003 (+3% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1004 (+4% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1005 (+5% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1006 (+6% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1007 (+7% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1008 (+8% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1009 (+9% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1010 (+10% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1011 (+11% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1012 (+12% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1013 (+13% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1014 (+14% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1015 (+15% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1016 (+16% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1017 (+17% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1018 (+18% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1019 (+19% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1020 (+20% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2001 (+1% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2002 (+2% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2003 (+3% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2004 (+4% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2005 (+5% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2006 (+6% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2007 (+7% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2008 (+8% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2009 (+9% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2010 (+10% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2011 (+11% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2012 (+12% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2013 (+13% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2014 (+14% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2015 (+15% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2016 (+16% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2017 (+17% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2018 (+18% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2019 (+19% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2020 (+20% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3001 (+1% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3002 (+1.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3003 (+1.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3004 (+2.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3005 (+2.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3006 (+3% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3007 (+3.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3008 (+3.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3009 (+4.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3010 (+4.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3011 (+5% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3012 (+5.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3013 (+5.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3014 (+6.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3015 (+6.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3016 (+7% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3017 (+7.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3018 (+7.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3019 (+8.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 3020 (+8.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1001 (+1% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1002 (+2% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1003 (+3% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1004 (+4% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1005 (+5% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1006 (+6% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1007 (+7% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1008 (+8% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1009 (+9% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1010 (+10% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1011 (+11% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1012 (+12% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1013 (+13% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1014 (+14% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1015 (+15% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1016 (+16% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1017 (+17% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1018 (+18% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1019 (+19% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1020 (+20% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2001 (+1% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2002 (+2% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2003 (+3% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2004 (+4% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2005 (+5% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2006 (+6% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2007 (+7% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2008 (+8% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2009 (+9% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2010 (+10% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2011 (+11% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2012 (+12% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2013 (+13% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2014 (+14% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2015 (+15% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2016 (+16% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2017 (+17% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2018 (+18% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2019 (+19% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2020 (+20% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3001 (+1% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3002 (+1.4% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3003 (+1.8% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3004 (+2.2% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3005 (+2.6% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3006 (+3% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3007 (+3.4% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3008 (+3.8% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3009 (+4.2% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3010 (+4.6% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3011 (+5% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3012 (+5.4% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3013 (+5.8% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3014 (+6.2% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3015 (+6.6% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3016 (+7% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3017 (+7.4% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3018 (+7.8% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3019 (+8.2% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3020 (+8.6% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1001 (+1% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1002 (+2% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1003 (+3% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1004 (+4% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1005 (+5% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1006 (+6% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1007 (+7% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1008 (+8% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1009 (+9% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1010 (+10% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1011 (+11% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1012 (+12% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1013 (+13% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1014 (+14% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1015 (+15% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1016 (+16% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1017 (+17% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1018 (+18% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1019 (+19% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 1020 (+20% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2001 (+1% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2002 (+2% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2003 (+3% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2004 (+4% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2005 (+5% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2006 (+6% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2007 (+7% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2008 (+8% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2009 (+9% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2010 (+10% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2011 (+11% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2012 (+12% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2013 (+13% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2014 (+14% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2015 (+15% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2016 (+16% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2017 (+17% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2018 (+18% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2019 (+19% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Level 1 - SubLevel 2020 (+20% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
-		<!-- Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1001 (+1% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1002 (+2% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1003 (+3% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1004 (+4% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1005 (+5% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1006 (+6% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1007 (+7% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1008 (+8% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1009 (+9% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1010 (+10% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1011 (+11% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1012 (+12% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1013 (+13% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1014 (+14% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1015 (+15% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1016 (+16% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1017 (+17% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1018 (+18% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1019 (+19% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 1020 (+20% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2001 (+1% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2002 (+2% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2003 (+3% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2004 (+4% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2005 (+5% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2006 (+6% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2007 (+7% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2008 (+8% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2009 (+9% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2010 (+10% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2011 (+11% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2012 (+12% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2013 (+13% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2014 (+14% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2015 (+15% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2016 (+16% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2017 (+17% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2018 (+18% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2019 (+19% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 2020 (+20% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3001 (+1% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3002 (+1.4% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3003 (+1.8% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3004 (+2.2% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3005 (+2.6% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3006 (+3% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3007 (+3.4% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3008 (+3.8% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3009 (+4.2% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3010 (+4.6% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3011 (+5% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3012 (+5.4% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3013 (+5.8% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3014 (+6.2% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3015 (+6.6% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3016 (+7% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3017 (+7.4% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3018 (+7.8% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3019 (+8.2% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
-		<!-- Level 1 - SubLevel 3020 (+8.6% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1001 (+1% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1002 (+2% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1003 (+3% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1004 (+4% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1005 (+5% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1006 (+6% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1007 (+7% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1008 (+8% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1009 (+9% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1010 (+10% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1011 (+11% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1012 (+12% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1013 (+13% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1014 (+14% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1015 (+15% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1016 (+16% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1017 (+17% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1018 (+18% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1019 (+19% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1020 (+20% Power): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2001 (+1% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2002 (+2% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2003 (+3% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2004 (+4% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2005 (+5% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2006 (+6% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2007 (+7% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2008 (+8% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2009 (+9% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2010 (+10% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2011 (+11% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2012 (+12% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2013 (+13% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2014 (+14% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2015 (+15% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2016 (+16% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2017 (+17% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2018 (+18% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2019 (+19% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2020 (+20% Chance): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3001 (+1% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3002 (+1.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3003 (+1.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3004 (+2.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3005 (+2.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3006 (+3% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3007 (+3.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3008 (+3.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3009 (+4.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3010 (+4.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3011 (+5% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3012 (+5.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3013 (+5.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3014 (+6.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3015 (+6.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3016 (+7% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3017 (+7.4% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3018 (+7.8% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3019 (+8.2% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 3020 (+8.6% Hex): Stuns. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1001 (+1% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1002 (+2% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1003 (+3% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1004 (+4% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1005 (+5% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1006 (+6% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1007 (+7% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1008 (+8% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1009 (+9% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1010 (+10% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1011 (+11% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1012 (+12% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1013 (+13% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1014 (+14% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1015 (+15% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1016 (+16% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1017 (+17% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1018 (+18% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1019 (+19% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1020 (+20% Power): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2001 (+1% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2002 (+2% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2003 (+3% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2004 (+4% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2005 (+5% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2006 (+6% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2007 (+7% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2008 (+8% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2009 (+9% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2010 (+10% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2011 (+11% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2012 (+12% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2013 (+13% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2014 (+14% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2015 (+15% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2016 (+16% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2017 (+17% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2018 (+18% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2019 (+19% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2020 (+20% Chance): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3001 (+1% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3002 (+1.4% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3003 (+1.8% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3004 (+2.2% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3005 (+2.6% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3006 (+3% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3007 (+3.4% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3008 (+3.8% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3009 (+4.2% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3010 (+4.6% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3011 (+5% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3012 (+5.4% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3013 (+5.8% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3014 (+6.2% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3015 (+6.6% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3016 (+7% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3017 (+7.4% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3018 (+7.8% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3019 (+8.2% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3020 (+8.6% Hex): Makes unable to move. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1001 (+1% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1002 (+2% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1003 (+3% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1004 (+4% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1005 (+5% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1006 (+6% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1007 (+7% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1008 (+8% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1009 (+9% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1010 (+10% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1011 (+11% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1012 (+12% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1013 (+13% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1014 (+14% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1015 (+15% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1016 (+16% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1017 (+17% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1018 (+18% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1019 (+19% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 1020 (+20% Power): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2001 (+1% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2002 (+2% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2003 (+3% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2004 (+4% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2005 (+5% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2006 (+6% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2007 (+7% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2008 (+8% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2009 (+9% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2010 (+10% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2011 (+11% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2012 (+12% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2013 (+13% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2014 (+14% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2015 (+15% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2016 (+16% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2017 (+17% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2018 (+18% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2019 (+19% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Level 1 - SubLevel 2020 (+20% Chance): Paralysis makes unable to do anything. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
+				<!-- Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1001 (+1% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1002 (+2% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1003 (+3% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1004 (+4% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1005 (+5% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1006 (+6% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1007 (+7% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1008 (+8% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1009 (+9% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1010 (+10% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1011 (+11% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1012 (+12% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1013 (+13% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1014 (+14% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1015 (+15% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1016 (+16% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1017 (+17% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1018 (+18% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1019 (+19% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 1020 (+20% Power): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2001 (+1% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2002 (+2% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2003 (+3% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2004 (+4% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2005 (+5% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2006 (+6% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2007 (+7% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2008 (+8% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2009 (+9% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2010 (+10% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2011 (+11% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2012 (+12% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2013 (+13% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2014 (+14% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2015 (+15% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2016 (+16% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2017 (+17% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2018 (+18% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2019 (+19% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 2020 (+20% Chance): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3001 (+1% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3002 (+1.4% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3003 (+1.8% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3004 (+2.2% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3005 (+2.6% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3006 (+3% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3007 (+3.4% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3008 (+3.8% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3009 (+4.2% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3010 (+4.6% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3011 (+5% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3012 (+5.4% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3013 (+5.8% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3014 (+6.2% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3015 (+6.6% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3016 (+7% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3017 (+7.4% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3018 (+7.8% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3019 (+8.2% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
+				<!-- Level 1 - SubLevel 3020 (+8.6% Hex): Makes unable to hide. Speed is decreased. Inflicted status: Obstruction (Disarm, Hold, Blind, Block, Aggression, Silence, Banishment, Bluff, Ban on Stealth). -->
 			</effect>
 		</effects>
 	</skill>
