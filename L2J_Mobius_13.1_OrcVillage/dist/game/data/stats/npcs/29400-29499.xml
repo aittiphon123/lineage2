@@ -1814,7 +1814,6 @@
 		</skillList>
 	</npc>
 	<npc id="29433" level="130" type="RaidBoss" name="Atrus" title="Kasha's Avatar">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="83343" /> <!-- Kasha Orc Boss' Elite Avenger - For NPC. -->
@@ -1834,6 +1833,7 @@
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="MAGE" isAggressive="false" />
 		<collision>
 			<radius normal="54" />
 			<height normal="147" />
@@ -1851,12 +1851,11 @@
 		</skillList>
 	</npc>
 	<npc id="29434" level="130" type="Monster" name="Chaotic Seal">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="88639227" hpRegen="13.4" mp="3190" mpRegen="30" />
-			<attack physical="319843" magical="291506" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="319843" magical="291506" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="600" distance="600" width="120" />
 			<defence physical="150648" magical="729046" />
 			<speed>
 				<walk ground="1" />
@@ -1868,7 +1867,8 @@
 				<defence fire="2650" water="2650" wind="2650" earth="2650" holy="2650" dark="2600" />
 			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" canMove="false" />
+		<ai isAggressive="false" />
 		<collision>
 			<radius normal="36" />
 			<height normal="126" />
@@ -1886,7 +1886,6 @@
 		</skillList>
 	</npc>
 	<npc id="29435" level="130" type="Monster" name="Chaotic Seal">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1903,7 +1902,8 @@
 				<defence fire="2650" water="2650" wind="2650" earth="2650" holy="2600" dark="2650" />
 			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" canMove="false" />
+		<ai isAggressive="false" />
 		<collision>
 			<radius normal="36" />
 			<height normal="126" />

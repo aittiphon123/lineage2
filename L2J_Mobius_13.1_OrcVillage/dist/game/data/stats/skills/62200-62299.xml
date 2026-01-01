@@ -245,93 +245,367 @@
 	<skill id="62224" toLevel="1" name="Kasha's Avatar Atrus">
 		<!-- Once of the High Orcs, Atrus lost his way tempted by the Chaos Power. Now he knows only one master - Kasha. <Bonus stats>. Max received damage is fixed at 2,000,000. Received damage from basic attacks -30%, Accuracy/ Evasion +200. <Spawn requirements>. Spawns in Kasha Orc Fortress at 21:00 every Wednesday and Saturday, and disappears in 20 min. <Reward requirements>. The defeat contribution reward is only given to 200 top-damage characters. The damage dealt by a character has to be at least 0.1% of the boss' Max HP. The first/ last hit reward is given to characters who have fulfilled the requirements for the defeat contribution reward as well as have delivered the first/ last blow. The top-damage reward is given to characters who have fulfilled the requirements for the defeat contribution reward as well as have achieved the 1st-10th rank in the damage rank list. -->
 		<icon>icon.skillraid</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+		<effect name="GetDamageLimit">
+			<amount>2000000</amount>
+		</effect>
+		<effect name="DamageByAttack">
+				<amount>-30</amount>
+				<type>ENEMY_ALL</type>
+		</effect>
+		<effect name="Accuracy">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+		</effect>
+	</effects>
 	</skill>
 	<skill id="62225" toLevel="1" name="Kasha's Destruction (Blunt Weapon)">
 		<operateType>A1</operateType>
-		<castRange>1000</castRange>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SQUARE</affectScope>
+		<castRange>350</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>350</effectRange>
+		<fanRange>0;0;350;300</fanRange>
 		<hitTime>1500</hitTime>
-		<isMagic>6</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+		<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.20</pAtkMod>
+				<pDefMod>0.006</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62226" toLevel="1" name="Kasha's Wave (Blunt Weapon)">
 		<!-- Deals P. damage stunning enemies for 2 sec. The damage is increased based on the number of affected targets. Cannot be removed. -->
 		<icon>icon.skill33916</icon>
-		<operateType>A1</operateType>
-		<castRange>2000</castRange>
+		<operateType>DA2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>600</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>1600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>1000</effectRange>
 		<hitTime>4000</hitTime>
 		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>130</magicLevel>
+		<reuseDelay>3000</reuseDelay>
 		<isMagic>6</isMagic>
+		<trait>SHOCK</trait>
+		<effects>
+		<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.25</pAtkMod>
+				<pDefMod>0.005</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62227" toLevel="1" name="Kasha's Pull (Blunt Weapon)">
 		<!-- Pulls nearby enemies and stuns them for 1 sec. Cannot be removed. -->
 		<icon>icon.skill32715</icon>
-		<operateType>A1</operateType>
-		<coolTime>500</coolTime>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>1</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>1200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
 		<effectPoint>-100</effectPoint>
-		<hitTime>1000</hitTime>
+		<hitTime>2500</hitTime>
+		<activateRate>150</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>2000</castRange>
 		<isDebuff>true</isDebuff>
+		<lvlBonusRate>200</lvlBonusRate>
 		<isMagic>6</isMagic>
+		<reuseDelay>5000</reuseDelay>
+		<trait>PULL</trait>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+				<perfectionRate>150</perfectionRate>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62228" toLevel="1" name="Kasha's Sweep (Blunt Weapon)">
 		<!-- Deals P. damage knocking enemies down for 4 sec. The damage is increased based on the number of affected targets. Cannot be removed. -->
 		<icon>icon.skill1184</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>4</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>300</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2500</hitTime>
 		<isDebuff>true</isDebuff>
-		<isMagic>6</isMagic>
+		<reuseDelay>7000</reuseDelay>
+		<trait>KNOCKDOWN</trait>
+		<effects>
+		<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.20</pAtkMod>
+				<pDefMod>0.005</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="DefenceTrait">
+				<AIRBIND>100</AIRBIND>
+				<KNOCKBACK>100</KNOCKBACK>
+				<SLEEP>100</SLEEP>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SHOCK>100</SHOCK>
+				<HOLD>100</HOLD>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62229" toLevel="1" name="Kasha's Direct Attack (Blunt Weapon)">
-		<operateType>A1</operateType>
-		<castRange>5000</castRange>
+		<operateType>DA2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>70</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>600</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>1600</castRange>
 		<coolTime>500</coolTime>
-		<hitTime>500</hitTime>
+		<effectPoint>-100</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitCancelTime>1</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>130</magicLevel>
+		<reuseDelay>7000</reuseDelay>
+		<!-- <nextAction>ATTACK</nextAction> -->
+		<isMagic>6</isMagic>
+		<trait>SHOCK</trait>
+		<effects>
+		<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.25</pAtkMod>
+				<pDefMod>0.005</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62230" toLevel="1" name="Kasha's Fray (Blunt Weapon)">
 		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectObject>ALL</affectObject>
+		<activateRate>100</activateRate>
+		<affectRange>1000</affectRange>
+		<affectScope>SQUARE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>1600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>1500</effectRange>
+		<fanRange>0;0;1500;1500</fanRange>
 		<hitTime>2000</hitTime>
-		<isMagic>6</isMagic>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>700</reuseDelay>
+		<trait>KNOCKDOWN</trait>
+		<effects>
+		<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.52</pAtkMod>
+				<pDefMod>0.003</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62231" toLevel="1" name="Kasha's Destruction (Stormer)">
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>100</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty> 
 		<castRange>2000</castRange>
-		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<coolTime>500</coolTime>
 		<hitTime>1500</hitTime>
-		<isMagic>6</isMagic>
+		<reuseDelay>5</reuseDelay>
+		<lvlBonusRate>1</lvlBonusRate>
+		<effects>
+			<effect name="PhysicalDamage">
+        <power>100</power>
+        <pAtkMod>0.92</pAtkMod>
+        <pDefMod>0.01</pDefMod>
+        <ignoreShieldDefence>true</ignoreShieldDefence>
+        <overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62232" toLevel="1" name="Kasha's Inner Storm (Stormer)">
 		<!-- Deals P. damage knocking enemies down for 4 sec. The damage is increased based on the number of affected targets. Cannot be removed. -->
 		<icon>icon.skill32100</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>4</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>500</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>500</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2000</hitTime>
 		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>130</magicLevel>
 		<isMagic>6</isMagic>
+		<reuseDelay>15000</reuseDelay>
+		<trait>KNOCKDOWN</trait>
+		<effects>
+		<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.22</pAtkMod>
+				<pDefMod>0.005</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62233" toLevel="1" name="Kasha's Outer Storm (Stormer)">
 		<!-- Deals P. damage knocking enemies down for 4 sec. The damage is increased based on the number of affected targets. Cannot be removed. -->
 		<icon>icon.skill32100</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>4</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectScope>RING_RANGE</affectScope>
+		<fanRange>0;0;200;0</fanRange>
+		<affectRange>2000</affectRange>
+		<affectObject>NOT_FRIEND</affectObject>
+		<basicProperty>NONE</basicProperty>
+		<castRange>300</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
-		<hitTime>2000</hitTime>
+		<hitTime>2500</hitTime>
 		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>130</magicLevel>
 		<isMagic>6</isMagic>
+		<reuseDelay>26000</reuseDelay>
+		<trait>KNOCKDOWN</trait>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>100</power>
+				<pAtkMod>0.296</pAtkMod>
+				<pDefMod>0.01</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62234" toLevel="1" name="Chaos Cure">
-		<operateType>A1</operateType>
-		<castRange>5000</castRange>
+	<!-- effect visual to script -->
+		<operateType>CA1</operateType>
+		<targetType>TARGET</targetType>
+		<affectRange>3000</affectRange>
+		<affectScope>SINGLE</affectScope>
+		<castRange>3000</castRange>
+		<channelingStart>1.2</channelingStart>
+		<channelingTickInterval>1</channelingTickInterval>
+		<effectPoint>-714</effectPoint>
+		<effectRange>3000</effectRange> 
+		<coolTime>500</coolTime>
 		<hitTime>10000</hitTime>
-		<isMagic>6</isMagic>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>1</magicCriticalRate>
+		<magicLevel>127</magicLevel>
+		<reuseDelay>100</reuseDelay>
 	</skill>
 	<skill id="62235" toLevel="1" name="Chaos Stone Call">
 		<operateType>A1</operateType>
@@ -543,7 +817,12 @@
 	<skill id="62241" toLevel="1" name="Chaotic Seal">
 		<!-- A crystal imbued with the Chaos Power. Recovers Atrus' HP. If all crystals are destroyed and Atrus cannot recover HP, the converted Chaos Power is transferred to those around him. <Bonus stats>. Max received damage is fixed at 2,000,000. -->
 		<icon>icon.skillraid</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+		<effect name="GetDamageLimit">
+			<amount>2000000</amount>
+		</effect>
+	</effects>
 	</skill>
 	<skill id="62242" toLevel="1" name="Freya's Breath">
 		<!-- Freya's Garden is filled with the Queen's icy breath and power. Skill cooldown -99%. Note!. The effect is only active in Freya's Garden. -->

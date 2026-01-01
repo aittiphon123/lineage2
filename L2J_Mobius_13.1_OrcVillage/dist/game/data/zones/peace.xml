@@ -1182,4 +1182,17 @@
 		<node X="149843" Y="-112843" />
 		<node X="149465" Y="-113152" />
 	</zone>
+	<zone name="Kasha_Orc_Fortress_Spawn" type="PeaceZone" shape="NPoly" minZ="-3451" maxZ="-1451"> <!-- Kasha Orc Fortress Spawn -->
+		<node X="-9014" Y="-115014" />
+		<node X="-8905" Y="-115111" />
+		<node X="-8694" Y="-115034" />
+		<node X="-8596" Y="-115072" />
+		<node X="-8597" Y="-114984" />
+		<node X="-8437" Y="-114756" />
+		<node X="-8415" Y="-114492" />
+		<node X="-8508" Y="-114388" />
+		<node X="-8784" Y="-114328" />
+		<node X="-9207" Y="-114601" />
+		<node X="-9218" Y="-114720" />
+	</zone>
 </list>
