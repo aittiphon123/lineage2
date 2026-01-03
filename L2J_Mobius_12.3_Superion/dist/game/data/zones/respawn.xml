@@ -1945,4 +1945,17 @@
 		<race name="KAMAEL" point="olympiad_stadium04" />
 		<race name="ERTHEIA" point="olympiad_stadium04" />
 	</zone>
+	<zone name="langk_lizardmen_temple_gludio_17_24" type="RespawnZone" shape="NPoly" minZ="-5500" maxZ="-1000">
+		<node X="-98380" Y="196648" />
+		<node X="-65368" Y="196556" />
+		<node X="-65368" Y="229188" />
+		<node X="-98428" Y="229188" />
+		<race name="HUMAN" point="gludio_castle_town" />
+		<race name="DARK_ELF" point="gludio_castle_town" />
+		<race name="ORC" point="gludio_castle_town" />
+		<race name="DWARF" point="gludio_castle_town" />
+		<race name="ELF" point="gludio_castle_town" />
+		<race name="KAMAEL" point="gludio_castle_town" />
+		<race name="ERTHEIA" point="gludio_castle_town" />
+	</zone>
 </list>

@@ -74,6 +74,13 @@
 		<node X="-65880" Y="195756" />
 		<node X="-98388" Y="196880" />
 	</zone>
+	<zone name="gludio_1724_001" type="TaxZone" shape="NPoly" minZ="-5500" maxZ="-1000">
+		<stat name="domainId" val="1" />
+		<node X="-98380" Y="196648" />
+		<node X="-65368" Y="196556" />
+		<node X="-65368" Y="229188" />
+		<node X="-98428" Y="229188" />
+	</zone>
 	<zone name="gludio_1725_001" type="TaxZone" shape="NPoly" minZ="-5036" maxZ="964">
 		<stat name="domainId" val="1" />
 		<node X="-98320" Y="229472" />
