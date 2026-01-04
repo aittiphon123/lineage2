@@ -166,8 +166,8 @@ import handlers.bypasshandlers.NpcViewMod;
 import handlers.bypasshandlers.Observation;
 import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
-import handlers.bypasshandlers.QuestLink;
 import handlers.bypasshandlers.ReleaseAttribute;
+import handlers.bypasshandlers.ScriptLink;
 import handlers.bypasshandlers.SkillList;
 import handlers.bypasshandlers.TerritoryStatus;
 import handlers.bypasshandlers.TutorialClose;
@@ -483,10 +483,10 @@ public class MasterHandler
 			Multisell.class,
 			NpcViewMod.class,
 			Observation.class,
-			QuestLink.class,
 			PlayerHelp.class,
 			PrivateWarehouse.class,
 			ReleaseAttribute.class,
+			ScriptLink.class,
 			SkillList.class,
 			TerritoryStatus.class,
 			TutorialClose.class,

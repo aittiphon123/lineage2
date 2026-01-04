@@ -2226,7 +2226,7 @@ public class Item extends WorldObject
 	 */
 	public void onBypassFeedback(Player player, String command)
 	{
-		if (!command.startsWith("Quest"))
+		if (!command.startsWith("Script"))
 		{
 			return;
 		}

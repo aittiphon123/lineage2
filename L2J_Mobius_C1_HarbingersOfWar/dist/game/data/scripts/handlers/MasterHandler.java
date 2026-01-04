@@ -142,7 +142,7 @@ import handlers.bypasshandlers.Multisell;
 import handlers.bypasshandlers.NpcViewMod;
 import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
-import handlers.bypasshandlers.QuestLink;
+import handlers.bypasshandlers.ScriptLink;
 import handlers.bypasshandlers.Sell;
 import handlers.bypasshandlers.SkillList;
 import handlers.bypasshandlers.SupportMagic;
@@ -378,10 +378,10 @@ public class MasterHandler
 			Link.class,
 			Multisell.class,
 			NpcViewMod.class,
-			QuestLink.class,
 			PlayerHelp.class,
 			PrivateWarehouse.class,
 			Sell.class,
+			ScriptLink.class,
 			SkillList.class,
 			SupportMagic.class,
 			TerritoryStatus.class,

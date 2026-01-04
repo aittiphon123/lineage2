@@ -155,9 +155,9 @@ import handlers.bypasshandlers.NpcViewMod;
 import handlers.bypasshandlers.Observation;
 import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
-import handlers.bypasshandlers.QuestLink;
 import handlers.bypasshandlers.QuestList;
 import handlers.bypasshandlers.Rift;
+import handlers.bypasshandlers.ScriptLink;
 import handlers.bypasshandlers.Sell;
 import handlers.bypasshandlers.SkillList;
 import handlers.bypasshandlers.SupportBlessing;
@@ -418,12 +418,12 @@ public class MasterHandler
 			Multisell.class,
 			NpcViewMod.class,
 			Observation.class,
-			QuestLink.class,
 			PlayerHelp.class,
 			PrivateWarehouse.class,
 			QuestList.class,
 			Rift.class,
 			Sell.class,
+			ScriptLink.class,
 			SkillList.class,
 			SupportBlessing.class,
 			SupportMagic.class,

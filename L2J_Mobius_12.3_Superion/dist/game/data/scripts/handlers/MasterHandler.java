@@ -165,8 +165,8 @@ import handlers.bypasshandlers.NpcViewMod;
 import handlers.bypasshandlers.Observation;
 import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
-import handlers.bypasshandlers.QuestLink;
 import handlers.bypasshandlers.ReleaseAttribute;
+import handlers.bypasshandlers.ScriptLink;
 import handlers.bypasshandlers.SkillList;
 import handlers.bypasshandlers.TerritoryStatus;
 import handlers.bypasshandlers.TutorialClose;
@@ -276,8 +276,8 @@ import handlers.targethandlers.NpcBody;
 import handlers.targethandlers.Others;
 import handlers.targethandlers.OwnerPet;
 import handlers.targethandlers.PcBody;
-import handlers.targethandlers.Self;
 import handlers.targethandlers.RecallCreature;
+import handlers.targethandlers.Self;
 import handlers.targethandlers.Summon;
 import handlers.targethandlers.Target;
 import handlers.targethandlers.TargetOrSelf;
@@ -489,10 +489,10 @@ public class MasterHandler
 			Multisell.class,
 			NpcViewMod.class,
 			Observation.class,
-			QuestLink.class,
 			PlayerHelp.class,
 			PrivateWarehouse.class,
 			ReleaseAttribute.class,
+			ScriptLink.class,
 			SkillList.class,
 			TerritoryStatus.class,
 			TutorialClose.class,

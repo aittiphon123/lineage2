@@ -164,8 +164,8 @@ import handlers.bypasshandlers.Observation;
 import handlers.bypasshandlers.PetExtractWindow;
 import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
-import handlers.bypasshandlers.QuestLink;
 import handlers.bypasshandlers.ReleaseAttribute;
+import handlers.bypasshandlers.ScriptLink;
 import handlers.bypasshandlers.SkillList;
 import handlers.bypasshandlers.SupportBlessing;
 import handlers.bypasshandlers.SupportMagic;
@@ -484,10 +484,10 @@ public class MasterHandler
 			NpcViewMod.class,
 			Observation.class,
 			PetExtractWindow.class,
-			QuestLink.class,
 			PlayerHelp.class,
 			PrivateWarehouse.class,
 			ReleaseAttribute.class,
+			ScriptLink.class,
 			SkillList.class,
 			SupportBlessing.class,
 			SupportMagic.class,

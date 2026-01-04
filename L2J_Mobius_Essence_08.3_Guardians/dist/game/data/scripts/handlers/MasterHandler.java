@@ -165,8 +165,8 @@ import handlers.bypasshandlers.Observation;
 import handlers.bypasshandlers.PetExtractWindow;
 import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
-import handlers.bypasshandlers.QuestLink;
 import handlers.bypasshandlers.ReleaseAttribute;
+import handlers.bypasshandlers.ScriptLink;
 import handlers.bypasshandlers.SkillList;
 import handlers.bypasshandlers.SupportBlessing;
 import handlers.bypasshandlers.SupportMagic;
@@ -280,8 +280,8 @@ import handlers.targethandlers.Others;
 import handlers.targethandlers.OwnerPet;
 import handlers.targethandlers.PcBody;
 import handlers.targethandlers.Pet;
-import handlers.targethandlers.Self;
 import handlers.targethandlers.RecallCreature;
+import handlers.targethandlers.Self;
 import handlers.targethandlers.Summon;
 import handlers.targethandlers.Target;
 import handlers.targethandlers.TargetOrSelf;
@@ -492,10 +492,10 @@ public class MasterHandler
 			NpcViewMod.class,
 			Observation.class,
 			PetExtractWindow.class,
-			QuestLink.class,
 			PlayerHelp.class,
 			PrivateWarehouse.class,
 			ReleaseAttribute.class,
+			ScriptLink.class,
 			SkillList.class,
 			SupportBlessing.class,
 			SupportMagic.class,
