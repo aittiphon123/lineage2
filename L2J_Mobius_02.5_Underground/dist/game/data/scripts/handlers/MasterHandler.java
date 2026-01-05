@@ -306,7 +306,6 @@ import handlers.usercommandhandlers.ChannelLeave;
 import handlers.usercommandhandlers.ClanPenalty;
 import handlers.usercommandhandlers.ClanWarsList;
 import handlers.usercommandhandlers.Dismount;
-import handlers.usercommandhandlers.ExperienceGain;
 import handlers.usercommandhandlers.InstanceZone;
 import handlers.usercommandhandlers.Loc;
 import handlers.usercommandhandlers.Mount;
@@ -321,6 +320,7 @@ import handlers.voicedcommandhandlers.AutoPotion;
 import handlers.voicedcommandhandlers.Banking;
 import handlers.voicedcommandhandlers.ChangePassword;
 import handlers.voicedcommandhandlers.ChatAdmin;
+import handlers.voicedcommandhandlers.ExperienceGain;
 import handlers.voicedcommandhandlers.Lang;
 import handlers.voicedcommandhandlers.Offline;
 import handlers.voicedcommandhandlers.OfflinePlay;
@@ -560,7 +560,6 @@ public class MasterHandler
 			ClanPenalty.class,
 			ClanWarsList.class,
 			Dismount.class,
-			ExperienceGain.class,
 			Unstuck.class,
 			InstanceZone.class,
 			Loc.class,
@@ -578,6 +577,7 @@ public class MasterHandler
 			// TODO: Add configuration options for this voiced commands.
 			// CastleHandler.class,
 			// ClanHandler.class,
+			ExperienceGain.class,
 			WeddingConfig.ALLOW_WEDDING ? Wedding.class : null,
 			AutoPlayConfig.ENABLE_AUTO_PLAY ? AutoPlay.class : null,
 			BankingConfig.BANKING_SYSTEM_ENABLED ? Banking.class : null,
