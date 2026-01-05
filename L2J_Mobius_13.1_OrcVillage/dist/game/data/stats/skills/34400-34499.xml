@@ -1100,7 +1100,7 @@
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-			<effect name="MagicalAttack">
+			<effect name="MagicalDamage">
 				<power>18000</power>
 				<criticalChance>50</criticalChance>
 			</effect>
