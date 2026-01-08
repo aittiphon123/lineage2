@@ -962,7 +962,8 @@ public class Player extends Playable
 		// Set the base class ID to that of the actual class ID.
 		player.setBaseClass(player.getPlayerClass());
 		
-		// Kept for backwards compatibilPlayerConfig PlayerPlayerConfig.setPlayerConfig(PlayerConfig.ALT_GAME_NEW_CHAR_ALWAYS_IS_NEWBIE || (CharInfoTable.getInstance().accountCharNumber(accountName) == 0));
+		// Set the player as a newbie if there are no other characters associated with the current account.
+		player.setNewbie(PlayerConfig.ALT_GAME_NEW_CHAR_ALWAYS_IS_NEWBIE || (CharInfoTable.getInstance().accountCharNumber(accountName) == 0));
 		
 		// Add the player in the characters table of the database
 		return player.createDb() ? player : null;
