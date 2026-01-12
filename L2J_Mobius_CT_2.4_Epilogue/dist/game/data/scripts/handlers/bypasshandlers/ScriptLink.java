@@ -146,11 +146,11 @@ public class ScriptLink implements IBypassHandler
 			{
 				if (questId == TO_LEAD_AND_BE_LED)
 				{
-					sb.append("<a action=\"bypass Quest Q00118_ToLeadAndBeLed sponsor\">[" + quest.getDescription() + state + " (Sponsor)]</a><br>");
+					sb.append("<a action=\"bypass Script Q00118_ToLeadAndBeLed sponsor\">[" + quest.getDescription() + state + " (Sponsor)]</a><br>");
 				}
 				else if (questId == THE_LEADER_AND_THE_FOLLOWER)
 				{
-					sb.append("<a action=\"bypass Quest Q00123_TheLeaderAndTheFollower sponsor\">[" + quest.getDescription() + state + " (Sponsor)]</a><br>");
+					sb.append("<a action=\"bypass Script Q00123_TheLeaderAndTheFollower sponsor\">[" + quest.getDescription() + state + " (Sponsor)]</a><br>");
 				}
 			}
 		}

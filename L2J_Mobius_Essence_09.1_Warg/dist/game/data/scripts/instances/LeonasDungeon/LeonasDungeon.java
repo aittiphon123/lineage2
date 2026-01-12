@@ -141,17 +141,17 @@ public class LeonasDungeon extends InstanceScript
 				{
 					case 1:
 					{
-						packet.replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest LeonasDungeon setDifficulty1\">Difficulty - Low</Button>", "");
+						packet.replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Script LeonasDungeon setDifficulty1\">Difficulty - Low</Button>", "");
 						break;
 					}
 					case 2:
 					{
-						packet.replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest LeonasDungeon setDifficulty2\">Difficulty - Medium</Button>", "");
+						packet.replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Script LeonasDungeon setDifficulty2\">Difficulty - Medium</Button>", "");
 						break;
 					}
 					case 3:
 					{
-						packet.replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest LeonasDungeon setDifficulty3\">Difficulty - High</Button>", "");
+						packet.replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Script LeonasDungeon setDifficulty3\">Difficulty - High</Button>", "");
 						break;
 					}
 				}

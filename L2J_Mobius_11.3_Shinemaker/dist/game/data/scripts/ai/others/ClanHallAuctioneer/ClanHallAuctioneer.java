@@ -281,7 +281,7 @@ public class ClanHallAuctioneer extends Script
 			{
 				final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId(), getHtm(player, "ClanHallAuctioneer-list.html"));
 				// @formatter:off
-				final PageResult result = PageBuilder.newBuilder(clanHalls, 8, "bypass -h Quest ClanHallAuctioneer auctionList")
+				final PageResult result = PageBuilder.newBuilder(clanHalls, 8, "bypass -h Script ClanHallAuctioneer auctionList")
 					.currentPage(page)
 					.pageHandler(NextPrevPageHandler.INSTANCE)
 					.formatter(BypassParserFormatter.INSTANCE)
@@ -297,7 +297,7 @@ public class ClanHallAuctioneer extends Script
 					
 					sb.append("<tr><td width=50><font color=\"aaaaff\">&^");
 					sb.append(clanHall.getResidenceId());
-					sb.append(";</font></td><td width=100><a action=\"bypass -h Quest ClanHallAuctioneer auctionList id=");
+					sb.append(";</font></td><td width=100><a action=\"bypass -h Script ClanHallAuctioneer auctionList id=");
 					sb.append(clanHall.getResidenceId());
 					sb.append("\"><font color=\"ffffaa\">&%");
 					sb.append(clanHall.getResidenceId());
@@ -418,7 +418,7 @@ public class ClanHallAuctioneer extends Script
 			
 			final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId(), getHtm(player, "ClanHallAuctioneer-bidderList.html"));
 			// @formatter:off
-			final PageResult result = PageBuilder.newBuilder(clanHallAuction.getBids().values().stream().sorted(Comparator.comparingLong(Bidder::getTime).reversed()).collect(Collectors.toList()), 10, "bypass -h Quest ClanHallAuctioneer auctionList")
+			final PageResult result = PageBuilder.newBuilder(clanHallAuction.getBids().values().stream().sorted(Comparator.comparingLong(Bidder::getTime).reversed()).collect(Collectors.toList()), 10, "bypass -h Script ClanHallAuctioneer auctionList")
 				.currentPage(page)
 				.pageHandler(NextPrevPageHandler.INSTANCE)
 				.formatter(BypassParserFormatter.INSTANCE)

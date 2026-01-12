@@ -156,7 +156,7 @@ public class HermuncusMinion extends Script
 	
 	private String generateButton(Integer locationId)
 	{
-		return "<Button align=LEFT icon=TELEPORT action=\"bypass -h Quest HermuncusMinion teleport " + locationId + "\" msg=\"811;F;" + locationId + "\"><fstring>" + locationId + "</fstring> - 150000 <fstring>1000308</fstring></Button>";
+		return "<Button align=LEFT icon=TELEPORT action=\"bypass -h Script HermuncusMinion teleport " + locationId + "\" msg=\"811;F;" + locationId + "\"><fstring>" + locationId + "</fstring> - 150000 <fstring>1000308</fstring></Button>";
 	}
 	
 	public static void main(String[] args)

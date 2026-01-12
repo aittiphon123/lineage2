@@ -103,41 +103,41 @@ public class Eraton extends Script
 			case ("ERATON_LIST"):
 			{
 				final StringBuilder sb = new StringBuilder();
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + "SIGEL" + "\">Sigel Knight</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + "TYRR" + "\">Tyrr Warrior</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + "OTHELL" + "\">Othell Rogue</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + "YUL" + "\">Yul Archer</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + "FEOH" + "\">Feoh Wizard</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + "ISS" + "\">Iss Enchanter</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + "WYNN" + "\">Wynn Summoner</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + "AEORE" + "\">Aeore Healer</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + "SHINEMAKER" + "\">Shine Maker</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + "SIGEL" + "\">Sigel Knight</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + "TYRR" + "\">Tyrr Warrior</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + "OTHELL" + "\">Othell Rogue</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + "YUL" + "\">Yul Archer</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + "FEOH" + "\">Feoh Wizard</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + "ISS" + "\">Iss Enchanter</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + "WYNN" + "\">Wynn Summoner</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + "AEORE" + "\">Aeore Healer</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + "SHINEMAKER" + "\">Shine Maker</button>");
 				htmltext = getHtm(player, "34584-1.html").replace("%CLASS_NAMES%", sb.toString());
 				break;
 			}
 			case ("ERATON_SIGEL"):
 			{
 				final StringBuilder sb = new StringBuilder();
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SIGEL_PHOENIX_KNIGHT + "\">Sigel Phoenix Knight</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SIGEL_HELL_KNIGHT + "\">Sigel Hell Knight</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SIGEL_EVA_TEMPLAR + "\">Sigel Eva Templar</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SIGEL_SHILLIEN_TEMPLAR + "\">Sigel Shillien Templar</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.SIGEL_PHOENIX_KNIGHT + "\">Sigel Phoenix Knight</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.SIGEL_HELL_KNIGHT + "\">Sigel Hell Knight</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.SIGEL_EVA_TEMPLAR + "\">Sigel Eva Templar</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.SIGEL_SHILLIEN_TEMPLAR + "\">Sigel Shillien Templar</button>");
 				
 				// Death Knights became able to use the Stone of Destiny item with the Death Knight Reborn Content Update released on August 1st 2023.
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SIGEL_DEATH_KNIGHT + "\">Sigel Death Knight</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.SIGEL_DEATH_KNIGHT + "\">Sigel Death Knight</button>");
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
 			}
 			case ("ERATON_TYRR"):
 			{
 				final StringBuilder sb = new StringBuilder();
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.TYRR_DUELIST + "\">Tyrr Duelist</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.TYRR_DREADNOUGHT + "\">Tyrr Drearnought</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.TYRR_TITAN + "\">Tyrr Titan</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.TYRR_GRAND_KHAVATARI + "\">Tyrr Grand Khavatari</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.TYRR_DOOMBRINGER + "\">Tyrr Doombringer</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.TYRR_MAESTRO + "\">Tyrr Maestro</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.EVISCERATOR + "\">Eviscerator</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.TYRR_DUELIST + "\">Tyrr Duelist</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.TYRR_DREADNOUGHT + "\">Tyrr Drearnought</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.TYRR_TITAN + "\">Tyrr Titan</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.TYRR_GRAND_KHAVATARI + "\">Tyrr Grand Khavatari</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.TYRR_DOOMBRINGER + "\">Tyrr Doombringer</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.TYRR_MAESTRO + "\">Tyrr Maestro</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.EVISCERATOR + "\">Eviscerator</button>");
 				
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
@@ -145,10 +145,10 @@ public class Eraton extends Script
 			case ("ERATON_OTHELL"):
 			{
 				final StringBuilder sb = new StringBuilder();
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.OTHELL_ADVENTURER + "\">Othell Adventurer</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.OTHELL_WIND_RIDER + "\">Othell Wind Rider</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.OTHELL_GHOST_HUNTER + "\">Othell Ghost Hunter</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.OTHELL_FORTUNE_SEEKER + "\">Othell Fortune Seeker</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.OTHELL_ADVENTURER + "\">Othell Adventurer</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.OTHELL_WIND_RIDER + "\">Othell Wind Rider</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.OTHELL_GHOST_HUNTER + "\">Othell Ghost Hunter</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.OTHELL_FORTUNE_SEEKER + "\">Othell Fortune Seeker</button>");
 				
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
@@ -156,22 +156,22 @@ public class Eraton extends Script
 			case ("ERATON_YUL"):
 			{
 				final StringBuilder sb = new StringBuilder();
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.YUL_SAGITTARIUS + "\">Yul Sagittarius</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.YUL_MOONLIGHT_SENTINEL + "\">Yul Moonlight Sentinel</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.YUL_GHOST_SENTINEL + "\">Yul Ghost Sentinel</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.YUL_TRICKSTER + "\">Yul Trickster</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.YUL_SAGITTARIUS + "\">Yul Sagittarius</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.YUL_MOONLIGHT_SENTINEL + "\">Yul Moonlight Sentinel</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.YUL_GHOST_SENTINEL + "\">Yul Ghost Sentinel</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.YUL_TRICKSTER + "\">Yul Trickster</button>");
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
 			}
 			case ("ERATON_FEOH"):
 			{
 				final StringBuilder sb = new StringBuilder();
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.FEOH_ARCHMAGE + "\">Feoh Archmage</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.FEOH_SOULTAKER + "\">Feoh Soultaker</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.FEOH_MYSTIC_MUSE + "\">Feoh Mystic Muse</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.FEOH_STORM_SCREAMER + "\">Feoh Storm Screamer</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.FEOH_SOUL_HOUND + "\">Feoh SoulHound</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SAYHA_SEER + "\">Sayha's Seer</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.FEOH_ARCHMAGE + "\">Feoh Archmage</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.FEOH_SOULTAKER + "\">Feoh Soultaker</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.FEOH_MYSTIC_MUSE + "\">Feoh Mystic Muse</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.FEOH_STORM_SCREAMER + "\">Feoh Storm Screamer</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.FEOH_SOUL_HOUND + "\">Feoh SoulHound</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.SAYHA_SEER + "\">Sayha's Seer</button>");
 				
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
@@ -179,11 +179,11 @@ public class Eraton extends Script
 			case ("ERATON_ISS"):
 			{
 				final StringBuilder sb = new StringBuilder();
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.ISS_HIEROPHANT + "\">Iss Hierophant</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.ISS_SWORD_MUSE + "\">Iss Sword Muse</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.ISS_SPECTRAL_DANCER + "\">Iss Spectral Dancer</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.ISS_DOOMCRYER + "\">Iss Doomcryer</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.ISS_DOMINATOR + "\">Iss Dominator</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.ISS_HIEROPHANT + "\">Iss Hierophant</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.ISS_SWORD_MUSE + "\">Iss Sword Muse</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.ISS_SPECTRAL_DANCER + "\">Iss Spectral Dancer</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.ISS_DOOMCRYER + "\">Iss Doomcryer</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.ISS_DOMINATOR + "\">Iss Dominator</button>");
 				
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
@@ -191,25 +191,25 @@ public class Eraton extends Script
 			case ("ERATON_WYNN"):
 			{
 				final StringBuilder sb = new StringBuilder();
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.WYNN_ARCANA_LORD + "\">Wynn Arcana Lord</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.WYNN_ELEMENTAL_MASTER + "\">Wynn Elemental Master</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.WYNN_SPECTRAL_MASTER + "\">Wynn Spectral Master</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.WYNN_ARCANA_LORD + "\">Wynn Arcana Lord</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.WYNN_ELEMENTAL_MASTER + "\">Wynn Elemental Master</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.WYNN_SPECTRAL_MASTER + "\">Wynn Spectral Master</button>");
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
 			}
 			case ("ERATON_AEORE"):
 			{
 				final StringBuilder sb = new StringBuilder();
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.AEORE_CARDINAL + "\">Aeore Cardinal</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.AEORE_EVA_SAINT + "\">Aeore Eva Saint</button>");
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.AEORE_SHILLIEN_SAINT + "\">Aeore Shillien Saint</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.AEORE_CARDINAL + "\">Aeore Cardinal</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.AEORE_EVA_SAINT + "\">Aeore Eva Saint</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.AEORE_SHILLIEN_SAINT + "\">Aeore Shillien Saint</button>");
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
 			}
 			case ("ERATON_SHINEMAKER"):
 			{
 				final StringBuilder sb = new StringBuilder();
-				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SHINE_MAKER + "\">Shine Maker</button>");
+				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Script Eraton ERATON_" + PlayerClass.SHINE_MAKER + "\">Shine Maker</button>");
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
 			}

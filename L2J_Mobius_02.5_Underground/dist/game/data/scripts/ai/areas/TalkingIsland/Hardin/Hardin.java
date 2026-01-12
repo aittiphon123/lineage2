@@ -126,7 +126,7 @@ public class Hardin extends Script
 				
 				classes.append("<button value=\"");
 				classes.append(ClassListData.getInstance().getClass(c.getId()).getClassName());
-				classes.append("\" action=\"bypass -h Quest Hardin try_");
+				classes.append("\" action=\"bypass -h Script Hardin try_");
 				classes.append(String.valueOf(c.getId()));
 				classes.append("\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br1>");
 			}

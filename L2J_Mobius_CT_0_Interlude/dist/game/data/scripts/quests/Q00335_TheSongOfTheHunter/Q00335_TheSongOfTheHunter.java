@@ -380,7 +380,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 		final int[] listpacked = unpackInt(st.getInt("list"), 5);
 		for (int i = 0; i <= 5; ++i)
 		{
-			final String s = "<a action=\"bypass Quest Q00335_TheSongOfTheHunter 30745-request-" + requests[listpacked[i]].request_id + "\">" + requests[listpacked[i]].text + "</a>";
+			final String s = "<a action=\"bypass Script Q00335_TheSongOfTheHunter 30745-request-" + requests[listpacked[i]].request_id + "\">" + requests[listpacked[i]].text + "</a>";
 			result = result.replaceFirst("%reply%", s);
 		}
 		

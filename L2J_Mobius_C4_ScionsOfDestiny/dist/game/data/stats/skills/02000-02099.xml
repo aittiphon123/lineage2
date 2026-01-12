@@ -360,6 +360,8 @@
 		<table name="#itemConsumeId">1538 3958</table>
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="displayId" val="2013" /> <!-- C4 animation fix -->
+		<set name="displayLevel" val="1" /> <!-- C4 animation fix -->
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />

@@ -260,7 +260,7 @@ public class Q10814_BefittingOfTheStatus extends Quest
 						final ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
 						if (item != null)
 						{
-							sb.append("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest Q10814_BefittingOfTheStatus insertItem_" + itemId + "\">" + item.getName() + "</Button>");
+							sb.append("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Script Q10814_BefittingOfTheStatus insertItem_" + itemId + "\">" + item.getName() + "</Button>");
 						}
 					}
 				}
