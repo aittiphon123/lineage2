@@ -998,6 +998,7 @@
 	<skill id="2177" levels="1" name="Blessed Scroll of Escape: Clan Hall">
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="displayId" val="2013" /> <!-- C4 animation tempfix -->
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -1021,6 +1022,7 @@
 	<skill id="2178" levels="1" name="Blessed Scroll of Escape: Castle">
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="displayId" val="2013" /> <!-- C4 animation tempfix -->
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
