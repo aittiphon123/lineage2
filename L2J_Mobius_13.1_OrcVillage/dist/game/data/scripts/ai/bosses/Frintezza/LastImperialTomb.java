@@ -21,12 +21,14 @@
 package ai.bosses.Frintezza;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.model.Location;
+import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
@@ -54,10 +56,11 @@ public class LastImperialTomb extends InstanceScript
 	// NPCs
 	private static final int GUIDE = 34543;
 	private static final int CUBE = 29061;
-	private static final int HALL_ALARM = 18328;
-	private static final int HALL_KEEPER_SUICIDAL_SOLDIER = 18333;
 	private static final int DUMMY = 29052;
 	private static final int DUMMY2 = 29053;
+	private static final int FRINTEZZA = 29045;
+	private static final int SCARLET1 = 29046;
+	private static final int SCARLET2 = 29047;
 	private static final int[] PORTRAITS =
 	{
 		29048,
@@ -68,26 +71,8 @@ public class LastImperialTomb extends InstanceScript
 		29050,
 		29051
 	};
-	private static final int FRINTEZZA = 29045;
-	private static final int SCARLET1 = 29046;
-	private static final int SCARLET2 = 29047;
-	private static final int[] ON_KILL_MONSTERS =
-	{
-		HALL_ALARM,
-		HALL_KEEPER_SUICIDAL_SOLDIER,
-		18329,
-		18330,
-		18331,
-		18334,
-		18335,
-		18336,
-		18337,
-		18338,
-		18339
-	};
 	
 	// Items
-	private static final int DEWDROP_OF_DESTRUCTION_ITEM_ID = 8556;
 	private static final int FIRST_SCARLET_WEAPON = 8204;
 	private static final int SECOND_SCARLET_WEAPON = 7903; // 8222?
 	
@@ -141,9 +126,6 @@ public class LastImperialTomb extends InstanceScript
 		SKILL_MSG.put(5, NpcStringId.HYPNOTIC_MAZURKA);
 	}
 	
-	// Locations
-	protected static final Location SECOND_ROOM_CENTER = new Location(-87919, -147013, -9214, 0);
-	
 	// Spawns
 	// @formatter:off
 	static final int[][] PORTRAIT_SPAWNS =
@@ -167,12 +149,11 @@ public class LastImperialTomb extends InstanceScript
 		super(TEMPLATE_ID);
 		addTalkId(GUIDE, CUBE);
 		addAttackId(SCARLET1);
-		addKillId(ON_KILL_MONSTERS);
-		addKillId(HALL_ALARM, SCARLET2);
+		addSkillSeeId(PORTRAITS);
+		addKillId(SCARLET2);
 		addKillId(PORTRAITS);
 		addKillId(DEMONS);
-		addSpawnId(HALL_ALARM, DUMMY, DUMMY2);
-		addSpellFinishedId(HALL_KEEPER_SUICIDAL_SOLDIER);
+		addSpawnId(DUMMY, DUMMY2);
 	}
 	
 	@Override
@@ -595,7 +576,7 @@ public class LastImperialTomb extends InstanceScript
 				final Location scarletLocation = world.getParameters().getLocation("scarletLocation");
 				final Npc activeScarlet = addSpawn(SCARLET2, scarletLocation, false, 0, false, world.getId());
 				world.setParameter("activeScarlet", activeScarlet);
-				activeScarlet.setRHandId(SECOND_SCARLET_WEAPON);
+				activeScarlet.setLHandId(SECOND_SCARLET_WEAPON);
 				activeScarlet.setInvul(true);
 				activeScarlet.setImmobilized(true);
 				activeScarlet.disableAllSkills();
@@ -618,6 +599,7 @@ public class LastImperialTomb extends InstanceScript
 				npc.enableAllSkills();
 				enablePlayers(world);
 				activateDemons(world);
+				playRandomSong(world);
 				break;
 			}
 			case "FINISH_CAMERA_1":
@@ -717,11 +699,6 @@ public class LastImperialTomb extends InstanceScript
 	{
 		npc.setRandomWalking(false);
 		npc.setImmobilized(true);
-		if (npc.getId() == HALL_ALARM)
-		{
-			npc.disableCoreAI(true);
-		}
-		else // dummy
 		{
 			npc.setInvul(true);
 		}
@@ -744,7 +721,11 @@ public class LastImperialTomb extends InstanceScript
 				startQuestTimer("SCARLET_SECOND_MORPH", 1000, null, attacker, false);
 			}
 		}
-		
+	}
+	
+	@Override
+	public void onSkillSee(Npc npc, Player attacker, Skill skill, Collection<WorldObject> targets, boolean isSummon)
+	{
 		if (skill != null)
 		{
 			// When Dewdrop of Destruction is used on Portraits they suicide.
@@ -771,6 +752,7 @@ public class LastImperialTomb extends InstanceScript
 		if (npc.getId() == SCARLET2)
 		{
 			final Npc frintezza = world.getParameters().getObject("frintezza", Npc.class);
+			cancelQuestTimer("PLAY_RANDOM_SONG", frintezza, null);
 			broadcastPacket(world, new MagicSkillCanceled(frintezza.getObjectId()));
 			startQuestTimer("FINISH_CAMERA_1", 500, npc, killer, false);
 			killPortraitsAndDemons(world);
@@ -792,62 +774,6 @@ public class LastImperialTomb extends InstanceScript
 			{
 				portraits.remove(npc);
 				world.setParameter("portraits", portraits);
-			}
-		}
-		else
-		{
-			final int killCount = world.getParameters().getInt("monstersCount");
-			world.setParameter("monstersCount", killCount - 1);
-			if (killCount <= 0)
-			{
-				switch (world.getStatus())
-				{
-					case 1:
-					{
-						world.setStatus(2);
-						world.spawnGroup("room2_part1");
-						final List<Monster> monsters = world.getAliveNpcs(Monster.class);
-						world.setParameter("monstersCount", monsters.size() - 1);
-						for (int doorId : FIRST_ROUTE_DOORS)
-						{
-							world.openCloseDoor(doorId, true);
-						}
-						break;
-					}
-					case 2:
-					{
-						world.setStatus(3);
-						world.spawnGroup("room2_part2");
-						final List<Monster> monsters = world.getAliveNpcs(Monster.class);
-						world.setParameter("monstersCount", monsters.size() - 1);
-						for (int doorId : SECOND_ROOM_DOORS)
-						{
-							world.openCloseDoor(doorId, true);
-						}
-						
-						for (Npc monster : monsters)
-						{
-							attackPlayer(world, monster, SECOND_ROOM_CENTER);
-						}
-						break;
-					}
-					case 3:
-					{
-						world.setStatus(4);
-						for (int doorId : SECOND_ROUTE_DOORS)
-						{
-							world.openCloseDoor(doorId, true);
-						}
-						
-						startQuestTimer("FRINTEZZA_INTRO_START", FRINTEZZA_WAIT_TIME * 60 * 1000, null, killer, false);
-						break;
-					}
-				}
-			}
-			
-			if (getRandom(100) < 5)
-			{
-				npc.dropItem(killer, DEWDROP_OF_DESTRUCTION_ITEM_ID, 1);
 			}
 		}
 	}
@@ -934,23 +860,6 @@ public class LastImperialTomb extends InstanceScript
 					player.sendPacket(packet2);
 				}
 			}
-		}
-	}
-	
-	private void attackPlayer(Instance world, Npc npc, Location LOCATION)
-	{
-		final List<Player> players = world.getPlayers().stream().filter(player -> !player.isDead() && !player.isInvisible()).toList();
-		final Player target = (!players.isEmpty()) ? players.get(getRandom(0, (players.size() - 1))) : null;
-		
-		if (target != null)
-		{
-			npc.asAttackable().addDamageHate(target, 0, 500);
-			npc.getAI().setIntention(Intention.ATTACK, target);
-			npc.setRunning();
-		}
-		else
-		{
-			npc.getAI().setIntention(Intention.MOVE_TO, LOCATION);
 		}
 	}
 	
