@@ -116,7 +116,7 @@ public class ScriptLink implements IBypassHandler
 				state = " (Done)";
 			}
 			
-			sb.append("<a action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
+			sb.append("<a action=\"bypass npc_" + npc.getObjectId() + "_Script " + quest.getName() + "\">");
 			sb.append("[");
 			
 			if (quest.isCustomQuest())
