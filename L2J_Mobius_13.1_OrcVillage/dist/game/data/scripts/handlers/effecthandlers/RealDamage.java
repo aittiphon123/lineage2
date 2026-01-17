@@ -62,6 +62,12 @@ public class RealDamage extends AbstractEffect
 			return;
 		}
 		
+		// Check if effected is Invul (Celestial) or HP Blocked (Petrification).
+		if (effected.isHpBlocked() || effected.isInvul())
+		{
+			return;
+		}
+		
 		// Check if effected NPC is not attackable.
 		if (effected.isNpc() && !effected.isAttackable())
 		{
@@ -82,12 +88,6 @@ public class RealDamage extends AbstractEffect
 		}
 		else // PER
 		{
-			// Percent does not ignore HP block.
-			if (effected.isHpBlocked())
-			{
-				return;
-			}
-			
 			// Percent Level check https://eu.4game.com/patchnotes/lineage2/270/ Changed Skills
 			final int levelDifference = Math.abs(effector.getLevel() - effected.getLevel());
 			if (levelDifference >= 6)
