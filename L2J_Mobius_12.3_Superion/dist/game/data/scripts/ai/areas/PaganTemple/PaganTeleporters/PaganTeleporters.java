@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package ai.areas.PaganTemple.PaganTeleporters;
 
@@ -25,8 +29,9 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.script.Script;
 
 /**
- * Pagan Temple teleport AI.<br>
- * @author Plim
+ * Pagan Temple teleport AI
+ * @version Prelude of War Part 2 - 27 September 2019
+ * @author Notorion
  */
 public class PaganTeleporters extends Script
 {
@@ -41,17 +46,16 @@ public class PaganTeleporters extends Script
 		TRIOLS_LOCS.put(TRIOLS_MIRROR_1, new Location(-12766, -35840, -10856));
 		TRIOLS_LOCS.put(TRIOLS_MIRROR_2, new Location(36640, -51218, 718));
 	}
-	// @formatter:off
+	
 	private static final int[] NPCS =
 	{
-		32034, 32035, 32036, 32037, 32039, 32040
+		32034,
+		32035,
+		32036,
+		32037,
+		32039,
+		32040
 	};
-	// @formatter:on
-	
-	// Items
-	private static final int VISITORS_MARK = 8064;
-	private static final int FADED_VISITORS_MARK = 8065;
-	private static final int PAGANS_MARK = 8067;
 	
 	private PaganTeleporters()
 	{
@@ -77,8 +81,7 @@ public class PaganTeleporters extends Script
 				break;
 			}
 		}
-		
-		return "";
+		return null;
 	}
 	
 	@Override
@@ -89,7 +92,7 @@ public class PaganTeleporters extends Script
 			player.teleToLocation(TRIOLS_LOCS.get(npc.getId()));
 		}
 		
-		return "";
+		return null;
 	}
 	
 	@Override
@@ -99,14 +102,9 @@ public class PaganTeleporters extends Script
 		{
 			case 32034:
 			{
-				if (!hasAtLeastOneQuestItem(player, VISITORS_MARK, FADED_VISITORS_MARK, PAGANS_MARK))
-				{
-					return "noItem.htm";
-				}
-				
 				openDoor(19160001, 0);
 				startQuestTimer("CLOSE_DOOR_1", 10000, null, null);
-				return "FadedMark.htm";
+				return "openDoor.htm";
 			}
 			case 32035:
 			{
@@ -116,25 +114,19 @@ public class PaganTeleporters extends Script
 			}
 			case 32036:
 			{
-				if (!hasQuestItems(player, PAGANS_MARK))
-				{
-					return "noMark.htm";
-				}
-				
-				startQuestTimer("CLOSE_DOOR_2", 10000, null, null);
 				openDoor(19160010, 0);
 				openDoor(19160011, 0);
-				return "openDoor.htm";
+				startQuestTimer("CLOSE_DOOR_2", 10000, null, null);
+				return "openDoor2.htm";
 			}
 			case 32037:
 			{
 				openDoor(19160010, 0);
 				openDoor(19160011, 0);
 				startQuestTimer("CLOSE_DOOR_2", 10000, null, null);
-				return "FadedMark.htm";
+				return "FadedMark2.htm";
 			}
 		}
-		
 		return super.onTalk(npc, player);
 	}
 	

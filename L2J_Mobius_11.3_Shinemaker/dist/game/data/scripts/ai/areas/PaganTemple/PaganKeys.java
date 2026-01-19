@@ -26,81 +26,38 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.script.Script;
 
 /**
- * Custom script to remove custom key drop from NPC XMLs.<br>
- * Used to access more conveniently Pagan Temple.
- * @author Mobius
+ * Pagan Temple teleport AI
+ * @version Prelude of War Part 2 - 27 September 2019
+ * @author Notorion
  */
 public class PaganKeys extends Script
 {
-	// Items
-	private static final int ANTEROOM_KEY = 8273;
-	private static final int CHAPEL_KEY = 8274;
-	private static final int KEY_OF_DARKNESS = 8275;
+	// Item
+	private static final int KEY_OF_PAGANS = 36247;
 	
-	// NPCs
-	private static final int ZOMBIE_WORKER = 22140;
-	private static final int TRIOLS_LAYPERSON = 22142;
-	private static final int TRIOLS_PRIEST = 22168;
+	// NPC
+	private static final int RESURRECTED_WORKER = 22140;
 	
-	// Misc
-	private static final int ANTEROOM_KEY_CHANCE = 10;
-	private static final int CHAPEL_KEY_CHANCE = 10;
-	private static final int KEY_OF_DARKNESS_CHANCE = 10;
+	// Chance
+	private static final int DROP_CHANCE = 55;
 	
 	private PaganKeys()
 	{
-		addKillId(ZOMBIE_WORKER, TRIOLS_LAYPERSON, TRIOLS_PRIEST);
+		addKillId(RESURRECTED_WORKER);
 	}
 	
 	@Override
 	public void onKill(Npc npc, Player killer, boolean isSummon)
 	{
-		switch (npc.getId())
+		if (getRandom(100) < DROP_CHANCE)
 		{
-			case ZOMBIE_WORKER:
+			if (PlayerConfig.AUTO_LOOT)
 			{
-				if (getRandom(100) < ANTEROOM_KEY_CHANCE)
-				{
-					if (PlayerConfig.AUTO_LOOT)
-					{
-						giveItems(killer, ANTEROOM_KEY, 1);
-					}
-					else
-					{
-						npc.dropItem(killer, ANTEROOM_KEY, 1);
-					}
-				}
-				break;
+				giveItems(killer, KEY_OF_PAGANS, 1);
 			}
-			case TRIOLS_LAYPERSON:
+			else
 			{
-				if (getRandom(100) < CHAPEL_KEY_CHANCE)
-				{
-					if (PlayerConfig.AUTO_LOOT)
-					{
-						giveItems(killer, CHAPEL_KEY, 1);
-					}
-					else
-					{
-						npc.dropItem(killer, CHAPEL_KEY, 1);
-					}
-				}
-				break;
-			}
-			case TRIOLS_PRIEST:
-			{
-				if (getRandom(100) < KEY_OF_DARKNESS_CHANCE)
-				{
-					if (PlayerConfig.AUTO_LOOT)
-					{
-						giveItems(killer, KEY_OF_DARKNESS, 1);
-					}
-					else
-					{
-						npc.dropItem(killer, KEY_OF_DARKNESS, 1);
-					}
-				}
-				break;
+				npc.dropItem(killer, KEY_OF_PAGANS, 1);
 			}
 		}
 	}
