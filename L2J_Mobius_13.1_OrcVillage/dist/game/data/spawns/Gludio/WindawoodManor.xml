@@ -2,24 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn name="WindawoodManor">
 		<group>
-			<npc id="20050" x="-31009" y="139462" z="-3904" heading="40529" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-31080" y="145452" z="-3720" heading="47501" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-31122" y="141922" z="-3904" heading="4816" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-31185" y="144306" z="-3680" heading="16340" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-31471" y="139192" z="-3904" heading="37605" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-31670" y="144256" z="-3800" heading="37527" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-32176" y="145859" z="-3904" heading="50428" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-32490" y="140131" z="-3912" heading="21885" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-32510" y="139410" z="-3904" heading="27070" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-33473" y="137292" z="-3480" heading="26523" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-33839" y="138252" z="-3464" heading="27653" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-34715" y="141904" z="-3512" heading="61759" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-34937" y="138132" z="-3432" heading="40008" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-35120" y="138972" z="-3384" heading="15214" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-35335" y="141686" z="-3416" heading="27507" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-35669" y="137532" z="-3344" heading="40241" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-36265" y="139070" z="-3248" heading="46820" respawnTime="60sec" /> <!-- Arachnid Predator -->
-			<npc id="20050" x="-36420" y="141686" z="-3240" heading="37526" respawnTime="60sec" /> <!-- Arachnid Predator -->
 			<npc id="20055" x="-30169" y="146681" z="-3784" heading="6084" respawnTime="60sec" /> <!-- Monster Eye Watchman -->
 			<npc id="20055" x="-30915" y="143677" z="-3672" heading="44614" respawnTime="60sec" /> <!-- Monster Eye Watchman -->
 			<npc id="20055" x="-31990" y="147745" z="-3904" heading="23753" respawnTime="60sec" /> <!-- Monster Eye Watchman -->
@@ -120,13 +102,6 @@
 			<npc id="20547" x="-30911" y="159816" z="-3320" heading="55315" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
 			<npc id="20547" x="-30973" y="160618" z="-3152" heading="1465" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
 			<npc id="20547" x="-31561" y="162975" z="-2944" heading="25565" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
-			<npc id="20548" x="-34479" y="144875" z="-3384" heading="38918" respawnTime="60sec" /> <!-- Ol Mahum Deserter -->
-			<npc id="20548" x="-34674" y="147325" z="-3424" heading="15963" respawnTime="60sec" /> <!-- Ol Mahum Deserter -->
-			<npc id="20548" x="-34750" y="143248" z="-3408" heading="5735" respawnTime="60sec" /> <!-- Ol Mahum Deserter -->
-			<npc id="20548" x="-34842" y="143113" z="-3384" heading="21053" respawnTime="60sec" /> <!-- Ol Mahum Deserter -->
-			<npc id="20548" x="-34908" y="144199" z="-3328" heading="40793" respawnTime="60sec" /> <!-- Ol Mahum Deserter -->
-			<npc id="20548" x="-35539" y="144710" z="-3160" heading="63080" respawnTime="60sec" /> <!-- Ol Mahum Deserter -->
-			<npc id="20548" x="-35856" y="144904" z="-3080" heading="12061" respawnTime="60sec" /> <!-- Ol Mahum Deserter -->
 		</group>
 	</spawn>
 </list>

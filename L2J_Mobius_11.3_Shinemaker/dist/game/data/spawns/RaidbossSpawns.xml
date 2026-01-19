@@ -144,12 +144,6 @@
 		<npc id="25698" x="-213004" y="175631" z="-11978" heading="16141" dbSave="true" dbName="Dopagen" respawnTime="24hour" respawnRandom="12hour" /> <!-- Dopagen - Kokracon -->
 	</spawn>
 	<spawn>
-		<npc id="25886" x="48201" y="147390" z="-3408" heading="0" dbSave="true" dbName="Houpon the Warden Overseer" respawnTime="24hour" respawnRandom="12hour" chaseRange="2500" /> <!-- Houpon the Warden Overseer - Raid Boss -->
-	</spawn>
-	<spawn>
-		<npc id="25887" x="43207" y="144814" z="-3120" heading="0" dbSave="true" dbName="Crook the Mad" respawnTime="24hour" respawnRandom="12hour" chaseRange="2500" /> <!-- Crook the Mad - Raid Boss -->
-	</spawn>
-	<spawn>
 		<npc id="25902" x="-103142" y="48418" z="-31528" heading="13361" dbSave="true" dbName="Gigantic Golem" respawnTime="24hour" respawnRandom="12hour" /> <!-- Gigantic Golem - Raid Boss -->
 	</spawn>
 	<spawn>

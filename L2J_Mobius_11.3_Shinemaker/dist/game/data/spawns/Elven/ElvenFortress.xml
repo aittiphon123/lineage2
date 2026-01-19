@@ -32,24 +32,6 @@
 			<npc id="20019" x="25424" y="61049" z="-3528" heading="4994" respawnTime="60sec" /> <!-- Dryad Elder -->
 			<npc id="20019" x="9166" y="57923" z="-3408" heading="2857" respawnTime="60sec" /> <!-- Dryad Elder -->
 			<npc id="20019" x="9718" y="58017" z="-3352" heading="59572" respawnTime="60sec" /> <!-- Dryad Elder -->
-			<npc id="20033" x="12897" y="76729" z="-4272" heading="18483" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="13071" y="76382" z="-4224" heading="20915" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="13116" y="76814" z="-4272" heading="17981" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="13242" y="77318" z="-4200" heading="60457" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="13535" y="76685" z="-4272" heading="6554" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="14717" y="78950" z="-4288" heading="32611" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="14774" y="79086" z="-4288" heading="7084" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="16444" y="79560" z="-4416" heading="59013" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="16739" y="78566" z="-4416" heading="64806" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="17006" y="79488" z="-4416" heading="6384" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="18449" y="75735" z="-4384" heading="33151" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="18481" y="75849" z="-4384" heading="4601" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="18738" y="75615" z="-4384" heading="41906" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="18860" y="75598" z="-4384" heading="28524" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="18959" y="79656" z="-4384" heading="30294" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="19623" y="79624" z="-4384" heading="22744" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="20142" y="75676" z="-4384" heading="46604" respawnTime="60sec" /> <!-- Shade Horror -->
-			<npc id="20033" x="20304" y="75646" z="-4384" heading="15586" respawnTime="60sec" /> <!-- Shade Horror -->
 			<npc id="20036" x="10311" y="62901" z="-3544" heading="37890" respawnTime="60sec" /> <!-- Lirein -->
 			<npc id="20036" x="11361" y="61728" z="-3552" heading="15292" respawnTime="60sec" /> <!-- Lirein -->
 			<npc id="20036" x="11614" y="62562" z="-3624" heading="4522" respawnTime="60sec" /> <!-- Lirein -->
@@ -68,21 +50,6 @@
 			<npc id="20036" x="6980" y="66428" z="-3672" heading="36856" respawnTime="60sec" /> <!-- Lirein -->
 			<npc id="20036" x="8136" y="70116" z="-3416" heading="37646" respawnTime="60sec" /> <!-- Lirein -->
 			<npc id="20036" x="8667" y="62799" z="-3520" heading="44975" respawnTime="60sec" /> <!-- Lirein -->
-			<npc id="20040" x="12468" y="80035" z="-4080" heading="39908" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="12471" y="75531" z="-4176" heading="31218" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="12549" y="77773" z="-4176" heading="25301" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="12594" y="80227" z="-4080" heading="52498" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="12614" y="75584" z="-4176" heading="28798" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="12891" y="77733" z="-4176" heading="29115" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="13343" y="80107" z="-4080" heading="1136" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="13500" y="78280" z="-4096" heading="22571" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="13541" y="78204" z="-4096" heading="45426" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="13741" y="78852" z="-4096" heading="59862" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="13791" y="76371" z="-4128" heading="40364" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="13860" y="77021" z="-4128" heading="62823" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="15114" y="81110" z="-4088" heading="48545" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="15217" y="80810" z="-4096" heading="18954" respawnTime="60sec" /> <!-- Sukar Ratman -->
-			<npc id="20040" x="15294" y="81635" z="-4096" heading="27611" respawnTime="60sec" /> <!-- Sukar Ratman -->
 			<npc id="20044" x="20886" y="71546" z="-3184" heading="8903" respawnTime="60sec" /> <!-- Lirein Elder -->
 			<npc id="20044" x="2508" y="72047" z="-3512" heading="17482" respawnTime="60sec" /> <!-- Lirein Elder -->
 			<npc id="20044" x="2508" y="72800" z="-3568" heading="41887" respawnTime="60sec" /> <!-- Lirein Elder -->
@@ -101,17 +68,6 @@
 			<npc id="20044" x="5350" y="80363" z="-3640" heading="27277" respawnTime="60sec" /> <!-- Lirein Elder -->
 			<npc id="20044" x="5932" y="81831" z="-3568" heading="64715" respawnTime="60sec" /> <!-- Lirein Elder -->
 			<npc id="20044" x="6320" y="82932" z="-3504" heading="17557" respawnTime="60sec" /> <!-- Lirein Elder -->
-			<npc id="20047" x="13084" y="80102" z="-4080" heading="55021" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
-			<npc id="20047" x="13280" y="78568" z="-4096" heading="34956" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
-			<npc id="20047" x="13319" y="80568" z="-4096" heading="12748" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
-			<npc id="20047" x="13338" y="77747" z="-4096" heading="61939" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
-			<npc id="20047" x="13518" y="79172" z="-4096" heading="18788" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
-			<npc id="20047" x="13793" y="76257" z="-4128" heading="15257" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
-			<npc id="20047" x="13825" y="79268" z="-4096" heading="41559" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
-			<npc id="20047" x="13871" y="76384" z="-4128" heading="17849" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
-			<npc id="20047" x="13898" y="80168" z="-4080" heading="2777" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
-			<npc id="20047" x="14128" y="80302" z="-4080" heading="36371" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
-			<npc id="20047" x="14164" y="80185" z="-4080" heading="36904" respawnTime="60sec" /> <!-- Sukar Ratman Captain -->
 			<npc id="20308" x="10378" y="59526" z="-3320" heading="3054" respawnTime="60sec" /> <!-- Hook Spider -->
 			<npc id="20308" x="11005" y="61397" z="-3480" heading="46912" respawnTime="60sec" /> <!-- Hook Spider -->
 			<npc id="20308" x="11331" y="58625" z="-3336" heading="41574" respawnTime="60sec" /> <!-- Hook Spider -->
@@ -148,76 +104,6 @@
 			<npc id="20336" x="43272" y="63906" z="-3624" heading="886" respawnTime="60sec" /> <!-- Green Dryad -->
 			<npc id="20336" x="43437" y="61703" z="-3520" heading="56913" respawnTime="60sec" /> <!-- Green Dryad -->
 			<npc id="20336" x="44969" y="63292" z="-3576" heading="8330" respawnTime="60sec" /> <!-- Green Dryad -->
-			<npc id="20345" x="15182" y="79400" z="-4288" heading="47238" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="15588" y="76250" z="-4416" heading="17010" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="15682" y="75965" z="-4416" heading="38678" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="15772" y="76154" z="-4416" heading="49974" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="15832" y="76583" z="-4384" heading="15539" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="15864" y="76244" z="-4416" heading="9602" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="16422" y="76572" z="-4416" heading="34286" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="16530" y="78973" z="-4416" heading="0" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="16714" y="78973" z="-4416" heading="0" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="17518" y="81002" z="-4352" heading="32697" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="18493" y="82058" z="-4384" heading="60186" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="18498" y="81456" z="-4384" heading="8487" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="18671" y="81912" z="-4384" heading="15671" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="18997" y="79487" z="-4384" heading="9992" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="19469" y="78907" z="-4376" heading="16732" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="20133" y="75625" z="-4384" heading="38507" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20345" x="20276" y="76182" z="-4384" heading="20080" respawnTime="60sec" /> <!-- Dark Terror -->
-			<npc id="20351" x="10338" y="74921" z="-3840" heading="19842" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="10370" y="82019" z="-3840" heading="27538" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="10383" y="81938" z="-3840" heading="23591" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="10479" y="82281" z="-3840" heading="29411" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="10562" y="74530" z="-3840" heading="59319" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="11789" y="80956" z="-4080" heading="60438" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12002" y="80937" z="-4080" heading="63213" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12012" y="80953" z="-4080" heading="28987" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12110" y="81113" z="-4080" heading="20263" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12117" y="76632" z="-4176" heading="34573" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12124" y="77188" z="-4176" heading="28373" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12407" y="76681" z="-4176" heading="59259" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12411" y="76750" z="-4176" heading="52387" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12675" y="75414" z="-4176" heading="49798" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12753" y="77934" z="-4176" heading="9070" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12805" y="77878" z="-4176" heading="6278" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="12886" y="75688" z="-4176" heading="10904" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20351" x="13087" y="75391" z="-4176" heading="19305" respawnTime="60sec" /> <!-- Dre Vanul Tracker -->
-			<npc id="20353" x="10463" y="81892" z="-3840" heading="48282" respawnTime="60sec" /> <!-- Dre Vanul Beholder -->
-			<npc id="20353" x="10647" y="74719" z="-3840" heading="59598" respawnTime="60sec" /> <!-- Dre Vanul Beholder -->
-			<npc id="20353" x="10805" y="74851" z="-3840" heading="44230" respawnTime="60sec" /> <!-- Dre Vanul Beholder -->
-			<npc id="20353" x="10816" y="75020" z="-3840" heading="52199" respawnTime="60sec" /> <!-- Dre Vanul Beholder -->
-			<npc id="20353" x="10905" y="82079" z="-3840" heading="48632" respawnTime="60sec" /> <!-- Dre Vanul Beholder -->
-			<npc id="20371" x="16431" y="76582" z="-4416" heading="49466" respawnTime="60sec" /> <!-- Mist Terror -->
-			<npc id="20371" x="16750" y="77507" z="-4384" heading="14477" respawnTime="60sec" /> <!-- Mist Terror -->
-			<npc id="20371" x="17630" y="77058" z="-4384" heading="32767" respawnTime="60sec" /> <!-- Mist Terror -->
-			<npc id="20371" x="17862" y="81269" z="-4352" heading="33255" respawnTime="60sec" /> <!-- Mist Terror -->
-			<npc id="20371" x="18136" y="80916" z="-4360" heading="36937" respawnTime="60sec" /> <!-- Mist Terror -->
-			<npc id="20371" x="18301" y="77005" z="-4384" heading="30594" respawnTime="60sec" /> <!-- Mist Terror -->
-			<npc id="20371" x="18317" y="77068" z="-4384" heading="62024" respawnTime="60sec" /> <!-- Mist Terror -->
-			<npc id="20371" x="18392" y="81941" z="-4384" heading="32806" respawnTime="60sec" /> <!-- Mist Terror -->
-			<npc id="20371" x="18663" y="81855" z="-4384" heading="626" respawnTime="60sec" /> <!-- Mist Terror -->
-			<npc id="20371" x="20407" y="76947" z="-4320" heading="32417" respawnTime="60sec" /> <!-- Mist Terror -->
-			<npc id="20372" x="22539" y="75913" z="-4096" heading="40430" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="22770" y="77926" z="-4096" heading="30198" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="22801" y="76040" z="-4096" heading="63306" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="23232" y="77684" z="-4096" heading="51018" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="24675" y="74858" z="-4096" heading="19161" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="25034" y="76047" z="-4096" heading="53937" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="25042" y="78313" z="-4096" heading="32696" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="25131" y="78107" z="-4096" heading="42374" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="25185" y="75198" z="-4088" heading="57393" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="25300" y="76034" z="-4096" heading="41449" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="25314" y="78075" z="-4096" heading="19815" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="25389" y="74688" z="-4096" heading="43223" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20372" x="25550" y="78120" z="-4096" heading="14881" respawnTime="60sec" /> <!-- Baraq Orc Warrior -->
-			<npc id="20373" x="22726" y="75875" z="-4096" heading="6945" respawnTime="60sec" /> <!-- Baraq Orc Warrior Captain -->
-			<npc id="20373" x="22755" y="77624" z="-4096" heading="47591" respawnTime="60sec" /> <!-- Baraq Orc Warrior Captain -->
-			<npc id="20373" x="22949" y="77870" z="-4096" heading="10466" respawnTime="60sec" /> <!-- Baraq Orc Warrior Captain -->
-			<npc id="20373" x="23088" y="76197" z="-4096" heading="9718" respawnTime="60sec" /> <!-- Baraq Orc Warrior Captain -->
-			<npc id="20373" x="23863" y="77504" z="-4096" heading="3159" respawnTime="60sec" /> <!-- Baraq Orc Warrior Captain -->
-			<npc id="20373" x="24319" y="76356" z="-4096" heading="34159" respawnTime="60sec" /> <!-- Baraq Orc Warrior Captain -->
-			<npc id="20373" x="25134" y="76125" z="-4096" heading="24821" respawnTime="60sec" /> <!-- Baraq Orc Warrior Captain -->
 			<npc id="20460" x="11439" y="55042" z="-3472" heading="50731" respawnTime="60sec" /> <!-- Crimson Spider -->
 			<npc id="20460" x="11833" y="60496" z="-3464" heading="29984" respawnTime="60sec" /> <!-- Crimson Spider -->
 			<npc id="20460" x="12942" y="59581" z="-3392" heading="5942" respawnTime="60sec" /> <!-- Crimson Spider -->
@@ -226,27 +112,6 @@
 			<npc id="20460" x="18257" y="56650" z="-3464" heading="40358" respawnTime="60sec" /> <!-- Crimson Spider -->
 			<npc id="20460" x="18976" y="58369" z="-3416" heading="59532" respawnTime="60sec" /> <!-- Crimson Spider -->
 			<npc id="20460" x="20036" y="56848" z="-3488" heading="56407" respawnTime="60sec" /> <!-- Crimson Spider -->
-			<npc id="20463" x="20793" y="79569" z="-4096" heading="48683" respawnTime="60sec" /> <!-- Dungeon Skeleton Archer -->
-			<npc id="20463" x="21119" y="76845" z="-4280" heading="18236" respawnTime="60sec" /> <!-- Dungeon Skeleton Archer -->
-			<npc id="20463" x="21562" y="81257" z="-4096" heading="65273" respawnTime="60sec" /> <!-- Dungeon Skeleton Archer -->
-			<npc id="20463" x="22873" y="79153" z="-4096" heading="6764" respawnTime="60sec" /> <!-- Dungeon Skeleton Archer -->
-			<npc id="20463" x="24157" y="76720" z="-4096" heading="22572" respawnTime="60sec" /> <!-- Dungeon Skeleton Archer -->
-			<npc id="20463" x="24375" y="77340" z="-4096" heading="50854" respawnTime="60sec" /> <!-- Dungeon Skeleton Archer -->
-			<npc id="20463" x="24494" y="80689" z="-4096" heading="18618" respawnTime="60sec" /> <!-- Dungeon Skeleton Archer -->
-			<npc id="20464" x="20481" y="77126" z="-4296" heading="7859" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="20724" y="79522" z="-4096" heading="50486" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="21067" y="80289" z="-4096" heading="22558" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="22285" y="80919" z="-4096" heading="0" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="22417" y="80695" z="-4096" heading="0" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="22628" y="79438" z="-4096" heading="36855" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="23739" y="80492" z="-4096" heading="0" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="23945" y="81018" z="-4096" heading="4894" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="24136" y="78959" z="-4096" heading="50939" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="24147" y="79095" z="-4096" heading="0" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="24199" y="76393" z="-4096" heading="50307" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="24216" y="76349" z="-4096" heading="39617" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="25347" y="81520" z="-4096" heading="11902" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
-			<npc id="20464" x="25687" y="81520" z="-4096" heading="44668" respawnTime="60sec" /> <!-- Dungeon Skeleton Soldier -->
 			<npc id="20466" x="10434" y="59541" z="-3320" heading="3050" respawnTime="60sec" /> <!-- Pincer Spider -->
 			<npc id="20466" x="10956" y="61615" z="-3496" heading="8994" respawnTime="60sec" /> <!-- Pincer Spider -->
 			<npc id="20466" x="11799" y="62499" z="-3624" heading="10043" respawnTime="60sec" /> <!-- Pincer Spider -->
@@ -382,22 +247,6 @@
 			<npc id="20473" x="31281" y="60006" z="-3488" heading="10445" respawnTime="60sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
 			<npc id="20473" x="31957" y="61479" z="-3560" heading="5177" respawnTime="60sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
 			<npc id="20473" x="32283" y="61949" z="-3560" heading="50850" respawnTime="60sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
-			<npc id="20504" x="15954" y="76584" z="-4384" heading="51771" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="16185" y="76952" z="-4384" heading="26425" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="17486" y="81190" z="-4352" heading="23496" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="18097" y="80744" z="-4384" heading="64137" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="19137" y="77453" z="-4416" heading="0" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="19234" y="78498" z="-4352" heading="49732" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="19273" y="77165" z="-4416" heading="0" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="19330" y="79250" z="-4352" heading="9934" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="19681" y="76589" z="-4384" heading="0" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="20997" y="81298" z="-4096" heading="61063" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="22103" y="79285" z="-4096" heading="45789" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="22124" y="79263" z="-4096" heading="0" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="24046" y="81004" z="-4096" heading="34559" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="24527" y="80973" z="-4096" heading="16907" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="25687" y="81653" z="-4096" heading="48838" respawnTime="60sec" /> <!-- Dread Soldier -->
-			<npc id="20504" x="25857" y="81710" z="-4096" heading="23739" respawnTime="60sec" /> <!-- Dread Soldier -->
 			<npc id="20509" x="25656" y="63681" z="-3576" heading="31723" respawnTime="60sec" /> <!-- Spore Fungus -->
 			<npc id="20509" x="26844" y="62331" z="-3552" heading="30489" respawnTime="60sec" /> <!-- Spore Fungus -->
 			<npc id="20509" x="27108" y="63681" z="-3568" heading="24073" respawnTime="60sec" /> <!-- Spore Fungus -->

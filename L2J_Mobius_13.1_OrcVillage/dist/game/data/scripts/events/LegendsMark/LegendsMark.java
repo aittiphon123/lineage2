@@ -135,18 +135,6 @@ public class LegendsMark extends LongTimeEvent
 		19455, // Aden Raider
 		19456, // Te Ochdumann
 		19457, // Travis
-		20668, // Grave Guard
-		23290, // Royal Knight
-		23291, // Personal Magician
-		23292, // Royal Guard
-		23293, // Royal Guard Captain
-		23294, // Chief Magician
-		23295, // Operations Manager
-		23296, // Chief Quartermaster
-		23297, // Escort
-		23298, // Royal Quartermaster
-		23299, // Operations Chief of th
-		23300, // Commander of Operation
 		// Wasteland
 		24501, // Centaur Fighter
 		24504, // Centaur Warlord
@@ -171,25 +159,6 @@ public class LegendsMark extends LongTimeEvent
 		24633, // Ketra Orc Warrior
 		24634, // Ketra Orc Lieutenant
 		24635, // Ketra Orc Battalion Co
-		// Sea Of Spores
-		24226, // Aranea
-		24227, // Keros
-		24228, // Falena
-		24229, // Atrofa
-		24230, // Nuba
-		24231, // Torfedo
-		24234, // Lesatanas
-		24235, // Arbor
-		24236, // Tergus
-		24237, // Skeletus
-		24238, // Atrofine
-		// Dragon Valley
-		24480, // Dragon Legionnaire
-		24482, // Dragon Officer
-		24481, // Dragon Peltast
-		24483, // Dragon Centurion
-		24484, // Dragon Elite Guard
-		24485, // Behemoth Dragon
 		// Fafurion Temple
 		24329, // Starving Water Dragon
 		24318, // Temple Guard Captain

@@ -2379,86 +2379,6 @@
 			<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 		</skillList>
 	</npc>
-	<npc id="19675" level="105" type="Monster" name="Mechanical Device">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>CONSTRUCT</race>
-		<sex>ETC</sex>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="50469384" hpRegen="11.4" mp="25848" mpRegen="30" />
-			<attack physical="1041418" magical="118663" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="11108" magical="4498" />
-			<speed>
-				<walk ground="1" />
-				<run ground="1" />
-			</speed>
-			<hitTime>600</hitTime>
-			<attribute>
-				<defence fire="500" water="500" wind="450" earth="500" holy="500" dark="500" />
-				<attack type="EARTH" value="400" />
-			</attribute>
-			<abnormalResist physical="0" magical="0" />
-		</stats>
-		<status attackable="true" noSleepMode="true" canMove="false" />
-		<collision>
-			<radius normal="40" />
-			<height normal="73.5" />
-		</collision>
-		<skillList>
-			<skill id="4416" level="2" /> <!-- Magical Creatures -->
-			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
-			<skill id="5465" level="1" /> <!-- Earth Attribute -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="16514" level="6" /> <!-- Party Fighter Monster -->
-		</skillList>
-	</npc>
-	<npc id="19676" level="104" type="Monster" name="Area Dummy">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMANOID</race>
-		<sex>MALE</sex>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="8446.44475689713" hpRegen="8.5" mp="2355" mpRegen="3" />
-			<attack physical="1949.95411856464" magical="1331.56588332443" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="405.66735" magical="296.84976" />
-			<speed>
-				<walk ground="1" />
-				<run ground="1" />
-			</speed>
-			<hitTime>600</hitTime>
-			<attribute>
-				<defence fire="500" water="500" wind="450" earth="500" holy="500" dark="500" />
-				<attack type="EARTH" value="400" />
-			</attribute>
-			<abnormalResist physical="0" magical="0" />
-		</stats>
-		<status attackable="false" undying="true" noSleepMode="true" canMove="false" targetable="false" showName="false" />
-		<collision>
-			<radius normal="10" />
-			<height normal="20" />
-		</collision>
-		<skillList>
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
-			<skill id="5465" level="1" /> <!-- Earth Attribute -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-		</skillList>
-	</npc>
 	<npc id="19677" level="105" type="Monster" name="Seal of Gnosis" title="Seven Signs">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>CONSTRUCT</race>
@@ -2932,45 +2852,6 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-		</skillList>
-	</npc>
-	<npc id="19689" level="104" type="Monster" name="Ward of Danger">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMANOID</race>
-		<sex>MALE</sex>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="8446.44475689713" hpRegen="8.5" mp="2355" mpRegen="3" />
-			<attack physical="1949.95411856464" magical="1331.56588332443" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="405.66735" magical="296.84976" />
-			<speed>
-				<walk ground="1" />
-				<run ground="1" />
-			</speed>
-			<hitTime>600</hitTime>
-			<attribute>
-				<defence fire="500" water="500" wind="450" earth="500" holy="500" dark="500" />
-				<attack type="EARTH" value="400" />
-			</attribute>
-			<abnormalResist physical="0" magical="0" />
-		</stats>
-		<status attackable="false" undying="true" noSleepMode="true" canMove="false" targetable="false" />
-		<collision>
-			<radius normal="10" />
-			<height normal="20" />
-		</collision>
-		<skillList>
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
-			<skill id="5465" level="1" /> <!-- Earth Attribute -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 		</skillList>
 	</npc>
 	<npc id="19690" level="94" type="Monster" name="Spicula Elite Captain">

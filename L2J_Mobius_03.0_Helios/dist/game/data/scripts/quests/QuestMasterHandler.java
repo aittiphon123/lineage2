@@ -507,7 +507,6 @@ import quests.Q10848_TrialsBeforeTheBattle.Q10848_TrialsBeforeTheBattle;
 import quests.Q10849_TrialsForAdaptation.Q10849_TrialsForAdaptation;
 import quests.Q10851_ElvenBotany.Q10851_ElvenBotany;
 import quests.Q10852_TheMotherTreeRevivalProject.Q10852_TheMotherTreeRevivalProject;
-import quests.Q10853_ToWeakenTheGiants.Q10853_ToWeakenTheGiants;
 import quests.Q10854_ToSeizeTheFortress.Q10854_ToSeizeTheFortress;
 import quests.Q10856_SuperionAppears.Q10856_SuperionAppears;
 import quests.Q10857_SecretTeleport.Q10857_SecretTeleport;
@@ -1047,7 +1046,6 @@ public class QuestMasterHandler
 		Q10849_TrialsForAdaptation.class,
 		Q10851_ElvenBotany.class,
 		Q10852_TheMotherTreeRevivalProject.class,
-		Q10853_ToWeakenTheGiants.class,
 		Q10854_ToSeizeTheFortress.class,
 		Q10856_SuperionAppears.class,
 		Q10857_SecretTeleport.class,

@@ -10,7 +10,6 @@
 			<npc id="33383" x="-85135" y="86331" z="-3432" heading="33419" respawnTime="60sec" /> <!-- Guard -->
 			<npc id="33383" x="-84930" y="86133" z="-3429" heading="50019" respawnTime="60sec" /> <!-- Guard -->
 			<npc id="33383" x="-84539" y="86133" z="-3432" heading="49151" respawnTime="60sec" /> <!-- Guard -->
-			<npc id="27165" x="-81247" y="75607" z="-3368" respawnTime="60sec" /> <!-- Abyssal Jewel 1 - Quest Monster -->
 			<npc id="31137" x="-80208" y="87120" z="-5152" heading="49000" respawnTime="60sec" /> <!-- Festival Guide - Level 31 or Below -->
 			<npc id="31138" x="-77200" y="87728" z="-5152" heading="49000" respawnTime="60sec" /> <!-- Festival Guide - Level 42 or Below -->
 			<npc id="31139" x="-76096" y="87136" z="-5152" heading="32500" respawnTime="60sec" /> <!-- Festival Guide - Level 53 or Below -->

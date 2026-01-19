@@ -43,7 +43,7 @@ public class GreedyTreasureChests extends Script
 		// Ivory Tower Crater
 		24421, 24422, 24423, 24424, 24425, 24426,
 		// Tanor Canyon
-		20936, 20937, 20938, 20939, 20940, 20941, 20942, 20943, 24587,
+		20936, 20937, 20938, 20939, 20941, 20942, 20943, 24587,
 		// Alligator Island
 		24373, 24376, 24377,	
 		// Field of Silence
@@ -68,8 +68,6 @@ public class GreedyTreasureChests extends Script
 		24486, 24487, 24488, 24489, 24490, 24491,
 		// Sea Of Spores
 		24621, 24622, 24623, 24624,
-		// Dragon Valley
-		24481, 24482,
 		// Fafurion Temple
 		24318, 24322, 24323, 24325, 24329,
 		// Wastelands

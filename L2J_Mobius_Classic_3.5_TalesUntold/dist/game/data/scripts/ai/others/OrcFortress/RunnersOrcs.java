@@ -36,18 +36,17 @@ import org.l2jmobius.gameserver.model.script.Script;
 public class RunnersOrcs extends Script
 {
 	// NPCs
-	private static final Set<Integer> ORC_GUARDS = new HashSet<>();
-	static
-	{
-		ORC_GUARDS.add(22175);
-		ORC_GUARDS.add(22176);
-		ORC_GUARDS.add(22177);
-		ORC_GUARDS.add(22178);
-		ORC_GUARDS.add(22179);
-		ORC_GUARDS.add(22180);
-		ORC_GUARDS.add(22181);
-		
-	}
+	// private static final Set<Integer> ORC_GUARDS = new HashSet<>();
+	// static
+	// {
+	// ORC_GUARDS.add(22175);
+	// ORC_GUARDS.add(22176);
+	// ORC_GUARDS.add(22177);
+	// ORC_GUARDS.add(22178);
+	// ORC_GUARDS.add(22179);
+	// ORC_GUARDS.add(22180);
+	// ORC_GUARDS.add(22181);
+	// }
 	private static final Set<Integer> ORC_GUARDS_ALL = new HashSet<>();
 	static
 	{
@@ -62,36 +61,35 @@ public class RunnersOrcs extends Script
 		ORC_GUARDS_ALL.add(22172);
 		ORC_GUARDS_ALL.add(22173);
 		ORC_GUARDS_ALL.add(22174);
-		ORC_GUARDS_ALL.add(22175);
-		ORC_GUARDS_ALL.add(22176);
-		ORC_GUARDS_ALL.add(22177);
-		ORC_GUARDS_ALL.add(22178);
-		ORC_GUARDS_ALL.add(22179);
-		ORC_GUARDS_ALL.add(22180);
-		ORC_GUARDS_ALL.add(22181);
-		
+		// ORC_GUARDS_ALL.add(22175);
+		// ORC_GUARDS_ALL.add(22176);
+		// ORC_GUARDS_ALL.add(22177);
+		// ORC_GUARDS_ALL.add(22178);
+		// ORC_GUARDS_ALL.add(22179);
+		// ORC_GUARDS_ALL.add(22180);
+		// ORC_GUARDS_ALL.add(22181);
 	}
-	private static final int ORC_FORTRESS_FLAG = 18397;
+	// private static final int ORC_FORTRESS_FLAG = 18397;
 	
 	public RunnersOrcs()
 	{
-		addSpawnId(ORC_GUARDS);
+		// addSpawnId(ORC_GUARDS);
 		addCreatureSeeId(ORC_GUARDS_ALL);
 	}
 	
-	@Override
-	public void onSpawn(Npc npc)
-	{
-		World.getInstance().forEachVisibleObject(npc, Npc.class, flag ->
-		{
-			if ((flag.getId() == ORC_FORTRESS_FLAG))
-			{
-				npc.setRunning();
-				npc.asAttackable().addDamageHate(flag, 0, 999999);
-				npc.getAI().setIntention(Intention.ATTACK, flag);
-			}
-		});
-	}
+	// @Override
+	// public void onSpawn(Npc npc)
+	// {
+	// World.getInstance().forEachVisibleObject(npc, Npc.class, flag ->
+	// {
+	// if ((flag.getId() == ORC_FORTRESS_FLAG))
+	// {
+	// npc.setRunning();
+	// npc.asAttackable().addDamageHate(flag, 0, 999999);
+	// npc.getAI().setIntention(Intention.ATTACK, flag);
+	// }
+	// });
+	// }
 	
 	@Override
 	public void onCreatureSee(Npc npc, Creature creature)

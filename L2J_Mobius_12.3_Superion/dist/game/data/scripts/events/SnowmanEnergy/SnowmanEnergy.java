@@ -184,18 +184,6 @@ public class SnowmanEnergy extends LongTimeEvent
 		24638, // Varka Silenos Footman
 		24639, // Varka Silenos Sergeant
 		24640, // Varka Silenos Officer
-		// Sea Of Spores
-		24226, // Aranea
-		24227, // Keros
-		24228, // Falena
-		24229, // Atrofa
-		24230, // Nuba
-		24231, // Torfedo
-		24234, // Lesatanas
-		24235, // Arbor
-		24236, // Tergus
-		24237, // Skeletus
-		24238, // Atrofine
 		// Fafurion Temple
 		24329, // Starving Water Dragon
 		24318, // Temple Guard Captain
@@ -205,13 +193,6 @@ public class SnowmanEnergy extends LongTimeEvent
 		24323, // Temple Guard
 		24321, // Temple Patrol Guard
 		24322, // Temple Knight Recruit
-		// Dragon Valley
-		24480, // Dragon Legionnaire
-		24482, // Dragon Officer
-		24481, // Dragon Peltast
-		24483, // Dragon Centurion
-		24484, // Dragon Elite Guard
-		24485, // Behemoth Dragon
 		// Beast Farm
 		24651, // Red Kookaburra
 		24652, // Blue Kookaburra

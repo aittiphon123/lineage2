@@ -1367,27 +1367,6 @@
 			</spoil>
 		</dropLists>
 	</npc>
-	<npc id="20940" level="107" type="Monster" name="Tanor Silenos Shaman">
-		<race>HUMANOID</race>
-		<mpReward value="550" type="DIFF" ticks="10" affects="PARTY" />
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="176235.260115607" hpRegen="11.5" mp="26106.2706270627" mpRegen="3.9" />
-			<speed>
-				<walk ground="60" />
-				<run ground="160" />
-			</speed>
-			<attack physical="289373.080588796" magical="802.669648119492" critical="4.75" attackSpeed="253" range="40" />
-			<defence physical="2972.95918367347" magical="1140.29770323971" />
-		</stats>
-		<skillList>
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="5465" level="1" /> <!-- Earth Attack -->
-		</skillList>
-		<collision>
-			<radius normal="10" />
-			<height normal="10" />
-		</collision>
-	</npc>
 	<npc id="20941" level="108" type="Monster" name="Tanor Silenos Chieftain" title="Lord of Tanor Canyon">
 		<parameters>
 			<param name="MoveAroundSocial" value="80" />
@@ -1578,26 +1557,6 @@
 				<item id="81344" min="1" max="1" chance="2.131" /> <!-- Augmenting Stone Crystal -->
 			</spoil>
 		</dropLists>
-	</npc>
-	<npc id="20944" level="108" type="Monster" name="Nightmare Lord">
-		<race>DEMONIC</race>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="192256.069364162" hpRegen="11.5" mp="26106.2706270627" mpRegen="3.9" />
-			<speed>
-				<walk ground="60" />
-				<run ground="160" />
-			</speed>
-			<attack physical="316176.675333863" magical="852.565665508686" critical="4.75" attackSpeed="253" range="40" />
-			<defence physical="3093.40101522843" magical="1187.78375299459" />
-		</stats>
-		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="5465" level="1" /> <!-- Earth Attack -->
-		</skillList>
-		<collision>
-			<radius normal="10" />
-			<height normal="10" />
-		</collision>
 	</npc>
 	<npc id="20954" level="60" type="Monster" name="Starving Corpse">
 		<parameters>

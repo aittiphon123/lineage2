@@ -4188,61 +4188,6 @@
 			</drop>
 		</dropLists>
 	</npc>
-	<npc id="23784" level="100" type="Monster" name="Dark Wizard of the Magic Circle">
-		<race>DEMONIC</race>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="75279.1907514451" hpRegen="10.5" mp="23785.4785478548" mpRegen="3.6" />
-			<speed>
-				<walk ground="60" />
-				<run ground="160" />
-			</speed>
-			<attack physical="88222.9046795392" magical="466.620941924112" critical="4.75" attackSpeed="253" range="40" />
-			<defence physical="967.195767195767" magical="370.195749733704" />
-		</stats>
-		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="5465" level="1" /> <!-- Earth Attack -->
-		</skillList>
-		<collision>
-			<radius normal="10" />
-			<height normal="10" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="8600" min="1" max="1" chance="10" /> <!-- Herb of Life -->
-				<item id="8601" min="1" max="1" chance="8" /> <!-- Major Herb of Life -->
-				<item id="8602" min="1" max="1" chance="2" /> <!-- Superior Herb of Life -->
-				<item id="8603" min="1" max="1" chance="19.8" /> <!-- Herb of Mana -->
-				<item id="8604" min="1" max="1" chance="9.9" /> <!-- Major Herb of Mana -->
-				<item id="8605" min="1" max="1" chance="3.3" /> <!-- Superior Herb of Mana -->
-				<item id="34849" min="1" max="1" chance="0.7" /> <!-- Mysterious Herb of Power -->
-				<item id="34850" min="1" max="1" chance="0.7" /> <!-- Mysterious Herb of Magic -->
-				<item id="13028" min="1" max="1" chance="0.1" /> <!-- Vitality Recovering Potion - Grizzly -->
-			</drop>
-		</dropLists>
-	</npc>
-	<npc id="23790" level="103" type="Monster" name="Kimerian's Shadows">
-		<race>FAIRY</race>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="368820.231213873" hpRegen="11.5" mp="24936.6336633663" mpRegen="3.9" />
-			<speed>
-				<walk ground="60" />
-				<run ground="160" />
-			</speed>
-			<attack physical="179365.88831233" magical="590.850970208235" critical="4.75" attackSpeed="253" range="40" />
-			<defence physical="2477.60416666667" magical="944.719471947195" />
-		</stats>
-		<skillList>
-			<skill id="4416" level="13" /> <!-- Fairies -->
-			<skill id="5465" level="1" /> <!-- Earth Attack -->
-			<skill id="14823" level="1" /> <!-- Instant Kill Attack Resistance -->
-			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
-		</skillList>
-		<collision>
-			<radius normal="10" />
-			<height normal="10" />
-		</collision>
-	</npc>
 	<npc id="23791" level="101" type="Monster" name="Bathus" title="Marred">
 		<race>GIANT</race>
 		<sex>MALE</sex>

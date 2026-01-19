@@ -49,74 +49,6 @@
 			</drop>
 		</dropLists>
 	</npc>
-	<npc id="20410" level="15" type="Monster" name="Scavenger Spider">
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-		</parameters>
-		<race>BUG</race>
-		<sex>MALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="246.95422" hpRegen="2.5" mp="149.2" mpRegen="1.2" />
-			<attack physical="29.61691" magical="20.22451" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="73.55216" magical="53.82228" />
-			<speed>
-				<walk ground="72" />
-				<run ground="130" />
-			</speed>
-			<hitTime>260</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status attackable="true" />
-		<skillList>
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
-			<skill id="4412" level="10" /> <!-- Slightly Weak P. Def. -->
-			<skill id="4413" level="10" /> <!-- Slightly Weak M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		</skillList>
-		<exCrtEffect>false</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
-			<clanList>
-				<clan>ALL</clan>
-			</clanList>
-		</ai>
-		<collision>
-			<radius normal="26" />
-			<height normal="25.5" />
-		</collision>
-		<dropLists>
-			<drop>
-				<group chance="70">
-					<item id="57" min="12" max="27" chance="100" /> <!-- Adena -->
-				</group>
-				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
-				</group>
-				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
-				</group>
-				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
-				</group>
-				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
-				</group>
-				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Recovering Potion - Grizzly -->
-				</group>
-			</drop>
-		</dropLists>
-	</npc>
 	<npc id="20412" level="49" type="Monster" name="Susceptor">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -1157,38 +1089,6 @@
 			</drop>
 		</dropLists>
 	</npc>
-	<npc id="20468" level="6" type="Monster" name="Kaboo Orc">
-		<race>HUMANOID</race>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="54.3352601156069" hpRegen="2" mp="50.8250825082508" mpRegen="0.9" />
-			<speed>
-				<walk ground="60" />
-				<run ground="160" />
-			</speed>
-			<attack physical="14.8257968865827" magical="6.63076508496" critical="4.75" attackSpeed="253" range="40" />
-			<defence physical="55.7894736842105" magical="27.0974465867639" />
-		</stats>
-		<skillList>
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-		</skillList>
-		<collision>
-			<radius normal="10" />
-			<height normal="10" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="8600" min="1" max="1" chance="10" /> <!-- Herb of Life -->
-				<item id="8601" min="1" max="1" chance="8" /> <!-- Major Herb of Life -->
-				<item id="8602" min="1" max="1" chance="2" /> <!-- Superior Herb of Life -->
-				<item id="8603" min="1" max="1" chance="19.8" /> <!-- Herb of Mana -->
-				<item id="8604" min="1" max="1" chance="9.9" /> <!-- Major Herb of Mana -->
-				<item id="8605" min="1" max="1" chance="3.3" /> <!-- Superior Herb of Mana -->
-				<item id="34849" min="1" max="1" chance="0.7" /> <!-- Mysterious Herb of Power -->
-				<item id="34850" min="1" max="1" chance="0.7" /> <!-- Mysterious Herb of Magic -->
-				<item id="13028" min="1" max="1" chance="0.1" /> <!-- Vitality Recovering Potion - Grizzly -->
-			</drop>
-		</dropLists>
-	</npc>
 	<npc id="20469" level="8" type="Monster" name="Kaboo Orc Archer">
 		<parameters>
 			<param name="MoveAroundSocial" value="104" />
@@ -1868,30 +1768,6 @@
 				<item id="57" min="12" max="29" chance="70" /> <!-- Adena -->
 			</drop>
 		</dropLists>
-	</npc>
-	<npc id="20492" level="21" type="Monster" name="Kirunak's Escort">
-		<race>UNDEAD</race>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="333.526011560694" hpRegen="3.5" mp="168.316831683168" mpRegen="1.5" />
-			<speed>
-				<walk ground="60" />
-				<run ground="160" />
-			</speed>
-			<attack physical="48.8762534722505" magical="19.0751998350761" critical="4.75" attackSpeed="253" range="40" />
-			<defence physical="69.4214876033058" magical="37.0946185527644" />
-		</stats>
-		<skillList>
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
-			<skill id="4410" level="10" /> <!-- Slightly Weak P. Atk. -->
-			<skill id="4411" level="10" /> <!-- Slightly Weak M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-		</skillList>
-		<collision>
-			<radius normal="10" />
-			<height normal="10" />
-		</collision>
 	</npc>
 	<npc id="20494" level="31" type="Monster" name="Turek War Hound">
 		<parameters>

@@ -5,21 +5,6 @@
 			<npc id="19543" x="52107" y="-54328" z="-3152" respawnTime="60sec" /> <!-- Invisible Kekropus NPC -->
 			<npc id="31657" x="46016" y="-36368" z="-1656" respawnTime="60sec" /> <!-- Tablet Of Vision -->
 			<npc id="31656" x="47376" y="-56880" z="-2336" heading="58000" respawnTime="60sec" /> <!-- Tablet Of Vision -->
-			<npc id="27381" x="41268" y="-65322" z="-2456" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="41808" y="-65424" z="-2480" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="40998" y="-65016" z="-2440" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="40998" y="-64863" z="-2432" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="41178" y="-65016" z="-2424" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="41628" y="-65220" z="-2456" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="41628" y="-65322" z="-2464" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="41088" y="-65067" z="-2432" heading="37640" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="41538" y="-65373" z="-2464" heading="15355" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="40368" y="-64914" z="-2416" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="40278" y="-65322" z="-2408" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="40818" y="-64965" z="-2456" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="40818" y="-65373" z="-2456" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="40458" y="-64863" z="-2432" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
-			<npc id="27381" x="40368" y="-65424" z="-2424" respawnTime="60sec" /> <!-- Reckless Wind Spirit - Quest Monster -->
 			<npc id="31526" x="51995" y="-51265" z="-3096" respawnTime="60sec" /> <!-- Broken Bookshelf -->
 			<npc id="31522" x="51878" y="-54796" z="-3160" heading="22912" respawnTime="60sec" /> <!-- Mysterious Wizard -->
 			<npc id="31523" x="51475" y="-54596" z="-3152" heading="11040" respawnTime="60sec" /> <!-- Tombstone -->

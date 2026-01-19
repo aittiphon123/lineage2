@@ -18,8 +18,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -41,8 +39,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -65,8 +61,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -88,8 +82,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -111,8 +103,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -132,8 +122,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -156,8 +144,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -179,8 +165,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -202,8 +186,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -225,8 +207,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -248,8 +228,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -273,8 +251,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -296,8 +272,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -321,8 +295,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -346,8 +318,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -369,8 +339,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -394,8 +362,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -419,8 +385,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -444,8 +408,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -467,8 +429,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -491,8 +451,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -516,8 +474,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -540,8 +496,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -562,8 +516,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -585,8 +537,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -608,8 +558,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -631,8 +579,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -655,8 +601,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -679,8 +623,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -704,8 +646,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -727,8 +667,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -750,8 +688,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -773,8 +709,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -796,8 +730,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -819,8 +751,6 @@
 		<npc id="23487" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ailith -->
 		<npc id="23494" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Salamander -->
 		<npc id="23495" count="2" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Dre Vanul -->
-		<npc id="23488" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Apophis -->
-		<npc id="23496" count="3" respawnTime="9sec" chaseRange="1500" /> <!-- Magma Ifrit -->
 	</spawn>
 	<spawn>
 		<territories>

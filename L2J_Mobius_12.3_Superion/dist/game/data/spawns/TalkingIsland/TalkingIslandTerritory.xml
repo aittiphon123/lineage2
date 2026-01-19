@@ -153,14 +153,6 @@
 			<npc id="20151" x="-108513" y="251593" z="-3088" heading="25977" respawnTime="60sec" chaseRange="300" /> <!-- Kobold -->
 			<npc id="20151" x="-108379" y="250627" z="-3080" heading="27083" respawnTime="60sec" chaseRange="300" /> <!-- Kobold -->
 			<npc id="20151" x="-106259" y="247530" z="-3456" heading="28719" respawnTime="60sec" chaseRange="300" /> <!-- Kobold -->
-			<npc id="20494" x="-113989" y="247347" z="-3520" heading="56060" respawnTime="60sec" /> <!-- Turek War Hound -->
-			<npc id="20494" x="-113763" y="246970" z="-3752" heading="65392" respawnTime="60sec" /> <!-- Turek War Hound -->
-			<npc id="20494" x="-114082" y="247253" z="-3544" heading="3435" respawnTime="60sec" /> <!-- Turek War Hound -->
-			<npc id="20494" x="-113617" y="246407" z="-3752" heading="16306" respawnTime="60sec" /> <!-- Turek War Hound -->
-			<npc id="20494" x="-112966" y="246971" z="-3664" heading="48984" respawnTime="60sec" /> <!-- Turek War Hound -->
-			<npc id="20494" x="-113152" y="246407" z="-3688" heading="50085" respawnTime="60sec" /> <!-- Turek War Hound -->
-			<npc id="20494" x="-112687" y="246689" z="-3584" heading="11064" respawnTime="60sec" /> <!-- Turek War Hound -->
-			<npc id="20494" x="-113803" y="246971" z="-3752" heading="34952" respawnTime="60sec" /> <!-- Turek War Hound -->
 			<npc id="22991" x="-116798" y="232271" z="-2896" heading="27013" respawnTime="60sec" /> <!-- Crawler - Husk -->
 			<npc id="22991" x="-115390" y="236167" z="-3088" heading="31384" respawnTime="60sec" /> <!-- Crawler - Husk -->
 			<npc id="22991" x="-115936" y="235852" z="-3088" heading="31384" respawnTime="60sec" /> <!-- Crawler - Husk -->

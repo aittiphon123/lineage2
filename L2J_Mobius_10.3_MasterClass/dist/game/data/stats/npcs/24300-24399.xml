@@ -1751,26 +1751,6 @@
 			</spoil>
 		</dropLists>
 	</npc>
-	<npc id="24374" level="108" type="Monster" name="Crokian Lad Warrior">
-		<race>HUMANOID</race>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="192256.069364162" hpRegen="11.5" mp="26106.2706270627" mpRegen="3.9" />
-			<speed>
-				<walk ground="60" />
-				<run ground="160" />
-			</speed>
-			<attack physical="316176.675333863" magical="852.565665508686" critical="4.75" attackSpeed="253" range="40" />
-			<defence physical="3093.40101522843" magical="1187.78375299459" />
-		</stats>
-		<skillList>
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="5463" level="1" /> <!-- Water Attack -->
-		</skillList>
-		<collision>
-			<radius normal="10" />
-			<height normal="10" />
-		</collision>
-	</npc>
 	<npc id="24376" level="108" type="Monster" name="Nos Lad">
 		<parameters>
 			<skill name="Skill01_ID" id="32862" level="1" />

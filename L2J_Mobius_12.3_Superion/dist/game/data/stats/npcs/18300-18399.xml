@@ -2167,9 +2167,6 @@
 		<parameters>
 			<param name="BroadCastRange" value="300" />
 			<param name="ProbBroadCast" value="80" />
-			<minions name="Privates">
-				<npc id="22197" count="3" respawnTime="0" weightPoint="1" /> <!-- Velociraptor -->
-			</minions>
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>

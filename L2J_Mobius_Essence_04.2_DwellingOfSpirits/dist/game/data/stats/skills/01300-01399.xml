@@ -678,7 +678,7 @@
 			<value level="10">85</value>
 		</magicLevel>
 	</skill>
-	<skill id="1321" toLevel="1" name="Dwarven Craft">
+	<skill id="1321" toLevel="2" name="Dwarven Craft">
 		<!-- Can read Dwarven recipe books. -->
 		<icon>icon.skill0172</icon>
 		<operateType>A1</operateType>

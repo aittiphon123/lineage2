@@ -46,12 +46,10 @@ public class Q10512_NobleMaterial2 extends Quest
 	private static final int[] MONSTERS =
 	{
 		23487, // Magma Ailith
-		23488, // Magma Apophis
 		23491, // Lava Wendigo
 		23492, // Lava-spawn Golem
 		23494, // Magma Salamander
 		23495, // Magma Dre Vanul
-		23496, // Magma Ifrit
 		23500, // Flame Crow
 		23501, // Flame Rael
 		23502, // Blazing Salamander

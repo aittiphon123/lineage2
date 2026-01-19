@@ -75,7 +75,6 @@
 			<npc id="23151" x="188253" y="24616" z="-3664" heading="63532" respawnTime="60sec" /> <!-- Shillien's Messenger -->
 			<npc id="23151" x="189249" y="24616" z="-3664" heading="12006" respawnTime="60sec" /> <!-- Shillien's Messenger -->
 			<npc id="23151" x="189249" y="24752" z="-3664" heading="28924" respawnTime="60sec" /> <!-- Shillien's Messenger -->
-			<npc id="27470" x="181110" y="11907" z="-2728" heading="32960" respawnTime="60sec" /> <!-- Shillien's Messenger Cabrio - Quest Monster -->
 			<npc id="33165" x="185732" y="20407" z="-3344" respawnTime="60sec" /> <!-- Aden Vanguard Member -->
 			<npc id="33405" x="193353" y="22608" z="-3624" heading="36900" respawnTime="60sec" /> <!-- Rotating Dimensional Door -->
 			<npc id="33407" x="186170" y="20336" z="-3368" respawnTime="60sec" /> <!-- Quartermaster - Aden Vanguard -->

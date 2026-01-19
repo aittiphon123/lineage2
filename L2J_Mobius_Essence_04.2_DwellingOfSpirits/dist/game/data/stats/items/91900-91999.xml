@@ -719,7 +719,6 @@
 		<set name="enchant_limit" val="1" />
 		<skills>
 			<skill id="50188" level="1" type="ON_ENCHANT" type_value="0" /> <!-- Adventurer's Talisman -->
-			<skill id="50188" level="2" type="ON_ENCHANT" type_value="1" /> <!-- Adventurer's Talisman Lv2 -->
 		</skills>
 	</item>
 	<item id="91938" name="Primeval Isle's Prolongating Stone" type="EtcItem">

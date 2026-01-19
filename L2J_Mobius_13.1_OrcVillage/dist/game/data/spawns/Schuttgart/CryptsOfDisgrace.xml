@@ -2,15 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn name="CryptsOfDisgrace">
 		<group>
-			<npc id="22001" x="41672" y="-113145" z="-2184" heading="17948" respawnTime="60sec" chaseRange="2500" /> <!-- Grim Wolf -->
-			<npc id="22001" x="41554" y="-112766" z="-2160" heading="19952" respawnTime="60sec" chaseRange="2500" /> <!-- Grim Wolf -->
-			<npc id="22001" x="41393" y="-112883" z="-2112" heading="40455" respawnTime="60sec" chaseRange="2500" /> <!-- Grim Wolf -->
-			<npc id="22001" x="41158" y="-112479" z="-2064" heading="25314" respawnTime="60sec" chaseRange="2500" /> <!-- Grim Wolf -->
-			<npc id="22002" x="40278" y="-112103" z="-1856" heading="24998" respawnTime="60sec" chaseRange="2500" /> <!-- Grim Bear -->
-			<npc id="22002" x="40086" y="-111746" z="-1752" heading="21531" respawnTime="60sec" chaseRange="2500" /> <!-- Grim Bear -->
-			<npc id="22002" x="40226" y="-111894" z="-1800" heading="57054" respawnTime="60sec" chaseRange="2500" /> <!-- Grim Bear -->
-			<npc id="22002" x="40724" y="-111027" z="-1680" heading="22874" respawnTime="60sec" chaseRange="2500" /> <!-- Grim Bear -->
-			<npc id="22002" x="39925" y="-110598" z="-1472" heading="3139" respawnTime="60sec" chaseRange="2500" /> <!-- Grim Bear -->
 			<npc id="22003" x="47168" y="-110575" z="-2344" heading="8386" respawnTime="60sec" chaseRange="2500" /> <!-- Grave Robber Scout -->
 			<npc id="22003" x="47479" y="-110646" z="-2328" heading="11997" respawnTime="60sec" chaseRange="2500" /> <!-- Grave Robber Scout -->
 			<npc id="22003" x="47806" y="-111256" z="-2224" heading="26180" respawnTime="60sec" chaseRange="2500" /> <!-- Grave Robber Scout -->

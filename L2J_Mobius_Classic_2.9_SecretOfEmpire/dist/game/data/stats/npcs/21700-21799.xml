@@ -2423,9 +2423,6 @@
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="54" />
 			<param name="MoveAroundSocial2" value="110" />
-			<minions name="Privates">
-				<npc id="21344" count="2" respawnTime="0" weightPoint="1" />
-			</minions>
 			<param name="FriendShip1" value="7211" />
 			<param name="FriendShip2" value="7212" />
 			<param name="FriendShip3" value="7213" />

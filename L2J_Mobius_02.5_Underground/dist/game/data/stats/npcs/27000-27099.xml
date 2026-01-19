@@ -536,9 +536,6 @@
 	</npc>
 	<npc id="27022" level="22" type="Monster" name="Merkenis" title="Quest Monster">
 		<parameters>
-			<minions name="Privates">
-				<npc id="20367" count="3" respawnTime="360" weightPoint="1" />
-			</minions>
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="110" />
 			<param name="MoveAroundSocial2" value="110" />

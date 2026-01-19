@@ -52,7 +52,7 @@ public class KrofinNest extends InstanceScript
 	
 	// Bosses
 	private static final int KROSHA_105 = 26500;
-	private static final int KROSHA_110 = 26467;
+	private static final int KROSHA_110 = 26466;
 	private static final int KROSHA_115 = 26487;
 	private static final int KROSHA_120 = 26525;
 	private static final int[] KROSHA =

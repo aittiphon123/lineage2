@@ -682,28 +682,6 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
 		</skillList>
 	</npc>
-	<npc id="24217" level="106" type="Monster" name="Lahkdoom">
-		<race>DEMONIC</race>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="24033039.8843931" hpRegen="11.5" mp="26106.2706270627" mpRegen="3.9" />
-			<speed>
-				<walk ground="60" />
-				<run ground="160" />
-			</speed>
-			<attack physical="262294.197031039" magical="751.580784340321" critical="4.75" attackSpeed="253" range="40" />
-			<defence physical="2849.74358974359" magical="1092.32461707709" />
-		</stats>
-		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="5467" level="1" /> <!-- Dark Attack -->
-			<skill id="14823" level="1" /> <!-- Instant Kill Attack Resistance -->
-			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
-		</skillList>
-		<collision>
-			<radius normal="10" />
-			<height normal="10" />
-		</collision>
-	</npc>
 	<npc id="24218" level="110" type="Monster" name="Valanga Orc Scout">
 		<race>HUMANOID</race>
 		<sex>MALE</sex>

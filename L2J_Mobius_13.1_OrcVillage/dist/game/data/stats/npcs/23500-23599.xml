@@ -237,53 +237,6 @@
 			</spoil>
 		</dropLists>
 	</npc>
-	<npc id="23504" level="99" type="Monster" name="Flame Votis">
-		<parameters>
-			<skill name="Skill01_ID" id="32862" level="1" />
-			<param name="Skill01_Probablity" value="100" />
-		</parameters>
-		<race>BEAST</race>
-		<sex>MALE</sex>
-		<acquire exp="86368" sp="78" />
-		<mpReward value="3" type="PER" ticks="5" affects="PARTY" />
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="183338" hpRegen="11.3" mp="2355" mpRegen="30" />
-			<attack physical="23636" magical="2433" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
-			<defence physical="2016" magical="816" />
-			<speed>
-				<walk ground="35" />
-				<run ground="70" />
-			</speed>
-			<hitTime>460</hitTime>
-			<attribute>
-				<defence fire="350" water="350" wind="300" earth="350" holy="350" dark="350" />
-				<attack type="EARTH" value="300" />
-			</attribute>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="5465" level="1" /> <!-- Earth Attribute -->
-			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		</skillList>
-		<collision>
-			<radius normal="20" />
-			<height normal="36" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="819" max="1909" chance="70" /> <!-- Adena -->
-			</drop>
-		</dropLists>
-	</npc>
 	<npc id="23505" level="101" type="Monster" name="Fortress Bandit">
 		<parameters>
 			<skill name="Skill01_ID" id="23638" level="1" />

@@ -10,7 +10,6 @@
 				<node x="70008" y="126428" />
 			</territory>
 		</territories>
-		<npc id="20552" count="2" respawnTime="22sec" /> <!-- Fettered Soul -->
 		<npc id="20553" count="1" respawnTime="22sec" /> <!-- Windsus -->
 		<npc id="20554" count="2" respawnTime="22sec" /> <!-- Grandis -->
 	</spawn>
@@ -24,7 +23,6 @@
 				<node x="68664" y="101008" />
 			</territory>
 		</territories>
-		<npc id="20552" count="3" respawnTime="22sec" /> <!-- Fettered Soul -->
 		<npc id="20553" count="3" respawnTime="22sec" /> <!-- Windsus -->
 		<npc id="20554" count="4" respawnTime="22sec" /> <!-- Grandis -->
 	</spawn>
@@ -37,7 +35,6 @@
 				<node x="72788" y="100220" />
 			</territory>
 		</territories>
-		<npc id="20552" count="2" respawnTime="22sec" /> <!-- Fettered Soul -->
 		<npc id="20553" count="2" respawnTime="22sec" /> <!-- Windsus -->
 		<npc id="20554" count="2" respawnTime="22sec" /> <!-- Grandis -->
 	</spawn>
@@ -52,11 +49,8 @@
 				<node x="74485" y="102681" />
 			</territory>
 		</territories>
-		<npc id="20552" count="3" respawnTime="22sec" /> <!-- Fettered Soul -->
 		<npc id="20553" count="3" respawnTime="22sec" /> <!-- Windsus -->
 		<npc id="20554" count="3" respawnTime="22sec" /> <!-- Grandis -->
-		<npc id="20244" count="3" respawnTime="22sec" /> <!-- Maluk Succubus -->
-		<npc id="20245" count="3" respawnTime="22sec" /> <!-- Maluk Succubus Turen -->
 	</spawn>
 	<spawn>
 		<territories>
@@ -68,7 +62,6 @@
 				<node x="75364" y="100648" />
 			</territory>
 		</territories>
-		<npc id="20552" count="4" respawnTime="22sec" /> <!-- Fettered Soul -->
 		<npc id="20553" count="4" respawnTime="22sec" /> <!-- Windsus -->
 		<npc id="20554" count="4" respawnTime="22sec" /> <!-- Grandis -->
 	</spawn>
@@ -82,7 +75,6 @@
 				<node x="82360" y="100564" />
 			</territory>
 		</territories>
-		<npc id="20552" count="2" respawnTime="22sec" /> <!-- Fettered Soul -->
 		<npc id="20553" count="2" respawnTime="22sec" /> <!-- Windsus -->
 		<npc id="20554" count="2" respawnTime="22sec" /> <!-- Grandis -->
 	</spawn>
@@ -95,7 +87,6 @@
 				<node x="85724" y="101888" />
 			</territory>
 		</territories>
-		<npc id="20552" count="4" respawnTime="22sec" /> <!-- Fettered Soul -->
 		<npc id="20553" count="4" respawnTime="22sec" /> <!-- Windsus -->
 		<npc id="20554" count="4" respawnTime="22sec" /> <!-- Grandis -->
 	</spawn>
@@ -109,7 +100,6 @@
 				<node x="90168" y="100856" />
 			</territory>
 		</territories>
-		<npc id="20552" count="7" respawnTime="22sec" /> <!-- Fettered Soul -->
 		<npc id="20553" count="7" respawnTime="22sec" /> <!-- Windsus -->
 		<npc id="20554" count="8" respawnTime="22sec" /> <!-- Grandis -->
 	</spawn>
@@ -123,7 +113,6 @@
 				<node x="98460" y="103660" />
 			</territory>
 		</territories>
-		<npc id="20552" count="7" respawnTime="22sec" /> <!-- Fettered Soul -->
 		<npc id="20553" count="6" respawnTime="22sec" /> <!-- Windsus -->
 		<npc id="20554" count="6" respawnTime="22sec" /> <!-- Grandis -->
 	</spawn>
@@ -136,7 +125,6 @@
 				<node x="100408" y="105904" />
 			</territory>
 		</territories>
-		<npc id="20552" count="1" respawnTime="22sec" /> <!-- Fettered Soul -->
 		<npc id="20553" count="1" respawnTime="22sec" /> <!-- Windsus -->
 		<npc id="20554" count="1" respawnTime="22sec" /> <!-- Grandis -->
 	</spawn>

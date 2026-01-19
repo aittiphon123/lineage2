@@ -42,8 +42,8 @@ public class SquashEvent extends LongTimeEvent
 	private static final int MANAGER = 31860;
 	private static final int NECTAR_SKILL = 2005;
 	
-	private static final List<Integer> SQUASH_LIST = Arrays.asList(12774, 12775, 12776, 12777, 12778, 12779, 13016, 13017);
-	private static final List<Integer> LARGE_SQUASH_LIST = Arrays.asList(12778, 12779, 13016, 13017);
+	private static final List<Integer> SQUASH_LIST = Arrays.asList(12774, 12775, 12776, 12777, 12778, 12779);
+	private static final List<Integer> LARGE_SQUASH_LIST = Arrays.asList(12778, 12779);
 	private static final List<Integer> CHRONO_LIST = Arrays.asList(4202, 5133, 5817, 7058, 8350);
 	
 	// @formatter:off
@@ -87,14 +87,6 @@ public class SquashEvent extends LongTimeEvent
 	private static final int Orcish_Glaive = 298;
 	private static final int Stick_of_Faith = 193;
 	private static final int Stormbringer = 72;
-	private static final int Berserker_Blade = 5286;
-	private static final int Dark_Screamer = 233;
-	private static final int Eminence_Bow = 286;
-	private static final int Fisted_Blade = 265;
-	private static final int Homunkulus_Sword = 84;
-	private static final int Poleaxe = 95;
-	private static final int Sage_Staff = 200;
-	private static final int Sword_of_Nightmare = 134;
 	
 	// Armor
 	private static final int Divine_Gloves = 2463;
@@ -105,19 +97,6 @@ public class SquashEvent extends LongTimeEvent
 	private static final int Full_Plate_Armor = 356;
 	private static final int Full_Plate_Helmet = 2414;
 	private static final int Full_Plate_Shield = 2497;
-	private static final int Avadon_Robe = 2406;
-	private static final int Blue_Wolf_Breastplate = 358;
-	private static final int Blue_Wolf_Gaiters = 2380;
-	private static final int Leather_Armor_of_Doom = 2392;
-	private static final int Sealed_Avadon_Boots = 600;
-	private static final int Sealed_Avadon_Circlet = 2415;
-	private static final int Sealed_Avadon_Gloves = 2464;
-	private static final int Sealed_Blue_Wolf_Boots = 2439;
-	private static final int Sealed_Blue_Wolf_Gloves = 2487;
-	private static final int Sealed_Blue_Wolf_Helmet = 2416;
-	private static final int Sealed_Doom_Boots = 601;
-	private static final int Sealed_Doom_Gloves = 2475;
-	private static final int Sealed_Doom_Helmet = 2417;
 	
 	// Misc
 	private static final int Class_Buff_Scroll_1st = 29011;
@@ -133,10 +112,6 @@ public class SquashEvent extends LongTimeEvent
 	private static final int Scroll_Enchant_Weapon_D = 955;
 	private static final int Scroll_Enchant_Armor_C = 952;
 	private static final int Scroll_Enchant_Weapon_C = 951;
-	private static final int Blessed_Scroll_Enchant_Armor_C = 29022;
-	private static final int Blessed_Scroll_Enchant_Weapon_C = 29021;
-	private static final int Blessed_Scroll_Enchant_Armor_D = 29020;
-	private static final int Blessed_Scroll_Enchant_Weapon_D = 29019;
 	private static final int Special_Pirate_Fruit = 49518;
 	private static final int XP_SP_Scroll_High = 29010;
 	private static final int Blessed_Scroll_of_Escape = 1538;
@@ -178,22 +153,6 @@ public class SquashEvent extends LongTimeEvent
 	private static final int Recipe_Sealed_Blue_Wolf_Gloves = 4998;
 	private static final int Recipe_Stick_of_Faith = 2306;
 	private static final int Recipe_Stormbringer = 2298;
-	private static final int Recipe_Avadon_Robe = 4951;
-	private static final int Recipe_Berserker_Blade = 5436;
-	private static final int Recipe_Blue_Wolf_Breastplate = 4981;
-	private static final int Recipe_Dark_Screamer = 2345;
-	private static final int Recipe_Divine_Tunic = 2233;
-	private static final int Recipe_Eminence_Bow = 2359;
-	private static final int Recipe_Fisted_Blade = 2346;
-	private static final int Recipe_Full_Plate_Armor = 2231;
-	private static final int Recipe_Homunkulus_Sword = 2330;
-	private static final int Recipe_Leather_Armor_of_Doom = 4985;
-	private static final int Recipe_Poleaxe = 2331;
-	private static final int Recipe_Sage_Staff = 2341;
-	private static final int Recipe_Sealed_Avadon_Circlet = 4952;
-	private static final int Recipe_Sealed_Blue_Wolf_Helmet = 4990;
-	private static final int Recipe_Sealed_Doom_Helmet = 4991;
-	private static final int Recipe_Sword_of_Nightmare = 2333;
 	
 	// Main Material
 	private static final int Animal_Bone = 1872;
@@ -206,21 +165,13 @@ public class SquashEvent extends LongTimeEvent
 	private static final int Cokes = 1879;
 	private static final int Coarse_Bone_Powder = 1881;
 	private static final int Adamantite_Nugget = 1877;
-	private static final int Asofe = 4043;
-	private static final int Mold_Glue = 4039;
-	private static final int Oriharukon_Ore = 1874;
-	private static final int Steel_Mold = 1883;
-	private static final int Synthetic_Braid = 1889;
-	private static final int Synthetic_Cokes = 1888;
 	private static final int Varnish_of_Purity = 1887;
-	private static final int High_grade_Suede = 1885;
 	private static final int Enria = 4042;
 	private static final int Mithril_Alloy = 1890;
 	private static final int Mold_Hardener = 4041;
 	private static final int Mold_Lubricant = 4040;
 	private static final int Crystal_D = 1458;
 	private static final int Crystal_C = 1459;
-	private static final int Crystal_B = 1460;
 	private static final int Silver_Mold = 1886;
 	private static final int Oriharukon = 1893;
 	
@@ -242,21 +193,6 @@ public class SquashEvent extends LongTimeEvent
 	private static final int Crystal_Staff_Head = 2067;
 	private static final int Blue_Wolf_Gaiter_Material = 4080;
 	private static final int Battle_Axe_Head = 2063;
-	private static final int Avadon_Robe_Fabric = 4071;
-	private static final int Berserker_Blade_Edge = 5530;
-	private static final int Blue_Wolf_Breastplate_Part = 4078;
-	private static final int Dark_Screamer_Edge = 2107;
-	private static final int Divine_Tunic_Fabric = 1988;
-	private static final int Eminence_Bow_Shaft = 2121;
-	private static final int Fisted_Blade_Piece = 2108;
-	private static final int Full_Plate_Armor_Temper = 1986;
-	private static final int Poleaxe_Blade = 2093;
-	private static final int Sage_Staff_Head = 2109;
-	private static final int Sealed_Avadon_Circlet_Pattern = 4072;
-	private static final int Sealed_Blue_Wolf_Helmet_Design = 4088;
-	private static final int Sealed_Doom_Helmet_Design = 4089;
-	private static final int Sword_of_Nightmare_Blade = 2095;
-	
 	
 	private static final int[][] DROPLIST =
 	{
@@ -392,101 +328,6 @@ public class SquashEvent extends LongTimeEvent
 		{ 12779, Mold_Lubricant, 50 },
 		{ 12779, Silver_Mold, 50 },
 		{ 12779, Varnish_of_Purity, 50 },
-
-		// Royal Ripe Squash
-		{ 13016, Class_Buff_Scroll_1st, 70 },
-		{ 13016, Angel_Cat_Blessing_Chest, 60 },
-		{ 13016, Greater_CP_Potion, 60 },
-		{ 13016, Quick_Healing_Potion, 60 },
-		{ 13016, Rice_Cake_of_Fighting_Spirit, 60 },
-		{ 13016, Adamantite_Nugget, 50 },
-		{ 13016, Asofe, 50 },
-		{ 13016, Coarse_Bone_Powder, 50 },
-		{ 13016, Cokes, 50 },
-		{ 13016, High_grade_Suede, 50 },
-		{ 13016, Mithril_Ore, 50 },
-		{ 13016, Mold_Glue, 50 },
-		{ 13016, Oriharukon_Ore, 50 },
-		{ 13016, Steel, 50 },
-		{ 13016, Steel_Mold, 50 },
-		{ 13016, Stone_of_Purity, 50 },
-		{ 13016, Synthetic_Braid, 50 },
-		{ 13016, Synthetic_Cokes, 50 },
-		{ 13016, Varnish_of_Purity, 50 },
-		{ 13016, Avadon_Robe_Fabric, 50 },
-		{ 13016, Berserker_Blade_Edge, 50 },
-		{ 13016, Blue_Wolf_Breastplate_Part, 50 },
-		{ 13016, Dark_Screamer_Edge, 50 },
-		{ 13016, Divine_Tunic_Fabric, 50 },
-		{ 13016, Eminence_Bow_Shaft, 50 },
-		{ 13016, Fisted_Blade_Piece, 50 },
-		{ 13016, Full_Plate_Armor_Temper, 50 },
-		{ 13016, Poleaxe_Blade, 50 },
-		{ 13016, Sage_Staff_Head, 50 },
-		{ 13016, Sealed_Avadon_Circlet_Pattern, 50 },
-		{ 13016, Sealed_Blue_Wolf_Helmet_Design, 50 },
-		{ 13016, Sealed_Doom_Helmet_Design, 50 },
-		{ 13016, Sword_of_Nightmare_Blade, 50 },
-		{ 13016, Recipe_Avadon_Robe, 50 },
-		{ 13016, Recipe_Berserker_Blade, 50 },
-		{ 13016, Recipe_Blue_Wolf_Breastplate, 50 },
-		{ 13016, Recipe_Dark_Screamer, 50 },
-		{ 13016, Recipe_Divine_Tunic, 50 },
-		{ 13016, Recipe_Eminence_Bow, 50 },
-		{ 13016, Recipe_Fisted_Blade, 50 },
-		{ 13016, Recipe_Full_Plate_Armor, 50 },
-		{ 13016, Recipe_Homunkulus_Sword, 50 },
-		{ 13016, Recipe_Leather_Armor_of_Doom, 50 },
-		{ 13016, Recipe_Poleaxe, 50 },
-		{ 13016, Recipe_Sage_Staff, 50 },
-		{ 13016, Recipe_Sealed_Avadon_Circlet, 50 },
-		{ 13016, Recipe_Sealed_Blue_Wolf_Helmet, 50 },
-		{ 13016, Recipe_Sealed_Doom_Helmet, 50 },
-		{ 13016, Recipe_Sword_of_Nightmare, 50 },
-		
-		// Royal Large Ripe Squash
-		{ 13017, Berserker_Blade, 5 },
-		{ 13017, Dark_Screamer, 5 },
-		{ 13017, Eminence_Bow, 5 },
-		{ 13017, Fisted_Blade, 5 },
-		{ 13017, Homunkulus_Sword, 5 },
-		{ 13017, Poleaxe, 5 },
-		{ 13017, Sage_Staff, 5 },
-		{ 13017, Sword_of_Nightmare, 5 },
-		{ 13017, Avadon_Robe, 5 },
-		{ 13017, Blue_Wolf_Breastplate, 5 },
-		{ 13017, Blue_Wolf_Gaiters, 5 },
-		{ 13017, Leather_Armor_of_Doom, 5 },
-		{ 13017, Sealed_Avadon_Boots, 10 },
-		{ 13017, Sealed_Avadon_Circlet, 10 },
-		{ 13017, Sealed_Avadon_Gloves, 10 },
-		{ 13017, Sealed_Blue_Wolf_Boots, 10 },
-		{ 13017, Sealed_Blue_Wolf_Gloves, 10 },
-		{ 13017, Sealed_Blue_Wolf_Helmet, 10 },
-		{ 13017, Sealed_Doom_Boots, 10 },
-		{ 13017, Sealed_Doom_Gloves, 10 },
-		{ 13017, Sealed_Doom_Helmet, 10 },
-		{ 13017, Class_Buff_Scroll_2nd , 50 },
-		{ 13017, Angel_Cat_Blessing_Chest, 50 },
-		{ 13017, Blessed_Scroll_of_Escape, 50 },
-		{ 13017, Blessed_Scroll_of_Resurrection, 50 },
-		{ 13017, Blessed_Scroll_Enchant_Armor_C, 30 },
-		{ 13017, Blessed_Scroll_Enchant_Armor_D, 30 },
-		{ 13017, Blessed_Scroll_Enchant_Weapon_C, 20 },
-		{ 13017, Blessed_Scroll_Enchant_Weapon_D, 20 },
-		{ 13017, Crystal_B, 50 },
-		{ 13017, Crystal_C, 50 },
-		{ 13017, Greater_CP_Potion, 50 },
-		{ 13017, Major_Healing_Potion, 50 },
-		{ 13017, Quick_Healing_Potion, 70 },
-		{ 13017, Rice_Cake_of_Flaming_Fighting_Spirit, 60 },
-		{ 13017, Scroll_Dance_of_Fire, 60 },
-		{ 13017, Scroll_Hunter_Song, 60 },
-		{ 13017, Scroll_Enchant_Armor_C, 50 },
-		{ 13017, Scroll_Enchant_Weapon_C, 40 },
-		{ 13017, Special_Pirate_Fruit, 60 },
-		{ 13017, XP_SP_Scroll_High, 60 },
-		{ 13017, XP_SP_Scroll_Medium, 60 },
 	};
 	// @formatter:on
 	
@@ -542,12 +383,12 @@ public class SquashEvent extends LongTimeEvent
 			{
 				case 12774: // Young Squash
 				{
-					randomSpawn(13016, 12775, 12776, npc);
+					randomSpawn(12775, 12776, npc);
 					break;
 				}
 				case 12777: // Large Young Squash
 				{
-					randomSpawn(13017, 12778, 12779, npc);
+					randomSpawn(12778, 12779, npc);
 					break;
 				}
 			}
@@ -599,14 +440,9 @@ public class SquashEvent extends LongTimeEvent
 		}
 	}
 	
-	private void randomSpawn(int low, int medium, int high, Npc npc)
+	private void randomSpawn(int medium, int high, Npc npc)
 	{
 		final int _random = getRandom(100);
-		if (_random < 5)
-		{
-			spawnNext(low, npc);
-		}
-		
 		if (_random < 10)
 		{
 			spawnNext(medium, npc);

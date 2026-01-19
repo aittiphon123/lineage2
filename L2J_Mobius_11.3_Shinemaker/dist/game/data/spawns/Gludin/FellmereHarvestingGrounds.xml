@@ -2,8 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn name="OrcBarracks">
 		<group>
-			<npc id="20495" x="-90818" y="111365" z="-3448" heading="21114" respawnTime="60sec" /> <!-- Turek Orc Prefect -->
-
 			<npc id="20008" x="-63427" y="105600" z="-3536" heading="4510" respawnTime="60sec" /> <!-- Felim Lizardman -->
 			<npc id="20008" x="-63520" y="105714" z="-3528" heading="8020" respawnTime="60sec" /> <!-- Felim Lizardman -->
 			<npc id="20008" x="-63634" y="108388" z="-3536" heading="11059" respawnTime="60sec" /> <!-- Felim Lizardman -->
