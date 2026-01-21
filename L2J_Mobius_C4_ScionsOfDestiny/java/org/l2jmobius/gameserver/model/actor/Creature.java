@@ -4623,7 +4623,7 @@ public abstract class Creature extends WorldObject
 				}
 				
 				// Pathfinding checks.
-				if (!directMove && ((originalDistance - distance) > 30) && !isAfraid() && !isInVehicle)
+				if (!directMove && (!isPlayer() || ((originalDistance - distance) > 30)) && !isAfraid() && !isInVehicle)
 				{
 					// Path calculation -- overrides previous movement check
 					move.geoPath = PathFinding.getInstance().findPath(curX, curY, curZ, originalX, originalY, originalZ, getInstanceId(), isPlayer());
