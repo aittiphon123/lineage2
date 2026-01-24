@@ -105,7 +105,7 @@
 			<npc id="26475" x="151023" y="249494" z="-7095" heading="32542" /> <!-- Kropios -->
 		</group>
 		<group name="KROSHA_FINAL_FORM" spawnByDefault="false">
-			<npc id="26467" x="142395" y="240706" z="-6216" heading="32542" /> <!-- Queen Krosha Final Form -->
+			<npc id="26466" x="142395" y="240706" z="-6216" heading="32542" /> <!-- Queen Krosha Final Form -->
 		</group>
 	</spawnlist>
 </instance>
