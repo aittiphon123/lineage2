@@ -748,7 +748,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" /> <!-- Epilogue Modification -->
+		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="EnchantScrolls" />
 		<set name="item_skill" val="2015-1" /> <!-- Scroll: Enchant Weapon (Grade B) -->
@@ -761,7 +761,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" /> <!-- Epilogue Modification -->
+		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="EnchantScrolls" />
 		<set name="item_skill" val="2016-1" /> <!-- Scroll: Enchant Armor (Grade B) -->
@@ -802,7 +802,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" /> <!-- Epilogue Modification -->
+		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="EnchantScrolls" />
 		<set name="item_skill" val="2017-1" /> <!-- Scroll: Enchant Weapon (Grade C) -->
@@ -815,7 +815,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" /> <!-- Epilogue Modification -->
+		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="EnchantScrolls" />
 		<set name="item_skill" val="2018-1" /> <!-- Scroll: Enchant Armor (Grade C) -->
@@ -856,7 +856,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" /> <!-- Epilogue Modification -->
+		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="EnchantScrolls" />
 		<set name="item_skill" val="2019-1" /> <!-- Scroll: Enchant Weapon (Grade D) -->
@@ -869,7 +869,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" /> <!-- Epilogue Modification -->
+		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="EnchantScrolls" />
 		<set name="item_skill" val="2020-1" /> <!-- Scroll: Enchant Armor (Grade D) -->
@@ -910,7 +910,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" /> <!-- Epilogue Modification -->
+		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="EnchantScrolls" />
 		<set name="item_skill" val="2021-1" /> <!-- Scroll: Enchant Weapon (Grade S) -->
@@ -923,7 +923,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" /> <!-- Epilogue Modification -->
+		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="EnchantScrolls" />
 		<set name="item_skill" val="2022-1" /> <!-- Scroll: Enchant Armor (Grade S) -->
