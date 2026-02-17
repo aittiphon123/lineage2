@@ -509,6 +509,24 @@ public class LoginServerThread extends Thread
 			client.close(ServerClose.STATIC_PACKET);
 			getInstance().sendLogout(account);
 		}
+		else // Offline player restored after restart.
+		{
+			for (Player player : World.getInstance().getPlayers())
+			{
+				if (account.equals(player.getAccountName()))
+				{
+					final GameClient playerGameClient = player.getClient();
+					if (playerGameClient != null)
+					{
+						playerGameClient.close(ServerClose.STATIC_PACKET);
+					}
+					player.storeMe();
+					player.deleteMe();
+					getInstance().sendLogout(account);
+					return;
+				}
+			}
+		}
 	}
 	
 	/**
