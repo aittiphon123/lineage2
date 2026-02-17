@@ -523,7 +523,6 @@ public class LoginServerThread extends Thread
 					player.storeMe();
 					player.deleteMe();
 					getInstance().sendLogout(account);
-					return;
 				}
 			}
 		}
