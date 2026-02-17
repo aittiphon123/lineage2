@@ -511,6 +511,7 @@ public class LoginServerThread extends Thread
 		}
 		else // Offline player restored after restart.
 		{
+			boolean logoutSent = false;
 			for (Player player : World.getInstance().getPlayers())
 			{
 				if (account.equals(player.getAccountName()))
@@ -522,7 +523,12 @@ public class LoginServerThread extends Thread
 					}
 					player.storeMe();
 					player.deleteMe();
-					getInstance().sendLogout(account);
+					
+					if (!logoutSent)
+					{
+						logoutSent = true;
+						getInstance().sendLogout(account);
+					}
 				}
 			}
 		}
