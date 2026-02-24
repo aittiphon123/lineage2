@@ -2,7 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/teleporterData.xsd">
 	<npc id="31119"> <!-- Gatekeeper Ziggurat -->
 		<teleport type="OTHER">
-			<location x="12521" y="-248481" z="-9585" /> <!-- Catacomb Forbidden Path Entrance -->
+			<location x="114155" y="84532" z="-6565" /> <!-- Catacomb Forbidden Path Entrance -->
 		</teleport>
 	</npc>
 </list>
