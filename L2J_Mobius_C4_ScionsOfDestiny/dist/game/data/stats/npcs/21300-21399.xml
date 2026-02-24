@@ -1126,7 +1126,7 @@
 		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Dog</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1205,7 +1205,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Bandersnatch</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1279,7 +1279,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Buffalo</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1359,7 +1359,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Flava</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1438,7 +1438,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Atroxspawn</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1513,7 +1513,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Antelope</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1601,7 +1601,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Nepenthes</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1691,7 +1691,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Yeti</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1764,7 +1764,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Atrox</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1837,7 +1837,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Bandersnatch</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1907,7 +1907,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Grendel</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -2129,7 +2129,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Kookaburra</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -2462,7 +2462,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Kookaburra</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -2705,7 +2705,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Windsus</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -3026,7 +3026,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Buffalo</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -3360,7 +3360,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Kookaburra</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -4224,7 +4224,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Antelope</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -4546,7 +4546,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Nepenthes</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -4784,7 +4784,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Bandersnatch</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -5109,7 +5109,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Flava</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -5445,7 +5445,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Antelope</clan>
 			</clanList>
 		</ai>
 		<dropLists>

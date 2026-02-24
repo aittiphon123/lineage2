@@ -1652,7 +1652,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Bat</clan>
 			</clanList>
 		</ai>
 		<dropLists>

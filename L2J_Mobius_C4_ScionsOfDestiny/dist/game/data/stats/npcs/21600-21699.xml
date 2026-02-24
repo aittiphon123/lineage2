@@ -1597,7 +1597,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Musveren</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1677,7 +1677,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Musveren</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1756,7 +1756,7 @@
 		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Musveren</clan>
 			</clanList>
 		</ai>
 		<dropLists>

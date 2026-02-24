@@ -244,7 +244,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Golem</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -593,7 +593,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Wisp</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -739,7 +739,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Predator</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1027,7 +1027,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Guardian</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1250,7 +1250,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Imp</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1444,7 +1444,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Imp</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1509,7 +1509,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Wolf</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1571,7 +1571,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Bugbear</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1699,7 +1699,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Bat</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1948,7 +1948,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Golem</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -2154,7 +2154,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Golem</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -2559,7 +2559,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Golem</clan>
 			</clanList>
 		</ai>
 		<dropLists>
