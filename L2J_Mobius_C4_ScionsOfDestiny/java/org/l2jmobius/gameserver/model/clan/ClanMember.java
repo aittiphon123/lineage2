@@ -49,7 +49,6 @@ public class ClanMember
 	private int _raceOrdinal;
 	private Player _player;
 	private int _pledgeType;
-	private int _clanPrivileges;
 	
 	/**
 	 * Used to restore a clan member from the database.
@@ -74,7 +73,6 @@ public class ClanMember
 		_powerGrade = clanMember.getInt("power_grade");
 		_sex = clanMember.getInt("sex") != 0;
 		_raceOrdinal = clanMember.getInt("race");
-		_clanPrivileges = clanMember.getInt("clan_privs");
 	}
 	
 	/**
@@ -100,7 +98,6 @@ public class ClanMember
 		_title = player.getTitle();
 		_sex = player.getAppearance().isFemale();
 		_raceOrdinal = player.getRace().ordinal();
-		
 	}
 	
 	/**
@@ -121,12 +118,10 @@ public class ClanMember
 			_title = _player.getTitle();
 			_sex = _player.getAppearance().isFemale();
 			_raceOrdinal = _player.getRace().ordinal();
-			_clanPrivileges = _player.getClanPrivileges().getMask();
 		}
 		
 		if (player != null)
 		{
-			player.getClanPrivileges().setMask(_clanPrivileges);
 			if ((_clan.getLevel() > 3) && player.isClanLeader())
 			{
 				SiegeManager.getInstance().addSiegeSkills(player);
@@ -139,12 +134,6 @@ public class ClanMember
 		}
 		
 		_player = player;
-	}
-	
-	public int getClanPrivileges()
-	{
-		// Note the .getMask() at the end of _player.getClanPrivileges()
-		return _player != null ? _player.getClanPrivileges().getMask() : _clanPrivileges;
 	}
 	
 	/**
