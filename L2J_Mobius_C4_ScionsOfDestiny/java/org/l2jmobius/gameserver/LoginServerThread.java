@@ -504,14 +504,13 @@ public class LoginServerThread extends Thread
 	public void doKickPlayer(String account)
 	{
 		final GameClient client = _accountsInGameServer.get(account);
+		
 		if (client != null)
 		{
 			client.close(ServerClose.STATIC_PACKET);
-			getInstance().sendLogout(account);
 		}
 		else // Offline player restored after restart.
 		{
-			boolean logoutSent = false;
 			for (Player player : World.getInstance().getPlayers())
 			{
 				if (account.equals(player.getAccountName()))
@@ -523,15 +522,11 @@ public class LoginServerThread extends Thread
 					}
 					player.storeMe();
 					player.deleteMe();
-					
-					if (!logoutSent)
-					{
-						logoutSent = true;
-						getInstance().sendLogout(account);
-					}
 				}
 			}
 		}
+		// Ensure the Login Server always gets the command to unlock the account.
+		getInstance().sendLogout(account);
 	}
 	
 	/**
