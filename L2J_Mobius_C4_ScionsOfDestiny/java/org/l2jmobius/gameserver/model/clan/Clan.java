@@ -1312,6 +1312,14 @@ public class Clan
 		}
 	}
 	
+	public void initializePrivs()
+	{
+		for (int i = 1; i < 10; i++)
+		{
+			_privs.put(i, new RankPrivs(i, 0, new ClanPrivileges()));
+		}
+	}
+	
 	private void restoreRankPrivs()
 	{
 		try (Connection con = DatabaseFactory.getConnection();
@@ -1335,22 +1343,20 @@ public class Clan
 					{
 						continue;
 					}
-					
-					_privs.get(rank).setPrivs(privileges);
+					if (_privs.get(rank) == null)
+					{
+						_privs.put(rank, new RankPrivs(rank, 0, privileges));
+					}
+					else
+					{
+						_privs.get(rank).setPrivs(privileges);
+					}
 				}
 			}
 		}
 		catch (Exception e)
 		{
 			LOGGER.log(Level.SEVERE, "Error restoring clan privs by rank: " + e.getMessage(), e);
-		}
-	}
-	
-	public void initializePrivs()
-	{
-		for (int i = 1; i < 10; i++)
-		{
-			_privs.put(i, new RankPrivs(i, 0, new ClanPrivileges()));
 		}
 	}
 	
