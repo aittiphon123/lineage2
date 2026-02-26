@@ -995,7 +995,7 @@ public class Clan
 					final int leaderId = clanData.getInt("leader_id");
 					ps.clearParameters();
 					
-					try (PreparedStatement select = con.prepareStatement("SELECT char_name,level,classid,charId,title,power_grade,subpledge,apprentice,sponsor,sex,race FROM characters WHERE clanid=?"))
+					try (PreparedStatement select = con.prepareStatement("SELECT char_name,level,classid,charId,title,power_grade,subpledge,apprentice,sponsor,sex,race,clan_privs FROM characters WHERE clanid=?"))
 					{
 						select.setInt(1, _clanId);
 						try (ResultSet clanMember = select.executeQuery())
