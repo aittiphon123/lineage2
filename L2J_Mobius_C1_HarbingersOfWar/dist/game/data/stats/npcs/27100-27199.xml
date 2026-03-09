@@ -1497,7 +1497,7 @@
 		</stats>
 		<status undying="false" />
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai type="ARCHER" aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="10" grown="12" />
 			<height normal="22" grown="27" />

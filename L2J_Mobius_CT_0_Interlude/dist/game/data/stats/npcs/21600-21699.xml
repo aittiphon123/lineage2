@@ -3195,7 +3195,7 @@
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>0.5</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+		<ai type="ARCHER" aggroRange="300" clanHelpRange="300" isAggressive="false">
 			<clanList>
 				<clan>LIZARDMAN</clan>
 			</clanList>
@@ -3508,7 +3508,7 @@
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>0.5</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300">
+		<ai type="ARCHER" aggroRange="300" clanHelpRange="300">
 			<clanList>
 				<clan>LIZARDMAN</clan>
 			</clanList>
@@ -3613,7 +3613,7 @@
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>0.5</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300">
+		<ai type="ARCHER" aggroRange="300" clanHelpRange="300">
 			<clanList>
 				<clan>LIZARDMAN</clan>
 			</clanList>
