@@ -445,7 +445,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Predator</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -992,7 +992,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Eye</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -1441,7 +1441,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Gargoyle</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -5682,7 +5682,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Bee</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -5808,7 +5808,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Spider</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -5873,7 +5873,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Bear</clan>
 			</clanList>
 		</ai>
 		<dropLists>

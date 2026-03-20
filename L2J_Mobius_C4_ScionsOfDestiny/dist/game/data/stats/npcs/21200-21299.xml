@@ -4216,7 +4216,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="600">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Werewolf</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -4283,7 +4283,7 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="800" clanHelpRange="600" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Eye</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -6867,7 +6867,7 @@
 		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Antelope</clan>
 			</clanList>
 		</ai>
 		<dropLists>
@@ -7016,7 +7016,7 @@
 		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Bandersnatch</clan>
 			</clanList>
 		</ai>
 		<dropLists>

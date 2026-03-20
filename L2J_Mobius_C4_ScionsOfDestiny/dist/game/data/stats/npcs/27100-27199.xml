@@ -28,7 +28,7 @@
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Quest</clan>
 			</clanList>
 		</ai>
 		<collision>
@@ -333,7 +333,7 @@
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Quest</clan>
 			</clanList>
 		</ai>
 		<collision>
@@ -398,7 +398,7 @@
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Quest</clan>
 			</clanList>
 		</ai>
 		<collision>
@@ -434,7 +434,7 @@
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Quest</clan>
 			</clanList>
 		</ai>
 		<collision>
@@ -608,7 +608,7 @@
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Quest</clan>
 			</clanList>
 		</ai>
 		<collision>
@@ -1109,7 +1109,7 @@
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Quest</clan>
 			</clanList>
 		</ai>
 		<collision>
@@ -2492,7 +2492,7 @@
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Quest</clan>
 			</clanList>
 		</ai>
 		<collision>

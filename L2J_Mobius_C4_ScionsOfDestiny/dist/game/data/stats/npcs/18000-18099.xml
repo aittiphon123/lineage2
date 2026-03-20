@@ -369,7 +369,7 @@
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300">
 			<clanList>
-				<clan>ALL</clan>
+				<clan>Demon</clan>
 			</clanList>
 		</ai>
 		<collision>
