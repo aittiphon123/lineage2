@@ -398,10 +398,30 @@
 	<skill id="32832" toLevel="1" name="Petrified">
 		<!-- The petrification is applied and removed from the Treasure Chest and the Priest of Purification according to the status of the Cursed Weapon's owner. The petrification is removed in the following cases:. 1. The Cursed Weapon's owner is in a peaceful zone for more than 10 min. 2. The Cursed Weapon's owner is offline for more than 30 min. 3. Monday-Thursday 11:30-11:59 p.m. -->
 		<icon>icon.skill4111</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
 		<effectPoint>-100</effectPoint>
+		<irreplaceableBuff>true</irreplaceableBuff>
 		<isDebuff>true</isDebuff>
-		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isMagic>1</isMagic>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="BuffBlock" />
+			<effect name="BlockAbnormalSlot">
+				<slot>INVINCIBILITY_SPECIAL</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="32833" toLevel="1" name="Received Heal Reduction">
 		<!-- HP recovery effect does not apply. -->

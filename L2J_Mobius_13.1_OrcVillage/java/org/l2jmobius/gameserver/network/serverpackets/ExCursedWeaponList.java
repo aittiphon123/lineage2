@@ -35,6 +35,11 @@ public class ExCursedWeaponList extends ServerPacket
 		_ids = CursedWeaponsManager.getInstance().getCursedWeaponsIds();
 	}
 	
+	public ExCursedWeaponList(Set<Integer> ids)
+	{
+		_ids = ids;
+	}
+	
 	@Override
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{

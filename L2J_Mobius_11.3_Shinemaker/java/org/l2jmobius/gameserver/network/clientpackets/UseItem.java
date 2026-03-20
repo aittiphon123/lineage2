@@ -46,11 +46,13 @@ import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.item.OnItemUse;
 import org.l2jmobius.gameserver.model.item.EtcItem;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.enums.ItemSkillType;
 import org.l2jmobius.gameserver.model.item.holders.ItemSkillHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ActionType;
+import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.PacketLogger;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -58,6 +60,7 @@ import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
 import org.l2jmobius.gameserver.network.serverpackets.ExPutIntensiveResultForVariationMake;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.ExUseSharedGroupItem;
+import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.variation.ExShowVariationMakeWindow;
 
@@ -250,9 +253,29 @@ public class UseItem extends ClientPacket
 						return;
 					}
 					
-					// Don't allow weapon/shield equipment if a cursed weapon is equipped.
-					if (player.isCursedWeaponEquipped())
+					// Auto-Unequip Shield/Sigil when equipping Zariche (8190) or Akamanah (8689)
+					// This prevents visual bugs and ensures the Cursed Weapon is equipped cleanly.
+					if ((item.getId() == 8190) || (item.getId() == 8689))
 					{
+						final Item lHandItem = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+						if (lHandItem != null)
+						{
+							// Remove from slot (Server side)
+							player.getInventory().unEquipItemInBodySlot(BodyPart.L_HAND);
+							
+							// Update Inventory UI (Client side icon)
+							InventoryUpdate iu = new InventoryUpdate();
+							iu.addModifiedItem(lHandItem);
+							player.sendPacket(iu);
+							player.broadcastUserInfo();
+						}
+					}
+					
+					// Prevent equipping Shield/Sigil if a Cursed Weapon is already equipped.
+					final Item rHandItem = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+					if ((rHandItem != null) && ((rHandItem.getId() == 8190) || (rHandItem.getId() == 8689)) && (item.getTemplate().getBodyPart() == BodyPart.L_HAND) && !item.isEquipped())
+					{
+						player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 						return;
 					}
 					break;

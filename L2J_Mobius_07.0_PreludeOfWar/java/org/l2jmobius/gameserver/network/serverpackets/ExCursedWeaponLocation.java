@@ -24,8 +24,9 @@ import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 
 /**
- * Format: (ch) d[ddddd]
- * @author -Wooden-
+ * Format: (ch) d[ddddd] <br>
+ * Updated to the latest version of the Cursed Sword - Prelude of War 2019
+ * @author -Wooden-, Notorion
  */
 public class ExCursedWeaponLocation extends ServerPacket
 {
@@ -50,6 +51,22 @@ public class ExCursedWeaponLocation extends ServerPacket
 				buffer.writeInt(w.pos.getX());
 				buffer.writeInt(w.pos.getY());
 				buffer.writeInt(w.pos.getZ());
+				
+				// Calculates how much FARM (Excess) there is
+				// If the total reward is 5,000,027,000, the farm is 27,000.
+				long currentFarm = w.reward - 5_000_000_000L;
+				if (currentFarm < 0)
+				{
+					currentFarm = 0;
+				}
+				
+				// Sending order to the client
+				// The client fills: [Guaranteed] then [Bonus]
+				
+				// A) First Long: Goes to "Guaranteed Reward"
+				buffer.writeLong(5_000_000_000L);
+				// B) Second Long: Goes to "Bonus Reward"
+				buffer.writeLong(currentFarm);
 			}
 		}
 		else
@@ -62,13 +79,16 @@ public class ExCursedWeaponLocation extends ServerPacket
 	{
 		public Location pos;
 		public int id;
-		public int activated; // 0 - not activated ? 1 - activated
+		public int activated;
+		public long reward; // Variable to store Adena
 		
-		public CursedWeaponInfo(Location p, int cwId, int status)
+		// Constructor to receive Adena
+		public CursedWeaponInfo(Location p, int cwId, int status, long r)
 		{
 			pos = p;
 			id = cwId;
 			activated = status;
+			reward = r;
 		}
 	}
 }

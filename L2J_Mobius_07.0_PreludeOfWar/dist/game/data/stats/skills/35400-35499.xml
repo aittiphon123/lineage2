@@ -9,8 +9,34 @@
 			<value level="4">icon.killpoint_zariche4</value>
 			<value level="5">icon.killpoint_zariche5</value>
 		</icon>
-		<operateType>A1</operateType>
-		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<operateType>A2</operateType>
+		<canBeDispelled>false</canBeDispelled>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLevel>
+		<abnormalTime>
+			<value level="1">-1</value>
+			<value level="2">-1</value>
+			<value level="3">-1</value>
+			<value level="4">-1</value>
+			<value level="5">-1</value>
+		</abnormalTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<deleteAbnormalOnLeave>true</deleteAbnormalOnLeave>
+		<isMagic>4</isMagic>
+		<magicLevel>
+			<value level="1">21</value>
+			<value level="2">85</value>
+			<value level="3">100</value>
+			<value level="4">106</value>
+			<value level="5">111</value>
+		</magicLevel>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 	</skill>
 	<skill id="35401" toLevel="5" name="Blood Sword Akamanah">
 		<!-- Obtain Kill Points for killing PCs of Lv. 20+. The amount of Kill Points depends from your level:. 21-84 - 1 pt. / 85-99 - 10 pt. / 100-105 - 100 pt. / 106-110 - 500 pt. / 111+ - 700 pt. Kill Points for level up:. Lv. 2 - 15,000 / Lv. 3 - 45,000 / Lv. 4 - 90,000 / Lv. 5 - 180,000. At 23:59 the final owner receives 5 billion adena and additional adena according to their buff level:. Lv. 2 - 200 million / Lv. 3 - 500 million / Lv. 4 - 2 billion / Lv. 5 - 5 billion. The buff level is reset after death. -->
@@ -21,8 +47,34 @@
 			<value level="4">icon.killpoint_aka_manaf4</value>
 			<value level="5">icon.killpoint_aka_manaf5</value>
 		</icon>
-		<operateType>A1</operateType>
-		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<operateType>A2</operateType>
+		<canBeDispelled>false</canBeDispelled>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLevel>
+		<abnormalTime>
+			<value level="1">-1</value>
+			<value level="2">-1</value>
+			<value level="3">-1</value>
+			<value level="4">-1</value>
+			<value level="5">-1</value>
+		</abnormalTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<deleteAbnormalOnLeave>true</deleteAbnormalOnLeave>
+		<isMagic>4</isMagic>
+		<magicLevel>
+			<value level="1">21</value>
+			<value level="2">85</value>
+			<value level="3">100</value>
+			<value level="4">106</value>
+			<value level="5">111</value>
+		</magicLevel>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 	</skill>
 	<skill id="35402" toLevel="1" name="Cry of Sword - Zariche">
 		<!-- Skill to show the death effects of Zariche's owner -->
@@ -47,21 +99,65 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
-		<abnormalType>ROOT_MAGICALLY</abnormalType> <!-- FIX: NOT RETAIL -->
-		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
-		<activateRate>80</activateRate>
-		<affectLimit>5-12</affectLimit>
-		<affectObject>NOT_FRIEND</affectObject>
-		<affectRange>200</affectRange>
-		<affectScope>POINT_BLANK</affectScope>
+		<abnormalType>DEMONIC_CAGE</abnormalType>
+		<abnormalVisualEffect>ZARICHE_PRISION_AVE</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
 		<castRange>900</castRange>
 		<effectPoint>0</effectPoint>
-		<isDebuff>true</isDebuff>
-		<trait>HOLD</trait>
+		<isMagic>-1</isMagic>
+		<isDebuff>false</isDebuff>
+		<reuseDelay>3000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetConditions>
+			<condition name="OpTargetPc" />
+		</targetConditions>
 		<effects>
-			<effect name="Root" />
+			<effect name="CallSkill">
+				<skillId>35521</skillId> <!-- Soul Scar - Zariche -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="ResistSkill">
+				<skillId1>27646</skillId1>
+				<skillId2>27751</skillId2>
+				<skillId3>46715</skillId3>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>TURN_CRYSTAL,100;INVINCIBILITY,100;ABNORMAL_INVINCIBILITY,100</dispel>
+			</effect>
+			<effect name="BlockActions" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="BuffBlock" />
+			<effect name="DebuffBlock" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<DERANGEMENT>100</DERANGEMENT>
+				<CHANGEBODY>100</CHANGEBODY>
+				<PARALYZE>100</PARALYZE>
+				<SHOCK>100</SHOCK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKBACK>100</KNOCKBACK>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<AIRBIND>100</AIRBIND>
+				<TURN_STONE>100</TURN_STONE>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>ABNORMAL_INVINCIBILITY</slot>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>INVINCIBILITY</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -72,21 +168,80 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
-		<abnormalType>ROOT_MAGICALLY</abnormalType> <!-- FIX: NOT RETAIL -->
-		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
-		<activateRate>80</activateRate>
-		<affectLimit>5-12</affectLimit>
-		<affectObject>NOT_FRIEND</affectObject>
-		<affectRange>200</affectRange>
-		<affectScope>POINT_BLANK</affectScope>
+		<abnormalType>DEMONIC_CAGE</abnormalType>
+		<abnormalVisualEffect>ZARICHE_PRISION_AVE</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
 		<castRange>900</castRange>
 		<effectPoint>0</effectPoint>
-		<isDebuff>true</isDebuff>
-		<trait>HOLD</trait>
+		<isMagic>-1</isMagic>
+		<isDebuff>false</isDebuff>
+		<reuseDelay>3000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetConditions>
+			<condition name="OpTargetPc" />
+		</targetConditions>
 		<effects>
-			<effect name="Root" />
+			<effect name="CallSkill">
+				<skillId>35522</skillId> <!-- Soul Scar - Akamanah -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="ResistSkill">
+				<skillId1>27646</skillId1>
+				<skillId2>27751</skillId2>
+				<skillId3>46715</skillId3>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>PAAGRIOS_EARRING</slot>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>TURN_CRYSTAL,100;INVINCIBILITY,100;ABNORMAL_INVINCIBILITY,100</dispel>
+			</effect>
+			<effect name="BlockActions" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="BuffBlock" />
+			<effect name="DebuffBlock" />
+			<effect name="BlockAbnormalSlot">
+				<slot>BODY_DESTRUCTION;SPEED_DOWN;AIRBIND;TURN_FLEE;DERANGEMENT;CHANGEBODY;SLEEP;PARALYZE;KNOCKDOWN;TURN_STONE;STUN;SILENCE;SHILLIEN_STUN;SAYHAS_RING;SILENCE_PHYSICAL;FREEZE;FREEZE_SLOW;ATTACK_TIME_UP;ROOT_MAGICALLY</slot>
+			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
+				<DERANGEMENT>100</DERANGEMENT>
+				<SHOCK>100</SHOCK>
+				<PHYSICAL_BLOCKADE>100</PHYSICAL_BLOCKADE>
+				<KNOCKBACK>100</KNOCKBACK>
+				<PULL>100</PULL>
+				<DISARM>100</DISARM>
+				<TURN_STONE>100</TURN_STONE>
+				<SLEEP>100</SLEEP>
+				<BOSS>100</BOSS>
+				<AIRBIND>100</AIRBIND>
+				<DEPORT>100</DEPORT>
+				<PARALYZE>100</PARALYZE>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<ZONE>100</ZONE>
+				<PSYCHIC>100</PSYCHIC>
+				<AGGRESSION>100</AGGRESSION>
+				<DEPORT>100</DEPORT>
+				<PULL>100</PULL>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>ABNORMAL_INVINCIBILITY</slot>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>INVINCIBILITY</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -112,6 +267,19 @@
 				<type>BLOCK_MP</type>
 			</effect>
 			<effect name="DebuffBlock" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<DERANGEMENT>100</DERANGEMENT>
+				<CHANGEBODY>100</CHANGEBODY>
+				<PARALYZE>100</PARALYZE>
+				<SHOCK>100</SHOCK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKBACK>100</KNOCKBACK>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<AIRBIND>100</AIRBIND>
+				<TURN_STONE>100</TURN_STONE>
+			</effect>
 			<effect name="DispelByCategory">
 				<slot>DEBUFF</slot>
 				<rate>100</rate>
@@ -149,6 +317,19 @@
 				<type>BLOCK_MP</type>
 			</effect>
 			<effect name="DebuffBlock" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<DERANGEMENT>100</DERANGEMENT>
+				<CHANGEBODY>100</CHANGEBODY>
+				<PARALYZE>100</PARALYZE>
+				<SHOCK>100</SHOCK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKBACK>100</KNOCKBACK>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<AIRBIND>100</AIRBIND>
+				<TURN_STONE>100</TURN_STONE>
+			</effect>
 			<effect name="DispelByCategory">
 				<slot>DEBUFF</slot>
 				<rate>100</rate>

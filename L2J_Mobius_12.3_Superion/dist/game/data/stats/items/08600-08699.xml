@@ -1543,6 +1543,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
 		<set name="weight" val="1840" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -1558,6 +1560,7 @@
 			<stat type="pAtkRange">40</stat>
 		</stats>
 		<skills>
+			<skill id="35405" level="1" /> <!-- Prison of Souls - Akamanah -->
 			<skill id="3629" level="1" /> <!-- Blood Sword Akamanah -->
 		</skills>
 	</item>

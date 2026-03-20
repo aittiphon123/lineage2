@@ -23,12 +23,14 @@ import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.model.CursedWeapon;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.network.serverpackets.ExActivatedCursedTreasureBoxLocation;
 import org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation;
 import org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo;
 
 /**
+ * Updated for Prelude of War version <br>
  * Format: (ch)
- * @author -Wooden-
+ * @author -Wooden-, Notorion
  */
 public class RequestCursedWeaponLocation extends ClientPacket
 {
@@ -46,6 +48,12 @@ public class RequestCursedWeaponLocation extends ClientPacket
 			return;
 		}
 		
+		if (player.isInsideZone(org.l2jmobius.gameserver.model.zone.ZoneId.CONQUEST))
+		{
+			CursedWeaponsManager.getInstance().clearSinglePlayerScreen(player);
+			return;
+		}
+		
 		final List<CursedWeaponInfo> list = new LinkedList<>();
 		for (CursedWeapon cw : CursedWeaponsManager.getInstance().getCursedWeapons())
 		{
@@ -57,14 +65,30 @@ public class RequestCursedWeaponLocation extends ClientPacket
 			final Location pos = cw.getWorldPosition();
 			if (pos != null)
 			{
-				list.add(new CursedWeaponInfo(pos, cw.getItemId(), cw.isActivated() ? 1 : 0));
+				// Added cw.getCurrentReward() at the end
+				list.add(new CursedWeaponInfo(pos, cw.getItemId(), cw.isActivated() ? 1 : 0, cw.getCurrentReward()));
 			}
 		}
 		
-		// send the ExCursedWeaponLocation
+		// Send the ExCursedWeaponLocation
 		if (!list.isEmpty())
 		{
 			player.sendPacket(new ExCursedWeaponLocation(list));
+		}
+		
+		// Send ID
+		// Check Zariche Box
+		if (!CursedWeaponsManager.getInstance().getZaricheBoxLocs().isEmpty())
+		{
+			// Use ID 24370 (Chest)
+			player.sendPacket(new ExActivatedCursedTreasureBoxLocation(24370, CursedWeaponsManager.getInstance().getZaricheBoxLocs()));
+		}
+		
+		// Check Akamanah Box
+		if (!CursedWeaponsManager.getInstance().getAkamanahBoxLocs().isEmpty())
+		{
+			// Use ID 24371 (Chest)
+			player.sendPacket(new ExActivatedCursedTreasureBoxLocation(24371, CursedWeaponsManager.getInstance().getAkamanahBoxLocs()));
 		}
 	}
 }

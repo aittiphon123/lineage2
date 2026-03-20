@@ -4562,6 +4562,10 @@
 		<isMagic>4</isMagic>
 		<magicLevel>130</magicLevel>
 		<effects>
+			<effect name="ResistSkill">
+				<skillId1>35405</skillId1>
+				<skillId2>35404</skillId2>
+			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>100</amount>
 				<mode>PER</mode>
@@ -4645,6 +4649,10 @@
 		<isMagic>4</isMagic>
 		<magicLevel>130</magicLevel>
 		<effects>
+			<effect name="ResistSkill">
+				<skillId1>35404</skillId1>
+				<skillId2>35405</skillId2>
+			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>100</amount>
 				<mode>PER</mode>

@@ -5876,10 +5876,10 @@ public class Player extends Playable
 			return;
 		}
 		
-		// Cursed weapons progress
+		// Cursed weapons progress - Add killedPlayer to version Prelude of War 2019
 		if (isCursedWeaponEquipped() && target.isPlayer())
 		{
-			CursedWeaponsManager.getInstance().increaseKills(_cursedWeaponEquippedId);
+			CursedWeaponsManager.getInstance().increaseKills(_cursedWeaponEquippedId, killedPlayer);
 			return;
 		}
 		
@@ -6758,6 +6758,12 @@ public class Player extends Playable
 		}
 		else if (item.isWeapon())
 		{
+			// Allow equipping Sword Cursed - version Prelude of War 2019
+			if ((item.getId() == 8190) || (item.getId() == 8689))
+			{
+				return true;
+			}
+			
 			// Fishing rods are enabled for all players.
 			final ItemType itemType = item.getItemType();
 			if (itemType == WeaponType.FISHINGROD)
@@ -11159,6 +11165,36 @@ public class Player extends Playable
 			getStat().recalculateStats(false);
 			updateAbnormalVisualEffects();
 			sendSkillList();
+			
+			// Version Prelude of War 2019
+			// Checks if the player owns a Cursed Weapon and restores skills/references
+			// immediately after a subclass change or transformation update.
+			for (org.l2jmobius.gameserver.model.CursedWeapon cw : org.l2jmobius.gameserver.managers.CursedWeaponsManager.getInstance().getCursedWeapons())
+			{
+				if (cw.getPlayerId() == getObjectId())
+				{
+					// Update player reference in the Cursed Weapon Manager
+					cw.setPlayer(this);
+					setCursedWeaponEquippedId(cw.getItemId());
+					
+					// Apply skills immediately
+					cw.giveSkill();
+					
+					// Schedule a secondary check/apply to ensure skills persist
+					// after the class change animation/packet flow ends.
+					org.l2jmobius.commons.threads.ThreadPool.schedule(() ->
+					{
+						if (isOnline())
+						{
+							cw.giveSkill();
+							sendSkillList();
+						}
+					}, 1000);
+					
+					break;
+				}
+			}
+			sendSkillList();
 		}
 	}
 	
@@ -11547,6 +11583,36 @@ public class Player extends Playable
 			_subclassLock = false;
 			getStat().recalculateStats(false);
 			updateAbnormalVisualEffects();
+			sendSkillList();
+			
+			// Version Prelude of War 2019
+			// Checks if the player owns a Cursed Weapon and restores skills/references
+			// immediately after a subclass change or transformation update.
+			for (org.l2jmobius.gameserver.model.CursedWeapon cw : org.l2jmobius.gameserver.managers.CursedWeaponsManager.getInstance().getCursedWeapons())
+			{
+				if (cw.getPlayerId() == getObjectId())
+				{
+					// Update player reference in the Cursed Weapon Manager
+					cw.setPlayer(this);
+					setCursedWeaponEquippedId(cw.getItemId());
+					
+					// Apply skills immediately
+					cw.giveSkill();
+					
+					// Schedule a secondary check/apply to ensure skills persist
+					// after the class change animation/packet flow ends.
+					org.l2jmobius.commons.threads.ThreadPool.schedule(() ->
+					{
+						if (isOnline())
+						{
+							cw.giveSkill();
+							sendSkillList();
+						}
+					}, 1000);
+					
+					break;
+				}
+			}
 			sendSkillList();
 		}
 	}

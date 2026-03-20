@@ -90,8 +90,16 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			_inventory = player.getInventory();
 			_enchantLevel = _inventory.getWeaponEnchant();
 			_armorEnchant = _inventory.getArmorSetEnchant();
-			_rank = RankManager.getInstance().getPlayerGlobalRank(_player) == 1 ? 1 : RankManager.getInstance().getPlayerRaceRank(_player) == 1 ? 2 : 0;
-			_title = player.getTitle();
+			_rank = _player.isCursedWeaponEquipped() ? 0 : RankManager.getInstance().getPlayerGlobalRank(_player) == 1 ? 1 : RankManager.getInstance().getPlayerRaceRank(_player) == 1 ? 2 : 0;
+			
+			if (_player.isCursedWeaponEquipped())
+			{
+				_title = "";
+			}
+			else
+			{
+				_title = player.getTitle();
+			}
 			
 			if (player.isGM() && player.isInvisible())
 			{
@@ -304,14 +312,29 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		{
 			buffer.writeShort(32 + (_title.length() * 2));
 			buffer.writeSizedString(_title);
-			buffer.writeShort(_player.getPledgeType());
-			buffer.writeInt(_player.getClanId());
-			buffer.writeInt(_player.getClanCrestLargeId());
-			buffer.writeInt(_player.getClanCrestId());
-			buffer.writeInt(_player.getClanPrivileges().getMask());
-			buffer.writeByte(_player.isClanLeader());
-			buffer.writeInt(_player.getAllyId());
-			buffer.writeInt(_player.getAllyCrestId());
+			
+			if (_player.isCursedWeaponEquipped())
+			{
+				buffer.writeShort(0);
+				buffer.writeInt(0);
+				buffer.writeInt(0);
+				buffer.writeInt(0);
+				buffer.writeInt(0);
+				buffer.writeByte(0);
+				buffer.writeInt(0);
+				buffer.writeInt(0);
+			}
+			else
+			{
+				buffer.writeShort(_player.getPledgeType());
+				buffer.writeInt(_player.getClanId());
+				buffer.writeInt(_player.getClanCrestLargeId());
+				buffer.writeInt(_player.getClanCrestId());
+				buffer.writeInt(_player.getClanPrivileges().getMask());
+				buffer.writeByte(_player.isClanLeader());
+				buffer.writeInt(_player.getAllyId());
+				buffer.writeInt(_player.getAllyCrestId());
+			}
 			buffer.writeByte(_player.isInMatchingRoom());
 		}
 		

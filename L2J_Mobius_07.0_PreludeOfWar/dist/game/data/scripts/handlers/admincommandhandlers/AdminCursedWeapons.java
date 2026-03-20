@@ -25,17 +25,29 @@ import java.util.StringTokenizer;
 
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
+import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.CursedWeapon;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
- * This class handles following admin commands: - cw_info = displays cursed weapon status - cw_remove = removes a cursed weapon from the world, item id or name must be provided - cw_add = adds a cursed weapon into the world, item id or name must be provided. Target will be the weilder - cw_goto =
- * teleports GM to the specified cursed weapon - cw_reload = reloads instance manager
- * @version $Revision: 1.1.6.3 $ $Date: 2007/07/31 10:06:06 $
+ * This class handles the following admin commands: <br>
+ * - cw_info = displays cursed weapon status <br>
+ * - cw_remove = removes a cursed weapon from the world (item id or name must be provided) <br>
+ * - cw_add = adds a cursed weapon into the world (item id or name must be provided; target will be the wielder) <br>
+ * - cw_goto = teleports GM to the specified cursed weapon <br>
+ * - cw_reload = reloads the cursed weapons manager <br>
+ * - cw_info_menu = opens the HTML control panel for cursed weapons <br>
+ * --- Control Panel Extensions --- <br>
+ * - cw_test_toggle = toggles test mode for cursed weapon defense <br>
+ * - cw_phase_1 = starts the normal event phase (18h–22h29) <br>
+ * - cw_phase_2 = starts the special event phase (22h30–23h58) <br>
+ * - cw_stop = stops the cursed weapon event <br>
+ * @version $Revision: 1.1.6.5 $ $Date: 2026/02/16 16:40:00 $
  */
 public class AdminCursedWeapons implements IAdminCommandHandler
 {
@@ -46,15 +58,90 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 		"admin_cw_goto",
 		"admin_cw_reload",
 		"admin_cw_add",
-		"admin_cw_info_menu"
+		"admin_cw_info_menu",
+		// Command Panel Control
+		"admin_cw_test_toggle",
+		"admin_cw_phase_1",
+		"admin_cw_phase_2",
+		"admin_cw_stop"
 	};
+	
+	private static int _activePhase = 0;
+	private static boolean _isTestMode = false;
 	
 	@Override
 	public boolean onCommand(String command, Player activeChar)
 	{
 		final CursedWeaponsManager cwm = CursedWeaponsManager.getInstance();
-		int id = 0;
+		if (command.startsWith("admin_cw_stop"))
+		{
+			cwm.endEventForced();
+			org.l2jmobius.gameserver.model.script.Quest defenseScript = org.l2jmobius.gameserver.managers.ScriptManager.getInstance().getScript("CursedWeaponDefense");
+			
+			if (_isTestMode && (defenseScript != null))
+			{
+				defenseScript.notifyEvent("admin_cmd_test_toggle", null, activeChar);
+			}
+			
+			_activePhase = 0;
+			_isTestMode = false;
+			
+			if (defenseScript != null)
+			{
+				defenseScript.notifyEvent("admin_cmd_stop", null, activeChar);
+			}
+			
+			activeChar.sendMessage("The event and NPCs have ended (23:00 Simulation)!");
+			onCommand("admin_cw_info menu", activeChar);
+			return true;
+		}
+		// Control Panel
+		if (command.startsWith("admin_cw_phase") || command.startsWith("admin_cw_test"))
+		{
+			Quest defenseScript = ScriptManager.getInstance().getScript("CursedWeaponDefense");
+			
+			if (defenseScript != null)
+			{
+				
+				if (command.startsWith("admin_cw_phase") && !_isTestMode)
+				{
+					activeChar.sendMessage("Error: You must enable 'Test Mode' before starting the phases!");
+					onCommand("admin_cw_info menu", activeChar);
+					return true;
+				}
+				
+				String eventName = command.replace("admin_cw_", "admin_cmd_");
+				defenseScript.notifyEvent(eventName, null, activeChar);
+				
+				if (command.contains("test_toggle"))
+				{
+					_isTestMode = !_isTestMode; // Turns Test Mode on or off (Toggle)
+					if (!_isTestMode)
+					{
+						_activePhase = 0; // If the GM disabled Test Mode, phases are immediately cleared
+					}
+				}
+				else if (command.contains("phase_1"))
+				{
+					_activePhase = 1; // Switches visually to Phase 1
+				}
+				else if (command.contains("phase_2"))
+				{
+					_activePhase = 2; // Switches visually to Phase 2
+				}
+				if (command.contains("test") || command.contains("phase"))
+				{
+					onCommand("admin_cw_info menu", activeChar);
+				}
+			}
+			else
+			{
+				activeChar.sendMessage("Defense Script 'CursedWeaponDefense' not loaded.");
+			}
+			return true;
+		}
 		
+		int id = 0;
 		final StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
 		
@@ -92,8 +179,58 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 			{
 				final Collection<CursedWeapon> cws = cwm.getCursedWeapons();
 				final StringBuilder replyMSG = new StringBuilder(cws.size() * 300);
-				final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
+				// final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
+				final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 25000);
 				adminReply.setFile(activeChar, "data/html/admin/cwinfo.htm");
+				
+				// --- Cursed Weapons Defense - Control Panel ---
+				if (cwm.isEventActive() && (_activePhase == 0))
+				{
+					java.util.Calendar now = java.util.Calendar.getInstance();
+					int h = now.get(java.util.Calendar.HOUR_OF_DAY);
+					int m = now.get(java.util.Calendar.MINUTE);
+					_activePhase = (((h == 22) && (m >= 30)) || (h == 23)) ? 2 : 1;
+				}
+				
+				// --- Dynamic Texts and Buttons System ---
+				String statusText = "OFF";
+				String btnP1 = "Normal 18h/22h29";
+				String btnP2 = "Special 22h30/23h58";
+				String btnTest = _isTestMode ? "[ON] Test Mode" : "Test Mode";
+				
+				if (_activePhase == 1)
+				{
+					statusText = "NORMAL (ON)";
+					btnP1 = "[ ON ] Normal 18h";
+				}
+				else if (_activePhase == 2)
+				{
+					statusText = "SPECIAL (ON)";
+					btnP2 = "[ ON ] Special 22h30";
+				}
+				else if ((_activePhase == 0) && _isTestMode)
+				{
+					statusText = "TEST MODE (ON)"; // Status when Test Mode is enabled without selecting a phase
+				}
+				
+				// --- Cursed Weapons Defense - Control Panel ---
+				StringBuilder controlPanel = new StringBuilder();
+				controlPanel.append("<center><table width=270 border=0 bgcolor=222222>");
+				controlPanel.append("<tr><td align=center>Control Panel - ").append(statusText).append("</td></tr>");
+				controlPanel.append("</table>");
+				controlPanel.append("<table width=270>");
+				controlPanel.append("<tr>");
+				
+				controlPanel.append("<td><button value=\"").append(btnTest).append("\" action=\"bypass -h admin_cw_test_toggle\" width=85 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+				controlPanel.append("<td><button value=\"Stop Event\" action=\"bypass -h admin_cw_stop\" width=75 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+				controlPanel.append("<td><button value=\"Help\" action=\"bypass -h admin_html help/cwinfo.htm\" width=75 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+				controlPanel.append("</tr></table>");
+				
+				controlPanel.append("<table width=270><tr>");
+				controlPanel.append("<td><button value=\"").append(btnP1).append("\" action=\"bypass -h admin_cw_phase_1\" width=125 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+				controlPanel.append("<td><button value=\"").append(btnP2).append("\" action=\"bypass -h admin_cw_phase_2\" width=125 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+				controlPanel.append("</tr></table>");
+				
 				for (CursedWeapon cw : cwm.getCursedWeapons())
 				{
 					final int itemId = cw.getItemId();
@@ -147,13 +284,15 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 					replyMSG.append("</table><br>");
 				}
 				
-				adminReply.replace("%cwinfo%", replyMSG.toString());
+				adminReply.replace("%cwinfo%", controlPanel.toString() + replyMSG.toString());
 				activeChar.sendPacket(adminReply);
 			}
 		}
 		else if (command.startsWith("admin_cw_reload"))
 		{
 			cwm.load();
+			// Reload admin HTML info
+			onCommand("admin_cw_info menu", activeChar);
 		}
 		else
 		{
@@ -194,6 +333,9 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 			if (command.startsWith("admin_cw_remove "))
 			{
 				cw.endOfLife();
+				cw.purgeGhostMapIcons();
+				// Reload admin HTML info
+				onCommand("admin_cw_info menu", activeChar);
 			}
 			else if (command.startsWith("admin_cw_goto "))
 			{
@@ -207,18 +349,26 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 				}
 				else
 				{
+					// 1. Determine the receiver of the weapon (target or the GM himself)
 					final WorldObject target = activeChar.getTarget();
-					if ((target != null) && target.isPlayer())
-					{
-						target.asPlayer().addItem(ItemProcessType.QUEST, id, 1, target, true);
-					}
-					else
-					{
-						activeChar.addItem(ItemProcessType.QUEST, id, 1, activeChar, true);
-					}
+					final Player targetPlayer = ((target != null) && target.isPlayer()) ? target.asPlayer() : activeChar;
 					
+					// 2. Apply temporary GM authorization
+					// This flag tells CursedWeapon.java: "Ignore the schedule, this is a GM command."
+					targetPlayer.getVariables().set("CW_GM_AUTH", true);
+					
+					// 3. Grant the weapon (core checks the variable and allows activation)
+					targetPlayer.addItem(ItemProcessType.QUEST, id, 1, activeChar, true);
+					
+					// 4. Reset weapon duration and reactivate (core reads the variable in reActivate())
 					cw.setEndTime(System.currentTimeMillis() + (cw.getDuration() * 60000));
 					cw.reActivate();
+					
+					// 5. Remove GM authorization immediately after reActivate (cleanup)
+					targetPlayer.getVariables().remove("CW_GM_AUTH");
+					
+					// Reload admin HTML info
+					onCommand("admin_cw_info menu", activeChar);
 				}
 			}
 			else

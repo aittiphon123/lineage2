@@ -5197,6 +5197,68 @@ public abstract class Creature extends WorldObject
 				amount = Math.min(amount, damageCap);
 			}
 		}
+		// Cursed Weapon Defense - Damage
+		if (isNpc())
+		{
+			final int npcId = getId();
+			
+			// Zariche Treasure Chests 24370 / Akamanah Treasure Chests 24371
+			if ((npcId == 24370) || (npcId == 24371))
+			{
+				if ((attacker != null) && attacker.isPlayer())
+				{
+					final Player pAttacker = attacker.asPlayer();
+					
+					// Internal player variable check, if he is the owner of the Cursed Sword
+					// This works regardless of XML
+					final int cwId = pAttacker.getCursedWeaponEquippedId();
+					boolean isRealHolder = ((cwId == 8190) || (cwId == 8689));
+					
+					if (isRealHolder)
+					{
+						// Cursed Sword holder: limit 200
+						amount = Math.min(amount, 200);
+					}
+					else
+					{
+						// Regular player: limit 20
+						amount = Math.min(amount, 20);
+					}
+				}
+				else
+				{
+					// Pets/Summons: limit 20
+					amount = Math.min(amount, 20);
+				}
+			}
+			// Priests of Purification: 24366/24369
+			else if ((npcId >= 24366) && (npcId <= 24369))
+			{
+				if ((attacker != null) && attacker.isPlayer())
+				{
+					final Player pAttacker = attacker.asPlayer();
+					
+					final int cwId = pAttacker.getCursedWeaponEquippedId();
+					boolean isRealHolder = ((cwId == 8190) || (cwId == 8689));
+					
+					if (isRealHolder)
+					{
+						// Cursed Sword holder: limit 1500
+						amount = Math.min(amount, 1500);
+					}
+					else
+					{
+						// Regular player: total block
+						return;
+					}
+				}
+				else
+				{
+					// Pets/Summons: total block
+					return;
+				}
+			}
+		}
 		
 		// Calculate PvP/PvE damage received. It is a post-attack stat.
 		if (attacker != null)

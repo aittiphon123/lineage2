@@ -145,7 +145,12 @@ public class CharInfo extends ServerPacket
 		
 		for (int slot : getPaperdollOrder())
 		{
-			buffer.writeInt(_player.getInventory().getPaperdollItemDisplayId(slot)); // Confirmed
+			int itemId = _player.getInventory().getPaperdollItemDisplayId(slot);
+			if ((slot == Inventory.PAPERDOLL_RHAND) && _player.isCursedWeaponEquipped())
+			{
+				itemId = _player.getCursedWeaponEquippedId();
+			}
+			buffer.writeInt(itemId);
 		}
 		
 		for (int slot : getPaperdollOrderAugument())
@@ -181,11 +186,24 @@ public class CharInfo extends ServerPacket
 		buffer.writeInt(_player.getVisualHair());
 		buffer.writeInt(_player.getVisualHairColor());
 		buffer.writeInt(_player.getVisualFace());
-		buffer.writeString(_gmSeeInvis ? "Invisible" : appearance.getVisibleTitle());
-		buffer.writeInt(appearance.getVisibleClanId());
-		buffer.writeInt(appearance.getVisibleClanCrestId());
-		buffer.writeInt(appearance.getVisibleAllyId());
-		buffer.writeInt(appearance.getVisibleAllyCrestId());
+		
+		if (_player.isCursedWeaponEquipped())
+		{
+			buffer.writeString(""); // Title
+			buffer.writeInt(0); // VisibleClanId
+			buffer.writeInt(0); // VisibleClanCrestId
+			buffer.writeInt(0); // VisibleAllyId
+			buffer.writeInt(0); // VisibleAllyCrestId
+		}
+		else
+		{
+			buffer.writeString(_gmSeeInvis ? "Invisible" : appearance.getVisibleTitle());
+			buffer.writeInt(appearance.getVisibleClanId());
+			buffer.writeInt(appearance.getVisibleClanCrestId());
+			buffer.writeInt(appearance.getVisibleAllyId());
+			buffer.writeInt(appearance.getVisibleAllyCrestId());
+		}
+		
 		buffer.writeByte(!_player.isSitting()); // Confirmed
 		buffer.writeByte(_player.isRunning()); // Confirmed
 		buffer.writeByte(_player.isInCombat()); // Confirmed
@@ -205,7 +223,14 @@ public class CharInfo extends ServerPacket
 		buffer.writeInt(0); // TODO: Find me!
 		buffer.writeByte(_player.isMounted() ? 0 : _enchantLevel); // Confirmed
 		buffer.writeByte(_player.getTeam().getId()); // Confirmed
-		buffer.writeInt(_player.getClanCrestLargeId());
+		if (_player.isCursedWeaponEquipped())
+		{
+			buffer.writeInt(0); // ClanCrestLargeId
+		}
+		else
+		{
+			buffer.writeInt(_player.getClanCrestLargeId());
+		}
 		buffer.writeByte(_player.getNobleLevel()); // Confirmed
 		buffer.writeByte(_player.isHero() || (_player.isGM() && GeneralConfig.GM_HERO_AURA) ? 2 : 0); // 152 - Value for enabled changed to 2?
 		
@@ -226,8 +251,16 @@ public class CharInfo extends ServerPacket
 		
 		buffer.writeInt(appearance.getNameColor()); // Confirmed
 		buffer.writeInt(_heading); // Confirmed
-		buffer.writeByte(_player.getPledgeClass());
-		buffer.writeShort(_player.getPledgeType());
+		if (_player.isCursedWeaponEquipped())
+		{
+			buffer.writeByte(0); // PledgeClass
+			buffer.writeShort(0); // PledgeType
+		}
+		else
+		{
+			buffer.writeByte(_player.getPledgeClass());
+			buffer.writeShort(_player.getPledgeType());
+		}
 		buffer.writeInt(appearance.getTitleColor()); // Confirmed
 		buffer.writeByte(_player.isCursedWeaponEquipped() ? CursedWeaponsManager.getInstance().getLevel(_player.getCursedWeaponEquippedId()) : 0);
 		buffer.writeInt(_clan != null ? _clan.getReputationScore() : 0);
@@ -260,7 +293,7 @@ public class CharInfo extends ServerPacket
 		buffer.writeInt(0);
 		
 		// Rank.
-		buffer.writeByte(RankManager.getInstance().getPlayerGlobalRank(_player) == 1 ? 1 : RankManager.getInstance().getPlayerRaceRank(_player) == 1 ? 2 : 0);
+		buffer.writeByte(_player.isCursedWeaponEquipped() ? 0 : RankManager.getInstance().getPlayerGlobalRank(_player) == 1 ? 1 : RankManager.getInstance().getPlayerRaceRank(_player) == 1 ? 2 : 0);
 	}
 	
 	@Override

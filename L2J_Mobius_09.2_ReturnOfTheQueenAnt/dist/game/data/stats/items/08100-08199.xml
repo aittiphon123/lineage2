@@ -2156,11 +2156,14 @@
 		<!-- Deadly and powerful magical sword made by the devil Bremnon himself. It is always thirsty for blood. -->
 		<set name="icon" val="icon.weapon_unique_zariche_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
 		<set name="weight" val="1840" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -2176,6 +2179,7 @@
 			<stat type="pAtkRange">40</stat>
 		</stats>
 		<skills>
+			<skill id="35404" level="1" /> <!-- Prison of Souls - Zariche -->
 			<skill id="3603" level="1" /> <!-- Demonic Sword Zariche -->
 		</skills>
 	</item>

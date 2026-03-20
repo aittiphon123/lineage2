@@ -74,12 +74,12 @@ public class ExTimedHuntingZoneEnter extends ClientPacket
 			player.sendMessage("You can only enter in time-limited hunting zones while not in combat.");
 			return;
 		}
-		
-		if (player.getReputation() < 0)
-		{
-			player.sendMessage("You can only enter in time-limited hunting zones when you have positive reputation.");
-			return;
-		}
+		// Cursed Sword Weapon - version Prelude of War 2019
+		// if (player.getReputation() < 0)
+		// {
+		// player.sendMessage("You can only enter in time-limited hunting zones when you have positive reputation.");
+		// return;
+		// }
 		
 		if (player.isInDuel())
 		{

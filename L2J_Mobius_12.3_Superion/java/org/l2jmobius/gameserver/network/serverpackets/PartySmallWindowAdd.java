@@ -47,7 +47,14 @@ public class PartySmallWindowAdd extends ServerPacket
 		buffer.writeInt(_party.getLeaderObjectId()); // c3
 		buffer.writeInt(_party.getDistributionType().getId()); // c3
 		buffer.writeInt(_member.getObjectId());
-		buffer.writeString(_member.getName());
+		if (_member.isCursedWeaponEquipped() && (org.l2jmobius.gameserver.managers.CursedWeaponsManager.getInstance().getCursedWeapon(_member.getCursedWeaponEquippedId()) != null))
+		{
+			buffer.writeString(org.l2jmobius.gameserver.managers.CursedWeaponsManager.getInstance().getCursedWeapon(_member.getCursedWeaponEquippedId()).getName());
+		}
+		else
+		{
+			buffer.writeString(_member.getName());
+		}
 		buffer.writeInt((int) _member.getCurrentCp()); // c4
 		buffer.writeInt(_member.getMaxCp()); // c4
 		buffer.writeInt((int) _member.getCurrentHp());

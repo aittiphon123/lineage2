@@ -90,12 +90,17 @@
 	<admin command="give_item_to_all" description="Give item to all online players." accessLevel="100" confirmDlg="true" />
 
 	<!-- ADMIN CURSED WEAPONS -->
-	<admin command="cw_add" description="Add Cursed Weapon to player." accessLevel="100" confirmDlg="true" />
-	<admin command="cw_remove" description="Remove Cursed Weapon from player." accessLevel="100" />
-	<admin command="cw_goto" description="Go to Cursed Weapon." accessLevel="100" />
-	<admin command="cw_info" description="Cursed weapons info." accessLevel="100" />
-	<admin command="cw_info_menu" description="Open Cursed Weapons info menu." accessLevel="100" />
-	<admin command="cw_reload" description="Reload Cursed weapons." accessLevel="100" />
+	<admin command="cw_add" description="Apply the weapon to the target." accessLevel="100" confirmDlg="true" />
+	<admin command="cw_remove" description="Remove the weapon from the player/world." accessLevel="100" />
+	<admin command="cw_goto" description="Teleport to the cursed weapon." accessLevel="100" />
+	<admin command="cw_info" description="Show status in the chat window." accessLevel="100" />
+ 	<admin command="cw_info_menu" description="Open the main panel." accessLevel="100" />
+	<admin command="cw_reload" description="Reload weapon configs." accessLevel="100" />
+
+	<admin command="cw_test_toggle" accessLevel="100" description="Enable/Disable Test Mode." />
+	<admin command="cw_phase_1" accessLevel="100" description="Force Phase 1 - 18:00 (Normal/Coward)." />
+	<admin command="cw_phase_2" accessLevel="100" description="Force Phase 2 - 22:30 (Special/Attack)." />
+	<admin command="cw_stop" accessLevel="100" description="Stop the event, removing cursed swords from players and petrifying NPCs to switch event mode off." />
 
 	<!-- ADMIN DEBUG -->
 	<admin command="debug" description="Open debug menu." accessLevel="100" />

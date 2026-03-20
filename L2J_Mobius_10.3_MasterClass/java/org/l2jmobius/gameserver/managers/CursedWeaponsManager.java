@@ -1,19 +1,24 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
 package org.l2jmobius.gameserver.managers;
 
 import java.io.File;
@@ -22,10 +27,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,9 +42,11 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.model.CursedWeapon;
+import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -46,22 +56,184 @@ import org.l2jmobius.gameserver.model.actor.instance.FortCommander;
 import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.actor.instance.Guard;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.SystemMessageId;
+import org.l2jmobius.gameserver.network.serverpackets.ExActivatedCursedTreasureBoxLocation;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.util.Broadcast;
 
 /**
- * @author Micht
+ * CursedWeaponsManager AI - Version Prelude of War 2019
+ * @author Micht, Notorion
  */
 public class CursedWeaponsManager implements IXmlReader
 {
 	private static final Logger LOGGER = Logger.getLogger(CursedWeaponsManager.class.getName());
-	
 	private final Map<Integer, CursedWeapon> _cursedWeapons = new HashMap<>();
+	
+	// NPCs
+	public static final int ZARICHE_BOX_NPC_ID = 24370;
+	public static final int AKAMANAH_BOX_NPC_ID = 24371;
+	
+	public static final int ZARICHE_WEAPON_ID = 1;
+	public static final int AKAMANAH_WEAPON_ID = 2;
+	
+	private final List<Location> _zaricheBoxLocs = new CopyOnWriteArrayList<>();
+	private final List<Location> _akamanahBoxLocs = new CopyOnWriteArrayList<>();
+	
+	// Time Lock
+	private boolean _isEventActive = false;
 	
 	protected CursedWeaponsManager()
 	{
 		load();
+		// Checks the time every 1 minute (60000ms)
+		ThreadPool.scheduleAtFixedRate(this::checkEventStatus, 1000, 60000);
+	}
+	
+	public boolean isEventActive()
+	{
+		return _isEventActive;
+	}
+	
+	public void checkEventStatus()
+	{
+		Calendar now = Calendar.getInstance();
+		int day = now.get(Calendar.DAY_OF_WEEK);
+		int hour = now.get(Calendar.HOUR_OF_DAY);
+		int minute = now.get(Calendar.MINUTE);
+		
+		// 1. Week day verification: Monday and Thursday
+		if ((day != Calendar.MONDAY) && (day != Calendar.THURSDAY))
+		{
+			if (_isEventActive)
+			{
+				endAllWeapons();
+				_isEventActive = false;
+				clearEventVisuals();
+			}
+			return;
+		}
+		// 2. Event time
+		if ((hour >= 18) && (hour < 23))
+		{
+			if (!_isEventActive)
+			{
+				_isEventActive = true;
+				LOGGER.info("Cursed Weapons Defense Event Started.");
+			}
+		}
+		// 3. Deactivate and clean outside 18h/23h schedule
+		else
+		{
+			if (_isEventActive)
+			{
+				endAllWeapons();
+				_isEventActive = false;
+				clearEventVisuals();
+				LOGGER.info("Cursed Weapons Event Ended (Time Schedule).");
+			}
+			// Emergency redundancy (23:01)
+			else if ((hour == 23) && (minute == 1))
+			{
+				endAllWeapons();
+				clearEventVisuals();
+			}
+		}
+	}
+	
+	// Clean ico sword cursed and ico treasure chests
+	public void clearEventVisuals()
+	{
+		java.util.List<org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo> splitList = new java.util.ArrayList<>();
+		org.l2jmobius.gameserver.model.Location locZ = new org.l2jmobius.gameserver.model.Location(100000, 100000, 0);
+		org.l2jmobius.gameserver.model.Location locA = new org.l2jmobius.gameserver.model.Location(-100000, -100000, 0);
+		splitList.add(new org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo(locZ, 8190, 1, 0L));
+		splitList.add(new org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo(locA, 8689, 1, 0L));
+		broadcastToWorldExceptConquest(new org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation(splitList));
+		
+		_zaricheBoxLocs.clear();
+		_akamanahBoxLocs.clear();
+		broadcastToWorldExceptConquest(new org.l2jmobius.gameserver.network.serverpackets.ExActivatedCursedTreasureBoxLocation(8190, _zaricheBoxLocs));
+		broadcastToWorldExceptConquest(new org.l2jmobius.gameserver.network.serverpackets.ExActivatedCursedTreasureBoxLocation(8689, _akamanahBoxLocs));
+		broadcastToWorldExceptConquest(new org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation(java.util.Collections.emptyList()));
+	}
+	
+	private void endAllWeapons()
+	{
+		for (CursedWeapon cw : _cursedWeapons.values())
+		{
+			// End active Sword Weapons so they don't remain in the world
+			if (cw.isActive())
+			{
+				cw.endOfLife();
+			}
+		}
+	}
+	
+	/**
+	 * Adds the location of a Treasure Chest and notifies all players.
+	 * @param npcId The NPC ID of the Box (24370 or 24371)
+	 * @param loc The location X, Y, Z
+	 */
+	public void addBoxLocation(int npcId, Location loc)
+	{
+		if (!_isEventActive)
+		{
+			return;
+		}
+		// Zariche Treasure Chests (24370)
+		if (npcId == ZARICHE_BOX_NPC_ID)
+		{
+			if (!_zaricheBoxLocs.contains(loc))
+			{
+				_zaricheBoxLocs.add(loc);
+				broadcastToWorldExceptConquest(new ExActivatedCursedTreasureBoxLocation(npcId, _zaricheBoxLocs));
+			}
+		}
+		// Akamanah Treasure Chests (24371)
+		else if (npcId == AKAMANAH_BOX_NPC_ID)
+		{
+			if (!_akamanahBoxLocs.contains(loc))
+			{
+				_akamanahBoxLocs.add(loc);
+				broadcastToWorldExceptConquest(new ExActivatedCursedTreasureBoxLocation(npcId, _akamanahBoxLocs));
+			}
+		}
+	}
+	
+	public void removeBoxLocation(int npcId, Location loc)
+	{
+		// Zariche Treasure Chests (24370)
+		if (npcId == ZARICHE_BOX_NPC_ID)
+		{
+			_zaricheBoxLocs.remove(loc);
+			broadcastToWorldExceptConquest(new ExActivatedCursedTreasureBoxLocation(npcId, _zaricheBoxLocs));
+		}
+		// Akamanah Treasure Chests (24371)
+		else if (npcId == AKAMANAH_BOX_NPC_ID)
+		{
+			_akamanahBoxLocs.remove(loc);
+			broadcastToWorldExceptConquest(new ExActivatedCursedTreasureBoxLocation(npcId, _akamanahBoxLocs));
+		}
+	}
+	
+	public List<Location> getZaricheBoxLocs()
+	{
+		if (!_isEventActive)
+		{
+			return java.util.Collections.emptyList();
+		}
+		return _zaricheBoxLocs;
+	}
+	
+	public List<Location> getAkamanahBoxLocs()
+	{
+		if (!_isEventActive)
+		{
+			return java.util.Collections.emptyList();
+		}
+		return _akamanahBoxLocs;
 	}
 	
 	@Override
@@ -71,11 +243,19 @@ public class CursedWeaponsManager implements IXmlReader
 		{
 			return;
 		}
-		
 		parseDatapackFile("data/CursedWeapons.xml");
 		restore();
 		controlPlayers();
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _cursedWeapons.size() + " cursed weapons.");
+		// LOGGER.info(getClass().getSimpleName() + ": Loaded " + _cursedWeapons.size() + " cursed weapons.");
+	}
+	
+	public void increaseKills(int itemId, Player victim)
+	{
+		final CursedWeapon cw = _cursedWeapons.get(itemId);
+		if (cw != null)
+		{
+			cw.increaseKills(victim);
+		}
 	}
 	
 	@Override
@@ -97,6 +277,7 @@ public class CursedWeaponsManager implements IXmlReader
 						int val;
 						for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
 						{
+							// No longer by chance rate, during the event it is 100% configured in cursedweapon.java
 							if ("dropRate".equalsIgnoreCase(cd.getNodeName()))
 							{
 								attrs = cd.getAttributes();
@@ -128,8 +309,6 @@ public class CursedWeaponsManager implements IXmlReader
 								cw.setStageKills(val);
 							}
 						}
-						
-						// Store cursed weapon
 						_cursedWeapons.put(id, cw);
 					}
 				}
@@ -143,6 +322,7 @@ public class CursedWeaponsManager implements IXmlReader
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT itemId, charId, playerReputation, playerPkKills, nbKills, endTime FROM cursed_weapons"))
 		{
+			// LOGGER.info("[CW-DEBUG] private void restore in manage");
 			// Restore data for each cursed weapon from the database.
 			CursedWeapon cw;
 			while (rs.next())
@@ -167,14 +347,13 @@ public class CursedWeaponsManager implements IXmlReader
 		try (Connection con = DatabaseFactory.getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT owner_id FROM items WHERE item_id=?"))
 		{
+			// Remove the weapon from those who shouldn't have it
 			for (CursedWeapon cw : _cursedWeapons.values())
 			{
 				if (cw.isActivated())
 				{
-					continue; // Skip activated cursed weapons.
+					continue;
 				}
-				
-				// Verify if the cursed weapon is held by a player.
 				final int itemId = cw.getItemId();
 				ps.setInt(1, itemId);
 				try (ResultSet rset = ps.executeQuery())
@@ -183,33 +362,41 @@ public class CursedWeaponsManager implements IXmlReader
 					{
 						final int playerId = rset.getInt("owner_id");
 						LOGGER.info("PROBLEM : Player " + playerId + " owns the cursed weapon " + itemId + " but he shouldn't.");
-						
-						// Delete the item from the player's inventory.
+						// Deletes the item from inventory
 						try (PreparedStatement delete = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?"))
 						{
 							delete.setInt(1, playerId);
 							delete.setInt(2, itemId);
-							if (delete.executeUpdate() != 1)
-							{
-								LOGGER.warning("Error while deleting cursed weapon " + itemId + " from userId " + playerId);
-							}
+							delete.executeUpdate();
 						}
-						
-						// Restore the player's old karma and PK count.
+						catch (Exception e)
+						{
+							LOGGER.warning("Error while deleting cursed weapon " + itemId + " from userId " + playerId);
+						}
+						// Restore Karma and PK
 						try (PreparedStatement update = con.prepareStatement("UPDATE characters SET reputation=?, pkkills=? WHERE charId=?"))
 						{
 							update.setInt(1, cw.getPlayerReputation());
 							update.setInt(2, cw.getPlayerPkKills());
 							update.setInt(3, playerId);
-							if (update.executeUpdate() != 1)
-							{
-								LOGGER.warning("Error while updating karma & pkkills for userId " + cw.getPlayerId());
-							}
+							update.executeUpdate();
 						}
-						
-						// Clean up the cursed weapons table.
+						// Remove skills from this specific player (in case the weapon still existed)
+						try (PreparedStatement delSkills = con.prepareStatement("DELETE FROM character_skills WHERE charId=? AND skill_id IN (35398, 35400, 35399, 35401)"))
+						{
+							delSkills.setInt(1, playerId);
+							delSkills.executeUpdate();
+						}
 						removeFromDb(itemId);
 					}
+				}
+			}
+			try (PreparedStatement psClean = con.prepareStatement("DELETE FROM character_skills WHERE skill_id IN (35398, 35399, 35400, 35401) " + "AND charId NOT IN (SELECT owner_id FROM items WHERE item_id IN (8190, 8689))"))
+			{
+				int cleaned = psClean.executeUpdate();
+				if (cleaned > 0)
+				{
+					// LOGGER.info("CursedWeaponsManager: Cleaned orphaned skills from " + cleaned + " players.");
 				}
 			}
 		}
@@ -221,18 +408,80 @@ public class CursedWeaponsManager implements IXmlReader
 	
 	public synchronized void checkDrop(Attackable attackable, Player player)
 	{
+		// Original block list
 		if ((attackable instanceof Defender) || (attackable instanceof Guard) || (attackable instanceof GrandBoss) || (attackable instanceof FeedableBeast) || (attackable instanceof FortCommander))
 		{
 			return;
 		}
-		
-		for (CursedWeapon cw : _cursedWeapons.values())
+		// Block after 23h
+		java.util.Calendar now = java.util.Calendar.getInstance();
+		int h = now.get(java.util.Calendar.HOUR_OF_DAY);
+		int m = now.get(java.util.Calendar.MINUTE);
+		int s = now.get(java.util.Calendar.SECOND);
+		// Logic for absolute block for possession of cursed swords
+		// 1. (h >= 23) -> Blocks 23:00, 23:01, 00:00...
+		// 2. (h < 18) -> Blocks morning/afternoon
+		// 3. (h == 22 && m == 59) -> Blocks entire 22:59
+		// 4. (h == 22 && m == 58 && s >= 50) -> Blocks the final 10s
+		if ((h >= 23) || (h < 18) || ((h == 22) && ((m == 59) || ((m == 58) && (s >= 50)))))
+		{
+			return; // Cancels drop
+		}
+		// 1. Time Lock (Controlled by checkEventStatus)
+		if (!_isEventActive)
+		{
+			return;
+		}
+		// 3. Blocks and rules (Level, Instance, Zone)
+		if (attackable.getLevel() < 95)
+		{
+			return;
+		}
+		if (attackable.getInstanceId() > 0)
+		{
+			return;
+		}
+		// 4. Drop block in Conquest
+		for (ZoneType zone : ZoneManager.getInstance().getZones(attackable.getX(), attackable.getY(), attackable.getZ()))
+		{
+			if ((zone.getName() != null) && zone.getName().equalsIgnoreCase("Conquest"))
+			{
+				return; // In Conquest area: Does not drop.
+			}
+		}
+		// 3. Random drop between Cursed Swords
+		java.util.List<CursedWeapon> shuffledWeapons = new java.util.ArrayList<>(_cursedWeapons.values());
+		java.util.Collections.shuffle(shuffledWeapons);
+		// Current region of the monster
+		int currentRegionId = org.l2jmobius.gameserver.managers.MapRegionManager.getInstance().getMapRegionLocId(attackable.getX(), attackable.getY());
+		for (CursedWeapon cw : shuffledWeapons)
 		{
 			if (cw.isActive())
 			{
 				continue;
 			}
-			
+			// Region block
+			boolean regionOccupied = false;
+			for (CursedWeapon activeCw : _cursedWeapons.values())
+			{
+				// Checks active Cursed Swords
+				if (activeCw.isActive() && (activeCw.getWorldPosition() != null))
+				{
+					// Region of the active Sword
+					int activeRegionId = org.l2jmobius.gameserver.managers.MapRegionManager.getInstance().getMapRegionLocId(activeCw.getWorldPosition().getX(), activeCw.getWorldPosition().getY());
+					// If the region is the same, prohibits the drop
+					if (currentRegionId == activeRegionId)
+					{
+						regionOccupied = true;
+						break;
+					}
+				}
+			}
+			if (regionOccupied)
+			{
+				continue; // Region occupied, tries the next sword
+			}
+			// If the region is free, tries the real drop (Chance %)
 			if (cw.checkDrop(attackable, player))
 			{
 				break;
@@ -243,23 +492,18 @@ public class CursedWeaponsManager implements IXmlReader
 	public void activate(Player player, Item item)
 	{
 		final CursedWeapon cw = _cursedWeapons.get(item.getId());
-		
-		if (player.isCursedWeaponEquipped()) // Cannot own two cursed swords.
+		if (player.isCursedWeaponEquipped())
 		{
 			final CursedWeapon cw2 = _cursedWeapons.get(player.getCursedWeaponEquippedId());
-			
-			// Temporary fix to adjust the bonus level for the existing cursed weapon.
 			// Update the kill count based on the stage kills.
 			cw2.setNbKills(cw2.getStageKills() - 1);
 			cw2.increaseKills();
-			
-			// Erase the newly obtained cursed weapon.
 			cw.setPlayer(player); // Necessary to identify the inventory location.
 			cw.endOfLife(); // Expire the weapon and clean up.
 		}
 		else
 		{
-			cw.activate(player, item); // Activate the cursed weapon for the player.
+			cw.activate(player, item);
 		}
 	}
 	
@@ -293,6 +537,35 @@ public class CursedWeaponsManager implements IXmlReader
 			return;
 		}
 		
+		if (player.isInsideZone(org.l2jmobius.gameserver.model.zone.ZoneId.CONQUEST))
+		{
+			clearSinglePlayerScreen(player);
+		}
+		
+		if (!_isEventActive)
+		{
+			// Check if player has a registered cursed sword and clear without drop
+			for (CursedWeapon cw : _cursedWeapons.values())
+			{
+				if (cw.isActivated() && (player.getObjectId() == cw.getPlayerId()))
+				{
+					// Bind player so forceClearWithoutDrop() works properly
+					cw.setPlayer(player);
+					cw.setItem(player.getInventory().getItemByItemId(cw.getItemId()));
+					// Direct cleanup: no drop, no endOfLife(), no risk of re-drop
+					cw.forceClearWithoutDrop();
+					
+					clearEventVisuals();
+					return;
+				}
+			}
+			
+			// No sword: clear only visual packets
+			clearSinglePlayerScreen(player);
+			return;
+		}
+		
+		// Event ACTIVE: logic
 		for (CursedWeapon cw : _cursedWeapons.values())
 		{
 			if (cw.isActivated() && (player.getObjectId() == cw.getPlayerId()))
@@ -301,10 +574,8 @@ public class CursedWeaponsManager implements IXmlReader
 				cw.setItem(player.getInventory().getItemByItemId(cw.getItemId()));
 				cw.giveSkill();
 				player.setCursedWeaponEquippedId(cw.getItemId());
-				
 				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_S_REMAINING_TIME_S2_MIN_TYPE_CURSEDSWORD_TO_CHECK_OTHER_INFORMATION);
 				sm.addString(cw.getName());
-				// sm.addItemName(cw.getItemId());
 				sm.addInt((int) ((cw.getEndTime() - System.currentTimeMillis()) / 60000));
 				player.sendPacket(sm);
 			}
@@ -320,7 +591,6 @@ public class CursedWeaponsManager implements IXmlReader
 				return cw.getItemId();
 			}
 		}
-		
 		return -1;
 	}
 	
@@ -329,6 +599,7 @@ public class CursedWeaponsManager implements IXmlReader
 		try (Connection con = DatabaseFactory.getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM cursed_weapons WHERE itemId = ?"))
 		{
+			// LOGGER.info("[CW-DEBUG] public static void removeFromDb ");
 			ps.setInt(1, itemId);
 			ps.executeUpdate();
 		}
@@ -342,6 +613,7 @@ public class CursedWeaponsManager implements IXmlReader
 	{
 		for (CursedWeapon cw : _cursedWeapons.values())
 		{
+			// LOGGER.info("[CW-DEBUG] savedata manage");
 			cw.saveData();
 		}
 	}
@@ -385,5 +657,52 @@ public class CursedWeaponsManager implements IXmlReader
 	private static class SingletonHolder
 	{
 		protected static final CursedWeaponsManager INSTANCE = new CursedWeaponsManager();
+	}
+	
+	public void broadcastToWorldExceptConquest(org.l2jmobius.gameserver.network.serverpackets.ServerPacket packet)
+	{
+		for (org.l2jmobius.gameserver.model.actor.Player player : org.l2jmobius.gameserver.model.World.getInstance().getPlayers())
+		{
+			if ((player != null) && player.isOnline())
+			{
+				if (player.isInsideZone(org.l2jmobius.gameserver.model.zone.ZoneId.CONQUEST))
+				{
+					clearSinglePlayerScreen(player);
+				}
+				else
+				{
+					player.sendPacket(packet);
+				}
+			}
+		}
+	}
+	
+	public void endEventForced()
+	{
+		endAllWeapons();
+		_isEventActive = false;
+		clearEventVisuals();
+	}
+	
+	public void clearSinglePlayerScreen(org.l2jmobius.gameserver.model.actor.Player player)
+	{
+		if (player == null)
+		{
+			return;
+		}
+		
+		java.util.Set<Integer> emptyActiveList = new java.util.HashSet<>();
+		player.sendPacket(new org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponList(emptyActiveList));
+		
+		java.util.List<org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo> splitList = new java.util.ArrayList<>();
+		org.l2jmobius.gameserver.model.Location locZ = new org.l2jmobius.gameserver.model.Location(100000, 100000, 0);
+		org.l2jmobius.gameserver.model.Location locA = new org.l2jmobius.gameserver.model.Location(-100000, -100000, 0);
+		splitList.add(new org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo(locZ, 8190, 1, 0L));
+		splitList.add(new org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo(locA, 8689, 1, 0L));
+		player.sendPacket(new org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation(splitList));
+		
+		player.sendPacket(new org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponLocation(java.util.Collections.emptyList()));
+		player.sendPacket(new org.l2jmobius.gameserver.network.serverpackets.ExActivatedCursedTreasureBoxLocation(8190, java.util.Collections.emptyList()));
+		player.sendPacket(new org.l2jmobius.gameserver.network.serverpackets.ExActivatedCursedTreasureBoxLocation(8689, java.util.Collections.emptyList()));
 	}
 }

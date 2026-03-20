@@ -842,16 +842,26 @@
 		<node X="171514" Y="55200" />
 		<node X="171529" Y="55675" />
 	</zone>
-	<zone name="spores_spawn_peace" type="PeaceZone" shape="NPoly" minZ="-3872" maxZ="-3218"> <!-- Sea of Spores -->
-		<node X="63817" Y="26299" />
-		<node X="63930" Y="26390" />
-		<node X="64225" Y="26286" />
-		<node X="64276" Y="25985" />
-		<node X="64233" Y="25717" />
-		<node X="63946" Y="25725" />
-		<node X="63979" Y="25945" />
-		<node X="63966" Y="26003" />
-		<node X="63797" Y="26213" />
+	<zone name="sea_of_spores_spawn_peace" type="PeaceZone" shape="NPoly" minZ="-3872" maxZ="-3218"> <!-- Sea of Spores -->
+		<node X="64203" Y="26281" />
+		<node X="64263" Y="25958" />
+		<node X="64232" Y="25738" />
+		<node X="64068" Y="25734" />
+		<node X="63950" Y="25755" />
+		<node X="63908" Y="25622" />
+		<node X="63692" Y="25460" />
+		<node X="63632" Y="25443" />
+		<node X="63370" Y="25481" />
+		<node X="63315" Y="25508" />
+		<node X="63123" Y="25777" />
+		<node X="63175" Y="26050" />
+		<node X="63424" Y="26268" />
+		<node X="63488" Y="26279" />
+		<node X="63748" Y="26242" />
+		<node X="63817" Y="26294" />
+		<node X="63938" Y="26384" />
+		<node X="64054" Y="26356" />
+		<node X="64130" Y="26341" />
 	</zone>
 	<zone name="mahum_spawn_peace" type="PeaceZone" shape="NPoly" minZ="-3932" maxZ="-3333"> <!-- Sel Mahum Training Grounds -->
 		<node X="88426" Y="60461" />

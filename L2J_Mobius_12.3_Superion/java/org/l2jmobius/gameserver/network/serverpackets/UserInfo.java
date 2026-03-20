@@ -93,8 +93,16 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			_enchantLevel = _inventory.getWeaponEnchant();
 			_armorEnchant = _inventory.getArmorSetEnchant();
 			_afkAnimation = ((player.getClan() != null) && (CastleManager.getInstance().getCastleByOwner(player.getClan()) != null)) ? (player.isClanLeader() ? 100 : 101) : 0;
-			_rank = RankManager.getInstance().getPlayerGlobalRank(_player) == 1 ? 1 : RankManager.getInstance().getPlayerRaceRank(_player) == 1 ? 2 : RankManager.getInstance().getPlayerClassRank(_player) == 1 ? 4 : 0;
-			_title = player.getTitle();
+			_rank = _player.isCursedWeaponEquipped() ? 0 : (RankManager.getInstance().getPlayerGlobalRank(_player) == 1 ? 1 : RankManager.getInstance().getPlayerRaceRank(_player) == 1 ? 2 : RankManager.getInstance().getPlayerClassRank(_player) == 1 ? 4 : 0);
+			
+			if (_player.isCursedWeaponEquipped())
+			{
+				_title = "";
+			}
+			else
+			{
+				_title = player.getTitle();
+			}
 			
 			if (player.isGM() && player.isInvisible())
 			{
@@ -338,14 +346,29 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		{
 			buffer.writeShort(32 + (_title.length() * 2));
 			buffer.writeSizedString(_title);
-			buffer.writeShort(_player.getPledgeType());
-			buffer.writeInt(_player.getClanId());
-			buffer.writeInt(_player.getClanCrestLargeId());
-			buffer.writeInt(_player.getClanCrestId());
-			buffer.writeInt(_player.getClanPrivileges().getMask());
-			buffer.writeByte(_player.isClanLeader());
-			buffer.writeInt(_player.getAllyId());
-			buffer.writeInt(_player.getAllyCrestId());
+			// Remove Crest from the player carrying the Cursed Sword
+			if (_player.isCursedWeaponEquipped())
+			{
+				buffer.writeShort(0); // PledgeType
+				buffer.writeInt(0); // ClanId
+				buffer.writeInt(0); // ClanCrestLargeId
+				buffer.writeInt(0); // ClanCrestId
+				buffer.writeInt(0); // ClanPrivileges
+				buffer.writeByte(0); // isClanLeader
+				buffer.writeInt(0); // AllyId
+				buffer.writeInt(0); // AllyCrestId
+			}
+			else
+			{
+				buffer.writeShort(_player.getPledgeType());
+				buffer.writeInt(_player.getClanId());
+				buffer.writeInt(_player.getClanCrestLargeId());
+				buffer.writeInt(_player.getClanCrestId());
+				buffer.writeInt(_player.getClanPrivileges().getMask());
+				buffer.writeByte(_player.isClanLeader());
+				buffer.writeInt(_player.getAllyId());
+				buffer.writeInt(_player.getAllyCrestId());
+			}
 			buffer.writeByte(_player.isInMatchingRoom());
 		}
 		

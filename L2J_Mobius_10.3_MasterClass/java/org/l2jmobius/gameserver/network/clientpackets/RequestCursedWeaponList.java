@@ -16,6 +16,7 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
+import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.serverpackets.ExCursedWeaponList;
 
@@ -38,7 +39,11 @@ public class RequestCursedWeaponList extends ClientPacket
 		{
 			return;
 		}
-		
+		if (player.isInsideZone(org.l2jmobius.gameserver.model.zone.ZoneId.CONQUEST))
+		{
+			CursedWeaponsManager.getInstance().clearSinglePlayerScreen(player);
+			return;
+		}
 		player.sendPacket(new ExCursedWeaponList());
 	}
 }

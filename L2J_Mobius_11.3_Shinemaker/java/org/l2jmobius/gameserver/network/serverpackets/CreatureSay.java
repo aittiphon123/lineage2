@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.managers.MentorManager;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -36,7 +37,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 
 /**
- * @author Mobius
+ * @author Mobius, Notorion
  */
 public class CreatureSay extends ServerPacket
 {
@@ -52,9 +53,18 @@ public class CreatureSay extends ServerPacket
 	public CreatureSay(Player sender, Player receiver, String name, ChatType chatType, String text)
 	{
 		_sender = sender;
-		_senderName = name;
 		_chatType = chatType;
 		_text = text;
+		
+		if (sender.isCursedWeaponEquipped() && (chatType != ChatType.WHISPER))
+		{
+			_senderName = CursedWeaponsManager.getInstance().getCursedWeapon(sender.getCursedWeaponEquippedId()).getName();
+		}
+		else
+		{
+			_senderName = name;
+		}
+		
 		if (receiver != null)
 		{
 			if (receiver.getFriendList().contains(sender.getObjectId()))
@@ -89,8 +99,15 @@ public class CreatureSay extends ServerPacket
 	{
 		_sender = sender;
 		_chatType = chatType;
-		_senderName = senderName;
 		_text = text;
+		if ((sender != null) && sender.isPlayer() && sender.asPlayer().isCursedWeaponEquipped() && (chatType != ChatType.WHISPER))
+		{
+			_senderName = CursedWeaponsManager.getInstance().getCursedWeapon(sender.asPlayer().getCursedWeaponEquippedId()).getName();
+		}
+		else
+		{
+			_senderName = senderName;
+		}
 	}
 	
 	public CreatureSay(Creature sender, ChatType chatType, NpcStringId npcStringId)
@@ -131,6 +148,7 @@ public class CreatureSay extends ServerPacket
 	{
 		ServerPackets.SAY2.writeId(this, buffer);
 		buffer.writeInt(_sender == null ? 0 : _sender.getObjectId());
+		
 		buffer.writeInt(_chatType.getClientId());
 		if (_senderName != null)
 		{

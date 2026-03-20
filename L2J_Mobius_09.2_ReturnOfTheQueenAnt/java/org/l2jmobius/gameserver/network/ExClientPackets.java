@@ -552,7 +552,7 @@ public enum ExClientPackets
 	EX_ACTIVATE_AUTO_SHORTCUT(0x171, ExRequestActivateAutoShortcut::new, ConnectionState.IN_GAME),
 	EX_PREMIUM_MANAGER_LINK_HTML(0x172, null, ConnectionState.IN_GAME),
 	EX_PREMIUM_MANAGER_PASS_CMD_TO_SERVER(0x173, null, ConnectionState.IN_GAME),
-	EX_ACTIVATED_CURSED_TREASURE_BOX_LOCATION(0x174, null, ConnectionState.IN_GAME),
+	EX_ACTIVATED_CURSED_TREASURE_BOX_LOCATION(0x174, RequestExActivatedCursedTreasureBoxLocation::new, ConnectionState.IN_GAME),
 	EX_PAYBACK_LIST(0x175, null, ConnectionState.IN_GAME),
 	EX_PAYBACK_GIVE_REWARD(0x176, null, ConnectionState.IN_GAME),
 	EX_AUTOPLAY_SETTING(0x177, ExAutoPlaySetting::new, ConnectionState.IN_GAME),

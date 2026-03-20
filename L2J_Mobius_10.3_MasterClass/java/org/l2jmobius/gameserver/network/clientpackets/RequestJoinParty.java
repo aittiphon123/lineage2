@@ -211,11 +211,12 @@ public class RequestJoinParty extends ClientPacket
 			return;
 		}
 		
-		if (target.isCursedWeaponEquipped() || requestor.isCursedWeaponEquipped())
-		{
-			requestor.sendPacket(SystemMessageId.INVALID_TARGET);
-			return;
-		}
+		// removed in version Prelude of War - 02 August 2019
+		// if (target.isCursedWeaponEquipped() || requestor.isCursedWeaponEquipped())
+		// {
+		// requestor.sendPacket(SystemMessageId.INVALID_TARGET);
+		// return;
+		// }
 		
 		if (target.isJailed() || requestor.isJailed())
 		{
