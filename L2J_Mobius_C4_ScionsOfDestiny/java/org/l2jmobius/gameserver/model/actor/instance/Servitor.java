@@ -121,8 +121,17 @@ public class Servitor extends Summon implements Runnable
 	
 	public void setItemConsumeInterval(int interval)
 	{
-		_consumeItemInterval = interval;
-		_consumeItemIntervalRemaining = interval;
+		// Custom Fix: Force the interval to exactly 1/4th of the total lifetime.
+		// For a 60-min summon, it ticks every 15 mins. For a 20-min summon, every 5 mins.
+		if (_lifeTime > 0)
+		{
+			_consumeItemInterval = _lifeTime / 4;
+		}
+		else
+		{
+			_consumeItemInterval = interval; // Fallback just in case
+		}
+		_consumeItemIntervalRemaining = _consumeItemInterval;
 	}
 	
 	public int getItemConsumeInterval()
