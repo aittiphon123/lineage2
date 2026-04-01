@@ -43,6 +43,8 @@ import org.l2jmobius.gameserver.config.NpcConfig;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.data.enums.EvolveLevel;
+import org.l2jmobius.gameserver.data.holders.PetData;
+import org.l2jmobius.gameserver.data.holders.PetLevelData;
 import org.l2jmobius.gameserver.data.sql.CharSummonTable;
 import org.l2jmobius.gameserver.data.sql.SummonEffectTable;
 import org.l2jmobius.gameserver.data.sql.SummonEffectTable.SummonEffect;
@@ -55,8 +57,6 @@ import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.managers.FortSiegeManager;
 import org.l2jmobius.gameserver.managers.ItemManager;
 import org.l2jmobius.gameserver.managers.ItemsOnGroundManager;
-import org.l2jmobius.gameserver.model.PetData;
-import org.l2jmobius.gameserver.model.PetLevelData;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -741,7 +741,7 @@ public class Pet extends Summon
 				smsg.addLong(target.getCount());
 				sendPacket(smsg);
 			}
-			else if (target.getEnchantLevel() > 0)
+			else if (target.isEnchanted())
 			{
 				smsg = new SystemMessage(SystemMessageId.YOUR_PET_HAS_PICKED_UP_S1_S2);
 				smsg.addInt(target.getEnchantLevel());
@@ -1671,7 +1671,7 @@ public class Pet extends Summon
 		SystemMessage sm = null;
 		if (isEquiped)
 		{
-			if (item.getEnchantLevel() > 0)
+			if (item.isEnchanted())
 			{
 				sm = new SystemMessage(SystemMessageId.S1_S2_UNEQUIPPED);
 				sm.addInt(item.getEnchantLevel());
@@ -1701,7 +1701,7 @@ public class Pet extends Summon
 			items = _inventory.equipItemAndRecord(item);
 			if (item.isEquipped())
 			{
-				if (item.getEnchantLevel() > 0)
+				if (item.isEnchanted())
 				{
 					sm = new SystemMessage(SystemMessageId.S1_S2_EQUIPPED);
 					sm.addInt(item.getEnchantLevel());

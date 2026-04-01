@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.data.xml;
 
@@ -22,20 +26,24 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
 
 import org.l2jmobius.commons.util.IXmlReader;
-import org.l2jmobius.gameserver.model.ActionDataHolder;
-import org.l2jmobius.gameserver.model.StatSet;
+import org.l2jmobius.gameserver.data.holders.ActionDataHolder;
 
 /**
- * @author UnAfraid
+ * Loads and manages player action data from XML.<br>
+ * Maps action IDs to handlers and maintains relationships between skills and actions.
+ * @author UnAfraid, Mobius
  */
 public class ActionData implements IXmlReader
 {
 	private static final Logger LOGGER = Logger.getLogger(ActionData.class.getName());
 	
+	// Data storage.
 	private final Map<Integer, ActionDataHolder> _actionData = new HashMap<>();
-	private final Map<Integer, Integer> _actionSkillsData = new HashMap<>();
+	private final Map<Integer, Integer> _actionSkillData = new HashMap<>();
+	private int[] _actionIds;
 	
 	protected ActionData()
 	{
@@ -46,16 +54,11 @@ public class ActionData implements IXmlReader
 	public void load()
 	{
 		_actionData.clear();
-		_actionSkillsData.clear();
+		_actionSkillData.clear();
 		parseDatapackFile("data/ActionData.xml");
 		
-		for (ActionDataHolder holder : _actionData.values())
-		{
-			if (holder.getHandler().equals("PetSkillUse") || holder.getHandler().equals("ServitorSkillUse"))
-			{
-				_actionSkillsData.put(holder.getOptionId(), holder.getId());
-			}
-		}
+		// Cache action IDs.
+		_actionIds = _actionData.keySet().stream().mapToInt(Number::intValue).toArray();
 		
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _actionData.size() + " player actions.");
 	}
@@ -65,8 +68,17 @@ public class ActionData implements IXmlReader
 	{
 		forEach(document, "list", listNode -> forEach(listNode, "action", actionNode ->
 		{
-			final ActionDataHolder holder = new ActionDataHolder(new StatSet(parseAttributes(actionNode)));
-			_actionData.put(holder.getId(), holder);
+			final NamedNodeMap attrs = actionNode.getAttributes();
+			final int id = parseInteger(attrs, "id", 0);
+			final String handler = parseString(attrs, "handler", "");
+			final int optionId = parseInteger(attrs, "option", 0);
+			
+			if (handler.equals("PetSkillUse") || handler.equals("ServitorSkillUse"))
+			{
+				_actionSkillData.put(optionId, id);
+			}
+			
+			_actionData.put(id, new ActionDataHolder(id, handler, optionId));
 		}));
 	}
 	
@@ -87,16 +99,16 @@ public class ActionData implements IXmlReader
 	 */
 	public int getSkillActionId(int skillId)
 	{
-		return _actionSkillsData.getOrDefault(skillId, -1);
+		return _actionSkillData.getOrDefault(skillId, -1);
 	}
 	
 	/**
-	 * Retrieves a list of all action IDs.
+	 * Retrieves a list of all action IDs from the cached array.
 	 * @return an array of all action IDs available in the action data
 	 */
 	public int[] getActionIdList()
 	{
-		return _actionData.keySet().stream().mapToInt(Number::intValue).toArray();
+		return _actionIds;
 	}
 	
 	public static ActionData getInstance()

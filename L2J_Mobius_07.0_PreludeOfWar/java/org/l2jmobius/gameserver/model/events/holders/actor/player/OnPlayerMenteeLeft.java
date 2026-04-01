@@ -16,8 +16,8 @@
  */
 package org.l2jmobius.gameserver.model.events.holders.actor.player;
 
-import org.l2jmobius.gameserver.model.Mentee;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.player.Mentee;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.IBaseEvent;
 

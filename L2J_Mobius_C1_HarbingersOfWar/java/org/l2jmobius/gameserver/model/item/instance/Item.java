@@ -42,7 +42,6 @@ import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.managers.IdManager;
 import org.l2jmobius.gameserver.managers.ItemsOnGroundManager;
 import org.l2jmobius.gameserver.managers.MercTicketManager;
-import org.l2jmobius.gameserver.model.DropProtection;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -64,6 +63,7 @@ import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemLocation;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.enums.ShotType;
+import org.l2jmobius.gameserver.model.item.holders.DropProtection;
 import org.l2jmobius.gameserver.model.item.type.EtcItemType;
 import org.l2jmobius.gameserver.model.item.type.ItemType;
 import org.l2jmobius.gameserver.model.script.QuestState;
@@ -880,6 +880,14 @@ public class Item extends WorldObject
 	public int getEnchantLevel()
 	{
 		return _enchantLevel;
+	}
+	
+	/**
+	 * @return {@code true} if item is enchanted, {@code false} otherwise
+	 */
+	public boolean isEnchanted()
+	{
+		return _enchantLevel > 0;
 	}
 	
 	/**

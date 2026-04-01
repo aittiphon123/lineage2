@@ -30,8 +30,8 @@ import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.data.holders.InstanceReenterTimeHolder;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.managers.InstanceManager;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -400,11 +400,11 @@ public class InstanceTemplate extends ListenersContainer
 			{
 				if (player.getReputation() < 0)
 				{
-					location = MapRegionManager.getInstance().getNearestKarmaRespawn(player);
+					location = MapRegionData.getInstance().getNearestKarmaRespawn(player);
 				}
 				else
 				{
-					location = MapRegionManager.getInstance().getNearestTownRespawn(player);
+					location = MapRegionData.getInstance().getNearestTownRespawn(player);
 				}
 				break;
 			}

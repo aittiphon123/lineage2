@@ -51,7 +51,6 @@ public enum InstanceType
 	Monster(Attackable),
 	Block(Attackable),
 	Chest(Monster),
-	ControllableMob(Monster),
 	FeedableBeast(Monster),
 	TamedBeast(FeedableBeast),
 	FriendlyMob(Attackable),
@@ -98,6 +97,7 @@ public enum InstanceType
 	
 	// Custom
 	ClassMaster(Folk),
+	SchemeBuffer(Npc),
 	EventMob(Npc),
 	UCManagerInstance(Folk);
 	

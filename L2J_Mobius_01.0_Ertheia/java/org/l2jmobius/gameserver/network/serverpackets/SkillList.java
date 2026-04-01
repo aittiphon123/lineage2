@@ -79,7 +79,7 @@ public class SkillList extends ServerPacket
 		for (Skill temp : _skills)
 		{
 			buffer.writeInt(temp.passive ? 1 : 0);
-			buffer.writeInt(temp.subLevel > 1000 ? SkillEnchantConverter.levelToErtheia(temp.subLevel) : temp.level);
+			buffer.writeInt(temp.subLevel > 1000 ? SkillEnchantConverter.subLevelToLevel(temp.subLevel) : temp.level);
 			buffer.writeInt(temp.id);
 			buffer.writeInt(temp.reuseDelayGroup); // GOD ReuseDelayShareGroupID
 			buffer.writeByte(temp.disabled ? 1 : 0); // iSkillDisabled

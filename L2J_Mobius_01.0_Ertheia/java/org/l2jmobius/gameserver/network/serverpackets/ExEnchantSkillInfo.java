@@ -53,14 +53,14 @@ public class ExEnchantSkillInfo extends ServerPacket
 	{
 		ServerPackets.EX_ENCHANT_SKILL_INFO.writeId(this, buffer);
 		buffer.writeInt(_skillId);
-		buffer.writeInt(_skillSubLevel > 1000 ? SkillEnchantConverter.levelToErtheia(_skillSubLevel) : _skillLevel);
+		buffer.writeInt(_skillSubLevel > 1000 ? SkillEnchantConverter.subLevelToLevel(_skillSubLevel) : _skillLevel);
 		buffer.writeInt((_skillSubLevel % 1000) != EnchantSkillGroupsData.MAX_ENCHANT_LEVEL);
 		buffer.writeInt(_skillSubLevel > 1000);
 		buffer.writeInt(_routes.size());
 		_routes.forEach(route ->
 		{
 			final int subLevel = (_currentSubLevel > 0 ? (route + (_currentSubLevel % 1000)) - 1 : route);
-			buffer.writeInt(subLevel > 1000 ? SkillEnchantConverter.levelToErtheia(subLevel) : subLevel);
+			buffer.writeInt(subLevel > 1000 ? SkillEnchantConverter.subLevelToLevel(subLevel) : subLevel);
 		});
 	}
 }

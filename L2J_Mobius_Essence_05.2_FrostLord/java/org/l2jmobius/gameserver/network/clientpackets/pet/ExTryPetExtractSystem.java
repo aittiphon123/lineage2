@@ -20,11 +20,11 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.pet;
 
+import org.l2jmobius.gameserver.data.holders.PetData;
 import org.l2jmobius.gameserver.data.holders.PetExtractionHolder;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.PetDataTable;
 import org.l2jmobius.gameserver.data.xml.PetExtractData;
-import org.l2jmobius.gameserver.model.PetData;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;

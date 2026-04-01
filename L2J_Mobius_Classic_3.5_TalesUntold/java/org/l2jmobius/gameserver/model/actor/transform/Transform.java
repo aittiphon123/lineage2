@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
-import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -34,6 +33,7 @@ import org.l2jmobius.gameserver.model.itemcontainer.InventoryBlockType;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
+import org.l2jmobius.gameserver.model.skill.holders.SkillLearn;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.network.serverpackets.ExBasicActionList;
 import org.l2jmobius.gameserver.network.serverpackets.ExUserInfoEquipSlot;

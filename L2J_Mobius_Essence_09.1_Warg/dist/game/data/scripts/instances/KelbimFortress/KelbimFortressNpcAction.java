@@ -30,7 +30,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2jmobius.gameserver.data.xml.SkillData;
-import org.l2jmobius.gameserver.model.KeyValuePair;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -45,19 +44,19 @@ import org.l2jmobius.gameserver.model.skill.SkillCaster;
  */
 public class KelbimFortressNpcAction extends Script
 {
-	private static final Map<Integer, KeyValuePair<String, String>> ON_ACTION_DIALOGUE = new HashMap<>();
+	private static final Map<Integer, SimpleEntry<String, String>> ON_ACTION_DIALOGUE = new HashMap<>();
 	static
 	{
-		ON_ACTION_DIALOGUE.put(34377, new KeyValuePair<>("34377-no.htm", "34377.htm"));
-		ON_ACTION_DIALOGUE.put(18828, new KeyValuePair<>("18828-no.htm", "18828.htm"));
-		ON_ACTION_DIALOGUE.put(18829, new KeyValuePair<>("18829-no.htm", "18829.htm"));
+		ON_ACTION_DIALOGUE.put(34377, new SimpleEntry<>("34377-no.htm", "34377.htm"));
+		ON_ACTION_DIALOGUE.put(18828, new SimpleEntry<>("18828-no.htm", "18828.htm"));
+		ON_ACTION_DIALOGUE.put(18829, new SimpleEntry<>("18829-no.htm", "18829.htm"));
 	}
 	
-	private static final Map<Integer, KeyValuePair<String, String>> ON_KELBIM_STATUS = new HashMap<>();
+	private static final Map<Integer, SimpleEntry<String, String>> ON_KELBIM_STATUS = new HashMap<>();
 	static
 	{
-		ON_KELBIM_STATUS.put(18828, new KeyValuePair<>("18828.htm", "18828-ex.htm"));
-		ON_KELBIM_STATUS.put(18829, new KeyValuePair<>("18829.htm", "18829-ex.htm"));
+		ON_KELBIM_STATUS.put(18828, new SimpleEntry<>("18828.htm", "18828-ex.htm"));
+		ON_KELBIM_STATUS.put(18829, new SimpleEntry<>("18829.htm", "18829-ex.htm"));
 	}
 	
 	private static final int OVERLOAD_SKILL_ID = 48690;

@@ -66,7 +66,6 @@
 			<npc id="30733" x="-76467" y="252542" z="-3326" heading="53248" respawnTime="60sec" /> <!-- Guard -->
 			<npc id="30733" x="-77330" y="251015" z="-3420" heading="36864" respawnTime="60sec" /> <!-- Guard -->
 			<npc id="30733" x="-78143" y="250653" z="-3546" heading="45056" respawnTime="60sec" /> <!-- Guard -->
-			<npc id="30598" x="-84081" y="243227" z="-3723" heading="9000" respawnTime="60sec" /> <!-- Newbie Guide -->
 			<npc id="30368" x="-85301" y="244587" z="-3725" heading="24576" respawnTime="60sec" /> <!-- Lilith -->
 			<npc id="30031" x="-84516" y="245449" z="-3714" heading="40960" respawnTime="60sec" /> <!-- Biotin - High Priest -->
 			<npc id="30045" x="-86322" y="241215" z="-3727" heading="42500" respawnTime="60sec" /> <!-- Kenyos - Guard -->

@@ -1692,7 +1692,7 @@
 			<value level="2">2</value>
 		</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectObject>FRIEND</affectObject>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
@@ -1859,7 +1859,7 @@
 			<value level="2">2</value>
 		</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectObject>FRIEND</affectObject>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>

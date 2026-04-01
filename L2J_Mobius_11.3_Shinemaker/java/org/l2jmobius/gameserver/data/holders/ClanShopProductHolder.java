@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.data.holders;
 
-import org.l2jmobius.gameserver.model.TradeItem;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.network.holders.TradeItem;
 
 /**
  * @author Mobius

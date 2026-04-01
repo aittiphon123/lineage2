@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="3001" levels="1" name="int_1">
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLevel" val="0" />
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>0</magicLevel>
 	</skill>
 	<skill id="3002" levels="1" name="int_2">
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLevel" val="0" />
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>0</magicLevel>
 	</skill>
 	<skill id="3003" levels="1" name="str_2">
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLevel" val="0" />
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>0</magicLevel>
 	</skill>
 	<skill id="3004" levels="1" name="maxmp_5">
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLevel" val="0" />
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>0</magicLevel>
 	</skill>
 	<skill id="3005" levels="1" name="Bleed">
 		<!-- A scar cuts down HP. Effect 5. -->
-		<set name="icon" val="icon.skill0223" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="abnormalLevel" val="5" />
-		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="BLEEDING" />
-		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="activateRate" val="50" />
-		<set name="basicProperty" val="CON" />
-		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="magicLevel" val="40" />
-		<set name="trait" val="BLEED" />
+		<icon>icon.skill0223</icon>
+		<operateType>A2</operateType>
+		<targetType>ONE</targetType>
+		<abnormalLevel>5</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>50</activateRate>
+		<basicProperty>CON</basicProperty>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicLevel>40</magicLevel>
+		<trait>BLEED</trait>
 		<effects>
 			<effect name="DamOverTime" ticks="3">
-				<param power="44" />
+				<power>44</power>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3006" levels="1" name="Equip Set Items">
 		<!-- Additional effects given, when equipping set items. -->
-		<set name="icon" val="icon.skill0042" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLevel" val="0" />
+		<icon>icon.skill0042</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>0</magicLevel>
 	</skill>
 </list>

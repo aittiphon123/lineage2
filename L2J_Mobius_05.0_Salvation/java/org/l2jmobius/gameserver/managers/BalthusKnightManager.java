@@ -35,7 +35,7 @@ public final class BalthusKnightManager
 	 * Remove Dragon Weapons on enter world
 	 * @param player
 	 */
-	public static final void removeDragonWeapons(Player player)
+	public static void removeDragonWeapons(Player player)
 	{
 		PlayerInventory inv = player.getInventory();
 		
@@ -77,7 +77,7 @@ public final class BalthusKnightManager
 	 * Check spawn location on enter world
 	 * @param player
 	 */
-	public static final void checkSpawnLocation(Player player)
+	public static void checkSpawnLocation(Player player)
 	{
 		switch (player.getVariables().getInt(PlayerVariables.BALTHUS_PHASE, 1))
 		{

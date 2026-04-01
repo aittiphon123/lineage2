@@ -500,7 +500,7 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<castRange>400</castRange>
 		<effectPoint>687</effectPoint>
@@ -633,7 +633,7 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<castRange>400</castRange>
 		<effectPoint>687</effectPoint>

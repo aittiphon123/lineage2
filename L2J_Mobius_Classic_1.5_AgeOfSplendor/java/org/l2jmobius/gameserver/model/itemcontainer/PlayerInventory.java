@@ -35,8 +35,6 @@ import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.config.custom.TransmogConfig;
 import org.l2jmobius.gameserver.data.xml.ItemData;
-import org.l2jmobius.gameserver.model.TradeItem;
-import org.l2jmobius.gameserver.model.TradeList;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -52,6 +50,8 @@ import org.l2jmobius.gameserver.model.item.type.EtcItemType;
 import org.l2jmobius.gameserver.model.variables.ItemVariables;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.StatusUpdateType;
+import org.l2jmobius.gameserver.network.holders.TradeItem;
+import org.l2jmobius.gameserver.network.holders.TradeList;
 import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.StatusUpdate;
 

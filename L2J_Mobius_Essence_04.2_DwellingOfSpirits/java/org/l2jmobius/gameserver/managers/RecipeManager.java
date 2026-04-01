@@ -35,14 +35,14 @@ import org.l2jmobius.gameserver.data.holders.RecipeHolder;
 import org.l2jmobius.gameserver.data.holders.RecipeStatHolder;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.data.xml.RecipeData;
-import org.l2jmobius.gameserver.model.ManufactureItem;
-import org.l2jmobius.gameserver.model.RecipeList;
-import org.l2jmobius.gameserver.model.TempItem;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.stat.PlayerStat;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.item.recipe.ManufactureItem;
+import org.l2jmobius.gameserver.model.item.recipe.RecipeItemInfo;
+import org.l2jmobius.gameserver.model.item.recipe.RecipeList;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.skill.Skill;
@@ -174,7 +174,7 @@ public class RecipeManager
 	{
 		private static final Logger LOGGER = Logger.getLogger(RecipeItemMaker.class.getName());
 		protected boolean _isValid;
-		protected List<TempItem> _items = null;
+		protected List<RecipeItemInfo> _items = null;
 		protected final RecipeList _recipeList;
 		protected final Player _player; // "crafter"
 		protected final Player _target; // "customer"
@@ -268,7 +268,7 @@ public class RecipeManager
 				return;
 			}
 			
-			for (TempItem i : _items)
+			for (RecipeItemInfo i : _items)
 			{
 				_totalItems += i.getQuantity();
 			}
@@ -473,7 +473,7 @@ public class RecipeManager
 			int grabItems = _itemGrab;
 			while ((grabItems > 0) && !_items.isEmpty())
 			{
-				final TempItem item = _items.get(0);
+				final RecipeItemInfo item = _items.get(0);
 				int count = item.getQuantity();
 				if (count >= grabItems)
 				{
@@ -599,11 +599,11 @@ public class RecipeManager
 			return ret;
 		}
 		
-		private List<TempItem> listItems(boolean remove)
+		private List<RecipeItemInfo> listItems(boolean remove)
 		{
 			final RecipeHolder[] recipes = _recipeList.getRecipes();
 			final Inventory inv = _target.getInventory();
-			final List<TempItem> materials = new ArrayList<>();
+			final List<RecipeItemInfo> materials = new ArrayList<>();
 			SystemMessage sm;
 			for (RecipeHolder recipe : recipes)
 			{
@@ -625,13 +625,13 @@ public class RecipeManager
 					}
 					
 					// make new temporary object, just for counting purposes
-					materials.add(new TempItem(item, recipe.getQuantity()));
+					materials.add(new RecipeItemInfo(item, recipe.getQuantity()));
 				}
 			}
 			
 			if (remove)
 			{
-				for (TempItem tmp : materials)
+				for (RecipeItemInfo tmp : materials)
 				{
 					inv.destroyItemByItemId(ItemProcessType.CRAFT, tmp.getItemId(), tmp.getQuantity(), _target, _player);
 					if (tmp.getQuantity() > 1)

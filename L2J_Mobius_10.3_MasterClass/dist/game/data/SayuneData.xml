@@ -868,7 +868,7 @@
 				<loc id="4" x="-247800" y="143009" z="2822" />
 				<loc id="41" x="-248378" y="146424" z="3096" />
 			</choice>
-			<!-- Support Sporcha's Squad  -->
+			<!-- Support Sporcha's Squad -->
 			<choice id="5" x="-243790" y="138477" z="1560">
 				<loc id="6" x="-245234" y="140340" z="1885" />
 				<loc id="61" x="-243009" y="142404" z="2072" />
@@ -901,7 +901,7 @@
 				<loc id="4" x="-246880" y="148832" z="4761" />
 				<loc id="41" x="-248378" y="146424" z="3096" />
 			</choice>
-			<!-- Support Sporcha's Squad  -->
+			<!-- Support Sporcha's Squad -->
 			<choice id="5" x="-257685" y="154001" z="4368">
 				<loc id="6" x="-256331" y="149154" z="4368" />
 				<loc id="7" x="-253044" y="148184" z="8317" />
@@ -964,7 +964,7 @@
 	</map>
 	<map id="95"> <!-- Sporcha 3 -->
 		<selector id="0" x="-253080" y="154168" z="7192">
-			<!-- Support Devianne's Squad  -->
+			<!-- Support Devianne's Squad -->
 			<choice id="1" x="-257688" y="153998" z="4368">
 				<loc id="2" x="-257956" y="148991" z="4368" />
 				<loc id="3" x="-256494" y="144429" z="2320" />

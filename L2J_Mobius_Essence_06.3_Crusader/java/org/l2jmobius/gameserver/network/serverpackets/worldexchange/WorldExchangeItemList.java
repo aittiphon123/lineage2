@@ -23,12 +23,12 @@ package org.l2jmobius.gameserver.network.serverpackets.worldexchange;
 import java.util.List;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
 import org.l2jmobius.gameserver.model.ensoul.EnsoulOption;
 import org.l2jmobius.gameserver.model.item.enums.WorldExchangeItemSubType;
 import org.l2jmobius.gameserver.model.item.holders.WorldExchangeHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;

@@ -20,8 +20,6 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets;
 
-import static org.l2jmobius.gameserver.model.itemcontainer.Inventory.ADENA_ID;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +31,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.itemcontainer.ItemContainer;
 import org.l2jmobius.gameserver.model.itemcontainer.PlayerWarehouse;
 import org.l2jmobius.gameserver.network.PacketLogger;
@@ -124,9 +123,21 @@ public class SendWareHouseDepositList extends ClientPacket
 			return;
 		}
 		
-		// Freight price from config or normal price per item slot (30)
-		final long fee = _items.size() * 30;
-		long currentAdena = player.getAdena();
+		// Freight price from config or normal price per item slot.
+		final long fee;
+		final int currency;
+		if (isPrivate)
+		{
+			fee = _items.size() * 30;
+			currency = Inventory.ADENA_ID;
+		}
+		else
+		{
+			fee = _items.size() * 100;
+			currency = Inventory.LCOIN_ID;
+		}
+		
+		long currentCurrency = player.getInventory().getInventoryItemCount(currency, -1);
 		int slots = 0;
 		for (ItemHolder itemHolder : _items)
 		{
@@ -137,10 +148,10 @@ public class SendWareHouseDepositList extends ClientPacket
 				return;
 			}
 			
-			// Calculate needed adena and slots
-			if (item.getId() == ADENA_ID)
+			// Calculate needed currency and slots.
+			if (item.getId() == currency)
 			{
-				currentAdena -= itemHolder.getCount();
+				currentCurrency -= itemHolder.getCount();
 			}
 			
 			if (!item.isStackable())
@@ -160,24 +171,24 @@ public class SendWareHouseDepositList extends ClientPacket
 			return;
 		}
 		
-		// Check if enough adena and charge the fee
-		if ((currentAdena < fee) || !player.reduceAdena(ItemProcessType.FEE, fee, manager, false))
+		// Check if enough currency and charge the fee.
+		if ((currentCurrency < fee) || !player.destroyItemByItemId(ItemProcessType.FEE, currency, fee, manager, false))
 		{
-			player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
+			player.sendPacket(isPrivate ? SystemMessageId.NOT_ENOUGH_ADENA : SystemMessageId.NOT_ENOUGH_L2_COINS);
 			return;
 		}
 		
-		// get current tradelist if any
+		// Get current tradelist if any.
 		if (player.getActiveTradeList() != null)
 		{
 			return;
 		}
 		
-		// Proceed to the transfer
+		// Proceed to the transfer.
 		final InventoryUpdate playerIU = new InventoryUpdate();
 		for (ItemHolder itemHolder : _items)
 		{
-			// Check validity of requested item
+			// Check validity of requested item.
 			final Item oldItem = player.checkItemManipulation(itemHolder.getId(), itemHolder.getCount(), "deposit");
 			if (oldItem == null)
 			{
@@ -207,7 +218,7 @@ public class SendWareHouseDepositList extends ClientPacket
 			}
 		}
 		
-		// Send updated item list to the player
+		// Send updated item list to the player.
 		player.sendInventoryUpdate(playerIU);
 	}
 }

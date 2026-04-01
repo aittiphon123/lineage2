@@ -17,7 +17,7 @@
 package org.l2jmobius.gameserver.network.serverpackets;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.matching.CommandChannelMatchingRoom;
 import org.l2jmobius.gameserver.model.groups.matching.MatchingMemberType;
@@ -50,7 +50,7 @@ public class ExManageMpccRoomMember extends ServerPacket
 		buffer.writeString(_player.getName());
 		buffer.writeInt(_player.getPlayerClass().getId());
 		buffer.writeInt(_player.getLevel());
-		buffer.writeInt(MapRegionManager.getInstance().getBBs(_player.getLocation()));
+		buffer.writeInt(MapRegionData.getInstance().getBBs(_player.getLocation()));
 		buffer.writeInt(_memberType.ordinal());
 	}
 }

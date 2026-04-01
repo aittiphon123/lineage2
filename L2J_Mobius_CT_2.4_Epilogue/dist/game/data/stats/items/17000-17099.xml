@@ -13,7 +13,11 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="129600" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="16858,1,1,100;16857,2,2,100;16859,2,2,100" />
+		<capsuled_items>
+			<item id="16858" min="1" max="1" chance="100" /> <!-- Friendship Necklace of Black Ore - 90 day limited period -->
+			<item id="16857" min="2" max="2" chance="100" /> <!-- Friendship Earring of Black Ore - 90 day limited period -->
+			<item id="16859" min="2" max="2" chance="100" /> <!-- Friendship Ring of Black Ore - 90 day limited period -->
+		</capsuled_items>
 	</item>
 	<item id="17001" type="EtcItem" name="Sealed Set of Fortune - 90-day limited period">
 		<!-- When used, you acquire a Sealed Set of Friendship. Expires after 90 days if not used. No exchange/drop available. -->
@@ -28,7 +32,11 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="129600" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="16861,1,1,100;16860,2,2,100;16862,2,2,100" />
+		<capsuled_items>
+			<item id="16861" min="1" max="1" chance="100" /> <!-- Friendship Necklace of Binding - 90 day limited period -->
+			<item id="16860" min="2" max="2" chance="100" /> <!-- Friendship Earring of Binding - 90 day limited period -->
+			<item id="16862" min="2" max="2" chance="100" /> <!-- Friendship Ring of Binding - 90 day limited period -->
+		</capsuled_items>
 	</item>
 	<item id="17002" type="EtcItem" name="Elven Set of Fortune - 90-day limited period">
 		<!-- When used, you acquire an Elven Set of Friendship. Expires after 90 days if not used. No exchange/drop available. -->
@@ -43,7 +51,11 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="129600" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="16864,1,1,100;16863,2,2,100;16865,2,2,100" />
+		<capsuled_items>
+			<item id="16864" min="1" max="1" chance="100" /> <!-- Elven Earring of Friendship - 90 day limited period -->
+			<item id="16863" min="2" max="2" chance="100" /> <!-- Elven Earring of Friendship - 90 day limited period -->
+			<item id="16865" min="2" max="2" chance="100" /> <!-- Elven Ring of Friendship - 90 day limited period -->
+		</capsuled_items>
 	</item>
 	<item id="17003" type="EtcItem" name="Santa Claus's Gift - Event">
 		<!-- Santa Claus's Gift. One can receive the gift when double clicked. -->
@@ -55,7 +67,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="9085-1" /> <!-- Santa Claus's Gift -->
+		<skills>
+			<skill id="9085" level="1" /> <!-- Santa Claus's Gift -->
+		</skills>
 	</item>
 	<item id="17004" type="Armor" name="Agathion Seal Bracelet - Kid Rudolph - Event">
 		<!-- Bracelet that summons a cute Kid Rudolph Agathion that gives you a Santa Claus's Gift. The Kid Rudolph gives you Santa Claus's gift every 30 minutes after being summoned. You cannot receive the gift if your inventory weight is full. No exchange/drop available -->
@@ -69,8 +83,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="8464-1;3267-1" /> <!-- Release the Seal on Agathion - Kid Rudolph -->
+		<skills>
+			<skill id="8464" level="1" /> <!-- Release the Seal on Agathion - Kid Rudolph -->
+			<skill id="3267" level="1" /> <!-- Dismiss Agathion -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Dismiss Agathion -->
+		</skills>
 	</item>
 	<item id="17005" type="EtcItem" name="Santa - Potion of Will - Event">
 		<!-- It recovers CP by 300. -->
@@ -85,7 +102,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="9086-2" /> <!-- Santa - Potion of Will -->
+		<skills>
+			<skill id="9086" level="2" /> <!-- Santa - Potion of Will -->
+		</skills>
 	</item>
 	<item id="17006" type="Armor" name="Sealed Vesper Noble Breastplate">
 		<!-- Sealed Vesper Noble Breastplate. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -106,7 +125,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="236" />
+			<stat type="pDef">236</stat>
 		</stats>
 	</item>
 	<item id="17007" type="Armor" name="Sealed Vesper Noble Leather Breastplate">
@@ -125,7 +144,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
 		<stats>
-			<add order="0" stat="pDef" val="177" />
+			<stat type="pDef">177</stat>
 		</stats>
 	</item>
 	<item id="17008" type="Armor" name="Sealed Vesper Noble Tunic">
@@ -147,8 +166,8 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="118" />
-			<add stat="maxMp" val="637" />
+			<stat type="pDef">118</stat>
+			<stat type="maxMp">637</stat>
 		</stats>
 	</item>
 	<item id="17009" type="Armor" name="Sealed Vesper Noble Gaiters">
@@ -170,7 +189,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="148" />
+			<stat type="pDef">148</stat>
 		</stats>
 	</item>
 	<item id="17010" type="Armor" name="Sealed Vesper Noble Gauntlet">
@@ -191,7 +210,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="68" />
+			<stat type="pDef">68</stat>
 		</stats>
 	</item>
 	<item id="17011" type="Armor" name="Sealed Vesper Noble Boots">
@@ -212,7 +231,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="68" />
+			<stat type="pDef">68</stat>
 		</stats>
 	</item>
 	<item id="17012" type="Armor" name="Sealed Vesper Noble Leather Leggings">
@@ -231,7 +250,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
 		<stats>
-			<add order="0" stat="pDef" val="111" />
+			<stat type="pDef">111</stat>
 		</stats>
 	</item>
 	<item id="17013" type="Armor" name="Sealed Vesper Noble Leather Gloves">
@@ -249,7 +268,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
 		<stats>
-			<add order="0" stat="pDef" val="68" />
+			<stat type="pDef">68</stat>
 		</stats>
 	</item>
 	<item id="17014" type="Armor" name="Sealed Vesper Noble Leather Boots">
@@ -267,7 +286,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
 		<stats>
-			<add order="0" stat="pDef" val="68" />
+			<stat type="pDef">68</stat>
 		</stats>
 	</item>
 	<item id="17015" type="Armor" name="Sealed Vesper Noble Stockings">
@@ -289,8 +308,8 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="74" />
-			<add stat="maxMp" val="415" />
+			<stat type="pDef">74</stat>
+			<stat type="maxMp">415</stat>
 		</stats>
 	</item>
 	<item id="17016" type="Armor" name="Sealed Vesper Noble Gloves">
@@ -311,7 +330,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="68" />
+			<stat type="pDef">68</stat>
 		</stats>
 	</item>
 	<item id="17017" type="Armor" name="Sealed Vesper Noble Shoes">
@@ -332,7 +351,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="68" />
+			<stat type="pDef">68</stat>
 		</stats>
 	</item>
 </list>

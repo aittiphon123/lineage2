@@ -22,9 +22,9 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.sql.ClanHallTable;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.managers.CHSiegeManager;
 import org.l2jmobius.gameserver.managers.CastleManager;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
@@ -143,7 +143,7 @@ public class RequestRestartPoint extends ClientPacket
 					return;
 				}
 				
-				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CLANHALL);
+				loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.CLANHALL);
 				if ((ClanHallTable.getInstance().getClanHallByOwner(player.getClan()) != null) && (ClanHallTable.getInstance().getClanHallByOwner(player.getClan()).getFunction(ClanHall.FUNC_RESTORE_EXP) != null))
 				{
 					player.restoreExp(ClanHallTable.getInstance().getClanHallByOwner(player.getClan()).getFunction(ClanHall.FUNC_RESTORE_EXP).getLevel());
@@ -158,11 +158,11 @@ public class RequestRestartPoint extends ClientPacket
 					// Siege in progress
 					if (castle.getSiege().checkIsDefender(player.getClan()))
 					{
-						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
+						loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
 					}
 					else if (castle.getSiege().checkIsAttacker(player.getClan()))
 					{
-						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+						loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 					}
 					else
 					{
@@ -177,7 +177,7 @@ public class RequestRestartPoint extends ClientPacket
 						return;
 					}
 					
-					loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
+					loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
 				}
 				
 				if ((CastleManager.getInstance().getCastleByOwner(player.getClan()) != null) && (CastleManager.getInstance().getCastleByOwner(player.getClan()).getFunction(Castle.FUNC_RESTORE_EXP) != null))
@@ -216,7 +216,7 @@ public class RequestRestartPoint extends ClientPacket
 					return;
 				}
 				
-				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.SIEGEFLAG);
+				loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.SIEGEFLAG);
 				break;
 			}
 			case 4: // Fixed or Player is a festival participant
@@ -255,7 +255,7 @@ public class RequestRestartPoint extends ClientPacket
 			}
 			default:
 			{
-				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+				loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 				break;
 			}
 		}

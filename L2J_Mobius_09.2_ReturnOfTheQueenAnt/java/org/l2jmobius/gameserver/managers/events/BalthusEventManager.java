@@ -35,7 +35,6 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.managers.MailManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
@@ -45,6 +44,7 @@ import org.l2jmobius.gameserver.model.itemcontainer.Mail;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.balthusevent.ExBalthusEvent;
 import org.l2jmobius.gameserver.network.serverpackets.balthusevent.ExBalthusEventJackpotUser;
@@ -352,7 +352,7 @@ public class BalthusEventManager
 	
 	private void sendRewardToPlayer(Player player)
 	{
-		final Message msg = new Message(player.getObjectId(), _mailSubject, _mailContent, MailType.NEWS_INFORMER);
+		final MailMessage msg = new MailMessage(player.getObjectId(), _mailSubject, _mailContent, MailType.NEWS_INFORMER);
 		final Mail attachments = msg.createAttachments();
 		attachments.addItem(ItemProcessType.REWARD, _rewardItem.getId(), _rewardItem.getCount(), null, null);
 		MailManager.getInstance().sendMessage(msg);

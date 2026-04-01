@@ -9177,7 +9177,7 @@
 				<skillLevel>1</skillLevel>
 				<percentFrom>61</percentFrom>
 				<percentTo>100</percentTo>
-				<isAffectedBySkillId>45101</isAffectedBySkillId> <!-- Final Frenzy-->
+				<isAffectedBySkillId>45101</isAffectedBySkillId> <!-- Final Frenzy -->
 			</effect>
 			<effect name="TriggerSkillByHpPercent">
 				<skillId>45102</skillId>

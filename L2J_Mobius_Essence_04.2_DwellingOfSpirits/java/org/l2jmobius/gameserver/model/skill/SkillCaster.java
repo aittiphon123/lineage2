@@ -709,29 +709,36 @@ public class SkillCaster implements Runnable
 					}
 				}
 				
-				// Mobs in range 1000 see spell
-				World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npcMob ->
+				// Mobs in range 1000 see spell.
+				World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npc ->
 				{
-					if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_SKILL_SEE, npcMob))
+					if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_SKILL_SEE, npc))
 					{
-						EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, caster.isSummon(), targets), npcMob);
+						EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npc, player, skill, caster.isSummon(), targets), npc);
 					}
 					
-					// On Skill See logic
-					if (npcMob.isAttackable() && !npcMob.isFakePlayer())
+					// On Skill See logic.
+					if (npc.isAttackable() && !npc.isFakePlayer())
 					{
-						final Attackable attackable = npcMob.asAttackable();
+						final Attackable attackable = npc.asAttackable();
 						if ((skill.getEffectPoint() > 0) && attackable.hasAI() && (attackable.getAI().getIntention() == Intention.ATTACK))
 						{
 							final WorldObject npcTarget = attackable.getTarget();
 							for (WorldObject skillTarget : targets)
 							{
-								if ((npcTarget == skillTarget) || (npcMob == skillTarget))
+								if ((npcTarget == skillTarget) || (npc == skillTarget))
 								{
 									final Creature originalCaster = caster.isSummon() ? caster : player;
 									attackable.addDamageHate(originalCaster, 0, (skill.getEffectPoint() * 150) / (attackable.getLevel() + 7));
 								}
 							}
+						}
+						
+						// Players which are 9 levels above a Raid Boss and cast a skill nearby, are silenced with the Raid Curse skill.
+						if (!NpcConfig.RAID_DISABLE_CURSE && attackable.giveRaidCurse() && attackable.isInCombat() && ((player.getLevel() - attackable.getLevel()) > 8))
+						{
+							final CommonSkill curse = skill.hasNegativeEffect() ? CommonSkill.RAID_CURSE2 : CommonSkill.RAID_CURSE;
+							curse.getSkill().applyEffects(attackable, player);
 						}
 					}
 				});

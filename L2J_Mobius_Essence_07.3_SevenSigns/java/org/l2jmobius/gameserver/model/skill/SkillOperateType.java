@@ -105,6 +105,11 @@ public enum SkillOperateType
 	DA5,
 	
 	/**
+	 * Directional Active Skill with "Charge/Rush instant effect based on skill cast range".
+	 */
+	DA6,
+	
+	/**
 	 * Passive Skill.
 	 */
 	P,
@@ -144,6 +149,7 @@ public enum SkillOperateType
 			case DA2:
 			case DA4:
 			case DA5:
+			case DA6:
 			{
 				return true;
 			}
@@ -170,6 +176,7 @@ public enum SkillOperateType
 			case DA2:
 			case DA4:
 			case DA5:
+			case DA6:
 			{
 				return true;
 			}

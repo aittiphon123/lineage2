@@ -158,7 +158,7 @@ public final class Q10516_UnveiledFafurionTemple extends Quest
 	@Id(FREDERICK)
 	@Id(LUPICIA)
 	@Id(OKAYTI)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);

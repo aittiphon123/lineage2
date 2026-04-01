@@ -30,11 +30,18 @@ import org.l2jmobius.commons.util.Rnd;
  */
 public class OptionDataGroup
 {
+	private final int _order;
 	private final List<OptionDataCategory> _categories;
 	
-	public OptionDataGroup(List<OptionDataCategory> categories)
+	public OptionDataGroup(int order, List<OptionDataCategory> categories)
 	{
+		_order = order;
 		_categories = categories;
+	}
+	
+	public int getOrder()
+	{
+		return _order;
 	}
 	
 	public List<OptionDataCategory> getCategories()
@@ -44,32 +51,41 @@ public class OptionDataGroup
 	
 	public Options getRandomEffect(int itemId)
 	{
-		final List<OptionDataCategory> exclutions = new ArrayList<>();
+		final List<OptionDataCategory> exclusions = new ArrayList<>();
 		Options result = null;
+		
 		do
 		{
 			double random = Rnd.nextDouble() * 100.0;
+			
 			for (OptionDataCategory category : _categories)
 			{
 				if (!category.getItemIds().isEmpty() && !category.getItemIds().contains(itemId))
 				{
-					if (!exclutions.contains(category))
+					if (!exclusions.contains(category))
 					{
-						exclutions.add(category);
+						exclusions.add(category);
 					}
 					continue;
 				}
 				
-				if (category.getChance() >= random)
+				double chance = category.getChance();
+				if (random < chance)
 				{
+					// Return null, don't roll anything.
+					if (category.isEmptyCategory())
+					{
+						return null;
+					}
+					
 					result = category.getRandomOptions();
-					break;
+					return result;
 				}
 				
-				random -= category.getChance();
+				random -= chance;
 			}
 		}
-		while ((result == null) && (exclutions.size() < _categories.size()));
+		while (exclusions.size() < _categories.size());
 		
 		return result;
 	}

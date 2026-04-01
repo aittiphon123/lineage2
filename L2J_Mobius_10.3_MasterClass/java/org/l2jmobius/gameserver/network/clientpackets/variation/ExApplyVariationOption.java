@@ -20,10 +20,10 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.variation;
 
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.VariationRequest;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.variation.ApplyVariationOption;

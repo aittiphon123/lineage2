@@ -68,7 +68,7 @@ public class Q10389_TheVoiceOfAuthority extends Quest
 		addStartNpc(RADZEN);
 		addTalkId(RADZEN);
 		addKillId(MONSTERS);
-		addCondMinLevel(MIN_LEVEL);
+		addCondMinLevel(MIN_LEVEL, getNoQuestMsg(null));
 	}
 	
 	@Override

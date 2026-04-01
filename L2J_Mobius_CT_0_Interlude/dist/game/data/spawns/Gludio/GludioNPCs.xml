@@ -35,7 +35,7 @@
 		<npc id="30337" x="-11901" y="123798" z="-3080" heading="0" respawnDelay="60" /> <!-- Moretti -->
 		<npc id="30338" x="-11901" y="123436" z="-3087" heading="0" respawnDelay="60" /> <!-- Melville -->
 		<npc id="35391" x="-12693" y="123815" z="-3115" heading="49152" respawnDelay="60" /> <!-- Latif -->
-		<npc id="35390" x="-12866" y="124166" z="-3096" heading="57344" respawnDelay="60" /> <!-- Dillon-->
+		<npc id="35390" x="-12866" y="124166" z="-3096" heading="57344" respawnDelay="60" /> <!-- Dillon -->
 		<npc id="31031" x="-13188" y="124432" z="-3110" heading="16384" respawnDelay="5" /> <!-- Broadcasting Tower -->
 		<npc id="30322" x="-13049" y="124737" z="-3118" heading="16384" respawnDelay="60" /> <!-- Ballin -->
 		<npc id="30255" x="-13132" y="124988" z="-3118" heading="49152" respawnDelay="60" /> <!-- Haprock -->
@@ -69,7 +69,7 @@
 		<npc id="35385" x="-15882" y="123788" z="-3115" heading="13288" respawnDelay="60" /> <!-- Renny -->
 		<npc id="35384" x="-16159" y="123728" z="-3102" heading="53248" respawnDelay="60" /> <!-- Black -->
 		<npc id="30321" x="-15238" y="123282" z="-3107" heading="20480" respawnDelay="60" /> <!-- Sydnia -->
-		<npc id="30253" x="-15132" y="123282" z="-3107" heading="12288" respawnDelay="60" /> <!-- Simplon-->
+		<npc id="30253" x="-15132" y="123282" z="-3107" heading="12288" respawnDelay="60" /> <!-- Simplon -->
 		<npc id="30658" x="-28103" y="120600" z="-3729" heading="16384" respawnDelay="60" /> <!-- Gupu -->
 		<npc id="30659" x="-29120" y="122422" z="-3652" heading="49152" respawnDelay="60" /> <!-- Orphan Girl -->
 		<npc id="30659" x="-29025" y="122017" z="-3672" heading="0" respawnDelay="60" /> <!-- Orphan Girl -->

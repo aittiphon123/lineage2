@@ -18,7 +18,7 @@ package handlers;
 
 import org.l2jmobius.gameserver.handler.SkillConditionHandler;
 
-import handlers.skillconditionhandlers.*;
+import handlers.skill.conditions.*;
 
 /**
  * @author NosBit

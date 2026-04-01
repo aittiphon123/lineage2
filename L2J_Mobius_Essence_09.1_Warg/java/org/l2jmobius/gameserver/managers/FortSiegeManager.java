@@ -38,9 +38,6 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.data.xml.SpawnData;
-import org.l2jmobius.gameserver.model.CombatFlag;
-import org.l2jmobius.gameserver.model.FortSiegeSpawn;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -48,10 +45,13 @@ import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.siege.CombatFlag;
 import org.l2jmobius.gameserver.model.siege.Fort;
 import org.l2jmobius.gameserver.model.siege.FortSiege;
+import org.l2jmobius.gameserver.model.siege.FortSpawnHolder;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.spawns.NpcSpawnTemplate;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
@@ -65,7 +65,7 @@ public class FortSiegeManager
 	private int _attackerMaxClans = 500; // Max number of clans
 	
 	// Fort Siege settings
-	private Map<Integer, List<FortSiegeSpawn>> _commanderSpawnList;
+	private Map<Integer, List<FortSpawnHolder>> _commanderSpawnList;
 	private Map<Integer, List<CombatFlag>> _flagList;
 	private boolean _justToTerritory = true; // Changeable in fortsiege.properties
 	private int _flagMaxCount = 1; // Changeable in fortsiege.properties
@@ -278,7 +278,7 @@ public class FortSiegeManager
 		_flagList = new ConcurrentHashMap<>();
 		for (Fort fort : FortManager.getInstance().getForts())
 		{
-			final List<FortSiegeSpawn> commanderSpawns = new CopyOnWriteArrayList<>();
+			final List<FortSpawnHolder> commanderSpawns = new CopyOnWriteArrayList<>();
 			final List<CombatFlag> flagSpawns = new CopyOnWriteArrayList<>();
 			for (int i = 1; i < 5; i++)
 			{
@@ -297,7 +297,7 @@ public class FortSiegeManager
 					final int z = Integer.parseInt(st.nextToken());
 					final int heading = Integer.parseInt(st.nextToken());
 					final int npc_id = Integer.parseInt(st.nextToken());
-					commanderSpawns.add(new FortSiegeSpawn(fort.getResidenceId(), x, y, z, heading, npc_id, i));
+					commanderSpawns.add(new FortSpawnHolder(fort.getResidenceId(), x, y, z, heading, npc_id, i));
 				}
 				catch (Exception e)
 				{
@@ -335,7 +335,7 @@ public class FortSiegeManager
 		}
 	}
 	
-	public List<FortSiegeSpawn> getCommanderSpawnList(int fortId)
+	public List<FortSpawnHolder> getCommanderSpawnList(int fortId)
 	{
 		return _commanderSpawnList.get(fortId);
 	}
@@ -494,7 +494,7 @@ public class FortSiegeManager
 				{
 					for (Npc npc : nst.getSpawnedNpcs())
 					{
-						Spawn spawn = npc.getSpawn();
+						final Spawn spawn = npc.getSpawn();
 						if (spawn != null)
 						{
 							spawn.stopRespawn();

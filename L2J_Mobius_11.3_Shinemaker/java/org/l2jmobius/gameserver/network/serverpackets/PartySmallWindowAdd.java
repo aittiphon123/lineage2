@@ -21,6 +21,7 @@
 package org.l2jmobius.gameserver.network.serverpackets;
 
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.network.GameClient;
@@ -47,14 +48,15 @@ public class PartySmallWindowAdd extends ServerPacket
 		buffer.writeInt(_party.getLeaderObjectId()); // c3
 		buffer.writeInt(_party.getDistributionType().getId()); // c3
 		buffer.writeInt(_member.getObjectId());
-		if (_member.isCursedWeaponEquipped() && (org.l2jmobius.gameserver.managers.CursedWeaponsManager.getInstance().getCursedWeapon(_member.getCursedWeaponEquippedId()) != null))
+		if (_member.isCursedWeaponEquipped() && (CursedWeaponsManager.getInstance().getCursedWeapon(_member.getCursedWeaponEquippedId()) != null))
 		{
-			buffer.writeString(org.l2jmobius.gameserver.managers.CursedWeaponsManager.getInstance().getCursedWeapon(_member.getCursedWeaponEquippedId()).getName());
+			buffer.writeString(CursedWeaponsManager.getInstance().getCursedWeapon(_member.getCursedWeaponEquippedId()).getName());
 		}
 		else
 		{
 			buffer.writeString(_member.getName());
 		}
+		
 		buffer.writeInt((int) _member.getCurrentCp()); // c4
 		buffer.writeInt(_member.getMaxCp()); // c4
 		buffer.writeInt((int) _member.getCurrentHp());

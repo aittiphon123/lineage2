@@ -34,7 +34,6 @@ import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.managers.GraciaSeedsManager;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.Territory;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -51,6 +50,7 @@ import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
+import org.l2jmobius.gameserver.util.PolygonTerritory;
 
 /**
  * Seed of Destruction instance zone.<br>
@@ -85,7 +85,7 @@ public class Stage1 extends InstanceScript implements IXmlReader
 	}
 	
 	// Spawn data
-	private final Map<Integer, Territory> _spawnZoneList = new HashMap<>();
+	private final Map<Integer, PolygonTerritory> _spawnZoneList = new HashMap<>();
 	private final Map<Integer, List<SODSpawn>> _spawnList = new HashMap<>();
 	
 	// Locations
@@ -294,7 +294,7 @@ public class Stage1 extends InstanceScript implements IXmlReader
 								final int id = parseInteger(attrs, "id");
 								final int minz = parseInteger(attrs, "minZ");
 								final int maxz = parseInteger(attrs, "maxZ");
-								final Territory ter = new Territory(id);
+								final PolygonTerritory ter = new PolygonTerritory(id);
 								for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
 								{
 									if (f.getNodeName().equals("point"))
@@ -345,7 +345,7 @@ public class Stage1 extends InstanceScript implements IXmlReader
 			{
 				if (_spawnZoneList.containsKey(spw.zone))
 				{
-					final Territory terr = _spawnZoneList.get(spw.zone);
+					final PolygonTerritory terr = _spawnZoneList.get(spw.zone);
 					for (int i = 0; i < spw.count; i++)
 					{
 						final Location location = terr.getRandomPoint();

@@ -91,6 +91,7 @@ public class CollectionData implements IXmlReader
 						}
 						
 						final int id = parseInteger(attrs, "id");
+						final String name = parseString(attrs, "name", "");
 						final int optionId = parseInteger(attrs, "optionId");
 						final int category = parseInteger(attrs, "category");
 						final int completeCount = parseInteger(attrs, "completeCount");
@@ -114,7 +115,7 @@ public class CollectionData implements IXmlReader
 							}
 						}
 						
-						final CollectionDataHolder template = new CollectionDataHolder(id, optionId, category, completeCount, items);
+						final CollectionDataHolder template = new CollectionDataHolder(id, name, optionId, category, completeCount, items);
 						_collections.put(id, template);
 						_collectionsByTabId.computeIfAbsent(template.getCategory(), _ -> new ArrayList<>()).add(template);
 					}

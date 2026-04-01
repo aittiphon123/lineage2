@@ -24,7 +24,6 @@ import org.l2jmobius.gameserver.data.xml.TeleportListData;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.model.script.QuestDialogType;
 import org.l2jmobius.gameserver.model.script.QuestState;
@@ -44,7 +43,6 @@ public class Q10131_ProphecyMachineRestoration extends Quest
 	public Q10131_ProphecyMachineRestoration()
 	{
 		super(QUEST_ID);
-		addItemTalkId(39539); // Prophecy Fragment
 	}
 	
 	@Override
@@ -161,21 +159,6 @@ public class Q10131_ProphecyMachineRestoration extends Quest
 		}
 		
 		npc.showChatWindow(player);
-		return null;
-	}
-	
-	@Override
-	public String onItemTalk(Item item, Player player)
-	{
-		final QuestState questState = getQuestState(player, false);
-		if ((questState == null) || questState.isCompleted())
-		{
-			return null;
-		}
-		
-		questState.setCond(QuestCondType.DONE);
-		sendEndDialog(player);
-		
 		return null;
 	}
 }

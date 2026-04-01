@@ -135,6 +135,7 @@ import org.l2jmobius.gameserver.network.clientpackets.enchant.single.ExRequestEn
 import org.l2jmobius.gameserver.network.clientpackets.enchant.single.ExRequestViewEnchantResult;
 import org.l2jmobius.gameserver.network.clientpackets.ensoul.RequestItemEnsoul;
 import org.l2jmobius.gameserver.network.clientpackets.ensoul.RequestTryEnSoulExtraction;
+import org.l2jmobius.gameserver.network.clientpackets.equipmentupgrade.RequestUpgradeSystemProbList;
 import org.l2jmobius.gameserver.network.clientpackets.equipmentupgrade.RequestUpgradeSystemResult;
 import org.l2jmobius.gameserver.network.clientpackets.equipmentupgradenormal.ExUpgradeSystemNormalRequest;
 import org.l2jmobius.gameserver.network.clientpackets.faction.RequestUserFactionInfo;

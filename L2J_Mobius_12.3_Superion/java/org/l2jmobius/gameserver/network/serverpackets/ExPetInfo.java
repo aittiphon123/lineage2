@@ -421,12 +421,11 @@ public class ExPetInfo extends AbstractMaskPacket<NpcInfoType>
 		
 		if (containsMask(NpcInfoType.VISUAL_STATE))
 		{
-			buffer.writeByte(_statusMask); // Main writeByte, Essence writeInt.
+			buffer.writeByte(_statusMask);
 		}
 		
 		if (containsMask(NpcInfoType.ABNORMALS))
 		{
-			buffer.writeInt(0); // 493
 			buffer.writeShort(_abnormalVisualEffects.size());
 			for (AbnormalVisualEffect abnormalVisualEffect : _abnormalVisualEffects)
 			{

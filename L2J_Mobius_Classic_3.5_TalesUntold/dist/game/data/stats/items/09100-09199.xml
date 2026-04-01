@@ -36,7 +36,7 @@
 		<stats>
 			<stat type="pAtk">1</stat>
 			<stat type="mAtk">1</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">1</stat>

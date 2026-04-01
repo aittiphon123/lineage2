@@ -180,7 +180,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 			addComponentType(NpcInfoType.SUMMONED);
 		}
 		
-		if (npc.getClanId() > 0)
+		if ((npc.getClanId() > 0) && npc.isTargetable() && npc.isShowName())
 		{
 			final Clan clan = ClanTable.getInstance().getClan(npc.getClanId());
 			if ((clan != null) && ((npc instanceof Doppelganger) || (!npc.isMonster() && npc.isInsideZone(ZoneId.PEACE))))

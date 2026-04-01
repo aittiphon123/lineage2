@@ -19,11 +19,11 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.EnchantSkillTreeData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
-import org.l2jmobius.gameserver.model.EnchantSkillLearn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Folk;
 import org.l2jmobius.gameserver.model.skill.Skill;
+import org.l2jmobius.gameserver.model.skill.holders.EnchantSkillLearn;
 import org.l2jmobius.gameserver.network.serverpackets.ExEnchantSkillInfo;
 
 /**

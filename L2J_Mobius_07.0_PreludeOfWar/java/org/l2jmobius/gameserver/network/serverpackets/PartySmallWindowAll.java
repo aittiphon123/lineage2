@@ -21,8 +21,10 @@
 package org.l2jmobius.gameserver.network.serverpackets;
 
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
+import org.l2jmobius.gameserver.model.actor.holders.player.CursedWeapon;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -55,13 +57,14 @@ public class PartySmallWindowAll extends ServerPacket
 				buffer.writeInt(member.getObjectId());
 				if (member.isCursedWeaponEquipped())
 				{
-					final org.l2jmobius.gameserver.model.CursedWeapon cw = org.l2jmobius.gameserver.managers.CursedWeaponsManager.getInstance().getCursedWeapon(member.getCursedWeaponEquippedId());
+					final CursedWeapon cw = CursedWeaponsManager.getInstance().getCursedWeapon(member.getCursedWeaponEquippedId());
 					buffer.writeString(cw != null ? cw.getName() : member.getName());
 				}
 				else
 				{
 					buffer.writeString(member.getName());
 				}
+				
 				buffer.writeInt((int) member.getCurrentCp()); // c4
 				buffer.writeInt(member.getMaxCp()); // c4
 				buffer.writeInt((int) member.getCurrentHp());

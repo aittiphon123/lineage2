@@ -33,6 +33,7 @@ import org.l2jmobius.gameserver.config.custom.AutoPlayConfig;
 import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
 import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.data.BotReportTable;
+import org.l2jmobius.gameserver.data.SchemeBufferTable;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.sql.OfflinePlayTable;
 import org.l2jmobius.gameserver.data.sql.OfflineTraderTable;
@@ -497,6 +498,10 @@ public class Shutdown extends Thread
 		// Save all global variables data
 		GlobalVariablesManager.getInstance().storeMe();
 		LOGGER.info("Global Variables Manager: Variables saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		
+		// Schemes save.
+		SchemeBufferTable.getInstance().saveSchemes();
+		LOGGER.info("SchemeBufferTable: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		
 		// Save items on ground before closing
 		if (GeneralConfig.SAVE_DROPPED_ITEM)

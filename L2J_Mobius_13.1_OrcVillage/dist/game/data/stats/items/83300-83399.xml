@@ -721,7 +721,7 @@
 			<item id="82932" min="1" max="1" chance="14.285714" /> <!-- Guaranteed B-grade Relic Summon Coupon - 1-time -->
 			<item id="82933" min="1" max="1" chance="14.285714" /> <!-- Guaranteed A-grade Relic Summon Coupon - 1-time -->
 			<item id="83006" min="1" max="1" chance="14.285714" /> <!-- Relic Summon Coupon - 11-time -->
-			<item id="83007" min="1" max="1" chance="14.285714" /> <!-- Relic Summon Coupon - 1 time-->
+			<item id="83007" min="1" max="1" chance="14.285714" /> <!-- Relic Summon Coupon - 1 time -->
 			<item id="83008" min="1" max="1" chance="14.285714" /> <!-- C-grade Relic Ticket - 1 time -->
 			<item id="83009" min="1" max="1" chance="14.285714" /> <!-- B-grade Relic Ticket - 1 time -->
 		</capsuled_items>

@@ -29,7 +29,6 @@ import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.managers.DatabaseSpawnManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.MountType;
@@ -38,6 +37,7 @@ import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.Earthquake;
@@ -210,7 +210,7 @@ public class Behemoth extends Script
 						LOGGER.warning(getClass().getSimpleName() + ": Zone is not initialized properly!");
 					}
 				}
-				catch (final Exception e)
+				catch (Exception e)
 				{
 					LOGGER.warning(getClass().getSimpleName() + ": Problem with onSpawn! " + e.getMessage());
 				}

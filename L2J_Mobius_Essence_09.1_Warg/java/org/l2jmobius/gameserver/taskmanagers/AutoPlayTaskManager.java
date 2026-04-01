@@ -235,6 +235,7 @@ public class AutoPlayTaskManager
 						// Check if item is reachable.
 						if ((droppedItem == null) //
 							|| (!droppedItem.isSpawned()) //
+							|| GeneralConfig.IGNORED_AUTO_PICK_ITEMS.contains(droppedItem.getId()) //
 							|| !GeoEngine.getInstance().canMoveToTarget(player.getX(), player.getY(), player.getZ(), droppedItem.getX(), droppedItem.getY(), droppedItem.getZ(), player.getInstanceWorld()))
 						{
 							continue PICKUP;

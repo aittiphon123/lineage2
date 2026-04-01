@@ -701,7 +701,7 @@
 		<stats>
 			<stat type="pAtk">10</stat>
 			<stat type="mAtk">9</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>

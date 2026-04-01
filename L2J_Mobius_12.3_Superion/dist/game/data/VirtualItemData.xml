@@ -15,7 +15,7 @@
 	</virtualItem>
 	<virtualItem indexMain="2"> <!-- Weapon Upgrade - Illusory Equipment -->
 		<virtualItemStat slot="0" indexSub="1" itemId="29631" enchant="1" costVISPoint="20" /> <!-- Level 1: Weapon P./ M. Atk. +5. -->
-		<virtualItemStat slot="0" indexSub="2" itemId="29631" enchant="2" costVISPoint="20" /> <!-- Level 2: Weapon P./ M. Atk. +10.-->
+		<virtualItemStat slot="0" indexSub="2" itemId="29631" enchant="2" costVISPoint="20" /> <!-- Level 2: Weapon P./ M. Atk. +10. -->
 		<virtualItemStat slot="0" indexSub="3" itemId="29631" enchant="3" costVISPoint="40" /> <!-- Level 3: Weapon P./ M. Atk. +15. -->
 		<virtualItemStat slot="0" indexSub="4" itemId="29631" enchant="4" costVISPoint="40" /> <!-- Level 4: Weapon P./ M. Atk. +20. -->
 		<virtualItemStat slot="0" indexSub="5" itemId="29631" enchant="5" costVISPoint="60" /> <!-- Level 5: Weapon P./ M. Atk. +25. -->
@@ -973,7 +973,7 @@
 		<virtualItemStat slot="4194304" indexSub="9" itemId="80645" enchant="0" costVISPoint="30" />
 		<virtualItemStat slot="4194304" indexSub="10" itemId="80646" enchant="0" costVISPoint="30" />
 	</virtualItem>
-	<!--  BROOCH JEWELS -->
+	<!-- BROOCH JEWELS -->
 	<virtualItem indexMain="66">
 		<virtualItemStat slot="1073741824" indexSub="1" itemId="47677" enchant="0" costVISPoint="4" />
 		<virtualItemStat slot="1073741824" indexSub="2" itemId="47678" enchant="0" costVISPoint="4" />

@@ -21,6 +21,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
 import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -136,6 +137,7 @@ public class Q10764_FreeSpirit extends Quest
 		{
 			final int npcId = (npc.getId() == WIND_SPIRIT) ? LIBERATED_WIND_SPIRIT : LIBERATED_TREE_SPIRIT;
 			giveItems(player, LOOSENED_CHAIN, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			addSpawn(npcId, npc, false, 2500);
 			npc.deleteMe();
 			

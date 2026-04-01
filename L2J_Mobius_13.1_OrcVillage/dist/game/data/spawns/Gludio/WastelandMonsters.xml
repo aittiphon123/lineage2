@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<!-- Gludio Wasteland - Centaur Mob - Lineage 2 Superion version -->
-	<!-- To keep these spots visually organized, you need to add the corresponding IDs to the RandomSpawns.ini file in the MobsSpawnNotRandom section-->
+	<!-- To keep these spots visually organized, you need to add the corresponding IDs to the RandomSpawns.ini file in the MobsSpawnNotRandom section -->
 	<spawn name="wastelandcentaurspot_001" ai="NoRandomActivity">
 		<parameters>
 			<param name="disableRandomWalk" value="true" />

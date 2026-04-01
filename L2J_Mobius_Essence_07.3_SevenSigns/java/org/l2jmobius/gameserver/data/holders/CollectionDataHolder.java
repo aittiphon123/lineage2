@@ -30,14 +30,16 @@ import org.l2jmobius.gameserver.model.item.holders.ItemEnchantHolder;
 public class CollectionDataHolder
 {
 	private final int _collectionId;
+	private final String _name;
 	private final int _optionId;
 	private final int _category;
 	private final int _completeCount;
 	private final List<ItemEnchantHolder> _items;
 	
-	public CollectionDataHolder(int collectionId, int optionId, int category, int completeCount, List<ItemEnchantHolder> items)
+	public CollectionDataHolder(int collectionId, String name, int optionId, int category, int completeCount, List<ItemEnchantHolder> items)
 	{
 		_collectionId = collectionId;
+		_name = name;
 		_optionId = optionId;
 		_category = category;
 		_completeCount = completeCount;
@@ -49,6 +51,11 @@ public class CollectionDataHolder
 		return _collectionId;
 	}
 	
+	public String getName()
+	{
+		return _name;
+	}
+
 	public int getOptionId()
 	{
 		return _optionId;

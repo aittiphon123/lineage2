@@ -8374,4 +8374,18 @@
 	<zone name="Garden Authority Cube5" type="ConditionZone" shape="Cylinder" minZ="-3990" maxZ="-3600" rad="100">
 		<node X="-44696" Y="90333" />
 	</zone>
+	
+	<!-- Bosses portals -->
+	<zone name="zaken_portal_enter" type="ConditionZone" shape="Cylinder" minZ="-16000" maxZ="-3000" rad="120">
+		<node X="42325" Y="207883" />
+	</zone>
+	<zone name="queen_ant_portal_enter" type="ConditionZone" shape="Cylinder" minZ="-6000" maxZ="-5400" rad="150">
+		<node X="-21573" Y="181112" />
+	</zone>
+	<zone name="orfen_portal_enter" type="ConditionZone" shape="Cylinder" minZ="-4800" maxZ="-3800" rad="150">
+		<node X="43061" Y="16297" />
+	</zone>
+	<zone name="core_portal_enter" type="ConditionZone" shape="Cylinder" minZ="-7000" maxZ="-6000" rad="180">
+		<node X="18367" Y="109134" />
+	</zone>
 </list>

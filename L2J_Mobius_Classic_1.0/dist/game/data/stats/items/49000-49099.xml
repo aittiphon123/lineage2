@@ -260,7 +260,7 @@
 			<player chaotic="false" />
 		</conditions>
 		<skills>
-			<skill id="39020" level="1" /> <!--  -->
+			<skill id="39020" level="1" /> <!-- -->
 		</skills>
 	</item>
 	<item id="49027" name="Scroll: PK (D-grade)" type="EtcItem">
@@ -281,7 +281,7 @@
 			<player chaotic="false" />
 		</conditions>
 		<skills>
-			<skill id="39021" level="1" /> <!--  -->
+			<skill id="39021" level="1" /> <!-- -->
 		</skills>
 	</item>
 	<item id="49028" name="Scroll: PK (C-grade)" type="EtcItem">
@@ -302,7 +302,7 @@
 			<player chaotic="false" />
 		</conditions>
 		<skills>
-			<skill id="39022" level="1" /> <!--  -->
+			<skill id="39022" level="1" /> <!-- -->
 		</skills>
 	</item>
 	<item id="49029" name="Scroll: PK (B-grade)" type="EtcItem">
@@ -323,7 +323,7 @@
 			<player chaotic="false" />
 		</conditions>
 		<skills>
-			<skill id="39023" level="1" /> <!--  -->
+			<skill id="39023" level="1" /> <!-- -->
 		</skills>
 	</item>
 	<item id="49030" name="Scroll: PK (A-grade)" type="EtcItem">
@@ -344,7 +344,7 @@
 			<player chaotic="false" />
 		</conditions>
 		<skills>
-			<skill id="39024" level="1" /> <!--  -->
+			<skill id="39024" level="1" /> <!-- -->
 		</skills>
 	</item>
 	<item id="49031" name="Ring of Heir" type="Armor">
@@ -364,7 +364,7 @@
 			<stat type="mDef">14</stat>
 		</stats>
 		<skills>
-			<skill id="39019" level="1" /> <!--  -->
+			<skill id="39019" level="1" /> <!-- -->
 		</skills>
 	</item>
 	<item id="49032" name="Eva's Mark" additionalName="30-day" type="Armor">
@@ -380,7 +380,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="39025" level="1" /> <!--  -->
+			<skill id="39025" level="1" /> <!-- -->
 		</skills>
 	</item>
 	<item id="49033" name="Classic Gift Box" type="EtcItem">
@@ -517,7 +517,7 @@
 		<stats>
 			<stat type="pAtk">13</stat>
 			<stat type="mAtk">10</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -537,7 +537,7 @@
 		<stats>
 			<stat type="pAtk">12</stat>
 			<stat type="mAtk">14</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">20</stat>
@@ -558,7 +558,7 @@
 		<stats>
 			<stat type="pAtk">14</stat>
 			<stat type="mAtk">15</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">20</stat>
@@ -578,7 +578,7 @@
 		<stats>
 			<stat type="pAtk">17</stat>
 			<stat type="mAtk">11</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -597,7 +597,7 @@
 		<stats>
 			<stat type="pAtk">15</stat>
 			<stat type="mAtk">12</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -617,7 +617,7 @@
 		<stats>
 			<stat type="pAtk">14</stat>
 			<stat type="mAtk">16</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">20</stat>
@@ -637,7 +637,7 @@
 		<stats>
 			<stat type="pAtk">12</stat>
 			<stat type="mAtk">11</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>
@@ -657,7 +657,7 @@
 		<stats>
 			<stat type="pAtk">15</stat>
 			<stat type="mAtk">12</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -676,7 +676,7 @@
 		<stats>
 			<stat type="pAtk">9</stat>
 			<stat type="mAtk">7</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">20</stat>
@@ -696,7 +696,7 @@
 		<stats>
 			<stat type="pAtk">14</stat>
 			<stat type="mAtk">11</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -715,7 +715,7 @@
 		<stats>
 			<stat type="pAtk">14</stat>
 			<stat type="mAtk">11</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">20</stat>
@@ -825,7 +825,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SpiritShot" />
 		<skills>
-			<skill id="39029" level="1" /> <!--  -->
+			<skill id="39029" level="1" /> <!-- -->
 		</skills>
 	</item>
 	<item id="49063" name="Mysterious Spiritshot (D-grade)" type="EtcItem">
@@ -841,7 +841,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SpiritShot" />
 		<skills>
-			<skill id="39030" level="1" /> <!--  -->
+			<skill id="39030" level="1" /> <!-- -->
 		</skills>
 	</item>
 	<item id="49064" name="Mysterious Spiritshot (C-grade)" type="EtcItem">
@@ -857,7 +857,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SpiritShot" />
 		<skills>
-			<skill id="39031" level="1" /> <!--  -->
+			<skill id="39031" level="1" /> <!-- -->
 		</skills>
 	</item>
 	<item id="49065" name="Lucky Package: Blessed Spiritshots (No-grade)" additionalName="Event" type="EtcItem">

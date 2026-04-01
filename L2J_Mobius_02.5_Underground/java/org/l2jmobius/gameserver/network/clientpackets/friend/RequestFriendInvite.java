@@ -22,9 +22,9 @@ package org.l2jmobius.gameserver.network.clientpackets.friend;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.xml.FakePlayerData;
-import org.l2jmobius.gameserver.model.BlockList;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.player.BlockList;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;

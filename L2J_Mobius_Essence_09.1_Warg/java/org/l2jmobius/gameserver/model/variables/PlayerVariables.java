@@ -123,6 +123,7 @@ public class PlayerVariables extends AbstractVariables
 	public static final String CROSS_EVENT_CELLS = "CROSS_EVENT_CELLS";
 	public static final String CROSS_EVENT_REWARDS = "CROSS_EVENT_REWARDS";
 	public static final String CROSS_EVENT_ADVANCED_COUNT = "CROSS_EVENT_ADVANCED_COUNT";
+	public static final String DAILY_CONTINUED_RAID_GET_REWARD = "DAILY_CONTINUED_RAID_GET_REWARD";
 	public static final String CHAT_BACKGROUND_BLUE = "CHAT_BACKGROUND_BLUE";
 	public static final String CHAT_BACKGROUND_YELLOW = "CHAT_BACKGROUND_YELLOW";
 	public static final String ENABLE_CHAT_BACKGROUND = "ENABLE_CHAT_BACKGROUND";
@@ -182,6 +183,7 @@ public class PlayerVariables extends AbstractVariables
 		if (ASYNC_SAVE_ENABLED && !_scheduledSave.get())
 		{
 			_scheduledSave.set(true);
+			
 			ThreadPool.schedule(() ->
 			{
 				_scheduledSave.set(false);
@@ -223,80 +225,83 @@ public class PlayerVariables extends AbstractVariables
 	{
 		_saveLock.lock();
 		
-		try (Connection con = DatabaseFactory.getConnection())
+		try
 		{
-			// Process deletions.
-			if (!_deleted.isEmpty())
+			try (Connection con = DatabaseFactory.getConnection())
 			{
-				try (PreparedStatement st = con.prepareStatement(DELETE_QUERY))
+				// Process deletions.
+				if (!_deleted.isEmpty())
 				{
-					for (String name : _deleted)
+					try (PreparedStatement st = con.prepareStatement(DELETE_QUERY))
 					{
-						st.setInt(1, _objectId);
-						st.setString(2, name);
-						st.addBatch();
-					}
-					
-					st.executeBatch();
-				}
-			}
-			
-			// Process additions.
-			if (!_added.isEmpty())
-			{
-				try (PreparedStatement st = con.prepareStatement(INSERT_QUERY))
-				{
-					for (String name : _added)
-					{
-						final Object value = getSet().get(name);
-						if (value != null)
+						for (String name : _deleted)
 						{
 							st.setInt(1, _objectId);
 							st.setString(2, name);
-							st.setString(3, String.valueOf(value));
 							st.addBatch();
 						}
+						
+						st.executeBatch();
 					}
-					
-					st.executeBatch();
 				}
-			}
-			
-			// Process modifications.
-			if (!_modified.isEmpty())
-			{
-				try (PreparedStatement st = con.prepareStatement(UPDATE_QUERY))
+				
+				// Process additions.
+				if (!_added.isEmpty())
 				{
-					for (String name : _modified)
+					try (PreparedStatement st = con.prepareStatement(INSERT_QUERY))
 					{
-						final Object value = getSet().get(name);
-						if (value != null)
+						for (String name : _added)
 						{
-							st.setString(1, String.valueOf(value));
-							st.setInt(2, _objectId);
-							st.setString(3, name);
-							st.addBatch();
+							final Object value = getSet().get(name);
+							if (value != null)
+							{
+								st.setInt(1, _objectId);
+								st.setString(2, name);
+								st.setString(3, String.valueOf(value));
+								st.addBatch();
+							}
 						}
+						
+						st.executeBatch();
 					}
-					
-					st.executeBatch();
 				}
+				
+				// Process modifications.
+				if (!_modified.isEmpty())
+				{
+					try (PreparedStatement st = con.prepareStatement(UPDATE_QUERY))
+					{
+						for (String name : _modified)
+						{
+							final Object value = getSet().get(name);
+							if (value != null)
+							{
+								st.setString(1, String.valueOf(value));
+								st.setInt(2, _objectId);
+								st.setString(3, name);
+								st.addBatch();
+							}
+						}
+						
+						st.executeBatch();
+					}
+				}
+				
+				// Clear tracking after successful save.
+				clearChangeTracking();
+				compareAndSetChanges(true, false);
+				return true;
 			}
-		}
-		catch (SQLException e)
-		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Could not update variables for: " + _objectId, e);
-			_saveLock.unlock();
-			return false;
+			catch (SQLException e)
+			{
+				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Could not update variables for: " + _objectId, e);
+				return false;
+			}
 		}
 		finally
 		{
-			clearChangeTracking();
-			compareAndSetChanges(true, false);
 			_saveLock.unlock();
 		}
-		
-		return true;
 	}
 	
 	public boolean deleteMe()

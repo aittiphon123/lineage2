@@ -21,7 +21,7 @@
 		<set name="isAttackWeapon" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<stats>
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtkSpd">325</stat>
 		</stats>
 	</item>
 	<item id="13534" type="Weapon" name="Red Flag">
@@ -45,7 +45,7 @@
 		<set name="isAttackWeapon" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<stats>
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtkSpd">325</stat>
 		</stats>
 	</item>
 </list>

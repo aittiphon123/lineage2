@@ -119,7 +119,7 @@ public final class Q10559_BeforeTheGuide extends Quest
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id(MONK_OF_CHAOS)
 	@Id(HERPHAH)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);

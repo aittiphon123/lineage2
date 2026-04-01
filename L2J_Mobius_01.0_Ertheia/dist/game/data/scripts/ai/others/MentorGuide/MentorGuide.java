@@ -31,10 +31,9 @@ import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.managers.MentorManager;
-import org.l2jmobius.gameserver.model.Mentee;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.player.Mentee;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
@@ -54,6 +53,7 @@ import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.mentoring.ExMentorList;
 
@@ -536,7 +536,7 @@ public class MentorGuide extends Script implements IXmlReader
 	
 	private void sendMail(int objectId, String title, String body, int itemId, long amount)
 	{
-		final Message msg = new Message(objectId, title, body, MailType.MENTOR_NPC);
+		final MailMessage msg = new MailMessage(objectId, title, body, MailType.MENTOR_NPC);
 		final Mail attachments = msg.createAttachments();
 		attachments.addItem(ItemProcessType.REWARD, itemId, amount, null, null);
 		MailManager.getInstance().sendMessage(msg);

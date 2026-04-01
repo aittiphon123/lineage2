@@ -60,7 +60,7 @@ public class Q10378_WeedingWork extends Quest
 		addTalkId(DADFPHYNA);
 		addKillId(MANDRAGORA_OF_JOY_AND_SORROW, MANDRAGORA_OF_PRAYER);
 		registerQuestItems(MANDRAGORA_ROOT, MANDRAGORA_STEM);
-		addCondMinLevel(MIN_LEVEL);
+		addCondMinLevel(MIN_LEVEL, getNoQuestMsg(null));
 	}
 	
 	@Override

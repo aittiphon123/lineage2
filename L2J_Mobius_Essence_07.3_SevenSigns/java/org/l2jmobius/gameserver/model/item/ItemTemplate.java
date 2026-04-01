@@ -36,7 +36,6 @@ import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.config.custom.CustomDepositableItemsConfig;
-import org.l2jmobius.gameserver.model.ExtractableProduct;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -47,6 +46,8 @@ import org.l2jmobius.gameserver.model.events.ListenersContainer;
 import org.l2jmobius.gameserver.model.item.enchant.attribute.AttributeHolder;
 import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemGrade;
+import org.l2jmobius.gameserver.model.item.enums.ItemSkillType;
+import org.l2jmobius.gameserver.model.item.holders.ExtractableProduct;
 import org.l2jmobius.gameserver.model.item.holders.ItemSkillHolder;
 import org.l2jmobius.gameserver.model.item.type.ActionType;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
@@ -58,7 +59,6 @@ import org.l2jmobius.gameserver.model.stats.functions.FuncAdd;
 import org.l2jmobius.gameserver.model.stats.functions.FuncSet;
 import org.l2jmobius.gameserver.model.stats.functions.FuncTemplate;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.network.enums.ItemSkillType;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
 /**

@@ -21,8 +21,8 @@
 package org.l2jmobius.gameserver.model.zone.type;
 
 import org.l2jmobius.gameserver.data.holders.TimedHuntingZoneHolder;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.data.xml.TimedHuntingZoneData;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
@@ -108,7 +108,7 @@ public class TimedHuntingZone extends ZoneType
 			
 			if (!player.isGM())
 			{
-				player.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN));
+				player.teleToLocation(MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN));
 			}
 		}
 	}

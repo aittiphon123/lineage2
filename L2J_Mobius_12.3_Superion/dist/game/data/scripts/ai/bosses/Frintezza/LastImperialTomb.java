@@ -56,6 +56,7 @@ public class LastImperialTomb extends InstanceScript
 	// NPCs
 	private static final int GUIDE = 34543;
 	private static final int CUBE = 29061;
+	private static final int HALL_ALARM = 18328;
 	private static final int DUMMY = 29052;
 	private static final int DUMMY2 = 29053;
 	private static final int FRINTEZZA = 29045;
@@ -150,10 +151,10 @@ public class LastImperialTomb extends InstanceScript
 		addTalkId(GUIDE, CUBE);
 		addAttackId(SCARLET1);
 		addSkillSeeId(PORTRAITS);
-		addKillId(SCARLET2);
+		addKillId(HALL_ALARM, SCARLET2);
 		addKillId(PORTRAITS);
 		addKillId(DEMONS);
-		addSpawnId(DUMMY, DUMMY2);
+		addSpawnId(HALL_ALARM, DUMMY, DUMMY2);
 	}
 	
 	@Override
@@ -699,6 +700,11 @@ public class LastImperialTomb extends InstanceScript
 	{
 		npc.setRandomWalking(false);
 		npc.setImmobilized(true);
+		if (npc.getId() == HALL_ALARM)
+		{
+			npc.disableCoreAI(true);
+		}
+		else // dummy
 		{
 			npc.setInvul(true);
 		}
@@ -721,6 +727,7 @@ public class LastImperialTomb extends InstanceScript
 				startQuestTimer("SCARLET_SECOND_MORPH", 1000, null, attacker, false);
 			}
 		}
+		
 	}
 	
 	@Override

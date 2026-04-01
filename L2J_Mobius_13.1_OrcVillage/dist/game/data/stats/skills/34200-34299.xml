@@ -2487,7 +2487,19 @@
 		<!-- A magic counterattack in response to a basic one. -->
 		<icon>icon.skill1148</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>100</effectRange>
+		<hitTime>500</hitTime>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34295" toLevel="1" name="Axe Strike">
 		<!-- A physical attack. -->
@@ -2499,7 +2511,19 @@
 		<!-- A magic counterattack in response to a basic one. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-1</effectPoint>
+		<effectRange>100</effectRange>
+		<hitTime>500</hitTime>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34297" toLevel="1" name="Hot Springs' Refreshing Effect">
 		<!-- You feel refreshed thanks to Hot Springs' energy. -->

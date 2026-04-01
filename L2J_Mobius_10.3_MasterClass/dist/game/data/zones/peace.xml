@@ -1045,7 +1045,7 @@
 		<node X="-148311" Y="20673" />
 		<node X="-148295" Y="21973" />
 	</zone>
-	<zone name="Execution_Grounds_Spawn" type="PeaceZone" shape="NPoly" minZ="-2800" maxZ="-3900"> <!--Execution Grounds Spawn -->
+	<zone name="Execution_Grounds_Spawn" type="PeaceZone" shape="NPoly" minZ="-2800" maxZ="-3900"> <!-- Execution Grounds Spawn -->
 		<node X="48729" Y="147291" />
 		<node X="48639" Y="147696" />
 		<node X="48136" Y="147578" />

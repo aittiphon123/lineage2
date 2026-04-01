@@ -21,13 +21,14 @@
 package org.l2jmobius.gameserver.network.clientpackets.variation;
 
 import org.l2jmobius.gameserver.data.xml.VariationData;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.VariationRequest;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.options.Variation;
 import org.l2jmobius.gameserver.model.options.VariationFee;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
+import org.l2jmobius.gameserver.network.PacketLogger;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.clientpackets.AbstractRefinePacket;
 import org.l2jmobius.gameserver.network.serverpackets.ExVariationResult;
@@ -79,6 +80,9 @@ public class RequestRefine extends AbstractRefinePacket
 		final Item feeItem = player.getInventory().getItemByItemId(fee.getItemId());
 		if ((feeItem == null) && (fee.getItemId() != 0))
 		{
+			PacketLogger.warning(getClass().getSimpleName() + ": " + player.getName() + " does not have required fee item (ID: " + fee.getItemId() + ") for mineral ID: " + mineralItem.getId());
+			player.sendPacket(ExVariationResult.FAIL);
+			player.sendPacket(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS);
 			return;
 		}
 		
@@ -118,28 +122,20 @@ public class RequestRefine extends AbstractRefinePacket
 			return;
 		}
 		
-		// Support for single slot augments.
+		// Only reuse old options for slots that are truly optional and intentionally left empty (if needed).
+		// For your rare group, we don't fallback to old augment.
 		final int option1 = augment.getOption1Id();
 		final int option2 = augment.getOption2Id();
 		final int option3 = augment.getOption3Id();
-		if ((option1 < 1) || (option2 < 1) || (option3 < 1))
+		
+		// Optional: only fallback for option1/2 if your design requires at least 2 guaranteed options.
+		final VariationInstance oldAugment = targetItem.getAugmentation();
+		if (oldAugment != null)
 		{
-			final VariationInstance oldAugment = targetItem.getAugmentation();
-			if (oldAugment != null)
-			{
-				if (option1 < 1)
-				{
-					augment = new VariationInstance(augment.getMineralId(), oldAugment.getOption1Id(), option2, option3);
-				}
-				else if (option2 < 1)
-				{
-					augment = new VariationInstance(augment.getMineralId(), option1, oldAugment.getOption2Id(), option3);
-				}
-				else // Option 3.
-				{
-					augment = new VariationInstance(augment.getMineralId(), option1, option2, oldAugment.getOption3Id());
-				}
-			}
+			final int newOption1 = (option1 > 0) ? option1 : 0;
+			final int newOption2 = (option2 > 0) ? option2 : 0;
+			final int newOption3 = (option3 > 0) ? option3 : 0; // Do not fallback to old 3rd option.
+			augment = new VariationInstance(augment.getMineralId(), newOption1, newOption2, newOption3);
 		}
 		
 		player.sendPacket(new ExVariationResult(augment.getOption1Id(), augment.getOption2Id(), augment.getOption3Id(), true));

@@ -73,6 +73,7 @@
 							</xs:element>
 						</xs:sequence>
 						<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+						<xs:attribute name="name" type="xs:string" use="optional" />
 						<xs:attribute name="grade" type="xs:string" use="required" />
 						<xs:attribute name="summonChance" type="xs:unsignedLong" use="required" />
 						<xs:attribute name="baseRelicId" type="xs:unsignedInt" use="required" />

@@ -26,9 +26,7 @@ import org.l2jmobius.gameserver.config.NpcConfig;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
 import org.l2jmobius.gameserver.config.custom.ClassBalanceConfig;
-import org.l2jmobius.gameserver.model.Elementals;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.Weapon;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.stats.Calculator;
 import org.l2jmobius.gameserver.model.stats.MoveType;
@@ -40,6 +38,14 @@ public class CreatureStat
 {
 	private static final int DIVINE_INSPIRATION = 1405;
 	
+	// Elementals
+	private static final byte FIRE = 0;
+	private static final byte WATER = 1;
+	private static final byte WIND = 2;
+	private static final byte EARTH = 3;
+	private static final byte HOLY = 4;
+	private static final byte DARK = 5;
+	
 	private final Creature _creature;
 	private long _exp = 0;
 	private long _sp = 0;
@@ -49,8 +55,10 @@ public class CreatureStat
 	private final float[] _defenceTraits = new float[TraitType.values().length];
 	private final int[] _defenceTraitsCount = new int[TraitType.values().length];
 	private final int[] _traitsInvul = new int[TraitType.values().length];
+	
 	/** Creature's maximum buff count. */
 	private int _maxBuffCount = PlayerConfig.BUFFS_MAX_AMOUNT;
+	
 	/** Speed multiplier set by admin gmspeed command */
 	private double _gmSpeedMultiplier = 1;
 	
@@ -590,15 +598,14 @@ public class CreatureStat
 	 */
 	public int getPhysicalAttackRange()
 	{
-		final Weapon weapon = _creature.getActiveWeaponItem();
 		int baseAttackRange;
-		if (weapon != null)
-		{
-			baseAttackRange = weapon.getBaseAttackRange();
-		}
-		else
+		if (_creature.getActiveWeaponItem() == null)
 		{
 			baseAttackRange = _creature.getTemplate().getBaseAttackRange();
+		}
+		else // Use weapon pAtkRange stat.
+		{
+			baseAttackRange = 0;
 		}
 		
 		return (int) calcStat(Stat.POWER_ATTACK_RANGE, baseAttackRange, null, null);
@@ -715,27 +722,27 @@ public class CreatureStat
 	{
 		switch (attackAttribute)
 		{
-			case Elementals.FIRE:
+			case FIRE:
 			{
 				return (int) calcStat(Stat.FIRE_POWER, _creature.getTemplate().getBaseFire());
 			}
-			case Elementals.WATER:
+			case WATER:
 			{
 				return (int) calcStat(Stat.WATER_POWER, _creature.getTemplate().getBaseWater());
 			}
-			case Elementals.WIND:
+			case WIND:
 			{
 				return (int) calcStat(Stat.WIND_POWER, _creature.getTemplate().getBaseWind());
 			}
-			case Elementals.EARTH:
+			case EARTH:
 			{
 				return (int) calcStat(Stat.EARTH_POWER, _creature.getTemplate().getBaseEarth());
 			}
-			case Elementals.HOLY:
+			case HOLY:
 			{
 				return (int) calcStat(Stat.HOLY_POWER, _creature.getTemplate().getBaseHoly());
 			}
-			case Elementals.DARK:
+			case DARK:
 			{
 				return (int) calcStat(Stat.DARK_POWER, _creature.getTemplate().getBaseDark());
 			}
@@ -750,27 +757,27 @@ public class CreatureStat
 	{
 		switch (defenseAttribute)
 		{
-			case Elementals.FIRE:
+			case FIRE:
 			{
 				return (int) calcStat(Stat.FIRE_RES, _creature.getTemplate().getBaseFireRes());
 			}
-			case Elementals.WATER:
+			case WATER:
 			{
 				return (int) calcStat(Stat.WATER_RES, _creature.getTemplate().getBaseWaterRes());
 			}
-			case Elementals.WIND:
+			case WIND:
 			{
 				return (int) calcStat(Stat.WIND_RES, _creature.getTemplate().getBaseWindRes());
 			}
-			case Elementals.EARTH:
+			case EARTH:
 			{
 				return (int) calcStat(Stat.EARTH_RES, _creature.getTemplate().getBaseEarthRes());
 			}
-			case Elementals.HOLY:
+			case HOLY:
 			{
 				return (int) calcStat(Stat.HOLY_RES, _creature.getTemplate().getBaseHolyRes());
 			}
-			case Elementals.DARK:
+			case DARK:
 			{
 				return (int) calcStat(Stat.DARK_RES, _creature.getTemplate().getBaseDarkRes());
 			}

@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
@@ -52,20 +56,17 @@ public class ExCursedWeaponLocation extends ServerPacket
 				buffer.writeInt(w.pos.getY());
 				buffer.writeInt(w.pos.getZ());
 				
-				// Calculates how much FARM (Excess) there is
+				// Calculates how much FARM (Excess) there is.
 				// If the total reward is 5,000,027,000, the farm is 27,000.
-				long currentFarm = w.reward - 5_000_000_000L;
-				if (currentFarm < 0)
-				{
-					currentFarm = 0;
-				}
+				final long currentFarm = Math.max(0, w.reward - 5_000_000_000L);
 				
-				// Sending order to the client
-				// The client fills: [Guaranteed] then [Bonus]
+				// Sending order to the client.
+				// The client fills: [Guaranteed] then [Bonus].
 				
-				// A) First Long: Goes to "Guaranteed Reward"
+				// A) First Long: Goes to "Guaranteed Reward".
 				buffer.writeLong(5_000_000_000L);
-				// B) Second Long: Goes to "Bonus Reward"
+				
+				// B) Second Long: Goes to "Bonus Reward".
 				buffer.writeLong(currentFarm);
 			}
 		}
@@ -80,9 +81,9 @@ public class ExCursedWeaponLocation extends ServerPacket
 		public Location pos;
 		public int id;
 		public int activated;
-		public long reward; // Variable to store Adena
+		public long reward; // Variable to store Adena.
 		
-		// Constructor to receive Adena
+		// Constructor to receive Adena.
 		public CursedWeaponInfo(Location p, int cwId, int status, long r)
 		{
 			pos = p;

@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.model.actor.holders.player;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.l2jmobius.gameserver.data.holders.MissionLevelHolder;
 import org.l2jmobius.gameserver.data.xml.MissionLevel;
-import org.l2jmobius.gameserver.model.MissionLevelHolder;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 

@@ -146,7 +146,7 @@ public final class Q10529_IvoryTowersResearchSeaOfSporesJournal extends Quest
 	@RegisterEvent(EventType.ON_NPC_MENU_SELECT)
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id(BACON)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);

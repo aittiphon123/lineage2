@@ -68,7 +68,7 @@ public final class StigMach extends Script
 	@RegisterEvent(EventType.ON_NPC_MENU_SELECT)
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id(STIG)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player talker = event.getTalker();
 		final Npc npc = event.getNpc();

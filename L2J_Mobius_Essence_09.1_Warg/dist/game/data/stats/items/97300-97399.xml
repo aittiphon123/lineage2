@@ -41,29 +41,29 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">80</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multiattack -->
-			<skill id="50569" level="1" /> <!-- Gorde's Flame Spear -->
-			<skill id="50570" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Gorde's Flame Spear -->
-			<skill id="50570" level="2" type="ON_ENCHANT" type_value="2" /> <!-- +1 Gorde's Flame Spear -->
-			<skill id="50570" level="3" type="ON_ENCHANT" type_value="3" /> <!-- +2 Gorde's Flame Spear -->
-			<skill id="50570" level="4" type="ON_ENCHANT" type_value="4" /> <!-- +3 Gorde's Flame Spear -->
-			<skill id="50570" level="5" type="ON_ENCHANT" type_value="5" /> <!-- +4 Gorde's Flame Spear -->
-			<skill id="50570" level="6" type="ON_ENCHANT" type_value="6" /> <!-- +5 Gorde's Flame Spear -->
-			<skill id="50570" level="7" type="ON_ENCHANT" type_value="7" /> <!-- +6 Gorde's Flame Spear -->
-			<skill id="50570" level="8" type="ON_ENCHANT" type_value="8" /> <!-- +7 Gorde's Flame Spear -->
-			<skill id="50570" level="9" type="ON_ENCHANT" type_value="9" /> <!-- +8 Gorde's Flame Spear -->
-			<skill id="50570" level="10" type="ON_ENCHANT" type_value="10" /> <!-- +9 Gorde's Flame Spear -->
-			<skill id="50405" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
-			<skill id="50412" level="1" type="ON_BLESSING" type_value="5" /> <!-- +5 Boss Weapon Blessing Effect -->
-			<skill id="50413" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Boss' Weapon Blessing Effect -->
-			<skill id="50414" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Boss' Weapon Blessing Effect -->
-			<skill id="50415" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Boss' Weapon Blessing Effect -->
-			<skill id="50416" level="1" type="ON_BLESSING" type_value="9" /> <!-- +9 Boss' Weapon Blessing Effect -->
-			<skill id="50417" level="1" type="ON_BLESSING" type_value="10" /> <!-- +10 Boss' Weapon Blessing Effect -->
+			<skill id="50570" level="1" /> <!-- Gorde's Flame Spear -->
+			<skill id="50570" level="2" type="ON_ENCHANT" type_value="1" /> <!-- +1 Gorde's Flame Spear -->
+			<skill id="50570" level="3" type="ON_ENCHANT" type_value="2" /> <!-- +2 Gorde's Flame Spear -->
+			<skill id="50570" level="4" type="ON_ENCHANT" type_value="3" /> <!-- +3 Gorde's Flame Spear -->
+			<skill id="50570" level="5" type="ON_ENCHANT" type_value="4" /> <!-- +4 Gorde's Flame Spear -->
+			<skill id="50570" level="6" type="ON_ENCHANT" type_value="5" /> <!-- +5 Gorde's Flame Spear -->
+			<skill id="50570" level="7" type="ON_ENCHANT" type_value="6" /> <!-- +6 Gorde's Flame Spear -->
+			<skill id="50570" level="8" type="ON_ENCHANT" type_value="7" /> <!-- +7 Gorde's Flame Spear -->
+			<skill id="50570" level="9" type="ON_ENCHANT" type_value="8" /> <!-- +8 Gorde's Flame Spear -->
+			<skill id="50570" level="10" type="ON_ENCHANT" type_value="9" /> <!-- +9 Gorde's Flame Spear -->
+			<skill id="50570" level="11" type="ON_ENCHANT" type_value="10" /> <!-- +10 Gorde's Flame Spear -->
+			<skill id="50405" level="1" type="ON_BLESSING" /> <!-- Blessing Effect: Weapon -->
+			<skill id="50412" level="1" type="ON_BLESSING" type_value="5" /> <!-- Blessing Effect: +5 Boss Weapon -->
+			<skill id="50413" level="1" type="ON_BLESSING" type_value="6" /> <!-- Blessing Effect: +6 Boss Weapon -->
+			<skill id="50414" level="1" type="ON_BLESSING" type_value="7" /> <!-- Blessing Effect: +7 Boss Weapon -->
+			<skill id="50415" level="1" type="ON_BLESSING" type_value="8" /> <!-- Blessing Effect: +8 Boss Weapon -->
+			<skill id="50416" level="1" type="ON_BLESSING" type_value="9" /> <!-- Blessing Effect: +9 Boss Weapon -->
+			<skill id="50417" level="1" type="ON_BLESSING" type_value="10" /> <!-- Blessing Effect: +10 Boss Weapon -->
 		</skills>
 	</item>
 	<item id="97302" name="Gorde's Flame Spear" additionalName="Sealed" type="Weapon">
@@ -93,29 +93,29 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">80</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multiattack -->
-			<skill id="50569" level="1" /> <!-- Gorde's Flame Spear -->
-			<skill id="50570" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Gorde's Flame Spear -->
-			<skill id="50570" level="2" type="ON_ENCHANT" type_value="2" /> <!-- +1 Gorde's Flame Spear -->
-			<skill id="50570" level="3" type="ON_ENCHANT" type_value="3" /> <!-- +2 Gorde's Flame Spear -->
-			<skill id="50570" level="4" type="ON_ENCHANT" type_value="4" /> <!-- +3 Gorde's Flame Spear -->
-			<skill id="50570" level="5" type="ON_ENCHANT" type_value="5" /> <!-- +4 Gorde's Flame Spear -->
-			<skill id="50570" level="6" type="ON_ENCHANT" type_value="6" /> <!-- +5 Gorde's Flame Spear -->
-			<skill id="50570" level="7" type="ON_ENCHANT" type_value="7" /> <!-- +6 Gorde's Flame Spear -->
-			<skill id="50570" level="8" type="ON_ENCHANT" type_value="8" /> <!-- +7 Gorde's Flame Spear -->
-			<skill id="50570" level="9" type="ON_ENCHANT" type_value="9" /> <!-- +8 Gorde's Flame Spear -->
-			<skill id="50570" level="10" type="ON_ENCHANT" type_value="10" /> <!-- +9 Gorde's Flame Spear -->
-			<skill id="50405" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
-			<skill id="50412" level="1" type="ON_BLESSING" type_value="5" /> <!-- +5 Boss Weapon Blessing Effect -->
-			<skill id="50413" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Boss' Weapon Blessing Effect -->
-			<skill id="50414" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Boss' Weapon Blessing Effect -->
-			<skill id="50415" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Boss' Weapon Blessing Effect -->
-			<skill id="50416" level="1" type="ON_BLESSING" type_value="9" /> <!-- +9 Boss' Weapon Blessing Effect -->
-			<skill id="50417" level="1" type="ON_BLESSING" type_value="10" /> <!-- +10 Boss' Weapon Blessing Effect -->
+			<skill id="50570" level="1" /> <!-- Gorde's Flame Spear -->
+			<skill id="50570" level="2" type="ON_ENCHANT" type_value="1" /> <!-- +1 Gorde's Flame Spear -->
+			<skill id="50570" level="3" type="ON_ENCHANT" type_value="2" /> <!-- +2 Gorde's Flame Spear -->
+			<skill id="50570" level="4" type="ON_ENCHANT" type_value="3" /> <!-- +3 Gorde's Flame Spear -->
+			<skill id="50570" level="5" type="ON_ENCHANT" type_value="4" /> <!-- +4 Gorde's Flame Spear -->
+			<skill id="50570" level="6" type="ON_ENCHANT" type_value="5" /> <!-- +5 Gorde's Flame Spear -->
+			<skill id="50570" level="7" type="ON_ENCHANT" type_value="6" /> <!-- +6 Gorde's Flame Spear -->
+			<skill id="50570" level="8" type="ON_ENCHANT" type_value="7" /> <!-- +7 Gorde's Flame Spear -->
+			<skill id="50570" level="9" type="ON_ENCHANT" type_value="8" /> <!-- +8 Gorde's Flame Spear -->
+			<skill id="50570" level="10" type="ON_ENCHANT" type_value="9" /> <!-- +9 Gorde's Flame Spear -->
+			<skill id="50570" level="11" type="ON_ENCHANT" type_value="10" /> <!-- +10 Gorde's Flame Spear -->
+			<skill id="50405" level="1" type="ON_BLESSING" /> <!-- Blessing Effect: Weapon -->
+			<skill id="50412" level="1" type="ON_BLESSING" type_value="5" /> <!-- Blessing Effect: +5 Boss Weapon -->
+			<skill id="50413" level="1" type="ON_BLESSING" type_value="6" /> <!-- Blessing Effect: +6 Boss Weapon -->
+			<skill id="50414" level="1" type="ON_BLESSING" type_value="7" /> <!-- Blessing Effect: +7 Boss Weapon -->
+			<skill id="50415" level="1" type="ON_BLESSING" type_value="8" /> <!-- Blessing Effect: +8 Boss Weapon -->
+			<skill id="50416" level="1" type="ON_BLESSING" type_value="9" /> <!-- Blessing Effect: +9 Boss Weapon -->
+			<skill id="50417" level="1" type="ON_BLESSING" type_value="10" /> <!-- Blessing Effect: +10 Boss Weapon -->
 		</skills>
 	</item>
 	<item id="97303" name="Lineage 2 Reward Pack (Time-limited)" additionalName="Sealed" type="EtcItem">

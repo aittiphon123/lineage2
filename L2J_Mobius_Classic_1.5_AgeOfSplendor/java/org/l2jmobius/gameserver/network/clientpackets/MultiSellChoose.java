@@ -29,7 +29,6 @@ import org.l2jmobius.gameserver.data.holders.MultisellEntryHolder;
 import org.l2jmobius.gameserver.data.holders.PreparedMultisellListHolder;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
-import org.l2jmobius.gameserver.model.ItemInfo;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
@@ -39,6 +38,7 @@ import org.l2jmobius.gameserver.model.item.enchant.attribute.AttributeHolder;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.enums.SpecialItemType;
 import org.l2jmobius.gameserver.model.item.holders.ItemChanceHolder;
+import org.l2jmobius.gameserver.model.item.holders.ItemInfo;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.itemcontainer.PlayerInventory;
@@ -547,7 +547,7 @@ public class MultiSellChoose extends ClientPacket
 						sm.addLong(totalCount);
 						player.sendPacket(sm);
 					}
-					else if (addedItem.getEnchantLevel() > 0)
+					else if (addedItem.isEnchanted())
 					{
 						final SystemMessage sm = new SystemMessage(SystemMessageId.ACQUIRED_S1_S2);
 						sm.addLong(addedItem.getEnchantLevel());

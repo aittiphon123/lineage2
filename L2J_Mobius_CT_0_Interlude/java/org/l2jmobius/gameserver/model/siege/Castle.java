@@ -43,7 +43,6 @@ import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.CastleManorManager;
 import org.l2jmobius.gameserver.managers.SiegeManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
-import org.l2jmobius.gameserver.model.TowerSpawn;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.MountType;

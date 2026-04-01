@@ -144,28 +144,28 @@
 		<node X="116040" Y="226040" />
 		<node X="106350" Y="226040" />
 	</zone>
-	<zone name="ravaged_inadril_field_of_silence" id="100" type="TimedHuntingZone" shape="NPoly" minZ="-5000" maxZ="4000">
+	<zone name="ravaged_inadril_field_of_silence" type="TimedHuntingZone" shape="NPoly" minZ="-5000" maxZ="4000">
 		<stat name="instanceId" val="1013" />
 		<node X="65540" Y="262140" />
 		<node X="65540" Y="196600" />
 		<node X="98300" Y="196600" />
 		<node X="98300" Y="262140" />
 	</zone>
-	<zone name="ravaged_inadril_field_of_whispers" id="101" type="TimedHuntingZone" shape="NPoly" minZ="-5000" maxZ="4000">
+	<zone name="ravaged_inadril_field_of_whispers" type="TimedHuntingZone" shape="NPoly" minZ="-5000" maxZ="4000">
 		<stat name="instanceId" val="1013" />
 		<node X="65540" Y="196600" />
 		<node X="65540" Y="163840" />
 		<node X="98300" Y="163840" />
 		<node X="98300" Y="196600" />
 	</zone>
-	<zone name="ravaged_inadril_alligator_beach" id="102" type="TimedHuntingZone" shape="NPoly" minZ="-5000" maxZ="4000">
+	<zone name="ravaged_inadril_alligator_beach" type="TimedHuntingZone" shape="NPoly" minZ="-5000" maxZ="4000">
 		<stat name="instanceId" val="1013" />
 		<node X="98300" Y="196600" />
 		<node X="98300" Y="229380" />
 		<node X="131070" Y="229380" />
 		<node X="131070" Y="196600" />
 	</zone>
-	<zone name="ravaged_inadril_alligator_island" id="103" type="TimedHuntingZone" shape="NPoly" minZ="-5000" maxZ="100">
+	<zone name="ravaged_inadril_alligator_island" type="TimedHuntingZone" shape="NPoly" minZ="-5000" maxZ="100">
 		<stat name="instanceId" val="1013" />
 		<node X="98310" Y="163840" />
 		<node X="131070" Y="163840" />

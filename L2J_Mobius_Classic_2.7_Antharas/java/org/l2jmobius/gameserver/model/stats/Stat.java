@@ -129,7 +129,7 @@ public enum Stat
 	PHYSICAL_SKILL_CRITICAL_DAMAGE_ADD("cAtkSkillAdd"),
 	MAGIC_CRITICAL_DAMAGE_ADD("mCritPowerAdd"),
 	SHIELD_DEFENCE_RATE("rShld", new ShieldDefenceRateFinalizer()),
-	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, 0, 1),
+	CRITICAL_RATE("critRate", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, 0, 1),
 	CRITICAL_RATE_SKILL("physicalSkillCriticalRate", new PSkillCritRateFinalizer()),
 	ADD_MAX_MAGIC_CRITICAL_RATE("addMaxMagicCritRate"),
 	ADD_MAX_PHYSICAL_CRITICAL_RATE("addMaxPhysicalCritRate"),

@@ -22,10 +22,11 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.appearance.PlayerAppearance;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
+import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 
@@ -34,6 +35,70 @@ import org.l2jmobius.gameserver.network.ServerPackets;
  */
 public class GMViewCharacterInfo extends ServerPacket
 {
+	private static final int[] PAPERDOLL_ITEM_SLOTS =
+	{
+		Inventory.PAPERDOLL_UNDER,
+		Inventory.PAPERDOLL_REAR,
+		Inventory.PAPERDOLL_LEAR,
+		Inventory.PAPERDOLL_NECK,
+		Inventory.PAPERDOLL_RFINGER,
+		Inventory.PAPERDOLL_LFINGER,
+		Inventory.PAPERDOLL_HEAD,
+		Inventory.PAPERDOLL_RHAND,
+		Inventory.PAPERDOLL_LHAND,
+		Inventory.PAPERDOLL_GLOVES,
+		Inventory.PAPERDOLL_CHEST,
+		Inventory.PAPERDOLL_LEGS,
+		Inventory.PAPERDOLL_FEET,
+		Inventory.PAPERDOLL_CLOAK,
+		Inventory.PAPERDOLL_RHAND,
+		Inventory.PAPERDOLL_HAIR,
+		Inventory.PAPERDOLL_HAIR2,
+		Inventory.PAPERDOLL_RBRACELET,
+		Inventory.PAPERDOLL_LBRACELET,
+		Inventory.PAPERDOLL_AGATHION1,
+		Inventory.PAPERDOLL_AGATHION2,
+		Inventory.PAPERDOLL_AGATHION3,
+		Inventory.PAPERDOLL_AGATHION4,
+		Inventory.PAPERDOLL_AGATHION5,
+		Inventory.PAPERDOLL_DECO1,
+		Inventory.PAPERDOLL_DECO2,
+		Inventory.PAPERDOLL_DECO3,
+		Inventory.PAPERDOLL_DECO4,
+		Inventory.PAPERDOLL_DECO5,
+		Inventory.PAPERDOLL_DECO6,
+		Inventory.PAPERDOLL_BELT,
+		Inventory.PAPERDOLL_BROOCH,
+		Inventory.PAPERDOLL_BROOCH_JEWEL1,
+		Inventory.PAPERDOLL_BROOCH_JEWEL2,
+		Inventory.PAPERDOLL_BROOCH_JEWEL3,
+		Inventory.PAPERDOLL_BROOCH_JEWEL4,
+		Inventory.PAPERDOLL_BROOCH_JEWEL5,
+		Inventory.PAPERDOLL_BROOCH_JEWEL6,
+		Inventory.PAPERDOLL_ARTIFACT_BOOK,
+		Inventory.PAPERDOLL_ARTIFACT1,
+		Inventory.PAPERDOLL_ARTIFACT2,
+		Inventory.PAPERDOLL_ARTIFACT3,
+		Inventory.PAPERDOLL_ARTIFACT4,
+		Inventory.PAPERDOLL_ARTIFACT5,
+		Inventory.PAPERDOLL_ARTIFACT6,
+		Inventory.PAPERDOLL_ARTIFACT7,
+		Inventory.PAPERDOLL_ARTIFACT8,
+		Inventory.PAPERDOLL_ARTIFACT9,
+		Inventory.PAPERDOLL_ARTIFACT10,
+		Inventory.PAPERDOLL_ARTIFACT11,
+		Inventory.PAPERDOLL_ARTIFACT12,
+		Inventory.PAPERDOLL_ARTIFACT13,
+		Inventory.PAPERDOLL_ARTIFACT14,
+		Inventory.PAPERDOLL_ARTIFACT15,
+		Inventory.PAPERDOLL_ARTIFACT16,
+		Inventory.PAPERDOLL_ARTIFACT17,
+		Inventory.PAPERDOLL_ARTIFACT18,
+		Inventory.PAPERDOLL_ARTIFACT19,
+		Inventory.PAPERDOLL_ARTIFACT20,
+		Inventory.PAPERDOLL_ARTIFACT21,
+	};
+	
 	private final Player _player;
 	private final int _runSpd;
 	private final int _walkSpd;
@@ -88,12 +153,13 @@ public class GMViewCharacterInfo extends ServerPacket
 		buffer.writeInt(_player.getCurrentLoad());
 		buffer.writeInt(_player.getMaxLoad());
 		buffer.writeInt(_player.getPkKills());
-		for (int slot : getPaperdollOrder())
+		
+		for (int slot : PAPERDOLL_ITEM_SLOTS)
 		{
 			buffer.writeInt(_player.getInventory().getPaperdollObjectId(slot));
 		}
 		
-		for (int slot : getPaperdollOrder())
+		for (int slot : PAPERDOLL_ITEM_SLOTS)
 		{
 			buffer.writeInt(_player.getInventory().getPaperdollItemDisplayId(slot));
 		}
@@ -179,6 +245,7 @@ public class GMViewCharacterInfo extends ServerPacket
 		buffer.writeByte(_player.isHero());
 		buffer.writeInt(appearance.getNameColor());
 		buffer.writeInt(appearance.getTitleColor());
+		
 		final AttributeType attackAttribute = _player.getAttackElement();
 		buffer.writeShort(attackAttribute.getClientId());
 		buffer.writeShort(_player.getAttackElementValue(attackAttribute));

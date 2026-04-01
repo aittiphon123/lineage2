@@ -20,21 +20,17 @@
  */
 package org.l2jmobius.gameserver.config;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
 import org.l2jmobius.commons.util.ConfigReader;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.model.actor.enums.player.IllegalActionPunishmentType;
 import org.l2jmobius.gameserver.model.groups.PartyExpType;
-import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 
 /**
  * This class loads all the player related configurations.
@@ -89,10 +85,6 @@ public class PlayerConfig
 	public static boolean FAKE_DEATH_DAMAGE_STAND;
 	public static boolean CALCULATE_MAGIC_SUCCESS_BY_SKILL_MAGIC_LEVEL;
 	public static boolean CALCULATE_DISTANCE_BOW_DAMAGE;
-	public static boolean ALLOW_CLASS_MASTERS;
-	public static boolean ALLOW_ENTIRE_TREE;
-	public static boolean ALTERNATE_CLASS_MASTER;
-	public static ClassMasterSettings CLASS_MASTER_SETTINGS;
 	public static boolean LIFE_CRYSTAL_NEEDED;
 	public static boolean ES_SP_BOOK_NEEDED;
 	public static boolean DIVINE_SP_BOOK_NEEDED;
@@ -244,6 +236,9 @@ public class PlayerConfig
 	public static boolean SILENCE_MODE_EXCLUDE;
 	public static boolean ALT_VALIDATE_TRIGGER_SKILLS;
 	public static int PLAYER_MOVEMENT_BLOCK_TIME;
+	public static boolean RANDOMIZE_AUTO_ATTACK_DAMAGE;
+	public static boolean RANDOMIZE_PHYSICAL_SKILL_DAMAGE;
+	public static boolean RANDOMIZE_MAGICAL_SKILL_DAMAGE;
 	
 	public static void load()
 	{
@@ -341,13 +336,6 @@ public class PlayerConfig
 		FAKE_DEATH_DAMAGE_STAND = config.getBoolean("FakeDeathDamageStand", true);
 		CALCULATE_MAGIC_SUCCESS_BY_SKILL_MAGIC_LEVEL = config.getBoolean("CalculateMagicSuccessBySkillMagicLevel", true);
 		CALCULATE_DISTANCE_BOW_DAMAGE = config.getBoolean("DistanceBowDamage", false);
-		ALLOW_CLASS_MASTERS = config.getBoolean("AllowClassMasters", false);
-		ALLOW_ENTIRE_TREE = config.getBoolean("AllowEntireTree", false);
-		ALTERNATE_CLASS_MASTER = config.getBoolean("AlternateClassMaster", false);
-		if (ALLOW_CLASS_MASTERS || ALTERNATE_CLASS_MASTER)
-		{
-			CLASS_MASTER_SETTINGS = new ClassMasterSettings(config.getString("ConfigClassMaster", ""));
-		}
 		LIFE_CRYSTAL_NEEDED = config.getBoolean("LifeCrystalNeeded", true);
 		ES_SP_BOOK_NEEDED = config.getBoolean("EnchantSkillSpBookNeeded", true);
 		DIVINE_SP_BOOK_NEEDED = config.getBoolean("DivineInspirationSpBookNeeded", true);
@@ -568,80 +556,8 @@ public class PlayerConfig
 		SILENCE_MODE_EXCLUDE = config.getBoolean("SilenceModeExclude", false);
 		ALT_VALIDATE_TRIGGER_SKILLS = config.getBoolean("AltValidateTriggerSkills", false);
 		PLAYER_MOVEMENT_BLOCK_TIME = config.getInt("NpcTalkBlockingTime", 0) * 1000;
-	}
-	
-	public static class ClassMasterSettings
-	{
-		private final Map<Integer, List<ItemHolder>> _claimItems = new HashMap<>(3);
-		private final Map<Integer, List<ItemHolder>> _rewardItems = new HashMap<>(3);
-		private final Map<Integer, Boolean> _allowedClassChange = new HashMap<>(3);
-		
-		public ClassMasterSettings(String configLine)
-		{
-			parseConfigLine(configLine.trim());
-		}
-		
-		private void parseConfigLine(String configLine)
-		{
-			if (configLine.isEmpty())
-			{
-				return;
-			}
-			
-			final StringTokenizer st = new StringTokenizer(configLine, ";");
-			while (st.hasMoreTokens())
-			{
-				// get allowed class change
-				final int job = Integer.parseInt(st.nextToken());
-				_allowedClassChange.put(job, true);
-				
-				final List<ItemHolder> requiredItems = new ArrayList<>();
-				// parse items needed for class change
-				if (st.hasMoreTokens())
-				{
-					final StringTokenizer st2 = new StringTokenizer(st.nextToken(), "[],");
-					while (st2.hasMoreTokens())
-					{
-						final StringTokenizer st3 = new StringTokenizer(st2.nextToken(), "()");
-						final int itemId = Integer.parseInt(st3.nextToken());
-						final int quantity = Integer.parseInt(st3.nextToken());
-						requiredItems.add(new ItemHolder(itemId, quantity));
-					}
-				}
-				
-				_claimItems.put(job, requiredItems);
-				
-				final List<ItemHolder> rewardItems = new ArrayList<>();
-				// parse gifts after class change
-				if (st.hasMoreTokens())
-				{
-					final StringTokenizer st2 = new StringTokenizer(st.nextToken(), "[],");
-					while (st2.hasMoreTokens())
-					{
-						final StringTokenizer st3 = new StringTokenizer(st2.nextToken(), "()");
-						final int itemId = Integer.parseInt(st3.nextToken());
-						final int quantity = Integer.parseInt(st3.nextToken());
-						rewardItems.add(new ItemHolder(itemId, quantity));
-					}
-				}
-				
-				_rewardItems.put(job, rewardItems);
-			}
-		}
-		
-		public boolean isAllowed(int job)
-		{
-			return (_allowedClassChange != null) && _allowedClassChange.containsKey(job) && _allowedClassChange.get(job);
-		}
-		
-		public List<ItemHolder> getRewardItems(int job)
-		{
-			return _rewardItems.get(job);
-		}
-		
-		public List<ItemHolder> getRequireItems(int job)
-		{
-			return _claimItems.get(job);
-		}
+		RANDOMIZE_AUTO_ATTACK_DAMAGE = config.getBoolean("RandomizeAutoAttackDamage", true);
+		RANDOMIZE_PHYSICAL_SKILL_DAMAGE = config.getBoolean("RandomizePhysicalSkillDamage", true);
+		RANDOMIZE_MAGICAL_SKILL_DAMAGE = config.getBoolean("RandomizeMagicalSkillDamage", true);
 	}
 }

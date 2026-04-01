@@ -1138,7 +1138,7 @@
 		<stats>
 			<stat type="pAtk">1</stat>
 			<stat type="mAtk">1</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1232,7 +1232,7 @@
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<stats>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
@@ -1250,7 +1250,7 @@
 		<set name="commissionItemType" val="DAGGER" />
 		<set name="isAppearanceable" val="true" />
 		<stats>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">1</stat>
 		</stats>
@@ -1269,7 +1269,7 @@
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<stats>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkRange">2</stat>
 		</stats>
 	</item>
@@ -1288,7 +1288,7 @@
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="isAppearanceable" val="true" />
 		<stats>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkRange">3</stat>
 		</stats>
@@ -1308,7 +1308,7 @@
 		<set name="commissionItemType" val="SPEAR" />
 		<set name="isAppearanceable" val="true" />
 		<stats>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">4</stat>
 		</stats>
@@ -1327,7 +1327,7 @@
 		<set name="commissionItemType" val="SPEAR" />
 		<set name="isAppearanceable" val="true" />
 		<stats>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">5</stat>
 		</stats>
@@ -1348,7 +1348,7 @@
 		<set name="commissionItemType" val="BOW" />
 		<set name="isAppearanceable" val="true" />
 		<stats>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">6</stat>
 		</stats>
@@ -1368,7 +1368,7 @@
 		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="isAppearanceable" val="true" />
 		<stats>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkRange">7</stat>
 		</stats>
@@ -1389,7 +1389,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkRange">8</stat>
 		</stats>
 	</item>
@@ -1409,7 +1409,7 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkRange">9</stat>
 		</stats>
@@ -1432,7 +1432,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="600" />
 		<stats>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkRange">10</stat>
 		</stats>
@@ -1475,7 +1475,7 @@
 			<player races="KAMAEL" />
 		</conditions>
 		<stats>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">-1.5</stat>
 			<stat type="pAtkRange">12</stat>
 		</stats>
@@ -1499,7 +1499,7 @@
 			<player races="KAMAEL" />
 		</conditions>
 		<stats>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">2</stat>
 			<stat type="pAtkRange">13</stat>
 		</stats>
@@ -1523,7 +1523,7 @@
 			<player races="KAMAEL" />
 		</conditions>
 		<stats>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">-1.5</stat>
 			<stat type="pAtkRange">14</stat>
 		</stats>
@@ -1544,7 +1544,7 @@
 		<set name="commissionItemType" val="DUALSWORD" />
 		<set name="isAppearanceable" val="true" />
 		<stats>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkRange">15</stat>
 		</stats>
 	</item>
@@ -1587,7 +1587,7 @@
 			</and>
 		</conditions>
 		<stats>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">17</stat>
 		</stats>

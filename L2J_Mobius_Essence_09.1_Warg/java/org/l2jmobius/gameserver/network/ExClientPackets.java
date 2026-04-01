@@ -78,6 +78,8 @@ import org.l2jmobius.gameserver.network.clientpackets.castlewar.ExPledgeMercenar
 import org.l2jmobius.gameserver.network.clientpackets.castlewar.ExPledgeMercenaryMemberList;
 import org.l2jmobius.gameserver.network.clientpackets.castlewar.ExPledgeMercenaryRecruitInfoSet;
 import org.l2jmobius.gameserver.network.clientpackets.chatbackground.ExChatBackgroundSetting;
+import org.l2jmobius.gameserver.network.clientpackets.clandungeon.RequestDungeonRankingList;
+import org.l2jmobius.gameserver.network.clientpackets.clandungeon.RequestDungeonRankingMyInfo;
 import org.l2jmobius.gameserver.network.clientpackets.classchange.ExRequestClassChange;
 import org.l2jmobius.gameserver.network.clientpackets.classchange.ExRequestClassChangeVerifying;
 import org.l2jmobius.gameserver.network.clientpackets.collection.RequestCollectionCloseUI;
@@ -142,6 +144,7 @@ import org.l2jmobius.gameserver.network.clientpackets.enchant.single.ExRequestEn
 import org.l2jmobius.gameserver.network.clientpackets.enchant.single.ExRequestViewEnchantResult;
 import org.l2jmobius.gameserver.network.clientpackets.ensoul.RequestItemEnsoul;
 import org.l2jmobius.gameserver.network.clientpackets.ensoul.RequestTryEnSoulExtraction;
+import org.l2jmobius.gameserver.network.clientpackets.equipmentupgrade.RequestUpgradeSystemProbList;
 import org.l2jmobius.gameserver.network.clientpackets.equipmentupgrade.RequestUpgradeSystemResult;
 import org.l2jmobius.gameserver.network.clientpackets.equipmentupgradenormal.ExUpgradeSystemNormalRequest;
 import org.l2jmobius.gameserver.network.clientpackets.friend.RequestBlockDetailInfo;
@@ -983,8 +986,8 @@ public enum ExClientPackets
 	EX_VIP_ATTENDANCE_REWARD(0x27F, RequestVipAttendanceItemReward::new, ConnectionState.IN_GAME),
 	EX_CHANGE_ABILITY_PRESET(0x280, null, ConnectionState.IN_GAME),
 	EX_NEW_HENNA_POTEN_ENCHANT_RESET(0x281, ExRequestNewHennaEnchantReset::new, ConnectionState.IN_GAME),
-	EX_INZONE_RANKING_MY_INFO(0x282, null, ConnectionState.IN_GAME),
-	EX_INZONE_RANKING_LIST(0x283, null, ConnectionState.IN_GAME),
+	EX_INZONE_RANKING_MY_INFO(0x282, RequestDungeonRankingMyInfo::new, ConnectionState.IN_GAME),
+	EX_INZONE_RANKING_LIST(0x283, RequestDungeonRankingList::new, ConnectionState.IN_GAME),
 	EX_TIME_RESTRICT_FIELD_HOST_USER_ENTER_BY_NPC(0x284, null, ConnectionState.IN_GAME),
 	// 439
 	EX_PREPARE_LOGIN(0x285, null, ConnectionState.IN_GAME),

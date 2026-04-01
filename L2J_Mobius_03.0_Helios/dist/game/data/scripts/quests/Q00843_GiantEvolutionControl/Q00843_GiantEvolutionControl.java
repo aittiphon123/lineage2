@@ -194,7 +194,7 @@ public final class Q00843_GiantEvolutionControl extends Quest
 	@RegisterEvent(EventType.ON_NPC_MENU_SELECT)
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id(KRENAHT)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);

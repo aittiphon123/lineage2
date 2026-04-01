@@ -27,6 +27,7 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.FriendlyNpc;
+import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureAttacked;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureDeath;
 import org.l2jmobius.gameserver.model.events.holders.instance.OnInstanceStatusChange;
@@ -122,10 +123,14 @@ public class KartiaHelperBarton extends Script
 				}
 				else if (!npc.isInCombat() || (npc.getTarget() == null))
 				{
-					final Creature monster = adolph.getTarget().asCreature();
-					if ((monster != null) && adolph.isInCombat() && !ArrayUtil.contains(KARTIA_FRIENDS, monster.getId()))
+					final WorldObject target = adolph.getTarget();
+					if ((target != null) && target.isMonster())
 					{
-						addAttackDesire(npc, monster);
+						final Monster monster = target.asMonster();
+						if ((monster != null) && adolph.isInCombat() && !ArrayUtil.contains(KARTIA_FRIENDS, monster.getId()))
+						{
+							addAttackDesire(npc, monster);
+						}
 					}
 				}
 			}

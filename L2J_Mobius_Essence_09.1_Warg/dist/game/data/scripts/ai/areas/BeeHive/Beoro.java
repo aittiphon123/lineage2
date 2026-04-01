@@ -26,11 +26,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.l2jmobius.commons.util.Rnd;
-import org.l2jmobius.gameserver.model.AggroInfo;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.npc.AggroInfo;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;

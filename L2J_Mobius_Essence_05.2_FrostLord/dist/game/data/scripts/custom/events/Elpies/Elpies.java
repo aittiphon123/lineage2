@@ -33,12 +33,12 @@ import org.l2jmobius.commons.time.TimeUtil;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.SpawnTable;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.EventMonster;
 import org.l2jmobius.gameserver.model.script.Event;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.util.Broadcast;
 
 public class Elpies extends Event

@@ -28,12 +28,11 @@ import java.util.List;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.holders.SpawnHolder;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -46,6 +45,7 @@ import org.l2jmobius.gameserver.model.script.QuestTimer;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.Skill;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.util.ArrayUtil;
@@ -393,7 +393,7 @@ public class Anakim extends Script
 							}
 							else if (creature.isPlayer())
 							{
-								creature.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(creature, TeleportWhereType.TOWN));
+								creature.teleToLocation(MapRegionData.getInstance().getTeleToLocation(creature, TeleportWhereType.TOWN));
 							}
 						}
 					}

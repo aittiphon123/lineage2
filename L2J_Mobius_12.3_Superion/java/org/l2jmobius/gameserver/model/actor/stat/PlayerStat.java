@@ -409,6 +409,11 @@ public class PlayerStat extends PlayableStat
 	
 	public boolean canEquipCloak()
 	{
+		if (!getActiveChar().hasEnteredWorld())
+		{
+			return true;
+		}
+		
 		return _cloakSlot;
 	}
 	

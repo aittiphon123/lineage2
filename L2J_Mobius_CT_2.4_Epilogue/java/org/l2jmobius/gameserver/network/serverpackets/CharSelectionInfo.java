@@ -35,7 +35,6 @@ import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
 import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
 import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
-import org.l2jmobius.gameserver.model.CharSelectInfoPackage;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
@@ -43,6 +42,7 @@ import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.network.Disconnection;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
+import org.l2jmobius.gameserver.network.holders.CharacterInfoHolder;
 
 public class CharSelectionInfo extends ServerPacket
 {
@@ -51,7 +51,7 @@ public class CharSelectionInfo extends ServerPacket
 	private final String _loginName;
 	private final int _sessionId;
 	private int _activeId;
-	private final List<CharSelectInfoPackage> _characterPackages;
+	private final List<CharacterInfoHolder> _characterPackages;
 	
 	/**
 	 * Constructor for CharSelectionInfo.
@@ -74,7 +74,7 @@ public class CharSelectionInfo extends ServerPacket
 		_activeId = activeId;
 	}
 	
-	public List<CharSelectInfoPackage> getCharInfo()
+	public List<CharacterInfoHolder> getCharInfo()
 	{
 		return _characterPackages;
 	}
@@ -102,7 +102,7 @@ public class CharSelectionInfo extends ServerPacket
 		
 		for (int i = 0; i < size; i++)
 		{
-			final CharSelectInfoPackage charInfoPackage = _characterPackages.get(i);
+			final CharacterInfoHolder charInfoPackage = _characterPackages.get(i);
 			buffer.writeString(charInfoPackage.getName()); // Character name
 			buffer.writeInt(charInfoPackage.getObjectId()); // Character ID
 			buffer.writeString(_loginName); // Account name
@@ -168,10 +168,10 @@ public class CharSelectionInfo extends ServerPacket
 		}
 	}
 	
-	private static List<CharSelectInfoPackage> loadCharacterSelectInfo(String loginName)
+	private static List<CharacterInfoHolder> loadCharacterSelectInfo(String loginName)
 	{
-		CharSelectInfoPackage charInfopackage;
-		final List<CharSelectInfoPackage> characterList = new LinkedList<>();
+		CharacterInfoHolder charInfopackage;
+		final List<CharacterInfoHolder> characterList = new LinkedList<>();
 		try (Connection con = DatabaseFactory.getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM characters WHERE account_name=? ORDER BY createDate"))
 		{
@@ -217,7 +217,7 @@ public class CharSelectionInfo extends ServerPacket
 		return characterList;
 	}
 	
-	private static void loadCharacterSubclassInfo(CharSelectInfoPackage charInfopackage, int objectId, int activeClassId)
+	private static void loadCharacterSubclassInfo(CharacterInfoHolder charInfopackage, int objectId, int activeClassId)
 	{
 		try (Connection con = DatabaseFactory.getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT exp, sp, level FROM character_subclasses WHERE charId=? AND class_id=? ORDER BY charId"))
@@ -240,7 +240,7 @@ public class CharSelectionInfo extends ServerPacket
 		}
 	}
 	
-	private static CharSelectInfoPackage restoreChar(ResultSet chardata) throws Exception
+	private static CharacterInfoHolder restoreChar(ResultSet chardata) throws Exception
 	{
 		final int objectId = chardata.getInt("charId");
 		final String name = chardata.getString("char_name");
@@ -259,7 +259,7 @@ public class CharSelectionInfo extends ServerPacket
 			return null;
 		}
 		
-		final CharSelectInfoPackage charInfopackage = new CharSelectInfoPackage(objectId, name);
+		final CharacterInfoHolder charInfopackage = new CharacterInfoHolder(objectId, name);
 		charInfopackage.setAccessLevel(chardata.getInt("accesslevel"));
 		charInfopackage.setLevel(chardata.getInt("level"));
 		charInfopackage.setMaxHp(chardata.getInt("maxhp"));

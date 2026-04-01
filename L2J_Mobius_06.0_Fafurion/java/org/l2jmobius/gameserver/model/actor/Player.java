@@ -78,8 +78,11 @@ import org.l2jmobius.gameserver.config.custom.PvpAnnounceConfig;
 import org.l2jmobius.gameserver.config.custom.PvpRewardItemConfig;
 import org.l2jmobius.gameserver.config.custom.PvpTitleColorConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
+import org.l2jmobius.gameserver.data.holders.AccessLevel;
 import org.l2jmobius.gameserver.data.holders.MonsterBookCardHolder;
 import org.l2jmobius.gameserver.data.holders.MonsterBookRewardHolder;
+import org.l2jmobius.gameserver.data.holders.PetData;
+import org.l2jmobius.gameserver.data.holders.PetLevelData;
 import org.l2jmobius.gameserver.data.holders.PreparedMultisellListHolder;
 import org.l2jmobius.gameserver.data.holders.RecipeHolder;
 import org.l2jmobius.gameserver.data.holders.SellBuffHolder;
@@ -128,21 +131,7 @@ import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.managers.SellBuffsManager;
 import org.l2jmobius.gameserver.managers.SiegeManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
-import org.l2jmobius.gameserver.model.AccessLevel;
-import org.l2jmobius.gameserver.model.ArenaParticipantsHolder;
-import org.l2jmobius.gameserver.model.BlockList;
-import org.l2jmobius.gameserver.model.ClientSettings;
-import org.l2jmobius.gameserver.model.ContactList;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.PetData;
-import org.l2jmobius.gameserver.model.PetLevelData;
-import org.l2jmobius.gameserver.model.PremiumItem;
-import org.l2jmobius.gameserver.model.Radar;
-import org.l2jmobius.gameserver.model.Request;
-import org.l2jmobius.gameserver.model.SkillLearn;
-import org.l2jmobius.gameserver.model.TeleportBookmark;
-import org.l2jmobius.gameserver.model.TimeStamp;
-import org.l2jmobius.gameserver.model.TradeList;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.appearance.PlayerAppearance;
@@ -160,16 +149,23 @@ import org.l2jmobius.gameserver.model.actor.enums.player.Sex;
 import org.l2jmobius.gameserver.model.actor.enums.player.ShortcutType;
 import org.l2jmobius.gameserver.model.actor.enums.player.SubclassInfoType;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
+import org.l2jmobius.gameserver.model.actor.holders.creature.TimeStamp;
+import org.l2jmobius.gameserver.model.actor.holders.player.ArenaParticipantsHolder;
 import org.l2jmobius.gameserver.model.actor.holders.player.AttendanceInfoHolder;
 import org.l2jmobius.gameserver.model.actor.holders.player.AutoPlaySettingsHolder;
 import org.l2jmobius.gameserver.model.actor.holders.player.AutoUseSettingsHolder;
+import org.l2jmobius.gameserver.model.actor.holders.player.BlockList;
+import org.l2jmobius.gameserver.model.actor.holders.player.ClientSettings;
+import org.l2jmobius.gameserver.model.actor.holders.player.ContactList;
 import org.l2jmobius.gameserver.model.actor.holders.player.Duel;
 import org.l2jmobius.gameserver.model.actor.holders.player.Macro;
 import org.l2jmobius.gameserver.model.actor.holders.player.MacroList;
 import org.l2jmobius.gameserver.model.actor.holders.player.MovieHolder;
+import org.l2jmobius.gameserver.model.actor.holders.player.Radar;
 import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
 import org.l2jmobius.gameserver.model.actor.holders.player.Shortcuts;
 import org.l2jmobius.gameserver.model.actor.holders.player.SubClassHolder;
+import org.l2jmobius.gameserver.model.actor.holders.player.TeleportBookmark;
 import org.l2jmobius.gameserver.model.actor.instance.AirShip;
 import org.l2jmobius.gameserver.model.actor.instance.Boat;
 import org.l2jmobius.gameserver.model.actor.instance.ControlTower;
@@ -250,6 +246,7 @@ import org.l2jmobius.gameserver.model.item.enums.ItemGrade;
 import org.l2jmobius.gameserver.model.item.enums.ItemLocation;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.item.holders.PremiumItem;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ActionType;
 import org.l2jmobius.gameserver.model.item.type.ArmorType;
@@ -287,6 +284,7 @@ import org.l2jmobius.gameserver.model.skill.SkillCastingType;
 import org.l2jmobius.gameserver.model.skill.enums.NextActionType;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
+import org.l2jmobius.gameserver.model.skill.holders.SkillLearn;
 import org.l2jmobius.gameserver.model.skill.holders.SkillUseHolder;
 import org.l2jmobius.gameserver.model.skill.targets.TargetType;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
@@ -308,6 +306,8 @@ import org.l2jmobius.gameserver.network.enums.HtmlActionScope;
 import org.l2jmobius.gameserver.network.enums.PartySmallWindowUpdateType;
 import org.l2jmobius.gameserver.network.enums.StatusUpdateType;
 import org.l2jmobius.gameserver.network.enums.UserInfoType;
+import org.l2jmobius.gameserver.network.holders.RequestPartner;
+import org.l2jmobius.gameserver.network.holders.TradeList;
 import org.l2jmobius.gameserver.network.serverpackets.AbstractHtmlPacket;
 import org.l2jmobius.gameserver.network.serverpackets.AcquireSkillList;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
@@ -596,7 +596,6 @@ public class Player extends Playable
 	
 	/** Stored from last ValidatePosition **/
 	private final Location _lastServerPosition = new Location(0, 0, 0);
-	private final Location _lastMoveToPosition = new Location(0, 0, 0);
 	
 	private final AtomicBoolean _blinkActive = new AtomicBoolean();
 	
@@ -732,7 +731,7 @@ public class Player extends Playable
 	// there can only be one active party request at once
 	private Player _activeRequester;
 	private long _requestExpireTime = 0;
-	private final Request _request = new Request(this);
+	private final RequestPartner _request = new RequestPartner(this);
 	
 	// Used for protection after teleport
 	private long _spawnProtectEndTime = 0;
@@ -1600,9 +1599,9 @@ public class Player extends Playable
 		return activeQuests;
 	}
 	
-	public void processQuestEvent(String questName, String event)
+	public void processScriptEvent(String scriptName, String event)
 	{
-		final Quest quest = ScriptManager.getInstance().getScript(questName);
+		final Quest quest = ScriptManager.getInstance().getScript(scriptName);
 		if ((quest == null) || (event == null) || event.isEmpty())
 		{
 			return;
@@ -2379,7 +2378,7 @@ public class Player extends Playable
 		if (isEquiped)
 		{
 			final BodyPart bodyPart = BodyPart.fromItem(item);
-			if (item.getEnchantLevel() > 0)
+			if (item.isEnchanted())
 			{
 				if (bodyPart == BodyPart.AGATHION)
 				{
@@ -2426,7 +2425,7 @@ public class Player extends Playable
 			if (item.isEquipped())
 			{
 				final BodyPart bodyPart = item.getTemplate().getBodyPart();
-				if (item.getEnchantLevel() > 0)
+				if (item.isEnchanted())
 				{
 					if (item.isArmor() && (bodyPart == BodyPart.AGATHION))
 					{
@@ -2819,65 +2818,54 @@ public class Player extends Playable
 	}
 	
 	/**
-	 * @param classId
-	 * @return the fists weapon of the Player Class (used when no weapon is equipped).
+	 * Returns the appropriate fist weapon template for a given class ID.<br>
+	 * Fist weapons are used as default weapons when a player has no weapon equipped.
+	 * @param classId the class identifier for this Player
+	 * @return the Weapon template for the fist weapon corresponding to the class ID.
 	 */
 	public Weapon findFistsWeaponItem(int classId)
 	{
-		Weapon weaponItem = null;
+		final Weapon weaponItem;
+		
 		if ((classId >= 0x00) && (classId <= 0x09))
 		{
-			// human fighter fists
-			final ItemTemplate temp = ItemData.getInstance().getTemplate(246);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(246 /* Human Fighter Fist */);
 		}
 		else if ((classId >= 0x0a) && (classId <= 0x11))
 		{
-			// human mage fists
-			final ItemTemplate temp = ItemData.getInstance().getTemplate(251);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(251 /* Human Mystic Fist */);
 		}
 		else if ((classId >= 0x12) && (classId <= 0x18))
 		{
-			// elven fighter fists
-			final ItemTemplate temp = ItemData.getInstance().getTemplate(244);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(244 /* Elven Fighter Fist */);
 		}
 		else if ((classId >= 0x19) && (classId <= 0x1e))
 		{
-			// elven mage fists
-			final ItemTemplate temp = ItemData.getInstance().getTemplate(249);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(249 /* Elven Mystic Fist */);
 		}
 		else if ((classId >= 0x1f) && (classId <= 0x25))
 		{
-			// dark elven fighter fists
-			final ItemTemplate temp = ItemData.getInstance().getTemplate(245);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(245 /* Dark Fighter Fist */);
 		}
 		else if ((classId >= 0x26) && (classId <= 0x2b))
 		{
-			// dark elven mage fists
-			final ItemTemplate temp = ItemData.getInstance().getTemplate(250);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(250 /* Dark Mystic Fist */);
 		}
 		else if ((classId >= 0x2c) && (classId <= 0x30))
 		{
-			// orc fighter fists
-			final ItemTemplate temp = ItemData.getInstance().getTemplate(248);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(248 /* Orc Fighter Fist */);
 		}
 		else if ((classId >= 0x31) && (classId <= 0x34))
 		{
-			// orc mage fists
-			final ItemTemplate temp = ItemData.getInstance().getTemplate(252);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(252 /* Orc Shaman Fist */);
 		}
 		else if ((classId >= 0x35) && (classId <= 0x39))
 		{
-			// dwarven fists
-			final ItemTemplate temp = ItemData.getInstance().getTemplate(247);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(247 /* Dwarven Fighter Fist */);
+		}
+		else // Default fist item to avoid NPEs.
+		{
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(246 /* Human Fighter Fist */);
 		}
 		
 		return weaponItem;
@@ -3646,7 +3634,7 @@ public class Player extends Playable
 					sm.addLong(item.getCount());
 					sendPacket(sm);
 				}
-				else if (item.getEnchantLevel() > 0)
+				else if (item.isEnchanted())
 				{
 					final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_A_S1_S2);
 					sm.addInt(item.getEnchantLevel());
@@ -4016,7 +4004,7 @@ public class Player extends Playable
 				targetIU.addNewItem(newItem);
 			}
 			
-			targetPlayer.sendPacket(targetIU);
+			targetPlayer.sendInventoryUpdate(targetIU);
 		}
 		
 		return newItem;
@@ -4872,7 +4860,7 @@ public class Player extends Playable
 			// if item is instance of ArmorType or WeaponType broadcast an "Attention" system message
 			if ((target.getItemType() instanceof ArmorType) || (target.getItemType() instanceof WeaponType))
 			{
-				if (target.getEnchantLevel() > 0)
+				if (target.isEnchanted())
 				{
 					smsg = new SystemMessage(SystemMessageId.ATTENTION_C1_HAS_PICKED_UP_S2_S3);
 					smsg.addPcName(this);
@@ -6056,7 +6044,7 @@ public class Player extends Playable
 	/**
 	 * @return the Player requester of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).
 	 */
-	public Request getRequest()
+	public RequestPartner getRequest()
 	{
 		return _request;
 	}
@@ -6479,7 +6467,7 @@ public class Player extends Playable
 		{
 			final SystemMessage sm;
 			final Item unequippedItem = unequipped.get(0);
-			if (unequippedItem.getEnchantLevel() > 0)
+			if (unequippedItem.isEnchanted())
 			{
 				sm = new SystemMessage(SystemMessageId.S1_S2_HAS_BEEN_UNEQUIPPED);
 				sm.addInt(unequippedItem.getEnchantLevel());
@@ -6523,7 +6511,7 @@ public class Player extends Playable
 			{
 				SystemMessage sm = null;
 				final Item unequippedItem = unequipped.get(0);
-				if (unequippedItem.getEnchantLevel() > 0)
+				if (unequippedItem.isEnchanted())
 				{
 					sm = new SystemMessage(SystemMessageId.S1_S2_HAS_BEEN_UNEQUIPPED);
 					sm.addInt(unequippedItem.getEnchantLevel());
@@ -11444,16 +11432,6 @@ public class Player extends Playable
 		return _lastServerPosition;
 	}
 	
-	public void setLastMoveToPosition(Location location)
-	{
-		_lastMoveToPosition.setXYZ(location);
-	}
-	
-	public Location getLastMoveToPosition()
-	{
-		return _lastMoveToPosition;
-	}
-	
 	public void setBlinkActive(boolean value)
 	{
 		_blinkActive.set(value);
@@ -12694,7 +12672,7 @@ public class Player extends Playable
 					return;
 				}
 				
-				if (equippedItem.getEnchantLevel() > 0)
+				if (equippedItem.isEnchanted())
 				{
 					sm = new SystemMessage(SystemMessageId.S1_S2_HAS_BEEN_UNEQUIPPED);
 					sm.addInt(equippedItem.getEnchantLevel());

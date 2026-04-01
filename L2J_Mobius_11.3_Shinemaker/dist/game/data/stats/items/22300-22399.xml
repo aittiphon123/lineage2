@@ -1057,7 +1057,7 @@
 		<set name="material" val="STEEL" />
 		<stats>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -1081,7 +1081,7 @@
 		<set name="material" val="STEEL" />
 		<stats>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -1144,7 +1144,7 @@
 		<stats>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="accCombat">4.75</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -1170,7 +1170,7 @@
 		<stats>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="accCombat">4.75</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -1530,7 +1530,7 @@
 		<set name="enchant_enabled" val="true" />
 		<stats>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">80</stat>
@@ -1559,7 +1559,7 @@
 		<set name="enchant_enabled" val="true" />
 		<stats>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">80</stat>

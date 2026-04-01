@@ -43,7 +43,7 @@ public class ExEnchantSkillInfoDetail extends ServerPacket
 	{
 		_type = type;
 		_skillId = skillId;
-		_skillLevel = skillSubLevel > 1000 ? SkillEnchantConverter.levelToErtheia(skillSubLevel) : skillLevel;
+		_skillLevel = skillSubLevel > 1000 ? SkillEnchantConverter.subLevelToLevel(skillSubLevel) : skillLevel;
 		_enchantSkillHolder = EnchantSkillGroupsData.getInstance().getEnchantSkillHolder(skillSubLevel % 1000);
 	}
 	

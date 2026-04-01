@@ -218,7 +218,7 @@ public final class Q10554_GiftForYou extends Quest
 	@Id(SIBIS)
 	@Id(TARTI)
 	@Id(STIG)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);

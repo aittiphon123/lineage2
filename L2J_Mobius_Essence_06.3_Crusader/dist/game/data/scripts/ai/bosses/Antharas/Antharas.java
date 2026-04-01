@@ -667,7 +667,7 @@ public class Antharas extends Script
 		GrandBossManager.getInstance().getStatSet(ANTHARAS_CLIENT_ID).set("respawn_time", System.currentTimeMillis() + respawnTime);
 	}
 	
-	private final void refreshAiParams(Player attacker, int damage)
+	private void refreshAiParams(Player attacker, int damage)
 	{
 		if ((_attacker1 != null) && (attacker == _attacker1))
 		{

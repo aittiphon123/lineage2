@@ -101,7 +101,7 @@ public class RequestUnEquipItem extends ClientPacket
 		if (!unequipped.isEmpty())
 		{
 			final Item unequippedItem = unequipped.get(0);
-			if (unequippedItem.getEnchantLevel() > 0)
+			if (unequippedItem.isEnchanted())
 			{
 				player.sendMessage("Equipment of +" + unequippedItem.getEnchantLevel() + " " + unequippedItem.getName() + " has been removed.");
 			}

@@ -20,23 +20,72 @@
  */
 package org.l2jmobius.gameserver.network.loginserverpackets.game;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.l2jmobius.commons.network.base.BaseWritablePacket;
 
+/**
+ * Game server authentication request to the login server.<br>
+ * Signature compatible with existing callsites.
+ * <ul>
+ * <li>Opcode: 0x01.</li>
+ * <li>Payload: id (byte), acceptAlt (byte), reserveHost (byte), host1 (String), host2 (String), port (short), maxPlayers (int), hexIdLen (int), hexId (bytes).</li>
+ * </ul>
+ * @author BazookaRpm
+ */
 public class AuthRequest extends BaseWritablePacket
 {
+	// Opcode.
+	private static final int OPCODE = 0x01;
+	
+	// Data.
+	private final int _id;
+	private final boolean _acceptAlternate;
+	private final byte[] _hexId;
+	private final int _port;
+	private final boolean _reserveHost;
+	private final int _maxPlayers;
+	private final List<String> _hosts;
+	
+	/**
+	 * Auth constructor matching (id, acceptAlternate, hexid, port, reserveHost, maxplayer, subnets, hosts).
+	 * @param id server id
+	 * @param acceptAlternate allow alternate ID
+	 * @param hexid server hexadecimal id
+	 * @param port bind port
+	 * @param reserveHost reserve host flag
+	 * @param maxplayer max players
+	 * @param subnets subnet list
+	 * @param hosts host list
+	 */
 	public AuthRequest(int id, boolean acceptAlternate, byte[] hexid, int port, boolean reserveHost, int maxplayer, List<String> subnets, List<String> hosts)
 	{
-		writeByte(0x01);
-		writeByte(id);
-		writeByte(acceptAlternate ? 0x01 : 0x00);
-		writeByte(reserveHost ? 0x01 : 0x00);
-		writeString(hosts.isEmpty() ? "127.0.0.1" : hosts.get(2));
-		writeString(hosts.isEmpty() ? "127.0.0.1" : hosts.get(0));
-		writeShort(port);
-		writeInt(maxplayer);
-		writeInt(hexid.length);
-		writeBytes(hexid);
+		_id = id;
+		_acceptAlternate = acceptAlternate;
+		_hexId = (hexid != null) ? hexid : new byte[0];
+		_port = port;
+		_reserveHost = reserveHost;
+		_maxPlayers = maxplayer;
+		// _subnets = (subnets != null) ? subnets : Collections.emptyList();
+		_hosts = (hosts != null) ? hosts : Collections.emptyList();
+	}
+	
+	/**
+	 * Serializes the authentication payload.
+	 */
+	@Override
+	public void write()
+	{
+		writeByte(OPCODE);
+		writeByte(_id);
+		writeByte(_acceptAlternate ? 0x01 : 0x00);
+		writeByte(_reserveHost ? 0x01 : 0x00);
+		writeString(_hosts.isEmpty() ? "127.0.0.1" : _hosts.get(2));
+		writeString(_hosts.isEmpty() ? "127.0.0.1" : _hosts.get(0));
+		writeShort(_port);
+		writeInt(_maxPlayers);
+		writeInt(_hexId.length);
+		writeBytes(_hexId);
 	}
 }

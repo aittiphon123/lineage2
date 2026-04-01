@@ -25,9 +25,9 @@
 		<group name="teleports">
 			<!-- Spawn -->
 			<npc id="34549" x="114650" y="10690" z="-5197" heading="12641" respawnTime="60sec" /> <!-- Priests' Teleporter - Priestess of Light -->
-			<!-- Ancient Battleground West-->
+			<!-- Ancient Battleground West -->
 			<npc id="34549" x="105110" y="-3696" z="-3328" heading="17184" respawnTime="60sec" /> <!-- Priests' Teleporter - Priestess of Light -->
-			<!-- Ancient Battleground East-->
+			<!-- Ancient Battleground East -->
 			<npc id="34549" x="131681" y="-8626" z="-3914" heading="37448" respawnTime="60sec" /> <!-- Priests' Teleporter - Priestess of Light -->
 			<!-- Tower of Insolence 1st -->
 			<npc id="34549" x="-82000" y="16159" z="-15426" heading="17110" respawnTime="60sec" /> <!-- Priests' Teleporter - Priestess of Light -->
@@ -47,10 +47,10 @@
 			<npc id="34778" x="114826" y="11017" z="-5195" heading="10764" respawnTime="60sec" /> <!-- Priest Guard - Priest of Light -->
 			<npc id="34778" x="114414" y="10966" z="-5197" heading="16383" respawnTime="60sec" /> <!-- Priest Guard - Priest of Light -->
 			<npc id="34779" x="114546" y="10701" z="-5197" heading="9405" respawnTime="60sec" /> <!-- Nerea - Priestess of Light -->
-			<!-- Ancient Battleground West-->
+			<!-- Ancient Battleground West -->
 			<npc id="34778" x="104889" y="-3225" z="-3326" heading="22985" respawnTime="60sec" /> <!-- Priest Guard - Priest of Light -->
 			<npc id="34778" x="105450" y="-3676" z="-3316" heading="61289" respawnTime="60sec" /> <!-- Priest Guard - Priest of Light -->
-			<!-- Ancient Battleground East-->
+			<!-- Ancient Battleground East -->
 			<npc id="34778" x="131344" y="-8470" z="-3911" heading="24530" respawnTime="60sec" /> <!-- Priest Guard - Priest of Light -->
 			<npc id="34778" x="131691" y="-8970" z="-3914" heading="58350" respawnTime="60sec" /> <!-- Priest Guard - Priest of Light -->
 			<!-- Tower of Insolence 1st -->

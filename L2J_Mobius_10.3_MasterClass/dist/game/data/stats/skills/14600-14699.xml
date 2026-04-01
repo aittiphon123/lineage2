@@ -234,7 +234,7 @@
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
-		<abnormalType>MAX_HP_UP</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
 		<affectObject>FRIEND</affectObject>
 		<affectRange>1000</affectRange>
 		<affectScope>PARTY</affectScope>

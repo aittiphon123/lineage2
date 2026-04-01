@@ -54,7 +54,7 @@
 		<npc id="35445" x="150532" y="26500" z="-2248" heading="0" respawnDelay="60" /> <!-- Albert -->
 		<npc id="30876" x="152007" y="24856" z="-2137" heading="0" respawnDelay="60" /> <!-- Eastan -->
 		<npc id="30877" x="152004" y="25352" z="-2129" heading="0" respawnDelay="60" /> <!-- Grayson -->
-		<npc id="31827" x="150856" y="24864" z="-2144" heading="26000" respawnDelay="60" /> <!-- Adventure Guildsman-->
+		<npc id="31827" x="150856" y="24864" z="-2144" heading="26000" respawnDelay="60" /> <!-- Adventure Guildsman -->
 		<npc id="30853" x="149488" y="25504" z="-2121" heading="32768" respawnDelay="60" /> <!-- Raien -->
 		<npc id="30851" x="149216" y="25648" z="-2121" heading="49152" respawnDelay="60" /> <!-- Kendra -->
 		<npc id="30852" x="148960" y="25408" z="-2121" heading="0" respawnDelay="60" /> <!-- Sinden -->

@@ -26,13 +26,13 @@ import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.managers.RankManager;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.appearance.PlayerAppearance;
 import org.l2jmobius.gameserver.model.actor.instance.Decoy;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.interfaces.ILocational;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.GameClient;
@@ -118,7 +118,7 @@ public class CharInfo extends ServerPacket
 	
 	public CharInfo(Decoy decoy, boolean gmSeeInvis)
 	{
-		this(decoy.asPlayer(), gmSeeInvis); // init
+		this(decoy.asPlayer(), gmSeeInvis); // Init.
 		_objId = decoy.getObjectId();
 		_x = decoy.getX();
 		_y = decoy.getY();
@@ -150,6 +150,7 @@ public class CharInfo extends ServerPacket
 			{
 				itemId = _player.getCursedWeaponEquippedId();
 			}
+			
 			buffer.writeInt(itemId);
 		}
 		
@@ -231,6 +232,7 @@ public class CharInfo extends ServerPacket
 		{
 			buffer.writeInt(_player.getClanCrestLargeId());
 		}
+		
 		buffer.writeByte(_player.getNobleLevel()); // Confirmed
 		buffer.writeByte(_player.isHero() || (_player.isGM() && GeneralConfig.GM_HERO_AURA) ? 2 : 0); // 152 - Value for enabled changed to 2?
 		
@@ -261,6 +263,7 @@ public class CharInfo extends ServerPacket
 			buffer.writeByte(_player.getPledgeClass());
 			buffer.writeShort(_player.getPledgeType());
 		}
+		
 		buffer.writeInt(appearance.getTitleColor()); // Confirmed
 		buffer.writeByte(_player.isCursedWeaponEquipped() ? CursedWeaponsManager.getInstance().getLevel(_player.getCursedWeaponEquippedId()) : 0);
 		buffer.writeInt(_clan != null ? _clan.getReputationScore() : 0);
@@ -287,8 +290,8 @@ public class CharInfo extends ServerPacket
 		}
 		
 		buffer.writeByte(_player.isTrueHero() ? 100 : 0);
-		buffer.writeByte(_player.isHairAccessoryEnabled()); // Hair accessory
-		buffer.writeByte(_player.getAbilityPointsUsed()); // Used Ability Points
+		buffer.writeByte(_player.isHairAccessoryEnabled()); // Hair accessory.
+		buffer.writeByte(_player.getAbilityPointsUsed()); // Used Ability Points.
 		buffer.writeInt(0);
 		buffer.writeInt(0);
 		

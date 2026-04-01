@@ -179,7 +179,7 @@ public final class Q10552_ChallengeBalthusKnight extends Quest
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id(TARTI)
 	@Id(STIG)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);

@@ -142,7 +142,7 @@
 	</option>
 	<option id="36035" name="leather_leggings_heat">
 		<!-- P. Atk. +2% -->
-		<passive_skill id="36007" level="1" /> <!-- Collection_0526_Enhanced Leviathan Leather Leggings  -->
+		<passive_skill id="36007" level="1" /> <!-- Collection_0526_Enhanced Leviathan Leather Leggings -->
 	</option>
 	<option id="36036" name="tunics_heat">
 		<!-- M. Atk. +2% -->
@@ -154,7 +154,7 @@
 	</option>
 	<option id="36038" name="fortitude_II">
 		<!-- Received Critical Rate from basic attacks and P./ M. skills -1.5% -->
-		<passive_skill id="36010" level="1" /> <!-- Collection_0526_Enhanced Leviathan Leather Leggings  -->
+		<passive_skill id="36010" level="1" /> <!-- Collection_0526_Enhanced Leviathan Leather Leggings -->
 	</option>
 	<option id="36039" name="gloves_of_divine_blood_I">
 		<!-- P. Atk., M. Atk. +1% -->

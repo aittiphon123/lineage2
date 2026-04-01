@@ -26,6 +26,7 @@ import java.util.List;
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 
@@ -40,7 +41,7 @@ public class WareHouseDepositList extends AbstractItemPacket
 	public static final int FREIGHT = 1;
 	
 	private final int _sendType;
-	private final long _playerAdena;
+	private final long _playerCurrency;
 	private final List<Item> _items = new ArrayList<>();
 	private final List<Integer> _itemsStackable = new ArrayList<>();
 	/**
@@ -57,7 +58,8 @@ public class WareHouseDepositList extends AbstractItemPacket
 	{
 		_sendType = sendType;
 		_whType = type;
-		_playerAdena = player.getAdena();
+		_playerCurrency = (type == CLAN) || (type == CASTLE) ? player.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) : player.getAdena();
+		
 		final boolean isPrivate = _whType == PRIVATE;
 		for (Item temp : player.getInventory().getAvailableItems(true, isPrivate, false))
 		{
@@ -91,7 +93,7 @@ public class WareHouseDepositList extends AbstractItemPacket
 		else
 		{
 			buffer.writeShort(_whType);
-			buffer.writeLong(_playerAdena);
+			buffer.writeLong(_playerCurrency);
 			buffer.writeInt(_itemsStackable.size());
 			buffer.writeInt(_items.size());
 		}

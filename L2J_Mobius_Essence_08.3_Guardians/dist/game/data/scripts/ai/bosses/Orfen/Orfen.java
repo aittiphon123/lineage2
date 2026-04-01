@@ -47,7 +47,7 @@ public class Orfen extends Script
 {
 	private static final Location SPAWN_LOCATION = new Location(64418, 29467, -3792);
 	
-	private static final NpcStringId[] TEXT =
+	private static final NpcStringId[] ORFEN_MESSAGES =
 	{
 		NpcStringId.S1_STOP_KIDDING_YOURSELF_ABOUT_YOUR_OWN_POWERLESSNESS,
 		NpcStringId.S1_YOU_WILL_LEARN_WHAT_THE_TRUE_FEAR_IS,
@@ -148,56 +148,46 @@ public class Orfen extends Script
 	@Override
 	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
-		if (npc.getId() == ORFEN)
+		final Creature originalCaster = isSummon ? caster.getServitors().values().stream().findFirst().orElse(caster.getPet()) : caster;
+		if ((skill.getEffectPoint() > 0) && (getRandom(5) == 0) && npc.isInsideRadius2D(originalCaster, 1000))
 		{
-			final Creature originalCaster = isSummon ? caster.getServitors().values().stream().findFirst().orElse(caster.getPet()) : caster;
-			if ((skill.getEffectPoint() > 0) && (getRandom(5) == 0) && npc.isInsideRadius2D(originalCaster, 1000))
-			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(4)], caster.getName());
-				originalCaster.teleToLocation(npc.getLocation());
-				npc.setTarget(originalCaster);
-				npc.doCast(PARALYSIS.getSkill());
-			}
+			npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(4)], caster.getName());
+			originalCaster.teleToLocation(npc.getLocation());
+			npc.setTarget(originalCaster);
+			npc.doCast(PARALYSIS.getSkill());
 		}
 	}
 	
 	@Override
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
 	{
-		final int npcId = npc.getId();
-		if (npcId == ORFEN)
+		if (npc.isInsideRadius2D(attacker, 1000) && !npc.isInsideRadius2D(attacker, 300) && (getRandom(10) == 0))
 		{
-			if (npc.isInsideRadius2D(attacker, 1000) && !npc.isInsideRadius2D(attacker, 300) && (getRandom(10) == 0))
-			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
-				attacker.teleToLocation(npc.getLocation());
-				npc.setTarget(attacker);
-				npc.doCast(PARALYSIS.getSkill());
-			}
+			npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
+			attacker.teleToLocation(npc.getLocation());
+			npc.setTarget(attacker);
+			npc.doCast(PARALYSIS.getSkill());
 		}
 	}
 	
 	@Override
 	public void onKill(Npc npc, Player killer, boolean isSummon)
 	{
-		if (npc.getId() == ORFEN)
-		{
-			npc.broadcastPacket(new PlaySound(1, "BS02_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
-			GrandBossManager.getInstance().setStatus(ORFEN, DEAD);
-			
-			final long baseIntervalMillis = GrandBossConfig.ORFEN_SPAWN_INTERVAL * 3600000;
-			final long randomRangeMillis = GrandBossConfig.ORFEN_SPAWN_RANDOM * 3600000;
-			final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
-			startQuestTimer("orfen_unlock", respawnTime, null, null);
-			
-			// Also save the respawn time so that the info is maintained past reboots.
-			final StatSet info = GrandBossManager.getInstance().getStatSet(ORFEN);
-			info.set("respawn_time", System.currentTimeMillis() + respawnTime);
-			GrandBossManager.getInstance().setStatSet(ORFEN, info);
-			
-			// Stop distance check task.
-			cancelQuestTimers("DISTANCE_CHECK");
-		}
+		npc.broadcastPacket(new PlaySound(1, "BS02_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
+		GrandBossManager.getInstance().setStatus(ORFEN, DEAD);
+		
+		final long baseIntervalMillis = GrandBossConfig.ORFEN_SPAWN_INTERVAL * 3600000;
+		final long randomRangeMillis = GrandBossConfig.ORFEN_SPAWN_RANDOM * 3600000;
+		final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
+		startQuestTimer("orfen_unlock", respawnTime, null, null);
+		
+		// Also save the respawn time so that the info is maintained past reboots.
+		final StatSet info = GrandBossManager.getInstance().getStatSet(ORFEN);
+		info.set("respawn_time", System.currentTimeMillis() + respawnTime);
+		GrandBossManager.getInstance().setStatSet(ORFEN, info);
+		
+		// Stop distance check task.
+		cancelQuestTimers("DISTANCE_CHECK");
 	}
 	
 	public static void main(String[] args)

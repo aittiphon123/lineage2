@@ -57,7 +57,7 @@ public class RequestExEnchantSkillInfoDetail extends ClientPacket
 		else
 		{
 			skillLevel = player.getKnownSkill(_skillId).getLevel();
-			skillSubLevel = SkillEnchantConverter.levelToUnderground(_skillLevel);
+			skillSubLevel = SkillEnchantConverter.levelToSubLevel(_skillLevel);
 		}
 		
 		if ((_skillId <= 0) || (skillLevel <= 0) || (skillSubLevel < 0))

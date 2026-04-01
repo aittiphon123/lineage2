@@ -1094,7 +1094,7 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>5</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<castRange>400</castRange>
 		<effectPoint>1</effectPoint>
@@ -1185,7 +1185,7 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>5</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<castRange>400</castRange>
 		<effectPoint>1</effectPoint>
@@ -1239,6 +1239,7 @@
 		<!-- The GM is always with you. For 1 h., P. Accuracy +8, P. Evasion/ M. Evasion +8, and Speed +37. Critical Damage Received -30%. -->
 		<icon>icon.skill11521</icon>
 		<operateType>A2</operateType>
+		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
 		<effectPoint>1</effectPoint>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
@@ -1246,6 +1247,7 @@
 		<!-- The GM is always by your side. For 1 h., Atk. Spd. +37%, Casting Spd. +34%. With a certain chance, Vampiric Rage effect +9%. -->
 		<icon>icon.skill11518</icon>
 		<operateType>A2</operateType>
+		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
 		<effectPoint>1</effectPoint>
 		<reuseDelay>1000</reuseDelay>
 	</skill>

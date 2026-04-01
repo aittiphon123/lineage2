@@ -20,12 +20,14 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.ability;
 
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
-import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.request.AbilityLearnRequest;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
+import org.l2jmobius.gameserver.model.skill.holders.SkillLearn;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.serverpackets.ability.ExAcquireAPSkillList;
@@ -49,43 +51,58 @@ public class RequestResetAbilityPoint extends ClientPacket
 			return;
 		}
 		
+		if (player.hasRequest(AbilityLearnRequest.class))
+		{
+			return;
+		}
+		
+		player.addRequest(new AbilityLearnRequest(player));
+		
 		if (player.isSubClassActive() && !player.isDualClassActive())
 		{
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		
 		if (player.isInStoreMode() || (player.getActiveRequester() != null))
 		{
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		else if (player.getLevel() < 85)
 		{
 			player.sendPacket(SystemMessageId.REACH_LV_85_TO_USE);
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		else if (player.isInOlympiadMode())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_OR_RESET_ABILITY_POINTS_WHILE_PARTICIPATING_IN_THE_OLYMPIAD_OR_CEREMONY_OF_CHAOS);
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		else if (player.isOnEvent())
 		{
 			player.sendMessage("You cannot use or reset Ability Points while participating in an event.");
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		else if (player.getAbilityPoints() == 0)
 		{
 			player.sendMessage("You don't have ability points to reset!");
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		else if (player.getAbilityPointsUsed() == 0)
 		{
 			player.sendMessage("You haven't used your ability points yet!");
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		else if (player.getSp() < PlayerConfig.ABILITY_POINTS_RESET_SP)
 		{
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SP_FOR_THIS);
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		
@@ -100,8 +117,12 @@ public class RequestResetAbilityPoint extends ClientPacket
 			}
 		}
 		
-		player.setAbilityPointsUsed(0);
-		player.sendPacket(new ExAcquireAPSkillList(player));
-		player.broadcastUserInfo();
+		ThreadPool.schedule(() ->
+		{
+			player.setAbilityPointsUsed(0);
+			player.sendPacket(new ExAcquireAPSkillList(player));
+			player.broadcastUserInfo();
+			player.removeRequest(AbilityLearnRequest.class);
+		}, 300);
 	}
 }

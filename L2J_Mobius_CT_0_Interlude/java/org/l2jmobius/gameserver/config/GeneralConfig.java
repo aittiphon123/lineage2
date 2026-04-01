@@ -178,6 +178,7 @@ public class GeneralConfig
 	public static boolean CORRECT_PRICES;
 	public static long MULTISELL_AMOUNT_LIMIT;
 	public static boolean ENABLE_FALLING_DAMAGE;
+	public static boolean DEBUFF_DURATION_USES_RESISTS;
 	
 	public static void load()
 	{
@@ -344,5 +345,6 @@ public class GeneralConfig
 		CORRECT_PRICES = config.getBoolean("CorrectPrices", true);
 		MULTISELL_AMOUNT_LIMIT = config.getLong("MultisellAmountLimit", 10000);
 		ENABLE_FALLING_DAMAGE = config.getBoolean("EnableFallingDamage", true);
+		DEBUFF_DURATION_USES_RESISTS = config.getBoolean("DebuffDurationUsesResists", false);
 	}
 }

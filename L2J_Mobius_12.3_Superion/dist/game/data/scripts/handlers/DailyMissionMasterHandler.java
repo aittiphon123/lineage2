@@ -24,29 +24,29 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.gameserver.handler.DailyMissionHandler;
 
-import handlers.dailymissionhandlers.AuctionDailyMissionHandler;
-import handlers.dailymissionhandlers.AugmentationDailyMissionHandler;
-import handlers.dailymissionhandlers.BossDailyMissionHandler;
-import handlers.dailymissionhandlers.CeremonyOfChaosDailyMissionHandler;
-import handlers.dailymissionhandlers.CombinationDailyMissionHandler;
-import handlers.dailymissionhandlers.CompoundDailyMissionHandler;
-import handlers.dailymissionhandlers.ConquestCollectFlowersMissionHandler;
-import handlers.dailymissionhandlers.EnchantDailyMissionHandler;
-import handlers.dailymissionhandlers.EnsoulDailyMissionHandler;
-import handlers.dailymissionhandlers.ExaltedDailyMissionHandler;
-import handlers.dailymissionhandlers.FishingDailyMissionHandler;
-import handlers.dailymissionhandlers.JoinClanDailyMissionHandler;
-import handlers.dailymissionhandlers.LevelDailyMissionHandler;
-import handlers.dailymissionhandlers.LoginMonthDailyMissionHandler;
-import handlers.dailymissionhandlers.LoginWeekendDailyMissionHandler;
-import handlers.dailymissionhandlers.MentorDailyMissionHandler;
-import handlers.dailymissionhandlers.MonsterDailyMissionHandler;
-import handlers.dailymissionhandlers.NoblesseDailyMissionHandler;
-import handlers.dailymissionhandlers.OlympiadDailyMissionHandler;
-import handlers.dailymissionhandlers.OlympiadHeroDailyMissionHandler;
-import handlers.dailymissionhandlers.QuestDailyMissionHandler;
-import handlers.dailymissionhandlers.SiegeDailyMissionHandler;
-import handlers.dailymissionhandlers.UseItemDailyMissionHandler;
+import handlers.dailymissions.AuctionDailyMissionHandler;
+import handlers.dailymissions.AugmentationDailyMissionHandler;
+import handlers.dailymissions.BossDailyMissionHandler;
+import handlers.dailymissions.CeremonyOfChaosDailyMissionHandler;
+import handlers.dailymissions.CombinationDailyMissionHandler;
+import handlers.dailymissions.CompoundDailyMissionHandler;
+import handlers.dailymissions.ConquestCollectFlowersMissionHandler;
+import handlers.dailymissions.EnchantDailyMissionHandler;
+import handlers.dailymissions.EnsoulDailyMissionHandler;
+import handlers.dailymissions.ExaltedDailyMissionHandler;
+import handlers.dailymissions.FishingDailyMissionHandler;
+import handlers.dailymissions.JoinClanDailyMissionHandler;
+import handlers.dailymissions.LevelDailyMissionHandler;
+import handlers.dailymissions.LoginMonthDailyMissionHandler;
+import handlers.dailymissions.LoginWeekendDailyMissionHandler;
+import handlers.dailymissions.MentorDailyMissionHandler;
+import handlers.dailymissions.MonsterDailyMissionHandler;
+import handlers.dailymissions.NoblesseDailyMissionHandler;
+import handlers.dailymissions.OlympiadDailyMissionHandler;
+import handlers.dailymissions.OlympiadHeroDailyMissionHandler;
+import handlers.dailymissions.QuestDailyMissionHandler;
+import handlers.dailymissions.SiegeDailyMissionHandler;
+import handlers.dailymissions.UseItemDailyMissionHandler;
 
 /**
  * @author UnAfraid, Mobius

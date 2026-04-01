@@ -24,11 +24,11 @@ import java.util.List;
 
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.managers.MailManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 
 /**
  * @author Mobius
@@ -38,7 +38,7 @@ public class ExShowReceivedPostList extends ServerPacket
 	private static final int MESSAGE_FEE = 100;
 	private static final int MESSAGE_FEE_PER_SLOT = 1000;
 	
-	private final List<Message> _inbox;
+	private final List<MailMessage> _inbox;
 	
 	public ExShowReceivedPostList(int objectId)
 	{
@@ -53,7 +53,7 @@ public class ExShowReceivedPostList extends ServerPacket
 		if ((_inbox != null) && !_inbox.isEmpty())
 		{
 			buffer.writeInt(_inbox.size());
-			for (Message msg : _inbox)
+			for (MailMessage msg : _inbox)
 			{
 				buffer.writeInt(msg.getMailType().ordinal());
 				if (msg.getMailType() == MailType.COMMISSION_ITEM_SOLD)

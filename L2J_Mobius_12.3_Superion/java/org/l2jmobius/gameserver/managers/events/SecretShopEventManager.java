@@ -40,7 +40,6 @@ import java.util.stream.Collectors;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.managers.MailManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
@@ -49,6 +48,7 @@ import org.l2jmobius.gameserver.model.itemcontainer.Mail;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.ExItemAnnounce;
 import org.l2jmobius.gameserver.network.serverpackets.secretshop.ExFestivalBmAllItemInfo;
 import org.l2jmobius.gameserver.network.serverpackets.secretshop.ExFestivalBmGame;
@@ -322,7 +322,7 @@ public class SecretShopEventManager
 	
 	private void sendMail(Player player)
 	{
-		final Message message = new Message(player.getObjectId(), "Secret Shop Clan Reward", "Your clan member won one of the main prize of the event. All (online) clan members receive an additional reward.", MailType.REGULAR);
+		final MailMessage message = new MailMessage(player.getObjectId(), "Secret Shop Clan Reward", "Your clan member won one of the main prize of the event. All (online) clan members receive an additional reward.", MailType.REGULAR);
 		final Mail attachment = message.createAttachments();
 		attachment.addItem(ItemProcessType.REWARD, CLAN_REWARD_ITEM_ID, CLAN_REWARD_ITEM_COUNT, null, null);
 		MailManager.getInstance().sendMessage(message);

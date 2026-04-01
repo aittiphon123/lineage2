@@ -28,13 +28,13 @@
 	<pet id="26" name="Vigorous" skillId="49206" skillLvl="1" /> <!-- MEN +1 -->
 	<pet id="27" name="Resolute" skillId="49206" skillLvl="2" /> <!-- MEN +2 -->
 	<pet id="28" name="Strong-spirited" skillId="49206" skillLvl="3" /> <!-- MEN +3 -->
-	<pet id="29" name="Wolf" /> <!--  -->
-	<pet id="30" name="Buffalo" /> <!--  -->
-	<pet id="31" name="Tiger" /> <!--  -->
-	<pet id="32" name="Kookaburra" /> <!--  -->
-	<pet id="33" name="Dragon" /> <!--  -->
-	<pet id="34" name="Thunder Hawk" /> <!--  -->
-	<pet id="35" name="Fox Cub" /> <!--  -->
+	<pet id="29" name="Wolf" /> <!-- -->
+	<pet id="30" name="Buffalo" /> <!-- -->
+	<pet id="31" name="Tiger" /> <!-- -->
+	<pet id="32" name="Kookaburra" /> <!-- -->
+	<pet id="33" name="Dragon" /> <!-- -->
+	<pet id="34" name="Thunder Hawk" /> <!-- -->
+	<pet id="35" name="Fox Cub" /> <!-- -->
 	<pet id="101" name="Woof-woof" /> <!-- Wolf -->
 	<pet id="102" name="Silver Hide" /> <!-- Wolf -->
 	<pet id="103" name="Chun" /> <!-- Wolf -->

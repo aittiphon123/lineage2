@@ -26,12 +26,12 @@ package org.l2jmobius.gameserver.util;
  */
 public class SkillEnchantConverter
 {
-	public static int levelToErtheia(int enchantLevel)
+	public static int subLevelToLevel(int enchantLevel)
 	{
 		return ((enchantLevel % 1000) + ((enchantLevel / 1000) * 100));
 	}
 	
-	public static int levelToUnderground(int enchantLevel)
+	public static int levelToSubLevel(int enchantLevel)
 	{
 		return ((enchantLevel % 100) + ((enchantLevel / 100) * 1000));
 	}

@@ -18,7 +18,7 @@ package ai.others.CastleTeleporter;
 
 import java.util.StringTokenizer;
 
-import org.l2jmobius.gameserver.managers.MapRegionManager;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.World;
@@ -152,14 +152,14 @@ public class CastleTeleporter extends Script
 			}
 			case "MASS_TELEPORT":
 			{
-				final int region = MapRegionManager.getInstance().getMapRegionLocId(npc.getX(), npc.getY());
+				final int region = MapRegionData.getInstance().getMapRegionLocId(npc.getX(), npc.getY());
 				final NpcSay msg = new NpcSay(npc, ChatType.NPC_SHOUT, NpcStringId.THE_DEFENDERS_OF_S1_CASTLE_WILL_BE_TELEPORTED_INSIDE);
 				msg.addStringParameter(npc.getCastle().getName());
 				npc.getCastle().oustAllPlayers();
 				npc.setScriptValue(0);
 				for (Player pl : World.getInstance().getPlayers()) // TODO: Is it possible to get all the players for that region, instead of all players?
 				{
-					if (region == MapRegionManager.getInstance().getMapRegionLocId(pl))
+					if (region == MapRegionData.getInstance().getMapRegionLocId(pl))
 					{
 						pl.sendPacket(msg);
 					}

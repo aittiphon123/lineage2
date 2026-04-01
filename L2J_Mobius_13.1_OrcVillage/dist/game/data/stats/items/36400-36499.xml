@@ -274,7 +274,7 @@
 			<stat type="pAtk">1039</stat>
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">433</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">40</stat>
@@ -303,7 +303,7 @@
 			<stat type="pAtk">1445</stat>
 			<stat type="mAtk">690</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -333,7 +333,7 @@
 			<stat type="pAtk">2339</stat>
 			<stat type="mAtk">690</stat>
 			<stat type="pAtkSpd">293</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">500</stat>
@@ -363,7 +363,7 @@
 			<stat type="pAtk">950</stat>
 			<stat type="mAtk">690</stat>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -391,7 +391,7 @@
 			<stat type="pAtk">1188</stat>
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -421,7 +421,7 @@
 			<stat type="pAtk">1188</stat>
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">80</stat>
@@ -452,7 +452,7 @@
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="accCombat">8</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -481,7 +481,7 @@
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="accCombat">8</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="randomDamage">20</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -510,7 +510,7 @@
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="accCombat">8</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="randomDamage">20</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -538,7 +538,7 @@
 			<stat type="pAtk">1445</stat>
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -566,7 +566,7 @@
 			<stat type="pAtk">1039</stat>
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">433</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">40</stat>
@@ -595,7 +595,7 @@
 			<stat type="pAtk">1188</stat>
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -623,7 +623,7 @@
 			<stat type="pAtk">1445</stat>
 			<stat type="mAtk">690</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -653,7 +653,7 @@
 			<stat type="pAtk">2339</stat>
 			<stat type="mAtk">690</stat>
 			<stat type="pAtkSpd">293</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">500</stat>
@@ -683,7 +683,7 @@
 			<stat type="pAtk">950</stat>
 			<stat type="mAtk">690</stat>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -713,7 +713,7 @@
 			<stat type="mAtk">690</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="accCombat">8</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="randomDamage">20</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -744,7 +744,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="accMagic">8</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="randomDamage">20</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -772,7 +772,7 @@
 			<stat type="pAtk">1039</stat>
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">433</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">40</stat>
@@ -803,7 +803,7 @@
 			<stat type="pAtk">2339</stat>
 			<stat type="mAtk">690</stat>
 			<stat type="pAtkSpd">293</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">500</stat>
@@ -832,7 +832,7 @@
 			<stat type="pAtk">1445</stat>
 			<stat type="mAtk">690</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -861,7 +861,7 @@
 			<stat type="pAtk">950</stat>
 			<stat type="mAtk">690</stat>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -889,7 +889,7 @@
 			<stat type="pAtk">1188</stat>
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -919,7 +919,7 @@
 			<stat type="pAtk">2106</stat>
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">400</stat>
@@ -948,7 +948,7 @@
 			<stat type="pAtk">1188</stat>
 			<stat type="mAtk">517</stat>
 			<stat type="pAtkSpd">433</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">40</stat>
@@ -978,7 +978,7 @@
 		<stats>
 			<stat type="pAtk">1877</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>
@@ -1010,7 +1010,7 @@
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">1247</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1042,7 +1042,7 @@
 		<stats>
 			<stat type="pAtk">4225</stat>
 			<stat type="mAtk">1247</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
@@ -1075,7 +1075,7 @@
 		<stats>
 			<stat type="pAtk">1716</stat>
 			<stat type="mAtk">1247</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1106,7 +1106,7 @@
 		<stats>
 			<stat type="pAtk">2146</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1137,7 +1137,7 @@
 		<stats>
 			<stat type="pAtk">2146</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
@@ -1170,7 +1170,7 @@
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">5</stat>
@@ -1202,7 +1202,7 @@
 		<stats>
 			<stat type="pAtk">2146</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">20</stat>
@@ -1234,7 +1234,7 @@
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">20</stat>
@@ -1266,7 +1266,7 @@
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
@@ -1299,7 +1299,7 @@
 		<stats>
 			<stat type="pAtk">1877</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>
@@ -1331,7 +1331,7 @@
 		<stats>
 			<stat type="pAtk">2146</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1362,7 +1362,7 @@
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">1247</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1394,7 +1394,7 @@
 		<stats>
 			<stat type="pAtk">4225</stat>
 			<stat type="mAtk">1247</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
@@ -1427,7 +1427,7 @@
 		<stats>
 			<stat type="pAtk">1716</stat>
 			<stat type="mAtk">1247</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1459,7 +1459,7 @@
 		<stats>
 			<stat type="pAtk">1716</stat>
 			<stat type="mAtk">1247</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">20</stat>
@@ -1492,7 +1492,7 @@
 		<stats>
 			<stat type="pAtk">2090</stat>
 			<stat type="mAtk">1371</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="accMagic">8</stat>
@@ -1525,7 +1525,7 @@
 		<stats>
 			<stat type="pAtk">1877</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>
@@ -1558,7 +1558,7 @@
 		<stats>
 			<stat type="pAtk">4225</stat>
 			<stat type="mAtk">1247</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
@@ -1590,7 +1590,7 @@
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">1247</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1622,7 +1622,7 @@
 		<stats>
 			<stat type="pAtk">1716</stat>
 			<stat type="mAtk">1247</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
@@ -1654,7 +1654,7 @@
 		<stats>
 			<stat type="pAtk">2146</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1686,7 +1686,7 @@
 		<stats>
 			<stat type="pAtk">3804</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">5</stat>
@@ -1718,7 +1718,7 @@
 		<stats>
 			<stat type="pAtk">2146</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">10</stat>
@@ -1751,7 +1751,7 @@
 		<stats>
 			<stat type="pAtk">2177</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>
@@ -1786,7 +1786,7 @@
 		<stats>
 			<stat type="pAtk">3027</stat>
 			<stat type="mAtk">1446</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1821,7 +1821,7 @@
 		<stats>
 			<stat type="pAtk">4898</stat>
 			<stat type="mAtk">1446</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
@@ -1857,7 +1857,7 @@
 		<stats>
 			<stat type="pAtk">1990</stat>
 			<stat type="mAtk">1446</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1891,7 +1891,7 @@
 		<stats>
 			<stat type="pAtk">2488</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1925,7 +1925,7 @@
 		<stats>
 			<stat type="pAtk">2488</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
@@ -1961,7 +1961,7 @@
 		<stats>
 			<stat type="pAtk">3027</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">5</stat>
@@ -1996,7 +1996,7 @@
 		<stats>
 			<stat type="pAtk">2488</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">20</stat>
@@ -2031,7 +2031,7 @@
 		<stats>
 			<stat type="pAtk">3027</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">20</stat>
@@ -2066,7 +2066,7 @@
 		<stats>
 			<stat type="pAtk">3027</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
@@ -2101,7 +2101,7 @@
 		<stats>
 			<stat type="pAtk">2177</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>
@@ -2136,7 +2136,7 @@
 		<stats>
 			<stat type="pAtk">2488</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -2170,7 +2170,7 @@
 		<stats>
 			<stat type="pAtk">3027</stat>
 			<stat type="mAtk">1446</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -2205,7 +2205,7 @@
 		<stats>
 			<stat type="pAtk">4898</stat>
 			<stat type="mAtk">1446</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
@@ -2241,7 +2241,7 @@
 		<stats>
 			<stat type="pAtk">1990</stat>
 			<stat type="mAtk">1446</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -2276,7 +2276,7 @@
 		<stats>
 			<stat type="pAtk">1990</stat>
 			<stat type="mAtk">1446</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">20</stat>
@@ -2312,7 +2312,7 @@
 		<stats>
 			<stat type="pAtk">2423</stat>
 			<stat type="mAtk">1590</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="accMagic">8</stat>
@@ -2348,7 +2348,7 @@
 		<stats>
 			<stat type="pAtk">2177</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>
@@ -2384,7 +2384,7 @@
 		<stats>
 			<stat type="pAtk">4898</stat>
 			<stat type="mAtk">1446</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
@@ -2419,7 +2419,7 @@
 		<stats>
 			<stat type="pAtk">3027</stat>
 			<stat type="mAtk">1446</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -2454,7 +2454,7 @@
 		<stats>
 			<stat type="pAtk">1990</stat>
 			<stat type="mAtk">1446</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
@@ -2489,7 +2489,7 @@
 		<stats>
 			<stat type="pAtk">2488</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -2524,7 +2524,7 @@
 		<stats>
 			<stat type="pAtk">4411</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">5</stat>
@@ -2559,7 +2559,7 @@
 		<stats>
 			<stat type="pAtk">2488</stat>
 			<stat type="mAtk">1084</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">10</stat>
@@ -2594,7 +2594,7 @@
 		<stats>
 			<stat type="pAtk">2523</stat>
 			<stat type="mAtk">1257</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>
@@ -2630,7 +2630,7 @@
 		<stats>
 			<stat type="pAtk">3509</stat>
 			<stat type="mAtk">1676</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -2666,7 +2666,7 @@
 		<stats>
 			<stat type="pAtk">5678</stat>
 			<stat type="mAtk">1676</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
@@ -2703,7 +2703,7 @@
 		<stats>
 			<stat type="pAtk">2307</stat>
 			<stat type="mAtk">1676</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -2738,7 +2738,7 @@
 		<stats>
 			<stat type="pAtk">2884</stat>
 			<stat type="mAtk">1257</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -2773,7 +2773,7 @@
 		<stats>
 			<stat type="pAtk">2884</stat>
 			<stat type="mAtk">1257</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
@@ -2810,7 +2810,7 @@
 		<stats>
 			<stat type="pAtk">3509</stat>
 			<stat type="mAtk">1257</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">5</stat>
@@ -2846,7 +2846,7 @@
 		<stats>
 			<stat type="pAtk">2884</stat>
 			<stat type="mAtk">1257</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">20</stat>
@@ -2882,7 +2882,7 @@
 		<stats>
 			<stat type="pAtk">3509</stat>
 			<stat type="mAtk">1257</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">20</stat>
@@ -2918,7 +2918,7 @@
 		<stats>
 			<stat type="pAtk">3509</stat>
 			<stat type="mAtk">1257</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
@@ -2954,7 +2954,7 @@
 		<stats>
 			<stat type="pAtk">2523</stat>
 			<stat type="mAtk">1257</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>

@@ -72,7 +72,7 @@
 	<teleport id="102" x="178024" y="52164" z="-3984" price="23999" /> <!-- Giant's Cave -->
 	<teleport id="103" x="125760" y="41031" z="-4392" price="19999" /> <!-- Enchanted Valley -->
 	<teleport id="104" price="1499"> <!-- Cemetery -->
-		<location x="178863" y="20306" z="-3168" />
+		<location x="179544" y="20318" z="-3164" />
 		<location x="172204" y="20322" z="-3328" />
 		<location x="173668" y="9235" z="-2736" />
 	</teleport>

@@ -31,7 +31,6 @@ import org.l2jmobius.gameserver.data.sql.OfflinePlayTable;
 import org.l2jmobius.gameserver.data.xml.AdminData;
 import org.l2jmobius.gameserver.managers.AntiFeedManager;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
-import org.l2jmobius.gameserver.model.CharSelectInfoPackage;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.Containers;
@@ -45,6 +44,7 @@ import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.ConnectionState;
 import org.l2jmobius.gameserver.network.Disconnection;
 import org.l2jmobius.gameserver.network.GameClient;
+import org.l2jmobius.gameserver.network.holders.CharacterInfoHolder;
 import org.l2jmobius.gameserver.network.serverpackets.CharSelected;
 import org.l2jmobius.gameserver.network.serverpackets.LeaveWorld;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -99,7 +99,7 @@ public class CharacterSelect extends ClientPacket
 				// but if not then this is repeated packet and nothing should be done here
 				if (client.getPlayer() == null)
 				{
-					final CharSelectInfoPackage info = client.getCharSelection(_charSlot);
+					final CharacterInfoHolder info = client.getCharSelection(_charSlot);
 					if (info == null)
 					{
 						return;

@@ -2,7 +2,7 @@
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn name="DionNPCs">
 		<npc id="30071" x="17282" y="147500" z="-3119" heading="20480" respawnDelay="60" /> <!-- Lucas - Captain -->
-		<npc id="30072" x="17503" y="147575" z="-3124" heading="20480" respawnDelay="60" /> <!-- Metty-->
+		<npc id="30072" x="17503" y="147575" z="-3124" heading="20480" respawnDelay="60" /> <!-- Metty -->
 		<npc id="31798" x="17388" y="146912" z="-3104" heading="3000" respawnDelay="60" /> <!-- Adventure Guildsman -->
 		<npc id="30464" x="17280" y="146944" z="-3085" heading="45056" respawnDelay="60" /> <!-- Clayton -->
 		<npc id="30462" x="17168" y="146720" z="-3085" heading="2500" respawnDelay="60" /> <!-- Tronix -->
@@ -79,7 +79,7 @@
 		<npc id="30608" x="19041" y="145964" z="-3068" heading="8192" respawnDelay="60" /> <!-- Maria -->
 		<npc id="30737" x="19079" y="145762" z="-3080" heading="49152" respawnDelay="60" /> <!-- Morgan -->
 		<npc id="30767" x="18853" y="145939" z="-3075" heading="49152" respawnDelay="60" /> <!-- Auctioneer -->
-		<npc id="30483" x="17296" y="114176" z="-3439" heading="32768" respawnDelay="60" /> <!--  Mozella -->
+		<npc id="30483" x="17296" y="114176" z="-3439" heading="32768" respawnDelay="60" /> <!-- Mozella -->
 		<npc id="30484" x="17725" y="113906" z="-11671" heading="16384" respawnDelay="60" /> <!-- Ponti -->
 		<npc id="30485" x="17725" y="108220" z="-9057" heading="16384" respawnDelay="60" /> <!-- Capella -->
 		<npc id="30486" x="17722" y="119749" z="-9068" heading="49152" respawnDelay="60" /> <!-- Hanna -->

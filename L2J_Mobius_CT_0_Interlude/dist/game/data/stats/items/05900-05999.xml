@@ -93,7 +93,9 @@
 		<set name="weight" val="20" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2096-1" /> <!-- Soul Crystal -->
+		<skills>
+			<skill id="2096" level="1" /> <!-- Soul Crystal -->
+		</skills>
 	</item>
 	<item id="5909" type="EtcItem" name="(Not used) Green Soul Crystal: Grade 11">
 		<!-- A green crystal that absorbs souls. Grade 11. Once saturated, it bestows special abilities to a weapon. 26 MP is consumed each time it is used. -->
@@ -116,7 +118,9 @@
 		<set name="weight" val="20" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2096-1" /> <!-- Soul Crystal -->
+		<skills>
+			<skill id="2096" level="1" /> <!-- Soul Crystal -->
+		</skills>
 	</item>
 	<item id="5912" type="EtcItem" name="(Not used) Blue Soul Crystal: Grade 11">
 		<!-- A blue crystal that absorbs souls. Grade 11. Once saturated, it bestows special abilities to a weapon. 26 MP is consumed each time it is used. -->
@@ -139,7 +143,9 @@
 		<set name="weight" val="20" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2096-1" /> <!-- Soul Crystal -->
+		<skills>
+			<skill id="2096" level="1" /> <!-- Soul Crystal -->
+		</skills>
 	</item>
 	<item id="5915" type="EtcItem" name="Pirate's Treasure Map">
 		<!-- A map that was created after putting together the map pieces found on Alligator Island. It appears to have a mark showing the location of treasure! -->
@@ -158,7 +164,9 @@
 		<set name="price" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2171-1" /> <!-- Spellbook Paper -->
+		<skills>
+			<skill id="2171" level="1" /> <!-- Spellbook Paper -->
+		</skills>
 	</item>
 	<item id="5917" type="EtcItem" name="Kranvel's Spellbook: Chapter of Fire">
 		<!-- Great Magus Kranvel's Spellbook: Chapter of Fire. Collect the Chapters on Fire, Water, Wind and Earth and take all of them to Elder Casian. -->
@@ -364,7 +372,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2172-1" /> <!-- Scroll of Giants -->
+		<skills>
+			<skill id="2172" level="1" /> <!-- Scroll of Giants -->
+		</skills>
 	</item>
 	<item id="5945" type="EtcItem" name="Book: Giants Science and Technology, Chapter 1">
 		<!-- A part of the theory book that describes the science and technology of the Titan era. The 1st of five chapters. -->
@@ -444,7 +454,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2173-1" /> <!-- Book of Giants -->
+		<skills>
+			<skill id="2173" level="1" /> <!-- Book of Giants -->
+		</skills>
 	</item>
 	<item id="5956" type="EtcItem" name="15 Year Old Wine">
 		<!-- A gift from Harlan as a token of gratitude. It is aged 15 years. Average quality wine. -->
@@ -538,7 +550,9 @@
 		<set name="price" val="400" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2176-1" /> <!-- Ancient Papyrus -->
+		<skills>
+			<skill id="2176" level="1" /> <!-- Ancient Papyrus -->
+		</skills>
 	</item>
 	<item id="5967" type="EtcItem" name="Ancient Blue Papyrus">
 		<!-- A papyrus scroll found in the Tower of Insolence. If you double-click it, you can read its contents. -->
@@ -549,7 +563,9 @@
 		<set name="price" val="400" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2176-2" /> <!-- Ancient Papyrus -->
+		<skills>
+			<skill id="2176" level="2" /> <!-- Ancient Papyrus -->
+		</skills>
 	</item>
 	<item id="5968" type="EtcItem" name="Ancient Black Papyrus">
 		<!-- A papyrus scroll found in the Tower of Insolence. If you double-click it, you can read its contents. -->
@@ -560,7 +576,9 @@
 		<set name="price" val="400" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2176-3" /> <!-- Ancient Papyrus -->
+		<skills>
+			<skill id="2176" level="3" /> <!-- Ancient Papyrus -->
+		</skills>
 	</item>
 	<item id="5969" type="EtcItem" name="Ancient White Papyrus">
 		<!-- A papyrus scroll found in the Tower of Insolence. If you double-click it, you can read its contents. -->
@@ -571,10 +589,12 @@
 		<set name="price" val="400" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2176-4" /> <!-- Ancient Papyrus -->
+		<skills>
+			<skill id="2176" level="4" /> <!-- Ancient Papyrus -->
+		</skills>
 	</item>
 	<item id="5970" type="EtcItem" name="Ancient Chain Letter">
-		<!-- A mysterious letter found in the Tower of Insolence. Its text reads "if you send this letter to 10 other people, you will have good luck!" -->
+		<!-- A mysterious letter found in the Tower of Insolence. Its text reads "if you send this letter to 10 other people, you will have good luck! -->
 		<set name="icon" val="icon.etc_piece_of_paper_black_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />

@@ -22,10 +22,10 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.appearance.PlayerAppearance;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 

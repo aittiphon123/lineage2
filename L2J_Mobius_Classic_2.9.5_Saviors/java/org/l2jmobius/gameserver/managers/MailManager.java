@@ -30,10 +30,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2jmobius.commons.database.DatabaseFactory;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.ExNoticePostArrived;
 import org.l2jmobius.gameserver.network.serverpackets.ExUnReadMailCount;
 import org.l2jmobius.gameserver.taskmanagers.MessageDeletionTaskManager;
@@ -45,7 +45,7 @@ public class MailManager
 {
 	private static final Logger LOGGER = Logger.getLogger(MailManager.class.getName());
 	
-	private final Map<Integer, Message> _messages = new ConcurrentHashMap<>();
+	private final Map<Integer, MailMessage> _messages = new ConcurrentHashMap<>();
 	
 	protected MailManager()
 	{
@@ -62,7 +62,7 @@ public class MailManager
 			while (rs.next())
 			{
 				count++;
-				final Message msg = new Message(rs);
+				final MailMessage msg = new MailMessage(rs);
 				final int msgId = msg.getId();
 				_messages.put(msgId, msg);
 				MessageDeletionTaskManager.getInstance().add(msgId, msg.getExpiration());
@@ -76,12 +76,12 @@ public class MailManager
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + count + " messages.");
 	}
 	
-	public Message getMessage(int msgId)
+	public MailMessage getMessage(int msgId)
 	{
 		return _messages.get(msgId);
 	}
 	
-	public Collection<Message> getMessages()
+	public Collection<MailMessage> getMessages()
 	{
 		return _messages.values();
 	}
@@ -89,7 +89,7 @@ public class MailManager
 	public boolean hasUnreadPost(Player player)
 	{
 		final int objectId = player.getObjectId();
-		for (Message msg : _messages.values())
+		for (MailMessage msg : _messages.values())
 		{
 			if ((msg != null) && (msg.getReceiverId() == objectId) && msg.isUnread())
 			{
@@ -103,7 +103,7 @@ public class MailManager
 	public int getInboxSize(int objectId)
 	{
 		int size = 0;
-		for (Message msg : _messages.values())
+		for (MailMessage msg : _messages.values())
 		{
 			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
 			{
@@ -117,7 +117,7 @@ public class MailManager
 	public int getOutboxSize(int objectId)
 	{
 		int size = 0;
-		for (Message msg : _messages.values())
+		for (MailMessage msg : _messages.values())
 		{
 			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
 			{
@@ -128,10 +128,10 @@ public class MailManager
 		return size;
 	}
 	
-	public List<Message> getInbox(int objectId)
+	public List<MailMessage> getInbox(int objectId)
 	{
-		final List<Message> inbox = new LinkedList<>();
-		for (Message msg : _messages.values())
+		final List<MailMessage> inbox = new LinkedList<>();
+		for (MailMessage msg : _messages.values())
 		{
 			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
 			{
@@ -145,7 +145,7 @@ public class MailManager
 	public long getUnreadCount(Player player)
 	{
 		long count = 0;
-		for (Message message : getInbox(player.getObjectId()))
+		for (MailMessage message : getInbox(player.getObjectId()))
 		{
 			if (message.isUnread())
 			{
@@ -159,7 +159,7 @@ public class MailManager
 	public int getMailsInProgress(int objectId)
 	{
 		int count = 0;
-		for (Message msg : _messages.values())
+		for (MailMessage msg : _messages.values())
 		{
 			if ((msg != null) && (msg.getMailType() == MailType.REGULAR))
 			{
@@ -177,10 +177,10 @@ public class MailManager
 		return count;
 	}
 	
-	public List<Message> getOutbox(int objectId)
+	public List<MailMessage> getOutbox(int objectId)
 	{
-		final List<Message> outbox = new LinkedList<>();
-		for (Message msg : _messages.values())
+		final List<MailMessage> outbox = new LinkedList<>();
+		for (MailMessage msg : _messages.values())
 		{
 			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
 			{
@@ -191,11 +191,11 @@ public class MailManager
 		return outbox;
 	}
 	
-	public void sendMessage(Message msg)
+	public void sendMessage(MailMessage msg)
 	{
 		_messages.put(msg.getId(), msg);
 		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = Message.getStatement(msg, con))
+			PreparedStatement ps = MailMessage.getStatement(msg, con))
 		{
 			ps.execute();
 		}

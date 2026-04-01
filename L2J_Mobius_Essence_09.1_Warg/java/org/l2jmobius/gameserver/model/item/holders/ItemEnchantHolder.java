@@ -28,23 +28,34 @@ import org.l2jmobius.gameserver.model.StatSet;
 public class ItemEnchantHolder extends ItemHolder
 {
 	private final int _enchantLevel;
+	private final int _index;
 	
 	public ItemEnchantHolder(StatSet set)
 	{
 		super(set);
 		_enchantLevel = 0;
+		_index = 0;
 	}
 	
 	public ItemEnchantHolder(int id, long count)
 	{
 		super(id, count);
 		_enchantLevel = 0;
+		_index = 0;
 	}
 	
 	public ItemEnchantHolder(int id, long count, int enchantLevel)
 	{
 		super(id, count);
 		_enchantLevel = enchantLevel;
+		_index = 0;
+	}
+	
+	public ItemEnchantHolder(int id, long count, int enchantLevel, int index)
+	{
+		super(id, count);
+		_enchantLevel = enchantLevel;
+		_index = index;
 	}
 	
 	/**
@@ -53,6 +64,14 @@ public class ItemEnchantHolder extends ItemHolder
 	public int getEnchantLevel()
 	{
 		return _enchantLevel;
+	}
+	
+	/**
+	 * @return index of items contained in this object
+	 */
+	public int getIndex()
+	{
+		return _index;
 	}
 	
 	@Override

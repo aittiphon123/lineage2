@@ -85,7 +85,7 @@
 		<skill skillName="Sleep" skillId="1069" skillLevel="17" getLevel="48" levelUpSp="24000" learnedByNpc="true" />
 		<skill skillName="Sleep" skillId="1069" skillLevel="18" getLevel="48" levelUpSp="24000" learnedByNpc="true" />
 		<skill skillName="Greater Heal" skillId="1217" skillLevel="1" getLevel="48" levelUpSp="24000" learnedByNpc="true">
-			<item id="3429" count="1" /> <!-- Spellbook:  Greater Heal11 -->
+			<item id="3429" count="1" /> <!-- Spellbook: Greater Heal11 -->
 		</skill>
 		<skill skillName="Greater Heal" skillId="1217" skillLevel="2" getLevel="48" levelUpSp="24000" learnedByNpc="true" />
 		<skill skillName="Greater Heal" skillId="1217" skillLevel="3" getLevel="48" levelUpSp="24000" learnedByNpc="true" />

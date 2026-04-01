@@ -749,7 +749,7 @@
 		<!-- For 30 min., Critical Rate for basic attacks +30%, Critical Damage for basic attacks +30%, M. Skill Critical Rate +4%, received Critical Damage from basic attacks -50%. With a certain chance, increases Critical Damage when hit. -->
 		<icon>icon.skill11522</icon>
 		<operateType>A2</operateType>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<effectPoint>1</effectPoint>
 		<isMagic>1</isMagic>
 		<reuseDelay>60000</reuseDelay>
@@ -758,6 +758,7 @@
 		<!-- For 30 min., Atk. Spd. +34%, and Casting Spd. +31%. Has a chance of applying 9% Vampiric Rage. -->
 		<icon>icon.skill11518</icon>
 		<operateType>A2</operateType>
+		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
 		<effectPoint>1</effectPoint>
 		<isMagic>1</isMagic>
 		<reuseDelay>60000</reuseDelay>
@@ -766,6 +767,7 @@
 		<!-- For 30 min., Max HP +37%, Max MP +62%, Max CP +37%. With a certain chance, absorbs 9% of the inflicted damage as HP. -->
 		<icon>icon.skill11519</icon>
 		<operateType>A2</operateType>
+		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
 		<effectPoint>1</effectPoint>
 		<isMagic>1</isMagic>
 		<reuseDelay>60000</reuseDelay>
@@ -774,6 +776,7 @@
 		<!-- For 30 min., Atk. Spd. +60%, Casting Spd. +60%, and all Skill MP Consumption -10%. -->
 		<icon>icon.skill11520</icon>
 		<operateType>A2</operateType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<effectPoint>1</effectPoint>
 		<isMagic>1</isMagic>
 		<reuseDelay>60000</reuseDelay>
@@ -782,6 +785,7 @@
 		<!-- For 30 min., P. Accuracy +5, P./ M. Evasion +5, Speed +34, received Critical Damage from basic attacks -30%. -->
 		<icon>icon.skill11521</icon>
 		<operateType>A2</operateType>
+		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
 		<effectPoint>1</effectPoint>
 		<isMagic>1</isMagic>
 		<reuseDelay>60000</reuseDelay>

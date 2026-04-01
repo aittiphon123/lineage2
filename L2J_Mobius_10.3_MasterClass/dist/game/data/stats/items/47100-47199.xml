@@ -696,7 +696,7 @@
 		<stats>
 			<stat type="pAtk">92</stat>
 			<stat type="mAtk">54</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">500</stat>

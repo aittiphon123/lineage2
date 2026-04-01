@@ -20,17 +20,17 @@
 		<skill skillName="Sleep" skillId="1069" skillLevel="11" getLevel="40" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Sleep" skillId="1069" skillLevel="12" getLevel="40" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="1" getLevel="40" levelUpSp="13000" learnedByNpc="true">
-			<item id="3431" count="1" /> <!-- Spellbook:  Greater Group Heal11 -->
+			<item id="3431" count="1" /> <!-- Spellbook: Greater Group Heal11 -->
 		</skill>
 		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="2" getLevel="40" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="3" getLevel="40" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Greater Quick Heal" skillId="1218" skillLevel="1" getLevel="40" levelUpSp="13000" learnedByNpc="true">
-			<item id="3430" count="1" /> <!-- Spellbook:  Greater Battle Heal11 -->
+			<item id="3430" count="1" /> <!-- Spellbook: Greater Battle Heal11 -->
 		</skill>
 		<skill skillName="Greater Quick Heal" skillId="1218" skillLevel="2" getLevel="40" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Greater Quick Heal" skillId="1218" skillLevel="3" getLevel="40" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Greater Heal" skillId="1217" skillLevel="1" getLevel="40" levelUpSp="13000" learnedByNpc="true">
-			<item id="3429" count="1" /> <!-- Spellbook:  Greater Heal11 -->
+			<item id="3429" count="1" /> <!-- Spellbook: Greater Heal11 -->
 		</skill>
 		<skill skillName="Greater Heal" skillId="1217" skillLevel="2" getLevel="40" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Greater Heal" skillId="1217" skillLevel="3" getLevel="40" levelUpSp="13000" learnedByNpc="true" />

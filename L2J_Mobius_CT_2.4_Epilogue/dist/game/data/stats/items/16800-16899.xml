@@ -12,7 +12,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="16853,1,1,100;13273,1,1,100;15426,1,1,100" />
+		<capsuled_items>
+			<item id="16853" min="1" max="1" chance="100" /> <!-- Equipment Set 90 Day Pack - 90 day limited period -->
+			<item id="13273" min="1" max="1" chance="100" /> <!-- Hunting Helper Exchange Coupon - 5 hours -->
+			<item id="15426" min="1" max="1" chance="100" /> <!-- Hero's Summon Point - Event - Event -->
+		</capsuled_items>
 	</item>
 	<item id="16853" type="EtcItem" name="Equipment Set Pack - 90-day limited period">
 		<!-- When used, you can obtain a 90 day limited time equipment set for your class. Can use after 1st job change. Expires after 30 days if not used. No exchange/drop available -->
@@ -26,8 +30,10 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2914-3" /> <!-- Equipment Set 10 Day Pack -->
 		<set name="time" val="129600" />
+		<skills>
+			<skill id="2914" level="3" /> <!-- Equipment Set 90 Day Pack -->
+		</skills>
 	</item>
 	<item id="16854" type="Armor" name="Majestic Earring of Fortune - 90-day limited period">
 		<!-- MP +25. No exchange/drop available -->
@@ -43,8 +49,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
 		</stats>
 	</item>
 	<item id="16855" type="Armor" name="Majestic Necklace of Fortune - 90-day limited period">
@@ -61,8 +67,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="85" />
-			<add stat="maxMp" val="33" />
+			<stat type="mDef">85</stat>
+			<stat type="maxMp">33</stat>
 		</stats>
 	</item>
 	<item id="16856" type="Armor" name="Majestic Ring of Fortune - 90-day limited period">
@@ -79,8 +85,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="42" />
-			<add stat="maxMp" val="17" />
+			<stat type="mDef">42</stat>
+			<stat type="maxMp">17</stat>
 		</stats>
 	</item>
 	<item id="16857" type="Armor" name="Fortune Earring of Black Ore - 90-day limited period">
@@ -97,7 +103,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="54" />
+			<stat type="mDef">54</stat>
 		</stats>
 	</item>
 	<item id="16858" type="Armor" name="Fortune Necklace of Black Ore - 90-day limited period">
@@ -114,7 +120,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="72" />
+			<stat type="mDef">72</stat>
 		</stats>
 	</item>
 	<item id="16859" type="Armor" name="Fortune Ring of Black Ore - 90-day limited period">
@@ -131,7 +137,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="36" />
+			<stat type="mDef">36</stat>
 		</stats>
 	</item>
 	<item id="16860" type="Armor" name="Fortune Earring of Seal - 90-day limited period">
@@ -148,7 +154,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="45" />
+			<stat type="mDef">45</stat>
 		</stats>
 	</item>
 	<item id="16861" type="Armor" name="Fortune Necklace of Seal - 90-day limited period">
@@ -165,7 +171,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="64" />
+			<stat type="mDef">64</stat>
 		</stats>
 	</item>
 	<item id="16862" type="Armor" name="Fortune Ring of Seal - 90-day limited period">
@@ -182,7 +188,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="32" />
+			<stat type="mDef">32</stat>
 		</stats>
 	</item>
 	<item id="16863" type="Armor" name="Elven Earring of Fortune - 90-day limited period">
@@ -199,7 +205,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="34" />
+			<stat type="mDef">34</stat>
 		</stats>
 	</item>
 	<item id="16864" type="Armor" name="Elven Earring of Fortune - 90-day limited period">
@@ -216,7 +222,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="45" />
+			<stat type="mDef">45</stat>
 		</stats>
 	</item>
 	<item id="16865" type="Armor" name="Elven Ring of Fortune - 90-day limited period">
@@ -233,7 +239,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="mDef" val="22" />
+			<stat type="mDef">22</stat>
 		</stats>
 	</item>
 	<item id="16866" type="Armor" name="Dark Crystal Robe of Fortune - 90-day limited period">
@@ -254,8 +260,8 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="139" />
-			<add stat="maxMp" val="665" />
+			<stat type="pDef">139</stat>
+			<stat type="maxMp">665</stat>
 		</stats>
 	</item>
 	<item id="16867" type="Armor" name="Dark Crystal Helmet of Fortune - 90-day limited period">
@@ -272,7 +278,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="69" />
+			<stat type="pDef">69</stat>
 		</stats>
 	</item>
 	<item id="16868" type="Armor" name="Dark Crystal Gloves of Fortune - Robe - 90-day limited period">
@@ -292,7 +298,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="46" />
+			<stat type="pDef">46</stat>
 		</stats>
 	</item>
 	<item id="16869" type="Armor" name="Dark Crystal Boots of Fortune - Robe - 90-day limited period">
@@ -312,7 +318,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="46" />
+			<stat type="pDef">46</stat>
 		</stats>
 	</item>
 	<item id="16870" type="Armor" name="Dark Crystal Shield of Fortune - 90-day limited period">
@@ -333,9 +339,9 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="243" />
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">243</stat>
 		</stats>
 	</item>
 	<item id="16871" type="Armor" name="Avadon Robe of Fortune - 90-day limited period">
@@ -356,8 +362,8 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="127" />
-			<add stat="maxMp" val="561" />
+			<stat type="pDef">127</stat>
+			<stat type="maxMp">561</stat>
 		</stats>
 	</item>
 	<item id="16872" type="Armor" name="Avadon Circlet of Fortune - 90-day limited period">
@@ -374,7 +380,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="16873" type="Armor" name="Avadon Gloves of Fortune - Robe - 90-day limited period">
@@ -394,7 +400,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="41" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="16874" type="Armor" name="Avadon Boots of Fortune - Robe - 90-day limited period">
@@ -414,7 +420,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="41" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="16875" type="Armor" name="Avadon Shield of Fortune - 90-day limited period">
@@ -435,9 +441,9 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="216" />
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">216</stat>
 		</stats>
 	</item>
 	<item id="16876" type="Armor" name="Karmian Tunic of Fortune - 90-day limited period">
@@ -458,8 +464,8 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="60" />
-			<add stat="maxMp" val="225" />
+			<stat type="pDef">60</stat>
+			<stat type="maxMp">225</stat>
 		</stats>
 	</item>
 	<item id="16877" type="Armor" name="Karmian Stockings of Fortune - 90-day limited period">
@@ -480,8 +486,8 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="37" />
-			<add stat="maxMp" val="141" />
+			<stat type="pDef">37</stat>
+			<stat type="maxMp">141</stat>
 		</stats>
 	</item>
 	<item id="16878" type="Armor" name="Karmian Gloves of Fortune - 90-day limited period">
@@ -498,7 +504,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="32" />
+			<stat type="pDef">32</stat>
 		</stats>
 	</item>
 	<item id="16879" type="Armor" name="Karmian Boots of Fortune - 90-day limited period">
@@ -515,7 +521,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="32" />
+			<stat type="pDef">32</stat>
 		</stats>
 	</item>
 	<item id="16880" type="Armor" name="Mithril Tunic of Fortune - 90-day limited period">
@@ -536,8 +542,8 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="52" />
-			<add stat="maxMp" val="169" />
+			<stat type="pDef">52</stat>
+			<stat type="maxMp">169</stat>
 		</stats>
 	</item>
 	<item id="16881" type="Armor" name="Mithril Stockings of Fortune - 90-day limited period">
@@ -558,8 +564,8 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="32" />
-			<add stat="maxMp" val="105" />
+			<stat type="pDef">32</stat>
+			<stat type="maxMp">105</stat>
 		</stats>
 	</item>
 	<item id="16882" type="Armor" name="Elven Mithril Gloves of Fortune - 90-day limited period">
@@ -576,7 +582,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="27" />
+			<stat type="pDef">27</stat>
 		</stats>
 	</item>
 	<item id="16883" type="Armor" name="Elven Mithril Boots of Fortune - 90-day limited period">
@@ -593,7 +599,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="27" />
+			<stat type="pDef">27</stat>
 		</stats>
 	</item>
 	<item id="16884" type="Armor" name="Dark Crystal Leather Armor of Fortune - 90-day limited period">
@@ -611,7 +617,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="128" />
+			<stat type="pDef">128</stat>
 		</stats>
 	</item>
 	<item id="16885" type="Armor" name="Dark Crystal Leggings of Fortune - 90-day limited period">
@@ -629,7 +635,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="80" />
+			<stat type="pDef">80</stat>
 		</stats>
 	</item>
 	<item id="16886" type="Armor" name="Dark Crystal Gloves of Fortune - Light Armor - 90-day limited period">
@@ -646,7 +652,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="46" />
+			<stat type="pDef">46</stat>
 		</stats>
 	</item>
 	<item id="16887" type="Armor" name="Dark Crystal Boots of Fortune - Light Armor - 90-day limited period">
@@ -663,7 +669,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="46" />
+			<stat type="pDef">46</stat>
 		</stats>
 	</item>
 	<item id="16888" type="Armor" name="Leather Armor of Doom of Fortune - 90-day limited period">
@@ -681,7 +687,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="202" />
+			<stat type="pDef">202</stat>
 		</stats>
 	</item>
 	<item id="16889" type="Armor" name="Doom Helmet of Fortune - 90-day limited period">
@@ -698,7 +704,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="66" />
+			<stat type="pDef">66</stat>
 		</stats>
 	</item>
 	<item id="16890" type="Armor" name="Doom Gloves of Fortune - Heavy Armor - 90-day limited period">
@@ -718,7 +724,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="44" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="16891" type="Armor" name="Doom Gloves of Fortune - Light Armor - 90-day limited period">
@@ -735,7 +741,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="16892" type="Armor" name="Doom Boots of Fortune - Heavy Armor - 90-day limited period">
@@ -755,7 +761,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="44" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="16893" type="Armor" name="Doom Boots of Fortune - Light Armor - 90-day limited period">
@@ -772,7 +778,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="16894" type="Armor" name="Doom Plate Armor of Fortune - 90-day limited period">
@@ -793,7 +799,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="270" />
+			<stat type="pDef">270</stat>
 		</stats>
 	</item>
 	<item id="16895" type="Armor" name="Doom Shield of Fortune - 90-day limited period">
@@ -814,9 +820,9 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="230" />
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">230</stat>
 		</stats>
 	</item>
 	<item id="16896" type="Armor" name="Plate Leather Armor of Fortune - 90-day limited period">
@@ -834,7 +840,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="94" />
+			<stat type="pDef">94</stat>
 		</stats>
 	</item>
 	<item id="16897" type="Armor" name="Plate Leather Gaiters of Fortune - 90-day limited period">
@@ -852,7 +858,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="59" />
+			<stat type="pDef">59</stat>
 		</stats>
 	</item>
 	<item id="16898" type="Armor" name="Plate Leather Boots of Fortune - 90-day limited period">
@@ -869,7 +875,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="32" />
+			<stat type="pDef">32</stat>
 		</stats>
 	</item>
 	<item id="16899" type="Armor" name="Plate Leather Gloves of Fortune - 90-day limited period">
@@ -886,7 +892,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<stats>
-			<add order="0" stat="pDef" val="33" />
+			<stat type="pDef">33</stat>
 		</stats>
 	</item>
 </list>

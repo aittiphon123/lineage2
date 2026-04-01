@@ -353,7 +353,7 @@
 		<set name="material" val="SCALE_OF_DRAGON" />
 		<stats>
 			<stat type="pDef">148</stat>
-			<stat type="rCrit">2.9</stat>
+			<stat type="critRate">2.9</stat>
 			<stat type="mCritRate">2.9</stat>
 		</stats>
 	</item>
@@ -482,7 +482,7 @@
 		<set name="material" val="SCALE_OF_DRAGON" />
 		<stats>
 			<stat type="pDef">148</stat>
-			<stat type="rCrit">2.9</stat>
+			<stat type="critRate">2.9</stat>
 			<stat type="mCritRate">2.9</stat>
 			<stat type="rEvas">3</stat>
 			<stat type="mEvas">3</stat>
@@ -591,7 +591,7 @@
 		<stats>
 			<stat type="pDef">148</stat>
 			<stat type="mDef">42</stat>
-			<stat type="rCrit">2.9</stat>
+			<stat type="critRate">2.9</stat>
 			<stat type="mCritRate">2.9</stat>
 			<stat type="maxMp">649</stat>
 		</stats>

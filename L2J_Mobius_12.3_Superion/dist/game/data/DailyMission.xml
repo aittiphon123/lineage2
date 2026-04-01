@@ -1344,7 +1344,7 @@
 		</items>
 	</reward>
 	<reward id="4115" name="Mentee Training" requiredCompletion="2" isOneTime="false"> <!-- TODO: start_date=201028	start_time=201125	end_date=700	end_time=500 -->
-		<!-- Train 1 Mentee. (Mentorship lasts until the Mentee reaches Lv. 105.)  To add a Mentee open the Friend Manager window (Alt+Y) and open the Mentorship tab. -->
+		<!-- Train 1 Mentee. (Mentorship lasts until the Mentee reaches Lv. 105.) To add a Mentee open the Friend Manager window (Alt+Y) and open the Mentorship tab. -->
 		<handler name="mentor" />
 		<items>
 			<item id="-200" count="170" /> <!-- Clan Reputation -->

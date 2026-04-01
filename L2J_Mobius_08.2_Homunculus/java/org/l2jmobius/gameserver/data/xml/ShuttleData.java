@@ -30,7 +30,7 @@ import org.w3c.dom.Node;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
-import org.l2jmobius.gameserver.model.VehiclePathPoint;
+import org.l2jmobius.gameserver.model.actor.holders.creature.VehiclePathPoint;
 import org.l2jmobius.gameserver.model.actor.instance.Shuttle;
 import org.l2jmobius.gameserver.model.actor.templates.CreatureTemplate;
 import org.l2jmobius.gameserver.model.shuttle.ShuttleDataHolder;

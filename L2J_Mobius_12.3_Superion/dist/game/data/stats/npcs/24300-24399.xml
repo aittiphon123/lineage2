@@ -1812,7 +1812,7 @@
 			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="true" noSleepMode="true" canMove="false" />
-		<ai type="MAGE" /> 
+		<ai type="MAGE" />
 		<collision>
 			<radius normal="30" />
 			<height normal="36.5" />
@@ -1832,7 +1832,7 @@
 			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 			<skill id="32833" level="1" /> <!-- Received Heal Reduction -->
 			<skill id="14823" level="1" /> <!-- Instant Kill Attack Resistance -->
-			<skill id="32819" level="1" />  <!-- Purifying Prayer -->
+			<skill id="32819" level="1" /> <!-- Purifying Prayer -->
 			<skill id="999881" level="1" /> <!-- Custom Skill Protection Npcs Priests/Treasure Chests -->
 		</skillList>
 	</npc>
@@ -1875,7 +1875,7 @@
 			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 			<skill id="32833" level="1" /> <!-- Received Heal Reduction -->
 			<skill id="14823" level="1" /> <!-- Instant Kill Attack Resistance -->
-			<skill id="32820" level="1" />  <!-- Purifying Hand -->
+			<skill id="32820" level="1" /> <!-- Purifying Hand -->
 			<skill id="999881" level="1" /> <!-- Custom Skill Protection Npcs Priests/Treasure Chests -->
 		</skillList>
 	</npc>
@@ -1957,7 +1957,7 @@
 			<skill id="4390" level="2" /> <!-- Lv.1 Mystic Immunity -->
 			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 			<skill id="32833" level="1" /> <!-- Received Heal Reduction -->
-			<skill id="14823" level="1" /> <!-- Instant Kill Attack Resistance --> 
+			<skill id="14823" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="999881" level="1" /> <!-- Custom Skill Protection Npcs Priests/Treasure Chests -->
 		</skillList>
 	</npc>

@@ -20,9 +20,10 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
-import java.util.LinkedHashMap;
+import java.util.Comparator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.data.xml.VariationData;
@@ -41,9 +42,9 @@ public class VariationProbList extends ServerPacket
 {
 	private final int _refineryId;
 	private final Item _targetItem;
-	private final Map<Options, Double> _options1 = new LinkedHashMap<>();
-	private final Map<Options, Double> _options2 = new LinkedHashMap<>();
-	private final Map<Options, Double> _options3 = new LinkedHashMap<>();
+	private final Map<Options, Double> _options1 = new TreeMap<>(Comparator.comparingInt(Options::getId));
+	private final Map<Options, Double> _options2 = new TreeMap<>(Comparator.comparingInt(Options::getId));
+	private final Map<Options, Double> _options3 = new TreeMap<>(Comparator.comparingInt(Options::getId));
 	
 	public VariationProbList(int refineryId, Item targetItem)
 	{
@@ -95,8 +96,9 @@ public class VariationProbList extends ServerPacket
 		buffer.writeInt(_refineryId);
 		buffer.writeInt(_targetItem.getId());
 		
-		buffer.writeInt(0); // CurrentPage
-		buffer.writeInt(0); // MaxPage
+		// With 0 values the output is doubled at each checked augmented item.
+		buffer.writeInt(1); // CurrentPage
+		buffer.writeInt(1); // MaxPage
 		
 		buffer.writeInt(_options1.size() + _options2.size() + _options3.size());
 		for (Entry<Options, Double> entry : _options1.entrySet())

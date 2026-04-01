@@ -24,7 +24,7 @@
 		<npc id="30547" x="117366" y="-178725" z="-1112" heading="0" respawnDelay="60" /> <!-- Tardyon -->
 		<npc id="30548" x="117378" y="-178914" z="-1120" heading="0" respawnDelay="60" /> <!-- Nathan -->
 		<npc id="31688" x="115488" y="-179616" z="-888" heading="0" respawnDelay="60" /> <!-- Grand Olympiad Manager -->
-		<npc id="31772" x="115488" y="-179664" z="-888" heading="0" respawnDelay="60" /> <!-- Monument of Heroes-->
+		<npc id="31772" x="115488" y="-179664" z="-888" heading="0" respawnDelay="60" /> <!-- Monument of Heroes -->
 		<npc id="30520" x="115205" y="-180024" z="-872" heading="32768" respawnDelay="60" /> <!-- Reed -->
 		<npc id="30521" x="114716" y="-180018" z="-872" heading="0" respawnDelay="60" /> <!-- Murdoc -->
 		<npc id="30522" x="114832" y="-179520" z="-856" heading="49152" respawnDelay="60" /> <!-- Airy -->
@@ -33,7 +33,7 @@
 		<npc id="30537" x="114348" y="-178537" z="-808" heading="0" respawnDelay="60" /> <!-- Daichir -->
 		<npc id="30539" x="114409" y="-178415" z="-808" heading="57344" respawnDelay="60" /> <!-- Chichirin -->
 		<npc id="30540" x="115072" y="-178176" z="-880" heading="0" respawnDelay="60" /> <!-- Wirphy -->
-		<npc id="30993" x="115075" y="-178133" z="-880" heading="1000" respawnDelay="60" /> <!-- Lottery Ticket Saller-->
+		<npc id="30993" x="115075" y="-178133" z="-880" heading="1000" respawnDelay="60" /> <!-- Lottery Ticket Saller -->
 		<npc id="30650" x="114990" y="-177294" z="-856" heading="0" respawnDelay="60" /> <!-- Gerald -->
 		<npc id="30545" x="115183" y="-176728" z="-784" heading="20480" respawnDelay="60" /> <!-- Proton -->
 		<npc id="30546" x="114969" y="-176752" z="-784" heading="15384" respawnDelay="60" /> <!-- Dinkey -->

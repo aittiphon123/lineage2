@@ -266,7 +266,7 @@
 	</option>
 	<option id="36366" name="option_id_36366">
 		<!-- Attribute Attack/ Resistance +30 -->
-		<passive_skill id="36270" level="1" /> <!-- Adventure in the Tower of Insolence's Upper Floors  Collection_6_169 -->
+		<passive_skill id="36270" level="1" /> <!-- Adventure in the Tower of Insolence's Upper Floors Collection_6_169 -->
 	</option>
 	<option id="36367" name="option_id_36367">
 		<!-- P. Atk./ M. Atk./ P. Def./ M. Def. +3% -->
@@ -278,11 +278,11 @@
 	</option>
 	<option id="36369" name="option_id_36369">
 		<!-- On the Tower of Insolence's top floor: PvE damage +10%, All received Critical Damage -20% -->
-		<passive_skill id="36273" level="1" /> <!-- Baium's Challenger Collection_6_172 36273/36274  -->
+		<passive_skill id="36273" level="1" /> <!-- Baium's Challenger Collection_6_172 36273/36274 -->
 	</option>
 	<option id="36370" name="option_id_36370">
 		<!-- Attribute Attack/ Resistance +150, damage +5%, received damage -5%, acquired XP/ SP +10% -->
-		<passive_skill id="36275" level="1" /> <!-- Gran Kain's Power Collection_7_2014-->
+		<passive_skill id="36275" level="1" /> <!-- Gran Kain's Power Collection_7_2014 -->
 	</option>
 	<option id="36371" name="option_id_36371">
 		<!-- All Critical Damage, Power of basic attacks and P./ M. skills +5%, received damage -10% -->

@@ -33,9 +33,9 @@ import org.w3c.dom.Node;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.config.ServerConfig;
-import org.l2jmobius.gameserver.model.Augmentation;
 import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.options.Augmentation;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.clientpackets.AbstractRefinePacket;
 

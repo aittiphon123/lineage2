@@ -5082,15 +5082,15 @@
 		<isMagic>0</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="Speed">+1</effect>-->
-		<!--	<effect name="M. Atk.">+100</effect>-->
-		<!--	<effect name="Casting Spd.">+10</effect>-->
-		<!--	<effect name="P. Atk.">+100</effect>-->
-		<!--	<effect name="Spiritshot damage">+3%</effect>-->
-		<!--	<effect name="Soulshot damage">+3%</effect>-->
-		<!--	<effect name="Atk. Spd.">+10</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="Speed">+1</effect> -->
+		<!-- 	<effect name="M. Atk.">+100</effect> -->
+		<!-- 	<effect name="Casting Spd.">+10</effect> -->
+		<!-- 	<effect name="P. Atk.">+100</effect> -->
+		<!-- 	<effect name="Spiritshot damage">+3%</effect> -->
+		<!-- 	<effect name="Soulshot damage">+3%</effect> -->
+		<!-- 	<effect name="Atk. Spd.">+10</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="50669" toLevel="1" name="Young Knight's Set">
 		<!-- <Set effect>. P. Def. +3%. Max HP +41 -->

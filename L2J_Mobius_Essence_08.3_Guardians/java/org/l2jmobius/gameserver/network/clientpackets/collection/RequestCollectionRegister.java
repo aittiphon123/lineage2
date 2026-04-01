@@ -128,9 +128,7 @@ public class RequestCollectionRegister extends ClientPacket
 		if (completeCount == collection.getCompleteCount())
 		{
 			player.sendPacket(new ExCollectionComplete(_collectionId));
-			
-			// TODO: CollectionData.getInstance().getCollection(_collectionId).getName()
-			player.sendPacket(new SystemMessage(SystemMessageId.S1_COLLECTION_IS_COMPLETE).addString(""));
+			player.sendPacket(new SystemMessage(SystemMessageId.S1_COLLECTION_IS_COMPLETE).addString(collection.getName()));
 			
 			// Apply collection option if all requirements are met.
 			final Options options = OptionData.getInstance().getOptions(collection.getOptionId());

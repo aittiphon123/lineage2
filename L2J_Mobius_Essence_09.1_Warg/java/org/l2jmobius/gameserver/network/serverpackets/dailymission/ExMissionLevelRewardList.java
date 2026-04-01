@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.network.serverpackets.dailymission;
 import java.util.List;
 
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.data.holders.MissionLevelHolder;
 import org.l2jmobius.gameserver.data.xml.MissionLevel;
-import org.l2jmobius.gameserver.model.MissionLevelHolder;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.holders.player.MissionLevelPlayerDataHolder;
 import org.l2jmobius.gameserver.network.GameClient;

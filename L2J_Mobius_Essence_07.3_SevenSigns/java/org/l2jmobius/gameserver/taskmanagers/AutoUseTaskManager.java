@@ -27,13 +27,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.data.holders.ActionDataHolder;
 import org.l2jmobius.gameserver.data.xml.ActionData;
 import org.l2jmobius.gameserver.data.xml.PetSkillData;
 import org.l2jmobius.gameserver.handler.IItemHandler;
-import org.l2jmobius.gameserver.handler.IPlayerActionHandler;
+import org.l2jmobius.gameserver.handler.IActionUserHandler;
 import org.l2jmobius.gameserver.handler.ItemHandler;
-import org.l2jmobius.gameserver.handler.PlayerActionHandler;
-import org.l2jmobius.gameserver.model.ActionDataHolder;
+import org.l2jmobius.gameserver.handler.ActionUserHandler;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -49,6 +49,7 @@ import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.item.OnItemUse;
 import org.l2jmobius.gameserver.model.item.EtcItem;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.model.item.enums.ItemSkillType;
 import org.l2jmobius.gameserver.model.item.holders.ItemSkillHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
@@ -60,7 +61,6 @@ import org.l2jmobius.gameserver.model.skill.targets.AffectScope;
 import org.l2jmobius.gameserver.model.skill.targets.TargetType;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.network.enums.ItemSkillType;
 
 /**
  * @author Mobius
@@ -498,7 +498,7 @@ public class AutoUseTaskManager
 						final ActionDataHolder actionHolder = ActionData.getInstance().getActionData(actionId);
 						if (actionHolder != null)
 						{
-							final IPlayerActionHandler actionHandler = PlayerActionHandler.getInstance().getHandler(actionHolder.getHandler());
+							final IActionUserHandler actionHandler = ActionUserHandler.getInstance().getHandler(actionHolder.getHandler());
 							if (actionHandler != null)
 							{
 								if (!actionHandler.isPetAction())

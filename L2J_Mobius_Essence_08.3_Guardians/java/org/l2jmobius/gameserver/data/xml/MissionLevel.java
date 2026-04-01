@@ -31,7 +31,7 @@ import java.util.logging.Logger;
 import org.w3c.dom.Document;
 
 import org.l2jmobius.commons.util.IXmlReader;
-import org.l2jmobius.gameserver.model.MissionLevelHolder;
+import org.l2jmobius.gameserver.data.holders.MissionLevelHolder;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 

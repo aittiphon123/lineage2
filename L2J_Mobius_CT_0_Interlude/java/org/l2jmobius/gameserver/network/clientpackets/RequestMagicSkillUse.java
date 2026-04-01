@@ -74,7 +74,7 @@ public class RequestMagicSkillUse extends ClientPacket
 			}
 		}
 		
-		// Get the level of the used skill
+		// Get the level of the used skill.
 		Skill skill = player.getKnownSkill(_magicId);
 		if (skill == null)
 		{
@@ -87,13 +87,13 @@ public class RequestMagicSkillUse extends ClientPacket
 			}
 		}
 		
-		// If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
+		// If alternate rule Karma punishment is set to true, forbid teleport to player with Karma.
 		if (!PlayerConfig.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (player.getKarma() > 0) && skill.hasEffectType(EffectType.TELEPORT))
 		{
 			return;
 		}
 		
-		// players mounted on pets cannot use any toggle skills
+		// Players mounted on pets cannot use any toggle skills.
 		if (skill.isToggle() && player.isMounted())
 		{
 			return;

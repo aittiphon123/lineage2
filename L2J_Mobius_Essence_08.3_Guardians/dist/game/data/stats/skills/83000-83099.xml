@@ -2289,7 +2289,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="CriticalRate">
+			<effect name="PhysicalSkillCriticalRate">
 				<amount>
 					<value level="1">0</value>
 					<value level="2">0</value>
@@ -2738,42 +2738,6 @@
 					<value level="31">700</value>
 				</amount>
 				<mode>DIFF</mode>
-			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">0</value>
-					<value level="13">0</value>
-					<value level="14">0</value>
-					<value level="15">0</value>
-					<value level="16">0</value>
-					<value level="17">0.5</value>
-					<value level="18">1</value>
-					<value level="19">1.5</value>
-					<value level="20">2</value>
-					<value level="21">3</value>
-					<value level="22">3.5</value>
-					<value level="23">4</value>
-					<value level="24">4.5</value>
-					<value level="25">5</value>
-					<value level="26">5.5</value>
-					<value level="27">5.5</value>
-					<value level="28">6</value>
-					<value level="29">6.5</value>
-					<value level="30">7</value>
-					<value level="31">7.5</value>
-				</amount>
-				<mode>PER</mode>
 			</effect>
 			<effect name="MagicCriticalRate">
 				<amount>

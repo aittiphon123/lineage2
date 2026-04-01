@@ -61,7 +61,7 @@ public class Q10377_TheInvadedExecutionGrounds extends Quest
 		addFirstTalkId(TOMBSTONE_OF_THE_GUILLOTINE_OF_DEATH, TOMBSTONE_OF_HOUPON_THE_WARDEN_OVERSEER, TOMBSTONE_OF_CROOK_THE_MAD);
 		addTalkId(SYLVAIN, HARLAN, RODERIK, ENDRIGO);
 		registerQuestItems(HARLANS_ORDERS, ENDRIGOS_REPORT);
-		addCondMinLevel(MIN_LEVEL);
+		addCondMinLevel(MIN_LEVEL, getNoQuestMsg(null));
 	}
 	
 	@Override

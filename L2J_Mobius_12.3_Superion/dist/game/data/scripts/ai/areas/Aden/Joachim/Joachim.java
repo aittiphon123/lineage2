@@ -112,7 +112,7 @@ public class Joachim extends Script
 					final QuestState qs = player.getQuestState(Q10107_SplitDestiny.class.getSimpleName());
 					if ((qs == null) || (!qs.isCompleted() && !PlayerConfig.ALT_GAME_DUALCLASS_WITHOUT_QUEST))
 					{
-						htmltext = "noQuest.html";
+						return "noQuest.html";
 					}
 				}
 				

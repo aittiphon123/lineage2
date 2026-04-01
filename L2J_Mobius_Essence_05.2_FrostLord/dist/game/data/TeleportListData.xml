@@ -69,7 +69,7 @@
 	<teleport id="101" x="187383" y="20498" z="-3584" price="6750" /> <!-- Seal of Shilen -->
 	<teleport id="102" x="177116" y="45786" z="-4168" price="15300" /> <!-- Giant's Cave -->
 	<teleport id="104" price="1500"> <!-- Cemetery -->
-		<location x="178863" y="20306" z="-3168" />
+		<location x="179544" y="20318" z="-3164" />
 		<location x="172204" y="20322" z="-3328" />
 		<location x="173668" y="9235" z="-2736" />
 	</teleport>

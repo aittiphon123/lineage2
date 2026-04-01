@@ -105,7 +105,7 @@ public class Q10974_NewStylishEquipment extends Quest
 					boolean foundEnchant = false;
 					SEARCH: for (Item item : player.getInventory().getAllItemsByItemId(ADVENTURER_SHEEP_HAT.getId()))
 					{
-						if (item.getEnchantLevel() > 0)
+						if (item.isEnchanted())
 						{
 							foundEnchant = true;
 							break SEARCH;
@@ -148,7 +148,7 @@ public class Q10974_NewStylishEquipment extends Quest
 					boolean foundEnchant = false;
 					SEARCH: for (Item item : player.getInventory().getAllItemsByItemId(ADVENTURER_BELT.getId()))
 					{
-						if (item.getEnchantLevel() > 0)
+						if (item.isEnchanted())
 						{
 							foundEnchant = true;
 							break SEARCH;
@@ -191,7 +191,7 @@ public class Q10974_NewStylishEquipment extends Quest
 					boolean foundEnchant = false;
 					SEARCH: for (Item item : player.getInventory().getAllItemsByItemId(ADVENTURER_CLOAK.getId()))
 					{
-						if (item.getEnchantLevel() > 0)
+						if (item.isEnchanted())
 						{
 							foundEnchant = true;
 							break SEARCH;
@@ -241,7 +241,7 @@ public class Q10974_NewStylishEquipment extends Quest
 					boolean foundEnchant = false;
 					SEARCH: for (Item item : player.getInventory().getAllItemsByItemId(ADVENTURER_SHEEP_HAT.getId()))
 					{
-						if (item.getEnchantLevel() > 0)
+						if (item.isEnchanted())
 						{
 							foundEnchant = true;
 							break SEARCH;
@@ -264,7 +264,7 @@ public class Q10974_NewStylishEquipment extends Quest
 					boolean foundEnchant = false;
 					SEARCH: for (Item item : player.getInventory().getAllItemsByItemId(ADVENTURER_BELT.getId()))
 					{
-						if (item.getEnchantLevel() > 0)
+						if (item.isEnchanted())
 						{
 							foundEnchant = true;
 							break SEARCH;
@@ -287,7 +287,7 @@ public class Q10974_NewStylishEquipment extends Quest
 					boolean foundEnchant = false;
 					SEARCH: for (Item item : player.getInventory().getAllItemsByItemId(ADVENTURER_CLOAK.getId()))
 					{
-						if (item.getEnchantLevel() > 0)
+						if (item.isEnchanted())
 						{
 							foundEnchant = true;
 							break SEARCH;

@@ -139,7 +139,7 @@
 				</weaponType>
 				<mode>PER</mode>
 			</effect>
-			<!--Missing Effect Deals M. Skill Damage on Pet's Attack, not enough info about this skill-->
+			<!-- Missing Effect Deals M. Skill Damage on Pet's Attack, not enough info about this skill -->
 		</effects>
 	</skill>
 	<skill id="49002" toLevel="20" name="Magic Missile">

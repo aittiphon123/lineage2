@@ -19,7 +19,7 @@ package org.l2jmobius.gameserver.network.serverpackets.sayune;
 import java.util.List;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.gameserver.model.SayuneEntry;
+import org.l2jmobius.gameserver.data.holders.SayuneEntry;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;

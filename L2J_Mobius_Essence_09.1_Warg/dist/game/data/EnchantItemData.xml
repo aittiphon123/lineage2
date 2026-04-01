@@ -3,36 +3,36 @@
 	<!-- Weapon scrolls -->
 
 	<!-- Protecting Scroll: Enchant Weapon -->
-	<enchant id="6569" targetGrade="A" maxEnchant="10" safeEnchant="5" /> <!-- Protecting Scroll: Enchant A-grade Weapon -->
-	<enchant id="6571" targetGrade="B" maxEnchant="10" safeEnchant="5" /> <!-- Protecting Scroll: Enchant B-grade Weapon -->
-	<enchant id="6573" targetGrade="C" maxEnchant="10" safeEnchant="5" /> <!-- Protecting Scroll: Enchant C-grade Weapon -->
-	<enchant id="6575" targetGrade="D" maxEnchant="10" safeEnchant="5" /> <!-- Protecting Scroll: Enchant D-grade Weapon -->
+	<enchant id="6569" targetGrade="A" safeEnchant="4" /> <!-- Protecting Scroll: Enchant A-grade Weapon -->
+	<enchant id="6571" targetGrade="B" safeEnchant="4" /> <!-- Protecting Scroll: Enchant B-grade Weapon -->
+	<enchant id="6573" targetGrade="C" safeEnchant="4" /> <!-- Protecting Scroll: Enchant C-grade Weapon -->
+	<enchant id="6575" targetGrade="D" safeEnchant="4" /> <!-- Protecting Scroll: Enchant D-grade Weapon -->
 	
 	<!-- Stable Scrolls: Enchant A-Grade Armor -->
-	<enchant id="22224" targetGrade="A" minEnchant="6" />
-	<enchant id="100568" targetGrade="A" minEnchant="6" />
-	<enchant id="101206" targetGrade="A" minEnchant="6" />
+	<enchant id="22224" targetGrade="A" maxEnchant="6" safeEnchant="4" />
+	<enchant id="100568" targetGrade="A" maxEnchant="7" />
+	<enchant id="101206" targetGrade="A" maxEnchant="7" />
 	
 	<!-- Stable Scrolls: Enchant A-Grade Weapon -->
-	<enchant id="22223" targetGrade="A" minEnchant="6" />
-	<enchant id="100567" targetGrade="A" minEnchant="6" />
-	<enchant id="101205" targetGrade="A" minEnchant="6" />
+	<enchant id="22223" targetGrade="A" maxEnchant="6" safeEnchant="4" />
+	<enchant id="100567" targetGrade="A" minEnchant="7" />
+	<enchant id="101205" targetGrade="A" minEnchant="7" />
 
 	<!-- Scrolls: Enchant Weapon -->
-	<enchant id="729" targetGrade="A" maxEnchant="10" safeEnchant="4" />
-	<enchant id="93976" targetGrade="A" maxEnchant="10" safeEnchant="4" />
-	<enchant id="947" targetGrade="B" maxEnchant="10" safeEnchant="4" />
-	<enchant id="93406" targetGrade="B" maxEnchant="10" safeEnchant="4" />
-	<enchant id="951" targetGrade="C" maxEnchant="10" safeEnchant="4" />
-	<enchant id="93408" targetGrade="C" maxEnchant="10" safeEnchant="4" />
-	<enchant id="955" targetGrade="D" maxEnchant="10" safeEnchant="4" />
-	<enchant id="93410" targetGrade="D" maxEnchant="10" safeEnchant="4" />
+	<enchant id="729" targetGrade="A" safeEnchant="4" />
+	<enchant id="93976" targetGrade="A" safeEnchant="4" />
+	<enchant id="947" targetGrade="B" safeEnchant="4" />
+	<enchant id="93406" targetGrade="B" safeEnchant="4" />
+	<enchant id="951" targetGrade="C" safeEnchant="4" />
+	<enchant id="93408" targetGrade="C" safeEnchant="4" />
+	<enchant id="955" targetGrade="D" safeEnchant="4" />
+	<enchant id="93410" targetGrade="D" safeEnchant="4" />
 	<!-- Improved Scrolls: Enchant Weapon -->
-	<enchant id="33810" targetGrade="S" maxEnchant="10" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
-	<enchant id="33809" targetGrade="A" maxEnchant="10" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
-	<enchant id="33808" targetGrade="B" maxEnchant="10" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
-	<enchant id="33807" targetGrade="C" maxEnchant="10" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
-	<enchant id="33806" targetGrade="D" maxEnchant="10" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
+	<enchant id="33810" targetGrade="S" maxEnchant="16" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
+	<enchant id="33809" targetGrade="A" maxEnchant="16" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
+	<enchant id="33808" targetGrade="B" maxEnchant="16" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
+	<enchant id="33807" targetGrade="C" maxEnchant="16" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
+	<enchant id="33806" targetGrade="D" maxEnchant="16" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
 	<enchant id="93255" targetGrade="A" maxEnchant="6" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="2" randomEnchantChance="10" />
 	<enchant id="93268" targetGrade="A" maxEnchant="6" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="2" randomEnchantChance="10" />
 	<!-- Cursed Scrolls: Enchant Weapon -->
@@ -65,7 +65,7 @@
 		<item id="95691" /> <!-- Aden's Dual Swords - Sealed -->
 	</enchant>
 	<!-- Scroll: Enchant Death Knight's Flame Sword -->
-	<enchant id="93931" targetGrade="A" maxEnchant="5" scrollGroupId="2">
+	<enchant id="93931" targetGrade="A" maxEnchant="16" scrollGroupId="2">
 		<item id="93864" /> <!-- Death Knight's Flame Sword -->
 		<item id="96927" /> <!-- Axe of Immortality -->
 		<item id="96928" /> <!-- Ancient Sword of Immortality -->
@@ -102,40 +102,40 @@
 	<!-- Armor scrolls -->
 
 	<!-- Protecting Scroll: Enchant Armor -->
-	<enchant id="6570" targetGrade="A" maxEnchant="10" safeEnchant="5" /> <!-- Protecting Scroll: Enchant A-grade Armor -->
-	<enchant id="6572" targetGrade="B" maxEnchant="10" safeEnchant="5" /> <!-- Protecting Scroll: Enchant B-grade Armor -->
-	<enchant id="6574" targetGrade="C" maxEnchant="10" safeEnchant="5" /> <!-- Protecting Scroll: Enchant C-grade Armor -->
-	<enchant id="6576" targetGrade="D" maxEnchant="10" safeEnchant="5" /> <!-- Protecting Scroll: Enchant D-grade Armor -->
+	<enchant id="6570" targetGrade="A" safeEnchant="4" /> <!-- Protecting Scroll: Enchant A-grade Armor -->
+	<enchant id="6572" targetGrade="B" safeEnchant="4" /> <!-- Protecting Scroll: Enchant B-grade Armor -->
+	<enchant id="6574" targetGrade="C" safeEnchant="4" /> <!-- Protecting Scroll: Enchant C-grade Armor -->
+	<enchant id="6576" targetGrade="D" safeEnchant="4" /> <!-- Protecting Scroll: Enchant D-grade Armor -->
 
 	<!-- Scrolls: Enchant Armor -->
-	<enchant id="730" targetGrade="A" maxEnchant="10" safeEnchant="4" />
-	<enchant id="93977" targetGrade="A" maxEnchant="10" safeEnchant="4" />
-	<enchant id="948" targetGrade="B" maxEnchant="10" safeEnchant="4" />
-	<enchant id="93407" targetGrade="B" maxEnchant="10" safeEnchant="4" />
-	<enchant id="952" targetGrade="C" maxEnchant="10" safeEnchant="4" />
-	<enchant id="93409" targetGrade="C" maxEnchant="10" safeEnchant="4" />
-	<enchant id="956" targetGrade="D" maxEnchant="10" safeEnchant="4" />
-	<enchant id="93411" targetGrade="D" maxEnchant="10" safeEnchant="4" />
+	<enchant id="730" targetGrade="A" safeEnchant="4" />
+	<enchant id="93977" targetGrade="A" safeEnchant="4" />
+	<enchant id="948" targetGrade="B" safeEnchant="4" />
+	<enchant id="93407" targetGrade="B" safeEnchant="4" />
+	<enchant id="952" targetGrade="C" safeEnchant="4" />
+	<enchant id="93409" targetGrade="C" safeEnchant="4" />
+	<enchant id="956" targetGrade="D" safeEnchant="4" />
+	<enchant id="93411" targetGrade="D" safeEnchant="4" />
 	<!-- Improved Scrolls: Enchant Armor -->
-	<enchant id="33816" targetGrade="S" maxEnchant="10" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
-	<enchant id="33815" targetGrade="A" maxEnchant="10" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
-	<enchant id="33814" targetGrade="B" maxEnchant="10" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
-	<enchant id="33813" targetGrade="C" maxEnchant="10" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
-	<enchant id="33812" targetGrade="D" maxEnchant="10" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
-	<enchant id="93256" targetGrade="A" maxEnchant="6" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="2" randomEnchantChance="10" />
-	<enchant id="93269" targetGrade="A" maxEnchant="6" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="2" randomEnchantChance="10" />
+	<enchant id="33816" targetGrade="S" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
+	<enchant id="33815" targetGrade="A" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
+	<enchant id="33814" targetGrade="B" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
+	<enchant id="33813" targetGrade="C" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
+	<enchant id="33812" targetGrade="D" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="3" randomEnchantChance="10" />
+	<enchant id="93256" targetGrade="A" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="2" randomEnchantChance="10" />
+	<enchant id="93269" targetGrade="A" safeEnchant="4" randomEnchantMin="1" randomEnchantMax="2" randomEnchantChance="10" />
 	<!-- Cursed Scrolls: Enchant Armor -->
-	<enchant id="93258" targetGrade="A" minEnchant="2" maxEnchant="16" safeEnchant="16" />
-	<enchant id="93271" targetGrade="A" minEnchant="2" maxEnchant="16" safeEnchant="16" />
-	<enchant id="95701" targetGrade="B" minEnchant="2" maxEnchant="16" safeEnchant="16" />
-	<enchant id="95707" targetGrade="B" minEnchant="2" maxEnchant="16" safeEnchant="16" />
-	<enchant id="95703" targetGrade="C" minEnchant="2" maxEnchant="16" safeEnchant="16" />
-	<enchant id="95709" targetGrade="C" minEnchant="2" maxEnchant="16" safeEnchant="16" />
-	<enchant id="95705" targetGrade="D" minEnchant="2" maxEnchant="16" safeEnchant="16" />
-	<enchant id="95711" targetGrade="D" minEnchant="2" maxEnchant="16" safeEnchant="16" />
+	<enchant id="93258" targetGrade="A" minEnchant="1" maxEnchant="16" safeEnchant="16" />
+	<enchant id="93271" targetGrade="A" minEnchant="1" maxEnchant="16" safeEnchant="16" />
+	<enchant id="95701" targetGrade="B" minEnchant="1" maxEnchant="16" safeEnchant="16" />
+	<enchant id="95707" targetGrade="B" minEnchant="1" maxEnchant="16" safeEnchant="16" />
+	<enchant id="95703" targetGrade="C" minEnchant="1" maxEnchant="16" safeEnchant="16" />
+	<enchant id="95709" targetGrade="C" minEnchant="1" maxEnchant="16" safeEnchant="16" />
+	<enchant id="95705" targetGrade="D" minEnchant="1" maxEnchant="16" safeEnchant="16" />
+	<enchant id="95711" targetGrade="D" minEnchant="1" maxEnchant="16" safeEnchant="16" />
 	<!-- Accessories scrolls -->
 	<!-- Scroll: Enchant Rare Accessories -->
-	<enchant id="94383" maxEnchant="5" safeEnchant="1" scrollGroupId="3">
+	<enchant id="94383" safeEnchant="1" scrollGroupId="3">
 		<item id="6660" /> <!-- Queen Ant's Ring -->
 		<item id="95327" /> <!-- Queen Ant's Ring - Sealed -->
 		<item id="6661" /> <!-- Orfen's Earring -->
@@ -158,7 +158,7 @@
 		<item id="100371" /> <!-- Ferion's Necklace - Sealed -->
 	</enchant>
 	<!-- Scroll: Enchant Rare Accessories (Event) -->
-	<enchant id="94384" maxEnchant="5" safeEnchant="1" scrollGroupId="3">
+	<enchant id="94384" safeEnchant="1" scrollGroupId="3">
 		<item id="6660" /> <!-- Queen Ant's Ring -->
 		<item id="95327" /> <!-- Queen Ant's Ring - Sealed -->
 		<item id="6661" /> <!-- Orfen's Earring -->
@@ -181,7 +181,7 @@
 		<item id="100371" /> <!-- Ferion's Necklace - Sealed -->
 	</enchant>
 	<!-- Improved Scroll: Enchant Rare Accessories -->
-	<enchant id="94385" maxEnchant="3" safeEnchant="1" randomEnchantMin="1" randomEnchantMax="2" randomEnchantChance="10" scrollGroupId="3">
+	<enchant id="94385" safeEnchant="1" randomEnchantMin="1" randomEnchantMax="2" randomEnchantChance="10" scrollGroupId="3">
 		<item id="6660" /> <!-- Queen Ant's Ring -->
 		<item id="95327" /> <!-- Queen Ant's Ring - Sealed -->
 		<item id="6661" /> <!-- Orfen's Earring -->
@@ -204,7 +204,7 @@
 		<item id="100371" /> <!-- Ferion's Necklace - Sealed -->
 	</enchant>
 	<!-- Improved Scroll: Enchant Rare Accessories (Event) -->
-	<enchant id="94386" maxEnchant="3" safeEnchant="1" randomEnchantMin="1" randomEnchantMax="2" randomEnchantChance="10" scrollGroupId="3">
+	<enchant id="94386" safeEnchant="1" randomEnchantMin="1" randomEnchantMax="2" randomEnchantChance="10" scrollGroupId="3">
 		<item id="6660" /> <!-- Queen Ant's Ring -->
 		<item id="95327" /> <!-- Queen Ant's Ring - Sealed -->
 		<item id="6661" /> <!-- Orfen's Earring -->
@@ -226,7 +226,7 @@
 		<item id="100370" /> <!-- Ferion's Necklace -->
 		<item id="100371" /> <!-- Ferion's Necklace - Sealed -->
 	</enchant>
-	<!-- Scroll: Enchannt Hellbound Ring -->
+	<!-- Scroll: Enchant Hellbound Ring -->
 	<enchant id="94719" maxEnchant="10" scrollGroupId="3" safeEnchant="3">
 		<item id="94718" /> <!-- Hellbound Ring -->
 	</enchant>

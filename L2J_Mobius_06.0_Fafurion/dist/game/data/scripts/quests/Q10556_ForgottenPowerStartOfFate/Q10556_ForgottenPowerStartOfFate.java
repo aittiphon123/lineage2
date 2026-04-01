@@ -26,7 +26,6 @@ import java.util.Map.Entry;
 
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
 import org.l2jmobius.gameserver.managers.ScriptManager;
-import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
@@ -43,6 +42,7 @@ import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.skill.Skill;
+import org.l2jmobius.gameserver.model.skill.holders.SkillLearn;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.UserInfoType;
@@ -284,7 +284,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 	@Id(MASTER_WIZARD)
 	@Id(MASTER_SUMMONER)
 	@Id(MASTER_HEALER)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);

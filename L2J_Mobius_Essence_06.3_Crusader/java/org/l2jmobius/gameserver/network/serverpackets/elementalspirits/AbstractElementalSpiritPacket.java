@@ -21,7 +21,7 @@
 package org.l2jmobius.gameserver.network.serverpackets.elementalspirits;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.gameserver.model.ElementalSpirit;
+import org.l2jmobius.gameserver.model.actor.holders.player.ElementalSpirit;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 
 /**

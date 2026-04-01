@@ -1004,7 +1004,7 @@ public class CastleChamberlain extends Script
 					final TeleportHolder holder = TeleporterData.getInstance().getHolder(npc.getId(), listName);
 					if (holder != null)
 					{
-						holder.showTeleportList(player, npc, "Quest CastleChamberlain goto");
+						holder.showTeleportList(player, npc, "Script CastleChamberlain goto");
 					}
 				}
 				break;
@@ -1211,10 +1211,10 @@ public class CastleChamberlain extends Script
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id({35100, 35142, 35184, 35226, 35274,	35316, 35363, 35509, 35555, 36653, 36654, 36655, 36656, 36657, 36658, 36659, 36660, 36661})
 	// @formatter:on
-	public void onNpcManorBypass(OnNpcManorBypass evt)
+	public void onNpcManorBypass(OnNpcManorBypass event)
 	{
-		final Player player = evt.getPlayer();
-		final Npc npc = evt.getTarget();
+		final Player player = event.getPlayer();
+		final Npc npc = event.getTarget();
 		if (isOwner(player, npc))
 		{
 			final CastleManorManager manor = CastleManorManager.getInstance();
@@ -1224,17 +1224,17 @@ public class CastleChamberlain extends Script
 				return;
 			}
 			
-			final int castleId = (evt.getManorId() == -1) ? npc.getCastle().getResidenceId() : evt.getManorId();
-			switch (evt.getRequest())
+			final int castleId = (event.getManorId() == -1) ? npc.getCastle().getResidenceId() : event.getManorId();
+			switch (event.getRequest())
 			{
 				case 3: // Seed info
 				{
-					player.sendPacket(new ExShowSeedInfo(castleId, evt.isNextPeriod(), true));
+					player.sendPacket(new ExShowSeedInfo(castleId, event.isNextPeriod(), true));
 					break;
 				}
 				case 4: // Crop info
 				{
-					player.sendPacket(new ExShowCropInfo(castleId, evt.isNextPeriod(), true));
+					player.sendPacket(new ExShowCropInfo(castleId, event.isNextPeriod(), true));
 					break;
 				}
 				case 5: // Basic info
@@ -1266,7 +1266,7 @@ public class CastleChamberlain extends Script
 				}
 				default:
 				{
-					LOGGER.warning(getClass().getSimpleName() + ": " + player + " send unknown request id " + evt.getRequest() + "!");
+					LOGGER.warning(getClass().getSimpleName() + ": " + player + " send unknown request id " + event.getRequest() + "!");
 				}
 			}
 		}

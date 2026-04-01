@@ -59,7 +59,7 @@ public class DropItem extends ServerPacket
 		buffer.writeByte(_item.isStackable());
 		buffer.writeLong(_item.getCount());
 		buffer.writeInt(0);
-		buffer.writeByte(_item.getEnchantLevel() > 0);
+		buffer.writeByte(_item.isEnchanted());
 		buffer.writeInt(0);
 		buffer.writeByte(_item.getEnchantLevel()); // Grand Crusade
 		buffer.writeByte(_item.getAugmentation() != null); // Grand Crusade

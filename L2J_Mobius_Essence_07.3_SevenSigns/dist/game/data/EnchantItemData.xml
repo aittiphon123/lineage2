@@ -64,7 +64,7 @@
 		<item id="96939" /> <!-- Spear of Immortality -->
 		<item id="96940" /> <!-- Bow of Immortality -->
 		<item id="97088" /> <!-- Sword of Immortality -->
-		<item id="97089" /> <!-- Dual Swords of Immortality-->
+		<item id="97089" /> <!-- Dual Swords of Immortality -->
 	</enchant>
 	<!-- Sealed Scroll: Enchant Death Knight's Flame Sword -->
 	<enchant id="93932" targetGrade="A" maxEnchant="5" scrollGroupId="2">
@@ -81,7 +81,7 @@
 		<item id="96939" /> <!-- Spear of Immortality -->
 		<item id="96940" /> <!-- Bow of Immortality -->
 		<item id="97088" /> <!-- Sword of Immortality -->
-		<item id="97089" /> <!-- Dual Swords of Immortality-->
+		<item id="97089" /> <!-- Dual Swords of Immortality -->
 	</enchant>
 	
 	<!-- Armor scrolls -->
@@ -374,14 +374,14 @@
 		<item id="94642" /> <!-- Pet Earring -->
 		<item id="94643" /> <!-- Pet Ring -->
 		<item id="98991" /> <!-- Pet Earring -->
-		<item id="98992" /> <!-- Pet Ring-->
+		<item id="98992" /> <!-- Pet Ring -->
 	</enchant>
 	<!-- Scroll: Enchant Pet Accessories - Sealed -->
 	<enchant id="98993" scrollGroupId="3">
 		<item id="94642" /> <!-- Pet Earring -->
 		<item id="94643" /> <!-- Pet Ring -->
 		<item id="98991" /> <!-- Pet Earring -->
-		<item id="98992" /> <!-- Pet Ring-->
+		<item id="98992" /> <!-- Pet Ring -->
 	</enchant>
 	
 	<enchant id="98204" /> <!-- Scroll: Enchant Sigil of Immortality (Time-limited) - Sealed -->

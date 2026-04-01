@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.sql.OfflineTraderTable;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
@@ -86,7 +86,7 @@ public class RequestRestart extends ClientPacket
 				location = world.getExitLocation(player);
 				if (location == null)
 				{
-					location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+					location = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 				}
 			}
 			
@@ -94,7 +94,7 @@ public class RequestRestart extends ClientPacket
 		}
 		else if (player.isInTimedHuntingZone())
 		{
-			location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+			location = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 		}
 		
 		if (location != null)

@@ -31,7 +31,6 @@ import org.l2jmobius.commons.time.TimeUtil;
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.managers.MailManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -43,6 +42,7 @@ import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Mail;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
 /**
@@ -194,7 +194,7 @@ public class CharacterBirthday extends Script
 						text = text.replace("$s1", String.valueOf(age));
 					}
 					
-					final Message message = new Message(playerId, GeneralConfig.ALT_BIRTHDAY_MAIL_SUBJECT, text, MailType.BIRTHDAY);
+					final MailMessage message = new MailMessage(playerId, GeneralConfig.ALT_BIRTHDAY_MAIL_SUBJECT, text, MailType.BIRTHDAY);
 					final Mail attachments = message.createAttachments();
 					attachments.addItem(ItemProcessType.REWARD, GeneralConfig.ALT_BIRTHDAY_GIFT, 1, null, null);
 					MailManager.getInstance().sendMessage(message);

@@ -48,7 +48,7 @@ public class Q10388_ConspiracyBehindDoor extends Quest
 		super(10388);
 		addStartNpc(ELIA);
 		addTalkId(ELIA, KARGOS, HICHEN, RAZDEN);
-		addCondMinLevel(MIN_LEVEL);
+		addCondMinLevel(MIN_LEVEL, getNoQuestMsg(null));
 	}
 	
 	@Override

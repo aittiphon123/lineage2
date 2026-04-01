@@ -19,10 +19,10 @@ package org.l2jmobius.gameserver.data.holders;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.gameserver.model.ItemInfo;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.item.holders.ItemChanceHolder;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.model.item.holders.ItemInfo;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.itemcontainer.ItemContainer;

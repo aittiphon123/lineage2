@@ -31,7 +31,7 @@
 		<npc id="31839" x="148548" y="-56376" z="-2779" heading="5000" respawnDelay="60" /> <!-- Adventure Guildsman -->
 		<npc id="35466" x="148224" y="-56496" z="-2779" heading="21000" respawnDelay="60" /> <!-- Gerard -->
 		<npc id="35465" x="148381" y="-56525" z="-2760" heading="54000" respawnDelay="60" /> <!-- Millicent -->
-		<npc id="35464" x="147072" y="-56416" z="-2779" heading="11500" respawnDelay="60" /> <!-- Volfrem-->
+		<npc id="35464" x="147072" y="-56416" z="-2779" heading="11500" respawnDelay="60" /> <!-- Volfrem -->
 		<npc id="35463" x="147134" y="-56576" z="-2760" heading="44000" respawnDelay="60" /> <!-- Helga -->
 		<npc id="31838" x="146856" y="-56424" z="-2779" heading="26000" respawnDelay="60" /> <!-- Adventure Guildsman -->
 		<npc id="35462" x="146488" y="-55432" z="-2779" heading="1000" respawnDelay="60" /> <!-- Kalmer -->

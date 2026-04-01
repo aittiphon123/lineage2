@@ -27,8 +27,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -42,6 +42,7 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogout;
 import org.l2jmobius.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2jmobius.gameserver.model.script.Script;
+import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -59,21 +60,21 @@ public class CursedWeaponAttack extends Script
 	private static final Logger LOGGER = Logger.getLogger(CursedWeaponAttack.class.getName());
 	
 	// Skill IDs
-	private static final int SKILL_ID_ZARICHE = 35404; // Prison of Souls - Zariche
-	private static final int SKILL_ID_AKAMANAH = 35405; // Prison of Souls - Akamanah
+	private static final int SKILL_ID_ZARICHE = 35404; // Prison of Souls - Zariche.
+	private static final int SKILL_ID_AKAMANAH = 35405; // Prison of Souls - Akamanah.
 	
 	// Mechanics constants
-	private static final int HITS_TO_BREAK = 540; // 540 Hits required to break
-	private static final int DURATION_SECONDS = 120; // 2 Minutes duration
+	private static final int HITS_TO_BREAK = 540; // 540 Hits required to break.
+	private static final int DURATION_SECONDS = 120; // 2 Minutes duration.
 	
 	// Scar skills
-	private static final int SKILL_SCAR_ZARICHE = 35521; // Soul Scar - Zariche - 130sec
-	private static final int SKILL_SCAR_AKAMANAH = 35522; // Soul Scar - Akamanah - 130sec
+	private static final int SKILL_SCAR_ZARICHE = 35521; // Soul Scar - Zariche - 130sec.
+	private static final int SKILL_SCAR_AKAMANAH = 35522; // Soul Scar - Akamanah - 130sec.
 	
-	// Fallback location if teleport fails
+	// Fallback location if teleport fails.
 	private static final Location FALLBACK_LOC = new Location(17860, 170170, -3507);
 	
-	// Active prisoners map (ObjectId -> PrisonData)
+	// Active prisoners map (ObjectId -> PrisonData).
 	private static final Map<Integer, PrisonData> _prisoners = new ConcurrentHashMap<>();
 	
 	private static class PrisonData
@@ -103,13 +104,16 @@ public class CursedWeaponAttack extends Script
 	{
 		LOGGER.info("CursedWeaponAttack initialized: registering global event Cursed Weapons Defense.");
 		
-		// 1. Skill Use
+		// 1. Skill Use.
 		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_CREATURE_SKILL_USE, event -> onCreatureSkillUse((OnCreatureSkillUse) event), this));
-		// 2. Attack
+		
+		// 2. Attack.
 		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_CREATURE_ATTACK, event -> onCreatureAttack((OnCreatureAttack) event), this));
-		// 3. Player Logout
+		
+		// 3. Player Logout.
 		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_LOGOUT, event -> onPlayerLogout((OnPlayerLogout) event), this));
-		// Player Login
+		
+		// Player Login.
 		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_LOGIN, event -> onPlayerLogin((OnPlayerLogin) event), this));
 	}
 	
@@ -139,15 +143,16 @@ public class CursedWeaponAttack extends Script
 			}
 			
 			final Player victim = target.asPlayer();
-			// Holder protection block
+			
+			// Holder protection block.
 			if (victim.isCursedWeaponEquipped())
 			{
 				ThreadPool.schedule(() ->
 				{
 					victim.stopSkillEffects(skill);
 					
-					// Extra visual cleanup for safety
-					victim.getEffectList().stopAbnormalVisualEffect(org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect.ZARICHE_PRISION_AVE);
+					// Extra visual cleanup for safety.
+					victim.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.ZARICHE_PRISION_AVE);
 					
 					// victim.sendMessage("The prison effect does not work on another cursed weapon holder.");
 				}, 500);
@@ -172,13 +177,10 @@ public class CursedWeaponAttack extends Script
 			return;
 		}
 		
-		// Magic attack on prisoner
-		if (!_prisoners.isEmpty() && (target != null) && target.isPlayer())
+		// Magic attack on prisoner.
+		if (!_prisoners.isEmpty() && (target != null) && target.isPlayer() && skill.hasNegativeEffect())
 		{
-			if (skill.hasNegativeEffect())
-			{
-				checkHit(target.asPlayer(), caster);
-			}
+			checkHit(target.asPlayer(), caster);
 		}
 	}
 	
@@ -275,7 +277,7 @@ public class CursedWeaponAttack extends Script
 				return;
 			}
 			
-			// remove visual effects
+			// Remove visual effects.
 			final Skill s = SkillData.getInstance().getSkill(expectedData.skillId, 1);
 			if (s != null)
 			{
@@ -305,7 +307,7 @@ public class CursedWeaponAttack extends Script
 			
 			if (!victim.isDead())
 			{
-				Location loc = MapRegionManager.getInstance().getTeleToLocation(victim, TeleportWhereType.TOWN);
+				Location loc = MapRegionData.getInstance().getTeleToLocation(victim, TeleportWhereType.TOWN);
 				if (loc == null)
 				{
 					loc = FALLBACK_LOC;
@@ -324,7 +326,7 @@ public class CursedWeaponAttack extends Script
 			ThreadPool.schedule(() ->
 			{
 				_prisoners.remove(expectedData.victimObjectId);
-			}, 2000); // seconds of immunity against new imprisonment
+			}, 2000); // Seconds of immunity against new imprisonment.
 		}
 	}
 	
@@ -334,6 +336,7 @@ public class CursedWeaponAttack extends Script
 		{
 			return;
 		}
+		
 		final PrisonData data = _prisoners.remove(event.getPlayer().getObjectId());
 		if (data != null)
 		{
@@ -349,7 +352,7 @@ public class CursedWeaponAttack extends Script
 			return;
 		}
 		
-		// 1. Check if the player has the prison skill
+		// 1. Check if the player has the prison skill.
 		final boolean hasZariche = player.getEffectList().isAffectedBySkill(SKILL_ID_ZARICHE);
 		final boolean hasAkamanah = player.getEffectList().isAffectedBySkill(SKILL_ID_AKAMANAH);
 		
@@ -360,8 +363,8 @@ public class CursedWeaponAttack extends Script
 		
 		final int skillId = hasZariche ? SKILL_ID_ZARICHE : SKILL_ID_AKAMANAH;
 		
-		// 2. Read the actual remaining time on the buff
-		long remainingTime = 3000L; // minimum safety
+		// 2. Read the actual remaining time on the buff.
+		long remainingTime = 3000L; // Minimum safety.
 		
 		final BuffInfo info = player.getEffectList().getBuffInfoBySkillId(skillId);
 		if (info != null)
@@ -375,7 +378,7 @@ public class CursedWeaponAttack extends Script
 		
 		// LOGGER.info("CursedWeaponAttack: Fugitive " + player.getName() + " recaptured. Remaining time: " + (remainingTime / 1000) + "s");
 		
-		// 3. Reactivate the task in the script
+		// 3. Reactivate the task in the script.
 		final PrisonData newData = new PrisonData(skillId, player.getObjectId());
 		_prisoners.put(player.getObjectId(), newData);
 		

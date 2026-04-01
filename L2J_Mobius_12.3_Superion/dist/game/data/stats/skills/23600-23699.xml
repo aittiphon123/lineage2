@@ -1329,10 +1329,30 @@
 		<!-- Decreases Wind Resistance. Inflicted status: Debilitation. -->
 		<icon>icon.skill4281_new</icon>
 		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>0</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>ARMOR_WIND</abnormalType>
+		<activateRate>100</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>800</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>WIND</attributeType>
+		<attributeValue>180</attributeValue>
+		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>-100</effectPoint>
+		<hitTime>0</hitTime>
 		<isDebuff>true</isDebuff>
-		<isMagic>1</isMagic>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
 		<mpConsume>10</mpConsume>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>WIND</attribute>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23670" toLevel="1" name="Holy Defense Reduction">
 		<!-- Decreases Holy Resistance. Inflicted status: Debilitation. -->
@@ -1347,10 +1367,30 @@
 		<!-- Decreases Earth Resistance. Inflicted status: Debilitation. -->
 		<icon>icon.skill4282_new</icon>
 		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>0</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>ARMOR_EARTH</abnormalType>
+		<activateRate>100</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>800</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>EARTH</attributeType>
+		<attributeValue>180</attributeValue>
+		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>-100</effectPoint>
+		<hitTime>0</hitTime>
 		<isDebuff>true</isDebuff>
-		<isMagic>1</isMagic>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
 		<mpConsume>10</mpConsume>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23672" toLevel="1" name="Dark Defense Reduction">
 		<!-- Decreases Dark Resistance. Inflicted status: Debilitation. -->

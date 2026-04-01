@@ -238,8 +238,36 @@
 	<skill id="34314" toLevel="1" name="Summon Stalactite">
 		<!-- The enemy falls into a trap that knocks them down. The effect cannot be resisted. -->
 		<icon>icon.s_raid_antaras_summon_stalactite2</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2500</attributeValue>
+		<basicProperty>NONE</basicProperty>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<hitTime>5000</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>120</magicLevel>
+		<reuseDelay>0</reuseDelay>
+		<trait>KNOCKDOWN</trait>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34315" toLevel="1" name="Antharas' Earth Guard">
 		<!-- Antharas' Symbol increases HP to the maximum. Available after consuming all of Antharas' Symbols. If you have Antharas' Symbol, a broken symbol appears after a while. -->
@@ -924,8 +952,19 @@
 		<!-- A magic counterattack in response to a basic one. -->
 		<icon>icon.skill1148</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
-		<mpConsume>1</mpConsume>
+		<effectRange>100</effectRange>
+		<hitTime>500</hitTime>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34372" toLevel="1" name="Dark Blast">
 		<!-- A ranged physical attack. -->
@@ -953,8 +992,19 @@
 		<!-- A magic counterattack in response to a basic one. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-20</effectPoint>
-		<mpConsume>1</mpConsume>
+		<effectRange>100</effectRange>
+		<hitTime>500</hitTime>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34376" toLevel="1" name="Dark Explosion">
 		<!-- A ranged magic attack. -->

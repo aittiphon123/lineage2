@@ -21,7 +21,7 @@ import java.util.List;
 
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
-import org.l2jmobius.gameserver.model.VehiclePathPoint;
+import org.l2jmobius.gameserver.model.actor.holders.creature.VehiclePathPoint;
 
 /**
  * @author UnAfraid

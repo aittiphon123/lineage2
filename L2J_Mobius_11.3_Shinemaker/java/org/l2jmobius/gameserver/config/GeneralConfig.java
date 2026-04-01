@@ -176,6 +176,7 @@ public class GeneralConfig
 	public static boolean ENABLE_AUTO_ITEM;
 	public static boolean RESUME_AUTO_PLAY;
 	public static boolean ENABLE_AUTO_ASSIST;
+	public static Set<Integer> IGNORED_AUTO_PICK_ITEMS = new HashSet<>();
 	public static AbnormalVisualEffect BLUE_TEAM_ABNORMAL_EFFECT;
 	public static AbnormalVisualEffect RED_TEAM_ABNORMAL_EFFECT;
 	
@@ -348,6 +349,15 @@ public class GeneralConfig
 		ENABLE_AUTO_ITEM = config.getBoolean("EnableAutoItem", true);
 		RESUME_AUTO_PLAY = config.getBoolean("ResumeAutoPlay", false);
 		ENABLE_AUTO_ASSIST = config.getBoolean("AssistLeader", false);
+		IGNORED_AUTO_PICK_ITEMS.clear();
+		final String ignoredAutoPickItems = config.getString("IgnoredAutoPickItems", "").trim();
+		if (!ignoredAutoPickItems.isEmpty())
+		{
+			for (String itemIdString : ignoredAutoPickItems.split(","))
+			{
+				IGNORED_AUTO_PICK_ITEMS.add(Integer.parseInt(itemIdString.trim()));
+			}
+		}
 		BLUE_TEAM_ABNORMAL_EFFECT = null;
 		final String blueTeamAve = config.getString("BlueTeamAbnormalEffect", "").trim();
 		if (!blueTeamAve.isEmpty())

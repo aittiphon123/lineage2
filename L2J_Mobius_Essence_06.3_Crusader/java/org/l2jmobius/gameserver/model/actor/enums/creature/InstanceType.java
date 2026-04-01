@@ -50,7 +50,6 @@ public enum InstanceType
 	Guard(Attackable),
 	Monster(Attackable),
 	Chest(Monster),
-	ControllableMob(Monster),
 	FeedableBeast(Monster),
 	TamedBeast(FeedableBeast),
 	FriendlyMob(Attackable),

@@ -1078,7 +1078,19 @@
 		<!-- A magic counterattack in response to a basic one. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>100</effectRange>
+		<hitTime>500</hitTime>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34580" toLevel="3" name="Primordial Fire Source Lv. 3">
 		<!-- Level 1: You feel the true power of the Primal Fire Source. Power of basic attacks and P./ M. skills +5%, AoE Damage Resistance +5%. -->

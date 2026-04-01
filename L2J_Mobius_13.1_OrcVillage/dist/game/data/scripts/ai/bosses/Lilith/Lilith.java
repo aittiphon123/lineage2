@@ -26,11 +26,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2jmobius.gameserver.ai.Intention;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -42,6 +41,7 @@ import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
@@ -281,7 +281,7 @@ public class Lilith extends Script
 			{
 				if ((c != null) && c.isPlayer())
 				{
-					c.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(c, TeleportWhereType.TOWN));
+					c.teleToLocation(MapRegionData.getInstance().getTeleToLocation(c, TeleportWhereType.TOWN));
 				}
 			}
 		}

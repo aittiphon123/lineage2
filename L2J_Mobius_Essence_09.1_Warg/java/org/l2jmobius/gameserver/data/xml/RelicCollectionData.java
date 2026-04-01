@@ -96,6 +96,7 @@ public class RelicCollectionData implements IXmlReader
 						}
 						
 						final int id = parseInteger(attrs, "id");
+						final String name = parseString(attrs, "name", "");
 						final int optionId = parseInteger(attrs, "optionId");
 						final int category = parseInteger(attrs, "category");
 						final int completeCount = parseInteger(attrs, "completeCount");
@@ -119,7 +120,7 @@ public class RelicCollectionData implements IXmlReader
 							}
 						}
 						
-						final RelicCollectionDataHolder template = new RelicCollectionDataHolder(id, optionId, category, completeCount, combatPower, relics);
+						final RelicCollectionDataHolder template = new RelicCollectionDataHolder(id, name, optionId, category, completeCount, combatPower, relics);
 						RELIC_COLLECTIONS.put(id, template);
 						RELIC_COLLECTION_CATEGORIES.computeIfAbsent(template.getCategory(), _ -> new ArrayList<>()).add(template);
 					}

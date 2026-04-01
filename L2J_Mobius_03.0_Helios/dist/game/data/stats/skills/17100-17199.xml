@@ -1037,7 +1037,7 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>5</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<castRange>400</castRange>
 		<effectPoint>1</effectPoint>
@@ -1131,7 +1131,7 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>5</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<castRange>400</castRange>
 		<effectPoint>1</effectPoint>
@@ -1185,6 +1185,7 @@
 		<!-- The GM is always with you. For 1 hour, increases P. Accuracy + 8, physical and magic evasion + 8, and speed + 37. Decreases received critical damage - 30%. -->
 		<icon>icon.skill11521</icon>
 		<operateType>A2</operateType>
+		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
 		<effectPoint>1</effectPoint>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
@@ -1192,6 +1193,7 @@
 		<!-- The GM is always with you. For 1 hour, increases Atk. Spd. + 37% and Casting Spd. + 34%. Applies Vampiric Rage effect + 9% with a certain probability. -->
 		<icon>icon.skill11518</icon>
 		<operateType>A2</operateType>
+		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
 		<effectPoint>1</effectPoint>
 		<reuseDelay>1000</reuseDelay>
 	</skill>

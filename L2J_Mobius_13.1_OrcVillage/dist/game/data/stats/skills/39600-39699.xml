@@ -311,7 +311,7 @@
 		<affectScope>SINGLE</affectScope>
 		<effectPoint>1</effectPoint>
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>81367</itemConsumeId> <!-- Songpyeon (Event)-->
+		<itemConsumeId>81367</itemConsumeId> <!-- Songpyeon (Event) -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>5000</reuseDelay>
 		<specialLevel>-1</specialLevel>

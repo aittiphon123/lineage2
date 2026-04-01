@@ -68,7 +68,7 @@ public class Q10380_TheExecutionersExecution extends Quest
 		addStartNpc(ENDRIGO);
 		addTalkId(ENDRIGO);
 		addKillId(GUILLOTINE_OF_DEATH, NAGDU_THE_DEFORMED, SADIAC_THE_KILLER, ROSENIAS_DIVINE_SPIRIT, HASKAL_GHOST, CANTA_STANDING_BEAST, GAZAM, TURAN_GHOST, KILLER_FRANGS, KALLBERA, HAKAL_THE_BUTTCHERED, SAMMITA);
-		addCondMinLevel(MIN_LEVEL);
+		addCondMinLevel(MIN_LEVEL, getNoQuestMsg(null));
 		addCondCompletedQuest(Q10379_AnUninvitedGuest.class.getSimpleName(), "warden_endrigo_q10380_02.html");
 	}
 	

@@ -203,6 +203,11 @@
 		<item id="48493" /> <!-- Dragon Rind Leather Shirt -->
 	</enchant>
 
+	<!-- Gran Kain's Scroll: Enchant Silvery Accessory -->
+	<enchant id="83405" maxEnchant="10" scrollGroupId="4">
+		<item id="82986" /> <!-- Silvery Shirt -->
+	</enchant>
+
 	<!-- Blessed Scroll: Enchant Artifact Book -->
 	<enchant id="81694" maxEnchant="10">
 		<item id="48956" /> <!-- Artifact Book Lv. 3 -->
@@ -425,14 +430,14 @@
 	</enchant>
 
 	<!-- Gran Kain's Scroll: Enchant R-grade Weapon -->
-	<enchant id="60206" targetGrade="R" maxEnchant="20" />
-	<enchant id="82307" targetGrade="R" maxEnchant="20" />
+	<enchant id="60206" targetGrade="R" maxEnchant="30" />
+	<enchant id="82307" targetGrade="R" maxEnchant="30" />
 	<!-- Shining Gran Kain's Scroll: Enchant Weapon (R-grade) -->
 	<enchant id="48912" targetGrade="R" maxEnchant="30" />
 
 	<!-- Gran Kain's Scroll: Enchant R-grade Armor -->
-	<enchant id="60207" targetGrade="R" maxEnchant="12" />
-	<enchant id="82308" targetGrade="R" maxEnchant="12" />
+	<enchant id="60207" targetGrade="R" maxEnchant="30" />
+	<enchant id="82308" targetGrade="R" maxEnchant="30" />
 	<!-- Shining Gran Kain's Scroll: Enchant Armor (R-grade) -->
 	<enchant id="80502" targetGrade="R" maxEnchant="30" />
 
@@ -2073,20 +2078,20 @@
 	<enchant id="17527" targetGrade="R" maxEnchant="30" />
 
 	<!-- Blessed Scrolls: Enchant Weapon -->
-	<enchant id="6569" targetGrade="A" maxEnchant="30" />
-	<enchant id="6571" targetGrade="B" maxEnchant="30" />
-	<enchant id="6573" targetGrade="C" maxEnchant="30" />
-	<enchant id="6575" targetGrade="D" maxEnchant="30" />
-	<enchant id="6577" targetGrade="S" maxEnchant="30" />
-	<enchant id="19447" targetGrade="R" maxEnchant="30" />
+	<enchant id="6569" targetGrade="A" maxEnchant="30" bonusRate="20" />
+	<enchant id="6571" targetGrade="B" maxEnchant="30" bonusRate="20" />
+	<enchant id="6573" targetGrade="C" maxEnchant="30" bonusRate="20" />
+	<enchant id="6575" targetGrade="D" maxEnchant="30" bonusRate="20" />
+	<enchant id="6577" targetGrade="S" maxEnchant="30" bonusRate="20" />
+	<enchant id="19447" targetGrade="R" maxEnchant="30" bonusRate="20" />
 
 	<!-- Blessed Scrolls: Enchant Armor -->
-	<enchant id="6570" targetGrade="A" maxEnchant="30" />
-	<enchant id="6572" targetGrade="B" maxEnchant="30" />
-	<enchant id="6574" targetGrade="C" maxEnchant="30" />
-	<enchant id="6576" targetGrade="D" maxEnchant="30" />
-	<enchant id="6578" targetGrade="S" maxEnchant="30" />
-	<enchant id="19448" targetGrade="R" maxEnchant="30" />
+	<enchant id="6570" targetGrade="A" maxEnchant="30" bonusRate="20" />
+	<enchant id="6572" targetGrade="B" maxEnchant="30" bonusRate="20" />
+	<enchant id="6574" targetGrade="C" maxEnchant="30" bonusRate="20" />
+	<enchant id="6576" targetGrade="D" maxEnchant="30" bonusRate="20" />
+	<enchant id="6578" targetGrade="S" maxEnchant="30" bonusRate="20" />
+	<enchant id="19448" targetGrade="R" maxEnchant="30" bonusRate="20" />
 
 	<!-- Not used anymore. -->
 	<!-- Crystal Scrolls: Enchant Weapon -->
@@ -2150,23 +2155,23 @@
 	<enchant id="22430" targetGrade="R" maxEnchant="7" bonusRate="100" />
 	<enchant id="23345" targetGrade="R" maxEnchant="7" bonusRate="100" />
 
-	<!-- Sacred Scroll: Enchant Weapon -->
-	<enchant id="23731" targetGrade="A" maxEnchant="4" bonusRate="100" />
-	<enchant id="23732" targetGrade="S" maxEnchant="4" bonusRate="100" />
-	<enchant id="23733" targetGrade="R" maxEnchant="4" bonusRate="100" />
+	<!-- Sacred Scroll: Enchant Weapon --> <!-- XXX Donation Only -->
+	<enchant id="23731" targetGrade="A" maxEnchant="35" bonusRate="100" />
+	<enchant id="23732" targetGrade="S" maxEnchant="35" bonusRate="100" />
+	<enchant id="23733" targetGrade="R" maxEnchant="35" bonusRate="100" />
 	
-	<enchant id="23737" targetGrade="A" maxEnchant="4" bonusRate="100" />
-	<enchant id="23738" targetGrade="S" maxEnchant="4" bonusRate="100" />
-	<enchant id="23739" targetGrade="R" maxEnchant="4" bonusRate="100" />
+	<enchant id="23737" targetGrade="A" maxEnchant="35" bonusRate="100" />
+	<enchant id="23738" targetGrade="S" maxEnchant="35" bonusRate="100" />
+	<enchant id="23739" targetGrade="R" maxEnchant="35" bonusRate="100" />
 	
-	<!-- Sacred Scroll: Enchant Armor -->
-	<enchant id="23734" targetGrade="A" maxEnchant="4" bonusRate="100" />
-	<enchant id="23735" targetGrade="S" maxEnchant="4" bonusRate="100" />
-	<enchant id="23736" targetGrade="R" maxEnchant="4" bonusRate="100" />
+	<!-- Sacred Scroll: Enchant Armor --> <!-- XXX Donation Only -->
+	<enchant id="23734" targetGrade="A" maxEnchant="35" bonusRate="100" />
+	<enchant id="23735" targetGrade="S" maxEnchant="35" bonusRate="100" />
+	<enchant id="23736" targetGrade="R" maxEnchant="35" bonusRate="100" />
 	
-	<enchant id="23740" targetGrade="A" maxEnchant="4" bonusRate="100" />
-	<enchant id="23741" targetGrade="S" maxEnchant="4" bonusRate="100" />
-	<enchant id="23742" targetGrade="R" maxEnchant="4" bonusRate="100" />
+	<enchant id="23740" targetGrade="A" maxEnchant="35" bonusRate="100" />
+	<enchant id="23741" targetGrade="S" maxEnchant="35" bonusRate="100" />
+	<enchant id="23742" targetGrade="R" maxEnchant="35" bonusRate="100" />
 
 	<!-- Destruction Scroll: Enchant Weapon (Event) -->
 	<enchant id="22221" targetGrade="S" maxEnchant="15" />
@@ -2343,26 +2348,26 @@
 	</enchant>
 
 	<!-- Blessed Scrolls: Enchant Weapon (Event) -->
-	<enchant id="17255" targetGrade="A" maxEnchant="30" />
-	<enchant id="17257" targetGrade="B" maxEnchant="30" />
-	<enchant id="17259" targetGrade="C" maxEnchant="30" />
-	<enchant id="17261" targetGrade="D" maxEnchant="30" />
-	<enchant id="17263" targetGrade="S" maxEnchant="30" />
-	<enchant id="23596" targetGrade="R" maxEnchant="30" />
-	<enchant id="34788" targetGrade="S" maxEnchant="30" />
-	<enchant id="34789" targetGrade="R" maxEnchant="30" />
-	<enchant id="36283" targetGrade="R" maxEnchant="30" />
+	<enchant id="17255" targetGrade="A" maxEnchant="30" bonusRate="20" />
+	<enchant id="17257" targetGrade="B" maxEnchant="30" bonusRate="20" />
+	<enchant id="17259" targetGrade="C" maxEnchant="30" bonusRate="20" />
+	<enchant id="17261" targetGrade="D" maxEnchant="30" bonusRate="20" />
+	<enchant id="17263" targetGrade="S" maxEnchant="30" bonusRate="20" />
+	<enchant id="23596" targetGrade="R" maxEnchant="30" bonusRate="20" />
+	<enchant id="34788" targetGrade="S" maxEnchant="30" bonusRate="20" />
+	<enchant id="34789" targetGrade="R" maxEnchant="30" bonusRate="20" />
+	<enchant id="36283" targetGrade="R" maxEnchant="30" bonusRate="20" />
 
 	<!-- Blessed Scrolls: Enchant Armor (Event) -->
-	<enchant id="17256" targetGrade="A" maxEnchant="30" />
-	<enchant id="17258" targetGrade="B" maxEnchant="30" />
-	<enchant id="17260" targetGrade="C" maxEnchant="30" />
-	<enchant id="17262" targetGrade="D" maxEnchant="30" />
-	<enchant id="17264" targetGrade="S" maxEnchant="30" />
-	<enchant id="23597" targetGrade="R" maxEnchant="30" />
-	<enchant id="34786" targetGrade="S" maxEnchant="30" />
-	<enchant id="34787" targetGrade="R" maxEnchant="30" />
-	<enchant id="36284" targetGrade="R" maxEnchant="30" />
+	<enchant id="17256" targetGrade="A" maxEnchant="30" bonusRate="20" />
+	<enchant id="17258" targetGrade="B" maxEnchant="30" bonusRate="20" />
+	<enchant id="17260" targetGrade="C" maxEnchant="30" bonusRate="20" />
+	<enchant id="17262" targetGrade="D" maxEnchant="30" bonusRate="20" />
+	<enchant id="17264" targetGrade="S" maxEnchant="30" bonusRate="20" />
+	<enchant id="23597" targetGrade="R" maxEnchant="30" bonusRate="20" />
+	<enchant id="34786" targetGrade="S" maxEnchant="30" bonusRate="20" />
+	<enchant id="34787" targetGrade="R" maxEnchant="30" bonusRate="20" />
+	<enchant id="36284" targetGrade="R" maxEnchant="30" bonusRate="20" />
 
 	<!-- Scrolls: Enchant Weapon (Event) -->
 	<enchant id="22306" targetGrade="S" maxEnchant="30" />
@@ -2401,30 +2406,30 @@
 	<enchant id="34785" targetGrade="R" maxEnchant="30" />
 
 	<!-- Blessed Scrolls: Enchant Weapon -->
-	<enchant id="22314" targetGrade="S" maxEnchant="30" />
-	<enchant id="22316" targetGrade="A" maxEnchant="30" />
-	<enchant id="22317" targetGrade="B" maxEnchant="30" />
-	<enchant id="22341" targetGrade="C" maxEnchant="30" />
+	<enchant id="22314" targetGrade="S" maxEnchant="30" bonusRate="20" />
+	<enchant id="22316" targetGrade="A" maxEnchant="30" bonusRate="20" />
+	<enchant id="22317" targetGrade="B" maxEnchant="30" bonusRate="20" />
+	<enchant id="22341" targetGrade="C" maxEnchant="30" bonusRate="20" />
 
-	<enchant id="23422" targetGrade="R" maxEnchant="30" />
-	<enchant id="23423" targetGrade="S" maxEnchant="30" />
-	<enchant id="23424" targetGrade="A" maxEnchant="30" />
-	<enchant id="23425" targetGrade="B" maxEnchant="30" />
-	<enchant id="23426" targetGrade="C" maxEnchant="30" />
-	<enchant id="23427" targetGrade="D" maxEnchant="30" />
+	<enchant id="23422" targetGrade="R" maxEnchant="30" bonusRate="20" />
+	<enchant id="23423" targetGrade="S" maxEnchant="30" bonusRate="20" />
+	<enchant id="23424" targetGrade="A" maxEnchant="30" bonusRate="20" />
+	<enchant id="23425" targetGrade="B" maxEnchant="30" bonusRate="20" />
+	<enchant id="23426" targetGrade="C" maxEnchant="30" bonusRate="20" />
+	<enchant id="23427" targetGrade="D" maxEnchant="30" bonusRate="20" />
 
 	<!-- Blessed Scrolls: Enchant Armor -->
-	<enchant id="22315" targetGrade="S" maxEnchant="30" />
-	<enchant id="22318" targetGrade="A" maxEnchant="30" />
-	<enchant id="22319" targetGrade="B" maxEnchant="30" />
-	
-	<enchant id="23428" targetGrade="R" maxEnchant="30" />
-	<enchant id="23429" targetGrade="S" maxEnchant="30" />
-	<enchant id="23430" targetGrade="A" maxEnchant="30" />
-	<enchant id="23431" targetGrade="B" maxEnchant="30" />
-	<enchant id="23432" targetGrade="C" maxEnchant="30" />
-	<enchant id="23433" targetGrade="D" maxEnchant="30" />
-	
+	<enchant id="22315" targetGrade="S" maxEnchant="30" bonusRate="20" />
+	<enchant id="22318" targetGrade="A" maxEnchant="30" bonusRate="20" />
+	<enchant id="22319" targetGrade="B" maxEnchant="30" bonusRate="20" />
+
+	<enchant id="23428" targetGrade="R" maxEnchant="30" bonusRate="20" />
+	<enchant id="23429" targetGrade="S" maxEnchant="30" bonusRate="20" />
+	<enchant id="23430" targetGrade="A" maxEnchant="30" bonusRate="20" />
+	<enchant id="23431" targetGrade="B" maxEnchant="30" bonusRate="20" />
+	<enchant id="23432" targetGrade="C" maxEnchant="30" bonusRate="20" />
+	<enchant id="23433" targetGrade="D" maxEnchant="30" bonusRate="20" />
+
 	<!-- Scrolls: Enchant Weapon -->
 	<enchant id="23410" targetGrade="R" maxEnchant="30" />
 	<enchant id="23411" targetGrade="S" maxEnchant="30" />
@@ -2454,12 +2459,12 @@
 	<!-- Scrolls: Enchant Weapon (For PA Only) -->
 	<enchant id="22627" targetGrade="R" maxEnchant="30" />
 	<!-- Blessed Scrolls: Enchant Weapon (For PA Only) -->
-	<enchant id="22647" targetGrade="R" maxEnchant="30" />
+	<enchant id="22647" targetGrade="R" maxEnchant="30" bonusRate="20" />
 
 	<!-- Scrolls: Enchant Armor (For PA Only) -->
 	<enchant id="22628" targetGrade="R" maxEnchant="30" />
 	<!-- Blessed Scrolls: Enchant Armor (For PA Only) -->
-	<enchant id="22648" targetGrade="R" maxEnchant="30" />
+	<enchant id="22648" targetGrade="R" maxEnchant="30" bonusRate="20" />
 
 	<!-- Weapon Destiny Enchant Scrolls -->
 	<enchant id="33455" targetGrade="D" />
@@ -2660,7 +2665,7 @@
 		<item id="82834" /> <!-- Trinity Dual Blunt Weapons -->
 	</enchant>
 
-	<!-- Giant's Scroll: Enchant L-grade Weapon (Event)-->
+	<!-- Giant's Scroll: Enchant L-grade Weapon (Event) -->
 	<enchant id="82861" targetGrade="L" maxEnchant="10" scrollGroupId="1">
 		<item id="82821" /> <!-- Trinity Shaper -->
 		<item id="82822" /> <!-- Trinity Cutter -->

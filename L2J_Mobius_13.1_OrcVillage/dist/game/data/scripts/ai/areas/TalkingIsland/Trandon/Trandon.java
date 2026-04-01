@@ -371,9 +371,9 @@ public class Trandon extends Script
 	// TODO: Move this to char skills
 	@RegisterEvent(EventType.ON_PLAYER_SUB_CHANGE)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void onSubChange(OnPlayerSubChange evt)
+	public void onSubChange(OnPlayerSubChange event)
 	{
-		final Player player = evt.getPlayer();
+		final Player player = event.getPlayer();
 		if (player.isDualClassActive() || !player.isSubClassActive())
 		{
 			giveSkills(player, "DualSkillList");
@@ -384,9 +384,9 @@ public class Trandon extends Script
 	
 	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void onLogin(OnPlayerLogin evt)
+	public void onLogin(OnPlayerLogin event)
 	{
-		final Player player = evt.getPlayer();
+		final Player player = event.getPlayer();
 		if (player.isDualClassActive() || !player.isSubClassActive())
 		{
 			giveSkills(player, "DualSkillList");

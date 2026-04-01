@@ -10043,10 +10043,10 @@
 		</pveEffects>
 	</skill>
 	<skill id="10030" toLevel="4" name="Challenge Aura - Faith">
-		<!-- Level 1: Sigel Knight is ready for any challenge. <font color="ECECEC"><Aura of Faith></font>. P. Atk. +20%, P. Skill Critical Rate +20%, P. Skill Power +20%, skill cooldown -3%. When Aura of Faith is active, the duration of <font color="ECECEC">Raise Sword</font> is increased by 25%. Only one <font color="ECECEC">Aura of Faith</font> can be active at a time. -->
-		<!-- Level 2: Sigel Knight is ready for any challenge. <font color="ECECEC"><Aura of Faith></font>. P. Atk. +25%, P. Skill Critical Rate +25%, P. Skill Power +25%, skill cooldown -4%. When Aura of Faith is active, the duration of <font color="ECECEC">Raise Sword</font> is increased by 30%. Only one <font color="ECECEC">Aura of Faith</font> can be active at a time. -->
-		<!-- Level 3: Sigel Knight is ready for any challenge. <font color="ECECEC"><Aura of Faith></font>. P. Atk. +30%, P. Skill Critical Rate +30%, P. Skill Critical Damage +20%, P. Skill Power +30%, skill cooldown -5%. When the Aura of Faith is active, the duration of <font color="ECECEC">Raise Sword</font> is increased by 40%. Only one <font color="ECECEC">Aura of Faith</font> can be active at a time. -->
-		<!-- Level 4: Sigel Knight is ready for any challenge. <font color="ECECEC"><Aura of Faith></font>. P. Atk. +35%, P. Skill Critical Rate +35%, P. Skill Critical Damage +40%, P. Skill Power +35%, skill cooldown -7%. When the Aura of Faith is active, the duration of <font color="ECECEC">Raise Sword</font> is increased by 50%. Only one <font color="ECECEC">Aura of Faith</font> can be active at a time. -->
+		<!-- Level 1: Sigel Knight is ready for any challenge. <font color="ECECEC"><Aura of Faith></font>. P. Atk. +20%, P. Skill Critical Rate +20%, P. Skill Power +20%, Skill Cooldown -3%. When the Aura of Faith is active, the duration of <font color="ECECEC">Raise Sword</font> is increased by 25%. Only one <font color="ECECEC">Aura of Faith</font> can be active at a time. -->
+		<!-- Level 2: Sigel Knight is ready for any challenge. <font color="ECECEC"><Aura of Faith></font>. P. Atk. +25%, P. Skill Critical Rate +25%, P. Skill Power +25%, Skill Cooldown -4%. When the Aura of Faith is active, the duration of <font color="ECECEC">Raise Sword</font> is increased by 30%. Only one <font color="ECECEC">Aura of Faith</font> can be active at a time. -->
+		<!-- Level 3: Sigel Knight is ready for any challenge. <font color="ECECEC"><Aura of Faith></font>. P. Atk. +30%, P. Skill Critical Rate +30%, P. Skill Critical Damage +20%, P. Skill Power +30%, Skill Cooldown -5%. When the Aura of Faith is active, the duration of <font color="ECECEC">Raise Sword</font> is increased by 40%. Only one <font color="ECECEC">Aura of Faith</font> can be active at a time. -->
+		<!-- Level 4: Sigel Knight is ready for any challenge. <font color="ECECEC"><Aura of Faith></font>. P. Atk. +35%, P. Skill Critical Rate +35%, P. Skill Critical Damage +40%, P. Skill Power +35%, Skill Cooldown -7%. When the Aura of Faith is active, the duration of <font color="ECECEC">Raise Sword</font> is increased by 50%. Only one <font color="ECECEC">Aura of Faith</font> can be active at a time. -->
 		<icon>icon.skill10030</icon>
 		<operateType>AU</operateType>
 		<abnormalVisualEffect>AURA_BUFF_SELF</abnormalVisualEffect>
@@ -10061,44 +10061,70 @@
 				<skillLevel>1</skillLevel>
 				<ticks>7</ticks>
 			</effect>
-			<effect name="MagicMpCost">
-				<amount>-15</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>-15</amount>
-				<mode>PER</mode>
-				<magicType>0</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>-15</amount>
-				<mode>PER</mode>
-				<magicType>3</magicType>
-			</effect>
 			<effect name="Reuse">
-				<amount>-5</amount>
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-5</value>
+					<value level="4">-7</value>
+				</amount>
 				<mode>PER</mode>
 				<magicType>0</magicType>
 			</effect>
 			<effect name="Reuse">
-				<amount>-5</amount>
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-5</value>
+					<value level="4">-7</value>
+				</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>
 			<effect name="Reuse">
-				<amount>-5</amount>
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-5</value>
+					<value level="4">-7</value>
+				</amount>
 				<mode>PER</mode>
 				<magicType>3</magicType>
 			</effect>
 			<effect name="Reuse">
-				<amount>-5</amount>
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-5</value>
+					<value level="4">-7</value>
+				</amount>
 				<mode>PER</mode>
 				<magicType>22</magicType>
 			</effect>
-			<effect name="Speed">
-				<amount>20</amount>
-				<mode>DIFF</mode>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+					<value level="4">35</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="3">20</value>
+					<value level="4">40</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+					<value level="4">35</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

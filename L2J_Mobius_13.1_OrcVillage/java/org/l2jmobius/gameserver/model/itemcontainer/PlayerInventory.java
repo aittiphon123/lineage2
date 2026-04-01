@@ -36,9 +36,8 @@ import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.config.custom.TransmogConfig;
 import org.l2jmobius.gameserver.data.xml.AgathionData;
 import org.l2jmobius.gameserver.data.xml.ItemData;
-import org.l2jmobius.gameserver.model.TradeItem;
-import org.l2jmobius.gameserver.model.TradeList;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerItemAdd;
@@ -57,6 +56,8 @@ import org.l2jmobius.gameserver.model.skill.SkillConditionScope;
 import org.l2jmobius.gameserver.model.variables.ItemVariables;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.StatusUpdateType;
+import org.l2jmobius.gameserver.network.holders.TradeItem;
+import org.l2jmobius.gameserver.network.holders.TradeList;
 import org.l2jmobius.gameserver.network.serverpackets.ExAdenaInvenCount;
 import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.StatusUpdate;
@@ -806,13 +807,19 @@ public class PlayerInventory extends Inventory
 	@Override
 	protected boolean removeItem(Item item)
 	{
-		// Removes any reference to the item from Shortcut bar
+		// Removes any reference to the item from Shortcut bar.
 		_owner.removeItemFromShortcut(item.getObjectId());
 		
-		// Removes active Enchant Scroll
+		// Removes active Enchant Scroll.
 		if (_owner.isProcessingItem(item.getObjectId()))
 		{
-			_owner.removeRequestsThatProcessesItem(item.getObjectId());
+			// Prevents inventory corruption during multi-enchant with insufficient scrolls.
+			// Without this check, remaining scrolls would incorrectly display 0 quantity after enchantment.
+			final EnchantItemRequest enchantItemRequest = _owner.getRequest(EnchantItemRequest.class);
+			if ((enchantItemRequest == null) || !enchantItemRequest.isProcessing() || (item.getObjectId() != enchantItemRequest.getEnchantingScrollObjectId()))
+			{
+				_owner.removeRequestsThatProcessesItem(item.getObjectId());
+			}
 		}
 		
 		if (item.getId() == ADENA_ID)

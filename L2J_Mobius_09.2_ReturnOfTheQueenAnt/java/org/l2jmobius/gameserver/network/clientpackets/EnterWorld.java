@@ -57,7 +57,6 @@ import org.l2jmobius.gameserver.managers.PetitionManager;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.managers.ServerRestartManager;
 import org.l2jmobius.gameserver.managers.SiegeManager;
-import org.l2jmobius.gameserver.model.Couple;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -66,6 +65,7 @@ import org.l2jmobius.gameserver.model.actor.enums.player.IllegalActionPunishment
 import org.l2jmobius.gameserver.model.actor.enums.player.SubclassInfoType;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.holders.player.AttendanceInfoHolder;
+import org.l2jmobius.gameserver.model.actor.holders.player.Couple;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;

@@ -23,9 +23,9 @@ package org.l2jmobius.gameserver.network.serverpackets.elementalspirits;
 import java.util.List;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.gameserver.model.ElementalSpirit;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.ElementalSpiritType;
+import org.l2jmobius.gameserver.model.actor.holders.player.ElementalSpirit;
 import org.l2jmobius.gameserver.model.item.holders.ElementalSpiritAbsorbItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.GameClient;

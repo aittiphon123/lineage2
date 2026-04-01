@@ -5,9 +5,7 @@
 			<npc id="30013" x="48668" y="186341" z="-3480" heading="39805" respawnTime="60sec" /> <!-- Pierre - Fishing Specialist -->
 			<npc id="30012" x="48765" y="186205" z="-3480" heading="39805" respawnTime="60sec" /> <!-- Fishing Guildsman -->
 			<npc id="34019" x="36447" y="193137" z="-3094" heading="43370" respawnTime="60sec" /> <!-- Fethin - Devil's Isle Agent -->
-			<npc id="34020" x="43618" y="206249" z="-3752" heading="19688" respawnTime="60sec" /> <!-- Nikia - Devil's Isle Agent -->
 			<npc id="34021" x="49312" y="208621" z="-3728" heading="62768" respawnTime="60sec" /> <!-- Garom - Devil's Isle Agent -->
-			<npc id="34022" x="44128" y="206922" z="-3752" heading="37689" respawnTime="60sec" /> <!-- Pirate Spirit -->
 			<npc id="34023" x="49327" y="208123" z="-3728" heading="8578" respawnTime="60sec" /> <!-- Pirate Spirit -->
 			<npc id="34033" x="49779" y="208032" z="-3728" heading="22649" respawnTime="60sec" /> <!-- Gallu -->
 			<npc id="34035" x="49919" y="208255" z="-3728" heading="40492" respawnTime="60sec" /> <!-- Kukoni -->

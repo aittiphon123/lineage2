@@ -150,7 +150,7 @@ public final class Q10555_ChargeAtAntharas extends Quest
 	@Id(ULTRIAN)
 	@Id(NARITA)
 	@Id(KAYLEEN)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);

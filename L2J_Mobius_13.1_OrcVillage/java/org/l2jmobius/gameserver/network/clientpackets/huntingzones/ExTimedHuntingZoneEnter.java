@@ -74,6 +74,7 @@ public class ExTimedHuntingZoneEnter extends ClientPacket
 			player.sendMessage("You can only enter in time-limited hunting zones while not in combat.");
 			return;
 		}
+		
 		// Cursed Sword Weapon - version Prelude of War 2019
 		// if (player.getReputation() < 0)
 		// {

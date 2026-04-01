@@ -7,7 +7,7 @@
 	</spawn>
 	<spawn name="PrimevalGarden">
 		<group>
-			<!-- <npc id="34177" x="-114814" y="216212" z="-13208" heading="47799" respawnTime="60sec" />  Kiku -->
+			<!-- <npc id="34177" x="-114814" y="216212" z="-13208" heading="47799" respawnTime="60sec" /> Kiku -->
 			<npc id="22261" x="-114829" y="214066" z="-13256" heading="60655" respawnTime="60sec" /> <!-- Dire Warrior -->
 			<npc id="22260" x="-114570" y="214170" z="-13256" heading="41760" respawnTime="60sec" /> <!-- Dire Archer -->
 			<npc id="22262" x="-115784" y="214254" z="-13248" heading="35290" respawnTime="60sec" /> <!-- Dire Spearman -->

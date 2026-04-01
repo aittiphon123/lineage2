@@ -50,7 +50,7 @@
 		<npc id="30346" x="6532" y="19903" z="-3688" heading="30000" respawnDelay="60" /> <!-- Kayleen -->
 		<npc id="30347" x="6449" y="19619" z="-3688" heading="30000" respawnDelay="60" /> <!-- Marion -->
 		<npc id="30668" x="-3826" y="40264" z="-3672" heading="32768" respawnDelay="60" /> <!-- Katari -->
-		<npc id="30977" x="-418" y="44174" z="-3568" heading="0" respawnDelay="60" /> <!-- Holy Ark of Secrecy1-->
+		<npc id="30977" x="-418" y="44174" z="-3568" heading="0" respawnDelay="60" /> <!-- Holy Ark of Secrecy1 -->
 		<npc id="30980" x="2908" y="44128" z="-2712" heading="0" respawnDelay="60" /> <!-- Ark Guardian's Corpse -->
 		<npc id="30420" x="-61717" y="75401" z="-3352" heading="58500" respawnDelay="60" /> <!-- Tyra -->
 		<npc id="30418" x="-46464" y="59263" z="-3312" heading="20480" respawnDelay="60" /> <!-- Annika -->

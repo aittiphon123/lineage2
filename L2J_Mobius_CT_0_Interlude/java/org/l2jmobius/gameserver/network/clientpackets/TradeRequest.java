@@ -22,10 +22,10 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.config.PlayerConfig;
-import org.l2jmobius.gameserver.model.BlockList;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.player.BlockList;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
 import org.l2jmobius.gameserver.network.serverpackets.SendTradeRequest;

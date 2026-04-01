@@ -34,33 +34,38 @@ public class OptionDataCategory
 	private final Map<Options, Double> _options;
 	private final Set<Integer> _itemIds;
 	private final double _chance;
+	private final boolean _isEmpty;
 	
 	public OptionDataCategory(Map<Options, Double> options, Set<Integer> itemIds, double chance)
 	{
 		_options = options;
 		_itemIds = itemIds;
 		_chance = chance;
+		_isEmpty = ((options == null) || options.isEmpty());
+	}
+	
+	public boolean isEmptyCategory()
+	{
+		return _isEmpty;
 	}
 	
 	Options getRandomOptions()
 	{
-		Options result = null;
-		do
+		if (_isEmpty)
 		{
-			double random = Rnd.nextDouble() * 100.0;
-			for (Entry<Options, Double> entry : _options.entrySet())
-			{
-				if (entry.getValue() >= random)
-				{
-					result = entry.getKey();
-					break;
-				}
-				
-				random -= entry.getValue();
-			}
+			return null;
 		}
-		while (result == null);
-		return result;
+		
+		double random = Rnd.nextDouble() * 100.0;
+		for (Entry<Options, Double> entry : _options.entrySet())
+		{
+			if (entry.getValue() >= random)
+			{
+				return entry.getKey();
+			}
+			random -= entry.getValue();
+		}
+		return null;
 	}
 	
 	public Map<Options, Double> getOptions()

@@ -144,7 +144,7 @@ public final class Q10533_OrfensAmbition extends Quest
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id(BACON)
 	@Id(JAMON)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);

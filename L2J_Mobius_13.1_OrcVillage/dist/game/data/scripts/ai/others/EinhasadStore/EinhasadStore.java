@@ -49,7 +49,7 @@ public class EinhasadStore extends Script
 	private static final int CLOAK = 34487006;
 	
 	// Others
-	private static final String COMMAND_BYPASS = "Quest EinhasadStore ";
+	private static final String COMMAND_BYPASS = "Script EinhasadStore ";
 	
 	private EinhasadStore()
 	{

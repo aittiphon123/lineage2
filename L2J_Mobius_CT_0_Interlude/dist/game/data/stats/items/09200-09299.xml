@@ -12,9 +12,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3266-1" /> <!-- Large Fireworks Ability -->
 		<set name="duration" val="360" />
 		<set name="useSkillDisTime" val="5" />
+		<skills>
+			<skill id="3266" level="1" /> <!-- Large Fireworks Ability -->
+		</skills>
 	</item>
 	<item id="9201" type="Armor" name="Shadow Item - Wizard Hat - Firework">
 		<!-- A shadow-type wizard hat with a wide brim and bent tip. Uses 2 hair accessory slots. An event hair accessory that grants a magical effect. This item cannot be exchanged, dropped, or sold. -->
@@ -28,9 +30,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3266-1" /> <!-- Large Fireworks Ability -->
 		<set name="duration" val="360" />
 		<set name="useSkillDisTime" val="5" />
+		<skills>
+			<skill id="3266" level="1" /> <!-- Large Fireworks Ability -->
+		</skills>
 	</item>
 	<item id="9202" type="Armor" name="Shadow Item - Dapper Cap - Firework">
 		<!-- A shadow-type hair accessory with a visor. Uses 2 hair accessory slots. An event hair accessory that grants a magical effect. This item cannot be exchanged, dropped, or sold. -->
@@ -44,9 +48,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3266-1" /> <!-- Large Fireworks Ability -->
 		<set name="duration" val="360" />
 		<set name="useSkillDisTime" val="5" />
+		<skills>
+			<skill id="3266" level="1" /> <!-- Large Fireworks Ability -->
+		</skills>
 	</item>
 	<item id="9203" type="Armor" name="Shadow Item - Romantic Chapeau - Firework">
 		<!-- A shadow-type hair accessory adorned with feathers. Uses 2 hair accessory slots. An event hair accessory that grants a magical effect. This item cannot be exchanged, dropped, or sold. -->
@@ -60,9 +66,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3266-1" /> <!-- Large Fireworks Ability -->
 		<set name="duration" val="360" />
 		<set name="useSkillDisTime" val="5" />
+		<skills>
+			<skill id="3266" level="1" /> <!-- Large Fireworks Ability -->
+		</skills>
 	</item>
 	<item id="9204" type="Armor" name="Shadow Item - Iron Circlet - Firework">
 		<!-- A shadow-type hair accessory made of iron. Uses 2 hair accessory slots. An event hair accessory that grants a magical effect. This item cannot be exchanged, dropped, or sold. -->
@@ -76,9 +84,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3266-1" /> <!-- Large Fireworks Ability -->
 		<set name="duration" val="360" />
 		<set name="useSkillDisTime" val="5" />
+		<skills>
+			<skill id="3266" level="1" /> <!-- Large Fireworks Ability -->
+		</skills>
 	</item>
 	<item id="9205" type="EtcItem" name="Alchemist's Chest Key">
 		<!-- A key to open an Alchemist's Treasure Chest. For use in events only -->
@@ -88,7 +98,9 @@
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2322-1" /> <!-- Chest Key - For Events Only -->
+		<skills>
+			<skill id="2322" level="1" /> <!-- Chest Key - For Events Only -->
+		</skills>
 	</item>
 	<item id="9206" type="EtcItem" name="Greater Healing Potion (Event)">
 		<!-- A magical potion that quickly restores HP. Its effect lasts for 15 seconds. Designed for use in events only. -->
@@ -102,8 +114,10 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2037-1" /> <!-- Greater Healing Potion -->
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2037" level="1" /> <!-- Greater Healing Potion -->
+		</skills>
 	</item>
 	<item id="9207" type="EtcItem" name="Quick Healing Potion (Event)">
 		<!-- A magical potion that quickly restores HP. Its effect is temporary. Designed for use in events only. -->
@@ -117,8 +131,10 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2038-1" /> <!-- Quick Healing Potion -->
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2038" level="1" /> <!-- Quick Healing Potion -->
+		</skills>
 	</item>
 	<item id="9208" type="Armor" name="Phantom Mask (Event)">
 		<!-- A feathered hair accessory. This item cannot be exchanged or dropped. -->

@@ -25,9 +25,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.spawns.NpcSpawnTemplate;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 
 /**
  * @author Mobius

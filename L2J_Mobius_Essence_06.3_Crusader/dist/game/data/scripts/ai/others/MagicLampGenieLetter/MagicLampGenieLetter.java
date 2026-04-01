@@ -50,7 +50,7 @@ public class MagicLampGenieLetter extends Script
 	
 	// Misc
 	private static final int LEVEL_MIN = 52;
-	private static final String TUTORIAL_BYPASS = "Quest MagicLampGenieLetter ";
+	private static final String TUTORIAL_BYPASS = "Script MagicLampGenieLetter ";
 	
 	public MagicLampGenieLetter()
 	{

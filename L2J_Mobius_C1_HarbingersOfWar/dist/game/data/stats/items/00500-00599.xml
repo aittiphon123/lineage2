@@ -12,8 +12,7 @@
 		<set name="price" val="242000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="51" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">51</stat>
 		</stats>
 	</item>
 	<item id="501" type="Armor" name="Armet">
@@ -28,8 +27,7 @@
 		<set name="price" val="1030000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="502" type="Armor" name="Close Helmet">
@@ -44,8 +42,7 @@
 		<set name="price" val="1560000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="64" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">64</stat>
 		</stats>
 	</item>
 	<item id="503" type="Armor" name="Zubei's Helmet">
@@ -61,8 +58,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="504" type="Armor" name="Dragon Helmet">
@@ -80,8 +76,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<stats>
-			<add order="0" stat="pDef" val="77" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">77</stat>
 		</stats>
 	</item>
 	<item id="505" type="Armor" name="Wolf Helmet">
@@ -96,8 +91,7 @@
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="66" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">66</stat>
 		</stats>
 	</item>
 	<item id="506" type="Armor" name="Shining Dragon Helmet">
@@ -112,8 +106,7 @@
 		<set name="price" val="1740000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="67" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">67</stat>
 		</stats>
 	</item>
 	<item id="507" type="Armor" name="Helmet of Victory">
@@ -128,8 +121,7 @@
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="66" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">66</stat>
 		</stats>
 	</item>
 	<item id="508" type="Armor" name="Helmet of Valor">
@@ -144,8 +136,7 @@
 		<set name="price" val="1740000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="67" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">67</stat>
 		</stats>
 	</item>
 	<item id="509" type="Armor" name="Glorious Helmet">
@@ -160,8 +151,7 @@
 		<set name="price" val="2040000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="65" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">65</stat>
 		</stats>
 	</item>
 	<item id="510" type="Armor" name="Red Flame Helmet">
@@ -176,8 +166,7 @@
 		<set name="price" val="2640000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="71" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">71</stat>
 		</stats>
 	</item>
 	<item id="511" type="Armor" name="Elven Crystal Helmet">
@@ -192,8 +181,7 @@
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="66" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">66</stat>
 		</stats>
 	</item>
 	<item id="512" type="Armor" name="Dark Crystal Helmet">
@@ -209,8 +197,7 @@
 		<set name="price" val="1740000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="69" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">69</stat>
 		</stats>
 	</item>
 	<item id="513" type="Armor" name="Implosion Helmet">
@@ -225,8 +212,7 @@
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="66" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">66</stat>
 		</stats>
 	</item>
 	<item id="514" type="Armor" name="Dark Dragon Helmet">
@@ -241,8 +227,7 @@
 		<set name="price" val="1740000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="67" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">67</stat>
 		</stats>
 	</item>
 	<item id="515" type="Armor" name="Elven Vagian Helm">
@@ -257,8 +242,7 @@
 		<set name="price" val="2040000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="65" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">65</stat>
 		</stats>
 	</item>
 	<item id="516" type="Armor" name="Dark Vagian Helm">
@@ -273,8 +257,7 @@
 		<set name="price" val="2640000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="71" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">71</stat>
 		</stats>
 	</item>
 	<item id="517" type="Armor" name="Composite Helmet">
@@ -290,8 +273,7 @@
 		<set name="price" val="368000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="54" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">54</stat>
 		</stats>
 	</item>
 	<item id="518" type="Armor" name="Hell Helm">
@@ -306,8 +288,7 @@
 		<set name="price" val="2640000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="71" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">71</stat>
 		</stats>
 	</item>
 	<item id="519" type="Armor" name="Art of Helmet">
@@ -322,8 +303,7 @@
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="66" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">66</stat>
 		</stats>
 	</item>
 	<item id="520" type="Armor" name="Masterpiece Helm">
@@ -338,8 +318,7 @@
 		<set name="price" val="2640000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="71" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">71</stat>
 		</stats>
 	</item>
 	<item id="521" type="Armor" name="Helmet of Silence">
@@ -354,8 +333,7 @@
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="66" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">66</stat>
 		</stats>
 	</item>
 	<item id="522" type="Armor" name="Gust Helmet">
@@ -370,8 +348,7 @@
 		<set name="price" val="1740000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="67" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">67</stat>
 		</stats>
 	</item>
 	<item id="523" type="Armor" name="Prairie Helmet">
@@ -386,8 +363,7 @@
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="66" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">66</stat>
 		</stats>
 	</item>
 	<item id="524" type="Armor" name="Helm of The Underworld">
@@ -402,8 +378,7 @@
 		<set name="price" val="1740000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="67" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">67</stat>
 		</stats>
 	</item>
 	<item id="525" type="Armor" name="Helmet of Concentration">
@@ -418,8 +393,7 @@
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="66" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">66</stat>
 		</stats>
 	</item>
 	<item id="526" type="Armor" name="Ace's Helmet">
@@ -434,8 +408,7 @@
 		<set name="price" val="1740000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="67" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">67</stat>
 		</stats>
 	</item>
 	<item id="527" type="Armor" name="Guardian's Helmet">
@@ -450,8 +423,7 @@
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="66" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">66</stat>
 		</stats>
 	</item>
 	<item id="528" type="Armor" name="Marksman Helmet">
@@ -466,8 +438,7 @@
 		<set name="price" val="1740000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="67" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">67</stat>
 		</stats>
 	</item>
 	<item id="529" type="Armor" name="Cap of Mana">
@@ -482,8 +453,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="530" type="Armor" name="Sage's Cap">
@@ -498,8 +468,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="531" type="Armor" name="Paradia Hood">
@@ -514,8 +483,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="532" type="Armor" name="Inferno Hood">
@@ -530,8 +498,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="533" type="Armor" name="Hood of Solar Eclipse">
@@ -546,8 +513,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="534" type="Armor" name="Hood of Black Ore">
@@ -562,8 +528,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="535" type="Armor" name="Hood of Summoning">
@@ -578,8 +543,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="536" type="Armor" name="Otherworldly Hood">
@@ -594,8 +558,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="537" type="Armor" name="Elemental Hood">
@@ -610,8 +573,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="538" type="Armor" name="Hood of Phantom">
@@ -626,8 +588,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="539" type="Armor" name="Hood of Grace">
@@ -642,8 +603,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="540" type="Armor" name="Hood of Holy Spirit">
@@ -658,8 +618,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="541" type="Armor" name="Phoenix Hood">
@@ -674,8 +633,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="542" type="Armor" name="Cerberus Hood">
@@ -690,8 +648,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="543" type="Armor" name="Hood of Aid">
@@ -706,8 +663,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="544" type="Armor" name="Hood of Blessing">
@@ -722,8 +678,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="545" type="Armor" name="Flame Helm">
@@ -738,8 +693,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="546" type="Armor" name="Helm of Bravery">
@@ -754,8 +708,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="547" type="Armor" name="Blood Helm">
@@ -771,8 +724,7 @@
 		<set name="price" val="1740000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="69" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">69</stat>
 		</stats>
 	</item>
 	<item id="548" type="Armor" name="Absolute Helm">
@@ -787,8 +739,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="549" type="Armor" name="Helm of Avadon">
@@ -803,8 +754,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="550" type="Armor" name="Helm of Doom">
@@ -819,8 +769,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="551" type="Armor" name="Helmet of Pledge">
@@ -835,8 +784,7 @@
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="552" type="Armor" name="Divine Helm">
@@ -851,8 +799,7 @@
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="62" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">62</stat>
 		</stats>
 	</item>
 	<item id="553" type="Armor" name="Iron Boots">
@@ -867,8 +814,7 @@
 		<set name="price" val="50800" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">24</stat>
 		</stats>
 	</item>
 	<item id="554" type="Armor" name="Zubei's Boots">
@@ -883,8 +829,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="555" type="Armor" name="Dragon Boots">
@@ -902,8 +847,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<stats>
-			<add order="0" stat="pDef" val="48" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">48</stat>
 		</stats>
 	</item>
 	<item id="556" type="Armor" name="Wolf Boots">
@@ -918,8 +862,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="557" type="Armor" name="Shining Dragon Boots">
@@ -934,8 +877,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="558" type="Armor" name="Boots of Victory">
@@ -950,8 +892,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="559" type="Armor" name="Boots of Valor">
@@ -966,8 +907,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="560" type="Armor" name="Glorious Boots">
@@ -982,8 +922,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="561" type="Armor" name="Red Flame Boots">
@@ -998,8 +937,7 @@
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="45" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">45</stat>
 		</stats>
 	</item>
 	<item id="562" type="Armor" name="Elven Crystal Boots">
@@ -1014,8 +952,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="563" type="Armor" name="Dark Crystal Boots">
@@ -1030,8 +967,7 @@
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="45" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">45</stat>
 		</stats>
 	</item>
 	<item id="564" type="Armor" name="Implosion Boots">
@@ -1046,8 +982,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="565" type="Armor" name="Dark Dragon Boots">
@@ -1062,8 +997,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="566" type="Armor" name="Elven Vagian Boots">
@@ -1078,8 +1012,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="567" type="Armor" name="Dark Vagian Boots">
@@ -1094,8 +1027,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="568" type="Armor" name="Composite Boots">
@@ -1110,8 +1042,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="569" type="Armor" name="Hell Boots">
@@ -1126,8 +1057,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="570" type="Armor" name="Art of Boots">
@@ -1142,8 +1072,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="571" type="Armor" name="Masterpiece Boots">
@@ -1158,8 +1087,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="572" type="Armor" name="Boots of Silence">
@@ -1174,8 +1102,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="573" type="Armor" name="Gust Boots">
@@ -1190,8 +1117,7 @@
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="45" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">45</stat>
 		</stats>
 	</item>
 	<item id="574" type="Armor" name="Prairie Boots">
@@ -1206,8 +1132,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="575" type="Armor" name="Boots of The Underworld">
@@ -1222,8 +1147,7 @@
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="45" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">45</stat>
 		</stats>
 	</item>
 	<item id="576" type="Armor" name="Boots of Concentration">
@@ -1238,8 +1162,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="577" type="Armor" name="Ace's Boots">
@@ -1254,8 +1177,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="578" type="Armor" name="Guardian's Boots">
@@ -1270,8 +1192,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="579" type="Armor" name="Marksman Boots">
@@ -1286,8 +1207,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="580" type="Armor" name="Boots of Mana">
@@ -1302,8 +1222,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="581" type="Armor" name="Sage's Boots">
@@ -1318,8 +1237,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="582" type="Armor" name="Paradia Boots">
@@ -1334,8 +1252,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="583" type="Armor" name="Inferno Boots">
@@ -1350,8 +1267,7 @@
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="48" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">48</stat>
 		</stats>
 	</item>
 	<item id="584" type="Armor" name="Boots of Solar Eclipse">
@@ -1366,8 +1282,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="585" type="Armor" name="Boots of Black Ore">
@@ -1382,8 +1297,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="586" type="Armor" name="Boots of Summoning">
@@ -1398,8 +1312,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="587" type="Armor" name="Otherworldly Boots">
@@ -1414,8 +1327,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="588" type="Armor" name="Elemental Boots">
@@ -1430,8 +1342,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="589" type="Armor" name="Boots of Phantom">
@@ -1446,8 +1357,7 @@
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="48" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">48</stat>
 		</stats>
 	</item>
 	<item id="590" type="Armor" name="Boots of Grace">
@@ -1462,8 +1372,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="591" type="Armor" name="Boots of Holy Spirit">
@@ -1478,8 +1387,7 @@
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="44" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">44</stat>
 		</stats>
 	</item>
 	<item id="592" type="Armor" name="Phoenix Boots">
@@ -1494,8 +1402,7 @@
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="45" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">45</stat>
 		</stats>
 	</item>
 	<item id="593" type="Armor" name="Cerberus Boots">
@@ -1510,8 +1417,7 @@
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="48" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">48</stat>
 		</stats>
 	</item>
 	<item id="594" type="Armor" name="Boots of Aid">
@@ -1526,8 +1432,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="595" type="Armor" name="Boots of Blessing">
@@ -1542,8 +1447,7 @@
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">41</stat>
 		</stats>
 	</item>
 	<item id="596" type="Armor" name="Flame Boots">
@@ -1558,8 +1462,7 @@
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="45" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">45</stat>
 		</stats>
 	</item>
 	<item id="597" type="Armor" name="Boots of Bravery">
@@ -1574,8 +1477,7 @@
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="45" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">45</stat>
 		</stats>
 	</item>
 	<item id="598" type="Armor" name="Blood Boots">
@@ -1590,8 +1492,7 @@
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="45" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">45</stat>
 		</stats>
 	</item>
 	<item id="599" type="Armor" name="Absolute Boots">
@@ -1606,8 +1507,7 @@
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="45" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">45</stat>
 		</stats>
 	</item>
 </list>

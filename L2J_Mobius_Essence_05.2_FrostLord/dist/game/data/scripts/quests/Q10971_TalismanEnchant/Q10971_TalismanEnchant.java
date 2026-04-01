@@ -111,7 +111,7 @@ public class Q10971_TalismanEnchant extends Quest
 			boolean foundEnchant = false;
 			SEARCH: for (Item item : player.getInventory().getAllItemsByItemId(ADVENTURERS_TALISMAN.getId()))
 			{
-				if (item.getEnchantLevel() > 0)
+				if (item.isEnchanted())
 				{
 					foundEnchant = true;
 					break SEARCH;

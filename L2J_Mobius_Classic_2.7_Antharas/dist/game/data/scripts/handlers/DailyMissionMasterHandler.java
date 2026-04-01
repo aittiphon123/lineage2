@@ -20,15 +20,15 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.gameserver.handler.DailyMissionHandler;
 
-import handlers.dailymissionhandlers.BossDailyMissionHandler;
-import handlers.dailymissionhandlers.FishingDailyMissionHandler;
-import handlers.dailymissionhandlers.JoinClanDailyMissionHandler;
-import handlers.dailymissionhandlers.LevelDailyMissionHandler;
-import handlers.dailymissionhandlers.LoginMonthDailyMissionHandler;
-import handlers.dailymissionhandlers.LoginWeekendDailyMissionHandler;
-import handlers.dailymissionhandlers.OlympiadDailyMissionHandler;
-import handlers.dailymissionhandlers.QuestDailyMissionHandler;
-import handlers.dailymissionhandlers.SiegeDailyMissionHandler;
+import handlers.dailymissions.BossDailyMissionHandler;
+import handlers.dailymissions.FishingDailyMissionHandler;
+import handlers.dailymissions.JoinClanDailyMissionHandler;
+import handlers.dailymissions.LevelDailyMissionHandler;
+import handlers.dailymissions.LoginMonthDailyMissionHandler;
+import handlers.dailymissions.LoginWeekendDailyMissionHandler;
+import handlers.dailymissions.OlympiadDailyMissionHandler;
+import handlers.dailymissions.QuestDailyMissionHandler;
+import handlers.dailymissions.SiegeDailyMissionHandler;
 
 /**
  * @author UnAfraid

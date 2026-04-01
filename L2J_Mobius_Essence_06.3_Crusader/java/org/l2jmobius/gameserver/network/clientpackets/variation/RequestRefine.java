@@ -21,12 +21,13 @@
 package org.l2jmobius.gameserver.network.clientpackets.variation;
 
 import org.l2jmobius.gameserver.data.xml.VariationData;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.options.Variation;
 import org.l2jmobius.gameserver.model.options.VariationFee;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
+import org.l2jmobius.gameserver.network.PacketLogger;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.clientpackets.AbstractRefinePacket;
 import org.l2jmobius.gameserver.network.serverpackets.ExVariationResult;
@@ -79,6 +80,9 @@ public class RequestRefine extends AbstractRefinePacket
 		final Item feeItem = player.getInventory().getItemByItemId(fee.getItemId());
 		if ((feeItem == null) && (fee.getItemId() != 0))
 		{
+			PacketLogger.warning(getClass().getSimpleName() + ": " + player.getName() + " does not have required fee item (ID: " + fee.getItemId() + ") for mineral ID: " + mineralItem.getId());
+			player.sendPacket(ExVariationResult.FAIL);
+			player.sendPacket(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS);
 			return;
 		}
 		

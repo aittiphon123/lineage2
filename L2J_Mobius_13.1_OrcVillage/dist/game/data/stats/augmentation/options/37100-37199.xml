@@ -143,175 +143,232 @@
 	<option id="37142" name="option_id_37142">
 		<!-- P./ M. Accuracy +20, Debuff Resistance +5%, acquired XP/ SP +10%, damage +7%, received damage -7% -->
 	</option>
-	<option id="37143" name="option_id_37143">
+	<option id="37143" name="chaos_aug_1">
 		<!-- P. Atk. +1% -->
+		<passive_skill id="37116" level="1" />
 	</option>
-	<option id="37144" name="option_id_37144">
+	<option id="37144" name="chaos_aug_1">
 		<!-- P. Atk. +2% -->
+		<passive_skill id="37116" level="2" />
 	</option>
-	<option id="37145" name="option_id_37145">
+	<option id="37145" name="chaos_aug_1">
 		<!-- P. Atk. +3% -->
+		<passive_skill id="37116" level="3" />
 	</option>
-	<option id="37146" name="option_id_37146">
+	<option id="37146" name="chaos_aug_1">
 		<!-- P. Atk. +5% -->
+		<passive_skill id="37116" level="4" />
 	</option>
-	<option id="37147" name="option_id_37147">
+	<option id="37147" name="chaos_aug_1">
 		<!-- P. Def. +1% -->
+		<passive_skill id="37117" level="1" />
 	</option>
-	<option id="37148" name="option_id_37148">
+	<option id="37148" name="chaos_aug_1">
 		<!-- P. Def. +2% -->
+		<passive_skill id="37117" level="2" />
 	</option>
-	<option id="37149" name="option_id_37149">
+	<option id="37149" name="chaos_aug_1">
 		<!-- P. Def. +3% -->
+		<passive_skill id="37117" level="3" />
 	</option>
-	<option id="37150" name="option_id_37150">
+	<option id="37150" name="chaos_aug_1">
 		<!-- P. Def. +5% -->
+		<passive_skill id="37117" level="4" />
 	</option>
-	<option id="37151" name="option_id_37151">
+	<option id="37151" name="chaos_aug_1">
 		<!-- Critical Damage for basic attacks +1% -->
+		<passive_skill id="37118" level="1" />
 	</option>
-	<option id="37152" name="option_id_37152">
+	<option id="37152" name="chaos_aug_1">
 		<!-- Critical Damage for basic attacks +2% -->
+		<passive_skill id="37118" level="2" />
 	</option>
-	<option id="37153" name="option_id_37153">
+	<option id="37153" name="chaos_aug_1">
 		<!-- Critical Damage for basic attacks +3% -->
+		<passive_skill id="37118" level="3" />
 	</option>
-	<option id="37154" name="option_id_37154">
+	<option id="37154" name="chaos_aug_1">
 		<!-- Critical Damage for basic attacks +5% -->
+		<passive_skill id="37118" level="4" />
 	</option>
-	<option id="37155" name="option_id_37155">
+	<option id="37155" name="chaos_aug_1">
 		<!-- P. Skill Critical Damage +1% -->
+		<passive_skill id="37119" level="1" />
 	</option>
-	<option id="37156" name="option_id_37156">
+	<option id="37156" name="chaos_aug_1">
 		<!-- P. Skill Critical Damage +2% -->
+		<passive_skill id="37119" level="2" />
 	</option>
-	<option id="37157" name="option_id_37157">
+	<option id="37157" name="chaos_aug_1">
 		<!-- P. Skill Critical Damage +3% -->
+		<passive_skill id="37119" level="3" />
 	</option>
-	<option id="37158" name="option_id_37158">
+	<option id="37158" name="chaos_aug_1">
 		<!-- P. Skill Critical Damage +5% -->
+		<passive_skill id="37119" level="4" />
 	</option>
-	<option id="37159" name="option_id_37159">
+	<option id="37159" name="chaos_aug_1">
 		<!-- M. Skill Critical Damage +1% -->
+		<passive_skill id="37120" level="1" />
 	</option>
-	<option id="37160" name="option_id_37160">
+	<option id="37160" name="chaos_aug_1">
 		<!-- M. Skill Critical Damage +2% -->
+		<passive_skill id="37120" level="2" />
 	</option>
-	<option id="37161" name="option_id_37161">
+	<option id="37161" name="chaos_aug_1">
 		<!-- M. Skill Critical Damage +3% -->
+		<passive_skill id="37120" level="3" />
 	</option>
-	<option id="37162" name="option_id_37162">
+	<option id="37162" name="chaos_aug_1">
 		<!-- M. Skill Critical Damage +5% -->
+		<passive_skill id="37120" level="4" />
 	</option>
-	<option id="37163" name="option_id_37163">
+	<option id="37163" name="chaos_aug_1">
 		<!-- M. Atk. +1% -->
+		<passive_skill id="37121" level="1" />
 	</option>
-	<option id="37164" name="option_id_37164">
+	<option id="37164" name="chaos_aug_1">
 		<!-- M. Atk. +2% -->
+		<passive_skill id="37121" level="2" />
 	</option>
-	<option id="37165" name="option_id_37165">
+	<option id="37165" name="chaos_aug_1">
 		<!-- M. Atk. +3% -->
+		<passive_skill id="37121" level="3" />
 	</option>
-	<option id="37166" name="option_id_37166">
+	<option id="37166" name="chaos_aug_1">
 		<!-- M. Atk. +5% -->
+		<passive_skill id="37121" level="4" />
 	</option>
-	<option id="37167" name="option_id_37167">
+	<option id="37167" name="chaos_aug_1">
 		<!-- M. Def. +1% -->
+		<passive_skill id="37122" level="1" />
 	</option>
-	<option id="37168" name="option_id_37168">
+	<option id="37168" name="chaos_aug_1">
 		<!-- M. Def. +2% -->
+		<passive_skill id="37122" level="2" />
 	</option>
-	<option id="37169" name="option_id_37169">
+	<option id="37169" name="chaos_aug_1">
 		<!-- M. Def. +3% -->
+		<passive_skill id="37122" level="3" />
 	</option>
-	<option id="37170" name="option_id_37170">
+	<option id="37170" name="chaos_aug_1">
 		<!-- M. Def. +5% -->
+		<passive_skill id="37122" level="4" />
 	</option>
-	<option id="37171" name="option_id_37171">
+	<option id="37171" name="chaos_aug_1">
 		<!-- P. Skill Power +1% -->
+		<passive_skill id="37123" level="1" />
 	</option>
-	<option id="37172" name="option_id_37172">
+	<option id="37172" name="chaos_aug_1">
 		<!-- P. Skill Power +2% -->
+		<passive_skill id="37123" level="2" />
 	</option>
-	<option id="37173" name="option_id_37173">
+	<option id="37173" name="chaos_aug_1">
 		<!-- P. Skill Power +3% -->
+		<passive_skill id="37123" level="3" />
 	</option>
-	<option id="37174" name="option_id_37174">
+	<option id="37174" name="chaos_aug_1">
 		<!-- P. Skill Power +5% -->
+		<passive_skill id="37123" level="4" />
 	</option>
-	<option id="37175" name="option_id_37175">
+	<option id="37175" name="chaos_aug_1">
 		<!-- M. Skill Power +1% -->
+		<passive_skill id="37124" level="1" />
 	</option>
-	<option id="37176" name="option_id_37176">
+	<option id="37176" name="chaos_aug_1">
 		<!-- M. Skill Power +2% -->
+		<passive_skill id="37124" level="2" />
 	</option>
-	<option id="37177" name="option_id_37177">
+	<option id="37177" name="chaos_aug_1">
 		<!-- M. Skill Power +3% -->
+		<passive_skill id="37124" level="3" />
 	</option>
-	<option id="37178" name="option_id_37178">
+	<option id="37178" name="chaos_aug_1">
 		<!-- M. Skill Power +5% -->
+		<passive_skill id="37124" level="4" />
 	</option>
-	<option id="37179" name="option_id_37179">
+	<option id="37179" name="chaos_aug_1">
 		<!-- Damage +1% -->
+		<passive_skill id="37125" level="1" />
 	</option>
-	<option id="37180" name="option_id_37180">
+	<option id="37180" name="chaos_aug_1">
 		<!-- Damage +2% -->
+		<passive_skill id="37125" level="2" />
 	</option>
-	<option id="37181" name="option_id_37181">
+	<option id="37181" name="chaos_aug_1">
 		<!-- Damage +3% -->
+		<passive_skill id="37125" level="3" />
 	</option>
-	<option id="37182" name="option_id_37182">
+	<option id="37182" name="chaos_aug_1">
 		<!-- Damage +5% -->
+		<passive_skill id="37125" level="4" />
 	</option>
-	<option id="37183" name="option_id_37183">
+	<option id="37183" name="chaos_aug_1">
 		<!-- Received damage -1% -->
+		<passive_skill id="37126" level="1" />
 	</option>
-	<option id="37184" name="option_id_37184">
+	<option id="37184" name="chaos_aug_1">
 		<!-- Received damage -2% -->
+		<passive_skill id="37126" level="2" />
 	</option>
-	<option id="37185" name="option_id_37185">
+	<option id="37185" name="chaos_aug_1">
 		<!-- Received damage -3% -->
+		<passive_skill id="37126" level="3" />
 	</option>
-	<option id="37186" name="option_id_37186">
+	<option id="37186" name="chaos_aug_1">
 		<!-- Received damage -5% -->
+		<passive_skill id="37126" level="4" />
 	</option>
-	<option id="37187" name="option_id_37187">
+	<option id="37187" name="chaos_aug_1">
 		<!-- Damage to immobilized targets +1% -->
+		<passive_skill id="37127" level="1" />
 	</option>
-	<option id="37188" name="option_id_37188">
+	<option id="37188" name="chaos_aug_1">
 		<!-- Damage to immobilized targets +2% -->
+		<passive_skill id="37127" level="2" />
 	</option>
-	<option id="37189" name="option_id_37189">
+	<option id="37189" name="chaos_aug_1">
 		<!-- Damage to immobilized targets +3% -->
+		<passive_skill id="37127" level="3" />
 	</option>
-	<option id="37190" name="option_id_37190">
+	<option id="37190" name="chaos_aug_1">
 		<!-- Damage to immobilized targets +5% -->
+		<passive_skill id="37127" level="4" />
 	</option>
-	<option id="37191" name="option_id_37191">
+	<option id="37191" name="chaos_aug_1">
 		<!-- Received damage when immobilized -1% -->
+		<passive_skill id="37128" level="1" />
 	</option>
-	<option id="37192" name="option_id_37192">
+	<option id="37192" name="chaos_aug_1">
 		<!-- Received damage when immobilized -2% -->
+		<passive_skill id="37128" level="2" />
 	</option>
-	<option id="37193" name="option_id_37193">
+	<option id="37193" name="chaos_aug_1">
 		<!-- Received damage when immobilized -3% -->
+		<passive_skill id="37128" level="3" />
 	</option>
-	<option id="37194" name="option_id_37194">
+	<option id="37194" name="chaos_aug_1">
 		<!-- Received damage when immobilized -5% -->
+		<passive_skill id="37128" level="4" />
 	</option>
-	<option id="37195" name="option_id_37195">
+	<option id="37195" name="chaos_aug_1">
 		<!-- All stats +1 -->
+		<passive_skill id="37129" level="1" />
 	</option>
-	<option id="37196" name="option_id_37196">
+	<option id="37196" name="chaos_aug_1">
 		<!-- All stats +2 -->
+		<passive_skill id="37129" level="2" />
 	</option>
-	<option id="37197" name="option_id_37197">
+	<option id="37197" name="chaos_aug_1">
 		<!-- All stats +3 -->
+		<passive_skill id="37129" level="3" />
 	</option>
-	<option id="37198" name="option_id_37198">
+	<option id="37198" name="chaos_aug_2">
 		<!-- Attribute Attack +10 -->
+		<passive_skill id="37130" level="1" />
 	</option>
-	<option id="37199" name="option_id_37199">
+	<option id="37199" name="chaos_aug_2">
 		<!-- Attribute Attack +20 -->
+		<passive_skill id="37130" level="2" />
 	</option>
 </list>

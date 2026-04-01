@@ -38,12 +38,12 @@ import org.l2jmobius.gameserver.config.NpcConfig;
 import org.l2jmobius.gameserver.data.SpawnTable;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.SpawnData;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.enums.npc.RaidBossStatus;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.spawns.NpcSpawnTemplate;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 
 /**
  * Database spawn manager.

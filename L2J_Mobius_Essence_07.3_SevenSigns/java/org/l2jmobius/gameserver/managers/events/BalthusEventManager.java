@@ -41,7 +41,6 @@ import java.util.logging.Logger;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.managers.MailManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -53,6 +52,7 @@ import org.l2jmobius.gameserver.model.itemcontainer.Mail;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.ExItemAnnounce;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
@@ -429,7 +429,7 @@ public class BalthusEventManager
 			final String lang = winner.getLang();
 			final String subject = ((lang != null) && _mail.containsKey(lang)) ? _mail.get(lang).getKey() : ((String) _mail.get("en").getKey());
 			final String content = ((lang != null) && _mail.containsKey(lang)) ? _mail.get(lang).getValue() : ((String) _mail.get("en").getValue());
-			final Message msg = new Message(winner.getObjectId(), subject, content, MailType.NEWS_INFORMER);
+			final MailMessage msg = new MailMessage(winner.getObjectId(), subject, content, MailType.NEWS_INFORMER);
 			final Mail attachments = msg.createAttachments();
 			returnItem = attachments.addItem(ItemProcessType.REWARD, _rewardItem.getId(), _rewardItem.getCount(), null, null);
 			if (returnItem != null)

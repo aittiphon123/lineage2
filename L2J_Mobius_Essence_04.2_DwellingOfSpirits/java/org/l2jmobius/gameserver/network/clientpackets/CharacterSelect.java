@@ -30,9 +30,9 @@ import org.l2jmobius.gameserver.data.holders.TimedHuntingZoneHolder;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.sql.OfflinePlayTable;
 import org.l2jmobius.gameserver.data.xml.AdminData;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.data.xml.SecondaryAuthData;
 import org.l2jmobius.gameserver.managers.AntiFeedManager;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
@@ -216,7 +216,7 @@ public class CharacterSelect extends ClientPacket
 						if (zone != null)
 						{
 							final Location exit = zone.getExitLocation();
-							cha.setXYZ(exit != null ? exit : MapRegionManager.getInstance().getTeleToLocation(cha, TeleportWhereType.TOWN));
+							cha.setXYZ(exit != null ? exit : MapRegionData.getInstance().getTeleToLocation(cha, TeleportWhereType.TOWN));
 							vars.remove(PlayerVariables.LAST_HUNTING_ZONE_ID);
 						}
 					}

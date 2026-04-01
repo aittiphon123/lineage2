@@ -27,7 +27,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 import org.l2jmobius.commons.util.IXmlReader;
-import org.l2jmobius.gameserver.model.SayuneEntry;
+import org.l2jmobius.gameserver.data.holders.SayuneEntry;
 
 /**
  * @author UnAfraid

@@ -71,7 +71,7 @@ public class Q10379_AnUninvitedGuest extends Quest
 		addStartNpc(ENDRIGO);
 		addTalkId(ENDRIGO);
 		addKillId(SCALDISECT_THE_FURIOUS, NAGDU_THE_DEFORMED, SADIAC_THE_KILLER, ROSENIAS_DIVINE_SPIRIT, HASKAL_GHOST, CANTA_STANDING_BEAST, GAZAM, TURAN_GHOST, KILLER_FRANGS, KALLBERA, HAKAL_THE_BUTTCHERED, SAMMITA);
-		addCondMinLevel(MIN_LEVEL);
+		addCondMinLevel(MIN_LEVEL, getNoQuestMsg(null));
 		addCondCompletedQuest(Q10377_TheInvadedExecutionGrounds.class.getSimpleName(), "warden_endrigo_q10379_02.html");
 	}
 	

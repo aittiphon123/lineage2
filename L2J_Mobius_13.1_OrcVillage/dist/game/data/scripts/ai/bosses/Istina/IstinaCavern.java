@@ -22,14 +22,14 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
-import org.l2jmobius.gameserver.model.AggroInfo;
-import org.l2jmobius.gameserver.model.DamageDoneInfo;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.npc.AggroInfo;
+import org.l2jmobius.gameserver.model.actor.holders.npc.DamageDoneInfo;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.script.InstanceScript;

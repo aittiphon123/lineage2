@@ -4486,11 +4486,11 @@
 		<reuseDelay>30</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="PhysicalAttack">
+			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalAttack">
+			<effect name="MagicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>

@@ -22,9 +22,9 @@ package ai.others.AttributeMaster;
 
 import java.util.Arrays;
 
-import org.l2jmobius.gameserver.model.ElementalSpirit;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.player.ElementalSpirit;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnElementalSpiritLearn;

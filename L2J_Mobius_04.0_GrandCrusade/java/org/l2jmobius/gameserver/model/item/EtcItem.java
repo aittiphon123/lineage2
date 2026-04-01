@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.model.item;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2jmobius.gameserver.model.ExtractableProduct;
 import org.l2jmobius.gameserver.model.StatSet;
+import org.l2jmobius.gameserver.model.item.holders.ExtractableProduct;
 import org.l2jmobius.gameserver.model.item.type.EtcItemType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 

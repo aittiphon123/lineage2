@@ -37,6 +37,7 @@ import org.l2jmobius.gameserver.model.conditions.Condition;
 import org.l2jmobius.gameserver.model.events.ListenersContainer;
 import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemGrade;
+import org.l2jmobius.gameserver.model.item.holders.ExtractableProduct;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ActionType;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
@@ -145,24 +146,21 @@ public abstract class ItemTemplate extends ListenersContainer
 		_referencePrice = set.getInt("price", 0);
 		_crystalType = set.getEnum("crystal_type", CrystalType.class, CrystalType.NONE);
 		_crystalCount = set.getInt("crystal_count", 0);
-		
 		_stackable = set.getBoolean("is_stackable", false);
 		_sellable = set.getBoolean("is_sellable", true);
 		_dropable = set.getBoolean("is_dropable", true);
 		_destroyable = set.getBoolean("is_destroyable", true);
 		_tradeable = set.getBoolean("is_tradable", true);
+		_questItem = set.getBoolean("is_questitem", false);
 		_depositable = set.getBoolean("is_depositable", true);
 		_elementable = set.getBoolean("element_enabled", false);
 		_enchantable = set.getBoolean("enchant_enabled", false);
-		_questItem = set.getBoolean("is_questitem", false);
 		_freightable = set.getBoolean("is_freightable", false);
 		_allowSelfResurrection = set.getBoolean("allow_self_resurrection", false);
 		_isOlyRestricted = set.getBoolean("is_oly_restricted", false);
 		_forNpc = set.getBoolean("for_npc", false);
-		
 		_immediateEffect = set.getBoolean("immediate_effect", false);
 		_exImmediateEffect = set.getBoolean("ex_immediate_effect", false);
-		
 		_defaultAction = set.getEnum("default_action", ActionType.class, ActionType.NONE);
 		_useSkillDisTime = set.getInt("useSkillDisTime", 0);
 		_defaultEnchantLevel = set.getInt("enchanted", 0);
@@ -175,7 +173,6 @@ public abstract class ItemTemplate extends ListenersContainer
 			final String[] skillsSplit = skills.split(";");
 			_skillHolder = new SkillHolder[skillsSplit.length];
 			int used = 0;
-			
 			for (String element : skillsSplit)
 			{
 				try
@@ -183,7 +180,6 @@ public abstract class ItemTemplate extends ListenersContainer
 					final String[] skillSplit = element.split("-");
 					final int id = Integer.parseInt(skillSplit[0]);
 					final int level = Integer.parseInt(skillSplit[1]);
-					
 					if (id == 0)
 					{
 						LOGGER.info("Ignoring item_skill(" + element + ") for item " + this + ". Skill id is 0!");
@@ -643,6 +639,29 @@ public abstract class ItemTemplate extends ListenersContainer
 	}
 	
 	/**
+	 * Checks if a function of the specified class is already attached to this item.
+	 * @param functionClass the class of the function to search for
+	 * @return {@code true} if a function of the specified class exists, {@code false} otherwise
+	 */
+	public boolean hasFunction(Class<? extends AbstractFunction> functionClass)
+	{
+		if ((_funcTemplates == null) || _funcTemplates.isEmpty())
+		{
+			return false;
+		}
+		
+		for (FuncTemplate template : _funcTemplates)
+		{
+			if (template.getClass().equals(functionClass))
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	/**
 	 * Add the FuncTemplate f to the list of functions used with the item
 	 * @param f : FuncTemplate to add
 	 */
@@ -859,6 +878,13 @@ public abstract class ItemTemplate extends ListenersContainer
 	public boolean isPetItem()
 	{
 		return getItemType() == EtcItemType.PET_COLLAR;
+	}
+	
+	/**
+	 * @param extractableProduct
+	 */
+	public void addCapsuledItem(ExtractableProduct extractableProduct)
+	{
 	}
 	
 	public Skill getEnchant4Skill()

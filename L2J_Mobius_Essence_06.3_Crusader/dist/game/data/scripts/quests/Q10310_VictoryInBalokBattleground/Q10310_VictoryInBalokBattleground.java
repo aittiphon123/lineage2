@@ -68,7 +68,7 @@ public class Q10310_VictoryInBalokBattleground extends Quest
 	private static final ItemHolder BERSERKER_SCROLL = new ItemHolder(94777, 10);
 	
 	// Misc
-	private static final String VICTORY_IN_BALOK_BYPASS = "Quest Q10310_VictoryInBalokBattleground ";
+	private static final String VICTORY_IN_BALOK_BYPASS = "Script Q10310_VictoryInBalokBattleground ";
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 60;
 	

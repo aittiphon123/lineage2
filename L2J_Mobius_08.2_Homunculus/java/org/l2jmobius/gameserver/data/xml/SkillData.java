@@ -22,6 +22,7 @@ package org.l2jmobius.gameserver.data.xml;
 
 import java.io.File;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
 import java.util.EnumMap;
@@ -269,19 +270,42 @@ public class SkillData implements IXmlReader
 								});
 							});
 							
+							// Handle level/sublevel combinations from namedParamInfo.
+							// The _info map already contains all explicit level/sublevel combinations.
+							namedParamInfo.getInfo().forEach((level, subLevelMap) ->
+							{
+								if (level == -1)
+								{
+									return;
+								}
+								
+								subLevelMap.forEach((subLevel, _) ->
+								{
+									if (subLevel == -1)
+									{
+										return;
+									}
+									
+									levels.computeIfAbsent(level, _ -> new HashSet<>()).add(subLevel);
+								});
+							});
+							
+							// Also handle standard level/sublevel ranges if provided.
 							if ((namedParamInfo.getFromLevel() != null) && (namedParamInfo.getToLevel() != null))
 							{
 								for (int i = namedParamInfo.getFromLevel(); i <= namedParamInfo.getToLevel(); i++)
 								{
 									if ((namedParamInfo.getFromSubLevel() != null) && (namedParamInfo.getToSubLevel() != null))
 									{
+										// Standard level and sublevel ranges.
 										for (int j = namedParamInfo.getFromSubLevel(); j <= namedParamInfo.getToSubLevel(); j++)
 										{
 											levels.computeIfAbsent(i, _ -> new HashSet<>()).add(j);
 										}
 									}
-									else
+									else if (!namedParamInfo.getInfo().containsKey(i))
 									{
+										// Level range without sublevel range, and not already in _info - use default sublevel.
 										levels.computeIfAbsent(i, _ -> new HashSet<>()).add(0);
 									}
 								}
@@ -366,6 +390,37 @@ public class SkillData implements IXmlReader
 	}
 	
 	/**
+	 * Checks if a NamedParamInfo matches a specific level and sublevel.<br>
+	 * This checks the _info map directly to see if the level/sublevel combination exists.
+	 * @param namedParamInfo The parameter information to check
+	 * @param level The level to match
+	 * @param subLevel The sublevel to match
+	 * @return True if the level and sublevel match the ranges or exist in _info
+	 */
+	private boolean matchesLevelAndSubLevel(NamedParamInfo namedParamInfo, int level, int subLevel)
+	{
+		// First check if this exact level/sublevel combination exists in _info.
+		if (namedParamInfo.getInfo().containsKey(level))
+		{
+			final Map<Integer, StatSet> subLevelMap = namedParamInfo.getInfo().get(level);
+			if (subLevelMap.containsKey(subLevel))
+			{
+				return true;
+			}
+		}
+		
+		// If not found in _info, check the range-based matching.
+		final boolean levelMatches = ((namedParamInfo.getFromLevel() == null) && (namedParamInfo.getToLevel() == null)) || ((namedParamInfo.getFromLevel() != null) && (namedParamInfo.getToLevel() != null) && (namedParamInfo.getFromLevel() <= level) && (namedParamInfo.getToLevel() >= level));
+		if (!levelMatches)
+		{
+			return false;
+		}
+		
+		// Check sublevel match within range.
+		return ((namedParamInfo.getFromSubLevel() == null) && (namedParamInfo.getToSubLevel() == null)) || ((namedParamInfo.getFromSubLevel() != null) && (namedParamInfo.getToSubLevel() != null) && (namedParamInfo.getFromSubLevel() <= subLevel) && (namedParamInfo.getToSubLevel() >= subLevel));
+	}
+	
+	/**
 	 * Iterates over a map of parameter info entries and applies a specified consumer action on each entry that matches the provided level and subLevel.
 	 * <p>
 	 * The method filters each {@link NamedParamInfo} entry based on level and subLevel ranges. If a match is found, it creates or retrieves a {@link StatSet} for the given levels, fills in parameter values, and applies the specified action.
@@ -380,8 +435,8 @@ public class SkillData implements IXmlReader
 	{
 		paramInfo.forEach((scope, namedParamInfos) -> namedParamInfos.forEach(namedParamInfo ->
 		{
-			if ((((namedParamInfo.getFromLevel() == null) && (namedParamInfo.getToLevel() == null)) || ((namedParamInfo.getFromLevel() <= level) && (namedParamInfo.getToLevel() >= level))) //
-				&& (((namedParamInfo.getFromSubLevel() == null) && (namedParamInfo.getToSubLevel() == null)) || ((namedParamInfo.getFromSubLevel() <= subLevel) && (namedParamInfo.getToSubLevel() >= subLevel))))
+			// Check if we have a match with level and sublevel ranges or table values.
+			if (matchesLevelAndSubLevel(namedParamInfo, level, subLevel))
 			{
 				final StatSet params = Optional.ofNullable(namedParamInfo.getInfo().getOrDefault(level, Collections.emptyMap()).get(subLevel)).orElseGet(StatSet::new);
 				namedParamInfo.getInfo().getOrDefault(level, Collections.emptyMap()).getOrDefault(-1, StatSet.EMPTY_STATSET).getSet().forEach(params.getSet()::putIfAbsent);
@@ -406,13 +461,24 @@ public class SkillData implements IXmlReader
 		Node n = node;
 		final NamedNodeMap attributes = n.getAttributes();
 		final String name = parseString(attributes, "name");
+		
+		// Standard level attributes.
 		final Integer level = parseInteger(attributes, "level");
-		final Integer fromLevel = parseInteger(attributes, "fromLevel", level);
-		final Integer toLevel = parseInteger(attributes, "toLevel", level);
+		Integer fromLevel = parseInteger(attributes, "fromLevel", level);
+		Integer toLevel = parseInteger(attributes, "toLevel", level);
+		
+		// Standard sublevel attributes.
 		final Integer subLevel = parseInteger(attributes, "subLevel");
-		final Integer fromSubLevel = parseInteger(attributes, "fromSubLevel", subLevel);
-		final Integer toSubLevel = parseInteger(attributes, "toSubLevel", subLevel);
+		Integer fromSubLevel = parseInteger(attributes, "fromSubLevel", subLevel);
+		Integer toSubLevel = parseInteger(attributes, "toSubLevel", subLevel);
+		
+		// New table attributes for multiple levels/sublevels in one line.
+		final String levelValuesStr = parseString(attributes, "levelValues");
+		
+		// Create the info map to store parameter data.
 		final Map<Integer, Map<Integer, StatSet>> info = new HashMap<>();
+		
+		// Parse child nodes to extract parameter information.
 		for (n = n.getFirstChild(); n != null; n = n.getNextSibling())
 		{
 			if (!n.getNodeName().equals("#text"))
@@ -421,6 +487,149 @@ public class SkillData implements IXmlReader
 			}
 		}
 		
+		// Check for numbered subLevel*Values attributes.
+		Integer[] parsedSubLevelValues = null;
+		int subLevelCategory = 0;
+		for (int i = 0; i < attributes.getLength(); i++)
+		{
+			final String attrName = attributes.item(i).getNodeName();
+			if (attrName.matches("subLevel\\d+Values"))
+			{
+				// Extract category number.
+				subLevelCategory = extractCategoryNumber(attrName);
+				
+				// Found a numbered subLevel attribute, parse it.
+				final String subLevelValuesStr = attributes.item(i).getNodeValue();
+				if ((subLevelValuesStr != null) && !subLevelValuesStr.isEmpty())
+				{
+					final String[] subLevelValues = subLevelValuesStr.trim().split("\\s+");
+					parsedSubLevelValues = new Integer[subLevelValues.length];
+					
+					for (int j = 0; j < subLevelValues.length; j++)
+					{
+						try
+						{
+							parsedSubLevelValues[j] = Integer.parseInt(subLevelValues[j]);
+						}
+						catch (NumberFormatException e)
+						{
+							LOGGER.warning(getClass().getSimpleName() + ": Invalid number format in " + attrName + ": " + subLevelValues[j]);
+							parsedSubLevelValues = null;
+							break;
+						}
+					}
+				}
+				break; // Only handle the first subLevel*Values attribute found.
+			}
+		}
+		
+		// If levelValues attribute is present, we'll use that instead of fromLevel/toLevel ranges.
+		if ((levelValuesStr != null) && !levelValuesStr.isEmpty())
+		{
+			// Parse the space-separated values.
+			final String[] levelValueStrings = levelValuesStr.trim().split("\\s+");
+			final List<Integer> parsedLevelValues = new ArrayList<>();
+			
+			// Convert to integers.
+			for (String valueStr : levelValueStrings)
+			{
+				try
+				{
+					parsedLevelValues.add(Integer.parseInt(valueStr));
+				}
+				catch (NumberFormatException e)
+				{
+					LOGGER.warning(getClass().getSimpleName() + ": Invalid number format in levelValues: " + valueStr);
+					// Return with standard level attributes as fallback.
+					return new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, info);
+				}
+			}
+			
+			// Determine the actual skill levels to use.
+			// If we have fromLevel and toLevel, use that range.
+			// Otherwise, assume levels start at 1.
+			final int startLevel = (fromLevel != null) ? fromLevel : 1;
+			final int endLevel = (toLevel != null) ? toLevel : ((startLevel + parsedLevelValues.size()) - 1);
+			
+			// Validate we have enough values for the level range.
+			final int expectedCount = (endLevel - startLevel) + 1;
+			if (parsedLevelValues.size() != expectedCount)
+			{
+				LOGGER.warning(getClass().getSimpleName() + ": levelValues count (" + parsedLevelValues.size() + ") does not match level range " + startLevel + "-" + endLevel + " (" + expectedCount + " expected)");
+				return new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, info);
+			}
+			
+			// Map each value to its corresponding level.
+			for (int i = 0; i < parsedLevelValues.size(); i++)
+			{
+				final int actualLevel = startLevel + i;
+				final Integer value = parsedLevelValues.get(i);
+				
+				// If we have subLevel*Values, populate all sublevel combinations.
+				if (parsedSubLevelValues != null)
+				{
+					for (int j = 0; j < parsedSubLevelValues.length; j++)
+					{
+						final int actualSubLevel = (subLevelCategory * 1000) + j + 1;
+						
+						// Store the value for this level/sublevel combination.
+						final StatSet statSet = new StatSet();
+						statSet.set(name, value);
+						info.computeIfAbsent(actualLevel, _ -> new HashMap<>()).put(actualSubLevel, statSet);
+					}
+					
+					// Update sublevel range.
+					fromSubLevel = (subLevelCategory * 1000) + 1;
+					toSubLevel = (subLevelCategory * 1000) + parsedSubLevelValues.length;
+				}
+				else
+				{
+					// No sublevels, use default sublevel 0.
+					final StatSet statSet = new StatSet();
+					statSet.set(name, value);
+					info.computeIfAbsent(actualLevel, _ -> new HashMap<>()).put(0, statSet);
+					
+					// Set default sublevel.
+					if (fromSubLevel == null)
+					{
+						fromSubLevel = 0;
+					}
+					if (toSubLevel == null)
+					{
+						toSubLevel = 0;
+					}
+				}
+			}
+			
+			// Update level range to match what we actually populated.
+			fromLevel = startLevel;
+			toLevel = endLevel;
+		}
+		else if (parsedSubLevelValues != null)
+		{
+			// We have subLevel*Values but no levelValues, use standard level range.
+			// Populate info with level range and sublevel values.
+			if ((fromLevel != null) && (toLevel != null))
+			{
+				for (int i = fromLevel; i <= toLevel; i++)
+				{
+					for (int j = 0; j < parsedSubLevelValues.length; j++)
+					{
+						// Calculate actual sublevel based on category.
+						final int actualSubLevel = (subLevelCategory * 1000) + j + 1;
+						
+						// Add this level/sublevel combination to info if not already present.
+						info.computeIfAbsent(i, _ -> new HashMap<>()).putIfAbsent(actualSubLevel, new StatSet());
+					}
+				}
+			}
+			
+			// Update fromSubLevel and toSubLevel based on category.
+			fromSubLevel = (subLevelCategory * 1000) + 1;
+			toSubLevel = (subLevelCategory * 1000) + parsedSubLevelValues.length;
+		}
+		
+		// Return with calculated from/to values.
 		return new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, info);
 	}
 	
@@ -435,6 +644,136 @@ public class SkillData implements IXmlReader
 	 */
 	private void parseInfo(Node node, Map<String, Map<Integer, Map<Integer, Object>>> variableValues, Map<Integer, Map<Integer, StatSet>> info)
 	{
+		final NamedNodeMap attributes = node.getAttributes();
+		final String nodeName = node.getNodeName();
+		
+		// Check for levelValues attribute.
+		final String levelValuesStr = parseString(attributes, "levelValues");
+		
+		// Check for subLevel*Values attributes.
+		String subLevelValuesStr = null;
+		int subLevelCategory = 0;
+		
+		for (int i = 0; i < attributes.getLength(); i++)
+		{
+			final String attrName = attributes.item(i).getNodeName();
+			if (attrName.matches("subLevel\\d+Values"))
+			{
+				subLevelValuesStr = attributes.item(i).getNodeValue();
+				subLevelCategory = extractCategoryNumber(attrName);
+				break; // Use first one found.
+			}
+		}
+		
+		// If we have either levelValues or subLevel*Values, use table parsing.
+		if (((levelValuesStr != null) && !levelValuesStr.isEmpty()) || ((subLevelValuesStr != null) && !subLevelValuesStr.isEmpty()))
+		{
+			// Get the parent skill's level range.
+			Node skillNode = node.getParentNode();
+			while ((skillNode != null) && !skillNode.getNodeName().equals("skill"))
+			{
+				skillNode = skillNode.getParentNode();
+			}
+			
+			if (skillNode == null)
+			{
+				LOGGER.warning(getClass().getSimpleName() + ": Could not find parent skill node for " + nodeName);
+				return;
+			}
+			
+			final NamedNodeMap skillAttrs = skillNode.getAttributes();
+			final Integer skillFromLevel = parseInteger(skillAttrs, "fromLevel", parseInteger(skillAttrs, "level", 1));
+			final Integer skillToLevel = parseInteger(skillAttrs, "toLevel", parseInteger(skillAttrs, "level", skillFromLevel));
+			
+			// Parse level values if present.
+			final List<Integer> levelList = new ArrayList<>();
+			final List<Object> levelValuesList = new ArrayList<>();
+			if ((levelValuesStr != null) && !levelValuesStr.isEmpty())
+			{
+				final String[] valueStrings = levelValuesStr.trim().split("\\s+");
+				for (int i = 0; i < valueStrings.length; i++)
+				{
+					final int level = skillFromLevel + i;
+					if (level > skillToLevel)
+					{
+						break;
+					}
+					
+					levelList.add(level);
+					levelValuesList.add(StringUtil.parseValue(valueStrings[i]));
+				}
+			}
+			else
+			{
+				// No levelValues, use full skill level range.
+				for (int level = skillFromLevel; level <= skillToLevel; level++)
+				{
+					levelList.add(level);
+				}
+			}
+			
+			// Parse sublevel values if present.
+			final List<Integer> subLevelList = new ArrayList<>();
+			final List<Object> subLevelValuesList = new ArrayList<>();
+			if ((subLevelValuesStr != null) && !subLevelValuesStr.isEmpty())
+			{
+				final String[] valueStrings = subLevelValuesStr.trim().split("\\s+");
+				for (int j = 0; j < valueStrings.length; j++)
+				{
+					final int subLevel = (subLevelCategory * 1000) + j + 1;
+					subLevelList.add(subLevel);
+					subLevelValuesList.add(StringUtil.parseValue(valueStrings[j]));
+				}
+			}
+			else
+			{
+				// No subLevelValues, use default sublevel 0.
+				subLevelList.add(0);
+			}
+			
+			// Now populate the info map with all combinations.
+			if (!levelValuesList.isEmpty())
+			{
+				// We have levelValues - use those values.
+				for (int i = 0; i < levelList.size(); i++)
+				{
+					final int level = levelList.get(i);
+					final Object value = levelValuesList.get(i);
+					for (int subLevel : subLevelList)
+					{
+						info.computeIfAbsent(level, _ -> new HashMap<>()).computeIfAbsent(subLevel, _ -> new StatSet()).set(nodeName, value);
+					}
+				}
+			}
+			else if (!subLevelValuesList.isEmpty())
+			{
+				// We have subLevelValues but no levelValues - use sublevel values.
+				for (int level : levelList)
+				{
+					for (int j = 0; j < subLevelList.size(); j++)
+					{
+						final int subLevel = subLevelList.get(j);
+						final Object value = subLevelValuesList.get(j);
+						info.computeIfAbsent(level, _ -> new HashMap<>()).computeIfAbsent(subLevel, _ -> new StatSet()).set(nodeName, value);
+					}
+				}
+			}
+			else
+			{
+				// Neither has values? This shouldn't happen but handle it.
+				for (int level : levelList)
+				{
+					for (int subLevel : subLevelList)
+					{
+						info.computeIfAbsent(level, _ -> new HashMap<>()).computeIfAbsent(subLevel, _ -> new StatSet());
+					}
+				}
+			}
+			
+			return; // Done with table parsing.
+		}
+		
+		// Standard parsing for non-table attributes.
 		Map<Integer, Map<Integer, Object>> values = parseValues(node);
 		final Object generalValue = values.getOrDefault(-1, Collections.emptyMap()).get(-1);
 		if (generalValue != null)
@@ -455,6 +794,32 @@ public class SkillData implements IXmlReader
 		}
 		
 		values.forEach((level, subLevelMap) -> subLevelMap.forEach((subLevel, value) -> info.computeIfAbsent(level, _ -> new HashMap<>()).computeIfAbsent(subLevel, _ -> new StatSet()).set(node.getNodeName(), value)));
+	}
+	
+	/**
+	 * Extracts the category number from a numbered subLevel attribute name.<br>
+	 * For example, "subLevel1Values" would return 1, "subLevel2Values" would return 2, etc.<br>
+	 * Returns 0 if no valid category number is found.
+	 * @param tableName The subLevel attribute name
+	 * @return The category number, or 0 if parsing fails
+	 */
+	private int extractCategoryNumber(String tableName)
+	{
+		try
+		{
+			// Extract digits from the middle of the string (after "subLevel" and before "Values").
+			final String numberStr = tableName.replace("subLevel", "").replace("Values", "");
+			if (!numberStr.isEmpty())
+			{
+				return Integer.parseInt(numberStr);
+			}
+		}
+		catch (NumberFormatException e)
+		{
+			LOGGER.warning(getClass().getSimpleName() + ": Failed to extract category number from " + tableName);
+		}
+		
+		return 0; // Return 0 if parsing fails.
 	}
 	
 	/**

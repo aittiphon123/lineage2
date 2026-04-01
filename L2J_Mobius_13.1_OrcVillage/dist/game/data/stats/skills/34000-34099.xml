@@ -2027,15 +2027,33 @@
 		<icon>icon.skill0497</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<abnormalTime>15</abnormalTime>
-		<affectScope>SINGLE</affectScope>
-		<castRange>-1</castRange>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2500</attributeValue>
+		<basicProperty>NONE</basicProperty>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>5000</hitTime>
 		<isDebuff>true</isDebuff>
-		<isMagic>6</isMagic>
-		<magicCriticalRate>5</magicCriticalRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>120</magicLevel>
 		<reuseDelay>0</reuseDelay>
+		<trait>KNOCKDOWN</trait>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 </list>

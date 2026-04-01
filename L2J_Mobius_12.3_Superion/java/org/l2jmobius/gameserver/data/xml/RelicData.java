@@ -93,6 +93,7 @@ public class RelicData implements IXmlReader
 						}
 						
 						final int relicId = parseInteger(attrs, "id");
+						final String name = parseString(attrs, "name", "");
 						final int grade = parseInteger(attrs, "grade");
 						int enchantLevel = 0;
 						int skillId = 0;
@@ -108,7 +109,7 @@ public class RelicData implements IXmlReader
 							}
 						}
 						
-						final RelicDataHolder template = new RelicDataHolder(relicId, grade, skillId, enchantLevel, skillLevel);
+						final RelicDataHolder template = new RelicDataHolder(relicId, name, grade, skillId, enchantLevel, skillLevel);
 						RELICS.put(relicId, template);
 					}
 				}

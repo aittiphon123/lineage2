@@ -75,6 +75,8 @@ import org.l2jmobius.gameserver.config.custom.PrivateStoreRangeConfig;
 import org.l2jmobius.gameserver.config.custom.PvpAnnounceConfig;
 import org.l2jmobius.gameserver.config.custom.PvpRewardItemConfig;
 import org.l2jmobius.gameserver.config.custom.PvpTitleColorConfig;
+import org.l2jmobius.gameserver.data.holders.AccessLevel;
+import org.l2jmobius.gameserver.data.holders.PetLevelData;
 import org.l2jmobius.gameserver.data.holders.SellBuffHolder;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.sql.CharSummonTable;
@@ -107,16 +109,7 @@ import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.managers.SiegeManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
-import org.l2jmobius.gameserver.model.AccessLevel;
-import org.l2jmobius.gameserver.model.BlockList;
-import org.l2jmobius.gameserver.model.ContactList;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.ManufactureItem;
-import org.l2jmobius.gameserver.model.PetLevelData;
-import org.l2jmobius.gameserver.model.Request;
-import org.l2jmobius.gameserver.model.SkillLearn;
-import org.l2jmobius.gameserver.model.TimeStamp;
-import org.l2jmobius.gameserver.model.TradeList;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.appearance.PlayerAppearance;
@@ -131,8 +124,11 @@ import org.l2jmobius.gameserver.model.actor.enums.player.PrivateStoreType;
 import org.l2jmobius.gameserver.model.actor.enums.player.Sex;
 import org.l2jmobius.gameserver.model.actor.enums.player.ShortcutType;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
+import org.l2jmobius.gameserver.model.actor.holders.creature.TimeStamp;
 import org.l2jmobius.gameserver.model.actor.holders.player.AutoPlaySettingsHolder;
 import org.l2jmobius.gameserver.model.actor.holders.player.AutoUseSettingsHolder;
+import org.l2jmobius.gameserver.model.actor.holders.player.BlockList;
+import org.l2jmobius.gameserver.model.actor.holders.player.ContactList;
 import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
 import org.l2jmobius.gameserver.model.actor.holders.player.Shortcuts;
 import org.l2jmobius.gameserver.model.actor.holders.player.SubClassHolder;
@@ -197,6 +193,7 @@ import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.enums.ShotType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.item.recipe.ManufactureItem;
 import org.l2jmobius.gameserver.model.item.type.ActionType;
 import org.l2jmobius.gameserver.model.item.type.ArmorType;
 import org.l2jmobius.gameserver.model.item.type.EtcItemType;
@@ -224,6 +221,7 @@ import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.Element;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
+import org.l2jmobius.gameserver.model.skill.holders.SkillLearn;
 import org.l2jmobius.gameserver.model.skill.holders.SkillUseHolder;
 import org.l2jmobius.gameserver.model.skill.targets.TargetType;
 import org.l2jmobius.gameserver.model.stats.Formulas;
@@ -240,6 +238,8 @@ import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.enums.HtmlActionScope;
+import org.l2jmobius.gameserver.network.holders.RequestPartner;
+import org.l2jmobius.gameserver.network.holders.TradeList;
 import org.l2jmobius.gameserver.network.serverpackets.AbstractHtmlPacket;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
 import org.l2jmobius.gameserver.network.serverpackets.ChangeWaitType;
@@ -450,7 +450,6 @@ public class Player extends Playable
 	
 	/** Stored from last ValidatePosition **/
 	private final Location _lastServerPosition = new Location(0, 0, 0);
-	private final Location _lastMoveToPosition = new Location(0, 0, 0);
 	
 	private final AtomicBoolean _blinkActive = new AtomicBoolean();
 	
@@ -571,7 +570,7 @@ public class Player extends Playable
 	// there can only be one active party request at once
 	private Player _activeRequester;
 	private long _requestExpireTime = 0;
-	private final Request _request = new Request(this);
+	private final RequestPartner _request = new RequestPartner(this);
 	private Item _arrowItem;
 	
 	// Used for protection after teleport
@@ -1112,9 +1111,9 @@ public class Player extends Playable
 		return quests;
 	}
 	
-	public void processQuestEvent(String questName, String event)
+	public void processScriptEvent(String scriptName, String event)
 	{
-		final Quest quest = ScriptManager.getInstance().getScript(questName);
+		final Quest quest = ScriptManager.getInstance().getScript(scriptName);
 		if ((quest == null) || (event == null) || event.isEmpty())
 		{
 			return;
@@ -1685,7 +1684,7 @@ public class Player extends Playable
 		SystemMessage sm = null;
 		if (isEquiped)
 		{
-			if (item.getEnchantLevel() > 0)
+			if (item.isEnchanted())
 			{
 				sendMessage("Equipment of +" + item.getEnchantLevel() + " " + item.getName() + " has been removed.");
 			}
@@ -1705,7 +1704,7 @@ public class Player extends Playable
 			if (item.isEquipped())
 			{
 				final BodyPart bodyPart = item.getTemplate().getBodyPart();
-				if (item.getEnchantLevel() > 0)
+				if (item.isEnchanted())
 				{
 					sm = new SystemMessage(SystemMessageId.EQUIPPED_S1_S2);
 					sm.addInt(item.getEnchantLevel());
@@ -1970,56 +1969,54 @@ public class Player extends Playable
 	}
 	
 	/**
-	 * @param classId
-	 * @return the fists weapon of the Player Class (used when no weapon is equipped).
+	 * Returns the appropriate fist weapon template for a given class ID.<br>
+	 * Fist weapons are used as default weapons when a player has no weapon equipped.
+	 * @param classId the class identifier for this Player
+	 * @return the Weapon template for the fist weapon corresponding to the class ID.
 	 */
 	public Weapon findFistsWeaponItem(int classId)
 	{
-		Weapon weaponItem = null;
+		final Weapon weaponItem;
+		
 		if ((classId >= 0x00) && (classId <= 0x09))
 		{
-			// human fighter fists
-			weaponItem = (Weapon) ItemData.getInstance().getTemplate(246);
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(246 /* Human Fighter Fist */);
 		}
 		else if ((classId >= 0x0a) && (classId <= 0x11))
 		{
-			// human mage fists
-			weaponItem = (Weapon) ItemData.getInstance().getTemplate(251);
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(251 /* Human Mystic Fist */);
 		}
 		else if ((classId >= 0x12) && (classId <= 0x18))
 		{
-			// elven fighter fists
-			weaponItem = (Weapon) ItemData.getInstance().getTemplate(244);
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(244 /* Elven Fighter Fist */);
 		}
 		else if ((classId >= 0x19) && (classId <= 0x1e))
 		{
-			// elven mage fists
-			weaponItem = (Weapon) ItemData.getInstance().getTemplate(249);
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(249 /* Elven Mystic Fist */);
 		}
 		else if ((classId >= 0x1f) && (classId <= 0x25))
 		{
-			// dark elven fighter fists
-			weaponItem = (Weapon) ItemData.getInstance().getTemplate(245);
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(245 /* Dark Fighter Fist */);
 		}
 		else if ((classId >= 0x26) && (classId <= 0x2b))
 		{
-			// dark elven mage fists
-			weaponItem = (Weapon) ItemData.getInstance().getTemplate(250);
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(250 /* Dark Mystic Fist */);
 		}
 		else if ((classId >= 0x2c) && (classId <= 0x30))
 		{
-			// orc fighter fists
-			weaponItem = (Weapon) ItemData.getInstance().getTemplate(248);
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(248 /* Orc Fighter Fist */);
 		}
 		else if ((classId >= 0x31) && (classId <= 0x34))
 		{
-			// orc mage fists
-			weaponItem = (Weapon) ItemData.getInstance().getTemplate(252);
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(252 /* Orc Shaman Fist */);
 		}
 		else if ((classId >= 0x35) && (classId <= 0x39))
 		{
-			// dwarven fists
-			weaponItem = (Weapon) ItemData.getInstance().getTemplate(247);
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(247 /* Dwarven Fighter Fist */);
+		}
+		else // Default fist item to avoid NPEs.
+		{
+			weaponItem = (Weapon) ItemData.getInstance().getTemplate(246 /* Human Fighter Fist */);
 		}
 		
 		return weaponItem;
@@ -2683,7 +2680,7 @@ public class Player extends Playable
 					sm.addInt(item.getCount());
 					sendPacket(sm);
 				}
-				else if (item.getEnchantLevel() > 0)
+				else if (item.isEnchanted())
 				{
 					sendMessage("You picked up +" + item.getEnchantLevel() + " " + item.getName() + ".");
 				}
@@ -3878,7 +3875,7 @@ public class Player extends Playable
 			if ((target.getItemType() instanceof ArmorType) || (target.getItemType() instanceof WeaponType))
 			{
 				String attMsg;
-				if (target.getEnchantLevel() > 0)
+				if (target.isEnchanted())
 				{
 					attMsg = "Attention: " + getName() + " picked up +" + target.getEnchantLevel() + " " + target.getName() + ".";
 				}
@@ -5094,7 +5091,7 @@ public class Player extends Playable
 	/**
 	 * @return the Player requester of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).
 	 */
-	public Request getRequest()
+	public RequestPartner getRequest()
 	{
 		return _request;
 	}
@@ -5515,7 +5512,7 @@ public class Player extends Playable
 		if (!unequipped.isEmpty())
 		{
 			final Item unequippedItem = unequipped.get(0);
-			if (unequippedItem.getEnchantLevel() > 0)
+			if (unequippedItem.isEnchanted())
 			{
 				sendMessage("Equipment of +" + unequippedItem.getEnchantLevel() + " " + unequippedItem.getName() + " has been removed.");
 			}
@@ -5555,7 +5552,7 @@ public class Player extends Playable
 			if (!unequipped.isEmpty())
 			{
 				final Item unequippedItem = unequipped.get(0);
-				if (unequippedItem.getEnchantLevel() > 0)
+				if (unequippedItem.isEnchanted())
 				{
 					sendMessage("Equipment of +" + unequippedItem.getEnchantLevel() + " " + unequippedItem.getName() + " has been removed.");
 				}
@@ -9289,16 +9286,6 @@ public class Player extends Playable
 		return _lastServerPosition;
 	}
 	
-	public void setLastMoveToPosition(Location location)
-	{
-		_lastMoveToPosition.setXYZ(location);
-	}
-	
-	public Location getLastMoveToPosition()
-	{
-		return _lastMoveToPosition;
-	}
-	
 	public void setBlinkActive(boolean value)
 	{
 		_blinkActive.set(value);
@@ -10238,7 +10225,7 @@ public class Player extends Playable
 					return;
 				}
 				
-				if (equippedItem.getEnchantLevel() > 0)
+				if (equippedItem.isEnchanted())
 				{
 					sendMessage("Equipment of +" + equippedItem.getEnchantLevel() + " " + equippedItem.getName() + " has been removed.");
 				}

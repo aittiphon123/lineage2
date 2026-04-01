@@ -820,7 +820,7 @@
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<effectPoint>1</effectPoint>
@@ -949,7 +949,7 @@
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<effectPoint>1</effectPoint>

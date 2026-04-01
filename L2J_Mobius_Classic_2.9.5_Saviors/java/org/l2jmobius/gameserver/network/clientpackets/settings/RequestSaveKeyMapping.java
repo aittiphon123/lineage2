@@ -58,12 +58,12 @@ public class RequestSaveKeyMapping extends ClientPacket
 			return;
 		}
 		
-		String uiKeyMapping = "";
+		final StringBuilder sb = new StringBuilder(_uiKeyMapping.length * 4);
 		for (Byte b : _uiKeyMapping)
 		{
-			uiKeyMapping += b + SPLIT_VAR;
+			sb.append(b).append(SPLIT_VAR);
 		}
 		
-		player.getVariables().set(PlayerVariables.UI_KEY_MAPPING, uiKeyMapping);
+		player.getVariables().set(PlayerVariables.UI_KEY_MAPPING, sb.toString());
 	}
 }

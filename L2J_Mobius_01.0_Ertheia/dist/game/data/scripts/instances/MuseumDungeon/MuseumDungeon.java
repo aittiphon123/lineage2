@@ -18,6 +18,7 @@ package instances.MuseumDungeon;
 
 import java.util.List;
 
+import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -220,8 +221,10 @@ public class MuseumDungeon extends InstanceScript
 			if (!toyron.isInCombat())
 			{
 				toyron.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ENOUGH_OF_THIS_COME_AT_ME);
-				toyron.reduceCurrentHp(1, npc, null); // TODO: Find better way for attack
-				npc.reduceCurrentHp(1, toyron, null);
+				toyron.asAttackable().addDamageHate(npc, 0, 500);
+				toyron.getAI().setIntention(Intention.ATTACK, npc);
+				npc.asAttackable().addDamageHate(toyron, 0, 500);
+				npc.getAI().setIntention(Intention.ATTACK, toyron);
 				startQuestTimer("TOYRON_FOLLOW", 3000, toyron, attacker);
 			}
 		}

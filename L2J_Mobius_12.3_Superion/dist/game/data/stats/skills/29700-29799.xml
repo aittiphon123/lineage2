@@ -241,11 +241,30 @@
 	<skill id="29728" toLevel="1" name="Halloween Outfit - Lovely Hanbok">
 		<!-- Changes the armor appearance to that of Lovely Hanbok. -->
 		<icon>icon.armor_t2000_b_i00</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>600</abnormalTime>
+		<abnormalType>APPEARANCE_POTION</abnormalType>
+		<abnormalVisualEffect>AVE_RED_LIBRA_29</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<effectPoint>780</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
 		<hitTime>1500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
 		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>5000</reuseDelay>
+		<reuseDelayType>S</reuseDelayType>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>
+					<value level="1">APPEARANCE_POTION,1</value>
+				</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29729" toLevel="1" name="Halloween Outfit - Jester">
 		<!-- Changes the armor appearance to that of Jester Outfit. -->

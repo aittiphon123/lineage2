@@ -1084,7 +1084,7 @@
 			<height normal="18.5" />
 		</collision>
 	</npc>
-	<npc id="34557" level="85" type="Folk" name="Chinoi" title="Grocer">
+	<npc id="34557" level="85" type="Merchant" name="Chinoi" title="Grocer">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
@@ -1103,7 +1103,7 @@
 			<height normal="21.3" />
 		</collision>
 	</npc>
-	<npc id="34558" level="85" type="Folk" name="Woopa" title="Warehouse Keeper">
+	<npc id="34558" level="85" type="Warehouse" name="Woopa" title="Warehouse Keeper">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>

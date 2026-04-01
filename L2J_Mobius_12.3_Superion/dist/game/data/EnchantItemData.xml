@@ -2660,7 +2660,7 @@
 		<item id="82834" /> <!-- Trinity Dual Blunt Weapons -->
 	</enchant>
 
-	<!-- Giant's Scroll: Enchant L-grade Weapon (Event)-->
+	<!-- Giant's Scroll: Enchant L-grade Weapon (Event) -->
 	<enchant id="82861" targetGrade="L" maxEnchant="10" scrollGroupId="1">
 		<item id="82821" /> <!-- Trinity Shaper -->
 		<item id="82822" /> <!-- Trinity Cutter -->

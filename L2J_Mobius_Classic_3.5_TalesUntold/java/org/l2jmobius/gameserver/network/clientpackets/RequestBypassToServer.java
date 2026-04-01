@@ -59,6 +59,7 @@ public class RequestBypassToServer extends ClientPacket
 {
 	private static final String[] _possibleNonHtmlCommands =
 	{
+		"item_",
 		"_bbs",
 		"bbs",
 		"_mail",

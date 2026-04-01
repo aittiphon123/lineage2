@@ -20,6 +20,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
 import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.script.State;
 
@@ -155,6 +156,7 @@ public class Q10775_InSearchOfAnAncientGiant extends Quest
 		if ((qs != null) && qs.isCond(1))
 		{
 			giveItems(killer, ENERGY_OF_REGENERATION, 1);
+			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			if (getQuestItemsCount(killer, ENERGY_OF_REGENERATION) >= 20)
 			{
 				qs.setCond(2, true);

@@ -1869,7 +1869,7 @@
 			<stat type="pAtk">660</stat>
 			<stat type="mAtk">327</stat>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
@@ -1917,7 +1917,7 @@
 			<stat type="pAtk">738</stat>
 			<stat type="mAtk">327</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>

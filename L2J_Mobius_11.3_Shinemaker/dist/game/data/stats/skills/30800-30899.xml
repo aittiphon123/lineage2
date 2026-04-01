@@ -3202,7 +3202,7 @@
 		<operateType>A2</operateType>
 		<effects>
 			<effect name="ReplaceSkillBySkill">
-				<existingSkillId>30840</existingSkillId> <!-- Vanguard-->
+				<existingSkillId>30840</existingSkillId> <!-- Vanguard -->
 				<replacementSkillId>19437</replacementSkillId> <!-- Vanguard end -->
 			</effect>
 			<effect name="ReplaceSkillBySkill">

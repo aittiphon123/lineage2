@@ -22,6 +22,7 @@ package org.l2jmobius.gameserver.network.clientpackets;
 
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -47,14 +48,14 @@ public class RequestMagicSkillUse extends ClientPacket
 	@Override
 	protected void runImpl()
 	{
-		// Get the current Player of the player
+		// Get the current Player of the player.
 		final Player player = getPlayer();
 		if (player == null)
 		{
 			return;
 		}
 		
-		// Get the level of the used skill
+		// Get the level of the used skill.
 		Skill skill = player.getKnownSkill(_magicId);
 		if (skill == null)
 		{
@@ -90,8 +91,15 @@ public class RequestMagicSkillUse extends ClientPacket
 			return;
 		}
 		
-		player.onActionRequest();
+		// Do not cast non transform skills when transformed.
+		final Transform transform = player.getTransformation();
+		if ((transform != null) && !transform.canUseWeaponStats() && !player.hasTransformSkill(skill))
+		{
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 		
+		player.onActionRequest();
 		player.useMagic(skill, null, _ctrlPressed, _shiftPressed);
 	}
 }

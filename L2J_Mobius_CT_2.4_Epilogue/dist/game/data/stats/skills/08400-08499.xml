@@ -2,37 +2,37 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="8458" levels="1" name="Bracelet Weight Gauge Add">
 		<!-- Increases the weight gauge when a bracelet is equipped. -->
-		<set name="icon" val="icon.skill0150" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLevel" val="1" />
+		<icon>icon.skill0150</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="Buff">
-				<add stat="weightLimit" val="3000" />
+				<add stat="weightLimit">3000</add>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="8464" levels="1" name="Release the Seal on Agathion - Kid Rudolph">
 		<!-- Removes Agathion's seal. -->
-		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLevel" val="85" />
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
 		<effects>
 			<effect name="SummonAgathion">
-				<param npcId="16073" />
+				<npcId>16073</npcId>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="8465" levels="1" name="Notifier">
 		<!-- It's time to return Santa Claus's gift that the Agathions gave you. -->
-		<set name="icon" val="icon.skill5239" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="NONE" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLevel" val="85" />
-		<set name="reuseDelay" val="15000" />
+		<icon>icon.skill5239</icon>
+		<operateType>A1</operateType>
+		<targetType>NONE</targetType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<reuseDelay>15000</reuseDelay>
 	</skill>
 </list>

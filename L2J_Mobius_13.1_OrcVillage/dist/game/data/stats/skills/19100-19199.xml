@@ -453,20 +453,57 @@
 		<!-- Blend in with enemies to avoid detection. If you attack in this state, the entire party becomes exposed. Duration: 60 sec. The skill cooldown is fixed. -->
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A2</operateType>
-		<effectPoint>
-			<value level="1">566</value>
-			<value level="2">590</value>
-			<value level="3">611</value>
-			<value level="4">630</value>
-		</effectPoint>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>60</abnormalTime>
+		<abnormalType>STEALTH</abnormalType>
+		<abnormalVisualEffect>STEALTH</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>566</effectPoint>
 		<hitTime>2000</hitTime>
-		<mpConsume>
-			<value level="1">61</value>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">60</value>
 			<value level="2">63</value>
-			<value level="3">67</value>
-			<value level="4">70</value>
-		</mpConsume>
-		<reuseDelay>4000</reuseDelay>
+			<value level="3">66</value>
+			<value level="4">69</value>
+		</magicLevel>
+		<mpConsume>61</mpConsume>
+		<reuseDelay>120000</reuseDelay>
+		<effects>
+			<effect name="SilentMove" />
+			<effect name="TriggerSkillByMagicType">
+				<!-- Cancel Shadow Move -->
+				<magicTypes>0;1;2;3;4;22</magicTypes>
+				<skillId>7097</skillId> <!-- Cancel Shadow Move -->
+				<skillLevel>1</skillLevel>
+				<chance>100</chance>
+				<targetType>MY_PARTY</targetType>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<!-- Cancel Shadow Move -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>MY_PARTY</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>SWORD,BLUNT</allowWeapons>
+				<skillId>7097</skillId> <!-- Cancel Shadow Move -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<!-- Cancel Shadow Move -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>MY_PARTY</targetType>
+				<skillId>7097</skillId> <!-- Cancel Shadow Move -->
+				<skillLevel>1</skillLevel>
+				<isCritical>false</isCritical>
+				<allowWeapons>SWORD,BLUNT</allowWeapons>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="19119" toLevel="1" name="Noblesse Grace">
 		<!-- Retains target's buffs/ debuffs upon death, except for Noblesse Grace and Lucky Charm. Consumes 1000 Spirit Ore. -->

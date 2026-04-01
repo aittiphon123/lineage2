@@ -22,8 +22,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+import org.l2jmobius.gameserver.data.holders.SayuneEntry;
 import org.l2jmobius.gameserver.data.xml.SayuneData;
-import org.l2jmobius.gameserver.model.SayuneEntry;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.enums.SayuneType;
 import org.l2jmobius.gameserver.network.serverpackets.sayune.ExFlyMove;

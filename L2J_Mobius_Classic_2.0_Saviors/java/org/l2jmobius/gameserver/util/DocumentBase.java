@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.util;
 
@@ -138,12 +142,13 @@ import org.l2jmobius.gameserver.model.item.type.ArmorType;
 import org.l2jmobius.gameserver.model.item.type.WeaponType;
 import org.l2jmobius.gameserver.model.siege.CastleSide;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
+import org.l2jmobius.gameserver.model.skill.EffectScope;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.model.stats.functions.FuncTemplate;
 
 /**
- * @author mkizub
+ * @author mkizub, Mobius
  */
 public abstract class DocumentBase
 {
@@ -196,6 +201,11 @@ public abstract class DocumentBase
 	
 	protected void parseTemplate(Node node, Object template)
 	{
+		parseTemplate(node, template, null);
+	}
+	
+	protected void parseTemplate(Node node, Object template, EffectScope effectScope)
+	{
 		Condition condition = null;
 		Node n = node.getFirstChild();
 		if (n == null)
@@ -239,7 +249,18 @@ public abstract class DocumentBase
 				case "enchant":
 				case "enchanthp":
 				{
-					attachFunc(n, template, name, condition);
+					// Check if we need to handle an alternative format for the "enchant" or "enchanthp" tag.
+					if ((n.getAttributes().getNamedItem("stat") == null) && (n.getAttributes().getNamedItem("val") == null))
+					{
+						// This is the alternative format with element-based stats.
+						processAlternativeFuncFormat(n, template, name, condition);
+					}
+					else
+					{
+						// Standard attribute-based format.
+						attachFunc(n, template, name, condition);
+					}
+					break;
 				}
 			}
 		}
@@ -275,6 +296,80 @@ public abstract class DocumentBase
 		else
 		{
 			throw new RuntimeException("Attaching stat to a non-effect template [" + template + "]!!!");
+		}
+	}
+	
+	/**
+	 * Process the alternative stats format for "share", "enchant", and "enchanthp" tags where stats are defined as element nodes.<br>
+	 * For example: &lt;enchant&gt;&lt;pDef&gt;0&lt;/pDef&gt;&lt;/enchant&gt; instead of &lt;enchant stat="pDef" val="0" /&gt;
+	 * @param n the node containing stat elements
+	 * @param template the template to attach stats to
+	 * @param functionName the function name ("share", "enchant" or "enchanthp")
+	 * @param attachCond the condition for attachment
+	 */
+	protected void processAlternativeFuncFormat(Node n, Object template, String functionName, Condition attachCond)
+	{
+		// Process each child element as a stat.
+		Node statNode = n.getFirstChild();
+		while (statNode != null)
+		{
+			// Skip non-element nodes (like whitespace text nodes).
+			if (statNode.getNodeType() == Node.ELEMENT_NODE)
+			{
+				// The element name is the stat name.
+				String statName = statNode.getNodeName();
+				// The element content is the value.
+				String valueString = statNode.getTextContent().trim();
+				
+				// Convert the stat name to a Stat enum value.
+				try
+				{
+					final Stat stat = Stat.valueOfXml(statName);
+					
+					// Parse the value.
+					double value;
+					if ((valueString.length() > 0) && (valueString.charAt(0) == '#'))
+					{
+						value = Double.parseDouble(getTableValue(valueString));
+					}
+					else
+					{
+						value = Double.parseDouble(valueString);
+					}
+					
+					// Use default order (-1).
+					final int order = -1;
+					
+					// Parse any conditions that might be inside the stat element.
+					final Condition applyCond = parseCondition(statNode.getFirstChild(), template);
+					
+					// Create and attach the function template with the original function name (enchant or enchanthp).
+					final FuncTemplate ft = new FuncTemplate(attachCond, applyCond, functionName, order, stat, value);
+					if (template instanceof ItemTemplate)
+					{
+						((ItemTemplate) template).addFunctionTemplate(ft);
+					}
+					else
+					{
+						throw new RuntimeException("Attaching stat to a non-effect template [" + template + "]!!!");
+					}
+				}
+				catch (NumberFormatException e)
+				{
+					LOGGER.warning("Invalid numeric value: '" + valueString + "' for stat: " + statName + ": " + e.getMessage());
+				}
+				catch (IllegalArgumentException e)
+				{
+					LOGGER.warning("Unknown stat name: " + statName + " in alternative " + functionName + " format: " + e.getMessage());
+				}
+				catch (Exception e)
+				{
+					LOGGER.warning("Error processing alternative " + functionName + " format for " + statName + ": " + e.getMessage());
+				}
+			}
+			
+			// Move to the next stat element.
+			statNode = statNode.getNextSibling();
 		}
 	}
 	
@@ -576,7 +671,7 @@ public abstract class DocumentBase
 				case "clanhall":
 				{
 					final StringTokenizer st = new StringTokenizer(a.getNodeValue(), ",");
-					final ArrayList<Integer> array = new ArrayList<>(st.countTokens());
+					final List<Integer> array = new ArrayList<>(st.countTokens());
 					while (st.hasMoreTokens())
 					{
 						final String item = st.nextToken().trim();
@@ -714,7 +809,7 @@ public abstract class DocumentBase
 				case "haspet":
 				{
 					final StringTokenizer st = new StringTokenizer(a.getNodeValue(), ",");
-					final ArrayList<Integer> array = new ArrayList<>(st.countTokens());
+					final List<Integer> array = new ArrayList<>(st.countTokens());
 					while (st.hasMoreTokens())
 					{
 						final String item = st.nextToken().trim();
@@ -727,7 +822,7 @@ public abstract class DocumentBase
 				case "servitornpcid":
 				{
 					final StringTokenizer st = new StringTokenizer(a.getNodeValue(), ",");
-					final ArrayList<Integer> array = new ArrayList<>(st.countTokens());
+					final List<Integer> array = new ArrayList<>(st.countTokens());
 					while (st.hasMoreTokens())
 					{
 						final String item = st.nextToken().trim();
@@ -1296,15 +1391,33 @@ public abstract class DocumentBase
 		}
 	}
 	
-	protected void setExtractableSkillData(StatSet set, String value)
+	/**
+	 * Parse an XML element with its value directly inside the element Example: <reuseDelay>3000</reuseDelay>
+	 * @param n the XML node to parse
+	 * @param set the StatSet to store the data into
+	 * @param level the current level
+	 */
+	protected void parseElementValue(Node n, StatSet set, Integer level)
 	{
-		set.set("capsuled_items_skill", value);
+		final String name = n.getNodeName().trim();
+		
+		// The value is the text content of the node.
+		final String value = n.getTextContent().trim();
+		final char ch = value.isEmpty() ? ' ' : value.charAt(0);
+		if ((ch == '#') || (ch == '-') || Character.isDigit(ch))
+		{
+			set.set(name, getValue(value, level));
+		}
+		else
+		{
+			set.set(name, value);
+		}
 	}
 	
 	protected String getValue(String value, Object template)
 	{
 		// is it a table?
-		if (value.charAt(0) == '#')
+		if ((value != null) && (value.length() > 0) && (value.charAt(0) == '#'))
 		{
 			if (template instanceof Skill)
 			{

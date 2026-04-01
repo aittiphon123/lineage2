@@ -92,7 +92,6 @@
 			<npc id="30548" x="117378" y="-178914" z="-1120" heading="0" respawnTime="60sec" /> <!-- Nathan - Protector -->
 			<npc id="30545" x="115183" y="-176728" z="-791" heading="20480" respawnTime="60sec" /> <!-- Proton - Protector -->
 			<npc id="30546" x="114969" y="-176752" z="-790" heading="15384" respawnTime="60sec" /> <!-- Dinkey - Protector -->
-			<npc id="30601" x="115632" y="-177996" z="-905" heading="32768" respawnTime="60sec" /> <!-- Newbie Guide -->
 			<npc id="30525" x="115468" y="-182446" z="-1434" heading="32768" respawnTime="60sec" /> <!-- Bronk - Head Blacksmith -->
 			<npc id="30553" x="116852" y="-183595" z="-1566" heading="32768" respawnTime="60sec" /> <!-- Maryse Redbonnet -->
 			<npc id="30540" x="115072" y="-178176" z="-906" heading="0" respawnTime="60sec" /> <!-- Wirphy - Gatekeeper -->

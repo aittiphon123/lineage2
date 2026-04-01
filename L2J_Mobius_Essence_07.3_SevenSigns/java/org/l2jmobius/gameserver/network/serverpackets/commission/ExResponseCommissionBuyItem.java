@@ -17,8 +17,8 @@
 package org.l2jmobius.gameserver.network.serverpackets.commission;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.gameserver.model.ItemInfo;
 import org.l2jmobius.gameserver.model.commission.CommissionItem;
+import org.l2jmobius.gameserver.model.item.holders.ItemInfo;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;

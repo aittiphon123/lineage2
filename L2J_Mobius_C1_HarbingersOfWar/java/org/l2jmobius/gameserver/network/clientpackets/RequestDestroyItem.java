@@ -165,7 +165,7 @@ public class RequestDestroyItem extends ClientPacket
 		
 		if (itemToRemove.isEquipped())
 		{
-			if (itemToRemove.getEnchantLevel() > 0)
+			if (itemToRemove.isEnchanted())
 			{
 				player.sendMessage("Equipment of +" + itemToRemove.getEnchantLevel() + " " + itemToRemove.getName() + " has been removed.");
 			}

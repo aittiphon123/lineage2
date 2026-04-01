@@ -109,7 +109,7 @@ public class GameAssistant extends Script
 	private static final int EX_SOULSHOT = 3247838;
 	
 	// Others
-	private static final String COMMAND_BYPASS = "Quest GameAssistant ";
+	private static final String COMMAND_BYPASS = "Script GameAssistant ";
 	
 	private GameAssistant()
 	{

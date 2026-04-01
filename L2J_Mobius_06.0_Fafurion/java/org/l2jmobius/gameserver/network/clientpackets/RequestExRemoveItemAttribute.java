@@ -82,7 +82,7 @@ public class RequestExRemoveItemAttribute extends ClientPacket
 			player.sendInventoryUpdate(iu);
 			SystemMessage sm;
 			final AttributeType realElement = targetItem.isArmor() ? type.getOpposite() : type;
-			if (targetItem.getEnchantLevel() > 0)
+			if (targetItem.isEnchanted())
 			{
 				if (targetItem.isArmor())
 				{

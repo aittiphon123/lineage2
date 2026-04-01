@@ -44,6 +44,8 @@ import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
+import org.l2jmobius.gameserver.network.enums.MultiEnchantResult;
+import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.ShortcutInit;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.enchant.EnchantResult;
@@ -60,7 +62,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 	private int _useLateAnnounce;
 	private int _slotId;
 	private final Map<Integer, Integer> _itemObjectId = new HashMap<>();
-	private final Map<Integer, String> _result = new HashMap<>();
+	private final Map<Integer, MultiEnchantResult> _result = new HashMap<>();
 	private final Map<Integer, int[]> _successEnchant = new HashMap<>();
 	private final Map<Integer, Integer> _failureEnchant = new HashMap<>();
 	final Map<Integer, Integer> failChallengePointInfoList = new LinkedHashMap<>();
@@ -135,6 +137,8 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 		_itemObjectId.clear();
 		request.setProcessing(true);
 		
+		final InventoryUpdate iu = new InventoryUpdate();
+		
 		for (int slotCounter = 0; slotCounter < slots.length; slotCounter++)
 		{
 			final int i = slots[slotCounter];
@@ -159,11 +163,14 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 				return;
 			}
 			
-			if (player.getInventory().destroyItemByItemId(ItemProcessType.FEE, scroll.getId(), 1, player, enchantItem) == null)
+			final Item destroyedScrollItem = player.getInventory().destroyItemByItemId(ItemProcessType.FEE, scroll.getId(), 1, player, enchantItem);
+			if (destroyedScrollItem == null)
 			{
 				player.removeRequest(request.getClass());
 				return;
 			}
+			
+			iu.addRemovedItem(destroyedScrollItem);
 			
 			// final InventoryUpdate iu = new InventoryUpdate();
 			synchronized (enchantItem)
@@ -183,7 +190,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 					{
 						player.sendPacket(SystemMessageId.AUGMENTATION_REQUIREMENTS_ARE_NOT_FULFILLED);
 						player.removeRequest(request.getClass());
-						_result.put(slots[i - 1], "ERROR");
+						_result.put(slots[i - 1], MultiEnchantResult.ERROR);
 						break;
 					}
 					case SUCCESS:
@@ -193,19 +200,21 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							// Blessed enchant: Enchant value down by 1.
 							player.sendPacket(SystemMessageId.THE_ENCHANT_VALUE_IS_DECREASED_BY_1);
 							enchantItem.setEnchantLevel(enchantItem.getEnchantLevel() - 1);
+							iu.addModifiedItem(enchantItem);
 						}
 						// Increase enchant level only if scroll's base template has chance, some armors can success over +20 but they shouldn't have increased.
 						else if (scrollTemplate.getChance(player, enchantItem) > 0)
 						{
 							enchantItem.setEnchantLevel(enchantItem.getEnchantLevel() + Math.min(Rnd.get(scrollTemplate.getRandomEnchantMin(), scrollTemplate.getRandomEnchantMax()), scrollTemplate.getMaxEnchantLevel()));
 							enchantItem.updateDatabase();
+							iu.addModifiedItem(enchantItem);
 						}
 						
-						_result.put(i, "SUCCESS");
+						_result.put(i, MultiEnchantResult.SUCCESS);
 						if (GeneralConfig.LOG_ITEM_ENCHANTS)
 						{
 							final StringBuilder sb = new StringBuilder();
-							if (enchantItem.getEnchantLevel() > 0)
+							if (enchantItem.isEnchanted())
 							{
 								LOGGER_ENCHANT.info(sb.append("Success, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", +").append(enchantItem.getEnchantLevel()).append(" ").append(enchantItem.getName()).append("(").append(enchantItem.getCount()).append(") [").append(enchantItem.getObjectId()).append("], ").append(scroll.getName()).append("(").append(scroll.getCount()).append(") [").append(scroll.getObjectId()).append("]").toString());
 							}
@@ -226,7 +235,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							if (GeneralConfig.LOG_ITEM_ENCHANTS)
 							{
 								final StringBuilder sb = new StringBuilder();
-								if (enchantItem.getEnchantLevel() > 0)
+								if (enchantItem.isEnchanted())
 								{
 									LOGGER_ENCHANT.info(sb.append("Safe Fail, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", +").append(enchantItem.getEnchantLevel()).append(" ").append(enchantItem.getName()).append("(").append(enchantItem.getCount()).append(") [").append(enchantItem.getObjectId()).append("], ").append(scroll.getName()).append("(").append(scroll.getCount()).append(") [").append(scroll.getObjectId()).append("]").toString());
 								}
@@ -244,19 +253,21 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							{
 								player.sendPacket(SystemMessageId.THE_ENCHANT_VALUE_IS_DECREASED_BY_1);
 								enchantItem.setEnchantLevel(enchantItem.getEnchantLevel() - 1);
+								iu.addModifiedItem(enchantItem);
 							}
 							else // Blessed enchant: Clear enchant value.
 							{
 								player.sendPacket(SystemMessageId.THE_BLESSED_ENCHANT_FAILED_THE_ENCHANT_VALUE_OF_THE_ITEM_BECAME_0);
 								enchantItem.setEnchantLevel(0);
+								iu.addModifiedItem(enchantItem);
 							}
 							
-							_result.put(i, "BLESSED_FAIL");
+							_result.put(i, MultiEnchantResult.BLESSED_FAIL);
 							enchantItem.updateDatabase();
 							if (GeneralConfig.LOG_ITEM_ENCHANTS)
 							{
 								final StringBuilder sb = new StringBuilder();
-								if (enchantItem.getEnchantLevel() > 0)
+								if (enchantItem.isEnchanted())
 								{
 									LOGGER_ENCHANT.info(sb.append("Blessed Fail, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", +").append(enchantItem.getEnchantLevel()).append(" ").append(enchantItem.getName()).append("(").append(enchantItem.getCount()).append(") [").append(enchantItem.getObjectId()).append("], ").append(scroll.getName()).append("(").append(scroll.getCount()).append(") [").append(scroll.getObjectId()).append("]").toString());
 								}
@@ -276,16 +287,17 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							
 							BlackCouponManager.getInstance().createNewRecord(player.getObjectId(), enchantItem.getId(), (short) enchantItem.getEnchantLevel());
 							
-							if (player.getInventory().destroyItem(ItemProcessType.FEE, enchantItem, player, null) == null)
+							final Item removedEnchantItem = player.getInventory().destroyItem(ItemProcessType.FEE, enchantItem, player, null);
+							if (removedEnchantItem == null)
 							{
 								// Unable to destroy item, cheater?
 								PunishmentManager.handleIllegalPlayerAction(player, "Unable to delete item on enchant failure from " + player + ", possible cheater !", GeneralConfig.DEFAULT_PUNISH);
 								player.removeRequest(request.getClass());
-								_result.put(i, "ERROR");
+								_result.put(i, MultiEnchantResult.ERROR);
 								if (GeneralConfig.LOG_ITEM_ENCHANTS)
 								{
 									final StringBuilder sb = new StringBuilder();
-									if (enchantItem.getEnchantLevel() > 0)
+									if (enchantItem.isEnchanted())
 									{
 										LOGGER_ENCHANT.info(sb.append("Unable to destroy, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", +").append(enchantItem.getEnchantLevel()).append(" ").append(enchantItem.getName()).append("(").append(enchantItem.getCount()).append(") [").append(enchantItem.getObjectId()).append("], ").append(scroll.getName()).append("(").append(scroll.getCount()).append(") [").append(scroll.getObjectId()).append("]").toString());
 									}
@@ -296,6 +308,8 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 								}
 								return;
 							}
+							
+							iu.addRemovedItem(removedEnchantItem);
 							
 							World.getInstance().removeObject(enchantItem);
 							
@@ -310,12 +324,24 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							if (count > 0)
 							{
 								crystals = player.getInventory().addItem(ItemProcessType.COMPENSATE, crystalId, count, player, enchantItem);
+								
 								final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 								sm.addItemName(crystals);
 								sm.addLong(count);
 								player.sendPacket(sm);
-								ItemHolder itemHolder = new ItemHolder(crystalId, count);
+								
+								final ItemHolder itemHolder = new ItemHolder(crystalId, count);
 								_failureReward.put(_failureReward.size() + 1, itemHolder);
+								
+								// TODO: Verify if we just need to addModifiedItem with no check.
+								if (player.getInventory().getInventoryItemCount(crystalId, -1) > count)
+								{
+									iu.addModifiedItem(crystals);
+								}
+								else
+								{
+									iu.addNewItem(crystals);
+								}
 							}
 							
 							// if (crystals != null)
@@ -325,15 +351,15 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							
 							if ((crystalId == 0) || (count == 0))
 							{
-								ItemHolder itemHolder = new ItemHolder(0, 0);
+								final ItemHolder itemHolder = new ItemHolder(0, 0);
 								_failureReward.put(_failureReward.size() + 1, itemHolder);
-								_result.put(i, "NO_CRYSTAL");
+								_result.put(i, MultiEnchantResult.NO_CRYSTAL);
 							}
 							else
 							{
-								ItemHolder itemHolder = new ItemHolder(0, 0);
+								final ItemHolder itemHolder = new ItemHolder(0, 0);
 								_failureReward.put(_failureReward.size() + 1, itemHolder);
-								_result.put(i, "FAIL");
+								_result.put(i, MultiEnchantResult.FAIL);
 							}
 							
 							final List<ItemChanceHolder> destroyRewards = ItemCrystallizationData.getInstance().getRewardItems(enchantItem, enchantItem.getEnchantLevel());
@@ -362,7 +388,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							if (GeneralConfig.LOG_ITEM_ENCHANTS)
 							{
 								final StringBuilder sb = new StringBuilder();
-								if (enchantItem.getEnchantLevel() > 0)
+								if (enchantItem.isEnchanted())
 								{
 									LOGGER_ENCHANT.info(sb.append("Fail, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", +").append(enchantItem.getEnchantLevel()).append(" ").append(enchantItem.getName()).append("(").append(enchantItem.getCount()).append(") [").append(enchantItem.getObjectId()).append("], ").append(scroll.getName()).append("(").append(scroll.getCount()).append(") [").append(scroll.getObjectId()).append("]").toString());
 								}
@@ -381,14 +407,14 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 		for (int slotCounter = 0; slotCounter < slots.length; slotCounter++)
 		{
 			final int i = slots[slotCounter];
-			if (_result.get(i).equals("SUCCESS"))
+			if (_result.get(i) == MultiEnchantResult.SUCCESS)
 			{
-				int[] intArray = new int[2];
+				final int[] intArray = new int[2];
 				intArray[0] = request.getMultiEnchantingItemsBySlot(i);
 				intArray[1] = player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(i)).getEnchantLevel();
 				_successEnchant.put(i, intArray);
 			}
-			else if (_result.get(i).equals("NO_CRYSTAL") || _result.get(i).equals("FAIL"))
+			else if ((_result.get(i) == MultiEnchantResult.NO_CRYSTAL) || (_result.get(i) == MultiEnchantResult.FAIL))
 			{
 				_failureEnchant.put(i, request.getMultiEnchantingItemsBySlot(i));
 				request.changeMultiEnchantingItemsBySlot(i, 0);
@@ -408,7 +434,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 		
 		request.setProcessing(false);
 		
-		player.sendItemList();
+		player.sendInventoryUpdate(iu);
 		player.broadcastUserInfo();
 		player.sendPacket(new ChangedEnchantTargetItemProbabilityList(player, true));
 		

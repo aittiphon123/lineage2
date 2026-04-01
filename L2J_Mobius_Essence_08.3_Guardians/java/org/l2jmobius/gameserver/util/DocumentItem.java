@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.util;
 
@@ -28,17 +32,17 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 import org.l2jmobius.commons.util.IXmlReader;
-import org.l2jmobius.gameserver.model.ExtractableProduct;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.conditions.Condition;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.enums.ItemSkillType;
+import org.l2jmobius.gameserver.model.item.holders.ExtractableProduct;
 import org.l2jmobius.gameserver.model.item.holders.ItemSkillHolder;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.model.stats.functions.FuncTemplate;
 
 /**
- * @author mkizub, JIV
+ * @author mkizub, JIV, Mobius
  */
 public class DocumentItem extends DocumentBase implements IXmlReader
 {
@@ -128,6 +132,35 @@ public class DocumentItem extends DocumentBase implements IXmlReader
 		final Node first = n.getFirstChild();
 		for (n = first; n != null; n = n.getNextSibling())
 		{
+			// Check if this is a direct element value node (like <icon>value</icon>).
+			if ((n.getNodeType() == Node.ELEMENT_NODE) && (n.getFirstChild() != null) && (n.getAttributes().getLength() == 0))
+			{
+				// First check if this node has any child ELEMENT nodes (not just text/whitespace).
+				boolean hasChildElements = false;
+				for (Node child = n.getFirstChild(); child != null; child = child.getNextSibling())
+				{
+					if (child.getNodeType() == Node.ELEMENT_NODE)
+					{
+						hasChildElements = true;
+						break;
+					}
+				}
+				
+				// Only parse as element value if it has NO child elements AND has text content.
+				if (!hasChildElements && (n.getFirstChild().getNodeType() == Node.TEXT_NODE))
+				{
+					// Parse element value, regardless of whether the item is created or not.
+					parseElementValue(n, _currentItem.set, 1);
+					
+					// If the item is already created, update it with the modified StatSet.
+					if (_currentItem.item != null)
+					{
+						_currentItem.item.set(_currentItem.set);
+					}
+					continue;
+				}
+			}
+			
 			if ("table".equalsIgnoreCase(n.getNodeName()))
 			{
 				if (_currentItem.item != null)

@@ -6,7 +6,7 @@
 		<npc id="30425" x="-83414" y="151924" z="-3127" heading="57344" respawnDelay="60" /> <!-- Neti -->
 		<npc id="35393" x="-83954" y="151814" z="-3127" heading="49152" respawnDelay="60" /> <!-- Faolan -->
 		<npc id="35392" x="-84596" y="152253" z="-3125" heading="53248" respawnDelay="60" /> <!-- Bremmer -->
-		<npc id="31092" x="-84745" y="151732" z="-3128" heading="50000" respawnDelay="60" /> <!-- Black Marketeer of Mammon-->
+		<npc id="31092" x="-84745" y="151732" z="-3128" heading="50000" respawnDelay="60" /> <!-- Black Marketeer of Mammon -->
 		<npc id="31688" x="-84816" y="151056" z="-3127" heading="0" respawnDelay="60" /> <!-- Grand Olympiad Manager -->
 		<npc id="31690" x="-84816" y="151008" z="-3127" heading="0" respawnDelay="60" /> <!-- Monument of Heroes -->
 		<npc id="30731" x="-84624" y="150832" z="-3129" heading="0" respawnDelay="60" /> <!-- Martin -->
@@ -29,7 +29,7 @@
 		<npc id="30369" x="-81864" y="149502" z="-3125" heading="49152" respawnDelay="60" /> <!-- Baenedes -->
 		<npc id="30990" x="-80785" y="149735" z="-3040" heading="23000" respawnDelay="5" /> <!-- Lottery Ticket Seller -->
 		<npc id="30320" x="-80752" y="149776" z="-3044" heading="20480" respawnDelay="60" /> <!-- Richlin -->
-		<npc id="31078" x="-80555" y="150387" z="-3040" heading="45000" respawnDelay="60" /> <!-- Prist of Dawn-->
+		<npc id="31078" x="-80555" y="150387" z="-3040" heading="45000" respawnDelay="60" /> <!-- Prist of Dawn -->
 		<npc id="35399" x="-79803" y="150032" z="-3044" heading="32768" respawnDelay="60" /> <!-- Luce -->
 		<npc id="35398" x="-79357" y="150232" z="-3037" heading="40000" respawnDelay="60" /> <!-- Ruben -->
 		<npc id="30391" x="-80430" y="150694" z="-3040" heading="24576" respawnDelay="60" /> <!-- Parina -->

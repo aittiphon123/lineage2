@@ -322,15 +322,15 @@
 	</option>
 	<option id="35880" name="Collection: rune_castle_guardian_choice">
 		<!-- Received M. Skill Critical Damage -1% -->
-		<passive_skill id="35931" level="1" /> <!-- Rune Castle Guardian's Choice  -->
+		<passive_skill id="35931" level="1" /> <!-- Rune Castle Guardian's Choice -->
 	</option>
 	<option id="35881" name="Collection: giran_castle_guardian_choice">
 		<!-- Received Critical Damage from basic attacks -1.3% -->
-		<passive_skill id="35932" level="1" /> <!-- Giran Castle Guardian's Choice  -->
+		<passive_skill id="35932" level="1" /> <!-- Giran Castle Guardian's Choice -->
 	</option>
 	<option id="35882" name="Collection: aden_castle_guardian_choice">
 		<!-- Received Critical Damage from basic attacks -1% -->
-		<passive_skill id="35933" level="1" /> <!-- Aden Castle Guardian's Choice  -->
+		<passive_skill id="35933" level="1" /> <!-- Aden Castle Guardian's Choice -->
 	</option>
 	<option id="35883" name="Collection: guardian_gift">
 		<!-- Fixed Damage Resistance +1% -->

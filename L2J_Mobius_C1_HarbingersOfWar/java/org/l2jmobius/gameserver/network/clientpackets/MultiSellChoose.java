@@ -53,7 +53,7 @@ public class MultiSellChoose extends ClientPacket
 	{
 		_listId = readInt();
 		_entryId = readInt();
-		_amount = readInt();
+		_amount = 1; // C1 has no amount.
 	}
 	
 	@Override
@@ -324,7 +324,7 @@ public class MultiSellChoose extends ClientPacket
 										
 										// get item with the LOWEST enchantment level from the inventory...
 										// +0 is lowest by default...
-										if (itemToTake.getEnchantLevel() > 0)
+										if (itemToTake.isEnchanted())
 										{
 											for (Item item : inventoryContents)
 											{

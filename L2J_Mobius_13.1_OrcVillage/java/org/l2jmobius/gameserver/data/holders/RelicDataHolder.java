@@ -26,14 +26,16 @@ package org.l2jmobius.gameserver.data.holders;
 public class RelicDataHolder
 {
 	private final int _relicId;
+	private final String _name;
 	private final int _grade;
 	private final int _skillId;
 	private final int _enchantLevel;
 	private final int _skillLevel;
 	
-	public RelicDataHolder(int relicId, int grade, int skillId, int enchantLevel, int skillLevel)
+	public RelicDataHolder(int relicId, String name, int grade, int skillId, int enchantLevel, int skillLevel)
 	{
 		_relicId = relicId;
+		_name = name;
 		_grade = grade;
 		_skillId = skillId;
 		_enchantLevel = enchantLevel;
@@ -43,6 +45,11 @@ public class RelicDataHolder
 	public int getRelicId()
 	{
 		return _relicId;
+	}
+	
+	public String getName()
+	{
+		return _name;
 	}
 	
 	public int getGrade()

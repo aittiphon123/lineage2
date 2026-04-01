@@ -172,6 +172,7 @@ public class GeneralConfig
 	public static boolean AUTO_PLAY_ATTACK_ACTION;
 	public static boolean RESUME_AUTO_PLAY;
 	public static boolean ENABLE_AUTO_ASSIST;
+	public static Set<Integer> IGNORED_AUTO_PICK_ITEMS = new HashSet<>();
 	public static String SUBJUGATION_TOPIC_BODY;
 	public static String SUBJUGATION_TOPIC_HEADER;
 	public static int SHARING_LOCATION_COST;
@@ -335,6 +336,15 @@ public class GeneralConfig
 		AUTO_PLAY_ATTACK_ACTION = config.getBoolean("AutoPlayAttackAction", true);
 		RESUME_AUTO_PLAY = config.getBoolean("ResumeAutoPlay", false);
 		ENABLE_AUTO_ASSIST = config.getBoolean("AssistLeader", false);
+		IGNORED_AUTO_PICK_ITEMS.clear();
+		final String ignoredAutoPickItems = config.getString("IgnoredAutoPickItems", "").trim();
+		if (!ignoredAutoPickItems.isEmpty())
+		{
+			for (String itemIdString : ignoredAutoPickItems.split(","))
+			{
+				IGNORED_AUTO_PICK_ITEMS.add(Integer.parseInt(itemIdString.trim()));
+			}
+		}
 		SUBJUGATION_TOPIC_BODY = config.getString("SubjugationTopicBody", "Reward for being in the top of the best players in clearing the lands of Aden");
 		SUBJUGATION_TOPIC_HEADER = config.getString("SubjugationTopicHeader", "Purge reward");
 		SHARING_LOCATION_COST = config.getInt("ShareLocationLcoinCost", 50);

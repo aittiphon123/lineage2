@@ -120,7 +120,7 @@ public class ExRelicsCollectionUpdate extends ServerPacket
 			if ((neededRelicCollectionId != 0) && !_player.isRelicRegistered(existingRelic.getRelicId(), existingRelic.getRelicLevel()))
 			{
 				// Check if collection is complete and give skills.
-				if (_player.isCompleteCollection(neededRelicCollectionId))
+				if (_player.isCompleteRelicCollection(neededRelicCollectionId))
 				{
 					// Announce Collection Complete.
 					_player.sendPacket(new ExRelicsCollectionCompleteAnnounce(neededRelicCollectionId));
@@ -138,7 +138,7 @@ public class ExRelicsCollectionUpdate extends ServerPacket
 					
 					buffer.writeInt(1); // Collection array size.
 					buffer.writeInt(neededRelicCollectionId); // Collection id.
-					buffer.writeByte(_player.isCompleteCollection(neededRelicCollectionId)); // Collection is complete?
+					buffer.writeByte(_player.isCompleteRelicCollection(neededRelicCollectionId)); // Collection is complete?
 					buffer.writeInt(1); // Registered relics in collection size.
 					buffer.writeInt(1); // Array position.
 					buffer.writeInt(_relicId); // Relic id.

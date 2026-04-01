@@ -30,6 +30,7 @@ import org.l2jmobius.gameserver.model.actor.enums.player.RelicGrade;
 public class RelicDataHolder
 {
 	private final int _relicId;
+	private final String _name;
 	private final int _parentRelicId;
 	private final RelicGrade _grade;
 	private final List<RelicEnchantHolder> _enchantHolder;
@@ -37,9 +38,10 @@ public class RelicDataHolder
 	private final float _compoundChanceModifier;
 	private final float _compoundUpGradeChanceModifier;
 	
-	public RelicDataHolder(int relicId, int parentRelicId, RelicGrade grade, long summonChance, List<RelicEnchantHolder> enchantHolder, float compoundChanceModifier, float compoundUpGradeChanceModifier)
+	public RelicDataHolder(int relicId, String name, int parentRelicId, RelicGrade grade, long summonChance, List<RelicEnchantHolder> enchantHolder, float compoundChanceModifier, float compoundUpGradeChanceModifier)
 	{
 		_relicId = relicId;
+		_name = name;
 		_parentRelicId = parentRelicId;
 		_grade = grade;
 		_summonChance = summonChance;
@@ -51,6 +53,11 @@ public class RelicDataHolder
 	public int getRelicId()
 	{
 		return _relicId;
+	}
+	
+	public String getName()
+	{
+		return _name;
 	}
 	
 	public int getParentRelicId()

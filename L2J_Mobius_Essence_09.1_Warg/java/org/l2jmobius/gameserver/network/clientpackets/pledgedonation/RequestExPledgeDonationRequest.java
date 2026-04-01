@@ -22,7 +22,6 @@ package org.l2jmobius.gameserver.network.clientpackets.pledgedonation;
 
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.managers.MailManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
@@ -31,6 +30,7 @@ import org.l2jmobius.gameserver.model.itemcontainer.Mail;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.pledgedonation.ExPledgeDonationInfo;
 import org.l2jmobius.gameserver.network.serverpackets.pledgedonation.ExPledgeDonationRequest;
 
@@ -135,7 +135,7 @@ public class RequestExPledgeDonationRequest extends ClientPacket
 	
 	private void sendMail(int charId, int amount, String donator)
 	{
-		final Message msg = new Message(charId, "Clan Rewards for " + donator + " Donation", "The entire clan receives rewards for " + donator + " donation.", MailType.PLEDGE_DONATION_CRITICAL_SUCCESS);
+		final MailMessage msg = new MailMessage(charId, "Clan Rewards for " + donator + " Donation", "The entire clan receives rewards for " + donator + " donation.", MailType.PLEDGE_DONATION_CRITICAL_SUCCESS);
 		final Mail attachment = msg.createAttachments();
 		attachment.addItem(ItemProcessType.REWARD, 95672, amount, null, donator); // Honor Coin Pouch
 		MailManager.getInstance().sendMessage(msg);

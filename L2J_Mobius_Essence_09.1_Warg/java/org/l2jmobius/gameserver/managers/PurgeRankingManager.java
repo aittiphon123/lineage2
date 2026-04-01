@@ -38,7 +38,6 @@ import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -46,6 +45,7 @@ import org.l2jmobius.gameserver.model.actor.holders.player.PlayerPurgeHolder;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Mail;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.subjugation.ExSubjugationSidebar;
 
 /**
@@ -87,7 +87,7 @@ public class PurgeRankingManager
 					for (Entry<String, Integer> purgeData : getTop5(category).entrySet())
 					{
 						final int charId = CharInfoTable.getInstance().getIdByName(purgeData.getKey());
-						final Message msg = new Message(charId, GeneralConfig.SUBJUGATION_TOPIC_HEADER, GeneralConfig.SUBJUGATION_TOPIC_BODY, MailType.PURGE_REWARD);
+						final MailMessage msg = new MailMessage(charId, GeneralConfig.SUBJUGATION_TOPIC_HEADER, GeneralConfig.SUBJUGATION_TOPIC_BODY, MailType.PURGE_REWARD);
 						final Mail attachment = msg.createAttachments();
 						int reward;
 						switch (category)

@@ -39,11 +39,10 @@ import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.cache.PaperdollCache;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.config.custom.TransmogConfig;
+import org.l2jmobius.gameserver.data.holders.ArmorSet;
 import org.l2jmobius.gameserver.data.xml.AppearanceItemData;
 import org.l2jmobius.gameserver.data.xml.ArmorSetData;
 import org.l2jmobius.gameserver.managers.ItemManager;
-import org.l2jmobius.gameserver.model.ArmorSet;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -64,6 +63,7 @@ import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.EtcItemType;
 import org.l2jmobius.gameserver.model.item.type.ItemType;
 import org.l2jmobius.gameserver.model.item.type.WeaponType;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillConditionScope;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
@@ -471,7 +471,7 @@ public abstract class Inventory extends ItemContainer
 			}
 			
 			// Apply skill, if weapon have "skills on unequip"
-			it.forEachSkill(ItemSkillType.ON_UNEQUIP, holder -> holder.getSkill().activateSkill(player, player));
+			it.forEachSkill(ItemSkillType.ON_UNEQUIP, holder -> holder.getSkill().activateSkill(player, player, item));
 			
 			if (update)
 			{
@@ -701,7 +701,7 @@ public abstract class Inventory extends ItemContainer
 			}
 			
 			// Apply skill, if weapon have "skills on equip"
-			item.getTemplate().forEachSkill(ItemSkillType.ON_EQUIP, holder -> holder.getSkill().activateSkill(player, player));
+			item.getTemplate().forEachSkill(ItemSkillType.ON_EQUIP, holder -> holder.getSkill().activateSkill(player, player, item));
 			
 			if (!addedSkills.isEmpty())
 			{

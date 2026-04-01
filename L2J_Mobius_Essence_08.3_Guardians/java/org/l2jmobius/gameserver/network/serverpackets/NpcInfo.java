@@ -188,7 +188,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 			addComponentType(NpcInfoType.SUMMONED);
 		}
 		
-		if (npc.getClanId() > 0)
+		if ((npc.getClanId() > 0) && npc.isTargetable() && npc.isShowName())
 		{
 			final Clan clan = ClanTable.getInstance().getClan(npc.getClanId());
 			if ((clan != null) && ((npc instanceof Doppelganger) || (npc.getTemplate().getId() == 34156 /* Clan Stronghold Device */) || (!npc.isMonster() && npc.isInsideZone(ZoneId.PEACE))))
@@ -526,12 +526,11 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		
 		if (containsMask(NpcInfoType.VISUAL_STATE))
 		{
-			buffer.writeInt(_statusMask); // Main writeByte, Essence writeInt.
+			buffer.writeByte(_statusMask);
 		}
 		
 		if (containsMask(NpcInfoType.ABNORMALS))
 		{
-			buffer.writeInt(0); // 493
 			final Team team = (GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null) ? _npc.getTeam() : Team.NONE;
 			buffer.writeShort(_abnormalVisualEffects.size() + (_npc.isInvisible() ? 1 : 0) + (team != Team.NONE ? 1 : 0));
 			for (AbnormalVisualEffect abnormalVisualEffect : _abnormalVisualEffects)

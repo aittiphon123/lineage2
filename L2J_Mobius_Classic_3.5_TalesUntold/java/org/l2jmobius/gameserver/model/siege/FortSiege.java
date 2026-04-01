@@ -44,10 +44,6 @@ import org.l2jmobius.gameserver.data.xml.SpawnData;
 import org.l2jmobius.gameserver.managers.FortManager;
 import org.l2jmobius.gameserver.managers.FortSiegeManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
-import org.l2jmobius.gameserver.model.CombatFlag;
-import org.l2jmobius.gameserver.model.FortSiegeSpawn;
-import org.l2jmobius.gameserver.model.SiegeClan;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -68,6 +64,7 @@ import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.spawns.NpcSpawnTemplate;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.model.spawns.SpawnGroup;
 import org.l2jmobius.gameserver.model.spawns.SpawnTemplate;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
@@ -142,7 +139,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 					{
 						for (Npc npc : nst.getSpawnedNpcs())
 						{
-							Spawn spawn = npc.getSpawn();
+							final Spawn spawn = npc.getSpawn();
 							if (spawn != null)
 							{
 								spawn.stopRespawn();
@@ -157,7 +154,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 					{
 						for (Npc npc : nst.getSpawnedNpcs())
 						{
-							Spawn spawn = npc.getSpawn();
+							final Spawn spawn = npc.getSpawn();
 							if (spawn != null)
 							{
 								spawn.stopRespawn();
@@ -172,7 +169,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 					{
 						for (Npc npc : nst.getSpawnedNpcs())
 						{
-							Spawn spawn = npc.getSpawn();
+							final Spawn spawn = npc.getSpawn();
 							if (spawn != null)
 							{
 								spawn.stopRespawn();
@@ -668,7 +665,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 					{
 						for (Npc npc : nst.getSpawnedNpcs())
 						{
-							Spawn spawn = npc.getSpawn();
+							final Spawn spawn = npc.getSpawn();
 							if (spawn != null)
 							{
 								spawn.setRespawnDelay(5);
@@ -683,7 +680,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 					{
 						for (Npc npc : nst.getSpawnedNpcs())
 						{
-							Spawn spawn = npc.getSpawn();
+							final Spawn spawn = npc.getSpawn();
 							if (spawn != null)
 							{
 								spawn.setRespawnDelay(5, 10);
@@ -700,7 +697,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 					{
 						for (Npc npc : nst.getSpawnedNpcs())
 						{
-							Spawn spawn = npc.getSpawn();
+							final Spawn spawn = npc.getSpawn();
 							if (spawn != null)
 							{
 								spawn.setRespawnDelay(5);
@@ -718,7 +715,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 				{
 					for (Npc npc : nst.getSpawnedNpcs())
 					{
-						Spawn spawn = npc.getSpawn();
+						final Spawn spawn = npc.getSpawn();
 						if (spawn != null)
 						{
 							spawn.setRespawnDelay(160);
@@ -1010,7 +1007,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 			final Spawn spawn = instance.getSpawn();
 			if (spawn != null)
 			{
-				for (FortSiegeSpawn spawn2 : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
+				for (FortSpawnHolder spawn2 : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
 				{
 					if (spawn2.getId() == spawn.getId())
 					{
@@ -1538,7 +1535,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 		try
 		{
 			_commanders.clear();
-			for (FortSiegeSpawn _sp : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
+			for (FortSpawnHolder _sp : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
 			{
 				final Spawn spawnDat = new Spawn(_sp.getId());
 				spawnDat.setAmount(1);

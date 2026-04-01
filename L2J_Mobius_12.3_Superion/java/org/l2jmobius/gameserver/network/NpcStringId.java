@@ -25388,7 +25388,7 @@ public class NpcStringId
 	@ClientString(id = 1032341, message = "When you use the teleporter, you can go to the Ruins of Ye Sagira.")
 	public static NpcStringId WHEN_YOU_USE_THE_TELEPORTER_YOU_CAN_GO_TO_THE_RUINS_OF_YE_SAGIRA;
 	
-	@ClientString(id = 1032342, message = "Have you been to Ruins of Ye Sagira?� You have to go at least once.")
+	@ClientString(id = 1032342, message = "Have you been to Ruins of Ye Sagira?' You have to go at least once.")
 	public static NpcStringId HAVE_YOU_BEEN_TO_RUINS_OF_YE_SAGIRA_YOU_HAVE_TO_GO_AT_LEAST_ONCE;
 	
 	@ClientString(id = 1032343, message = "Training Ground is located straight ahead.")
@@ -46490,7 +46490,7 @@ public class NpcStringId
 	@ClientString(id = 10338008, message = "Free me... And I promise you the power of Giants!")
 	public static NpcStringId FREE_ME_AND_I_PROMISE_YOU_THE_POWER_OF_GIANTS;
 	
-	@ClientString(id = 10338009, message = "Fight for me...� The true leader of all the races!")
+	@ClientString(id = 10338009, message = "Fight for me...' The true leader of all the races!")
 	public static NpcStringId FIGHT_FOR_ME_THE_TRUE_LEADER_OF_ALL_THE_RACES;
 	
 	@ClientString(id = 10338010, message = "You may use Scroll of Afterlife from Hermuncus to Awaken.")

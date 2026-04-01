@@ -24,9 +24,9 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2jmobius.gameserver.config.GrandBossConfig;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
@@ -320,7 +320,7 @@ public class Ramona extends Script
 							}
 							else if (creature.isPlayer())
 							{
-								creature.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(creature, TeleportWhereType.TOWN));
+								creature.teleToLocation(MapRegionData.getInstance().getTeleToLocation(creature, TeleportWhereType.TOWN));
 							}
 						}
 					}

@@ -2,7 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/hennaPatternPotential.xsd">
 	<enchantFees>
 		<fee step="1">
-			<requiredItem id="97147" count="1" adenaFee="10000" /> <!-- Hidden Power Booster-->
+			<requiredItem id="97147" count="1" adenaFee="10000" /> <!-- Hidden Power Booster -->
 			<dailyCount>20</dailyCount>
 			<enchantExp count="1" chance="60" />
 			<enchantExp count="2" chance="23" />

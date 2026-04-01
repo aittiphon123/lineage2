@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.model.events.holders.actor.creature;
 
-import org.l2jmobius.gameserver.model.ElementalSpirit;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.player.ElementalSpirit;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.IBaseEvent;
 

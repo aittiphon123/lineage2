@@ -844,7 +844,15 @@
 	</skill>
 	<skill id="29787" toLevel="1" name="Japan Collection E/P_32">
 		<!-- Acquired XP/ SP +20% -->
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="29788" toLevel="1" name="Japan Collection E/P_33">
 		<!-- Damage +5%, received damage -5%, P./ M. Skill Power +10%, acquired XP/ SP +30% -->

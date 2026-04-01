@@ -194,7 +194,7 @@
 	</option>
 	<option id="36548" name="Dragon Slayer">
 		<!-- All Critical Damage, Power of basic attacks and P./ M. skills +5%, received damage -10% -->
-		<passive_skill id="36337" level="1" /> <!-- Dragon Slayer-->
+		<passive_skill id="36337" level="1" /> <!-- Dragon Slayer -->
 	</option>
 	<option id="36549" name="Goddess' Blessing">
 		<!-- Power of basic attacks and P./ M. skills, P. Def., M. Def. +10%, acquired XP/ SP +10% -->

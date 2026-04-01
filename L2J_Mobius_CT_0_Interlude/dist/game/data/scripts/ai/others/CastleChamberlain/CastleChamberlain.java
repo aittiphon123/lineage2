@@ -28,7 +28,6 @@ import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.xml.TeleporterData;
 import org.l2jmobius.gameserver.managers.CastleManorManager;
-import org.l2jmobius.gameserver.model.SeedProduction;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportType;
@@ -47,6 +46,7 @@ import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.sevensigns.SevenSigns;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.Castle.CastleFunction;
+import org.l2jmobius.gameserver.model.siege.manor.SeedProduction;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.teleporter.TeleportHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -1355,10 +1355,10 @@ public class CastleChamberlain extends Script
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id({35100, 35142, 35184, 35226, 35274,	35316, 35363, 35509, 35555})
 	// @formatter:on
-	public void onNpcManorBypass(OnNpcManorBypass evt)
+	public void onNpcManorBypass(OnNpcManorBypass event)
 	{
-		final Player player = evt.getPlayer();
-		final Npc npc = evt.getTarget();
+		final Player player = event.getPlayer();
+		final Npc npc = event.getTarget();
 		if (isOwner(player, npc))
 		{
 			final CastleManorManager manor = CastleManorManager.getInstance();
@@ -1368,17 +1368,17 @@ public class CastleChamberlain extends Script
 				return;
 			}
 			
-			final int castleId = (evt.getManorId() == -1) ? npc.getCastle().getResidenceId() : evt.getManorId();
-			switch (evt.getRequest())
+			final int castleId = (event.getManorId() == -1) ? npc.getCastle().getResidenceId() : event.getManorId();
+			switch (event.getRequest())
 			{
 				case 3: // Seed info
 				{
-					player.sendPacket(new ExShowSeedInfo(castleId, evt.isNextPeriod(), true));
+					player.sendPacket(new ExShowSeedInfo(castleId, event.isNextPeriod(), true));
 					break;
 				}
 				case 4: // Crop info
 				{
-					player.sendPacket(new ExShowCropInfo(castleId, evt.isNextPeriod(), true));
+					player.sendPacket(new ExShowCropInfo(castleId, event.isNextPeriod(), true));
 					break;
 				}
 				case 5: // Basic info
@@ -1410,7 +1410,7 @@ public class CastleChamberlain extends Script
 				}
 				default:
 				{
-					LOGGER.warning(getClass().getSimpleName() + ": " + player + " send unknown request id " + evt.getRequest() + "!");
+					LOGGER.warning(getClass().getSimpleName() + ": " + player + " send unknown request id " + event.getRequest() + "!");
 				}
 			}
 		}

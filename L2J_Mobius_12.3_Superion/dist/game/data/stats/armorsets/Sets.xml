@@ -8891,7 +8891,7 @@
 		<skills>
 			<skill id="36583" level="4" minimumPieces="5" /> <!-- Set Effect - Supremacy Robe 5 pcs.(Robe) -->
 			<skill id="36584" level="1" minimumPieces="5" minimumEnchant="6" /> <!-- L-Grade Armor Set Enchantment + 6 -->
-			<skill id="36584" level="2" minimumPieces="5" minimumEnchant="7" /> <!-- L-Grade Armor Set Enchantment + 7  -->
+			<skill id="36584" level="2" minimumPieces="5" minimumEnchant="7" /> <!-- L-Grade Armor Set Enchantment + 7 -->
 			<skill id="36584" level="3" minimumPieces="5" minimumEnchant="8" /> <!-- L-Grade Armor Set Enchantment + 8 -->
 			<skill id="36584" level="4" minimumPieces="5" minimumEnchant="9" /> <!-- L-Grade Armor Set Enchantment + 9 -->
 			<skill id="36584" level="5" minimumPieces="5" minimumEnchant="10" /> <!-- L-Grade Armor Set Enchantment + 10 -->

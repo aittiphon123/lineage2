@@ -743,7 +743,7 @@
 		<node X="48400" Y="49391" />
 		<node X="48365" Y="50345" />
 	</zone>
-	<zone name="sea_of_spores_spawn_peace" type="PeaceZone" shape="NPoly" minZ="-3872" maxZ="-3218"> <!-- Sea of Spores --> 
+	<zone name="sea_of_spores_spawn_peace" type="PeaceZone" shape="NPoly" minZ="-3872" maxZ="-3218"> <!-- Sea of Spores -->
 		<node X="64203" Y="26281" />
 		<node X="64263" Y="25958" />
 		<node X="64232" Y="25738" />

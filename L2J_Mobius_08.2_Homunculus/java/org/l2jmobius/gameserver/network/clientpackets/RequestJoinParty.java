@@ -24,10 +24,10 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.FakePlayerData;
-import org.l2jmobius.gameserver.model.BlockList;
-import org.l2jmobius.gameserver.model.ClientSettings;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.player.BlockList;
+import org.l2jmobius.gameserver.model.actor.holders.player.ClientSettings;
 import org.l2jmobius.gameserver.model.actor.request.PartyRequest;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.groups.PartyDistributionType;
@@ -244,7 +244,7 @@ public class RequestJoinParty extends ClientPacket
 	{
 		final Party party = requestor.getParty();
 		
-		// summary of ppl already in party and ppl that get invitation
+		// Summary of people already in party and people that get invitation.
 		if (!party.isLeader(requestor))
 		{
 			requestor.sendPacket(SystemMessageId.ONLY_THE_LEADER_CAN_GIVE_OUT_INVITATIONS);
@@ -304,9 +304,9 @@ public class RequestJoinParty extends ClientPacket
 	
 	private boolean checkInviteByIgnoredSettings(Player target, Player requestor)
 	{
-		ClientSettings targetClientSettings = target.getClientSettings();
+		final ClientSettings targetClientSettings = target.getClientSettings();
 		boolean condition = targetClientSettings.isPartyRequestRestrictedFromOthers();
-		boolean clanCheck = (target.getClan() != null) && (requestor.getClan() != null) && (target.getClan() == requestor.getClan());
+		final boolean clanCheck = (target.getClan() != null) && (requestor.getClan() != null) && (target.getClan() == requestor.getClan());
 		if (condition && ((!targetClientSettings.isPartyRequestRestrictedFromFriends() && target.getFriendList().contains(requestor.getObjectId())) || (!targetClientSettings.isPartyRequestRestrictedFromClan() && clanCheck)))
 		{
 			condition = false;

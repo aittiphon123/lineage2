@@ -26,7 +26,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2jmobius.gameserver.ai.Intention;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -35,6 +34,7 @@ import org.l2jmobius.gameserver.model.actor.instance.TamedBeast;
 import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 

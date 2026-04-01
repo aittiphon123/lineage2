@@ -1321,10 +1321,10 @@ public class CastleChamberlain extends Script
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id({35100, 35142, 35184, 35226, 35274,	35316, 35363, 35509, 35555})
 	// @formatter:on
-	public void onNpcManorBypass(OnNpcManorBypass evt)
+	public void onNpcManorBypass(OnNpcManorBypass event)
 	{
-		final Player player = evt.getPlayer();
-		final Npc npc = evt.getTarget();
+		final Player player = event.getPlayer();
+		final Npc npc = event.getTarget();
 		if (isOwner(player, npc))
 		{
 			player.sendMessage("he manor system is currently under maintenance.");

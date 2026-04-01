@@ -22,9 +22,9 @@ package org.l2jmobius.gameserver.network.serverpackets;
 
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.data.xml.RecipeData;
-import org.l2jmobius.gameserver.model.RecipeList;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.stat.PlayerStat;
+import org.l2jmobius.gameserver.model.item.recipe.RecipeList;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.PacketLogger;

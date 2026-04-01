@@ -147,7 +147,7 @@ public class RequestAlchemyTryMixCube extends ClientPacket
 				return;
 			}
 			
-			if ((itemInstance.getEnchantLevel() > 0) || itemInstance.isAugmented())
+			if (itemInstance.isEnchanted() || itemInstance.isAugmented())
 			{
 				player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_COMBINED);
 				player.sendPacket(new ExTryMixCube(TryMixCubeType.FAIL_ITEM_WRONG));

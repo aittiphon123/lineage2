@@ -34,7 +34,6 @@ import java.util.logging.Logger;
 import org.w3c.dom.Document;
 
 import org.l2jmobius.commons.util.IXmlReader;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.item.EtcItem;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.options.OptionDataCategory;
@@ -42,6 +41,7 @@ import org.l2jmobius.gameserver.model.options.OptionDataGroup;
 import org.l2jmobius.gameserver.model.options.Options;
 import org.l2jmobius.gameserver.model.options.Variation;
 import org.l2jmobius.gameserver.model.options.VariationFee;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 
 /**
  * @author Pere, Mobius

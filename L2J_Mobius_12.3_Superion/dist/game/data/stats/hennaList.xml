@@ -26712,6 +26712,7 @@
 		<wear count="1" fee="0" />
 		<cancel count="1" fee="0" />
 		<skill id="29508" level="7" />
+		<skill id="29510" level="1" />
 		<classId>148</classId> <!-- Sigel Pheonix Knight -->
 		<classId>149</classId> <!-- Sigel Hell Knight -->
 		<classId>150</classId> <!-- Sigel Eva's Templar -->
@@ -26756,6 +26757,7 @@
 		<wear count="1" fee="0" />
 		<cancel count="1" fee="0" />
 		<skill id="29508" level="8" />
+		<skill id="29510" level="2" />
 		<classId>148</classId> <!-- Sigel Pheonix Knight -->
 		<classId>149</classId> <!-- Sigel Hell Knight -->
 		<classId>150</classId> <!-- Sigel Eva's Templar -->
@@ -26800,6 +26802,7 @@
 		<wear count="1" fee="0" />
 		<cancel count="1" fee="0" />
 		<skill id="29508" level="9" />
+		<skill id="29510" level="3" />
 		<classId>148</classId> <!-- Sigel Pheonix Knight -->
 		<classId>149</classId> <!-- Sigel Hell Knight -->
 		<classId>150</classId> <!-- Sigel Eva's Templar -->
@@ -26844,6 +26847,8 @@
 		<wear count="1" fee="0" />
 		<cancel count="1" fee="0" />
 		<skill id="29508" level="10" />
+		<skill id="29510" level="4" />
+		<skill id="29511" level="1" />
 		<classId>148</classId> <!-- Sigel Pheonix Knight -->
 		<classId>149</classId> <!-- Sigel Hell Knight -->
 		<classId>150</classId> <!-- Sigel Eva's Templar -->

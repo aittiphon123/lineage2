@@ -34,7 +34,7 @@ public class ExRequestViewMultiEnchantResult extends ClientPacket
 	@Override
 	protected void readImpl()
 	{
-		readByte();
+		// readByte();
 	}
 	
 	@Override

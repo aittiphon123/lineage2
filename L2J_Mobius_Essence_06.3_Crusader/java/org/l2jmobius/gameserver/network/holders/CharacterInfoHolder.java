@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.holders;
 
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.itemcontainer.PlayerInventory;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 
 /**

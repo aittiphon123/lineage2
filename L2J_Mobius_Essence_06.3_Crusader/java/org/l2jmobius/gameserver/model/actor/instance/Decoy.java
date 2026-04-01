@@ -37,7 +37,7 @@ import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.network.serverpackets.CharInfo;
+import org.l2jmobius.gameserver.network.serverpackets.ExCharInfo;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 import org.l2jmobius.gameserver.taskmanagers.DecayTaskManager;
 
@@ -172,7 +172,7 @@ public class Decoy extends Creature
 	public void onSpawn()
 	{
 		super.onSpawn();
-		sendPacket(new CharInfo(this, false));
+		sendPacket(new ExCharInfo(this, false));
 	}
 	
 	@Override
@@ -182,7 +182,7 @@ public class Decoy extends Creature
 		{
 			if (isVisibleFor(player))
 			{
-				player.sendPacket(new CharInfo(this, isInvisible() && player.isGM()));
+				player.sendPacket(new ExCharInfo(this, isInvisible() && player.isGM()));
 			}
 		});
 	}
@@ -265,7 +265,7 @@ public class Decoy extends Creature
 	@Override
 	public void sendInfo(Player player)
 	{
-		player.sendPacket(new CharInfo(this, isInvisible() && player.isGM()));
+		player.sendPacket(new ExCharInfo(this, isInvisible() && player.isGM()));
 	}
 	
 	@Override

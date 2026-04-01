@@ -9,6 +9,16 @@
 		<effectPoint>-100</effectPoint>
 		<hitTime>1000</hitTime>
 		<isMagic>6</isMagic>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="PhysicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62201" toLevel="1" name="Morhi's Chaotic Jump Attack">
 		<!-- Flux Attack -->

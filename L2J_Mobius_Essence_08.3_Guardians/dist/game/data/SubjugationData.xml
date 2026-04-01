@@ -163,6 +163,6 @@
 		<npc id="22457" points="400" /> <!-- Morgos command -->
 		<npc id="22465" points="400" /> <!-- bloodhound -->
 		<npc id="22453" points="400" /> <!-- Morgos guard -->
-		<npc id="22456" points="400" /> <!-- Morgos wizard-->
+		<npc id="22456" points="400" /> <!-- Morgos wizard -->
 	</purge>
 </list>

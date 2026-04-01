@@ -460,7 +460,7 @@ public class DailyResetManager
 				VipManager.getInstance().checkVipTierExpiration(player);
 			}
 			
-			player.getAccountVariables().restoreMe();
+			player.getAccountVariables().remove(AccountVariables.VIP_ITEM_BOUGHT);
 		}
 	}
 	

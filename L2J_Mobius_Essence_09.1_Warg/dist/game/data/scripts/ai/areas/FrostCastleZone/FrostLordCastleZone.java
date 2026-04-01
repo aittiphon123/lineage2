@@ -117,7 +117,7 @@ public class FrostLordCastleZone extends Script
 	
 	private static Npc _teleportchargedCrystal = null;
 	
-	private static final String SCRIPT_BYPASS = "Quest FrostLordCastleZone ";
+	private static final String SCRIPT_BYPASS = "Script FrostLordCastleZone ";
 	
 	private FrostLordCastleZone()
 	{

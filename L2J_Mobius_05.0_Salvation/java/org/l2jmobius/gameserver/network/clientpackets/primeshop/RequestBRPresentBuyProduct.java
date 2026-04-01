@@ -24,7 +24,6 @@ import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.xml.PrimeShopData;
 import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.PrimeShopRequest;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
@@ -35,6 +34,7 @@ import org.l2jmobius.gameserver.model.primeshop.PrimeShopItem;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.enums.ExBrProductReplyType;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.primeshop.ExBRBuyProduct;
 import org.l2jmobius.gameserver.network.serverpackets.primeshop.ExBRGamePoint;
 
@@ -127,7 +127,7 @@ public class RequestBRPresentBuyProduct extends ClientPacket
 			player.sendPacket(new ExBRBuyProduct(ExBrProductReplyType.SUCCESS));
 			player.sendPacket(new ExBRGamePoint(player));
 			
-			final Message mail = new Message(receiverId, _mailTitle, _mailBody, MailType.PRIME_SHOP_GIFT);
+			final MailMessage mail = new MailMessage(receiverId, _mailTitle, _mailBody, MailType.PRIME_SHOP_GIFT);
 			final Mail attachement = mail.createAttachments();
 			for (PrimeShopItem subItem : item.getItems())
 			{

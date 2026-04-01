@@ -6,8 +6,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1157" />
@@ -19,13 +17,13 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
 	</item>
 	<item id="301" type="Weapon" name="Scorpion">
@@ -34,8 +32,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1912" />
@@ -47,13 +43,13 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<set stat="pAtk" val="144" />
-			<set stat="mAtk" val="78" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">144</stat>
+			<stat type="mAtk">78</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
 	</item>
 	<item id="302" type="Weapon" name="Body Slasher">
@@ -62,8 +58,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="916" />
@@ -75,13 +69,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
 	</item>
 	<item id="303" type="Weapon" name="Widow Maker">
@@ -90,8 +84,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1912" />
@@ -103,13 +95,13 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<set stat="pAtk" val="144" />
-			<set stat="mAtk" val="78" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">144</stat>
+			<stat type="mAtk">78</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
 	</item>
 	<item id="304" type="Weapon" name="Orcish Halberd">
@@ -117,8 +109,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1704" />
@@ -130,13 +120,13 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<set stat="pAtk" val="219" />
-			<set stat="mAtk" val="109" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">219</stat>
+			<stat type="mAtk">109</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
 	</item>
 	<item id="305" type="Weapon" name="Tallum Glaive">
@@ -145,8 +135,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2160" />
@@ -158,13 +146,13 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
 	</item>
 	<item id="306" type="Weapon" name="Dragon Claw Axe">
@@ -172,8 +160,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1765" />
@@ -185,13 +171,13 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
 	</item>
 	<item id="307" type="Weapon" name="Aurakyria Lance">
@@ -199,8 +185,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="S" />
@@ -213,13 +197,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<stats>
-			<set stat="pAtk" val="269" />
-			<set stat="mAtk" val="128" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">269</stat>
+			<stat type="mAtk">128</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
 	</item>
 	<item id="308" type="Weapon" name="Buffalo's Horn">
@@ -227,8 +211,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -238,10 +220,12 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="6" />
-			<set stat="mAtk" val="8" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">6</stat>
+			<stat type="mAtk">8</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="309" type="Weapon" name="Tears of Eva">
@@ -249,8 +233,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -260,10 +242,12 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="19" />
-			<set stat="mAtk" val="22" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">19</stat>
+			<stat type="mAtk">22</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="310" type="Weapon" name="Relic of The Saints">
@@ -271,8 +255,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -282,10 +264,12 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="19" />
-			<set stat="mAtk" val="22" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">19</stat>
+			<stat type="mAtk">22</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="311" type="Weapon" name="Crucifix of Blessing">
@@ -293,8 +277,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -304,10 +286,12 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="25" />
-			<set stat="mAtk" val="28" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">25</stat>
+			<stat type="mAtk">28</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="312" type="Weapon" name="Branch of Life">
@@ -315,8 +299,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="743" />
@@ -329,12 +311,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="32" />
-			<set stat="mAtk" val="35" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">32</stat>
+			<stat type="mAtk">35</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="313" type="Weapon" name="Temptation of Abyss">
@@ -342,8 +324,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="743" />
@@ -356,12 +336,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="32" />
-			<set stat="mAtk" val="35" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">32</stat>
+			<stat type="mAtk">35</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="314" type="Weapon" name="Proof of Revenge">
@@ -369,8 +349,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="743" />
@@ -383,12 +361,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="32" />
-			<set stat="mAtk" val="35" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">32</stat>
+			<stat type="mAtk">35</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="315" type="Weapon" name="Divine Tome">
@@ -396,8 +374,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1170" />
@@ -410,12 +386,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="41" />
-			<set stat="mAtk" val="43" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="316" type="Weapon" name="Blood of Saints">
@@ -423,8 +399,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1758" />
@@ -437,12 +411,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="51" />
-			<set stat="mAtk" val="52" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">52</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="317" type="Weapon" name="Tome of Blood">
@@ -450,8 +424,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1758" />
@@ -464,12 +436,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="51" />
-			<set stat="mAtk" val="52" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">52</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="318" type="Weapon" name="Crucifix of Blood">
@@ -477,8 +449,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2545" />
@@ -491,12 +461,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="63" />
-			<set stat="mAtk" val="63" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">63</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="319" type="Weapon" name="Eye of Infinity">
@@ -504,8 +474,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2545" />
@@ -518,12 +486,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="63" />
-			<set stat="mAtk" val="63" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">63</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="320" type="Weapon" name="Blue Crystal Skull">
@@ -531,8 +499,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2763" />
@@ -545,12 +511,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="67" />
-			<set stat="mAtk" val="66" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">67</stat>
+			<stat type="mAtk">66</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="321" type="Weapon" name="Demon Fangs">
@@ -558,8 +524,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2763" />
@@ -572,12 +536,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="67" />
-			<set stat="mAtk" val="66" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">67</stat>
+			<stat type="mAtk">66</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="322" type="Weapon" name="Vajra Wands">
@@ -585,8 +549,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3272" />
@@ -599,12 +561,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="74" />
-			<set stat="mAtk" val="72" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">74</stat>
+			<stat type="mAtk">72</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="323" type="Weapon" name="Ancient Reagent">
@@ -612,8 +574,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="3272" />
@@ -626,12 +586,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="74" />
-			<set stat="mAtk" val="72" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">74</stat>
+			<stat type="mAtk">72</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="324" type="Weapon" name="Tears of Fairy">
@@ -639,8 +599,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1148" />
@@ -653,12 +611,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="98" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">98</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="325" type="Weapon" name="Horn of Glory">
@@ -666,8 +624,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1148" />
@@ -680,12 +636,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="98" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">98</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="326" type="Weapon" name="Heathen's Book">
@@ -693,8 +649,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1720" />
@@ -707,12 +661,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="101" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="327" type="Weapon" name="Hex Doll">
@@ -720,8 +674,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1720" />
@@ -734,12 +686,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="101" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="328" type="Weapon" name="Candle of Wisdom">
@@ -747,8 +699,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2452" />
@@ -761,12 +711,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="111" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="329" type="Weapon" name="Blessed Branch">
@@ -774,8 +724,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2452" />
@@ -788,12 +736,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="111" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="330" type="Weapon" name="Phoenix Feather">
@@ -801,8 +749,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2452" />
@@ -815,12 +761,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="111" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="331" type="Weapon" name="Cerberus Eye">
@@ -828,8 +774,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2452" />
@@ -842,12 +786,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="111" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="332" type="Weapon" name="Scroll of Destruction">
@@ -855,8 +799,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2452" />
@@ -869,12 +811,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="111" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="333" type="Weapon" name="Claws of Black Dragon">
@@ -882,8 +824,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2452" />
@@ -896,12 +836,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="111" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="334" type="Weapon" name="Three Eyed Crow's Feather">
@@ -909,8 +849,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2452" />
@@ -923,12 +861,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="111" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="335" type="Weapon" name="Soul Crystal">
@@ -936,8 +874,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1746" />
@@ -950,12 +886,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="155" />
-			<set stat="mAtk" val="132" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="336" type="Weapon" name="Scroll of Mana">
@@ -963,8 +899,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2440" />
@@ -977,12 +911,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="337" type="Weapon" name="Scroll of Massacre">
@@ -990,8 +924,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2440" />
@@ -1004,12 +936,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="338" type="Weapon" name="Wyvern's Skull">
@@ -1017,8 +949,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2440" />
@@ -1031,12 +961,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="339" type="Weapon" name="Blood Crystal">
@@ -1044,8 +974,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2440" />
@@ -1058,12 +986,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="340" type="Weapon" name="Unicorn's Horn">
@@ -1071,8 +999,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2440" />
@@ -1085,12 +1011,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="341" type="Weapon" name="Forgotten Tome">
@@ -1098,8 +1024,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2160" />
@@ -1112,12 +1036,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="152" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">152</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="342" type="Weapon" name="Enchanted Flute">
@@ -1125,8 +1049,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2160" />
@@ -1139,12 +1061,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="152" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">152</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="343" type="Weapon" name="Headless Arrow">
@@ -1152,8 +1074,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2160" />
@@ -1166,12 +1086,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="152" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">152</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="344" type="Weapon" name="Proof of Overlord">
@@ -1179,8 +1099,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2160" />
@@ -1193,12 +1111,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="152" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">152</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="345" type="Weapon" name="Deathbringer Sword">
@@ -1206,8 +1124,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2160" />
@@ -1220,12 +1136,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="152" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">152</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="346" type="Weapon" name="Tears of Fallen Angel">
@@ -1233,8 +1149,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="1765" />
@@ -1247,12 +1161,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<stats>
-			<set stat="pAtk" val="201" />
-			<set stat="mAtk" val="162" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">201</stat>
+			<stat type="mAtk">162</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="347" type="Armor" name="Ring Mail Breastplate">
@@ -1271,8 +1185,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="77" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">77</stat>
 		</stats>
 	</item>
 	<item id="348" type="Armor" name="Scale Mail">
@@ -1291,8 +1204,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">87</stat>
 		</stats>
 	</item>
 	<item id="349" type="Armor" name="Compound Scale Mail">
@@ -1311,8 +1223,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="95" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">95</stat>
 		</stats>
 	</item>
 	<item id="350" type="Armor" name="Dwarven Scale Mail">
@@ -1331,8 +1242,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="95" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">95</stat>
 		</stats>
 	</item>
 	<item id="351" type="Armor" name="Blast Plate">
@@ -1351,8 +1261,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="97" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">97</stat>
 		</stats>
 	</item>
 	<item id="352" type="Armor" name="Brigandine Tunic">
@@ -1372,8 +1281,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="103" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">103</stat>
 		</stats>
 	</item>
 	<item id="353" type="Armor" name="Half Plate Armor">
@@ -1392,8 +1300,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="111" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">111</stat>
 		</stats>
 	</item>
 	<item id="354" type="Armor" name="Chain Mail Shirt">
@@ -1413,8 +1320,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="120" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">120</stat>
 		</stats>
 	</item>
 	<item id="355" type="Armor" name="Dwarven Chain Mail Shirt">
@@ -1433,8 +1339,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="129" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">129</stat>
 		</stats>
 	</item>
 	<item id="356" type="Armor" name="Full Plate Armor">
@@ -1454,8 +1359,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="239" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">239</stat>
 		</stats>
 	</item>
 	<item id="357" type="Armor" name="Zubei's Breastplate">
@@ -1475,8 +1379,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="157" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">157</stat>
 		</stats>
 	</item>
 	<item id="358" type="Armor" name="Wolf Breastplate">
@@ -1496,8 +1399,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="166" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">166</stat>
 		</stats>
 	</item>
 	<item id="359" type="Armor" name="Shining Dragon Armor">
@@ -1513,8 +1415,7 @@
 		<set name="price" val="6770000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="301" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">301</stat>
 		</stats>
 	</item>
 	<item id="360" type="Armor" name="Armor of Victory">
@@ -1530,8 +1431,7 @@
 		<set name="price" val="3220000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="175" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">175</stat>
 		</stats>
 	</item>
 	<item id="361" type="Armor" name="Breastplate of Valor">
@@ -1547,8 +1447,7 @@
 		<set name="price" val="4630000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="185" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">185</stat>
 		</stats>
 	</item>
 	<item id="362" type="Armor" name="Glorious Armor">
@@ -1564,8 +1463,7 @@
 		<set name="price" val="4710000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="284" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">284</stat>
 		</stats>
 	</item>
 	<item id="363" type="Armor" name="Red Flame Armor">
@@ -1581,8 +1479,7 @@
 		<set name="price" val="6770000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="301" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">301</stat>
 		</stats>
 	</item>
 	<item id="364" type="Armor" name="Elven Crystal Breastplate">
@@ -1598,8 +1495,7 @@
 		<set name="price" val="3220000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="175" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">175</stat>
 		</stats>
 	</item>
 	<item id="365" type="Armor" name="Dark Crystal Breastplate">
@@ -1619,8 +1515,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="171" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">171</stat>
 		</stats>
 	</item>
 	<item id="366" type="Armor" name="Implosion Armor">
@@ -1636,8 +1531,7 @@
 		<set name="price" val="4710000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="284" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">284</stat>
 		</stats>
 	</item>
 	<item id="367" type="Armor" name="Dark Dragon Armor">
@@ -1653,8 +1547,7 @@
 		<set name="price" val="6770000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="301" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">301</stat>
 		</stats>
 	</item>
 	<item id="368" type="Armor" name="Elven Vagian Armor">
@@ -1670,8 +1563,7 @@
 		<set name="price" val="4710000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="284" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">284</stat>
 		</stats>
 	</item>
 	<item id="369" type="Armor" name="Dark Vagian Armor">
@@ -1687,8 +1579,7 @@
 		<set name="price" val="6770000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="301" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">301</stat>
 		</stats>
 	</item>
 	<item id="370" type="Armor" name="Complete Plate Armor">
@@ -1704,8 +1595,7 @@
 		<set name="price" val="4710000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="284" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">284</stat>
 		</stats>
 	</item>
 	<item id="371" type="Armor" name="Hell Plate">
@@ -1721,8 +1611,7 @@
 		<set name="price" val="6770000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="301" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">301</stat>
 		</stats>
 	</item>
 	<item id="372" type="Armor" name="Art of Plate">
@@ -1738,8 +1627,7 @@
 		<set name="price" val="4710000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="284" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">284</stat>
 		</stats>
 	</item>
 	<item id="373" type="Armor" name="Masterpiece Armor">
@@ -1755,8 +1643,7 @@
 		<set name="price" val="6770000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="301" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">301</stat>
 		</stats>
 	</item>
 	<item id="374" type="Armor" name="Armor of Nightmare">
@@ -1776,8 +1663,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="293" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">293</stat>
 		</stats>
 	</item>
 	<item id="375" type="Armor" name="Dragon Scale Mail">
@@ -1796,8 +1682,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<stats>
-			<add order="0" stat="pDef" val="198" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">198</stat>
 		</stats>
 	</item>
 	<item id="376" type="Armor" name="Iron Plate Gaiters">
@@ -1816,8 +1701,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="48" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">48</stat>
 		</stats>
 	</item>
 	<item id="377" type="Armor" name="Scale Gaiters">
@@ -1836,8 +1720,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="54" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">54</stat>
 		</stats>
 	</item>
 	<item id="378" type="Armor" name="Compound Scale Gaiters">
@@ -1856,8 +1739,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">61</stat>
 		</stats>
 	</item>
 	<item id="379" type="Armor" name="Dwarven Scale Gaiters">
@@ -1876,8 +1758,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">61</stat>
 		</stats>
 	</item>
 	<item id="380" type="Armor" name="Plate Gaiters">
@@ -1896,8 +1777,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="70" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">70</stat>
 		</stats>
 	</item>
 	<item id="381" type="Armor" name="Chain Gaiters">
@@ -1917,8 +1797,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="75" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">75</stat>
 		</stats>
 	</item>
 	<item id="382" type="Armor" name="Dwarven Chain Gaiters">
@@ -1937,8 +1816,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="80" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">80</stat>
 		</stats>
 	</item>
 	<item id="383" type="Armor" name="Zubei's Gaiters">
@@ -1958,8 +1836,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="98" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">98</stat>
 		</stats>
 	</item>
 	<item id="384" type="Armor" name="Wolf Gaiters">
@@ -1975,8 +1852,7 @@
 		<set name="price" val="2010000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="109" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">109</stat>
 		</stats>
 	</item>
 	<item id="385" type="Armor" name="Gaiters of Victory">
@@ -1992,8 +1868,7 @@
 		<set name="price" val="2010000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="109" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">109</stat>
 		</stats>
 	</item>
 	<item id="386" type="Armor" name="Gaiters of Valor">
@@ -2009,8 +1884,7 @@
 		<set name="price" val="2890000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="116" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">116</stat>
 		</stats>
 	</item>
 	<item id="387" type="Armor" name="Elven Crystal Gaiters">
@@ -2026,8 +1900,7 @@
 		<set name="price" val="2010000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="109" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">109</stat>
 		</stats>
 	</item>
 	<item id="388" type="Armor" name="Dark Crystal Gaiters">
@@ -2047,8 +1920,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</conditions>
 		<stats>
-			<add order="0" stat="pDef" val="107" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">107</stat>
 		</stats>
 	</item>
 	<item id="389" type="Armor" name="Dragon Scale Gaiters">
@@ -2067,8 +1939,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<stats>
-			<add order="0" stat="pDef" val="122" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">122</stat>
 		</stats>
 	</item>
 	<item id="390" type="Armor" name="Cotton Shirt">
@@ -2081,7 +1952,7 @@
 		<set name="weight" val="4770" />
 		<set name="price" val="20300" />
 		<stats>
-			<add order="0" stat="pDef" val="50" />
+			<stat type="pDef">50</stat>
 		</stats>
 	</item>
 	<item id="391" type="Armor" name="Puma Skin Shirt">
@@ -2097,8 +1968,7 @@
 		<set name="price" val="62600" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="58" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">58</stat>
 		</stats>
 	</item>
 	<item id="392" type="Armor" name="Lion Skin Shirt">
@@ -2114,8 +1984,7 @@
 		<set name="price" val="99900" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="65" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">65</stat>
 		</stats>
 	</item>
 	<item id="393" type="Armor" name="Mithril Banded Mail">
@@ -2131,8 +2000,7 @@
 		<set name="price" val="152000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="73" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">73</stat>
 		</stats>
 	</item>
 	<item id="394" type="Armor" name="Reinforced Leather Shirt">
@@ -2149,8 +2017,7 @@
 		<set name="price" val="152000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="73" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">73</stat>
 		</stats>
 	</item>
 	<item id="395" type="Armor" name="Manticore Skin Shirt">
@@ -2167,8 +2034,7 @@
 		<set name="price" val="224000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="77" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">77</stat>
 		</stats>
 	</item>
 	<item id="396" type="Armor" name="Salamander Skin Mail">
@@ -2185,8 +2051,7 @@
 		<set name="price" val="429000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="136" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">136</stat>
 		</stats>
 	</item>
 	<item id="397" type="Armor" name="Mithril Shirt">
@@ -2203,8 +2068,7 @@
 		<set name="price" val="379000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="90" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">90</stat>
 		</stats>
 	</item>
 	<item id="398" type="Armor" name="Plated Leather">
@@ -2221,8 +2085,7 @@
 		<set name="price" val="446000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="94" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">94</stat>
 		</stats>
 	</item>
 	<item id="399" type="Armor" name="Rind Leather Armor">
@@ -2238,8 +2101,7 @@
 		<set name="price" val="483000" />
 		<set name="enchant_enabled" val="true" />
 		<stats>
-			<add order="0" stat="pDef" val="97" />
-			<enchant stat="pDef" val="0" />
+			<stat type="pDef">97</stat>
 		</stats>
 	</item>
 </list>

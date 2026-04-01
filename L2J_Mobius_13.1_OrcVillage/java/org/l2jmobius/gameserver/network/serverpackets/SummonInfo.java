@@ -424,12 +424,11 @@ public class SummonInfo extends AbstractMaskPacket<NpcInfoType>
 		
 		if (containsMask(NpcInfoType.VISUAL_STATE))
 		{
-			buffer.writeByte(_statusMask); // Main writeByte, Essence writeInt.
+			buffer.writeByte(_statusMask);
 		}
 		
 		if (containsMask(NpcInfoType.ABNORMALS))
 		{
-			buffer.writeInt(0); // 493
 			final Team team = (GeneralConfig.BLUE_TEAM_ABNORMAL_EFFECT != null) && (GeneralConfig.RED_TEAM_ABNORMAL_EFFECT != null) ? _summon.getTeam() : Team.NONE;
 			buffer.writeShort(_abnormalVisualEffects.size() + (_summon.isInvisible() ? 1 : 0) + (team != Team.NONE ? 1 : 0));
 			for (AbnormalVisualEffect abnormalVisualEffect : _abnormalVisualEffects)

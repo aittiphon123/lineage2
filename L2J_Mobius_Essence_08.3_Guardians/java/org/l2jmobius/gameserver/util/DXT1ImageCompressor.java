@@ -147,7 +147,7 @@ public class DXT1ImageCompressor
 		buffer.putInt(0); // Reserved 2 not used
 	}
 	
-	private void extractBlock(final BufferedImage image, int x, int y, final int[] buffer, final TextureBlock block)
+	private void extractBlock(BufferedImage image, int x, int y, int[] buffer, TextureBlock block)
 	{
 		final int blockWidth = Math.min(image.getWidth() - x, 4);
 		final int blockHeight = Math.min(image.getHeight() - y, 4);

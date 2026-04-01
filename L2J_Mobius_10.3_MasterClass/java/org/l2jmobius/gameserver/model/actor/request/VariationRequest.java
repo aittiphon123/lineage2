@@ -20,9 +20,9 @@
  */
 package org.l2jmobius.gameserver.model.actor.request;
 
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 
 /**
  * @author Index

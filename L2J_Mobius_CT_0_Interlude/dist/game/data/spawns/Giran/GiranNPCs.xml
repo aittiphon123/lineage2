@@ -32,7 +32,7 @@
 		<npc id="30645" x="84274" y="143740" z="-3403" heading="32768" respawnDelay="60" /> <!-- Martien -->
 		<npc id="30125" x="83705" y="141439" z="-3530" heading="49152" respawnDelay="60" /> <!-- Belton -->
 		<npc id="30126" x="84064" y="141438" z="-3526" heading="49152" respawnDelay="60" /> <!-- Rath -->
-		<npc id="31806" x="83680" y="143616" z="-3408" heading="16500" respawnDelay="60" /> <!-- Adventure Guildsman-->
+		<npc id="31806" x="83680" y="143616" z="-3408" heading="16500" respawnDelay="60" /> <!-- Adventure Guildsman -->
 		<npc id="35456" x="83680" y="145456" z="-3408" heading="0" respawnDelay="60" /> <!-- Stewart -->
 		<npc id="35455" x="83568" y="145264" z="-3388" heading="32000" respawnDelay="60" /> <!-- Bianca -->
 		<npc id="30124" x="81608" y="143464" z="-3528" heading="49152" respawnDelay="60" /> <!-- Zerome -->
@@ -48,7 +48,7 @@
 		<npc id="31205" x="81100" y="145840" z="-3531" heading="50491" respawnDelay="5" /> <!-- Katz -->
 		<npc id="30097" x="79599" y="145522" z="-3494" heading="0" respawnDelay="60" /> <!-- Galladucci -->
 		<npc id="30098" x="79599" y="145457" z="-3494" heading="0" respawnDelay="60" /> <!-- Alexandria -->
-		<npc id="31807" x="82768" y="146320" z="-3536" heading="33000" respawnDelay="60" /> <!-- Adventure Guildsman-->
+		<npc id="31807" x="82768" y="146320" z="-3536" heading="33000" respawnDelay="60" /> <!-- Adventure Guildsman -->
 		<npc id="31031" x="82272" y="147072" z="-3514" heading="16384" respawnDelay="5" /> <!-- Broadcasting Tower -->
 		<npc id="30103" x="83264" y="146602" z="-3464" heading="32768" respawnDelay="60" /> <!-- Valkon -->
 		<npc id="30511" x="83263" y="146667" z="-3464" heading="32768" respawnDelay="60" /> <!-- Gesto -->

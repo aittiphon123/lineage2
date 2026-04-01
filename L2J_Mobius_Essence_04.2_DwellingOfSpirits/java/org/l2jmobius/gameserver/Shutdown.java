@@ -505,7 +505,7 @@ public class Shutdown extends Thread
 		
 		// Schemes save.
 		SchemeBufferTable.getInstance().saveSchemes();
-		LOGGER.info("SchemeBufferTable data has been saved.");
+		LOGGER.info("SchemeBufferTable: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		
 		// Save items on ground before closing
 		if (GeneralConfig.SAVE_DROPPED_ITEM)

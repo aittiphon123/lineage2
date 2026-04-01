@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.managers;
 
@@ -43,32 +47,40 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.config.GeneralConfig;
-import org.l2jmobius.gameserver.model.CropProcure;
-import org.l2jmobius.gameserver.model.Seed;
-import org.l2jmobius.gameserver.model.SeedProduction;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.clan.ClanMember;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.ItemContainer;
 import org.l2jmobius.gameserver.model.siege.Castle;
-import org.l2jmobius.gameserver.model.siege.ManorMode;
+import org.l2jmobius.gameserver.model.siege.manor.CropProcure;
+import org.l2jmobius.gameserver.model.siege.manor.ManorMode;
+import org.l2jmobius.gameserver.model.siege.manor.Seed;
+import org.l2jmobius.gameserver.model.siege.manor.SeedProduction;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 
 /**
  * Castle manor system.
- * @author malyelfik
+ * @author malyelfik, Stayway
  */
 public class CastleManorManager implements IXmlReader
 {
 	private static final Logger LOGGER = Logger.getLogger(CastleManorManager.class.getName());
 	
+	// SQL queries
 	private static final String INSERT_PRODUCT = "INSERT INTO castle_manor_production VALUES (?, ?, ?, ?, ?, ?)";
 	private static final String INSERT_CROP = "INSERT INTO castle_manor_procure VALUES (?, ?, ?, ?, ?, ?, ?)";
 	
+	// Current manor status
 	private ManorMode _mode = ManorMode.APPROVED;
+	
+	// Temporary date
 	private Calendar _nextModeChange = null;
-	private final Map<Integer, Seed> _seeds = new HashMap<>();
+	
+	// Seeds holder
+	private static final Map<Integer, Seed> _seeds = new HashMap<>();
+	
+	// Manor period settings
 	private final Map<Integer, List<CropProcure>> _procure = new HashMap<>();
 	private final Map<Integer, List<CropProcure>> _procureNext = new HashMap<>();
 	private final Map<Integer, List<SeedProduction>> _production = new HashMap<>();
@@ -91,9 +103,13 @@ public class CastleManorManager implements IXmlReader
 			{
 				_mode = ManorMode.MODIFIABLE;
 			}
-			else if ((hour == GeneralConfig.ALT_MANOR_REFRESH_TIME) && ((min >= GeneralConfig.ALT_MANOR_REFRESH_MIN) && (min < maintenanceMin)))
+			else if ((hour == GeneralConfig.ALT_MANOR_REFRESH_TIME) && (min >= GeneralConfig.ALT_MANOR_REFRESH_MIN) && (min < maintenanceMin))
 			{
 				_mode = ManorMode.MAINTENANCE;
+			}
+			else
+			{
+				_mode = ManorMode.APPROVED;
 			}
 			
 			// Schedule the mode change task.
@@ -108,6 +124,7 @@ public class CastleManorManager implements IXmlReader
 		else
 		{
 			_mode = ManorMode.DISABLED;
+			_nextModeChange = null;
 			LOGGER.info(getClass().getSimpleName() + ": Manor system is deactivated.");
 		}
 	}
@@ -262,7 +279,7 @@ public class CastleManorManager implements IXmlReader
 				_nextModeChange.set(Calendar.HOUR_OF_DAY, GeneralConfig.ALT_MANOR_APPROVE_TIME);
 				_nextModeChange.set(Calendar.MINUTE, GeneralConfig.ALT_MANOR_APPROVE_MIN);
 				
-				// Move to the next day if the time has already passed for today.
+				// If the time has already passed today, schedule for tomorrow.
 				if (_nextModeChange.before(Calendar.getInstance()))
 				{
 					_nextModeChange.add(Calendar.DATE, 1);
@@ -273,18 +290,48 @@ public class CastleManorManager implements IXmlReader
 			{
 				_nextModeChange.set(Calendar.HOUR_OF_DAY, GeneralConfig.ALT_MANOR_REFRESH_TIME);
 				_nextModeChange.set(Calendar.MINUTE, GeneralConfig.ALT_MANOR_REFRESH_MIN + GeneralConfig.ALT_MANOR_MAINTENANCE_MIN);
+				
+				// If the time has already passed today, schedule for tomorrow.
+				if (_nextModeChange.before(Calendar.getInstance()))
+				{
+					_nextModeChange.add(Calendar.DATE, 1);
+				}
 				break;
 			}
 			case APPROVED:
 			{
 				_nextModeChange.set(Calendar.HOUR_OF_DAY, GeneralConfig.ALT_MANOR_REFRESH_TIME);
 				_nextModeChange.set(Calendar.MINUTE, GeneralConfig.ALT_MANOR_REFRESH_MIN);
+				
+				// If the time has already passed today, schedule for tomorrow.
+				if (_nextModeChange.before(Calendar.getInstance()))
+				{
+					_nextModeChange.add(Calendar.DATE, 1);
+				}
 				break;
+			}
+			case DISABLED:
+			{
+				// If mode is DISABLED, don't schedule.
+				return;
+			}
+			default:
+			{
+				// For any unexpected mode, don't schedule.
+				return;
 			}
 		}
 		
-		// Schedule the mode change at the calculated time.
-		final long delay = Math.max(0, _nextModeChange.getTimeInMillis() - System.currentTimeMillis());
+		// Schedule mode change.
+		long delay = _nextModeChange.getTimeInMillis() - System.currentTimeMillis();
+		
+		// Ensure delay is not negative (minimum 1 second).
+		if (delay < 1000)
+		{
+			delay = 1000; // Schedule for at least 1 second from now.
+			_nextModeChange.setTimeInMillis(System.currentTimeMillis() + delay);
+		}
+		
 		ThreadPool.schedule(this::changeMode, delay);
 	}
 	
@@ -334,7 +381,7 @@ public class CastleManorManager implements IXmlReader
 						}
 					}
 					
-					// Update current production and procurements to the next period�s data.
+					// Update current production and procurements to the next period's data.
 					_production.put(castleId, _productionNext.get(castleId));
 					_procure.put(castleId, _procureNext.get(castleId));
 					
@@ -394,7 +441,7 @@ public class CastleManorManager implements IXmlReader
 				// Transition to approved mode
 				_mode = ManorMode.APPROVED;
 				
-				// Validate each castle�s funds and warehouse capacity.
+				// Validate each castle's funds and warehouse capacity.
 				for (Castle castle : CastleManager.getInstance().getCastles())
 				{
 					final Clan owner = castle.getOwner();
@@ -418,7 +465,7 @@ public class CastleManorManager implements IXmlReader
 					
 					final long manorCost = getManorCost(castleId, true);
 					
-					// Check if there�s enough capacity and funds.
+					// Check if there's enough capacity and funds.
 					if (!cwh.validateCapacity(requiredSlots) && (castle.getTreasury() < manorCost))
 					{
 						// Clear next period data if insufficient resources.
@@ -444,6 +491,11 @@ public class CastleManorManager implements IXmlReader
 					storeMe();
 				}
 				break;
+			}
+			case DISABLED:
+			{
+				// Do nothing if disabled.
+				return;
 			}
 		}
 		
@@ -576,7 +628,7 @@ public class CastleManorManager implements IXmlReader
 	
 	public List<SeedProduction> getSeedProduction(int castleId, boolean nextPeriod)
 	{
-		return (nextPeriod) ? _productionNext.get(castleId) : _production.get(castleId);
+		return nextPeriod ? _productionNext.get(castleId) : _production.get(castleId);
 	}
 	
 	public SeedProduction getSeedProduct(int castleId, int seedId, boolean nextPeriod)
@@ -594,7 +646,7 @@ public class CastleManorManager implements IXmlReader
 	
 	public List<CropProcure> getCropProcure(int castleId, boolean nextPeriod)
 	{
-		return (nextPeriod) ? _procureNext.get(castleId) : _procure.get(castleId);
+		return nextPeriod ? _procureNext.get(castleId) : _procure.get(castleId);
 	}
 	
 	public CropProcure getCropProcure(int castleId, int cropId, boolean nextPeriod)
@@ -778,6 +830,11 @@ public class CastleManorManager implements IXmlReader
 	
 	public String getNextModeChange()
 	{
+		if (_nextModeChange == null)
+		{
+			return "Disabled";
+		}
+		
 		return new SimpleDateFormat("dd/MM HH:mm:ss").format(_nextModeChange.getTime());
 	}
 	

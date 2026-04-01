@@ -348,12 +348,12 @@ public class MysticTavern extends Script
 				{
 					case INSTANCE_FREYA:
 					{
-						player.processQuestEvent(StoryOfFreya.class.getSimpleName(), "start_story");
+						player.processScriptEvent(StoryOfFreya.class.getSimpleName(), "start_story");
 						break;
 					}
 					case INSTANCE_TAUTI:
 					{
-						player.processQuestEvent(StoryOfTauti.class.getSimpleName(), "start_story");
+						player.processScriptEvent(StoryOfTauti.class.getSimpleName(), "start_story");
 						break;
 					}
 					

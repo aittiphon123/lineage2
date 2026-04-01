@@ -3,21 +3,21 @@
 	<spawn name="orc_fortress_preparation_npcs" spawnByDefault="false">
 		<group>
 			<npc id="18397" x="111074" y="-8179" z="-2349" heading="49324" respawnTime="60sec" /> <!-- Flag of Aden -->
-			<npc id="18398" x="107752" y="-7679" z="-2598" heading="8886" respawnTime="60sec" /> <!--  -->
-			<npc id="18398" x="108047" y="-7909" z="-2587" heading="9914" respawnTime="60sec" /> <!--  -->
-			<npc id="18399" x="108476" y="-7679" z="-2590" heading="16080" respawnTime="60sec" /> <!--  -->
-			<npc id="18400" x="108079" y="-6181" z="-2589" heading="58256" respawnTime="60sec" /> <!--  -->
-			<npc id="18400" x="108636" y="-5807" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
-			<npc id="18400" x="108676" y="-6013" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
-			<npc id="18400" x="108815" y="-5764" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
-			<npc id="18400" x="108827" y="-5946" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
-			<npc id="18400" x="108980" y="-5733" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
-			<npc id="18400" x="109008" y="-5955" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
-			<npc id="18400" x="109205" y="-5779" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
-			<npc id="18400" x="109225" y="-5967" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
-			<npc id="18401" x="109531" y="-6226" z="-2588" heading="49030" respawnTime="60sec" /> <!--  -->
-			<npc id="18401" x="109625" y="-6277" z="-2588" heading="48717" respawnTime="60sec" /> <!--  -->
-			<npc id="18401" x="109725" y="-6218" z="-2588" heading="49151" respawnTime="60sec" /> <!--  -->
+			<npc id="18398" x="107752" y="-7679" z="-2598" heading="8886" respawnTime="60sec" /> <!-- -->
+			<npc id="18398" x="108047" y="-7909" z="-2587" heading="9914" respawnTime="60sec" /> <!-- -->
+			<npc id="18399" x="108476" y="-7679" z="-2590" heading="16080" respawnTime="60sec" /> <!-- -->
+			<npc id="18400" x="108079" y="-6181" z="-2589" heading="58256" respawnTime="60sec" /> <!-- -->
+			<npc id="18400" x="108636" y="-5807" z="-2588" heading="58256" respawnTime="60sec" /> <!-- -->
+			<npc id="18400" x="108676" y="-6013" z="-2588" heading="58256" respawnTime="60sec" /> <!-- -->
+			<npc id="18400" x="108815" y="-5764" z="-2588" heading="58256" respawnTime="60sec" /> <!-- -->
+			<npc id="18400" x="108827" y="-5946" z="-2588" heading="58256" respawnTime="60sec" /> <!-- -->
+			<npc id="18400" x="108980" y="-5733" z="-2588" heading="58256" respawnTime="60sec" /> <!-- -->
+			<npc id="18400" x="109008" y="-5955" z="-2588" heading="58256" respawnTime="60sec" /> <!-- -->
+			<npc id="18400" x="109205" y="-5779" z="-2588" heading="58256" respawnTime="60sec" /> <!-- -->
+			<npc id="18400" x="109225" y="-5967" z="-2588" heading="58256" respawnTime="60sec" /> <!-- -->
+			<npc id="18401" x="109531" y="-6226" z="-2588" heading="49030" respawnTime="60sec" /> <!-- -->
+			<npc id="18401" x="109625" y="-6277" z="-2588" heading="48717" respawnTime="60sec" /> <!-- -->
+			<npc id="18401" x="109725" y="-6218" z="-2588" heading="49151" respawnTime="60sec" /> <!-- -->
 			<npc id="18402" x="109405" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
 			<npc id="18402" x="109405" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
 			<npc id="18402" x="109405" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->

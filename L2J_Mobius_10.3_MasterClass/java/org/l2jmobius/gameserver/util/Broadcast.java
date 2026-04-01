@@ -31,8 +31,8 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.enums.ChatType;
-import org.l2jmobius.gameserver.network.serverpackets.CharInfo;
 import org.l2jmobius.gameserver.network.serverpackets.CreatureSay;
+import org.l2jmobius.gameserver.network.serverpackets.ExCharInfo;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.RelationChanged;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
@@ -86,7 +86,7 @@ public class Broadcast
 			try
 			{
 				player.sendPacket(packet);
-				if ((packet instanceof CharInfo) && (creature.isPlayer()))
+				if ((packet instanceof ExCharInfo) && (creature.isPlayer()))
 				{
 					final long relation = creature.asPlayer().getRelation(player);
 					final boolean isAutoAttackable = creature.isAutoAttackable(player);

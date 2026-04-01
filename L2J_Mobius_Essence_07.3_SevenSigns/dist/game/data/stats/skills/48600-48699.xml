@@ -1059,53 +1059,53 @@
 		<isMagic>0</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="With a certain chance, absorbs of the inflicted damage as HP.">-->
-		<!--		<value level="1">3%</value>-->
-		<!--		<value level="2">3%</value>-->
-		<!--		<value level="3">3%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="P. Critical Rate">-->
-		<!--		<value level="1">+5%</value>-->
-		<!--		<value level="2">+5%</value>-->
-		<!--		<value level="3">+5%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Max HP">-->
-		<!--		<value level="1">+3000</value>-->
-		<!--		<value level="2">+3000</value>-->
-		<!--		<value level="3">+3000</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="P. Skill Critical Rate">-->
-		<!--		<value level="1">+5%</value>-->
-		<!--		<value level="2">+5%</value>-->
-		<!--		<value level="3">+5%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="P. Skill Critical Damage">-->
-		<!--		<value level="1">+5%</value>-->
-		<!--		<value level="2">+5%</value>-->
-		<!--		<value level="3">+5%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="P. Atk.">-->
-		<!--		<value level="1">+15%</value>-->
-		<!--		<value level="2">+15%</value>-->
-		<!--		<value level="3">+15%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Max MP">-->
-		<!--		<value level="1">+3000</value>-->
-		<!--		<value level="2">+3000</value>-->
-		<!--		<value level="3">+3000</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Atk. Spd.">-->
-		<!--		<value level="1">+50</value>-->
-		<!--		<value level="2">+50</value>-->
-		<!--		<value level="3">+50</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Critical Damage for basic attacks">-->
-		<!--		<value level="1">+5%</value>-->
-		<!--		<value level="2">+5%</value>-->
-		<!--		<value level="3">+5%</value>-->
-		<!--	</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="With a certain chance, absorbs of the inflicted damage as HP."> -->
+		<!-- 		<value level="1">3%</value> -->
+		<!-- 		<value level="2">3%</value> -->
+		<!-- 		<value level="3">3%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="P. Critical Rate"> -->
+		<!-- 		<value level="1">+5%</value> -->
+		<!-- 		<value level="2">+5%</value> -->
+		<!-- 		<value level="3">+5%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Max HP"> -->
+		<!-- 		<value level="1">+3000</value> -->
+		<!-- 		<value level="2">+3000</value> -->
+		<!-- 		<value level="3">+3000</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="P. Skill Critical Rate"> -->
+		<!-- 		<value level="1">+5%</value> -->
+		<!-- 		<value level="2">+5%</value> -->
+		<!-- 		<value level="3">+5%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="P. Skill Critical Damage"> -->
+		<!-- 		<value level="1">+5%</value> -->
+		<!-- 		<value level="2">+5%</value> -->
+		<!-- 		<value level="3">+5%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="P. Atk."> -->
+		<!-- 		<value level="1">+15%</value> -->
+		<!-- 		<value level="2">+15%</value> -->
+		<!-- 		<value level="3">+15%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Max MP"> -->
+		<!-- 		<value level="1">+3000</value> -->
+		<!-- 		<value level="2">+3000</value> -->
+		<!-- 		<value level="3">+3000</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Atk. Spd."> -->
+		<!-- 		<value level="1">+50</value> -->
+		<!-- 		<value level="2">+50</value> -->
+		<!-- 		<value level="3">+50</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Critical Damage for basic attacks"> -->
+		<!-- 		<value level="1">+5%</value> -->
+		<!-- 		<value level="2">+5%</value> -->
+		<!-- 		<value level="3">+5%</value> -->
+		<!-- 	</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="48675" toLevel="3" name="Master's Blessing - Magic">
 		<!-- The GM is always by your side. M. Atk. +15%. M. Skill Critical Rate +5%. M. Skill Critical Damage +5%. Max HP +3000. Max MP +3000. Casting Spd. +50. With a certain chance, absorbs 3% of the inflicted damage as HP. Continuously recovers some MP. The effect remains after death. Can be cancelled. -->
@@ -1124,43 +1124,43 @@
 		<isMagic>0</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="With a certain chance, absorbs of the inflicted damage as HP.">-->
-		<!--		<value level="1">3%</value>-->
-		<!--		<value level="2">3%</value>-->
-		<!--		<value level="3">3%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="M. Skill Critical Damage">-->
-		<!--		<value level="1">+5%</value>-->
-		<!--		<value level="2">+5%</value>-->
-		<!--		<value level="3">+5%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="M. Atk.">-->
-		<!--		<value level="1">+15%</value>-->
-		<!--		<value level="2">+15%</value>-->
-		<!--		<value level="3">+15%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Max HP">-->
-		<!--		<value level="1">+3000</value>-->
-		<!--		<value level="2">+3000</value>-->
-		<!--		<value level="3">+3000</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Casting Spd.">-->
-		<!--		<value level="1">+50</value>-->
-		<!--		<value level="2">+50</value>-->
-		<!--		<value level="3">+50</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="M. Skill Critical Rate">-->
-		<!--		<value level="1">+5%</value>-->
-		<!--		<value level="2">+5%</value>-->
-		<!--		<value level="3">+5%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Max MP">-->
-		<!--		<value level="1">+3000</value>-->
-		<!--		<value level="2">+3000</value>-->
-		<!--		<value level="3">+3000</value>-->
-		<!--	</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="With a certain chance, absorbs of the inflicted damage as HP."> -->
+		<!-- 		<value level="1">3%</value> -->
+		<!-- 		<value level="2">3%</value> -->
+		<!-- 		<value level="3">3%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="M. Skill Critical Damage"> -->
+		<!-- 		<value level="1">+5%</value> -->
+		<!-- 		<value level="2">+5%</value> -->
+		<!-- 		<value level="3">+5%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="M. Atk."> -->
+		<!-- 		<value level="1">+15%</value> -->
+		<!-- 		<value level="2">+15%</value> -->
+		<!-- 		<value level="3">+15%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Max HP"> -->
+		<!-- 		<value level="1">+3000</value> -->
+		<!-- 		<value level="2">+3000</value> -->
+		<!-- 		<value level="3">+3000</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Casting Spd."> -->
+		<!-- 		<value level="1">+50</value> -->
+		<!-- 		<value level="2">+50</value> -->
+		<!-- 		<value level="3">+50</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="M. Skill Critical Rate"> -->
+		<!-- 		<value level="1">+5%</value> -->
+		<!-- 		<value level="2">+5%</value> -->
+		<!-- 		<value level="3">+5%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Max MP"> -->
+		<!-- 		<value level="1">+3000</value> -->
+		<!-- 		<value level="2">+3000</value> -->
+		<!-- 		<value level="3">+3000</value> -->
+		<!-- 	</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="48676" toLevel="3" name="Master's Blessing - Status">
 		<!-- The GM is always by your side. P. Def. +15%. M. Def. +15%. All received Critical Rate -5%. All received Critical Damage -5%. Max HP +4000. Max MP +4000. Atk. Spd. +50. Casting Spd. +50. Speed +5. With a certain chance, absorbs 3% of the inflicted damage as HP. Continuously recovers some MP. The effect remains after death. Can be cancelled. -->
@@ -1179,58 +1179,58 @@
 		<isMagic>0</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="Speed">-->
-		<!--		<value level="1">+5</value>-->
-		<!--		<value level="2">+5</value>-->
-		<!--		<value level="3">+5</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="With a certain chance, absorbs of the inflicted damage as HP.">-->
-		<!--		<value level="1">3%</value>-->
-		<!--		<value level="2">3%</value>-->
-		<!--		<value level="3">3%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Max HP">-->
-		<!--		<value level="1">+4000</value>-->
-		<!--		<value level="2">+4000</value>-->
-		<!--		<value level="3">+4000</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Casting Spd.">-->
-		<!--		<value level="1">+50</value>-->
-		<!--		<value level="2">+50</value>-->
-		<!--		<value level="3">+50</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="All received Critical Damage">-->
-		<!--		<value level="1">-5%</value>-->
-		<!--		<value level="2">-5%</value>-->
-		<!--		<value level="3">-5%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="M. Def.">-->
-		<!--		<value level="1">+15%</value>-->
-		<!--		<value level="2">+15%</value>-->
-		<!--		<value level="3">+15%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Max MP">-->
-		<!--		<value level="1">+4000</value>-->
-		<!--		<value level="2">+4000</value>-->
-		<!--		<value level="3">+4000</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Atk. Spd.">-->
-		<!--		<value level="1">+50</value>-->
-		<!--		<value level="2">+50</value>-->
-		<!--		<value level="3">+50</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="P. Def.">-->
-		<!--		<value level="1">+15%</value>-->
-		<!--		<value level="2">+15%</value>-->
-		<!--		<value level="3">+15%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="All received Critical Rate">-->
-		<!--		<value level="1">-5%</value>-->
-		<!--		<value level="2">-5%</value>-->
-		<!--		<value level="3">-5%</value>-->
-		<!--	</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="Speed"> -->
+		<!-- 		<value level="1">+5</value> -->
+		<!-- 		<value level="2">+5</value> -->
+		<!-- 		<value level="3">+5</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="With a certain chance, absorbs of the inflicted damage as HP."> -->
+		<!-- 		<value level="1">3%</value> -->
+		<!-- 		<value level="2">3%</value> -->
+		<!-- 		<value level="3">3%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Max HP"> -->
+		<!-- 		<value level="1">+4000</value> -->
+		<!-- 		<value level="2">+4000</value> -->
+		<!-- 		<value level="3">+4000</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Casting Spd."> -->
+		<!-- 		<value level="1">+50</value> -->
+		<!-- 		<value level="2">+50</value> -->
+		<!-- 		<value level="3">+50</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="All received Critical Damage"> -->
+		<!-- 		<value level="1">-5%</value> -->
+		<!-- 		<value level="2">-5%</value> -->
+		<!-- 		<value level="3">-5%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="M. Def."> -->
+		<!-- 		<value level="1">+15%</value> -->
+		<!-- 		<value level="2">+15%</value> -->
+		<!-- 		<value level="3">+15%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Max MP"> -->
+		<!-- 		<value level="1">+4000</value> -->
+		<!-- 		<value level="2">+4000</value> -->
+		<!-- 		<value level="3">+4000</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Atk. Spd."> -->
+		<!-- 		<value level="1">+50</value> -->
+		<!-- 		<value level="2">+50</value> -->
+		<!-- 		<value level="3">+50</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="P. Def."> -->
+		<!-- 		<value level="1">+15%</value> -->
+		<!-- 		<value level="2">+15%</value> -->
+		<!-- 		<value level="3">+15%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="All received Critical Rate"> -->
+		<!-- 		<value level="1">-5%</value> -->
+		<!-- 		<value level="2">-5%</value> -->
+		<!-- 		<value level="3">-5%</value> -->
+		<!-- 	</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="48677" toLevel="20" name="P. Skill Power Decrease When Hit 5%">
 		<!-- Level 1: P. Skill Power -5% when hit -->
@@ -1264,30 +1264,30 @@
 		<isMagic>0</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="P. Skill Power when hit">-->
-		<!--		<value level="1">-5%</value>-->
-		<!--		<value level="2">-10%</value>-->
-		<!--		<value level="3">-15%</value>-->
-		<!--		<value level="4">-20%</value>-->
-		<!--		<value level="5">-25%</value>-->
-		<!--		<value level="6">-30%</value>-->
-		<!--		<value level="7">-35%</value>-->
-		<!--		<value level="8">-40%</value>-->
-		<!--		<value level="9">-45%</value>-->
-		<!--		<value level="10">-50%</value>-->
-		<!--		<value level="11">-55%</value>-->
-		<!--		<value level="12">-60%</value>-->
-		<!--		<value level="13">-65%</value>-->
-		<!--		<value level="14">-70%</value>-->
-		<!--		<value level="15">-75%</value>-->
-		<!--		<value level="16">-80%</value>-->
-		<!--		<value level="17">-85%</value>-->
-		<!--		<value level="18">-90%</value>-->
-		<!--		<value level="19">-95%</value>-->
-		<!--		<value level="20">-100%</value>-->
-		<!--	</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="P. Skill Power when hit"> -->
+		<!-- 		<value level="1">-5%</value> -->
+		<!-- 		<value level="2">-10%</value> -->
+		<!-- 		<value level="3">-15%</value> -->
+		<!-- 		<value level="4">-20%</value> -->
+		<!-- 		<value level="5">-25%</value> -->
+		<!-- 		<value level="6">-30%</value> -->
+		<!-- 		<value level="7">-35%</value> -->
+		<!-- 		<value level="8">-40%</value> -->
+		<!-- 		<value level="9">-45%</value> -->
+		<!-- 		<value level="10">-50%</value> -->
+		<!-- 		<value level="11">-55%</value> -->
+		<!-- 		<value level="12">-60%</value> -->
+		<!-- 		<value level="13">-65%</value> -->
+		<!-- 		<value level="14">-70%</value> -->
+		<!-- 		<value level="15">-75%</value> -->
+		<!-- 		<value level="16">-80%</value> -->
+		<!-- 		<value level="17">-85%</value> -->
+		<!-- 		<value level="18">-90%</value> -->
+		<!-- 		<value level="19">-95%</value> -->
+		<!-- 		<value level="20">-100%</value> -->
+		<!-- 	</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="48678" toLevel="20" name="M. Skill Power Decrease When Hit 5%">
 		<!-- Level 1: M. Skill Power -5% when hit -->
@@ -1321,30 +1321,30 @@
 		<isMagic>0</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="M. Skill Power when hit">-->
-		<!--		<value level="1">-5%</value>-->
-		<!--		<value level="2">-10%</value>-->
-		<!--		<value level="3">-15%</value>-->
-		<!--		<value level="4">-20%</value>-->
-		<!--		<value level="5">-25%</value>-->
-		<!--		<value level="6">-30%</value>-->
-		<!--		<value level="7">-35%</value>-->
-		<!--		<value level="8">-40%</value>-->
-		<!--		<value level="9">-45%</value>-->
-		<!--		<value level="10">-50%</value>-->
-		<!--		<value level="11">-55%</value>-->
-		<!--		<value level="12">-60%</value>-->
-		<!--		<value level="13">-65%</value>-->
-		<!--		<value level="14">-70%</value>-->
-		<!--		<value level="15">-75%</value>-->
-		<!--		<value level="16">-80%</value>-->
-		<!--		<value level="17">-85%</value>-->
-		<!--		<value level="18">-90%</value>-->
-		<!--		<value level="19">-95%</value>-->
-		<!--		<value level="20">-100%</value>-->
-		<!--	</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="M. Skill Power when hit"> -->
+		<!-- 		<value level="1">-5%</value> -->
+		<!-- 		<value level="2">-10%</value> -->
+		<!-- 		<value level="3">-15%</value> -->
+		<!-- 		<value level="4">-20%</value> -->
+		<!-- 		<value level="5">-25%</value> -->
+		<!-- 		<value level="6">-30%</value> -->
+		<!-- 		<value level="7">-35%</value> -->
+		<!-- 		<value level="8">-40%</value> -->
+		<!-- 		<value level="9">-45%</value> -->
+		<!-- 		<value level="10">-50%</value> -->
+		<!-- 		<value level="11">-55%</value> -->
+		<!-- 		<value level="12">-60%</value> -->
+		<!-- 		<value level="13">-65%</value> -->
+		<!-- 		<value level="14">-70%</value> -->
+		<!-- 		<value level="15">-75%</value> -->
+		<!-- 		<value level="16">-80%</value> -->
+		<!-- 		<value level="17">-85%</value> -->
+		<!-- 		<value level="18">-90%</value> -->
+		<!-- 		<value level="19">-95%</value> -->
+		<!-- 		<value level="20">-100%</value> -->
+		<!-- 	</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="48679" toLevel="2" name="Acropolis' Strike">
 		<!-- Level 1: A single physical attack. Power. 15,000. -->
@@ -1555,20 +1555,20 @@
 		<isMagic>4</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="Sayha's Grace Consumption">-30%</effect>-->
-		<!--	<effect name="MP Recovery Rate">+3</effect>-->
-		<!--	<effect name="M. Atk.">+50</effect>-->
-		<!--	<effect name="Max HP">+300</effect>-->
-		<!--	<effect name="HP Recovery Rate">+3</effect>-->
-		<!--	<effect name="Casting Spd.">+30</effect>-->
-		<!--	<effect name="M. Def.">+100</effect>-->
-		<!--	<effect name="P. Atk.">+50</effect>-->
-		<!--	<effect name="Max MP">+300</effect>-->
-		<!--	<effect name="Atk. Spd.">+30</effect>-->
-		<!--	<effect name="P. Def.">+100</effect>-->
-		<!--	<effect name="Acquired XP/ SP">+10%</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="Sayha's Grace Consumption">-30%</effect> -->
+		<!-- 	<effect name="MP Recovery Rate">+3</effect> -->
+		<!-- 	<effect name="M. Atk.">+50</effect> -->
+		<!-- 	<effect name="Max HP">+300</effect> -->
+		<!-- 	<effect name="HP Recovery Rate">+3</effect> -->
+		<!-- 	<effect name="Casting Spd.">+30</effect> -->
+		<!-- 	<effect name="M. Def.">+100</effect> -->
+		<!-- 	<effect name="P. Atk.">+50</effect> -->
+		<!-- 	<effect name="Max MP">+300</effect> -->
+		<!-- 	<effect name="Atk. Spd.">+30</effect> -->
+		<!-- 	<effect name="P. Def.">+100</effect> -->
+		<!-- 	<effect name="Acquired XP/ SP">+10%</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="48693" toLevel="1" name="Lightning Discharge">
 		<!-- A lightning bolt deals magic damage and paralyzes for 5 sec. Power 80. -->

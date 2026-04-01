@@ -45,11 +45,6 @@ import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.managers.SiegeGuardManager;
 import org.l2jmobius.gameserver.managers.SiegeManager;
-import org.l2jmobius.gameserver.model.Message;
-import org.l2jmobius.gameserver.model.SiegeClan;
-import org.l2jmobius.gameserver.model.SiegeScheduleDate;
-import org.l2jmobius.gameserver.model.Spawn;
-import org.l2jmobius.gameserver.model.TowerSpawn;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -68,8 +63,10 @@ import org.l2jmobius.gameserver.model.events.holders.sieges.OnCastleSiegeStart;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Mail;
 import org.l2jmobius.gameserver.model.olympiad.Hero;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.RelationChanged;
 import org.l2jmobius.gameserver.network.serverpackets.SiegeInfo;
@@ -304,7 +301,7 @@ public class Siege implements Siegable
 					reward = reward / winnersCount;
 					for (Integer elem : clan.getMapMercenary().keySet())
 					{
-						final Message msg = new Message(elem, "Reward from Siege!", "Your reward mercenary.", MailType.REGULAR);
+						final MailMessage msg = new MailMessage(elem, "Reward from Siege!", "Your reward mercenary.", MailType.REGULAR);
 						final Mail attachments = msg.createAttachments();
 						attachments.addItem(ItemProcessType.REWARD, 57, reward, null, null);
 						MailManager.getInstance().sendMessage(msg);

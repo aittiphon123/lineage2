@@ -557,7 +557,7 @@ public class DailyResetManager
 				VipManager.getInstance().checkVipTierExpiration(player);
 			}
 			
-			player.getAccountVariables().restoreMe();
+			player.getAccountVariables().remove(AccountVariables.VIP_ITEM_BOUGHT);
 		}
 	}
 	
@@ -925,7 +925,7 @@ public class DailyResetManager
 		// Update data for offline players.
 		try (Connection con = DatabaseFactory.getConnection())
 		{
-			try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var = ? AND charId IN (SELECT charId FROM characters WHERE online = 0)"))
+			try (PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ? AND account_name NOT IN (SELECT account_name FROM characters WHERE online = 1)"))
 			{
 				ps.setString(1, "MORGOS_MILITARY_FREE");
 				ps.execute();

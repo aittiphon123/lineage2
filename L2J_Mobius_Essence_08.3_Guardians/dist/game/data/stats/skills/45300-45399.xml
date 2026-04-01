@@ -6084,7 +6084,7 @@
 				<targetType>TARGET</targetType>
 			</effect>
 			<effect name="TriggerSkillBySkill">
-				<castSkillId>88054</castSkillId> <!-- Aqua Shiled Throwing-->
+				<castSkillId>88054</castSkillId> <!-- Aqua Shiled Throwing -->
 				<skillId>45375</skillId> <!-- Eva's Help -->
 				<skillLevel>
 					<value level="1">1</value>
@@ -6100,7 +6100,7 @@
 				<targetType>TARGET</targetType>
 			</effect>
 			<effect name="TriggerSkillBySkill">
-				<castSkillId>88009</castSkillId> <!-- Templar Assault-->
+				<castSkillId>88009</castSkillId> <!-- Templar Assault -->
 				<skillId>45375</skillId> <!-- Eva's Help -->
 				<skillLevel>
 					<value level="1">1</value>

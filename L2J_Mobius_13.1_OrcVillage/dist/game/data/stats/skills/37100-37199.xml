@@ -954,7 +954,18 @@
 		<!-- Level 3: P. Atk. +3%. -->
 		<!-- Level 4: P. Atk. +5%. -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37117" toLevel="4" name="Chaos Augmentation (I): P. Def.">
 		<!-- Level 1: P. Def. +1% -->
@@ -962,7 +973,18 @@
 		<!-- Level 3: P. Def. +3% -->
 		<!-- Level 4: P. Def. +5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37118" toLevel="4" name="Chaos Augmentation (I): Critical Damage for Basic Attacks">
 		<!-- Level 1: Critical Damage for basic attacks +1% -->
@@ -970,7 +992,18 @@
 		<!-- Level 3: Critical Damage for basic attacks +3% -->
 		<!-- Level 4: Critical Damage for basic attacks +5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37119" toLevel="4" name="Chaos Augmentation (I): P. Skill Critical Damage">
 		<!-- Level 1: P. Skill Critical Damage +1% -->
@@ -978,7 +1011,18 @@
 		<!-- Level 3: P. Skill Critical Damage +3% -->
 		<!-- Level 4: P. Skill Critical Damage +5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37120" toLevel="4" name="Chaos Augmentation (I): M. Skill Critical Damage">
 		<!-- Level 1: M. Skill Critical Damage +1% -->
@@ -986,7 +1030,18 @@
 		<!-- Level 3: M. Skill Critical Damage +3% -->
 		<!-- Level 4: M. Skill Critical Damage +5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37121" toLevel="4" name="Chaos Augmentation (I): M. Atk.">
 		<!-- Level 1: M. Atk. +1%. -->
@@ -994,7 +1049,18 @@
 		<!-- Level 3: M. Atk. +3%. -->
 		<!-- Level 4: M. Atk. +5%. -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37122" toLevel="4" name="Chaos Augmentation (I): M. Def.">
 		<!-- Level 1: M. Def. +1% -->
@@ -1002,7 +1068,18 @@
 		<!-- Level 3: M. Def. +3% -->
 		<!-- Level 4: M. Def. +5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37123" toLevel="4" name="Chaos Augmentation (I): P. Skill Power">
 		<!-- Level 1: P. Skill Power +1% -->
@@ -1010,7 +1087,18 @@
 		<!-- Level 3: P. Skill Power +3% -->
 		<!-- Level 4: P. Skill Power +5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37124" toLevel="4" name="Chaos Augmentation (I): M. Skill Power">
 		<!-- Level 1: M. Skill Power +1% -->
@@ -1018,7 +1106,18 @@
 		<!-- Level 3: M. Skill Power +3% -->
 		<!-- Level 4: M. Skill Power +5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37125" toLevel="4" name="Chaos Augmentation (I): Damage">
 		<!-- Level 1: Damage +1% -->
@@ -1026,7 +1125,63 @@
 		<!-- Level 3: Damage +3% -->
 		<!-- Level 4: Damage +5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37126" toLevel="4" name="Chaos Augmentation (I): Received Damage Reduction">
 		<!-- Level 1: Received damage -1% -->
@@ -1034,7 +1189,63 @@
 		<!-- Level 3: Received damage -3% -->
 		<!-- Level 4: Received damage -5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37127" toLevel="4" name="Chaos Augmentation (I): Damage to Immobilized Targets">
 		<!-- Level 1: Damage to immobilized targets +1%. -->
@@ -1042,7 +1253,38 @@
 		<!-- Level 3: Damage to immobilized targets +3%. -->
 		<!-- Level 4: Damage to immobilized targets +5%. -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="OpCheckAbnormal">
+				<type>STUN</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+				<affectType>TARGET</affectType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>AIRBIND</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+				<affectType>TARGET</affectType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>PARALYZE</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+				<affectType>TARGET</affectType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="ImmobileDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37128" toLevel="4" name="Chaos Augmentation (I): Received Damage Reduction When Immobilized">
 		<!-- Level 1: Received damage when immobilized -1% -->
@@ -1050,14 +1292,55 @@
 		<!-- Level 3: Received damage when immobilized -3% -->
 		<!-- Level 4: Received damage when immobilized -5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="OpCheckAbnormal">
+				<type>STUN</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>AIRBIND</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>PARALYZE</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="ImmobileDamageResist">
+				<amount>
+					<value level="1">-1</value>
+					<value level="2">-2</value>
+					<value level="3">-3</value>
+					<value level="4">-5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37129" toLevel="3" name="Chaos Augmentation (I): All Stats">
 		<!-- Level 1: All stats +1 -->
 		<!-- Level 2: All stats +2 -->
 		<!-- Level 3: All stats +3 -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+				<stat>STR,INT,CON,DEX,WIT,MEN,CHA,LUC</stat>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37130" toLevel="5" name="Chaos Augmentation (II): Attribute Attack">
 		<!-- Level 1: Attribute Attack +10 -->
@@ -1097,57 +1380,8 @@
 					<value level="4">40</value>
 					<value level="5">50</value>
 				</amount>
-				<attribute>FIRE</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">30</value>
-					<value level="4">40</value>
-					<value level="5">50</value>
-				</amount>
-				<attribute>WATER</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">30</value>
-					<value level="4">40</value>
-					<value level="5">50</value>
-				</amount>
-				<attribute>WIND</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">30</value>
-					<value level="4">40</value>
-					<value level="5">50</value>
-				</amount>
-				<attribute>EARTH</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">30</value>
-					<value level="4">40</value>
-					<value level="5">50</value>
-				</amount>
-				<attribute>HOLY</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">30</value>
-					<value level="4">40</value>
-					<value level="5">50</value>
-				</amount>
-				<attribute>DARK</attribute>
+				<mode>DIFF</mode>
+				<attribute>FIRE,WATER,WIND,EARTH,DARK,HOLY</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1159,8 +1393,6 @@
 		<!-- Level 5: Critical Damage for basic attacks +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
 		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>110</magicLevel>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>
@@ -1181,7 +1413,19 @@
 		<!-- Level 4: P. Skill Critical Damage +8% -->
 		<!-- Level 5: P. Skill Critical Damage +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37134" toLevel="5" name="Chaos Augmentation (II): M. Skill Critical Damage">
 		<!-- Level 1: M. Skill Critical Damage +2% -->
@@ -1190,7 +1434,19 @@
 		<!-- Level 4: M. Skill Critical Damage +8% -->
 		<!-- Level 5: M. Skill Critical Damage +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37135" toLevel="5" name="Chaos Augmentation (II): P. Def.">
 		<!-- Level 1: P. Def. +2% -->
@@ -1199,7 +1455,19 @@
 		<!-- Level 4: P. Def. +8% -->
 		<!-- Level 5: P. Def. +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37136" toLevel="5" name="Chaos Augmentation (II): M. Def.">
 		<!-- Level 1: M. Def. +2% -->
@@ -1208,7 +1476,19 @@
 		<!-- Level 4: M. Def. +8% -->
 		<!-- Level 5: M. Def. +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37137" toLevel="5" name="Chaos Augmentation (II): Bow/ Crossbow Resistance">
 		<!-- Level 1: Bow/ Crossbow Resistance +2% -->
@@ -1217,7 +1497,32 @@
 		<!-- Level 4: Bow/ Crossbow Resistance +8% -->
 		<!-- Level 5: Bow/ Crossbow Resistance +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<BOW>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</BOW>
+				<CROSSBOW>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</CROSSBOW>
+				<TWOHANDCROSSBOW>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</TWOHANDCROSSBOW>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37138" toLevel="5" name="Chaos Augmentation (II): Dagger/ Dual Daggers Resistance">
 		<!-- Level 1: Dagger/ Dual Daggers Resistance +2% -->
@@ -1226,7 +1531,25 @@
 		<!-- Level 4: Dagger/ Dual Daggers Resistance +8% -->
 		<!-- Level 5: Dagger/ Dual Daggers Resistance +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<DAGGER>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</DAGGER>
+				<DUALDAGGER>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</DUALDAGGER>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37139" toLevel="5" name="Chaos Augmentation (II): Sword/ Dual Swords Resistance">
 		<!-- Level 1: Sword/ Dual Swords Resistance +2% -->
@@ -1235,7 +1558,25 @@
 		<!-- Level 4: Sword/ Dual Swords Resistance +8% -->
 		<!-- Level 5: Sword/ Dual Swords Resistance +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</SWORD>
+				<DUAL>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</DUAL>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37140" toLevel="5" name="Chaos Augmentation (II): Debuff Resistance">
 		<!-- Level 1: Debuff Resistance +2% -->
@@ -1244,7 +1585,19 @@
 		<!-- Level 4: Debuff Resistance +8% -->
 		<!-- Level 5: Debuff Resistance +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistAbnormalByCategory">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-4</value>
+					<value level="3">-6</value>
+					<value level="4">-8</value>
+					<value level="5">-10</value>
+				</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37141" toLevel="5" name="Chaos Augmentation (II): Received Healing">
 		<!-- Level 1: Received Healing +2% -->
@@ -1254,8 +1607,6 @@
 		<!-- Level 5: Received Healing +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
 		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>110</magicLevel>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -1276,7 +1627,31 @@
 		<!-- Level 4: Skill cooldown -4% -->
 		<!-- Level 5: Skill cooldown -5% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">-1</value>
+					<value level="2">-2</value>
+					<value level="3">-3</value>
+					<value level="4">-4</value>
+					<value level="5">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">-1</value>
+					<value level="2">-2</value>
+					<value level="3">-3</value>
+					<value level="4">-4</value>
+					<value level="5">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37143" toLevel="5" name="Chaos Augmentation (II): Acquired XP/ SP">
 		<!-- Level 1: Acquired XP/ SP +2% -->
@@ -1286,8 +1661,6 @@
 		<!-- Level 5: Acquired XP/ SP +10% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
 		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>110</magicLevel>
 		<effects>
 			<effect name="ExpModify">
 				<amount>
@@ -1314,48 +1687,105 @@
 		<!-- Level 2: P. Skill Power +15% -->
 		<!-- Level 3: P. Skill Power +20% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37145" toLevel="3" name="Chaos Augmentation (II): M. Skill Power">
 		<!-- Level 1: M. Skill Power +10% -->
 		<!-- Level 2: M. Skill Power +15% -->
 		<!-- Level 3: M. Skill Power +20% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37146" toLevel="3" name="Chaos Augmentation (II): Critical Damage for Basic Attacks">
 		<!-- Level 1: Critical Damage for basic attacks +17% -->
 		<!-- Level 2: Critical Damage for basic attacks +20% -->
 		<!-- Level 3: Critical Damage for basic attacks +23% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">17</value>
+					<value level="2">20</value>
+					<value level="3">23</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37147" toLevel="3" name="Chaos Augmentation (II): P. Skill Critical Damage">
 		<!-- Level 1: P. Skill Critical Damage +17% -->
 		<!-- Level 2: P. Skill Critical Damage +20% -->
 		<!-- Level 3: P. Skill Critical Damage +23% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">17</value>
+					<value level="2">20</value>
+					<value level="3">23</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37148" toLevel="3" name="Chaos Augmentation (II): M. Skill Critical Damage">
 		<!-- Level 1: M. Skill Critical Damage +17% -->
 		<!-- Level 2: M. Skill Critical Damage +20% -->
 		<!-- Level 3: M. Skill Critical Damage +23% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">17</value>
+					<value level="2">20</value>
+					<value level="3">23</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37149" toLevel="2" name="Chaos Augmentation (II): Fixed Damage Resistance">
 		<!-- Level 1: Fixed Damage Resistance +17% -->
 		<!-- Level 2: Fixed Damage Resistance +20% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="RealDamageResist">
+				<amount>
+					<value level="1">17</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37150" toLevel="1" name="Chaos Augmentation (II): Received Damage Reduction When Immobilized">
 		<!-- Received damage when immobilized -20% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
 		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>110</magicLevel>
 		<passiveConditions>
 			<condition name="OpCheckAbnormal">
 				<type>STUN</type>
@@ -1363,15 +1793,23 @@
 				<hasAbnormal>true</hasAbnormal>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>AIRBIND</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>PARALYZE</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+				<affectType>CASTER</affectType>
+			</condition>
 		</passiveConditions>
 		<effects>
-			<effect name="DamageByAttack">
+			<effect name="ImmobileDamageResist">
 				<amount>-20</amount>
-				<type>PK</type>
-			</effect>
-			<effect name="DamageByAttack">
-				<amount>-20</amount>
-				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1379,28 +1817,190 @@
 		<!-- Level 1: Damage +15% -->
 		<!-- Level 2: Damage +20% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37152" toLevel="2" name="Chaos Augmentation (II): Received Damage Reduction">
 		<!-- Level 1: Received damage -15% -->
 		<!-- Level 2: Received damage -20% -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37153" toLevel="1" name="Chaos Augmentation (III): Damage + P./ M. Accuracy">
 		<!-- Damage +10%, P./ M. Accuracy +20 -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37154" toLevel="1" name="Chaos Augmentation (III): Critical Damage">
 		<!-- All Critical Damage +10%, P./ M. Accuracy +20 -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37155" toLevel="1" name="Chaos Augmentation (III): Skill Power">
 		<!-- Skill Power +10%, P./ M. Accuracy +20 -->
 		<icon>icon.renewal_mineral_L_grade_wp_am</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="37156" toLevel="5" name="Blood Energy Filled with Freed Chaos Lv. 1">
 		<!-- Level 1: When in inventory and while fighting Kasha Orcs, acquired XP/ SP +10%. -->
@@ -1471,7 +2071,6 @@
 					<value level="4">15</value>
 					<value level="5">20</value>
 				</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalAttackDamageBonus">
@@ -1480,7 +2079,6 @@
 					<value level="4">15</value>
 					<value level="5">20</value>
 				</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalSkillDamageBonus">
@@ -1489,7 +2087,6 @@
 					<value level="4">15</value>
 					<value level="5">20</value>
 				</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
@@ -1516,24 +2113,54 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DamageByAttack">
+
+			<effect name="PveMagicalSkillDefenceBonus">
 				<amount>
-					<value level="1">0</value>
 					<value fromLevel="2" toLevel="3">10</value>
-					<value level="4">-15</value>
-					<value level="5">-20</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
 				</amount>
-				<type>PK</type>
+				<mode>PER</mode>
 			</effect>
-			<effect name="DamageByAttack">
+			<effect name="PvePhysicalAttackDefenceBonus">
 				<amount>
-					<value level="1">0</value>
 					<value fromLevel="2" toLevel="3">10</value>
-					<value level="3">10</value>
-					<value level="4">-15</value>
-					<value level="5">-20</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
 				</amount>
-				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>
+					<value fromLevel="2" toLevel="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value fromLevel="2" toLevel="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value fromLevel="2" toLevel="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value fromLevel="2" toLevel="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="AutoAttackDamageBonus">
 				<amount>
@@ -1568,17 +2195,14 @@
 		<effects>
 			<effect name="PveMagicalSkillDamageBonus">
 				<amount>1</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalAttackDamageBonus">
 				<amount>1</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalSkillDamageBonus">
 				<amount>1</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
@@ -1593,13 +2217,29 @@
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DamageByAttack">
-				<amount>-1</amount>
-				<type>PK</type>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="DamageByAttack">
-				<amount>-1</amount>
-				<type>ENEMY_ALL</type>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1610,17 +2250,14 @@
 		<effects>
 			<effect name="PveMagicalSkillDamageBonus">
 				<amount>1</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalAttackDamageBonus">
 				<amount>1</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalSkillDamageBonus">
 				<amount>1</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
@@ -1635,13 +2272,29 @@
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DamageByAttack">
-				<amount>-1</amount>
-				<type>PK</type>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="DamageByAttack">
-				<amount>-1</amount>
-				<type>ENEMY_ALL</type>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1652,17 +2305,14 @@
 		<effects>
 			<effect name="PveMagicalSkillDamageBonus">
 				<amount>1</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalAttackDamageBonus">
 				<amount>1</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalSkillDamageBonus">
 				<amount>1</amount>
-				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
@@ -1677,13 +2327,29 @@
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DamageByAttack">
-				<amount>-1</amount>
-				<type>PK</type>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="DamageByAttack">
-				<amount>-1</amount>
-				<type>ENEMY_ALL</type>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <event name="Red Libra" active="04 08 2023-06 09 2023" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/eventConfig.xsd">
 	<spawnlist>
-		<!-- Giran-->
+		<!-- Giran -->
 		<add npc="34210" x="81010" y="149003" z="-3464" heading="65404" /> <!-- Red -->
 		<add npc="34211" x="80986" y="149064" z="-3464" heading="65404" /> <!-- Green -->
 		<add npc="34212" x="80981" y="148940" z="-3464" heading="65404" /> <!-- Black -->

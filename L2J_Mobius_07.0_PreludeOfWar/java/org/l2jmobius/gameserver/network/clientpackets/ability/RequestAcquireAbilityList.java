@@ -30,10 +30,11 @@ import java.util.Map;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
-import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.request.AbilityLearnRequest;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
+import org.l2jmobius.gameserver.model.skill.holders.SkillLearn;
 import org.l2jmobius.gameserver.network.PacketLogger;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
@@ -85,41 +86,55 @@ public class RequestAcquireAbilityList extends ClientPacket
 			return;
 		}
 		
+		if (player.hasRequest(AbilityLearnRequest.class))
+		{
+			return;
+		}
+		
+		player.addRequest(new AbilityLearnRequest(player));
+		
 		if (_skills == null)
 		{
 			PacketLogger.warning("Player " + player + " tried to exploit RequestAcquireAbilityList!");
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		
 		if (player.isSubClassActive() && !player.isDualClassActive())
 		{
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		
 		if ((player.getAbilityPoints() <= 0) || (player.getAbilityPoints() == player.getAbilityPointsUsed()))
 		{
 			PacketLogger.warning(player + " is trying to learn ability without ability points!");
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		
 		if (player.getLevel() < 85)
 		{
 			player.sendPacket(SystemMessageId.REACH_LEVEL_85_TO_USE_THE_ABILITY);
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		else if (!player.isAwakenedClass())
 		{
 			player.sendPacket(SystemMessageId.ONLY_AWAKENED_CHARACTERS_OF_LV_85_OR_ABOVE_CAN_BE_ACTIVATED);
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		else if (player.isInOlympiadMode())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_OR_RESET_ABILITY_POINTS_WHILE_PARTICIPATING_IN_THE_OLYMPIAD_OR_CEREMONY_OF_CHAOS);
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		else if (player.isOnEvent())
 		{
 			player.sendMessage("You cannot use or reset Ability Points while participating in an event.");
+			player.removeRequest(AbilityLearnRequest.class);
 			return;
 		}
 		
@@ -134,7 +149,8 @@ public class RequestAcquireAbilityList extends ClientPacket
 			{
 				PacketLogger.warning("SkillLearn " + holder.getSkillId() + " (" + holder.getSkillLevel() + ") not found!");
 				player.sendPacket(ActionFailed.STATIC_PACKET);
-				break;
+				player.removeRequest(AbilityLearnRequest.class);
+				return;
 			}
 			
 			final Skill skill = holder.getSkill();
@@ -142,7 +158,8 @@ public class RequestAcquireAbilityList extends ClientPacket
 			{
 				PacketLogger.warning("Skill " + holder.getSkillId() + " (" + holder.getSkillLevel() + ") not found!");
 				player.sendPacket(ActionFailed.STATIC_PACKET);
-				break;
+				player.removeRequest(AbilityLearnRequest.class);
+				return;
 			}
 			
 			if (player.getSkillLevel(skill.getId()) > 0)
@@ -175,6 +192,7 @@ public class RequestAcquireAbilityList extends ClientPacket
 			{
 				PacketLogger.warning(player + " is trying to learn " + skill + " without enough ability points spent!");
 				player.sendPacket(ActionFailed.STATIC_PACKET);
+				player.removeRequest(AbilityLearnRequest.class);
 				return;
 			}
 			
@@ -185,6 +203,7 @@ public class RequestAcquireAbilityList extends ClientPacket
 				{
 					PacketLogger.warning(player + " is trying to learn " + skill + " without having prerequsite skill: " + required.getSkill() + "!");
 					player.sendPacket(ActionFailed.STATIC_PACKET);
+					player.removeRequest(AbilityLearnRequest.class);
 					return;
 				}
 			}
@@ -194,6 +213,7 @@ public class RequestAcquireAbilityList extends ClientPacket
 			{
 				PacketLogger.warning(player + " is trying to learn ability without ability points!");
 				player.sendPacket(ActionFailed.STATIC_PACKET);
+				player.removeRequest(AbilityLearnRequest.class);
 				return;
 			}
 			
@@ -209,6 +229,7 @@ public class RequestAcquireAbilityList extends ClientPacket
 			player.sendSkillList();
 			player.getStat().recalculateStats(false);
 			player.broadcastUserInfo();
-		}, 100);
+			player.removeRequest(AbilityLearnRequest.class);
+		}, 300);
 	}
 }

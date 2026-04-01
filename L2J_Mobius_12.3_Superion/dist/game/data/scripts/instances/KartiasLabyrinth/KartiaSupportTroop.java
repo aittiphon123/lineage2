@@ -60,7 +60,7 @@ public class KartiaSupportTroop extends Script
 			final List<Monster> monsterList = World.getInstance().getVisibleObjects(npc, Monster.class);
 			if (!monsterList.isEmpty())
 			{
-				final Monster monster = monsterList.get(getRandom(monsterList.size()));
+				final Monster monster = getRandomEntry(monsterList);
 				if (monster.isTargetable() && GeoEngine.getInstance().canSeeTarget(npc, monster))
 				{
 					addAttackDesire(npc, monster);

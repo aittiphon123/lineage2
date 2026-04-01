@@ -47,7 +47,7 @@ public class Orfen extends Script
 {
 	private static final Location SPAWN_LOCATION = new Location(43728, 17220, -4342);
 	
-	private static final NpcStringId[] TEXT =
+	private static final NpcStringId[] ORFEN_MESSAGES =
 	{
 		NpcStringId.S1_STOP_KIDDING_YOURSELF_ABOUT_YOUR_OWN_POWERLESSNESS,
 		NpcStringId.S1_I_LL_MAKE_YOU_FEEL_WHAT_TRUE_FEAR_IS,
@@ -248,61 +248,61 @@ public class Orfen extends Script
 		{
 			if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000) && (getRandom(10) == 0))
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
 				npc.setTarget(attacker);
 				npc.doCast(ORFEN_FATAL_SLASHER.getSkill());
 			}
 			else if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000) && (getRandom(10) == 0))
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
 				npc.setTarget(attacker);
 				npc.doCast(ORFEN_ENERGY_SCATTER.getSkill());
 			}
 			else if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000) && (getRandom(10) == 0))
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
 				npc.setTarget(attacker);
 				npc.doCast(ORFEN_FURY_ENERGY_WAVE.getSkill());
 			}
 			else if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000) && (getRandom(10) == 0))
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
 				npc.setTarget(attacker);
 				npc.doCast(YOKE_OF_ORFEN.getSkill());
 			}
 			else if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000) && (getRandom(10) == 0))
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
 				npc.setTarget(attacker);
 				npc.doCast(ORFEN_BLOW_UP.getSkill());
 			}
 			else if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000) && (getRandom(10) == 0))
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
 				npc.setTarget(attacker);
 				npc.doCast(ORFEN_FATAL_STAMP.getSkill());
 			}
 			else if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000) && (getRandom(10) == 0))
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
 				npc.setTarget(attacker);
 				npc.doCast(ORFEN_RAISE_SPORE.getSkill());
 			}
 			else if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000) && (getRandom(10) == 0))
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
 				npc.setTarget(attacker);
 				npc.doCast(HALLUCINATING_DUST.getSkill());
 			}
 			else if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000) && (getRandom(10) == 0) && (npc.getCurrentHp() <= (npc.getMaxHp() * 0.5)))
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
 				npc.setTarget(attacker);
 				npc.doCast(ORFEN_RAGE.getSkill());
 			}
 			else if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000))
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, TEXT[getRandom(3)], attacker.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, ORFEN_MESSAGES[getRandom(3)], attacker.getName());
 				npc.setTarget(attacker);
 				npc.doCast(ORFEN_SLASHER.getSkill());
 			}

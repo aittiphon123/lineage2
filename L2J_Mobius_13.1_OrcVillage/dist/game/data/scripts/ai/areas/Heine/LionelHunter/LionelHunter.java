@@ -74,7 +74,7 @@ public class LionelHunter extends Script
 					final QuestState qs3 = player.getQuestState(Q10517_NobleMaterial4.class.getSimpleName());
 					if (((qs != null) && qs.isCompleted()) || ((qs1 != null) && qs1.isCompleted()) || ((qs2 != null) && qs2.isCompleted()) || ((qs3 != null) && qs3.isCompleted()))
 					{
-						MultisellData.getInstance().separateAndSend(SHIELD_SIGIL, player, null, false);
+						MultisellData.getInstance().separateAndSend(SHIELD_SIGIL, player, npc, false);
 						break;
 					}
 				}

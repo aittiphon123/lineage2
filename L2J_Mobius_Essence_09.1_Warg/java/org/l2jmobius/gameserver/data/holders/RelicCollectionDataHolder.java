@@ -29,15 +29,17 @@ import java.util.List;
 public class RelicCollectionDataHolder
 {
 	private final int _relicCollectionId;
+	private final String _name;
 	private final int _optionId;
 	private final int _category;
 	private final int _completeCount;
 	private final int _combatPower;
 	private final List<RelicCollectionInfoHolder> _relics;
 	
-	public RelicCollectionDataHolder(int relicCollectionId, int optionId, int category, int completeCount, int combatPower, List<RelicCollectionInfoHolder> relics)
+	public RelicCollectionDataHolder(int relicCollectionId, String name, int optionId, int category, int completeCount, int combatPower, List<RelicCollectionInfoHolder> relics)
 	{
 		_relicCollectionId = relicCollectionId;
+		_name = name;
 		_optionId = optionId;
 		_category = category;
 		_completeCount = completeCount;
@@ -48,6 +50,11 @@ public class RelicCollectionDataHolder
 	public int getCollectionId()
 	{
 		return _relicCollectionId;
+	}
+	
+	public String getName()
+	{
+		return _name;
 	}
 	
 	public int getOptionId()

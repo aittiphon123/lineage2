@@ -58,7 +58,7 @@ public class DimensionalMerchant extends Script
 	private static final int ENH_MINION_COUPON_EV = 22240; // Enhanced Rose Spirit Coupon (5-hour) - Event
 	
 	// Others
-	private static final String COMMAND_BYPASS = "Quest DimensionalMerchant ";
+	private static final String COMMAND_BYPASS = "Script DimensionalMerchant ";
 	private static final HashMap<String, Integer> MINION_EXCHANGE = new HashMap<>();
 	static
 	{

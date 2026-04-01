@@ -30,11 +30,11 @@ import java.util.logging.Logger;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
-import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.SocialClass;
 import org.l2jmobius.gameserver.model.clan.enums.ClanHallGrade;
 import org.l2jmobius.gameserver.model.events.ListenersContainer;
+import org.l2jmobius.gameserver.model.skill.holders.SkillLearn;
 import org.l2jmobius.gameserver.model.zone.type.ResidenceZone;
 
 /**

@@ -364,8 +364,8 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="handler" val="Book" />
-		<set name="default_action" val="SHOW_HTML" />
+		<set name="handler" val="Bypass" />
+		<set name="default_action" val="START_QUEST" />
 		<set name="material" val="FISH" />
 	</item>
 	<item id="23623" name="Gender Change Ticket" type="EtcItem">

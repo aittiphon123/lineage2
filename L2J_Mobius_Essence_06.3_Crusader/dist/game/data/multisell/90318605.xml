@@ -5,6 +5,6 @@
 	</npcs>
 	<item>
 		<ingredient id="57" count="20000000" /> <!-- Adena -->
-		<production id="97204" count="1" /> <!-- Scroll Morgos Military-->
+		<production id="97204" count="1" /> <!-- Scroll Morgos Military -->
 	</item>
 </list>

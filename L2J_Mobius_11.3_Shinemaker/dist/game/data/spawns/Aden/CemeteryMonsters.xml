@@ -58,7 +58,7 @@
 				<node x="171769" y="15453" />
 			</territory>
 		</territories>
-		<npc id="24847" count="2" respawnTime="30sec" respawnRandom="0sec" /> <!-- Elite Wizard-->
+		<npc id="24847" count="2" respawnTime="30sec" respawnRandom="0sec" /> <!-- Elite Wizard -->
 		<npc id="24843" count="2" respawnTime="30sec" respawnRandom="0sec" /> <!-- Royal Guard -->
 		<npc id="24844" count="2" respawnTime="30sec" respawnRandom="0sec" /> <!-- Royal Guard Captain -->
 		<npc id="24848" count="2" respawnTime="30sec" respawnRandom="0sec" /> <!-- Chief Magician -->

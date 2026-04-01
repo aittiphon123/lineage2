@@ -24,7 +24,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.concurrent.ScheduledFuture;
 
-import org.l2jmobius.gameserver.model.ItemInfo;
+import org.l2jmobius.gameserver.model.item.holders.ItemInfo;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 
 /**

@@ -65,7 +65,7 @@
 			<npc id="24015" count="5" /> <!-- Castle Guardian Knight -->
 			<npc id="24019" count="5" /> <!-- Castle Dark Wizard -->
 			<npc id="24043" count="5" /> <!-- Castle Archer -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24017" x="-251636" y="141195" z="1564" heading="59433" /> <!-- Castle Soul Reaper -->
 			<npc id="24017" x="-251802" y="140958" z="1561" heading="59433" /> <!-- Castle Soul Reaper -->
 			<npc id="24017" x="-251978" y="140710" z="1563" heading="59433" /> <!-- Castle Soul Reaper -->
@@ -115,7 +115,7 @@
 			<npc id="24047" x="-255705" y="145683" z="2073" heading="1950" /> <!-- Castle Executor -->
 			<npc id="24047" x="-256334" y="146022" z="2073" heading="1950" /> <!-- Castle Executor -->
 			<npc id="24047" x="-256117" y="146663" z="2073" heading="1950" /> <!-- Castle Executor -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24022" x="-256364" y="147912" z="2076" heading="51835" /> <!-- Embryo Magic Cannon -->
 			<npc id="24022" x="-256315" y="147634" z="2076" heading="51835" /> <!-- Embryo Magic Cannon -->
 			<npc id="24022" x="-256613" y="147562" z="2076" heading="51835" /> <!-- Embryo Magic Cannon -->
@@ -146,7 +146,7 @@
 			<npc id="24016" count="12" /> <!-- Castle Berserker -->
 			<npc id="24018" count="12" /> <!-- Castle High Priest -->
 			<npc id="24020" count="12" /> <!-- Castle Choir -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24017" x="-255932" y="154273" z="4121" heading="44693" /> <!-- Castle Soul Reaper -->
 			<npc id="24017" x="-256224" y="154406" z="4121" heading="44693" /> <!-- Castle Soul Reaper -->
 			<npc id="24017" x="-256508" y="154520" z="4124" heading="44693" /> <!-- Castle Soul Reaper -->
@@ -178,7 +178,7 @@
 			<npc id="24015" count="10" /> <!-- Castle Guardian Knight -->
 			<npc id="24019" count="10" /> <!-- Castle Dark Wizard -->
 			<npc id="24043" count="10" /> <!-- Castle Archer -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24017" x="-235669" y="145499" z="4123" heading="44889" /> <!-- Castle Soul Reaper -->
 			<npc id="24017" x="-235409" y="145382" z="4124" heading="44889" /> <!-- Castle Soul Reaper -->
 			<npc id="24017" x="-235939" y="145619" z="4123" heading="44889" /> <!-- Castle Soul Reaper -->
@@ -203,7 +203,7 @@
 				</banned_territory>
 			</territories>
 			<npc id="24048" count="8" /> <!-- Enhanced Poslof -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24022" x="-235183" y="152324" z="3607" heading="51041" /> <!-- Embryo Magic Cannon -->
 			<npc id="24022" x="-235149" y="152198" z="3607" heading="51041" /> <!-- Embryo Magic Cannon -->
 			<npc id="24022" x="-235456" y="152140" z="3607" heading="51041" /> <!-- Embryo Magic Cannon -->
@@ -242,7 +242,7 @@
 			<npc id="24047" x="-237695" y="150914" z="5144" heading="16047" /> <!-- Castle Executor -->
 			<npc id="24049" x="-237927" y="152285" z="5144" heading="18721" /> <!-- Castle Inquisitor -->
 			<npc id="24049" x="-237395" y="150920" z="5144" heading="16047" /> <!-- Castle Inquisitor -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24017" x="-237896" y="149289" z="5143" heading="13028" /> <!-- Castle Soul Reaper -->
 			<npc id="24017" x="-237583" y="149241" z="5152" heading="13028" /> <!-- Castle Soul Reaper -->
 			<npc id="24017" x="-237211" y="149193" z="5143" heading="13028" /> <!-- Castle Soul Reaper -->
@@ -273,7 +273,7 @@
 			<npc id="24044" count="12" /> <!-- Orc Mercenary Squad Commander -->
 			<npc id="24045" count="12" /> <!-- Orc Mercenary Warrior -->
 			<npc id="24046" count="12" /> <!-- Orc Mercenary Member -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24022" x="-246994" y="142563" z="2078" heading="1093" /> <!-- Embryo Magic Cannon -->
 			<npc id="24022" x="-246797" y="142522" z="2074" heading="1093" /> <!-- Embryo Magic Cannon -->
 			<npc id="24022" x="-246845" y="142218" z="2072" heading="1093" /> <!-- Embryo Magic Cannon -->
@@ -345,7 +345,7 @@
 			<npc id="24044" count="1" /> <!-- Orc Mercenary Squad Commander -->
 			<npc id="24045" count="2" /> <!-- Orc Mercenary Warrior -->
 			<npc id="24046" count="2" /> <!-- Orc Mercenary Member -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24042" x="-251456" y="144462" z="2584" heading="56870" /> <!-- Embryo Castle Magic Cannon -->
 		</group>
 		<group name="SPORCHA_2_SAYUNE" spawnByDefault="false">
@@ -363,7 +363,7 @@
 			<npc id="24016" count="10" /> <!-- Castle Berserker -->
 			<npc id="24018" count="10" /> <!-- Castle High Priest -->
 			<npc id="24020" count="10" /> <!-- Castle Choir -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24047" x="-253078" y="153391" z="7198" heading="44458" /> <!-- Castle Executor -->
 			<npc id="24047" x="-253417" y="153384" z="7192" heading="44458" /> <!-- Castle Executor -->
 			<npc id="24047" x="-253639" y="153603" z="7196" heading="44458" /> <!-- Castle Executor -->
@@ -394,7 +394,7 @@
 			<npc id="24043" x="-245309" y="145097" z="3095" heading="33184" /> <!-- Castle Archer -->
 			<npc id="24043" x="-245325" y="145221" z="3095" heading="33184" /> <!-- Castle Archer -->
 			<npc id="24043" x="-245331" y="145333" z="3095" heading="33184" /> <!-- Castle Archer -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24022" x="-244540" y="145070" z="3099" heading="34869" /> <!-- Embryo Magic Cannon -->
 			<npc id="24022" x="-244404" y="145097" z="3099" heading="34869" /> <!-- Embryo Magic Cannon -->
 			<npc id="24022" x="-244455" y="145317" z="3099" heading="34869" /> <!-- Embryo Magic Cannon -->
@@ -414,7 +414,7 @@
 			<npc id="24049" x="-240971" y="147973" z="4631" heading="44641" /> <!-- Castle Inquisitor -->
 			<npc id="24049" x="-241355" y="148667" z="4631" heading="44641" /> <!-- Castle Inquisitor -->
 			<npc id="24049" x="-240590" y="148944" z="4631" heading="46741" /> <!-- Castle Inquisitor -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24017" x="-240481" y="149326" z="4631" heading="46894" /> <!-- Castle Soul Reaper -->
 			<npc id="24017" x="-240820" y="149396" z="4631" heading="46894" /> <!-- Castle Soul Reaper -->
 			<npc id="24017" x="-241163" y="149460" z="4631" heading="46894" /> <!-- Castle Soul Reaper -->
@@ -526,7 +526,7 @@
 			<npc id="24016" count="1" /> <!-- Castle Berserker -->
 			<npc id="24018" count="2" /> <!-- Castle High Priest -->
 			<npc id="24020" count="2" /> <!-- Castle Choir -->
-			<!-- Raid Boss-->
+			<!-- Raid Boss -->
 			<npc id="24049" x="-241615" y="153701" z="5143" heading="45713" /> <!-- Castle Inquisitor -->
 			<npc id="24049" x="-242285" y="153732" z="5143" heading="45713" /> <!-- Castle Inquisitor -->
 			<npc id="24023" x="-241955" y="153714" z="5143" heading="45713" /> <!-- Embryo Castle Siege Tank -->

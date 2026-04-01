@@ -20,7 +20,6 @@
  */
 package org.l2jmobius.gameserver.model.item.holders;
 
-import org.l2jmobius.gameserver.model.ItemInfo;
 import org.l2jmobius.gameserver.model.item.enums.WorldExchangeItemStatusType;
 import org.l2jmobius.gameserver.model.item.enums.WorldExchangeItemSubType;
 import org.l2jmobius.gameserver.model.item.instance.Item;

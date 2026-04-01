@@ -89,7 +89,7 @@ public class UseItem extends ClientPacket
 			return;
 		}
 		
-		// Flood protect UseItem
+		// Flood protect UseItem.
 		if (!getClient().getFloodProtectors().canUseItem())
 		{
 			return;
@@ -117,7 +117,7 @@ public class UseItem extends ClientPacket
 		final Item item = player.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{
-			// GM can use other player item
+			// GM can use other player item.
 			if (player.isGM())
 			{
 				final WorldObject obj = World.getInstance().findObject(_objectId);
@@ -135,13 +135,13 @@ public class UseItem extends ClientPacket
 			return;
 		}
 		
-		// No UseItem is allowed while the player is in special conditions
+		// No UseItem is allowed while the player is in special conditions.
 		if (player.hasBlockActions() || player.isControlBlocked() || player.isAlikeDead())
 		{
 			return;
 		}
 		
-		// Char cannot use item when dead
+		// Char cannot use item when dead.
 		if (player.isDead() || !player.getInventory().canManipulateWithItemId(item.getId()))
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_THE_FUNCTION_CANNOT_BE_USED_AS_CERTAIN_REQUIREMENTS_ARE_NOT_MET);
@@ -158,7 +158,7 @@ public class UseItem extends ClientPacket
 		_itemId = item.getId();
 		if (player.isFishing() && ((_itemId < 6535) || (_itemId > 6540)))
 		{
-			// You cannot do anything else while fishing
+			// You cannot do anything else while fishing.
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_FISHING_3);
 			return;
 		}
@@ -211,10 +211,10 @@ public class UseItem extends ClientPacket
 				return;
 			}
 			
-			// Equip or unEquip
+			// Equip or unEquip.
 			if (FortSiegeManager.getInstance().isCombat(_itemId))
 			{
-				return; // no message
+				return; // No message.
 			}
 			
 			if (player.isCombatFlagEquipped())
@@ -260,11 +260,11 @@ public class UseItem extends ClientPacket
 						final Item lHandItem = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 						if (lHandItem != null)
 						{
-							// Remove from slot (Server side)
+							// Remove from slot (Server side).
 							player.getInventory().unEquipItemInBodySlot(BodyPart.L_HAND);
 							
-							// Update Inventory UI (Client side icon)
-							InventoryUpdate iu = new InventoryUpdate();
+							// Update Inventory UI (Client side icon).
+							final InventoryUpdate iu = new InventoryUpdate();
 							iu.addModifiedItem(lHandItem);
 							player.sendPacket(iu);
 							player.broadcastUserInfo();
@@ -383,7 +383,7 @@ public class UseItem extends ClientPacket
 			else if (handler.onItemUse(player, item, _ctrlPressed))
 			{
 				// Item reuse time should be added if the item is successfully used.
-				// Skill reuse delay is done at handlers.itemhandlers.ItemSkillsTemplate;
+				// Skill reuse delay is done at handlers.itemhandlers.ItemSkillsTemplate.
 				if (reuseDelay > 0)
 				{
 					player.addTimeStampItem(item, reuseDelay);

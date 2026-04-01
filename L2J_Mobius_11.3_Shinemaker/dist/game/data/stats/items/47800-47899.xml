@@ -779,7 +779,7 @@
 			<stat type="pAtk">833</stat>
 			<stat type="mAtk">363</stat>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8.0</stat>
+			<stat type="critRate">8.0</stat>
 			<stat type="accCombat">8.0</stat>
 			<stat type="pAtkRange">40</stat>
 			<stat type="randomDamage">10</stat>
@@ -810,7 +810,7 @@
 			<stat type="pAtk">1013</stat>
 			<stat type="mAtk">363</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8.0</stat>
+			<stat type="critRate">8.0</stat>
 			<stat type="accCombat">8.0</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -841,7 +841,7 @@
 			<stat type="pAtk">1013</stat>
 			<stat type="mAtk">363</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8.0</stat>
+			<stat type="critRate">8.0</stat>
 			<stat type="accCombat">8.0</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -871,7 +871,7 @@
 			<stat type="pAtk">773</stat>
 			<stat type="mAtk">384</stat>
 			<stat type="pAtkSpd">433</stat>
-			<stat type="rCrit">12.0</stat>
+			<stat type="critRate">12.0</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">40</stat>
 			<stat type="randomDamage">5</stat>
@@ -901,7 +901,7 @@
 			<stat type="pAtk">884</stat>
 			<stat type="mAtk">384</stat>
 			<stat type="pAtkSpd">433</stat>
-			<stat type="rCrit">12.0</stat>
+			<stat type="critRate">12.0</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">40</stat>
 			<stat type="randomDamage">10</stat>
@@ -931,7 +931,7 @@
 		<stats>
 			<stat type="pAtk">1740</stat>
 			<stat type="mAtk">513</stat>
-			<stat type="rCrit">12.0</stat>
+			<stat type="critRate">12.0</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">500</stat>
 			<stat type="randomDamage">5</stat>
@@ -963,7 +963,7 @@
 			<stat type="pAtk">1567</stat>
 			<stat type="mAtk">384</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">12.0</stat>
+			<stat type="critRate">12.0</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkRange">400</stat>
 			<stat type="randomDamage">5</stat>
@@ -994,7 +994,7 @@
 			<stat type="mAtk">363</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkSpd">433</stat>
-			<stat type="rCrit">12.0</stat>
+			<stat type="critRate">12.0</stat>
 		</stats>
 		<skills>
 			<skill id="13842" level="13" /> <!-- Enhanced Shadow Shaper -->
@@ -1021,7 +1021,7 @@
 			<stat type="mAtk">363</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8.0</stat>
+			<stat type="critRate">8.0</stat>
 		</stats>
 		<skills>
 			<skill id="13837" level="13" /> <!-- Enhanced Shadow Cutter -->
@@ -1049,7 +1049,7 @@
 			<stat type="mAtk">484</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8.0</stat>
+			<stat type="critRate">8.0</stat>
 		</stats>
 		<skills>
 			<skill id="13838" level="13" /> <!-- Enhanced Shadow Slasher -->
@@ -1078,7 +1078,7 @@
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="accCombat">8.0</stat>
-			<stat type="rCrit">6.0</stat>
+			<stat type="critRate">6.0</stat>
 		</stats>
 		<skills>
 			<skill id="13839" level="13" /> <!-- Enhanced Shadow Fighter -->
@@ -1106,7 +1106,7 @@
 			<stat type="mAtk">363</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8.0</stat>
+			<stat type="critRate">8.0</stat>
 		</stats>
 		<skills>
 			<skill id="13840" level="13" /> <!-- Enhanced Shadow Stormer -->
@@ -1136,7 +1136,7 @@
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="pAtkRange">500</stat>
-			<stat type="rCrit">12.0</stat>
+			<stat type="critRate">12.0</stat>
 		</stats>
 		<skills>
 			<skill id="13843" level="13" /> <!-- Enhanced Shadow Thrower -->
@@ -1165,7 +1165,7 @@
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="pAtkRange">400</stat>
-			<stat type="rCrit">12.0</stat>
+			<stat type="critRate">12.0</stat>
 		</stats>
 		<skills>
 			<skill id="13844" level="13" /> <!-- Enhanced Shadow Guardian -->
@@ -1194,7 +1194,7 @@
 			<stat type="mAtk">484</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkSpd">379</stat>
-			<stat type="rCrit">8.0</stat>
+			<stat type="critRate">8.0</stat>
 		</stats>
 		<skills>
 			<skill id="13845" level="13" /> <!-- Enhanced Shadow Buster -->
@@ -1225,7 +1225,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="accCombat">8.0</stat>
 			<stat type="accMagic">8.0</stat>
-			<stat type="rCrit">6.0</stat>
+			<stat type="critRate">6.0</stat>
 		</stats>
 		<skills>
 			<skill id="13846" level="13" /> <!-- Enhanced Shadow Retributer -->
@@ -1253,7 +1253,7 @@
 			<stat type="mAtk">363</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkSpd">325</stat>
-			<stat type="rCrit">8.0</stat>
+			<stat type="critRate">8.0</stat>
 		</stats>
 		<skills>
 			<skill id="13841" level="13" /> <!-- Enhanced Shadow Dual Swords -->
@@ -1404,7 +1404,7 @@
 		<stats>
 			<stat type="pAtk">92</stat>
 			<stat type="mAtk">54</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1429,7 +1429,7 @@
 		<stats>
 			<stat type="pAtk">198</stat>
 			<stat type="mAtk">83</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">-1.5</stat>
 			<stat type="pAtkSpd">303</stat>
 			<stat type="randomDamage">10</stat>

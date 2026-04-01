@@ -175,16 +175,16 @@
 		<isMagic>0</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="P. Critical Rate">+2%</effect>-->
-		<!--	<effect name="Max HP">+200</effect>-->
-		<!--	<effect name="P. Skill Critical Rate">+2%</effect>-->
-		<!--	<effect name="P. Skill Critical Damage">+2%</effect>-->
-		<!--	<effect name="P. Atk.">+2%</effect>-->
-		<!--	<effect name="Max MP">+200</effect>-->
-		<!--	<effect name="Atk. Spd.">+20</effect>-->
-		<!--	<effect name="P. Critical Damage">+2%</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="P. Critical Rate">+2%</effect> -->
+		<!-- 	<effect name="Max HP">+200</effect> -->
+		<!-- 	<effect name="P. Skill Critical Rate">+2%</effect> -->
+		<!-- 	<effect name="P. Skill Critical Damage">+2%</effect> -->
+		<!-- 	<effect name="P. Atk.">+2%</effect> -->
+		<!-- 	<effect name="Max MP">+200</effect> -->
+		<!-- 	<effect name="Atk. Spd.">+20</effect> -->
+		<!-- 	<effect name="P. Critical Damage">+2%</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="48709" toLevel="1" name="Bora's Luck - Magic">
 		<!-- M. Atk. +2%. M. Skill Critical Rate +2%. M. Skill Critical Damage +2%. Max HP +200. Max MP +200. Casting Spd. +20. The effect remains after death. The effect can be cancelled. -->
@@ -199,14 +199,14 @@
 		<isMagic>0</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="M. Skill Critical Damage">+2%</effect>-->
-		<!--	<effect name="M. Atk.">+2%</effect>-->
-		<!--	<effect name="Max HP">+200</effect>-->
-		<!--	<effect name="Casting Spd.">+20</effect>-->
-		<!--	<effect name="M. Skill Critical Rate">+2%</effect>-->
-		<!--	<effect name="Max MP">+200</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="M. Skill Critical Damage">+2%</effect> -->
+		<!-- 	<effect name="M. Atk.">+2%</effect> -->
+		<!-- 	<effect name="Max HP">+200</effect> -->
+		<!-- 	<effect name="Casting Spd.">+20</effect> -->
+		<!-- 	<effect name="M. Skill Critical Rate">+2%</effect> -->
+		<!-- 	<effect name="Max MP">+200</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="48710" toLevel="1" name="Bora's Luck - Status">
 		<!-- P. Def. +3%. M. Def. +3%. All received Critical Rate -3%. All received Critical Damage -3%. Max HP +200. Max MP +200. Atk. Spd. +20. Casting Spd. +20. Speed +2. The effect remains after death. The effect can be cancelled. -->
@@ -221,17 +221,17 @@
 		<isMagic>0</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="Speed">+2</effect>-->
-		<!--	<effect name="Max HP">+200</effect>-->
-		<!--	<effect name="Casting Spd.">+20</effect>-->
-		<!--	<effect name="All received Critical Damage">-3%</effect>-->
-		<!--	<effect name="M. Def.">+3%</effect>-->
-		<!--	<effect name="Max MP">+200</effect>-->
-		<!--	<effect name="Atk. Spd.">+20</effect>-->
-		<!--	<effect name="P. Def.">+3%</effect>-->
-		<!--	<effect name="All received Critical Rate">-3%</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="Speed">+2</effect> -->
+		<!-- 	<effect name="Max HP">+200</effect> -->
+		<!-- 	<effect name="Casting Spd.">+20</effect> -->
+		<!-- 	<effect name="All received Critical Damage">-3%</effect> -->
+		<!-- 	<effect name="M. Def.">+3%</effect> -->
+		<!-- 	<effect name="Max MP">+200</effect> -->
+		<!-- 	<effect name="Atk. Spd.">+20</effect> -->
+		<!-- 	<effect name="P. Def.">+3%</effect> -->
+		<!-- 	<effect name="All received Critical Rate">-3%</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="48711" toLevel="1" name="Deliver Message">
 		<!-- Deliver Message -->
@@ -535,21 +535,21 @@
 		<isMagic>4</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="Sayha's Grace Consumption">-30%</effect>-->
-		<!--	<effect name="MP Recovery Rate">+3</effect>-->
-		<!--	<effect name="HP Recovery Rate">+3</effect>-->
-		<!--	<effect name="M. Def.">+100</effect>-->
-		<!--	<effect name="P. Atk.">+50</effect>-->
-		<!--	<effect name="Max MP">+300</effect>-->
-		<!--	<effect name="M. Atk.">+50</effect>-->
-		<!--	<effect name="Magic Lamp charging rate">+3%</effect>-->
-		<!--	<effect name="Max HP">+300</effect>-->
-		<!--	<effect name="Casting Spd.">+30</effect>-->
-		<!--	<effect name="Atk. Spd.">+30</effect>-->
-		<!--	<effect name="P. Def.">+100</effect>-->
-		<!--	<effect name="Acquired XP/ SP">+10%</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="Sayha's Grace Consumption">-30%</effect> -->
+		<!-- 	<effect name="MP Recovery Rate">+3</effect> -->
+		<!-- 	<effect name="HP Recovery Rate">+3</effect> -->
+		<!-- 	<effect name="M. Def.">+100</effect> -->
+		<!-- 	<effect name="P. Atk.">+50</effect> -->
+		<!-- 	<effect name="Max MP">+300</effect> -->
+		<!-- 	<effect name="M. Atk.">+50</effect> -->
+		<!-- 	<effect name="Magic Lamp charging rate">+3%</effect> -->
+		<!-- 	<effect name="Max HP">+300</effect> -->
+		<!-- 	<effect name="Casting Spd.">+30</effect> -->
+		<!-- 	<effect name="Atk. Spd.">+30</effect> -->
+		<!-- 	<effect name="P. Def.">+100</effect> -->
+		<!-- 	<effect name="Acquired XP/ SP">+10%</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="48732" toLevel="1" name="Radin's Long Range Knockback">
 		<icon>icon.skill0000</icon>

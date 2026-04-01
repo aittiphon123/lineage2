@@ -21,8 +21,8 @@ import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.managers.InstanceManager;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.matching.MatchingMemberType;
 import org.l2jmobius.gameserver.model.groups.matching.PartyMatchingRoom;
@@ -55,7 +55,7 @@ public class ExPartyRoomMember extends ServerPacket
 			buffer.writeString(member.getName());
 			buffer.writeInt(member.getActiveClass());
 			buffer.writeInt(member.getLevel());
-			buffer.writeInt(MapRegionManager.getInstance().getBBs(member.getLocation()));
+			buffer.writeInt(MapRegionData.getInstance().getBBs(member.getLocation()));
 			buffer.writeInt(_room.getMemberType(member).ordinal());
 			final Map<Integer, Long> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(member);
 			buffer.writeInt(instanceTimes.size());

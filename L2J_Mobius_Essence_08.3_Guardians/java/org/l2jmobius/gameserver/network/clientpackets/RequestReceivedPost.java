@@ -23,8 +23,8 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.ExChangePostState;
 import org.l2jmobius.gameserver.network.serverpackets.ExReplyReceivedPost;
 
@@ -50,7 +50,7 @@ public class RequestReceivedPost extends ClientPacket
 			return;
 		}
 		
-		final Message msg = MailManager.getInstance().getMessage(_msgId);
+		final MailMessage msg = MailManager.getInstance().getMessage(_msgId);
 		if (msg == null)
 		{
 			return;
@@ -74,7 +74,7 @@ public class RequestReceivedPost extends ClientPacket
 		}
 		
 		player.sendPacket(new ExReplyReceivedPost(msg));
-		player.sendPacket(new ExChangePostState(true, _msgId, Message.READED));
+		player.sendPacket(new ExChangePostState(true, _msgId, MailMessage.READED));
 		msg.markAsRead();
 	}
 }

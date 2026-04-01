@@ -28,7 +28,7 @@
 		</failureItems>
 	</upgrade>
 	<upgrade id="2" type="1" chance="50" commission="5000000">
-		<upgradeItem id="6661" count="1" enchantLevel="0" /> <!--Orfen's Earring -->
+		<upgradeItem id="6661" count="1" enchantLevel="0" /> <!-- Orfen's Earring -->
 		<successItems>
 			<item id="94383" count="1" enchantLevel="0" /> <!-- Scroll: Enchant Rare Accessories -->
 		</successItems>

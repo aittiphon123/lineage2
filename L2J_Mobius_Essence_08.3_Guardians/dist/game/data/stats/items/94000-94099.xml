@@ -765,6 +765,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="300001" level="1" /> <!-- Glorious Warrior: Enhanced Abilities -->
+		</skills>
 	</item>
 	<item id="94047" name="Spellbook: Glorious Warrior's Ability" additionalName="Sealed" type="EtcItem">
 		<!-- A spellbook for learning Glorious Warrior's Ability. -->

@@ -227,7 +227,6 @@
 			<npc id="30158" x="45919" y="52414" z="-2795" heading="49152" respawnTime="60sec" /> <!-- Esrandell - Grand Magister -->
 			<npc id="30148" x="44683" y="46952" z="-2981" heading="28672" respawnTime="60sec" /> <!-- Ariel - Armor Merchant -->
 			<npc id="31853" x="36000" y="47132" z="-3685" heading="7167" respawnTime="60sec" /> <!-- Treant Bremec -->
-			<npc id="30599" x="45475" y="48359" z="-3060" heading="49152" respawnTime="60sec" /> <!-- Newbie Guide -->
 			<npc id="30414" x="43673" y="49683" z="-3046" heading="0" respawnTime="60sec" /> <!-- Rosella -->
 			<npc id="30150" x="42766" y="50037" z="-2984" heading="11500" respawnTime="60sec" /> <!-- Herbiel - Grocer -->
 			<npc id="30149" x="42700" y="50057" z="-2984" heading="14500" respawnTime="60sec" /> <!-- Creamees - Accessory Merchant -->
@@ -357,7 +356,6 @@
 			<npc id="31845" x="3907" y="9645" z="-2946" heading="17857" respawnTime="60sec" /> <!-- Bloody Pixy -->
 			<npc id="31845" x="15715" y="6848" z="-3255" heading="39582" respawnTime="60sec" /> <!-- Bloody Pixy -->
 			<npc id="31850" x="28078" y="13975" z="-3723" heading="49706" respawnTime="60sec" /> <!-- Blight Treant -->
-			<npc id="30600" x="12111" y="16686" z="-4582" heading="63240" respawnTime="60sec" /> <!-- Newbie Guide -->
 			<npc id="30141" x="11012" y="14128" z="-4242" heading="14500" respawnTime="60sec" /> <!-- Talos - Hierarch -->
 			<npc id="30359" x="11235" y="14078" z="-4242" heading="24576" respawnTime="60sec" /> <!-- Kaitar - Hierarch -->
 			<npc id="30144" x="10344" y="14445" z="-4242" heading="63640" respawnTime="60sec" /> <!-- Harne - Magister -->

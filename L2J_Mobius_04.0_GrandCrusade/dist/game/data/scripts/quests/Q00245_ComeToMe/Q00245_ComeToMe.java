@@ -23,9 +23,9 @@ package quests.Q00245_ComeToMe;
 import java.util.Collection;
 
 import org.l2jmobius.gameserver.managers.MentorManager;
-import org.l2jmobius.gameserver.model.Mentee;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.player.Mentee;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.script.Quest;
 import org.l2jmobius.gameserver.model.script.QuestSound;

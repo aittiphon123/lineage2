@@ -195,14 +195,15 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 		int failedAttempts = 0;
 		for (int i = 0; i < count; i++)
 		{
-			usedStones++;
 			final int result = addElement(player, stone, item, elementToAdd);
 			if (result == 1)
 			{
+				usedStones++;
 				successfulAttempts++;
 			}
 			else if (result == 0)
 			{
+				usedStones++;
 				failedAttempts++;
 			}
 			else

@@ -131,6 +131,7 @@ public class CreatureSay extends ServerPacket
 	{
 		ServerPackets.SAY2.writeId(this, buffer);
 		buffer.writeInt(_sender == null ? 0 : _sender.getObjectId());
+		
 		buffer.writeInt(_chatType.getClientId());
 		if (_senderName != null)
 		{

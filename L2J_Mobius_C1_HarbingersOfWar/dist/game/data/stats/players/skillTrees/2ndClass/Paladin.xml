@@ -29,7 +29,7 @@
 		<skill skillName="Shield Mastery" skillId="153" skillLevel="3" getLevel="40" levelUpSp="37000" learnedByNpc="true" />
 		<skill skillName="Holy Armor" skillId="197" skillLevel="1" getLevel="40" levelUpSp="37000" learnedByNpc="true" />
 		<skill skillName="Remedy" skillId="44" skillLevel="1" getLevel="40" levelUpSp="37000" learnedByNpc="true">
-			<item id="3432" count="1" /> <!-- Spellbook:  Remedy1 -->
+			<item id="3432" count="1" /> <!-- Spellbook: Remedy1 -->
 		</skill>
 
 		<skill skillName="Sword Blunt Mastery" skillId="217" skillLevel="12" getLevel="43" levelUpSp="14000" learnedByNpc="true" />

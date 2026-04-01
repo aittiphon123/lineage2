@@ -68,10 +68,7 @@ import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.managers.PcCafePointsManager;
 import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
-import org.l2jmobius.gameserver.model.KeyValuePair;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.Message;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Attackable;
@@ -180,6 +177,7 @@ import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.enums.AcquireSkillType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.model.spawns.SpawnGroup;
 import org.l2jmobius.gameserver.model.spawns.SpawnTemplate;
 import org.l2jmobius.gameserver.model.stats.Stat;
@@ -187,6 +185,7 @@ import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.Movie;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
 import org.l2jmobius.gameserver.network.serverpackets.ExAdenaInvenCount;
 import org.l2jmobius.gameserver.network.serverpackets.ExQuestNpcLogList;
@@ -2752,17 +2751,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	}
 	
 	/**
-	 * Adds a predicate to the start conditions.
-	 * @param questStartRequirement the predicate condition
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondStart(Predicate<Player> questStartRequirement, KeyValuePair<Integer, String>... pairs)
-	{
-		getStartConditions().add(new QuestCondition(questStartRequirement, pairs));
-	}
-	
-	/**
 	 * Adds a minimum/maximum level start condition to the quest.
 	 * @param minLevel the minimum player's level to start the quest
 	 * @param maxLevel the maximum player's level to start the quest
@@ -2771,18 +2759,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	public void addCondLevel(int minLevel, int maxLevel, String html)
 	{
 		addCondStart(p -> (p.getLevel() >= minLevel) && (p.getLevel() <= maxLevel), html);
-	}
-	
-	/**
-	 * Adds a minimum/maximum level start condition to the quest.
-	 * @param minLevel the minimum player's level to start the quest
-	 * @param maxLevel the maximum player's level to start the quest
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondMinLevel(int minLevel, int maxLevel, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> (p.getLevel() >= minLevel) && (p.getLevel() <= maxLevel), pairs);
 	}
 	
 	/**
@@ -2796,17 +2772,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	}
 	
 	/**
-	 * Adds a minimum level start condition to the quest.
-	 * @param minLevel the minimum player's level to start the quest
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondMinLevel(int minLevel, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> p.getLevel() >= minLevel, pairs);
-	}
-	
-	/**
 	 * Adds a minimum/maximum level start condition to the quest.
 	 * @param maxLevel the maximum player's level to start the quest
 	 * @param html the HTML to display if the condition is not met
@@ -2814,17 +2779,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	public void addCondMaxLevel(int maxLevel, String html)
 	{
 		addCondStart(p -> p.getLevel() <= maxLevel, html);
-	}
-	
-	/**
-	 * Adds a minimum/maximum level start condition to the quest.
-	 * @param maxLevel the maximum player's level to start the quest
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondMaxLevel(int maxLevel, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> p.getLevel() <= maxLevel, pairs);
 	}
 	
 	/**
@@ -2838,17 +2792,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	}
 	
 	/**
-	 * Adds a race start condition to the quest.
-	 * @param race the race
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondRace(Race race, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> p.getRace() == race, pairs);
-	}
-	
-	/**
 	 * Adds a not-race start condition to the quest.
 	 * @param race the race
 	 * @param html the HTML to display if the condition is not met
@@ -2856,17 +2799,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	public void addCondNotRace(Race race, String html)
 	{
 		addCondStart(p -> p.getRace() != race, html);
-	}
-	
-	/**
-	 * Adds a not-race start condition to the quest.
-	 * @param race the race
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondNotRace(Race race, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> p.getRace() != race, pairs);
 	}
 	
 	/**
@@ -2880,17 +2812,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	}
 	
 	/**
-	 * Adds a quest completed start condition to the quest.
-	 * @param name the quest name
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondCompletedQuest(String name, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> p.hasQuestState(name) && p.getQuestState(name).isCompleted(), pairs);
-	}
-	
-	/**
 	 * Adds a quest started start condition to the quest.
 	 * @param name the quest name
 	 * @param html the HTML to display if the condition is not met
@@ -2898,17 +2819,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	public void addCondStartedQuest(String name, String html)
 	{
 		addCondStart(p -> p.hasQuestState(name) && p.getQuestState(name).isStarted(), html);
-	}
-	
-	/**
-	 * Adds a quest started start condition to the quest.
-	 * @param name the quest name
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondStartedQuest(String name, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> p.hasQuestState(name) && p.getQuestState(name).isStarted(), pairs);
 	}
 	
 	/**
@@ -2922,17 +2832,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	}
 	
 	/**
-	 * Adds a class ID start condition to the quest.
-	 * @param playerClass the class identifier as a {@link PlayerClass} enum value
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondClassId(PlayerClass playerClass, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> p.getPlayerClass() == playerClass, pairs);
-	}
-	
-	/**
 	 * Adds a not-class ID start condition to the quest.
 	 * @param playerClass the class identifier as a {@link PlayerClass} enum value
 	 * @param html the HTML to display if the condition is not met
@@ -2940,17 +2839,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	public void addCondNotClassId(PlayerClass playerClass, String html)
 	{
 		addCondStart(p -> p.getPlayerClass() != playerClass, html);
-	}
-	
-	/**
-	 * Adds a not-class ID start condition to the quest.
-	 * @param playerClass the class identifier as a {@link PlayerClass} enum value
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondNotClassId(PlayerClass playerClass, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> p.getPlayerClass() != playerClass, pairs);
 	}
 	
 	/**
@@ -2963,32 +2851,12 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	}
 	
 	/**
-	 * Adds a subclass active start condition to the quest.
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondIsSubClassActive(KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> p.isSubClassActive(), pairs);
-	}
-	
-	/**
 	 * Adds a not-subclass active start condition to the quest.
 	 * @param html the HTML to display if the condition is not met
 	 */
 	public void addCondIsNotSubClassActive(String html)
 	{
 		addCondStart(p -> !p.isSubClassActive() && !p.isDualClassActive(), html);
-	}
-	
-	/**
-	 * Adds a not-subclass active start condition to the quest.
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondIsNotSubClassActive(KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> !p.isSubClassActive() && !p.isDualClassActive(), pairs);
 	}
 	
 	/**
@@ -3002,17 +2870,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	}
 	
 	/**
-	 * Adds a category start condition to the quest.
-	 * @param categoryType the category type
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondInCategory(CategoryType categoryType, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> p.isInCategory(categoryType), pairs);
-	}
-	
-	/**
 	 * Adds a clan level start condition to the quest.
 	 * @param clanLevel the clan level
 	 * @param html the HTML to display if the condition is not met
@@ -3020,28 +2877,6 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 	public void addCondClanLevel(int clanLevel, String html)
 	{
 		addCondStart(p -> (p.getClan() != null) && (p.getClan().getLevel() > clanLevel), html);
-	}
-	
-	/**
-	 * Adds a category start condition to the quest.
-	 * @param clanLevel the clan level
-	 * @param pairs the HTML to display if the condition is not met per each npc
-	 */
-	@SafeVarargs
-	public final void addCondClanLevel(int clanLevel, KeyValuePair<Integer, String>... pairs)
-	{
-		addCondStart(p -> (p.getClan() != null) && (p.getClan().getLevel() > clanLevel), pairs);
-	}
-	
-	/**
-	 * Adds a faction level start condition to the quest.
-	 * @param faction the faction
-	 * @param factionLevel the faction level
-	 * @param html the HTML to display if the condition is not met
-	 */
-	public void addFactionLevel(Faction faction, int factionLevel, String html)
-	{
-		addCondStart(p -> p.getFactionLevel(faction) >= factionLevel, html);
 	}
 	
 	public void onQuestAborted(Player player)
@@ -5361,10 +5196,10 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 		// Mail attachments.
 		if (GeneralConfig.ALLOW_MAIL)
 		{
-			final List<Message> inbox = MailManager.getInstance().getInbox(player.getObjectId());
+			final List<MailMessage> inbox = MailManager.getInstance().getInbox(player.getObjectId());
 			for (int itemId : itemIds)
 			{
-				for (Message message : inbox)
+				for (MailMessage message : inbox)
 				{
 					final Mail mail = message.getAttachments();
 					if ((mail != null) && (mail.getItemByItemId(itemId) != null))
@@ -5374,10 +5209,10 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 				}
 			}
 			
-			final List<Message> outbox = MailManager.getInstance().getOutbox(player.getObjectId());
+			final List<MailMessage> outbox = MailManager.getInstance().getOutbox(player.getObjectId());
 			for (int itemId : itemIds)
 			{
-				for (Message message : outbox)
+				for (MailMessage message : outbox)
 				{
 					final Mail mail = message.getAttachments();
 					if ((mail != null) && (mail.getItemByItemId(itemId) != null))

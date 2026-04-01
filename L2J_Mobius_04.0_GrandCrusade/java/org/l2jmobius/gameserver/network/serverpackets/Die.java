@@ -23,11 +23,11 @@ import java.util.List;
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.FortManager;
-import org.l2jmobius.gameserver.model.SiegeClan;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.Fort;
+import org.l2jmobius.gameserver.model.siege.SiegeClan;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 

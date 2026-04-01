@@ -25,8 +25,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.l2jmobius.gameserver.data.holders.ArmorSet;
 import org.l2jmobius.gameserver.data.xml.ArmorSetData;
-import org.l2jmobius.gameserver.model.ArmorSet;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.stats.BaseStat;

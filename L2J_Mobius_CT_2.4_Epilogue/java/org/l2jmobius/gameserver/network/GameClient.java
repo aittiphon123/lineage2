@@ -36,10 +36,10 @@ import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.config.custom.WeddingConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
-import org.l2jmobius.gameserver.model.CharSelectInfoPackage;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
+import org.l2jmobius.gameserver.network.holders.CharacterInfoHolder;
 import org.l2jmobius.gameserver.network.holders.ClientHardwareInfoHolder;
 import org.l2jmobius.gameserver.network.serverpackets.LeaveWorld;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
@@ -64,7 +64,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 	private SessionKey _sessionKey;
 	private Player _player;
 	private ClientHardwareInfoHolder _hardwareInfo;
-	private List<CharSelectInfoPackage> _charSlotMapping = null;
+	private List<CharacterInfoHolder> _charSlotMapping = null;
 	private volatile boolean _isDetached = false;
 	private boolean _isAuthedGG;
 	private boolean _protocolOk;
@@ -540,12 +540,12 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 		return player;
 	}
 	
-	public void setCharSelection(List<CharSelectInfoPackage> characters)
+	public void setCharSelection(List<CharacterInfoHolder> characters)
 	{
 		_charSlotMapping = characters;
 	}
 	
-	public CharSelectInfoPackage getCharSelection(int charslot)
+	public CharacterInfoHolder getCharSelection(int charslot)
 	{
 		if ((_charSlotMapping == null) || (charslot < 0) || (charslot >= _charSlotMapping.size()))
 		{
@@ -561,7 +561,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 	 */
 	private int getObjectIdForSlot(int characterSlot)
 	{
-		final CharSelectInfoPackage info = getCharSelection(characterSlot);
+		final CharacterInfoHolder info = getCharSelection(characterSlot);
 		if (info == null)
 		{
 			LOGGER.warning(toString() + " tried to delete Character in slot " + characterSlot + " but no characters exits at that slot.");

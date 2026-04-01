@@ -2088,17 +2088,17 @@
 				<power>6000</power>
 			</effect>
 		</effects>
-		<!--<effects> TODO: NEED TO IMPLEMENT-->
-		<!--	<effect name="Ignore Defense Resistance">45%</effect>-->
-		<!--	<effect name="Buff Cancel Resistance">-->
-		<!--		<value level="1">+80%</value>-->
-		<!--		<value level="2">+80%</value>-->
-		<!--		<value level="3">+90%</value>-->
-		<!--	</effect>-->
-		<!--	<effect name="Defense Ignore Removal">45%</effect>-->
-		<!--	<effect name="When used, recovers HP.">6000</effect>-->
-		<!--	<effect name="All received Critical Rate">-5%</effect>-->
-		<!--</effects>-->
+		<!-- <effects> TODO: NEED TO IMPLEMENT -->
+		<!-- 	<effect name="Ignore Defense Resistance">45%</effect> -->
+		<!-- 	<effect name="Buff Cancel Resistance"> -->
+		<!-- 		<value level="1">+80%</value> -->
+		<!-- 		<value level="2">+80%</value> -->
+		<!-- 		<value level="3">+90%</value> -->
+		<!-- 	</effect> -->
+		<!-- 	<effect name="Defense Ignore Removal">45%</effect> -->
+		<!-- 	<effect name="When used, recovers HP.">6000</effect> -->
+		<!-- 	<effect name="All received Critical Rate">-5%</effect> -->
+		<!-- </effects> -->
 	</skill>
 	<skill id="87155" toLevel="1" name="Shadow Blast">
 		<!-- Summoned <font color="FFBB00">shadow</font> explodes dealing damage in the nearby area. <font color="FF8000">Note!</font>. Cannot be triggered if there are no summoned <font color="FFBB00">shadows</font>. If there are no enemies nearby, the <font color="FFBB00">shadow</font> will not explode. -->

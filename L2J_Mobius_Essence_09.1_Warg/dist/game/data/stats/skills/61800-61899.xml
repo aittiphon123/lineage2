@@ -678,8 +678,8 @@
 		<isMagic>1</isMagic>
 		<mpConsume>0</mpConsume>
 		<reuseDelay>0</reuseDelay>
-		<!--<effects>-->
-		<!--	<effect name="Max Critical Rate limit">50%</effect>-->
-		<!--</effects>-->
+		<!-- <effects> -->
+		<!-- 	<effect name="Max Critical Rate limit">50%</effect> -->
+		<!-- </effects> -->
 	</skill>
 </list>

@@ -30,7 +30,6 @@ import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.managers.ScriptManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -45,6 +44,7 @@ import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.enums.MessageSenderType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 
@@ -211,7 +211,7 @@ public class CharacterBirthday extends Script
 				while (rs.next())
 				{
 					final String text = GeneralConfig.ALT_BIRTHDAY_MAIL_TEXT.replaceAll("$c1", rs.getString("char_name")).replaceAll("$s1", Integer.toString(rs.getInt("age")));
-					final Message message = new Message(rs.getInt("charId"), GeneralConfig.ALT_BIRTHDAY_MAIL_SUBJECT, text, MessageSenderType.ALEGRIA);
+					final MailMessage message = new MailMessage(rs.getInt("charId"), GeneralConfig.ALT_BIRTHDAY_MAIL_SUBJECT, text, MessageSenderType.ALEGRIA);
 					message.createAttachments().addItem(ItemProcessType.REWARD, GeneralConfig.ALT_BIRTHDAY_GIFT, 1, null, null);
 					MailManager.getInstance().sendMessage(message);
 					birthdayGiftCount++;

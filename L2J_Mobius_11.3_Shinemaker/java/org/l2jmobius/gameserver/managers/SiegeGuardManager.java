@@ -28,7 +28,6 @@ import java.util.logging.Logger;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.data.xml.CastleData;
 import org.l2jmobius.gameserver.data.xml.NpcData;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Defender;
@@ -38,6 +37,7 @@ import org.l2jmobius.gameserver.model.item.enums.ItemLocation;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.SiegeGuardHolder;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 
 /**
  * Siege Guard Manager.

@@ -46,9 +46,7 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.gameserver.config.WorldExchangeConfig;
 import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
-import org.l2jmobius.gameserver.model.ItemInfo;
 import org.l2jmobius.gameserver.model.StatSet;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemLocation;
@@ -56,9 +54,11 @@ import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.enums.WorldExchangeItemStatusType;
 import org.l2jmobius.gameserver.model.item.enums.WorldExchangeItemSubType;
 import org.l2jmobius.gameserver.model.item.enums.WorldExchangeSortType;
+import org.l2jmobius.gameserver.model.item.holders.ItemInfo;
 import org.l2jmobius.gameserver.model.item.holders.WorldExchangeHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
@@ -725,7 +725,7 @@ public class WorldExchangeManager implements IXmlReader
 		final Item receivedItem = player.getInventory().addItem(ItemProcessType.BUY, worldExchangeItem.getItemInstance(), player, null);
 		player.sendPacket(new WorldExchangeBuyItem(receivedItem.getObjectId(), receivedItem.getCount(), (byte) 1));
 		final SystemMessage sm;
-		if (receivedItem.getEnchantLevel() > 0)
+		if (receivedItem.isEnchanted())
 		{
 			if (receivedItem.getCount() < 2)
 			{

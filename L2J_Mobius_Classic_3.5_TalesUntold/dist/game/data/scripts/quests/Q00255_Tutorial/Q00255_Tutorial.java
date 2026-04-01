@@ -157,7 +157,7 @@ public class Q00255_Tutorial extends Quest
 		COMPLETE_LOCATION.put(53, new Location(115575, -178014, -904, 9808));
 		COMPLETE_LOCATION.put(192, new Location(-118073, 45131, 368, 43039));
 	}
-	private static final String TUTORIAL_BYPASS = "Quest Q00255_Tutorial ";
+	private static final String TUTORIAL_BYPASS = "Script Q00255_Tutorial ";
 	private static final int QUESTION_MARK_ID_1 = 1;
 	private static final int QUESTION_MARK_ID_2 = 5;
 	private static final int QUESTION_MARK_ID_3 = 28;

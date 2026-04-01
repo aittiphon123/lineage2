@@ -23,9 +23,9 @@ package org.l2jmobius.gameserver.network.serverpackets;
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.data.SpawnTable;
 import org.l2jmobius.gameserver.managers.ItemAuctionManager;
-import org.l2jmobius.gameserver.model.Spawn;
-import org.l2jmobius.gameserver.model.itemauction.ItemAuction;
-import org.l2jmobius.gameserver.model.itemauction.ItemAuctionInstance;
+import org.l2jmobius.gameserver.model.item.auction.ItemAuction;
+import org.l2jmobius.gameserver.model.item.auction.ItemAuctionInstance;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 

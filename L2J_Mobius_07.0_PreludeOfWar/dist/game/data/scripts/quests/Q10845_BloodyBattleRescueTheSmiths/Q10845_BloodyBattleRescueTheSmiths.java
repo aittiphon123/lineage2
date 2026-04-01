@@ -140,7 +140,7 @@ public final class Q10845_BloodyBattleRescueTheSmiths extends Quest
 	@Id(CAPTIVE_BLACKSMITH_BRUNON)
 	@Id(CAPTIVE_BLACKSMITH_SUMARI)
 	@Id(CAPTIVE_BLACKSMITH_TRAINEE_LANSIA)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);
@@ -279,7 +279,7 @@ public final class Q10845_BloodyBattleRescueTheSmiths extends Quest
 		}
 	}
 	
-	public final void checkLogState(Player player)
+	public void checkLogState(Player player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if ((qs != null) && (qs.getInt(Integer.toString(CAPTIVE_BLACKSMITH_KARROD)) == 1) && (qs.getInt(Integer.toString(CAPTIVE_BLACKSMITH_AIOS)) == 1) && (qs.getInt(Integer.toString(CAPTIVE_BLACKSMITH_BRUNON)) == 1) && (qs.getInt(Integer.toString(CAPTIVE_BLACKSMITH_SUMARI)) == 1) && (qs.getInt(Integer.toString(CAPTIVE_BLACKSMITH_TRAINEE_LANSIA)) == 1))

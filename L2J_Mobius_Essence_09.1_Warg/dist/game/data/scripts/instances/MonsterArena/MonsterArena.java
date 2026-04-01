@@ -121,6 +121,8 @@ public class MonsterArena extends InstanceScript
 			case "30202-01.htm":
 			case "30202-02.htm":
 			case "30202-03.htm":
+			case "30202-04.htm":
+			case "30202-05.htm":
 			case "30203-01.htm":
 			{
 				return event;

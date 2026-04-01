@@ -297,6 +297,28 @@ public class CharInfoTable
 		return 0;
 	}
 	
+	public int getRacelById(int objectId)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT race FROM characters WHERE charId = ?"))
+		{
+			ps.setInt(1, objectId);
+			try (ResultSet rset = ps.executeQuery())
+			{
+				if (rset.next())
+				{
+					return rset.getInt("race");
+				}
+			}
+		}
+		catch (SQLException e)
+		{
+			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Could not check existing char count: " + e.getMessage(), e);
+		}
+		
+		return 0;
+	}
+	
 	public void setClanId(int objectId, int clanId)
 	{
 		_clans.put(objectId, clanId);

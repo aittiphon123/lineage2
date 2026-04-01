@@ -21,6 +21,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
 import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -161,6 +162,7 @@ public class Q10771_VolatilePower extends Quest
 				
 				takeItems(player, SHINING_MYSTERIOUS_FRAGMENT, reduceCount);
 				giveItems(player, NORMAL_FRAGMENT_DUST, reduceCount);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				getTimers().addTimer("DESTROY_COUNT", 2000, npc, player);
 				if (getQuestItemsCount(player, NORMAL_FRAGMENT_DUST) >= 20)
 				{

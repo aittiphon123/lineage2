@@ -39,12 +39,12 @@ import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.olympiad.Hero;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 import org.l2jmobius.gameserver.network.Disconnection;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -57,7 +57,7 @@ public class CharSelectionInfo extends ServerPacket
 {
 	private static final Logger LOGGER = Logger.getLogger(CharSelectionInfo.class.getName());
 	
-	private static final int[] PAPERDOLL_ORDER =
+	private static final int[] PAPERDOLL_ITEM_SLOTS =
 	{
 		Inventory.PAPERDOLL_UNDER,
 		Inventory.PAPERDOLL_REAR,
@@ -120,7 +120,8 @@ public class CharSelectionInfo extends ServerPacket
 		Inventory.PAPERDOLL_ARTIFACT20, // 152
 		Inventory.PAPERDOLL_ARTIFACT21 // 152
 	};
-	private static final int[] PAPERDOLL_ORDER_VISUAL_ID =
+	
+	private static final int[] PAPERDOLL_VISUAL_SLOTS =
 	{
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_LHAND,
@@ -130,7 +131,7 @@ public class CharSelectionInfo extends ServerPacket
 		Inventory.PAPERDOLL_FEET,
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_HAIR,
-		Inventory.PAPERDOLL_HAIR2,
+		Inventory.PAPERDOLL_HAIR2
 	};
 	
 	private final String _loginName;
@@ -224,12 +225,13 @@ public class CharSelectionInfo extends ServerPacket
 			buffer.writeInt(0);
 			buffer.writeInt(0); // Ertheia
 			buffer.writeInt(0); // Ertheia
-			for (int slot : getPaperdollOrder())
+			
+			for (int slot : PAPERDOLL_ITEM_SLOTS)
 			{
 				buffer.writeInt(charInfoPackage.getPaperdollItemId(slot));
 			}
 			
-			for (int slot : getPaperdollOrderVisualId())
+			for (int slot : PAPERDOLL_VISUAL_SLOTS)
 			{
 				buffer.writeInt(charInfoPackage.getPaperdollItemVisualId(slot));
 			}
@@ -519,17 +521,5 @@ public class CharSelectionInfo extends ServerPacket
 		charInfopackage.setLastAccess(chardata.getLong("lastAccess"));
 		charInfopackage.setNoble(chardata.getInt("nobless") == 1);
 		return charInfopackage;
-	}
-	
-	@Override
-	public int[] getPaperdollOrder()
-	{
-		return PAPERDOLL_ORDER;
-	}
-	
-	@Override
-	public int[] getPaperdollOrderVisualId()
-	{
-		return PAPERDOLL_ORDER_VISUAL_ID;
 	}
 }

@@ -10,8 +10,10 @@
 		<set name="price" val="1000" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" /> <!-- Wolves' Necklace -->
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<skills>
+			<skill id="2046" level="1" /> <!-- Wolves' Necklace -->
+		</skills>
 	</item>
 	<item id="3501" type="EtcItem" name="Dragonflute of Star">
 		<!-- Flute used to call up hatchling of star. -->
@@ -23,8 +25,10 @@
 		<set name="price" val="1000" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" /> <!-- Wolves' Necklace -->
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<skills>
+			<skill id="2046" level="1" /> <!-- Wolves' Necklace -->
+		</skills>
 	</item>
 	<item id="3502" type="EtcItem" name="Dragonflute of Twilight">
 		<!-- Flute used to call up hatchling of twilight. -->
@@ -36,8 +40,10 @@
 		<set name="price" val="1000" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" /> <!-- Wolves' Necklace -->
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<skills>
+			<skill id="2046" level="1" /> <!-- Wolves' Necklace -->
+		</skills>
 	</item>
 	<item id="3503" type="EtcItem" name="Deliverymen Decertificate">
 		<!-- Official certification for making deliveries. Issued by the Iron Gate Guild. Seal of Lockrin of the Iron Gate is affixed. -->

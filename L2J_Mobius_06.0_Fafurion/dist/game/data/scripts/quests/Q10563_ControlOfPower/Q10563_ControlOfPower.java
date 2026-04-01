@@ -168,7 +168,7 @@ public final class Q10563_ControlOfPower extends Quest
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id(HERPHAH)
 	@Id(PENNY)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);

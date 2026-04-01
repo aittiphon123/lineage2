@@ -21,7 +21,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2jmobius.gameserver.data.sql.PartyMatchingHistoryTable;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.managers.MatchingRoomManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.enums.UserInfoType;
@@ -139,7 +139,7 @@ public abstract class MatchingRoom
 	
 	public int getLocation()
 	{
-		return MapRegionManager.getInstance().getBBs(_leader.getLocation());
+		return MapRegionData.getInstance().getBBs(_leader.getLocation());
 	}
 	
 	public int getMembersCount()

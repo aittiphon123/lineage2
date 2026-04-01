@@ -4805,11 +4805,11 @@
 		<reuseDelay>30000</reuseDelay>
 		<effects>
 			<effect name="TriggerHealPercentBySkill">
-				<castSkillId>30964</castSkillId> <!-- Hellfire - Restraint-->
+				<castSkillId>30964</castSkillId> <!-- Hellfire - Restraint -->
 				<power>5</power>
 			</effect>
 			<effect name="TriggerHealPercentBySkill">
-				<castSkillId>30965</castSkillId> <!-- Hellfire - Fury-->
+				<castSkillId>30965</castSkillId> <!-- Hellfire - Fury -->
 				<power>5</power>
 			</effect>
 			<effect name="TriggerHealPercentBySkill">
@@ -4833,7 +4833,7 @@
 				<power>5</power>
 			</effect>
 			<effect name="TriggerHealPercentBySkill">
-				<castSkillId>31158</castSkillId> <!--  Hell Rift  - Fury -->
+				<castSkillId>31158</castSkillId> <!-- Hell Rift - Fury -->
 				<power>5</power>
 			</effect>
 			<effect name="DebuffBlock" />

@@ -40,7 +40,6 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.CommissionManager;
@@ -56,6 +55,7 @@ import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.itemcontainer.Mail;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.commission.ExResponseCommissionBuyItem;
 import org.l2jmobius.gameserver.network.serverpackets.commission.ExResponseCommissionDelete;
 import org.l2jmobius.gameserver.network.serverpackets.commission.ExResponseCommissionInfo;
@@ -440,7 +440,7 @@ public class ItemCommissionManager
 			
 			final long saleFee = (long) Math.max(MIN_REGISTRATION_AND_SALE_FEE, (totalPrice * SALE_FEE_PER_DAY) * Math.min(commissionItem.getDurationInDays(), 7));
 			final long addDiscount = (long) (saleFee * discountFee);
-			final Message mail = new Message(itemInstance.getOwnerId(), itemInstance, MailType.COMMISSION_ITEM_SOLD);
+			final MailMessage mail = new MailMessage(itemInstance.getOwnerId(), itemInstance, MailType.COMMISSION_ITEM_SOLD);
 			final Mail attachement = mail.createAttachments();
 			attachement.addItem(ItemProcessType.SELL, Inventory.ADENA_ID, (totalPrice - saleFee) + addDiscount, player, null);
 			MailManager.getInstance().sendMessage(mail);
@@ -493,7 +493,7 @@ public class ItemCommissionManager
 	{
 		if ((_commissionItems.remove(commissionItem.getCommissionId()) != null) && deleteItemFromDB(commissionItem.getCommissionId()))
 		{
-			final Message mail = new Message(commissionItem.getItemInstance().getOwnerId(), commissionItem.getItemInstance(), MailType.COMMISSION_ITEM_RETURNED);
+			final MailMessage mail = new MailMessage(commissionItem.getItemInstance().getOwnerId(), commissionItem.getItemInstance(), MailType.COMMISSION_ITEM_RETURNED);
 			MailManager.getInstance().sendMessage(mail);
 		}
 	}

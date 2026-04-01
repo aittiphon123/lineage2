@@ -570,12 +570,12 @@
 				<skillId>47626</skillId> <!-- Breeze -->
 				<skillLevel>1</skillLevel>
 			</effect>
-			<!-- Arrow Rain + Wind Shot-->
+			<!-- Arrow Rain + Wind Shot -->
 			<effect name="ComboSkill">
 				<skillId>47645</skillId> <!-- Tearing Wind -->
 				<targetCheckSkillId>47623</targetCheckSkillId> <!-- Flurry -->
 			</effect>
-			<!-- (Arrow Rain + Spiral Shot) + Wind Shot-->
+			<!-- (Arrow Rain + Spiral Shot) + Wind Shot -->
 			<effect name="ComboSkill">
 				<skillId>47646</skillId> <!-- Strong Typhoon -->
 				<targetCheckSkillId>47634</targetCheckSkillId> <!-- Storm -->
@@ -701,7 +701,7 @@
 				<skillId>47633</skillId> <!-- Water Dust -->
 				<targetCheckSkillId>47622</targetCheckSkillId> <!-- Moisture -->
 			</effect>
-			<!-- Storm Arrow Rain + Spiral Shot-->
+			<!-- Storm Arrow Rain + Spiral Shot -->
 			<effect name="ComboSkill">
 				<skillId>47634</skillId> <!-- Storm -->
 				<targetCheckSkillId>47623</targetCheckSkillId> <!-- Flurry -->

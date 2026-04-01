@@ -22,9 +22,9 @@ package org.l2jmobius.gameserver.network.clientpackets.elementalspirits;
 
 import java.util.stream.Collectors;
 
-import org.l2jmobius.gameserver.model.ElementalSpirit;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.ElementalSpiritType;
+import org.l2jmobius.gameserver.model.actor.holders.player.ElementalSpirit;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.itemcontainer.InventoryBlockType;

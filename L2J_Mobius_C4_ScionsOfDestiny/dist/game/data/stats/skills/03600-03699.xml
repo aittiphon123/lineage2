@@ -13,18 +13,18 @@
 		<table name="#magicLevel">46 49 52 55 58 61 64 67 75</table>
 		<table name="#pAtk">20.44 22.64 24.77 26.78 28.59 30.12 31.30 39 45</table>
 		<table name="#pvpBonus">1 1 1 1 1 1 1.05 1.05 1.05</table>
-		<set name="icon" val="icon.skill1062" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLevel" val="#magicLevel" />
+		<icon>icon.skill1062</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>#magicLevel</magicLevel>
 		<effects>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk" />
-				<mul stat="maxHp" val="0.85" />
-				<add stat="atkCountMax" val="4" />
-				<mul stat="pvpPhysDmg" val="#pvpBonus" />
-				<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
-				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
+				<add stat="pAtk">#pAtk</add>
+				<mul stat="maxHp">0.85</mul>
+				<add stat="atkCountMax">4</add>
+				<mul stat="pvpPhysDmg">#pvpBonus</mul>
+				<mul stat="pvpPhysSkillsDmg">#pvpBonus</mul>
+				<mul stat="pvpMagicalDmg">#pvpBonus</mul>
 			</effect>
 		</effects>
 	</skill>
@@ -41,16 +41,16 @@
 		<table name="#magicLevel">46 49 52 55 58 61 64 67 75</table>
 		<table name="#pAtkSpd">1.08 1.07 1.07 1.07 1.06 1.06 1.06 1.06 1.07</table>
 		<table name="#pvpBonus">1 1 1 1 1 1 1.05 1.05 1.05</table>
-		<set name="icon" val="icon.skill1086" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLevel" val="#magicLevel" />
+		<icon>icon.skill1086</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>#magicLevel</magicLevel>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<add stat="atkCountMax" val="4" />
-				<mul stat="pvpPhysDmg" val="#pvpBonus" />
-				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
+				<mul stat="pAtkSpd">#pAtkSpd</mul>
+				<add stat="atkCountMax">4</add>
+				<mul stat="pvpPhysDmg">#pvpBonus</mul>
+				<mul stat="pvpMagicalDmg">#pvpBonus</mul>
 			</effect>
 		</effects>
 	</skill>
@@ -67,17 +67,17 @@
 		<table name="#accCombat">6.88 6.07 5.72 5.37 5.02 4.68 4.34 3.95 5.27</table>
 		<table name="#magicLevel">46 49 52 55 58 61 64 67 75</table>
 		<table name="#pvpBonus">1 1 1 1 1 1 1.05 1.05 1.05</table>
-		<set name="icon" val="icon.skill1240" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<set name="magicLevel" val="#magicLevel" />
+		<icon>icon.skill1240</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>#magicLevel</magicLevel>
 		<effects>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat" />
-				<add stat="atkCountMax" val="4" />
-				<mul stat="pvpPhysDmg" val="#pvpBonus" />
-				<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
-				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
+				<add stat="accCombat">#accCombat</add>
+				<add stat="atkCountMax">4</add>
+				<mul stat="pvpPhysDmg">#pvpBonus</mul>
+				<mul stat="pvpPhysSkillsDmg">#pvpBonus</mul>
+				<mul stat="pvpMagicalDmg">#pvpBonus</mul>
 			</effect>
 		</effects>
 	</skill>

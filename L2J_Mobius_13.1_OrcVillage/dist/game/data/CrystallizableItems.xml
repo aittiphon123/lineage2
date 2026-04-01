@@ -2019,7 +2019,7 @@
 			<item id="82902" count="10" chance="100.00" /> <!-- Lunarium -->
 			<item id="82903" count="5" chance="100.00" /> <!-- Solaris -->
 		</crystallizable_item>
-		<!-- Lv. 1-->
+		<!-- Lv. 1 -->
 		<crystallizable_item id="36441"> <!-- Antharas Shaper Lv. 1 -->
 			<item id="82902" count="20" chance="100.00" /> <!-- Lunarium -->
 			<item id="82903" count="15" chance="100.00" /> <!-- Solaris -->

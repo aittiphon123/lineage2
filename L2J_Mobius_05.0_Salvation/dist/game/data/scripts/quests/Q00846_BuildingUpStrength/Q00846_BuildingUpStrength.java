@@ -222,7 +222,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 	@Id(CAPTIVE_CHEF)
 	@Id(CAPTIVE_WIZARD)
 	@Id(CAPTIVE_CITIZEN)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);
@@ -678,13 +678,13 @@ public final class Q00846_BuildingUpStrength extends Quest
 	
 	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public final void onLogin(OnPlayerLogin evt)
+	public void onLogin(OnPlayerLogin event)
 	{
-		final Player player = evt.getPlayer();
+		final Player player = event.getPlayer();
 		sendNpcLogList(player);
 	}
 	
-	public final void checkLogState(Player player)
+	public void checkLogState(Player player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		

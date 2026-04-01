@@ -20,7 +20,7 @@
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">5</stat>
@@ -51,7 +51,7 @@
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">935</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -188,11 +188,6 @@
 			<skill id="35111" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Enchant Effect - Radiant Wizard's Circlet -->
 			<skill id="35111" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Enchant Effect - Radiant Wizard's Circlet -->
 			<skill id="35111" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect - Radiant Wizard's Circlet -->
-			<skill id="35111" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Radiant Wizard's Circlet Enchant Effect -->
-			<skill id="35111" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Radiant Wizard's Circlet Enchant Effect -->
-			<skill id="35111" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Radiant Wizard's Circlet Enchant Effect -->
-			<skill id="35111" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Radiant Wizard's Circlet Enchant Effect -->
-			<skill id="35111" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Radiant Wizard's Circlet Enchant Effect -->
 		</skills>
 	</item>
 	<item id="48208" name="Knight's Circlet" type="Armor">
@@ -549,7 +544,7 @@
 		<stats>
 			<stat type="pAtk">1445</stat>
 			<stat type="mAtk">517</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -589,7 +584,7 @@
 		<stats>
 			<stat type="pAtk">92</stat>
 			<stat type="mAtk">54</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">5</stat>
 		</stats>
@@ -1485,7 +1480,7 @@
 		<stats>
 			<stat type="pAtk">1</stat>
 			<stat type="mAtk">1</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1511,7 +1506,7 @@
 		<stats>
 			<stat type="pAtk">1</stat>
 			<stat type="mAtk">1</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1537,7 +1532,7 @@
 		<stats>
 			<stat type="pAtk">1</stat>
 			<stat type="mAtk">1</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1565,7 +1560,7 @@
 		<stats>
 			<stat type="pAtk">1</stat>
 			<stat type="mAtk">1</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
@@ -1591,7 +1586,7 @@
 		<stats>
 			<stat type="pAtk">1</stat>
 			<stat type="mAtk">1</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>

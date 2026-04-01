@@ -18,7 +18,7 @@ package org.l2jmobius.gameserver.model.item.holders;
 
 import java.util.function.Function;
 
-import org.l2jmobius.gameserver.model.ArmorSet;
+import org.l2jmobius.gameserver.data.holders.ArmorSet;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;

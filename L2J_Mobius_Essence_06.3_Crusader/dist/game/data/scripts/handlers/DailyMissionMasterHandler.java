@@ -24,20 +24,20 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.gameserver.handler.DailyMissionHandler;
 
-import handlers.dailymissionhandlers.BossDailyMissionHandler;
-import handlers.dailymissionhandlers.EnchantHennaDailyMissionHandler;
-import handlers.dailymissionhandlers.FishingDailyMissionHandler;
-import handlers.dailymissionhandlers.JoinClanDailyMissionHandler;
-import handlers.dailymissionhandlers.LevelDailyMissionHandler;
-import handlers.dailymissionhandlers.LoginMonthDailyMissionHandler;
-import handlers.dailymissionhandlers.LoginWeekendDailyMissionHandler;
-import handlers.dailymissionhandlers.MonsterDailyMissionHandler;
-import handlers.dailymissionhandlers.OlympiadDailyMissionHandler;
-import handlers.dailymissionhandlers.PurgeRewardDailyMissionHandler;
-import handlers.dailymissionhandlers.QuestDailyMissionHandler;
-import handlers.dailymissionhandlers.SiegeDailyMissionHandler;
-import handlers.dailymissionhandlers.SpiritDailyMissionHandler;
-import handlers.dailymissionhandlers.UseItemDailyMissionHandler;
+import handlers.dailymissions.BossDailyMissionHandler;
+import handlers.dailymissions.EnchantHennaDailyMissionHandler;
+import handlers.dailymissions.FishingDailyMissionHandler;
+import handlers.dailymissions.JoinClanDailyMissionHandler;
+import handlers.dailymissions.LevelDailyMissionHandler;
+import handlers.dailymissions.LoginMonthDailyMissionHandler;
+import handlers.dailymissions.LoginWeekendDailyMissionHandler;
+import handlers.dailymissions.MonsterDailyMissionHandler;
+import handlers.dailymissions.OlympiadDailyMissionHandler;
+import handlers.dailymissions.PurgeRewardDailyMissionHandler;
+import handlers.dailymissions.QuestDailyMissionHandler;
+import handlers.dailymissions.SiegeDailyMissionHandler;
+import handlers.dailymissions.SpiritDailyMissionHandler;
+import handlers.dailymissions.UseItemDailyMissionHandler;
 
 /**
  * @author UnAfraid, Mobius

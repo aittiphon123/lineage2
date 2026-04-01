@@ -1315,7 +1315,65 @@
 	<skill id="39773" toLevel="1" name="Festival Fairy's Hot Pie">
 		<!-- For 30 min., P. Atk./ M. Atk./ P. Def./ M. Def. +15%, Attribute Attack/ Resistance +100, acquired XP/ SP +5%.The effect remains after death, after switching to a dual class or entering instance zones. Removed when entering the Olympiad or the Ceremony of Chaos. -->
 		<icon>Icon.ev_buff_bread</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1800</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackAttributeAdd">
+				<amount>100</amount>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>DARK</attribute>
+			</effect>
+			<effect name="ExpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>5</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39774" toLevel="1" name="Swift Defense Cookie">
 		<!-- For 30 min., acquired XP/ SP +10%, Vitality bonus +20%, Attribute Resistance +70, received damage -10%. The effect remains after death. Cannot be used in the Olympiad. -->

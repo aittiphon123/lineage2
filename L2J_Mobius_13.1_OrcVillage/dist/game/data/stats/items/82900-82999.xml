@@ -1740,17 +1740,20 @@
 			<stat type="darkRes">50</stat>
 		</stats>
 		<skills>
-			<skill id="36610" level="1" /> <!-- Silvery Shirt -->
-			<skill id="36610" level="2" type="ON_ENCHANT" type_value="1" /> <!-- Silvery Shirt -->
-			<skill id="36610" level="3" type="ON_ENCHANT" type_value="2" /> <!-- Silvery Shirt -->
-			<skill id="36610" level="4" type="ON_ENCHANT" type_value="3" /> <!-- Silvery Shirt -->
-			<skill id="36610" level="5" type="ON_ENCHANT" type_value="4" /> <!-- Silvery Shirt -->
-			<skill id="36610" level="6" type="ON_ENCHANT" type_value="5" /> <!-- Silvery Shirt -->
-			<skill id="36610" level="7" type="ON_ENCHANT" type_value="6" /> <!-- Silvery Shirt -->
-			<skill id="36610" level="8" type="ON_ENCHANT" type_value="7" /> <!-- Silvery Shirt -->
-			<skill id="36610" level="9" type="ON_ENCHANT" type_value="8" /> <!-- Silvery Shirt -->
-			<skill id="36610" level="10" type="ON_ENCHANT" type_value="9" /> <!-- Silvery Shirt -->
-			<skill id="36610" level="11" type="ON_ENCHANT" type_value="10" /> <!-- Silvery Shirt -->
+			<skill id="36610" level="1" /> <!-- +0 Silvery Shirt -->
+			<skill id="35188" level="23" /> <!-- Silvery Rage -->
+			<skill id="35189" level="23" /> <!-- Silvery Scale -->
+			<skill id="35190" level="23" /> <!-- Silvery Surge -->
+			<skill id="36610" level="2" type="ON_ENCHANT" type_value="1" /> <!-- +1 Silvery Shirt -->
+			<skill id="36610" level="3" type="ON_ENCHANT" type_value="2" /> <!-- +2 Silvery Shirt -->
+			<skill id="36610" level="4" type="ON_ENCHANT" type_value="3" /> <!-- +3 Silvery Shirt -->
+			<skill id="36610" level="5" type="ON_ENCHANT" type_value="4" /> <!-- +4 Silvery Shirt -->
+			<skill id="36610" level="6" type="ON_ENCHANT" type_value="5" /> <!-- +5 Silvery Shirt -->
+			<skill id="36610" level="7" type="ON_ENCHANT" type_value="6" /> <!-- +6 Silvery Shirt -->
+			<skill id="36610" level="8" type="ON_ENCHANT" type_value="7" /> <!-- +7 Silvery Shirt -->
+			<skill id="36610" level="9" type="ON_ENCHANT" type_value="8" /> <!-- +8 Silvery Shirt -->
+			<skill id="36610" level="10" type="ON_ENCHANT" type_value="9" /> <!-- +9 Silvery Shirt -->
+			<skill id="36610" level="11" type="ON_ENCHANT" type_value="10" /> <!-- +10 Silvery Shirt -->
 			<skill id="37097" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Silvery Combat -->
 			<skill id="37097" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Silvery Combat -->
 			<skill id="37097" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Silvery Combat -->

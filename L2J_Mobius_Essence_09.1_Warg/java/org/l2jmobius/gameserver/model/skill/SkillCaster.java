@@ -747,29 +747,36 @@ public class SkillCaster implements Runnable
 					}
 				}
 				
-				// Mobs in range 1000 see spell
-				World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npcMob ->
+				// Mobs in range 1000 see spell.
+				World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npc ->
 				{
-					if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_SKILL_SEE, npcMob))
+					if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_SKILL_SEE, npc))
 					{
-						EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, caster.isSummon(), targets), npcMob);
+						EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npc, player, skill, caster.isSummon(), targets), npc);
 					}
 					
-					// On Skill See logic
-					if (npcMob.isAttackable() && !npcMob.isFakePlayer())
+					// On Skill See logic.
+					if (npc.isAttackable() && !npc.isFakePlayer())
 					{
-						final Attackable attackable = npcMob.asAttackable();
+						final Attackable attackable = npc.asAttackable();
 						if ((skill.getEffectPoint() > 0) && attackable.hasAI() && (attackable.getAI().getIntention() == Intention.ATTACK))
 						{
 							final WorldObject npcTarget = attackable.getTarget();
 							for (WorldObject skillTarget : targets)
 							{
-								if ((npcTarget == skillTarget) || (npcMob == skillTarget))
+								if ((npcTarget == skillTarget) || (npc == skillTarget))
 								{
 									final Creature originalCaster = caster.isSummon() ? caster : player;
 									attackable.addDamageHate(originalCaster, 0, (skill.getEffectPoint() * 150) / (attackable.getLevel() + 7));
 								}
 							}
+						}
+						
+						// Players which are 9 levels above a Raid Boss and cast a skill nearby, are silenced with the Raid Curse skill.
+						if (!NpcConfig.RAID_DISABLE_CURSE && attackable.giveRaidCurse() && attackable.isInCombat() && ((player.getLevel() - attackable.getLevel()) > 8))
+						{
+							final CommonSkill curse = skill.hasNegativeEffect() ? CommonSkill.RAID_CURSE2 : CommonSkill.RAID_CURSE;
+							curse.getSkill().applyEffects(attackable, player);
 						}
 					}
 				});
@@ -1371,6 +1378,27 @@ public class SkillCaster implements Runnable
 				x = target.getX() + (int) (Math.cos(Math.PI + radian + course) * nRadius);
 				y = target.getY() + (int) (Math.sin(Math.PI + radian + course) * nRadius);
 				z = target.getZ();
+				break;
+			}
+			case DA6:
+			{
+				final int dx = target.getX() - creature.getX();
+				final int dy = target.getY() - creature.getY();
+				final double distance = Math.sqrt((dx * dx) + (dy * dy));
+				if (distance > 1)
+				{
+					final double range = _skill.getCastRange();
+					final double ratio = range / distance;
+					x = creature.getX() + (int) (dx * ratio);
+					y = creature.getY() + (int) (dy * ratio);
+					z = creature.getZ();
+				}
+				else
+				{
+					x = creature.getX();
+					y = creature.getY();
+					z = creature.getZ();
+				}
 				break;
 			}
 		}

@@ -1,61 +1,68 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.model.script;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
 
-import org.l2jmobius.gameserver.model.KeyValuePair;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 
 /**
- * @author UnAfraid
+ * Represents a conditional rule used by the quest scripting system.<br>
+ * Binds a boolean condition evaluated against a player instance with an HTML dialog response associated with that condition.
+ * @author Galagard
  */
 public class QuestCondition
 {
 	private final Predicate<Player> _condition;
-	private Map<Integer, String> _perNpcDialog;
 	private final String _html;
 	
-	public QuestCondition(Predicate<Player> cond, String html)
+	/**
+	 * Creates a QuestCondition with an HTML dialog that applies regardless of which NPC triggered the condition.
+	 * @param condition a predicate that evaluates against a player instance
+	 * @param html a single HTML dialog string
+	 */
+	public QuestCondition(Predicate<Player> condition, String html)
 	{
-		_condition = cond;
+		_condition = condition;
 		_html = html;
 	}
 	
-	@SafeVarargs
-	public QuestCondition(Predicate<Player> cond, KeyValuePair<Integer, String>... pairs)
-	{
-		_condition = cond;
-		_html = null;
-		_perNpcDialog = new HashMap<>();
-		Stream.of(pairs).forEach(pair -> _perNpcDialog.put(pair.getKey(), pair.getValue()));
-	}
-	
+	/**
+	 * Evaluates the condition against the given player.
+	 * @param player a player instance
+	 * @return true if the player satisfies the condition, false otherwise
+	 */
 	public boolean test(Player player)
 	{
 		return _condition.test(player);
 	}
 	
+	/**
+	 * Retrieves the HTML dialog associated with the given NPC.
+	 * @param npc an NPC instance
+	 * @return HTML dialog string or null
+	 */
 	public String getHtml(Npc npc)
 	{
-		return _perNpcDialog != null ? _perNpcDialog.get(npc.getId()) : _html;
+		return _html;
 	}
 }

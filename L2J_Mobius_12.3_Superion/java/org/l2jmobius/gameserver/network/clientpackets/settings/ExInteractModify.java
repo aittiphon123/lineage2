@@ -20,8 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.settings;
 
-import org.l2jmobius.gameserver.model.ClientSettings;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.player.ClientSettings;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 
 /**

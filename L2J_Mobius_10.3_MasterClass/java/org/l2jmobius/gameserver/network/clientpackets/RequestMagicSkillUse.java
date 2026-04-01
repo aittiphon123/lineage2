@@ -24,6 +24,7 @@ import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -49,7 +50,7 @@ public class RequestMagicSkillUse extends ClientPacket
 	@Override
 	protected void runImpl()
 	{
-		// Get the current Player of the player
+		// Get the current Player of the player.
 		final Player player = getPlayer();
 		if (player == null)
 		{
@@ -122,6 +123,14 @@ public class RequestMagicSkillUse extends ClientPacket
 		if (player.isInAirShip())
 		{
 			player.sendPacket(SystemMessageId.THIS_ACTION_IS_PROHIBITED_WHILE_MOUNTED_OR_ON_AN_AIRSHIP);
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
+		// Do not cast non transform skills when transformed.
+		final Transform transform = player.getTransformation();
+		if ((transform != null) && !transform.canUseWeaponStats() && !player.hasTransformSkill(skill))
+		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}

@@ -64,7 +64,7 @@
 		<set name="ensoulNormalSlots" val="1" />
 		<stats>
 			<stat type="pDef">168</stat>
-			<stat type="rCrit">2.6</stat>
+			<stat type="critRate">2.6</stat>
 			<stat type="mCritRate">2.6</stat>
 			<stat type="rEvas">3</stat>
 			<stat type="mEvas">3</stat>
@@ -178,7 +178,7 @@
 		<stats>
 			<stat type="pDef">115</stat>
 			<stat type="mDef">27</stat>
-			<stat type="rCrit">2.6</stat>
+			<stat type="critRate">2.6</stat>
 			<stat type="mCritRate">2.6</stat>
 			<stat type="maxMp">427</stat>
 		</stats>
@@ -285,7 +285,7 @@
 		<set name="ensoulNormalSlots" val="1" />
 		<stats>
 			<stat type="pDef">209</stat>
-			<stat type="rCrit">2.6</stat>
+			<stat type="critRate">2.6</stat>
 			<stat type="mCritRate">2.6</stat>
 		</stats>
 	</item>
@@ -416,7 +416,7 @@
 		<set name="ensoulNormalSlots" val="1" />
 		<stats>
 			<stat type="pDef">168</stat>
-			<stat type="rCrit">2.6</stat>
+			<stat type="critRate">2.6</stat>
 			<stat type="mCritRate">2.6</stat>
 			<stat type="rEvas">3</stat>
 			<stat type="mEvas">3</stat>
@@ -525,7 +525,7 @@
 		<stats>
 			<stat type="pDef">115</stat>
 			<stat type="mDef">27</stat>
-			<stat type="rCrit">2.6</stat>
+			<stat type="critRate">2.6</stat>
 			<stat type="mCritRate">2.6</stat>
 			<stat type="maxMp">427</stat>
 		</stats>

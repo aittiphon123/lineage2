@@ -1302,7 +1302,7 @@
 		<set name="material" val="SCALE_OF_DRAGON" />
 		<stats>
 			<stat type="pDef">209</stat>
-			<stat type="rCrit">2.6</stat>
+			<stat type="critRate">2.6</stat>
 			<stat type="mCritRate">2.6</stat>
 		</stats>
 	</item>

@@ -37,7 +37,6 @@ import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
 import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -56,6 +55,7 @@ import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.balok.BalrogWarBossInfo;
@@ -655,7 +655,7 @@ public class Balok extends Script
 			}
 			
 			final int charId = ranker.getKey();
-			final Message mail = new Message(charId, "Battle with Balok Ranker Special Reward", "A special Reward given to rankers who contributed greatly in the balok Battle.", MailType.BALOK_RANKING_REWARD);
+			final MailMessage mail = new MailMessage(charId, "Battle with Balok Ranker Special Reward", "A special Reward given to rankers who contributed greatly in the balok Battle.", MailType.BALOK_RANKING_REWARD);
 			final Mail attachement = mail.createAttachments();
 			attachement.addItem(ItemProcessType.REWARD, 91690, 100, null, null); // Special HP Recovery Potion
 			MailManager.getInstance().sendMessage(mail);

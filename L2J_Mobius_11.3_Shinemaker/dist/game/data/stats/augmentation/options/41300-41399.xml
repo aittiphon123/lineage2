@@ -228,7 +228,7 @@
 	</option>
 	<option id="41389" name="Collection: Glowing Spring Triangle">
 		<!-- Power of basic attacks and P./ M. skills +7%, P./ M. Def. +7%, acquired XP/ SP +10% -->
-		<passive_skill id="29550" level="1" /> <!-- Soul Whisper  -->
+		<passive_skill id="29550" level="1" /> <!-- Soul Whisper -->
 	</option>
 	<option id="41390" name="Collection: Hunter's Hunch">
 		<!-- STR/ DEX/ CON/ INT/ WIT/ MEN/ LUC/ CHA +1 -->

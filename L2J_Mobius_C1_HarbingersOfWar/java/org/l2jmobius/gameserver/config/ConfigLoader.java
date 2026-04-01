@@ -25,6 +25,7 @@ import org.l2jmobius.gameserver.config.custom.AutoPlayConfig;
 import org.l2jmobius.gameserver.config.custom.AutoPotionsConfig;
 import org.l2jmobius.gameserver.config.custom.BankingConfig;
 import org.l2jmobius.gameserver.config.custom.BossAnnouncementsConfig;
+import org.l2jmobius.gameserver.config.custom.CancelReturnConfig;
 import org.l2jmobius.gameserver.config.custom.CaptchaConfig;
 import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
 import org.l2jmobius.gameserver.config.custom.ChatModerationConfig;
@@ -126,5 +127,6 @@ public class ConfigLoader
 		WalkerBotProtectionConfig.load();
 		WarehouseSortingConfig.load();
 		WeddingConfig.load();
+		CancelReturnConfig.load();
 	}
 }

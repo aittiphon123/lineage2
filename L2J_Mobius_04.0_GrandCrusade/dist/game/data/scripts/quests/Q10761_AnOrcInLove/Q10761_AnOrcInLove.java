@@ -24,6 +24,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.script.NpcLogListHolder;
 import org.l2jmobius.gameserver.model.script.Quest;
+import org.l2jmobius.gameserver.model.script.QuestSound;
 import org.l2jmobius.gameserver.model.script.QuestState;
 import org.l2jmobius.gameserver.model.script.State;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -141,6 +142,7 @@ public class Q10761_AnOrcInLove extends Quest
 		final QuestState qs = getQuestState(killer, false);
 		if ((qs != null) && qs.isCond(1))
 		{
+			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			int killCount = qs.getInt(KILL_COUNT_VAR);
 			if (killCount < 30)
 			{

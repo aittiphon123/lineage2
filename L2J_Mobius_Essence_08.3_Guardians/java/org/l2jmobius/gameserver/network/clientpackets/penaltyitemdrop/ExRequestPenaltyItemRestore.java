@@ -23,7 +23,6 @@ package org.l2jmobius.gameserver.network.clientpackets.penaltyitemdrop;
 import org.l2jmobius.gameserver.config.FeatureConfig;
 import org.l2jmobius.gameserver.managers.ItemManager;
 import org.l2jmobius.gameserver.managers.MailManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemPenaltyHolder;
@@ -33,6 +32,7 @@ import org.l2jmobius.gameserver.model.itemcontainer.Mail;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.enums.MailType;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 import org.l2jmobius.gameserver.network.serverpackets.penaltyitemdrop.ExPenaltyItemInfo;
 import org.l2jmobius.gameserver.network.serverpackets.penaltyitemdrop.ExPenaltyItemList;
 import org.l2jmobius.gameserver.network.serverpackets.penaltyitemdrop.ExPenaltyItemRestore;
@@ -96,7 +96,7 @@ public class ExRequestPenaltyItemRestore extends ClientPacket
 		{
 			final int itemReward = _isAdena ? Inventory.ADENA_ID : Inventory.LCOIN_ID;
 			final Item rewardItem = ItemManager.createItem(ItemProcessType.REWARD, itemReward, price, null);
-			final Message msg = new Message(player.getObjectId(), itemPenalty.getKillerObjectId(), "Penalty Item Reward!", "You are reward from Item penalty!", MailType.PRIME_SHOP_GIFT);
+			final MailMessage msg = new MailMessage(player.getObjectId(), itemPenalty.getKillerObjectId(), "Penalty Item Reward!", "You are reward from Item penalty!", MailType.PRIME_SHOP_GIFT);
 			final Mail attachments = msg.createAttachments();
 			attachments.addItem(ItemProcessType.REWARD, rewardItem, null, null);
 			MailManager.getInstance().sendMessage(msg);

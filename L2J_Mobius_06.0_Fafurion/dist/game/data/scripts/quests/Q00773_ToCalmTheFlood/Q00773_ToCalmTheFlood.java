@@ -266,9 +266,9 @@ public class Q00773_ToCalmTheFlood extends Quest
 	
 	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public final void onLogin(OnPlayerLogin evt)
+	public void onLogin(OnPlayerLogin event)
 	{
-		final Player player = evt.getPlayer();
+		final Player player = event.getPlayer();
 		sendNpcLogList(player);
 	}
 }

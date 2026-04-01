@@ -131,7 +131,7 @@ public class KartiaHelperAdolph extends Script
 					final List<Monster> monsterList = World.getInstance().getVisibleObjectsInRange(npc, Monster.class, 500);
 					if (!monsterList.isEmpty())
 					{
-						final Monster monster = monsterList.get(getRandom(monsterList.size()));
+						final Monster monster = getRandomEntry(monsterList);
 						if (monster.isTargetable() && GeoEngine.getInstance().canSeeTarget(npc, monster) && !ArrayUtil.contains(MIRRORS, monster.getId()) && !ArrayUtil.contains(KARTIA_FRIENDS, monster.getId()))
 						{
 							addAttackDesire(npc, monster);

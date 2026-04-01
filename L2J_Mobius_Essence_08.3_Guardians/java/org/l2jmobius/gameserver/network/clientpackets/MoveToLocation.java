@@ -24,11 +24,11 @@ import java.util.Arrays;
 
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.data.holders.SayuneEntry;
 import org.l2jmobius.gameserver.data.xml.DoorData;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.managers.ZoneBuildManager;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.SayuneEntry;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.AdminTeleportType;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
@@ -45,7 +45,6 @@ import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2jmobius.gameserver.network.serverpackets.sayune.ExFlyMove;
 import org.l2jmobius.gameserver.network.serverpackets.sayune.ExFlyMoveBroadcast;
 import org.l2jmobius.gameserver.util.Broadcast;
-import org.l2jmobius.gameserver.util.LocationUtil;
 
 public class MoveToLocation extends ClientPacket
 {
@@ -190,22 +189,8 @@ public class MoveToLocation extends ClientPacket
 					return;
 				}
 				
-				// Prevent moving to same location. Geodata cell size is 16.
-				final Location targetLocation = new Location(_targetX, _targetY, _targetZ);
-				if (LocationUtil.calculateDistance(player.getLastMoveToPosition(), targetLocation, true, false) < 17)
-				{
-					player.sendPacket(ActionFailed.STATIC_PACKET);
-					return;
-				}
-				
-				// When player is not attacking or casting set last "move to" position.
-				if (!player.isAttackingOrCastingNow())
-				{
-					player.setLastMoveToPosition(targetLocation);
-				}
-				
 				// Finally move to the target location.
-				player.getAI().setIntention(Intention.MOVE_TO, targetLocation);
+				player.getAI().setIntention(Intention.MOVE_TO, new Location(_targetX, _targetY, _targetZ));
 				break;
 			}
 		}

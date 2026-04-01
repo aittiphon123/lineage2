@@ -99,7 +99,7 @@ public class GameAssistant extends Script
 	private static final int EX_PETS = 3247854;
 	
 	// Others
-	private static final String COMMAND_BYPASS = "Quest GameAssistant ";
+	private static final String COMMAND_BYPASS = "Script GameAssistant ";
 	
 	private GameAssistant()
 	{

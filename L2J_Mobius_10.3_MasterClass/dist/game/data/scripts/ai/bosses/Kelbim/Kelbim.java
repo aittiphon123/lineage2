@@ -24,9 +24,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2jmobius.gameserver.config.GrandBossConfig;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
@@ -175,7 +175,7 @@ public class Kelbim extends Script
 							}
 							else if (creature.isPlayer())
 							{
-								creature.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(creature, TeleportWhereType.TOWN));
+								creature.teleToLocation(MapRegionData.getInstance().getTeleToLocation(creature, TeleportWhereType.TOWN));
 							}
 						}
 					}

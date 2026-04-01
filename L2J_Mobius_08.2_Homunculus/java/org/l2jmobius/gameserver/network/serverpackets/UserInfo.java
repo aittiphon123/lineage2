@@ -250,7 +250,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeInt(_player.getCriticalHit());
 			buffer.writeInt(_player.getMAtk());
 			buffer.writeInt(_player.getMAtkSpd());
-			buffer.writeInt(_player.getPAtkSpd()); // Seems like atk speed - 1
+			buffer.writeInt(_player.getPAtkSpd()); // Seems like atk speed - 1.
 			buffer.writeInt(_player.getMagicEvasionRate());
 			buffer.writeInt(_player.getMDef());
 			buffer.writeInt(_player.getMagicAccuracy());
@@ -318,7 +318,8 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		{
 			buffer.writeShort(32 + (_title.length() * 2));
 			buffer.writeSizedString(_title);
-			// Remove Crest do Player portando a Sword Cursed
+			
+			// Remove Crest from the player carrying the Cursed Sword.
 			if (_player.isCursedWeaponEquipped())
 			{
 				buffer.writeShort(0); // PledgeType
@@ -341,6 +342,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 				buffer.writeInt(_player.getAllyId());
 				buffer.writeInt(_player.getAllyCrestId());
 			}
+			
 			buffer.writeByte(_player.isInMatchingRoom());
 		}
 		
@@ -411,6 +413,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			{
 				buffer.writeInt(_appearance.getNameColor());
 			}
+			
 			buffer.writeInt(_appearance.getTitleColor());
 		}
 		

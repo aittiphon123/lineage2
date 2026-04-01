@@ -41,7 +41,6 @@ import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.network.enums.UserInfoType;
 import org.l2jmobius.gameserver.network.serverpackets.EnchantResult;
 import org.l2jmobius.gameserver.network.serverpackets.ExItemAnnounce;
 import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
@@ -57,13 +56,13 @@ public class RequestEnchantItem extends ClientPacket
 	protected static final Logger LOGGER_ENCHANT = Logger.getLogger("enchant.items");
 	
 	private int _objectId;
-	private int _supportId;
+	// private int _supportId;
 	
 	@Override
 	protected void readImpl()
 	{
 		_objectId = readInt();
-		_supportId = readInt();
+		// _supportId = readInt();
 	}
 	
 	@Override
@@ -106,27 +105,26 @@ public class RequestEnchantItem extends ClientPacket
 			return;
 		}
 		
-		// template for scroll
+		// Template for scroll.
 		final EnchantScroll scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll);
 		if (scrollTemplate == null)
 		{
 			return;
 		}
 		
-		// template for support item, if exist
+		// Template for support item, if exist.
 		EnchantSupportItem supportTemplate = null;
 		if (support != null)
 		{
-			if (support.getObjectId() != _supportId)
+			supportTemplate = EnchantItemData.getInstance().getSupportItem(support);
+			if (supportTemplate == null)
 			{
 				player.removeRequest(request.getClass());
 				return;
 			}
-			
-			supportTemplate = EnchantItemData.getInstance().getSupportItem(support);
 		}
 		
-		// first validation check - also over enchant check
+		// First validation check, also over enchant check.
 		if (!scrollTemplate.isValid(item, supportTemplate) || (PlayerConfig.DISABLE_OVER_ENCHANTING && ((item.getEnchantLevel() == scrollTemplate.getMaxEnchantLevel()) || (!(item.getTemplate().getEnchantLimit() == 0) && (item.getEnchantLevel() == item.getTemplate().getEnchantLimit())))))
 		{
 			player.sendPacket(SystemMessageId.AUGMENTATION_REQUIREMENTS_ARE_NOT_FULFILLED);
@@ -135,7 +133,7 @@ public class RequestEnchantItem extends ClientPacket
 			return;
 		}
 		
-		// fast auto-enchant cheat check
+		// Fast auto-enchant cheat check.
 		// Lowered value to 500 (from 2000) On Essence, some enchantments are much faster than normal ones.
 		if ((request.getTimestamp() == 0) || ((System.currentTimeMillis() - request.getTimestamp()) < 500))
 		{
@@ -145,8 +143,9 @@ public class RequestEnchantItem extends ClientPacket
 			return;
 		}
 		
-		// attempting to destroy scroll
-		if (player.getInventory().destroyItem(ItemProcessType.FEE, scroll.getObjectId(), 1, player, item) == null)
+		// Attempting to destroy scroll.
+		final Item destroyedScrollItem = player.getInventory().destroyItem(ItemProcessType.FEE, scroll.getObjectId(), 1, player, item);
+		if (destroyedScrollItem == null)
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to enchant with a scroll he doesn't have", GeneralConfig.DEFAULT_PUNISH);
@@ -155,20 +154,42 @@ public class RequestEnchantItem extends ClientPacket
 			return;
 		}
 		
-		// attempting to destroy support if exist
-		if ((support != null) && (player.getInventory().destroyItem(ItemProcessType.FEE, support.getObjectId(), 1, player, item) == null))
+		final InventoryUpdate iu = new InventoryUpdate();
+		if (destroyedScrollItem.getCount() > 0)
 		{
-			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
-			PunishmentManager.handleIllegalPlayerAction(player, player + " tried to enchant with a support item he doesn't have", GeneralConfig.DEFAULT_PUNISH);
-			player.removeRequest(request.getClass());
-			player.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
-			return;
+			iu.addModifiedItem(destroyedScrollItem);
+		}
+		else
+		{
+			iu.addRemovedItem(destroyedScrollItem);
 		}
 		
-		final InventoryUpdate iu = new InventoryUpdate();
+		// Attempting to destroy support if exists.
+		if (support != null)
+		{
+			final Item destroyedSupportItem = player.getInventory().destroyItem(ItemProcessType.FEE, support.getObjectId(), 1, player, item);
+			if (destroyedSupportItem == null)
+			{
+				player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
+				PunishmentManager.handleIllegalPlayerAction(player, player + " tried to enchant with a support item he doesn't have", GeneralConfig.DEFAULT_PUNISH);
+				player.removeRequest(request.getClass());
+				player.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
+				return;
+			}
+			
+			if (destroyedSupportItem.getCount() > 0)
+			{
+				iu.addModifiedItem(destroyedSupportItem);
+			}
+			else
+			{
+				iu.addRemovedItem(destroyedSupportItem);
+			}
+		}
+		
 		synchronized (item)
 		{
-			// last validation check
+			// Last validation check.
 			if ((item.getOwnerId() != player.getObjectId()) || !item.isEnchantable())
 			{
 				player.sendPacket(SystemMessageId.AUGMENTATION_REQUIREMENTS_ARE_NOT_FULFILLED);
@@ -207,6 +228,7 @@ public class RequestEnchantItem extends ClientPacket
 							item.setEnchantLevel(Math.min(item.getEnchantLevel() + Rnd.get(scrollTemplate.getRandomEnchantMin(), scrollTemplate.getRandomEnchantMax()), scrollTemplate.getMaxEnchantLevel()));
 						}
 						
+						iu.addModifiedItem(item);
 						item.updateDatabase();
 					}
 					
@@ -214,7 +236,7 @@ public class RequestEnchantItem extends ClientPacket
 					if (GeneralConfig.LOG_ITEM_ENCHANTS)
 					{
 						final StringBuilder sb = new StringBuilder();
-						if (item.getEnchantLevel() > 0)
+						if (item.isEnchanted())
 						{
 							if (support == null)
 							{
@@ -235,7 +257,7 @@ public class RequestEnchantItem extends ClientPacket
 						}
 					}
 					
-					// announce the success
+					// Announce the success.
 					if ((item.getEnchantLevel() >= (item.isArmor() ? PlayerConfig.MIN_ARMOR_ENCHANT_ANNOUNCE : PlayerConfig.MIN_WEAPON_ENCHANT_ANNOUNCE)) //
 						&& (item.getEnchantLevel() <= (item.isArmor() ? PlayerConfig.MAX_ARMOR_ENCHANT_ANNOUNCE : PlayerConfig.MAX_WEAPON_ENCHANT_ANNOUNCE)))
 					{
@@ -259,7 +281,7 @@ public class RequestEnchantItem extends ClientPacket
 						{
 							it.forEachSkill(ItemSkillType.ON_ENCHANT, holder ->
 							{
-								// add skills bestowed from +4 armor
+								// Add skills bestowed from +4 armor.
 								if (item.getEnchantLevel() >= holder.getValue())
 								{
 									player.addSkill(holder.getSkill(), false);
@@ -268,7 +290,7 @@ public class RequestEnchantItem extends ClientPacket
 							});
 						}
 						
-						player.broadcastUserInfo(); // update user info
+						player.broadcastUserInfo(); // Update user info.
 					}
 					break;
 				}
@@ -276,13 +298,13 @@ public class RequestEnchantItem extends ClientPacket
 				{
 					if (scrollTemplate.isSafe())
 					{
-						// safe enchant - remain old value
+						// Safe enchant: Remain old value.
 						player.sendPacket(SystemMessageId.ENCHANT_FAILED_THE_ENCHANT_SKILL_FOR_THE_CORRESPONDING_ITEM_WILL_BE_EXACTLY_RETAINED);
 						player.sendPacket(new EnchantResult(EnchantResult.SAFE_FAIL, item));
 						if (GeneralConfig.LOG_ITEM_ENCHANTS)
 						{
 							final StringBuilder sb = new StringBuilder();
-							if (item.getEnchantLevel() > 0)
+							if (item.isEnchanted())
 							{
 								if (support == null)
 								{
@@ -305,10 +327,10 @@ public class RequestEnchantItem extends ClientPacket
 					}
 					else
 					{
-						// unequip item on enchant failure to avoid item skills stack
+						// Unequip item on enchant failure to avoid item skills stack.
 						if (item.isEquipped())
 						{
-							if (item.getEnchantLevel() > 0)
+							if (item.isEnchanted())
 							{
 								final SystemMessage sm = new SystemMessage(SystemMessageId.S1_S2_UNEQUIPPED);
 								sm.addInt(item.getEnchantLevel());
@@ -326,30 +348,29 @@ public class RequestEnchantItem extends ClientPacket
 							{
 								iu.addModifiedItem(itm);
 							}
-							
-							player.sendInventoryUpdate(iu);
-							player.broadcastUserInfo();
 						}
 						
 						if (scrollTemplate.isBlessed() || scrollTemplate.isBlessedDown() || ((supportTemplate != null) && supportTemplate.isBlessed()))
 						{
-							// blessed enchant - enchant value down by 1
+							// Blessed enchant: Enchant value down by 1.
 							if (scrollTemplate.isBlessedDown())
 							{
 								item.setEnchantLevel(item.getEnchantLevel() - 1);
 							}
-							else // blessed enchant - clear enchant value
+							else // Blessed enchant: Clear enchant value.
 							{
 								player.sendPacket(SystemMessageId.THE_BLESSED_ENCHANT_FAILED_THE_ENCHANT_VALUE_OF_THE_ITEM_BECAME_0);
 								item.setEnchantLevel(0);
 							}
 							
+							iu.addModifiedItem(item);
 							item.updateDatabase();
 							player.sendPacket(new EnchantResult(EnchantResult.BLESSED_FAIL, 0, 0));
+							
 							if (GeneralConfig.LOG_ITEM_ENCHANTS)
 							{
 								final StringBuilder sb = new StringBuilder();
-								if (item.getEnchantLevel() > 0)
+								if (item.isEnchanted())
 								{
 									if (support == null)
 									{
@@ -374,17 +395,18 @@ public class RequestEnchantItem extends ClientPacket
 						{
 							final ItemChanceHolder destroyReward = ItemCrystallizationData.getInstance().getItemOnDestroy(player, item);
 							
-							// enchant failed, destroy item
-							if (player.getInventory().destroyItem(ItemProcessType.FEE, item, player, null) == null)
+							// Enchant failed, destroy item.
+							final Item destroyedItem = player.getInventory().destroyItem(ItemProcessType.FEE, item, player, null);
+							if (destroyedItem == null)
 							{
-								// unable to destroy item, cheater ?
+								// Unable to destroy item, cheater?
 								PunishmentManager.handleIllegalPlayerAction(player, "Unable to delete item on enchant failure from " + player + ", possible cheater !", GeneralConfig.DEFAULT_PUNISH);
 								player.removeRequest(request.getClass());
 								player.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 								if (GeneralConfig.LOG_ITEM_ENCHANTS)
 								{
 									final StringBuilder sb = new StringBuilder();
-									if (item.getEnchantLevel() > 0)
+									if (item.isEnchanted())
 									{
 										if (support == null)
 										{
@@ -407,13 +429,13 @@ public class RequestEnchantItem extends ClientPacket
 								return;
 							}
 							
+							iu.addRemovedItem(destroyedItem); // Item is gone, always tell the client to remove it.
+							
 							if ((destroyReward != null) && (Rnd.get(100) < destroyReward.getChance()))
 							{
 								player.addItem(ItemProcessType.COMPENSATE, destroyReward.getId(), destroyReward.getCount(), null, true);
 								player.sendPacket(new EnchantResult(EnchantResult.FAIL, destroyReward.getId(), (int) destroyReward.getCount()));
 							}
-							
-							// World.getInstance().removeObject(item);
 							
 							int count = 0;
 							if (item.getTemplate().isCrystallizable())
@@ -431,12 +453,8 @@ public class RequestEnchantItem extends ClientPacket
 								sm.addItemName(crystals);
 								sm.addLong(count);
 								player.sendPacket(sm);
+								iu.addNewItem(crystals); // Add the crystals gained, not the destroyed item.
 							}
-							
-							// if (crystals != null)
-							// {
-							// iu.addItem(crystals); // FIXME: Packet never sent?
-							// }
 							
 							if ((crystalId == 0) || (count == 0))
 							{
@@ -450,7 +468,7 @@ public class RequestEnchantItem extends ClientPacket
 							if (GeneralConfig.LOG_ITEM_ENCHANTS)
 							{
 								final StringBuilder sb = new StringBuilder();
-								if (item.getEnchantLevel() > 0)
+								if (item.isEnchanted())
 								{
 									if (support == null)
 									{
@@ -476,10 +494,10 @@ public class RequestEnchantItem extends ClientPacket
 				}
 			}
 			
-			player.sendItemList();
+			player.sendInventoryUpdate(iu);
+			player.broadcastUserInfo();
 			
 			request.setProcessing(false);
-			player.broadcastUserInfo(UserInfoType.ENCHANTLEVEL);
 		}
 	}
 }

@@ -134,9 +134,9 @@
 		<skill skillName="Basic Musician's Melody" skillId="30993" skillLevel="4" getLevel="99" levelUpSp="500" />
 		<skill skillName="Basic Andante Performance" skillId="31004" skillLevel="1" getLevel="85" levelUpSp="0" />
 		<skill skillName="Basic United Resistance" skillId="31006" skillLevel="1" getLevel="85" levelUpSp="0">
-			<!--<removeSkill id="30751" />  Novice Elemental Resistance -->
-			<!--<removeSkill id="30752" />  Novice Resistance Debuff -->
-			<!--<removeSkill id="30753" />  Novice Mental Attack Resistance -->
+			<!-- <removeSkill id="30751" /> Novice Elemental Resistance -->
+			<!-- <removeSkill id="30752" /> Novice Resistance Debuff -->
+			<!-- <removeSkill id="30753" /> Novice Mental Attack Resistance -->
 		</skill>
 		
 		<!-- Dual Class -->

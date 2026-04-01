@@ -174,6 +174,7 @@ public class RelicData implements IXmlReader
 						}
 						
 						final int relicId = parseInteger(attrs, "id");
+						final String name = parseString(attrs, "name", "");
 						final int parentRelicId = parseInteger(attrs, "baseRelicId");
 						final RelicGrade grade = RelicGrade.valueOf(parseString(attrs, "grade"));
 						final long summonChance = parseLong(attrs, "summonChance");
@@ -197,7 +198,7 @@ public class RelicData implements IXmlReader
 							}
 						}
 						
-						final RelicDataHolder template = new RelicDataHolder(relicId, parentRelicId, grade, summonChance, enchantHolder, compoundChanceModifier, compoundUpGradeChanceModifier);
+						final RelicDataHolder template = new RelicDataHolder(relicId, name, parentRelicId, grade, summonChance, enchantHolder, compoundChanceModifier, compoundUpGradeChanceModifier);
 						RELICS.put(relicId, template);
 					}
 				}

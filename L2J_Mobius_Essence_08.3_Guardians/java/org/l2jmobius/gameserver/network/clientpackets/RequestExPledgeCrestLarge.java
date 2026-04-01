@@ -17,8 +17,8 @@
 package org.l2jmobius.gameserver.network.clientpackets;
 
 import org.l2jmobius.gameserver.data.sql.CrestTable;
-import org.l2jmobius.gameserver.model.Crest;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.clan.Crest;
 import org.l2jmobius.gameserver.network.serverpackets.ExPledgeEmblem;
 
 /**

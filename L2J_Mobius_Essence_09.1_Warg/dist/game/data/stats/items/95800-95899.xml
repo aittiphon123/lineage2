@@ -1553,6 +1553,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="300002" level="1" /> <!-- Glorious Warrior: Enhanced Abilities -->
+		</skills>
 	</item>
 	<item id="95891" name="Spellbook: Glorious Warrior's Ability Lv. 3" additionalName="Sealed" type="EtcItem">
 		<!-- A spellbook for learning the Glorious Warrior: Enhanced Abilities Lv. 3 skill. <Classes>. All classes after the 3rd class change. <Skill effect>. When used, the caster gets a buff that increases STR/ INT/ DEX/ WIT/ CON/ MEN. -->
@@ -1566,6 +1569,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="300003" level="1" /> <!-- Glorious Warrior: Enhanced Abilities -->
+		</skills>
 	</item>
 	<item id="95892" name="Special Color Title" additionalName="Sealed" type="EtcItem">
 		<!-- A commemorative reward for reaching Lv. 92. Allows you to change your title color and add a special icon to the title. Characters of Lv. 90+ can choose the <font color="00DCFF">sky-blue</font> color. <font color=ff6666>Note!</font>. /resetname:. Returns to the default color, a special item is required. The title disappears if you leave a clan. -->

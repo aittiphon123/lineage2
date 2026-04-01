@@ -66,7 +66,6 @@ import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Attackable;
@@ -158,6 +157,7 @@ import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.AcquireSkillType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -1340,10 +1340,10 @@ public class Quest implements IEventTimerEvent<String>, IEventTimerCancel<String
 			LOGGER.log(Level.WARNING, "could not insert char quest:", e);
 		}
 		
-		// events
+		// Events? Remove this?
 		for (String name : ScriptManager.getInstance().getScripts().keySet())
 		{
-			player.processQuestEvent(name, "enter");
+			player.processScriptEvent(name, "enter");
 		}
 	}
 	

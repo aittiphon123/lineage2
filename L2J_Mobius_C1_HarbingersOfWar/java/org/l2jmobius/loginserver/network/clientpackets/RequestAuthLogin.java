@@ -20,12 +20,12 @@
  */
 package org.l2jmobius.loginserver.network.clientpackets;
 
-import java.util.List;
+import java.util.Collection;
 
+import org.l2jmobius.loginserver.GameServerListener;
 import org.l2jmobius.loginserver.GameServerTable;
 import org.l2jmobius.loginserver.GameServerThread;
 import org.l2jmobius.loginserver.LoginController;
-import org.l2jmobius.loginserver.LoginServer;
 import org.l2jmobius.loginserver.config.LoginConfig;
 import org.l2jmobius.loginserver.network.AbstractClientPacket;
 import org.l2jmobius.loginserver.network.LoginClient;
@@ -88,7 +88,7 @@ public class RequestAuthLogin extends AbstractClientPacket
 			return;
 		}
 		
-		final List<GameServerThread> gslist = LoginServer.getGameServerListener().getGameServerThreads();
+		final Collection<GameServerThread> gslist = GameServerListener.getGameServers();
 		synchronized (gslist)
 		{
 			for (GameServerThread gameServer : gslist)

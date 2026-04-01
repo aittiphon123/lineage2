@@ -151,37 +151,37 @@ public class Q20281_ReconnaissanceInLangkLizardmenBarracks extends Quest
 			{
 				player.sendPacket(new ExQuestDialog(QUEST_ID, QuestDialogType.END));
 			}
-		}
-		
-		if (npc.getId() == MYSTERIOUS_STONE)
-		{
-			npc.onDecay();
-			if ((questState != null) && questState.isCond(QuestCondType.STARTED))
+			
+			if (npc.getId() == MYSTERIOUS_STONE)
 			{
-				final NewQuest data = getQuestData();
-				if (data.getGoal().getItemId() > 0)
+				npc.onDecay();
+				if (questState.isCond(QuestCondType.STARTED))
 				{
-					final int itemCount = (int) getQuestItemsCount(player, data.getGoal().getItemId());
-					if (itemCount < data.getGoal().getCount())
+					final NewQuest data = getQuestData();
+					if (data.getGoal().getItemId() > 0)
 					{
-						giveItems(player, data.getGoal().getItemId(), 1);
-						final int newItemCount = (int) getQuestItemsCount(player, data.getGoal().getItemId());
-						questState.setCount(newItemCount);
+						final int itemCount = (int) getQuestItemsCount(player, data.getGoal().getItemId());
+						if (itemCount < data.getGoal().getCount())
+						{
+							giveItems(player, data.getGoal().getItemId(), 1);
+							final int newItemCount = (int) getQuestItemsCount(player, data.getGoal().getItemId());
+							questState.setCount(newItemCount);
+						}
 					}
-				}
-				else
-				{
-					final int currentCount = questState.getCount();
-					if (currentCount < data.getGoal().getCount())
+					else
 					{
-						questState.setCount(currentCount + 1);
+						final int currentCount = questState.getCount();
+						if (currentCount < data.getGoal().getCount())
+						{
+							questState.setCount(currentCount + 1);
+						}
 					}
-				}
-				
-				if (questState.getCount() >= data.getGoal().getCount())
-				{
-					questState.setCond(QuestCondType.DONE);
-					player.sendPacket(new ExQuestNotification(questState));
+					
+					if (questState.getCount() >= data.getGoal().getCount())
+					{
+						questState.setCond(QuestCondType.DONE);
+						player.sendPacket(new ExQuestNotification(questState));
+					}
 				}
 			}
 		}

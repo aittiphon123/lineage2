@@ -762,6 +762,17 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-96</effectPoint>
 		<hitTime>1500</hitTime>
+		<isMagic>6</isMagic>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="PhysicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62177" toLevel="1" name="Kasha Orcs' Magic Spike">
 		<!-- Attacks with the Chaos Power dealing M. damage to the target and stunning them for 3 sec. Cannot be removed. -->

@@ -39,10 +39,6 @@ import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.managers.FortManager;
 import org.l2jmobius.gameserver.managers.FortSiegeManager;
-import org.l2jmobius.gameserver.model.CombatFlag;
-import org.l2jmobius.gameserver.model.FortSiegeSpawn;
-import org.l2jmobius.gameserver.model.SiegeClan;
-import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -55,6 +51,7 @@ import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.sieges.OnFortSiegeFinish;
 import org.l2jmobius.gameserver.model.events.holders.sieges.OnFortSiegeStart;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.spawns.Spawn;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -623,7 +620,7 @@ public class FortSiege implements Siegable
 			final Spawn spawn = instance.getSpawn();
 			if (spawn != null)
 			{
-				for (FortSiegeSpawn spawn2 : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
+				for (FortSpawnHolder spawn2 : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
 				{
 					if (spawn2.getId() == spawn.getId())
 					{
@@ -1121,7 +1118,7 @@ public class FortSiege implements Siegable
 		try
 		{
 			_commanders.clear();
-			for (FortSiegeSpawn _sp : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
+			for (FortSpawnHolder _sp : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
 			{
 				final Spawn spawnDat = new Spawn(_sp.getId());
 				spawnDat.setAmount(1);

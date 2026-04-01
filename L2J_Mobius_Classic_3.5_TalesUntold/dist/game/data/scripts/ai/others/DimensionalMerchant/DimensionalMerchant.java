@@ -47,7 +47,7 @@ public class DimensionalMerchant extends Script
 	
 	// Others
 	private static final int ATTENDANCE_REWARD_MULTISELL = 3247801;
-	private static final String COMMAND_BYPASS = "Quest DimensionalMerchant ";
+	private static final String COMMAND_BYPASS = "Script DimensionalMerchant ";
 	
 	private DimensionalMerchant()
 	{

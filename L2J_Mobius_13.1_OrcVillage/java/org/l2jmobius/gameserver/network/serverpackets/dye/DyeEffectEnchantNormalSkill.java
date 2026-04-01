@@ -21,83 +21,38 @@
 package org.l2jmobius.gameserver.network.serverpackets.dye;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.commons.util.Rnd;
-import org.l2jmobius.gameserver.config.RatesConfig;
-import org.l2jmobius.gameserver.data.xml.SkillData;
-import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
-import org.l2jmobius.gameserver.model.skill.Skill;
-import org.l2jmobius.gameserver.model.variables.AccountVariables;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 
 /**
- * @author CostyKiller
+ * @author CostyKiller, Mobius
  */
 public class DyeEffectEnchantNormalSkill extends ServerPacket
 {
-	private final Player _player;
 	private final int _category;
 	private final int _slotId;
-	private int _slotLevel;
-	private int _skillId;
+	private final boolean _success;
+	private final int _slotLevel;
+	private final int _skillId;
 	private final int _skillLevel;
-	private int _challengeCount;
-	private Boolean _success = false;
+	private final int _challengeCount;
 	
-	public DyeEffectEnchantNormalSkill(Player player, int category, int slotId)
+	public DyeEffectEnchantNormalSkill(int category, int slotId, boolean success, int slotLevel, int skillId, int skillLevel, int challengeCount)
 	{
-		_player = player;
 		_category = category;
 		_slotId = slotId;
-		_slotLevel = _player.getAccountVariables().getInt(AccountVariables.DYE_LEVEL_FOR_SLOT_ + slotId, 0);
-		switch (slotId)
-		{
-			case 1:
-			{
-				_skillId = 37073; // Seal - Giant's Power
-				break;
-			}
-			case 2:
-			{
-				_skillId = 37074; // Seal - Giant's Wisdom
-				break;
-			}
-			case 3:
-			{
-				_skillId = 37075; // Seal - Giant's Might
-				break;
-			}
-		}
-		
-		_skillLevel = _slotLevel == 0 ? 1 : _slotLevel + 1;
-		_challengeCount = _player.getAccountVariables().getInt(AccountVariables.DYE_CHALLENGE_COUNT_FOR_SLOT_ + slotId, 30);
+		_success = success;
+		_slotLevel = slotLevel;
+		_skillId = skillId;
+		_skillLevel = skillLevel;
+		_challengeCount = challengeCount;
 	}
 	
 	@Override
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.EX_DYEEFFECT_ENCHANT_NORMALSKILL.writeId(this, buffer);
-		if ((_player.getInventory().getItemByItemId(RatesConfig.DYE_ENCHANT_NORMAL_SKILL_ITEM_ID).getCount() > RatesConfig.DYE_ENCHANT_NORMAL_SKILL_ITEM_COUNT))
-		{
-			if (Rnd.get(100) < RatesConfig.DYE_ENCHANT_NORMAL_SKILL_CHANCE)
-			{
-				_success = true;
-				_slotLevel = _slotLevel + 1;
-				_player.getAccountVariables().set(AccountVariables.DYE_LEVEL_FOR_SLOT_ + _slotId, _slotLevel);
-				
-				// Add skill here.
-				final Skill dyeSkill = SkillData.getInstance().getSkill(_skillId, _skillLevel);
-				_player.addSkill(dyeSkill, true);
-			}
-			
-			_player.destroyItemByItemId(ItemProcessType.FEE, RatesConfig.DYE_ENCHANT_NORMAL_SKILL_ITEM_ID, RatesConfig.DYE_ENCHANT_NORMAL_SKILL_ITEM_COUNT, _player, true);
-		}
-		
-		_challengeCount = _challengeCount - 1;
-		_player.getAccountVariables().set(AccountVariables.DYE_CHALLENGE_COUNT_FOR_SLOT_ + _slotId, _challengeCount);
-		
 		buffer.writeInt(_success);
 		buffer.writeInt(_category);
 		buffer.writeInt(_slotId);

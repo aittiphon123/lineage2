@@ -20,6 +20,10 @@
  */
 package ai.bosses.Zaken;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
 import org.l2jmobius.commons.time.TimeUtil;
@@ -27,8 +31,9 @@ import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
+import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
-import org.l2jmobius.gameserver.model.World;
+import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -41,958 +46,1247 @@ import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.taskmanagers.GameTimeTaskManager;
 
 /**
- * Zaken AI
+ * Controls Zaken raid boss behavior, including form switching, teleport logic and minion spawning.<br>
+ * Persists boss state across restarts and cleans up scheduled tasks on death.
+ * <ul>
+ * <li>Day/night face management and regeneration handling.</li>
+ * <li>Teleport logic based on combat state, distance and HP thresholds.</li>
+ * <li>Minion wave spawning and delayed minion respawn scheduling.</li>
+ * </ul>
+ * @author BazookaRpm
  */
 public class Zaken extends Script
 {
-	protected static final Logger LOGGER = Logger.getLogger(Zaken.class.getName());
+	// Logging.
+	private static final Logger LOGGER = Logger.getLogger(Zaken.class.getName());
 	
-	// Zaken status
-	private static final byte ALIVE = 0; // Zaken is spawned.
-	private static final byte DEAD = 1; // Zaken has been killed.
+	// NPC identifiers.
+	private static final int ZAKEN_NPC_ID = 29022;
+	private static final int DOLL_BLADER_B_NPC_ID = 29023;
+	private static final int VALE_MASTER_B_NPC_ID = 29024;
+	private static final int PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID = 29026;
+	private static final int PIRATES_ZOMBIE_B_NPC_ID = 29027;
 	
-	// NPCs
-	private static final int ZAKEN = 29022;
-	private static final int DOLL_BLADER_B = 29023;
-	private static final int VALE_MASTER_B = 29024;
-	private static final int PIRATES_ZOMBIE_CAPTAIN_B = 29026;
-	private static final int PIRATES_ZOMBIE_B = 29027;
-	private static final int[] X_COORDS =
+	// Boss status flags.
+	private static final byte STATUS_ALIVE = 0;
+	private static final byte STATUS_DEAD = 1;
+	
+	// Event identifiers.
+	private static final String EVENT_ZAKEN_UNLOCK = "zaken_unlock";
+	private static final String TIMER_MAIN = "1001";
+	private static final String TIMER_FACTION_TELEPORT = "1002";
+	private static final String TIMER_MINION_WAVES = "1003";
+	private static final String MINION_RESPAWN_PREFIX = "RESPAWN_MINION:";
+	
+	// Skill identifiers.
+	private static final int SKILL_TELEPORT_SELF = 4222;
+	private static final int SKILL_FACE_DAY = 4223;
+	private static final int SKILL_REGEN_NIGHT = 4227;
+	private static final int SKILL_TELEPORT_SINGLE = 4216;
+	private static final int SKILL_TELEPORT_AREA = 4217;
+	private static final int SKILL_4218 = 4218;
+	private static final int SKILL_4219 = 4219;
+	private static final int SKILL_4220 = 4220;
+	private static final int SKILL_4221 = 4221;
+	private static final int SKILL_MOUNT_DEBUFF = 4258;
+	private static final int SKILL_REGEN_CANCEL = 4242;
+	private static final int SKILL_FACE_NIGHT = 4224;
+	
+	// Gameplay constants.
+	private static final int NIGHT_END_HOUR = 5;
+	private static final int TELEPORT_RANGE = 1500;
+	private static final int AREA_TELEPORT_RANGE = 250;
+	private static final int Z_LEVEL_TOLERANCE = 100;
+	private static final int FACTION_CALL_Z_TOLERANCE = 200;
+	private static final int SKILL_RANGE_CHECK = 100;
+	private static final int TELEPORT_OFFSET_MAX = 650;
+	private static final int TELEPORT_LOCATION_COUNT = 15;
+	private static final int AREA_TELEPORT_TRACK_LIMIT = 5;
+	private static final int MAX_HEADING = 65536;
+	private static final int SKILL_ROLL_MAX = 15 * 15;
+	
+	// Timing constants.
+	private static final long MILLIS_PER_SECOND = 1000L;
+	private static final long MILLIS_PER_HOUR = 3600000L;
+	
+	// Minion respawn scheduling.
+	private static final AtomicInteger MINION_RESPAWN_ID = new AtomicInteger(0);
+	
+	// Teleport locations.
+	private static final Location[] TELEPORT_LOCATIONS =
 	{
-		53950,
-		55980,
-		54950,
-		55970,
-		53930,
-		55970,
-		55980,
-		54960,
-		53950,
-		53930,
-		55970,
-		55980,
-		54960,
-		53950,
-		53930
-	};
-	private static final int[] Y_COORDS =
-	{
-		219860,
-		219820,
-		218790,
-		217770,
-		217760,
-		217770,
-		219920,
-		218790,
-		219860,
-		217760,
-		217770,
-		219920,
-		218790,
-		219860,
-		217760
-	};
-	private static final int[] Z_COORDS =
-	{
-		-3488,
-		-3488,
-		-3488,
-		-3488,
-		-3488,
-		-3216,
-		-3216,
-		-3216,
-		-3216,
-		-3216,
-		-2944,
-		-2944,
-		-2944,
-		-2944,
-		-2944
+		new Location(53950, 219860, -3488),
+		new Location(55980, 219820, -3488),
+		new Location(54950, 218790, -3488),
+		new Location(55970, 217770, -3488),
+		new Location(53930, 217760, -3488),
+		new Location(55970, 217770, -3216),
+		new Location(55980, 219920, -3216),
+		new Location(54960, 218790, -3216),
+		new Location(53950, 219860, -3216),
+		new Location(53930, 217760, -3216),
+		new Location(55970, 217770, -2944),
+		new Location(55980, 219920, -2944),
+		new Location(54960, 218790, -2944),
+		new Location(53950, 219860, -2944),
+		new Location(53930, 217760, -2944)
 	};
 	
-	// Misc
+	// Zone management.
 	private static BossZone _zone;
-	private int _1001 = 0; // Used for first cancel of QuestTimer "1001".
-	private int _ai0 = 0; // Used for zaken coords updater.
-	private int _ai1 = 0; // Used for X coord tracking for non-random teleporting in zaken's self teleport skill.
-	private int _ai2 = 0; // Used for Y coord tracking for non-random teleporting in zaken's self teleport skill.
-	private int _ai3 = 0; // Used for Z coord tracking for non-random teleporting in zaken's self teleport skill.
-	private int _ai4 = 0; // Used for spawning minions cycles.
-	private int _quest0 = 0; // Used for teleporting progress.
-	private int _quest1 = 0; // Used for most hated players progress.
-	private int _quest2 = 0; // Used for zaken HP check for teleport.
-	private Player c_quest0 = null; // 1st player used for area teleport.
-	private Player c_quest1 = null; // 2nd player used for area teleport.
-	private Player c_quest2 = null; // 3rd player used for area teleport.
-	private Player c_quest3 = null; // 4th player used for area teleport.
-	private Player c_quest4 = null; // 5th player used for area teleport.
 	
+	// Concurrency control.
+	private final Object _stateLock = new Object();
+	
+	// Boss instance tracking.
+	private GrandBoss _zakenBoss = null;
+	
+	// Respawn management.
+	private final Set<Integer> _pendingMinionRespawnIds = ConcurrentHashMap.newKeySet();
+	private final ConcurrentHashMap<Integer, MinionRespawnData> _minionRespawnData = new ConcurrentHashMap<>();
+	
+	// AI runtime state.
+	private int _firstMainTick = 0;
+	private int _teleportInProgress = 0;
+	private int _teleportTargetX = 0;
+	private int _teleportTargetY = 0;
+	private int _teleportTargetZ = 0;
+	private int _minionSpawnCycle = 0;
+	private int _areaTeleportTrackedCount = 0;
+	private int _mostHatedTicks = 0;
+	private int _daytimeTeleportHpStage = 0;
+	private Creature _mostHatedTarget = null;
+	
+	// Area teleport tracking.
+	private Player _areaTeleportPlayer1 = null;
+	private Player _areaTeleportPlayer2 = null;
+	private Player _areaTeleportPlayer3 = null;
+	private Player _areaTeleportPlayer4 = null;
+	private Player _areaTeleportPlayer5 = null;
+	
+	/**
+	 * Initializes listeners and restores Zaken state from persistent grand boss data.
+	 */
 	public Zaken()
 	{
-		addKillId(ZAKEN);
-		addAttackId(ZAKEN);
+		addAttackId(ZAKEN_NPC_ID);
+		addKillId(ZAKEN_NPC_ID, DOLL_BLADER_B_NPC_ID, VALE_MASTER_B_NPC_ID, PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, PIRATES_ZOMBIE_B_NPC_ID);
+		addSpellFinishedId(ZAKEN_NPC_ID);
+		addAggroRangeEnterId(ZAKEN_NPC_ID);
+		addFactionCallId(ZAKEN_NPC_ID);
 		
 		_zone = GrandBossManager.getInstance().getZone(55312, 219168, -3223);
 		
-		final StatSet info = GrandBossManager.getInstance().getStatSet(ZAKEN);
-		final Integer status = GrandBossManager.getInstance().getStatus(ZAKEN);
-		if (status == DEAD)
+		final StatSet info = GrandBossManager.getInstance().getStatSet(ZAKEN_NPC_ID);
+		if (GrandBossManager.getInstance().getStatus(ZAKEN_NPC_ID) == STATUS_DEAD)
 		{
-			// Load the unlock date and time for zaken from DB.
-			final long temp = info.getLong("respawn_time") - System.currentTimeMillis();
-			
-			// If Zaken is locked until a certain time, mark it so and start the unlock timer.
-			// The unlock time has not yet expired.
-			if (temp > 0)
+			final long remainingDelay = info.getLong("respawn_time") - System.currentTimeMillis();
+			if (remainingDelay > 0)
 			{
-				startQuestTimer("zaken_unlock", temp, null, null);
+				startQuestTimer(EVENT_ZAKEN_UNLOCK, remainingDelay, null, null);
 			}
 			else
 			{
-				// The time has already expired while the server was offline. Immediately spawn Zaken.
-				final GrandBoss zaken = (GrandBoss) addSpawn(ZAKEN, 55312, 219168, -3223, 0, false, 0);
-				GrandBossManager.getInstance().setStatus(ZAKEN, ALIVE);
+				final GrandBoss zaken = (GrandBoss) addSpawn(ZAKEN_NPC_ID, 55312, 219168, -3223, 0, false, 0);
+				GrandBossManager.getInstance().setStatus(ZAKEN_NPC_ID, STATUS_ALIVE);
 				spawnBoss(zaken);
 			}
 		}
 		else
 		{
-			final int x = info.getInt("loc_x");
-			final int y = info.getInt("loc_y");
-			final int z = info.getInt("loc_z");
-			final int heading = info.getInt("heading");
-			final int hp = info.getInt("currentHP");
-			final int mp = info.getInt("currentMP");
-			final GrandBoss zaken = (GrandBoss) addSpawn(ZAKEN, x, y, z, heading, false, 0);
-			zaken.setCurrentHpMp(hp, mp);
+			final GrandBoss zaken = (GrandBoss) addSpawn(ZAKEN_NPC_ID, info.getInt("loc_x"), info.getInt("loc_y"), info.getInt("loc_z"), info.getInt("heading"), false, 0);
+			zaken.setCurrentHpMp(info.getInt("currentHP"), info.getInt("currentMP"));
 			spawnBoss(zaken);
 		}
 	}
 	
+	/**
+	 * Handles scheduled events, including minion respawns and boss timers.
+	 * @param event
+	 * @param npc
+	 * @param player
+	 * @return Event result.
+	 */
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		switch (event)
+		if ((event != null) && event.startsWith(MINION_RESPAWN_PREFIX))
 		{
-			case "1001":
+			final int id;
+			try
 			{
-				if (_1001 == 1)
+				id = Integer.parseInt(event.substring(MINION_RESPAWN_PREFIX.length()));
+			}
+			catch (Exception e)
+			{
+				LOGGER.warning("Zaken minion respawn event parse failed: event=" + event + ".");
+				return null;
+			}
+			
+			_pendingMinionRespawnIds.remove(id);
+			final MinionRespawnData data = _minionRespawnData.remove(id);
+			if (data == null)
+			{
+				return null;
+			}
+			
+			if (GrandBossManager.getInstance().getStatus(ZAKEN_NPC_ID) != STATUS_ALIVE)
+			{
+				return null;
+			}
+			
+			addSpawn(data.getNpcId(), data.getX(), data.getY(), data.getZ(), data.getHeading(), false, 0);
+			return null;
+		}
+		
+		if (event == null)
+		{
+			return null;
+		}
+		
+		synchronized (_stateLock)
+		{
+			switch (event)
+			{
+				case TIMER_MAIN:
 				{
-					_1001 = 0;
-					cancelQuestTimer("1001", npc, null);
-				}
-				
-				int sk4223 = 0;
-				int sk4227 = 0;
-				for (BuffInfo e : npc.getEffectList().getEffects())
-				{
-					if (e.getSkill().getId() == 4227)
+					if (_firstMainTick == 1)
 					{
-						sk4227 = 1;
+						_firstMainTick = 0;
+						cancelQuestTimer(TIMER_MAIN, npc, null);
 					}
 					
-					if (e.getSkill().getId() == 4223)
+					int hasDayFace = 0;
+					int hasNightRegen = 0;
+					for (BuffInfo effect : npc.getEffectList().getEffects())
 					{
-						sk4223 = 1;
-					}
-				}
-				
-				if (getTimeHour() < 5)
-				{
-					if (sk4223 == 1) // Use night face if Zaken have day face.
-					{
-						npc.setTarget(npc);
-						npc.doCast(SkillData.getInstance().getSkill(4224, 1));
-						_ai1 = npc.getX();
-						_ai2 = npc.getY();
-						_ai3 = npc.getZ();
-					}
-					
-					if (sk4227 == 0) // Use Zaken regeneration.
-					{
-						npc.setTarget(npc);
-						npc.doCast(SkillData.getInstance().getSkill(4227, 1));
-					}
-					
-					if ((npc.getAI().getIntention() == Intention.ATTACK) && (_ai0 == 0))
-					{
-						int i0 = 0;
-						int i1 = 1;
-						if (npc.asAttackable().getMostHated() != null)
+						if (effect.getSkill().getId() == SKILL_REGEN_NIGHT)
 						{
-							if ((((npc.asAttackable().getMostHated().getX() - _ai1) * (npc.asAttackable().getMostHated().getX() - _ai1)) + ((npc.asAttackable().getMostHated().getY() - _ai2) * (npc.asAttackable().getMostHated().getY() - _ai2))) > (1500 * 1500))
+							hasNightRegen = 1;
+						}
+						
+						if (effect.getSkill().getId() == SKILL_FACE_DAY)
+						{
+							hasDayFace = 1;
+						}
+					}
+					
+					if (getTimeHour() < NIGHT_END_HOUR)
+					{
+						if (hasDayFace == 1)
+						{
+							npc.setTarget(npc);
+							npc.doCast(SkillData.getInstance().getSkill(SKILL_FACE_NIGHT, 1));
+							_teleportTargetX = npc.getX();
+							_teleportTargetY = npc.getY();
+							_teleportTargetZ = npc.getZ();
+						}
+						
+						if (hasNightRegen == 0)
+						{
+							npc.setTarget(npc);
+							npc.doCast(SkillData.getInstance().getSkill(SKILL_REGEN_NIGHT, 1));
+						}
+						
+						if ((npc.getAI().getIntention() == Intention.ATTACK) && (_teleportInProgress == 0))
+						{
+							int isTargetOutOfRange = 0;
+							int areAllTargetsOutOfRange = 1;
+							
+							final Creature mostHatedForTeleport = npc.asAttackable().getMostHated();
+							if (mostHatedForTeleport != null)
 							{
-								i0 = 1;
+								{
+									final long dx = (long) mostHatedForTeleport.getX() - _teleportTargetX;
+									final long dy = (long) mostHatedForTeleport.getY() - _teleportTargetY;
+									if (((dx * dx) + (dy * dy)) > (TELEPORT_RANGE * (long) TELEPORT_RANGE))
+									{
+										isTargetOutOfRange = 1;
+									}
+									else
+									{
+										isTargetOutOfRange = 0;
+									}
+								}
+								
+								if (isTargetOutOfRange == 0)
+								{
+									areAllTargetsOutOfRange = 0;
+								}
+								
+								if (_areaTeleportTrackedCount > 0)
+								{
+									if (_areaTeleportPlayer1 == null)
+									{
+										isTargetOutOfRange = 0;
+									}
+									else
+									{
+										final long dx = (long) _areaTeleportPlayer1.getX() - _teleportTargetX;
+										final long dy = (long) _areaTeleportPlayer1.getY() - _teleportTargetY;
+										if (((dx * dx) + (dy * dy)) > (TELEPORT_RANGE * (long) TELEPORT_RANGE))
+										{
+											isTargetOutOfRange = 1;
+										}
+										else
+										{
+											isTargetOutOfRange = 0;
+										}
+									}
+									
+									if (isTargetOutOfRange == 0)
+									{
+										areAllTargetsOutOfRange = 0;
+									}
+								}
+								
+								if (_areaTeleportTrackedCount > 1)
+								{
+									if (_areaTeleportPlayer2 == null)
+									{
+										isTargetOutOfRange = 0;
+									}
+									else
+									{
+										final long dx = (long) _areaTeleportPlayer2.getX() - _teleportTargetX;
+										final long dy = (long) _areaTeleportPlayer2.getY() - _teleportTargetY;
+										if (((dx * dx) + (dy * dy)) > (TELEPORT_RANGE * (long) TELEPORT_RANGE))
+										{
+											isTargetOutOfRange = 1;
+										}
+										else
+										{
+											isTargetOutOfRange = 0;
+										}
+									}
+									
+									if (isTargetOutOfRange == 0)
+									{
+										areAllTargetsOutOfRange = 0;
+									}
+								}
+								
+								if (_areaTeleportTrackedCount > 2)
+								{
+									if (_areaTeleportPlayer3 == null)
+									{
+										isTargetOutOfRange = 0;
+									}
+									else
+									{
+										final long dx = (long) _areaTeleportPlayer3.getX() - _teleportTargetX;
+										final long dy = (long) _areaTeleportPlayer3.getY() - _teleportTargetY;
+										if (((dx * dx) + (dy * dy)) > (TELEPORT_RANGE * (long) TELEPORT_RANGE))
+										{
+											isTargetOutOfRange = 1;
+										}
+										else
+										{
+											isTargetOutOfRange = 0;
+										}
+									}
+									
+									if (isTargetOutOfRange == 0)
+									{
+										areAllTargetsOutOfRange = 0;
+									}
+								}
+								
+								if (_areaTeleportTrackedCount > 3)
+								{
+									if (_areaTeleportPlayer4 == null)
+									{
+										isTargetOutOfRange = 0;
+									}
+									else
+									{
+										final long dx = (long) _areaTeleportPlayer4.getX() - _teleportTargetX;
+										final long dy = (long) _areaTeleportPlayer4.getY() - _teleportTargetY;
+										if (((dx * dx) + (dy * dy)) > (TELEPORT_RANGE * (long) TELEPORT_RANGE))
+										{
+											isTargetOutOfRange = 1;
+										}
+										else
+										{
+											isTargetOutOfRange = 0;
+										}
+									}
+									
+									if (isTargetOutOfRange == 0)
+									{
+										areAllTargetsOutOfRange = 0;
+									}
+								}
+								
+								if (_areaTeleportTrackedCount >= AREA_TELEPORT_TRACK_LIMIT)
+								{
+									if (_areaTeleportPlayer5 == null)
+									{
+										isTargetOutOfRange = 0;
+									}
+									else
+									{
+										final long dx = (long) _areaTeleportPlayer5.getX() - _teleportTargetX;
+										final long dy = (long) _areaTeleportPlayer5.getY() - _teleportTargetY;
+										if (((dx * dx) + (dy * dy)) > (TELEPORT_RANGE * (long) TELEPORT_RANGE))
+										{
+											isTargetOutOfRange = 1;
+										}
+										else
+										{
+											isTargetOutOfRange = 0;
+										}
+									}
+									
+									if (isTargetOutOfRange == 0)
+									{
+										areAllTargetsOutOfRange = 0;
+									}
+								}
+								
+								if (areAllTargetsOutOfRange == 1)
+								{
+									_areaTeleportTrackedCount = 0;
+									final Location location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+									_teleportTargetX = location.getX() + getRandom(TELEPORT_OFFSET_MAX);
+									_teleportTargetY = location.getY() + getRandom(TELEPORT_OFFSET_MAX);
+									_teleportTargetZ = location.getZ();
+									npc.setTarget(npc);
+									npc.doCast(SkillData.getInstance().getSkill(SKILL_TELEPORT_SELF, 1));
+								}
+							}
+						}
+						
+						if ((getRandom(20) < 1) && (_teleportInProgress == 0))
+						{
+							_teleportTargetX = npc.getX();
+							_teleportTargetY = npc.getY();
+							_teleportTargetZ = npc.getZ();
+						}
+						
+						final Creature mostHated = npc.asAttackable().getMostHated();
+						if ((npc.getAI().getIntention() == Intention.ATTACK) && (_mostHatedTicks == 0) && (mostHated != null))
+						{
+							_mostHatedTarget = mostHated;
+							_mostHatedTicks = 1;
+						}
+						else if ((npc.getAI().getIntention() == Intention.ATTACK) && (_mostHatedTicks != 0) && (mostHated != null))
+						{
+							if (mostHated == _mostHatedTarget)
+							{
+								_mostHatedTicks++;
 							}
 							else
 							{
-								i0 = 0;
+								_mostHatedTarget = mostHated;
+								_mostHatedTicks = 1;
 							}
-							
-							if (i0 == 0)
-							{
-								i1 = 0;
-							}
-							
-							if (_quest0 > 0)
-							{
-								if (c_quest0 == null)
-								{
-									i0 = 0;
-								}
-								else if ((((c_quest0.getX() - _ai1) * (c_quest0.getX() - _ai1)) + ((c_quest0.getY() - _ai2) * (c_quest0.getY() - _ai2))) > (1500 * 1500))
-								{
-									i0 = 1;
-								}
-								else
-								{
-									i0 = 0;
-								}
-								
-								if (i0 == 0)
-								{
-									i1 = 0;
-								}
-							}
-							
-							if (_quest0 > 1)
-							{
-								if (c_quest1 == null)
-								{
-									i0 = 0;
-								}
-								else if ((((c_quest1.getX() - _ai1) * (c_quest1.getX() - _ai1)) + ((c_quest1.getY() - _ai2) * (c_quest1.getY() - _ai2))) > (1500 * 1500))
-								{
-									i0 = 1;
-								}
-								else
-								{
-									i0 = 0;
-								}
-								
-								if (i0 == 0)
-								{
-									i1 = 0;
-								}
-							}
-							
-							if (_quest0 > 2)
-							{
-								if (c_quest2 == null)
-								{
-									i0 = 0;
-								}
-								else if ((((c_quest2.getX() - _ai1) * (c_quest2.getX() - _ai1)) + ((c_quest2.getY() - _ai2) * (c_quest2.getY() - _ai2))) > (1500 * 1500))
-								{
-									i0 = 1;
-								}
-								else
-								{
-									i0 = 0;
-								}
-								
-								if (i0 == 0)
-								{
-									i1 = 0;
-								}
-							}
-							
-							if (_quest0 > 3)
-							{
-								if (c_quest3 == null)
-								{
-									i0 = 0;
-								}
-								else if ((((c_quest3.getX() - _ai1) * (c_quest3.getX() - _ai1)) + ((c_quest3.getY() - _ai2) * (c_quest3.getY() - _ai2))) > (1500 * 1500))
-								{
-									i0 = 1;
-								}
-								else
-								{
-									i0 = 0;
-								}
-								
-								if (i0 == 0)
-								{
-									i1 = 0;
-								}
-							}
-							
-							if (_quest0 > 4)
-							{
-								if (c_quest4 == null)
-								{
-									i0 = 0;
-								}
-								else if ((((c_quest4.getX() - _ai1) * (c_quest4.getX() - _ai1)) + ((c_quest4.getY() - _ai2) * (c_quest4.getY() - _ai2))) > (1500 * 1500))
-								{
-									i0 = 1;
-								}
-								else
-								{
-									i0 = 0;
-								}
-								
-								if (i0 == 0)
-								{
-									i1 = 0;
-								}
-							}
-							
-							if (i1 == 1)
-							{
-								_quest0 = 0;
-								final int i2 = getRandom(15);
-								_ai1 = X_COORDS[i2] + getRandom(650);
-								_ai2 = Y_COORDS[i2] + getRandom(650);
-								_ai3 = Z_COORDS[i2];
-								npc.setTarget(npc);
-								npc.doCast(SkillData.getInstance().getSkill(4222, 1));
-							}
-						}
-					}
-					
-					if ((getRandom(20) < 1) && (_ai0 == 0))
-					{
-						_ai1 = npc.getX();
-						_ai2 = npc.getY();
-						_ai3 = npc.getZ();
-					}
-					
-					Creature cAi0 = null;
-					if ((npc.getAI().getIntention() == Intention.ATTACK) && (_quest1 == 0))
-					{
-						if (npc.asAttackable().getMostHated() != null)
-						{
-							cAi0 = npc.asAttackable().getMostHated();
-							_quest1 = 1;
-						}
-					}
-					else if ((npc.getAI().getIntention() == Intention.ATTACK) && (_quest1 != 0) && (npc.asAttackable().getMostHated() != null))
-					{
-						if (cAi0 == npc.asAttackable().getMostHated())
-						{
-							_quest1 = (_quest1 + 1);
-						}
-						else
-						{
-							_quest1 = 1;
-							cAi0 = npc.asAttackable().getMostHated();
-						}
-					}
-					
-					if (npc.getAI().getIntention() == Intention.IDLE)
-					{
-						_quest1 = 0;
-					}
-					
-					if (_quest1 > 5)
-					{
-						npc.asAttackable().stopHating(cAi0);
-						final Creature nextTarget = npc.asAttackable().getMostHated();
-						if (nextTarget != null)
-						{
-							npc.getAI().setIntention(Intention.ATTACK, nextTarget);
 						}
 						
-						_quest1 = 0;
+						if (npc.getAI().getIntention() == Intention.IDLE)
+						{
+							_mostHatedTicks = 0;
+							_mostHatedTarget = null;
+						}
+						
+						if (_mostHatedTicks > 5)
+						{
+							if (_mostHatedTarget != null)
+							{
+								npc.asAttackable().stopHating(_mostHatedTarget);
+							}
+							final Creature nextTarget = npc.asAttackable().getMostHated();
+							if (nextTarget != null)
+							{
+								npc.getAI().setIntention(Intention.ATTACK, nextTarget);
+							}
+							
+							_mostHatedTicks = 0;
+							_mostHatedTarget = null;
+						}
 					}
+					else if (hasDayFace == 0)
+					{
+						npc.setTarget(npc);
+						npc.doCast(SkillData.getInstance().getSkill(SKILL_FACE_DAY, 1));
+						_daytimeTeleportHpStage = 3;
+					}
+					
+					if ((getTimeHour() >= NIGHT_END_HOUR) && (hasNightRegen == 1))
+					{
+						npc.setTarget(npc);
+						npc.doCast(SkillData.getInstance().getSkill(SKILL_REGEN_CANCEL, 1));
+					}
+					
+					if (getRandom(40) < 1)
+					{
+						final Location location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+						_teleportTargetX = location.getX() + getRandom(TELEPORT_OFFSET_MAX);
+						_teleportTargetY = location.getY() + getRandom(TELEPORT_OFFSET_MAX);
+						_teleportTargetZ = location.getZ();
+						npc.setTarget(npc);
+						npc.doCast(SkillData.getInstance().getSkill(SKILL_TELEPORT_SELF, 1));
+					}
+					
+					startQuestTimer(TIMER_MAIN, 30 * MILLIS_PER_SECOND, npc, null);
+					break;
 				}
-				else if (sk4223 == 0) // Use day face if not night time.
+				case TIMER_FACTION_TELEPORT:
 				{
-					npc.setTarget(npc);
-					npc.doCast(SkillData.getInstance().getSkill(4223, 1));
-					_quest2 = 3;
+					_areaTeleportTrackedCount = 0;
+					npc.doCast(SkillData.getInstance().getSkill(SKILL_TELEPORT_SELF, 1));
+					_teleportInProgress = 0;
+					break;
 				}
-				
-				if (sk4227 == 1) // When switching to day time, cancel zaken night regen.
+				case TIMER_MINION_WAVES:
 				{
-					npc.setTarget(npc);
-					npc.doCast(SkillData.getInstance().getSkill(4242, 1));
+					switch (_minionSpawnCycle)
+					{
+						case 1:
+						{
+							final Location location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ(), getRandom(MAX_HEADING), false, 0);
+							_minionSpawnCycle = 2;
+							break;
+						}
+						case 2:
+						{
+							final Location location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							addSpawn(DOLL_BLADER_B_NPC_ID, location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ(), getRandom(MAX_HEADING), false, 0);
+							_minionSpawnCycle = 3;
+							break;
+						}
+						case 3:
+						{
+							Location location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							addSpawn(VALE_MASTER_B_NPC_ID, location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ(), getRandom(MAX_HEADING), false, 0);
+							location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							addSpawn(VALE_MASTER_B_NPC_ID, location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ(), getRandom(MAX_HEADING), false, 0);
+							_minionSpawnCycle = 4;
+							break;
+						}
+						case 4:
+						{
+							Location location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ(), getRandom(MAX_HEADING), false, 0);
+							location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ(), getRandom(MAX_HEADING), false, 0);
+							location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ(), getRandom(MAX_HEADING), false, 0);
+							location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ(), getRandom(MAX_HEADING), false, 0);
+							location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ(), getRandom(MAX_HEADING), false, 0);
+							_minionSpawnCycle = 5;
+							break;
+						}
+						case 5:
+						{
+							addSpawn(DOLL_BLADER_B_NPC_ID, 52675, 219371, -3290, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 52687, 219596, -3368, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 52672, 219740, -3418, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 52857, 219992, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 52959, 219997, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 53381, 220151, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 54236, 220948, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 54885, 220144, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55264, 219860, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 55399, 220263, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55679, 220129, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 56276, 220783, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 57173, 220234, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 56267, 218826, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 56294, 219482, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 56094, 219113, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 56364, 218967, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 57113, 218079, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 56186, 217153, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55440, 218081, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 55202, 217940, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55225, 218236, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 54973, 218075, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 53412, 218077, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 54226, 218797, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 54394, 219067, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 54139, 219253, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 54262, 219480, -3488, getRandom(MAX_HEADING), false, 0);
+							_minionSpawnCycle = 6;
+							break;
+						}
+						case 6:
+						{
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 53412, 218077, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 54413, 217132, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 54841, 217132, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 55372, 217128, -3343, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 55893, 217122, -3488, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 56282, 217237, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 56963, 218080, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 56267, 218826, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 56294, 219482, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 56094, 219113, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 56364, 218967, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 56276, 220783, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 57173, 220234, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 54885, 220144, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55264, 219860, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 55399, 220263, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55679, 220129, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 54236, 220948, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 54464, 219095, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 54226, 218797, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 54394, 219067, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 54139, 219253, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 54262, 219480, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 53412, 218077, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55440, 218081, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 55202, 217940, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55225, 218236, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 54973, 218075, -3216, getRandom(MAX_HEADING), false, 0);
+							_minionSpawnCycle = 7;
+							break;
+						}
+						case 7:
+						{
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 54228, 217504, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 54181, 217168, -3216, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 54714, 217123, -3168, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 55298, 217127, -3073, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 55787, 217130, -2993, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 56284, 217216, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 56963, 218080, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 56267, 218826, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 56294, 219482, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 56094, 219113, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 56364, 218967, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 56276, 220783, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 57173, 220234, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 54885, 220144, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55264, 219860, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 55399, 220263, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55679, 220129, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 54236, 220948, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 54464, 219095, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 54226, 218797, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(VALE_MASTER_B_NPC_ID, 54394, 219067, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 54139, 219253, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(DOLL_BLADER_B_NPC_ID, 54262, 219480, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 53412, 218077, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 54280, 217200, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55440, 218081, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_CAPTAIN_B_NPC_ID, 55202, 217940, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 55225, 218236, -2944, getRandom(MAX_HEADING), false, 0);
+							addSpawn(PIRATES_ZOMBIE_B_NPC_ID, 54973, 218075, -2944, getRandom(MAX_HEADING), false, 0);
+							_minionSpawnCycle = 8;
+							cancelQuestTimer(TIMER_MINION_WAVES, null, null);
+							break;
+						}
+					}
+					break;
 				}
-				
-				if (getRandom(40) < 1)
+				case EVENT_ZAKEN_UNLOCK:
 				{
-					final int i2 = getRandom(15);
-					_ai1 = X_COORDS[i2] + getRandom(650);
-					_ai2 = Y_COORDS[i2] + getRandom(650);
-					_ai3 = Z_COORDS[i2];
-					npc.setTarget(npc);
-					npc.doCast(SkillData.getInstance().getSkill(4222, 1));
+					if (GrandBossManager.getInstance().getStatus(ZAKEN_NPC_ID) == STATUS_DEAD)
+					{
+						final GrandBoss zaken = (GrandBoss) addSpawn(ZAKEN_NPC_ID, 55312, 219168, -3223, 0, false, 0);
+						GrandBossManager.getInstance().setStatus(ZAKEN_NPC_ID, STATUS_ALIVE);
+						spawnBoss(zaken);
+					}
+					break;
 				}
-				
-				startQuestTimer("1001", 30000, npc, null);
-				break;
-			}
-			case "1002":
-			{
-				_quest0 = 0;
-				npc.doCast(SkillData.getInstance().getSkill(4222, 1));
-				_ai0 = 0;
-				break;
-			}
-			case "1003":
-			{
-				switch (_ai4)
-				{
-					case 1:
-					{
-						final int rr = getRandom(15);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, X_COORDS[rr] + getRandom(650), Y_COORDS[rr] + getRandom(650), Z_COORDS[rr], getRandom(65536), false, 0);
-						_ai4 = 2;
-						break;
-					}
-					case 2:
-					{
-						final int rr = getRandom(15);
-						addSpawn(DOLL_BLADER_B, X_COORDS[rr] + getRandom(650), Y_COORDS[rr] + getRandom(650), Z_COORDS[rr], getRandom(65536), false, 0);
-						_ai4 = 3;
-						break;
-					}
-					case 3:
-					{
-						addSpawn(VALE_MASTER_B, X_COORDS[getRandom(15)] + getRandom(650), Y_COORDS[getRandom(15)] + getRandom(650), Z_COORDS[getRandom(15)], getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, X_COORDS[getRandom(15)] + getRandom(650), Y_COORDS[getRandom(15)] + getRandom(650), Z_COORDS[getRandom(15)], getRandom(65536), false, 0);
-						_ai4 = 4;
-						break;
-					}
-					case 4:
-					{
-						addSpawn(PIRATES_ZOMBIE_B, X_COORDS[getRandom(15)] + getRandom(650), Y_COORDS[getRandom(15)] + getRandom(650), Z_COORDS[getRandom(15)], getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, X_COORDS[getRandom(15)] + getRandom(650), Y_COORDS[getRandom(15)] + getRandom(650), Z_COORDS[getRandom(15)], getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, X_COORDS[getRandom(15)] + getRandom(650), Y_COORDS[getRandom(15)] + getRandom(650), Z_COORDS[getRandom(15)], getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, X_COORDS[getRandom(15)] + getRandom(650), Y_COORDS[getRandom(15)] + getRandom(650), Z_COORDS[getRandom(15)], getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, X_COORDS[getRandom(15)] + getRandom(650), Y_COORDS[getRandom(15)] + getRandom(650), Z_COORDS[getRandom(15)], getRandom(65536), false, 0);
-						_ai4 = 5;
-						break;
-					}
-					case 5:
-					{
-						addSpawn(DOLL_BLADER_B, 52675, 219371, -3290, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 52687, 219596, -3368, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 52672, 219740, -3418, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 52857, 219992, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 52959, 219997, -3488, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 53381, 220151, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 54236, 220948, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 54885, 220144, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55264, 219860, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 55399, 220263, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55679, 220129, -3488, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 56276, 220783, -3488, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 57173, 220234, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 56267, 218826, -3488, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 56294, 219482, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 56094, 219113, -3488, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 56364, 218967, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 57113, 218079, -3488, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 56186, 217153, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55440, 218081, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 55202, 217940, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55225, 218236, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 54973, 218075, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 53412, 218077, -3488, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 54226, 218797, -3488, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 54394, 219067, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 54139, 219253, -3488, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 54262, 219480, -3488, getRandom(65536), false, 0);
-						_ai4 = 6;
-						break;
-					}
-					case 6:
-					{
-						addSpawn(PIRATES_ZOMBIE_B, 53412, 218077, -3488, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 54413, 217132, -3488, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 54841, 217132, -3488, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 55372, 217128, -3343, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 55893, 217122, -3488, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 56282, 217237, -3216, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 56963, 218080, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 56267, 218826, -3216, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 56294, 219482, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 56094, 219113, -3216, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 56364, 218967, -3216, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 56276, 220783, -3216, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 57173, 220234, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 54885, 220144, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55264, 219860, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 55399, 220263, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55679, 220129, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 54236, 220948, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 54464, 219095, -3216, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 54226, 218797, -3216, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 54394, 219067, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 54139, 219253, -3216, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 54262, 219480, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 53412, 218077, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55440, 218081, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 55202, 217940, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55225, 218236, -3216, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 54973, 218075, -3216, getRandom(65536), false, 0);
-						_ai4 = 7;
-						break;
-					}
-					case 7:
-					{
-						addSpawn(PIRATES_ZOMBIE_B, 54228, 217504, -3216, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 54181, 217168, -3216, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 54714, 217123, -3168, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 55298, 217127, -3073, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 55787, 217130, -2993, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 56284, 217216, -2944, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 56963, 218080, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 56267, 218826, -2944, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 56294, 219482, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 56094, 219113, -2944, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 56364, 218967, -2944, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 56276, 220783, -2944, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 57173, 220234, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 54885, 220144, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55264, 219860, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 55399, 220263, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55679, 220129, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 54236, 220948, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 54464, 219095, -2944, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 54226, 218797, -2944, getRandom(65536), false, 0);
-						addSpawn(VALE_MASTER_B, 54394, 219067, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 54139, 219253, -2944, getRandom(65536), false, 0);
-						addSpawn(DOLL_BLADER_B, 54262, 219480, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 53412, 218077, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 54280, 217200, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55440, 218081, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_CAPTAIN_B, 55202, 217940, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 55225, 218236, -2944, getRandom(65536), false, 0);
-						addSpawn(PIRATES_ZOMBIE_B, 54973, 218075, -2944, getRandom(65536), false, 0);
-						_ai4 = 8;
-						cancelQuestTimer("1003", null, null);
-						break;
-					}
-				}
-				break;
-			}
-			case "zaken_unlock":
-			{
-				final int status = GrandBossManager.getInstance().getStatus(ZAKEN);
-				if (status == DEAD)
-				{
-					final GrandBoss zaken = (GrandBoss) addSpawn(ZAKEN, 55312, 219168, -3223, 0, false, 0);
-					GrandBossManager.getInstance().setStatus(ZAKEN, ALIVE);
-					spawnBoss(zaken);
-				}
-				break;
-			}
-			case "CreateOnePrivateEx":
-			{
-				addSpawn(npc.getId(), npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
-				break;
 			}
 		}
 		
 		return super.onEvent(event, npc, player);
 	}
 	
+	/**
+	 * Handles faction assistance calls and triggers conditional boss teleports.
+	 * @param npc
+	 * @param caller
+	 * @param attacker
+	 * @param isPet
+	 */
 	@Override
 	public void onFactionCall(Npc npc, Npc caller, Player attacker, boolean isPet)
 	{
-		if ((caller == null) || (npc == null))
+		if ((caller == null) || (npc == null) || (attacker == null))
 		{
 			return;
 		}
 		
-		final int npcId = npc.getId();
-		final int callerId = caller.getId();
-		if ((getTimeHour() < 5) && (callerId != ZAKEN) && (npcId == ZAKEN))
+		synchronized (_stateLock)
 		{
-			final int damage = 0;
-			if ((npc.getAI().getIntention() == Intention.IDLE) && (_ai0 == 0) && (damage < 10) && (getRandom((30 * 15)) < 1))// todo - damage missing
+			if ((getTimeHour() < NIGHT_END_HOUR) && (caller.getId() != ZAKEN_NPC_ID) && (npc.getId() == ZAKEN_NPC_ID))
 			{
-				_ai0 = 1;
-				_ai1 = caller.getX();
-				_ai2 = caller.getY();
-				_ai3 = caller.getZ();
-				startQuestTimer("1002", 300, caller, null);
+				final Attackable attackableCaller = caller.asAttackable();
+				if (attackableCaller == null)
+				{
+					return;
+				}
+				
+				final Creature originalAttacker;
+				if (isPet)
+				{
+					final Creature summon = attacker.getSummon();
+					originalAttacker = (summon != null) ? summon : attacker;
+				}
+				else
+				{
+					originalAttacker = attacker;
+				}
+				
+				if (!attackableCaller.getAggroList().containsKey(originalAttacker))
+				{
+					return;
+				}
+				
+				final long dx = (long) originalAttacker.getX() - caller.getX();
+				final long dy = (long) originalAttacker.getY() - caller.getY();
+				long dz = (long) originalAttacker.getZ() - caller.getZ();
+				if (dz < 0)
+				{
+					dz = -dz;
+				}
+				
+				if ((dz <= FACTION_CALL_Z_TOLERANCE) && (((dx * dx) + (dy * dy)) <= (TELEPORT_RANGE * (long) TELEPORT_RANGE)))
+				{
+					if ((npc.getAI().getIntention() == Intention.IDLE) && (_teleportInProgress == 0) && (getRandom(30 * 15) < 1))
+					{
+						_teleportInProgress = 1;
+						_teleportTargetX = caller.getX();
+						_teleportTargetY = caller.getY();
+						_teleportTargetZ = caller.getZ();
+						startQuestTimer(TIMER_FACTION_TELEPORT, (MILLIS_PER_SECOND * 3) / 10, npc, null);
+					}
+				}
 			}
 		}
 	}
 	
+	/**
+	 * Handles post-cast actions for teleport-related skills.
+	 * @param npc
+	 * @param player
+	 * @param skill
+	 */
 	@Override
 	public void onSpellFinished(Npc npc, Player player, Skill skill)
 	{
-		if (npc.getId() == ZAKEN)
+		synchronized (_stateLock)
 		{
-			final int skillId = skill.getId();
-			if (skillId == 4222)
+			if (npc.getId() == ZAKEN_NPC_ID)
 			{
-				npc.teleToLocation(_ai1, _ai2, _ai3);
-				npc.getAI().setIntention(Intention.IDLE);
-			}
-			else if (skillId == 4216)
-			{
-				final int i1 = getRandom(15);
-				player.teleToLocation(X_COORDS[i1] + getRandom(650), Y_COORDS[i1] + getRandom(650), Z_COORDS[i1]);
-				npc.asAttackable().stopHating(player);
-				final Creature nextTarget = npc.asAttackable().getMostHated();
-				if (nextTarget != null)
+				final int skillId = skill.getId();
+				if (skillId == SKILL_TELEPORT_SELF)
 				{
-					npc.getAI().setIntention(Intention.ATTACK, nextTarget);
+					npc.teleToLocation(_teleportTargetX, _teleportTargetY, _teleportTargetZ);
+					npc.getAI().setIntention(Intention.IDLE);
 				}
-			}
-			else if (skillId == 4217)
-			{
-				int i0 = 0;
-				int i1 = getRandom(15);
-				player.teleToLocation(X_COORDS[i1] + getRandom(650), Y_COORDS[i1] + getRandom(650), Z_COORDS[i1]);
-				npc.asAttackable().stopHating(player);
-				if ((c_quest0 != null) && (_quest0 > 0) && (c_quest0 != player) && (c_quest0.getZ() > (player.getZ() - 100)) && (c_quest0.getZ() < (player.getZ() + 100)))
+				else if (skillId == SKILL_TELEPORT_SINGLE)
 				{
-					if ((((c_quest0.getX() - player.getX()) * (c_quest0.getX() - player.getX())) + ((c_quest0.getY() - player.getY()) * (c_quest0.getY() - player.getY()))) > (250 * 250))
+					final Location location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+					player.teleToLocation(location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ());
+					npc.asAttackable().stopHating(player);
+					final Creature nextTarget = npc.asAttackable().getMostHated();
+					if (nextTarget != null)
 					{
-						i0 = 1;
+						npc.getAI().setIntention(Intention.ATTACK, nextTarget);
 					}
-					else
+				}
+				else if (skillId == SKILL_TELEPORT_AREA)
+				{
+					int shouldSkipOtherTeleport = 0;
+					Location location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+					player.teleToLocation(location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ());
+					npc.asAttackable().stopHating(player);
+					
+					if ((_areaTeleportPlayer1 != null) && (_areaTeleportTrackedCount > 0) && (_areaTeleportPlayer1 != player) && (_areaTeleportPlayer1.getZ() > (player.getZ() - Z_LEVEL_TOLERANCE)) && (_areaTeleportPlayer1.getZ() < (player.getZ() + Z_LEVEL_TOLERANCE)))
 					{
-						i0 = 0;
+						final long dx = (long) _areaTeleportPlayer1.getX() - player.getX();
+						final long dy = (long) _areaTeleportPlayer1.getY() - player.getY();
+						if (((dx * dx) + (dy * dy)) > (AREA_TELEPORT_RANGE * (long) AREA_TELEPORT_RANGE))
+						{
+							shouldSkipOtherTeleport = 1;
+						}
+						else
+						{
+							shouldSkipOtherTeleport = 0;
+						}
+						
+						if (shouldSkipOtherTeleport == 0)
+						{
+							location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							_areaTeleportPlayer1.teleToLocation(location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ());
+							npc.asAttackable().stopHating(_areaTeleportPlayer1);
+						}
 					}
 					
-					if (i0 == 0)
+					if ((_areaTeleportPlayer2 != null) && (_areaTeleportTrackedCount > 1) && (_areaTeleportPlayer2 != player) && (_areaTeleportPlayer2.getZ() > (player.getZ() - Z_LEVEL_TOLERANCE)) && (_areaTeleportPlayer2.getZ() < (player.getZ() + Z_LEVEL_TOLERANCE)))
 					{
-						i1 = getRandom(15);
-						c_quest0.teleToLocation(X_COORDS[i1] + getRandom(650), Y_COORDS[i1] + getRandom(650), Z_COORDS[i1]);
-						npc.asAttackable().stopHating(c_quest0);
-					}
-				}
-				
-				if ((c_quest1 != null) && (_quest0 > 1) && (c_quest1 != player) && (c_quest1.getZ() > (player.getZ() - 100)) && (c_quest1.getZ() < (player.getZ() + 100)))
-				{
-					if ((((c_quest1.getX() - player.getX()) * (c_quest1.getX() - player.getX())) + ((c_quest1.getY() - player.getY()) * (c_quest1.getY() - player.getY()))) > (250 * 250))
-					{
-						i0 = 1;
-					}
-					else
-					{
-						i0 = 0;
-					}
-					
-					if (i0 == 0)
-					{
-						i1 = getRandom(15);
-						c_quest1.teleToLocation(X_COORDS[i1] + getRandom(650), Y_COORDS[i1] + getRandom(650), Z_COORDS[i1]);
-						npc.asAttackable().stopHating(c_quest1);
-					}
-				}
-				
-				if ((c_quest2 != null) && (_quest0 > 2) && (c_quest2 != player) && (c_quest2.getZ() > (player.getZ() - 100)) && (c_quest2.getZ() < (player.getZ() + 100)))
-				{
-					if ((((c_quest2.getX() - player.getX()) * (c_quest2.getX() - player.getX())) + ((c_quest2.getY() - player.getY()) * (c_quest2.getY() - player.getY()))) > (250 * 250))
-					{
-						i0 = 1;
-					}
-					else
-					{
-						i0 = 0;
+						final long dx = (long) _areaTeleportPlayer2.getX() - player.getX();
+						final long dy = (long) _areaTeleportPlayer2.getY() - player.getY();
+						if (((dx * dx) + (dy * dy)) > (AREA_TELEPORT_RANGE * (long) AREA_TELEPORT_RANGE))
+						{
+							shouldSkipOtherTeleport = 1;
+						}
+						else
+						{
+							shouldSkipOtherTeleport = 0;
+						}
+						
+						if (shouldSkipOtherTeleport == 0)
+						{
+							location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							_areaTeleportPlayer2.teleToLocation(location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ());
+							npc.asAttackable().stopHating(_areaTeleportPlayer2);
+						}
 					}
 					
-					if (i0 == 0)
+					if ((_areaTeleportPlayer3 != null) && (_areaTeleportTrackedCount > 2) && (_areaTeleportPlayer3 != player) && (_areaTeleportPlayer3.getZ() > (player.getZ() - Z_LEVEL_TOLERANCE)) && (_areaTeleportPlayer3.getZ() < (player.getZ() + Z_LEVEL_TOLERANCE)))
 					{
-						i1 = getRandom(15);
-						c_quest2.teleToLocation(X_COORDS[i1] + getRandom(650), Y_COORDS[i1] + getRandom(650), Z_COORDS[i1]);
-						npc.asAttackable().stopHating(c_quest2);
-					}
-				}
-				
-				if ((c_quest3 != null) && (_quest0 > 3) && (c_quest3 != player) && (c_quest3.getZ() > (player.getZ() - 100)) && (c_quest3.getZ() < (player.getZ() + 100)))
-				{
-					if ((((c_quest3.getX() - player.getX()) * (c_quest3.getX() - player.getX())) + ((c_quest3.getY() - player.getY()) * (c_quest3.getY() - player.getY()))) > (250 * 250))
-					{
-						i0 = 1;
-					}
-					else
-					{
-						i0 = 0;
-					}
-					
-					if (i0 == 0)
-					{
-						i1 = getRandom(15);
-						c_quest3.teleToLocation(X_COORDS[i1] + getRandom(650), Y_COORDS[i1] + getRandom(650), Z_COORDS[i1]);
-						npc.asAttackable().stopHating(c_quest3);
-					}
-				}
-				
-				if ((c_quest4 != null) && (_quest0 > 4) && (c_quest4 != player) && (c_quest4.getZ() > (player.getZ() - 100)) && (c_quest4.getZ() < (player.getZ() + 100)))
-				{
-					if ((((c_quest4.getX() - player.getX()) * (c_quest4.getX() - player.getX())) + ((c_quest4.getY() - player.getY()) * (c_quest4.getY() - player.getY()))) > (250 * 250))
-					{
-						i0 = 1;
-					}
-					else
-					{
-						i0 = 0;
+						final long dx = (long) _areaTeleportPlayer3.getX() - player.getX();
+						final long dy = (long) _areaTeleportPlayer3.getY() - player.getY();
+						if (((dx * dx) + (dy * dy)) > (AREA_TELEPORT_RANGE * (long) AREA_TELEPORT_RANGE))
+						{
+							shouldSkipOtherTeleport = 1;
+						}
+						else
+						{
+							shouldSkipOtherTeleport = 0;
+						}
+						
+						if (shouldSkipOtherTeleport == 0)
+						{
+							location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							_areaTeleportPlayer3.teleToLocation(location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ());
+							npc.asAttackable().stopHating(_areaTeleportPlayer3);
+						}
 					}
 					
-					if (i0 == 0)
+					if ((_areaTeleportPlayer4 != null) && (_areaTeleportTrackedCount > 3) && (_areaTeleportPlayer4 != player) && (_areaTeleportPlayer4.getZ() > (player.getZ() - Z_LEVEL_TOLERANCE)) && (_areaTeleportPlayer4.getZ() < (player.getZ() + Z_LEVEL_TOLERANCE)))
 					{
-						i1 = getRandom(15);
-						c_quest4.teleToLocation(X_COORDS[i1] + getRandom(650), Y_COORDS[i1] + getRandom(650), Z_COORDS[i1]);
-						npc.asAttackable().stopHating(c_quest4);
+						final long dx = (long) _areaTeleportPlayer4.getX() - player.getX();
+						final long dy = (long) _areaTeleportPlayer4.getY() - player.getY();
+						if (((dx * dx) + (dy * dy)) > (AREA_TELEPORT_RANGE * (long) AREA_TELEPORT_RANGE))
+						{
+							shouldSkipOtherTeleport = 1;
+						}
+						else
+						{
+							shouldSkipOtherTeleport = 0;
+						}
+						
+						if (shouldSkipOtherTeleport == 0)
+						{
+							location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							_areaTeleportPlayer4.teleToLocation(location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ());
+							npc.asAttackable().stopHating(_areaTeleportPlayer4);
+						}
 					}
-				}
-				
-				final Creature nextTarget = npc.asAttackable().getMostHated();
-				if (nextTarget != null)
-				{
-					npc.getAI().setIntention(Intention.ATTACK, nextTarget);
+					
+					if ((_areaTeleportPlayer5 != null) && (_areaTeleportTrackedCount >= AREA_TELEPORT_TRACK_LIMIT) && (_areaTeleportPlayer5 != player) && (_areaTeleportPlayer5.getZ() > (player.getZ() - Z_LEVEL_TOLERANCE)) && (_areaTeleportPlayer5.getZ() < (player.getZ() + Z_LEVEL_TOLERANCE)))
+					{
+						final long dx = (long) _areaTeleportPlayer5.getX() - player.getX();
+						final long dy = (long) _areaTeleportPlayer5.getY() - player.getY();
+						if (((dx * dx) + (dy * dy)) > (AREA_TELEPORT_RANGE * (long) AREA_TELEPORT_RANGE))
+						{
+							shouldSkipOtherTeleport = 1;
+						}
+						else
+						{
+							shouldSkipOtherTeleport = 0;
+						}
+						
+						if (shouldSkipOtherTeleport == 0)
+						{
+							location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+							_areaTeleportPlayer5.teleToLocation(location.getX() + getRandom(TELEPORT_OFFSET_MAX), location.getY() + getRandom(TELEPORT_OFFSET_MAX), location.getZ());
+							npc.asAttackable().stopHating(_areaTeleportPlayer5);
+						}
+					}
+					
+					final Creature nextTarget = npc.asAttackable().getMostHated();
+					if (nextTarget != null)
+					{
+						npc.getAI().setIntention(Intention.ATTACK, nextTarget);
+					}
 				}
 			}
 		}
 	}
 	
+	/**
+	 * Handles Zaken combat actions and conditional skill usage.
+	 * @param npc
+	 * @param attacker
+	 * @param damage
+	 * @param isPet
+	 */
 	@Override
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isPet)
 	{
-		final int npcId = npc.getId();
-		if (npcId == ZAKEN)
+		synchronized (_stateLock)
 		{
-			if (attacker.isMounted())
+			if (npc.getId() == ZAKEN_NPC_ID)
 			{
-				int sk4258 = 0;
-				for (BuffInfo e : attacker.getEffectList().getEffects())
+				if (attacker.isMounted())
 				{
-					if (e.getSkill().getId() == 4258)
+					int hasMountDebuff = 0;
+					for (BuffInfo effect : attacker.getEffectList().getEffects())
 					{
-						sk4258 = 1;
+						if (effect.getSkill().getId() == SKILL_MOUNT_DEBUFF)
+						{
+							hasMountDebuff = 1;
+						}
+					}
+					
+					if (hasMountDebuff == 0)
+					{
+						npc.setTarget(attacker);
+						npc.doCast(SkillData.getInstance().getSkill(SKILL_MOUNT_DEBUFF, 1));
 					}
 				}
 				
-				if (sk4258 == 0)
+				final Creature originalAttacker;
+				if (isPet)
 				{
-					npc.setTarget(attacker);
-					npc.doCast(SkillData.getInstance().getSkill(4258, 1));
+					final Creature summon = attacker.getSummon();
+					originalAttacker = (summon != null) ? summon : attacker;
 				}
-			}
-			
-			final Creature originalAttacker = isPet ? attacker.getSummon() : attacker;
-			final int hate = (int) (((damage / npc.getMaxHp()) / 0.05) * 20000);
-			npc.asAttackable().addDamageHate(originalAttacker, 0, hate);
-			if (getRandom(10) < 1)
-			{
-				final int i0 = getRandom((15 * 15));
-				if (i0 < 1)
+				else
 				{
-					npc.setTarget(attacker);
-					npc.doCast(SkillData.getInstance().getSkill(4216, 1));
+					originalAttacker = attacker;
 				}
-				else if (i0 < 2)
+				
+				npc.asAttackable().addDamageHate(originalAttacker, 0, (int) ((((double) damage / npc.getMaxHp()) / 0.05) * 20000));
+				
+				if (getRandom(10) < 1)
 				{
-					npc.setTarget(attacker);
-					npc.doCast(SkillData.getInstance().getSkill(4217, 1));
-				}
-				else if (i0 < 4)
-				{
-					npc.setTarget(attacker);
-					npc.doCast(SkillData.getInstance().getSkill(4219, 1));
-				}
-				else if (i0 < 8)
-				{
-					npc.setTarget(attacker);
-					npc.doCast(SkillData.getInstance().getSkill(4218, 1));
-				}
-				else if (i0 < 15)
-				{
-					for (Creature creature : World.getInstance().getVisibleObjectsInRange(npc, Creature.class, 100))
+					final int roll = getRandom(SKILL_ROLL_MAX);
+					if (roll < 1)
 					{
-						if (creature != attacker)
-						{
-							continue;
-						}
-						
+						npc.setTarget(attacker);
+						npc.doCast(SkillData.getInstance().getSkill(SKILL_TELEPORT_SINGLE, 1));
+					}
+					else if (roll < 2)
+					{
+						npc.setTarget(attacker);
+						npc.doCast(SkillData.getInstance().getSkill(SKILL_TELEPORT_AREA, 1));
+					}
+					else if (roll < 4)
+					{
+						npc.setTarget(attacker);
+						npc.doCast(SkillData.getInstance().getSkill(SKILL_4219, 1));
+					}
+					else if (roll < 8)
+					{
+						npc.setTarget(attacker);
+						npc.doCast(SkillData.getInstance().getSkill(SKILL_4218, 1));
+					}
+					else if (roll < 15)
+					{
 						if (attacker != npc.asAttackable().getMostHated())
 						{
-							npc.setTarget(attacker);
-							npc.doCast(SkillData.getInstance().getSkill(4221, 1));
+							final long dx = (long) attacker.getX() - npc.getX();
+							final long dy = (long) attacker.getY() - npc.getY();
+							final long dz = (long) attacker.getZ() - npc.getZ();
+							if (((dx * dx) + (dy * dy) + (dz * dz)) <= (SKILL_RANGE_CHECK * (long) SKILL_RANGE_CHECK))
+							{
+								npc.setTarget(attacker);
+								npc.doCast(SkillData.getInstance().getSkill(SKILL_4221, 1));
+							}
 						}
+					}
+					
+					if (getRandomBoolean() && (attacker == npc.asAttackable().getMostHated()))
+					{
+						npc.setTarget(attacker);
+						npc.doCast(SkillData.getInstance().getSkill(SKILL_4220, 1));
 					}
 				}
 				
-				if (getRandomBoolean() && (attacker == npc.asAttackable().getMostHated()))
+				if ((getTimeHour() >= NIGHT_END_HOUR) && (npc.getCurrentHp() < ((npc.getMaxHp() * _daytimeTeleportHpStage) / 4.0)))
 				{
-					npc.setTarget(attacker);
-					npc.doCast(SkillData.getInstance().getSkill(4220, 1));
+					_daytimeTeleportHpStage = (_daytimeTeleportHpStage - 1);
+					final Location location = TELEPORT_LOCATIONS[getRandom(TELEPORT_LOCATION_COUNT)];
+					_teleportTargetX = location.getX() + getRandom(TELEPORT_OFFSET_MAX);
+					_teleportTargetY = location.getY() + getRandom(TELEPORT_OFFSET_MAX);
+					_teleportTargetZ = location.getZ();
+					npc.setTarget(npc);
+					npc.doCast(SkillData.getInstance().getSkill(SKILL_TELEPORT_SELF, 1));
 				}
-			}
-			
-			if ((getTimeHour() >= 5) && (npc.getCurrentHp() < ((npc.getMaxHp() * _quest2) / 4.0)))
-			{
-				_quest2 = (_quest2 - 1);
-				final int i2 = getRandom(15);
-				_ai1 = X_COORDS[i2] + getRandom(650);
-				_ai2 = Y_COORDS[i2] + getRandom(650);
-				_ai3 = Z_COORDS[i2];
-				npc.setTarget(npc);
-				npc.doCast(SkillData.getInstance().getSkill(4222, 1));
 			}
 		}
 	}
 	
+	/**
+	 * Handles boss and minion deaths, including respawn scheduling.
+	 * @param npc
+	 * @param killer
+	 * @param isPet
+	 */
 	@Override
 	public void onKill(Npc npc, Player killer, boolean isPet)
 	{
-		final int npcId = npc.getId();
-		final Integer status = GrandBossManager.getInstance().getStatus(ZAKEN);
-		if (npcId == ZAKEN)
+		synchronized (_stateLock)
 		{
-			npc.broadcastPacket(new PlaySound(1, "BS02_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
-			GrandBossManager.getInstance().setStatus(ZAKEN, DEAD);
+			final int npcId = npc.getId();
 			
-			final long baseIntervalMillis = GrandBossConfig.ZAKEN_SPAWN_INTERVAL * 3600000;
-			final long randomRangeMillis = GrandBossConfig.ZAKEN_SPAWN_RANDOM * 3600000;
-			final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
+			if (npcId == ZAKEN_NPC_ID)
+			{
+				npc.broadcastPacket(new PlaySound(1, "BS02_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
+				GrandBossManager.getInstance().setStatus(ZAKEN_NPC_ID, STATUS_DEAD);
+				
+				cancelQuestTimer(TIMER_MAIN, npc, null);
+				cancelQuestTimer(TIMER_MINION_WAVES, npc, null);
+				
+				for (Integer pendingId : new HashSet<>(_pendingMinionRespawnIds))
+				{
+					cancelQuestTimer(MINION_RESPAWN_PREFIX + pendingId, npc, null);
+				}
+				_pendingMinionRespawnIds.clear();
+				_minionRespawnData.clear();
+				_zakenBoss = null;
+				
+				final long currentTime = System.currentTimeMillis();
+				final long baseIntervalMillis = GrandBossConfig.ZAKEN_SPAWN_INTERVAL * MILLIS_PER_HOUR;
+				final long randomRangeMillis = GrandBossConfig.ZAKEN_SPAWN_RANDOM * MILLIS_PER_HOUR;
+				final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
+				
+				LOGGER.info("Zaken (npcId=" + ZAKEN_NPC_ID + ") will respawn at: " + TimeUtil.getDateTimeString(currentTime + respawnTime) + " (delayMs=" + respawnTime + ", baseMs=" + baseIntervalMillis + ", randomRangeMs=" + randomRangeMillis + ").");
+				
+				startQuestTimer(EVENT_ZAKEN_UNLOCK, respawnTime, null, null);
+				
+				final StatSet info = GrandBossManager.getInstance().getStatSet(ZAKEN_NPC_ID);
+				info.set("respawn_time", currentTime + respawnTime);
+				GrandBossManager.getInstance().setStatSet(ZAKEN_NPC_ID, info);
+				return;
+			}
 			
-			// Next respawn time.
-			final long nextRespawnTime = System.currentTimeMillis() + respawnTime;
-			LOGGER.info("Zaken will respawn at: " + TimeUtil.getDateTimeString(nextRespawnTime));
-			
-			startQuestTimer("zaken_unlock", respawnTime, null, null);
-			cancelQuestTimer("1001", npc, null);
-			cancelQuestTimer("1003", npc, null);
-			
-			// Also save the respawn time so that the info is maintained past reboots.
-			final StatSet info = GrandBossManager.getInstance().getStatSet(ZAKEN);
-			info.set("respawn_time", System.currentTimeMillis() + respawnTime);
-			GrandBossManager.getInstance().setStatSet(ZAKEN, info);
-		}
-		else if (status == ALIVE)
-		{
-			startQuestTimer("CreateOnePrivateEx", ((30 + getRandom(60)) * 1000), npc, null);
+			if (GrandBossManager.getInstance().getStatus(ZAKEN_NPC_ID) == STATUS_ALIVE)
+			{
+				if (_zakenBoss == null)
+				{
+					LOGGER.warning("Zaken minion respawn skipped: boss instance is null while status is alive (minionNpcId=" + npcId + ").");
+					return;
+				}
+				
+				final int id = MINION_RESPAWN_ID.incrementAndGet();
+				final String eventName = MINION_RESPAWN_PREFIX + id;
+				_pendingMinionRespawnIds.add(id);
+				_minionRespawnData.put(id, new MinionRespawnData(npcId, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading()));
+				startQuestTimer(eventName, (30 + getRandom(60)) * MILLIS_PER_SECOND, _zakenBoss, null);
+			}
 		}
 	}
 	
+	/**
+	 * Handles aggro range entry logic and conditional skill usage.
+	 * @param npc
+	 * @param player
+	 * @param isPet
+	 */
 	@Override
 	public void onAggroRangeEnter(Npc npc, Player player, boolean isPet)
 	{
-		final int npcId = npc.getId();
-		if (npcId == ZAKEN)
+		synchronized (_stateLock)
 		{
-			if (_zone.isInsideZone(npc))
+			if (npc.getId() == ZAKEN_NPC_ID)
 			{
-				final Creature target = isPet ? player.getSummon() : player;
-				npc.asAttackable().addDamageHate(target, 1, 200);
-			}
-			
-			if ((player.getZ() > (npc.getZ() - 100)) && (player.getZ() < (npc.getZ() + 100)))
-			{
-				if ((_quest0 < 5) && (getRandom(3) < 1))
+				if ((_zone != null) && _zone.isInsideZone(npc))
 				{
-					if (_quest0 == 0)
+					final Creature target;
+					if (isPet)
 					{
-						c_quest0 = player;
+						final Creature summon = player.getSummon();
+						target = (summon != null) ? summon : player;
 					}
-					else if (_quest0 == 1)
+					else
 					{
-						c_quest1 = player;
-					}
-					else if (_quest0 == 2)
-					{
-						c_quest2 = player;
-					}
-					else if (_quest0 == 3)
-					{
-						c_quest3 = player;
-					}
-					else if (_quest0 == 4)
-					{
-						c_quest4 = player;
+						target = player;
 					}
 					
-					_quest0++;
+					npc.asAttackable().addDamageHate(target, 1, 200);
 				}
 				
-				if (getRandom(15) < 1)
+				if ((player.getZ() > (npc.getZ() - Z_LEVEL_TOLERANCE)) && (player.getZ() < (npc.getZ() + Z_LEVEL_TOLERANCE)))
 				{
-					final int i0 = getRandom((15 * 15));
-					if (i0 < 1)
+					if ((_areaTeleportTrackedCount < AREA_TELEPORT_TRACK_LIMIT) && (getRandom(3) < 1))
 					{
-						npc.setTarget(player);
-						npc.doCast(SkillData.getInstance().getSkill(4216, 1));
-					}
-					else if (i0 < 2)
-					{
-						npc.setTarget(player);
-						npc.doCast(SkillData.getInstance().getSkill(4217, 1));
-					}
-					else if (i0 < 4)
-					{
-						npc.setTarget(player);
-						npc.doCast(SkillData.getInstance().getSkill(4219, 1));
-					}
-					else if (i0 < 8)
-					{
-						npc.setTarget(player);
-						npc.doCast(SkillData.getInstance().getSkill(4218, 1));
-					}
-					else if (i0 < 15)
-					{
-						for (Creature creature : World.getInstance().getVisibleObjectsInRange(npc, Creature.class, 100))
+						if (_areaTeleportTrackedCount == 0)
 						{
-							if (creature != player)
-							{
-								continue;
-							}
-							
-							if (player != npc.asAttackable().getMostHated())
-							{
-								npc.setTarget(player);
-								npc.doCast(SkillData.getInstance().getSkill(4221, 1));
-							}
+							_areaTeleportPlayer1 = player;
 						}
+						else if (_areaTeleportTrackedCount == 1)
+						{
+							_areaTeleportPlayer2 = player;
+						}
+						else if (_areaTeleportTrackedCount == 2)
+						{
+							_areaTeleportPlayer3 = player;
+						}
+						else if (_areaTeleportTrackedCount == 3)
+						{
+							_areaTeleportPlayer4 = player;
+						}
+						else if (_areaTeleportTrackedCount == 4)
+						{
+							_areaTeleportPlayer5 = player;
+						}
+						
+						_areaTeleportTrackedCount++;
 					}
 					
-					if (getRandomBoolean() && (player == npc.asAttackable().getMostHated()))
+					if (getRandom(15) < 1)
 					{
-						npc.setTarget(player);
-						npc.doCast(SkillData.getInstance().getSkill(4220, 1));
+						final int roll = getRandom(SKILL_ROLL_MAX);
+						if (roll < 1)
+						{
+							npc.setTarget(player);
+							npc.doCast(SkillData.getInstance().getSkill(SKILL_TELEPORT_SINGLE, 1));
+						}
+						else if (roll < 2)
+						{
+							npc.setTarget(player);
+							npc.doCast(SkillData.getInstance().getSkill(SKILL_TELEPORT_AREA, 1));
+						}
+						else if (roll < 4)
+						{
+							npc.setTarget(player);
+							npc.doCast(SkillData.getInstance().getSkill(SKILL_4219, 1));
+						}
+						else if (roll < 8)
+						{
+							npc.setTarget(player);
+							npc.doCast(SkillData.getInstance().getSkill(SKILL_4218, 1));
+						}
+						else if (roll < 15)
+						{
+							if (player != npc.asAttackable().getMostHated())
+							{
+								final long dx = (long) player.getX() - npc.getX();
+								final long dy = (long) player.getY() - npc.getY();
+								if (((dx * dx) + (dy * dy)) <= (SKILL_RANGE_CHECK * (long) SKILL_RANGE_CHECK))
+								{
+									npc.setTarget(player);
+									npc.doCast(SkillData.getInstance().getSkill(SKILL_4221, 1));
+								}
+							}
+						}
+						
+						if (getRandomBoolean() && (player == npc.asAttackable().getMostHated()))
+						{
+							npc.setTarget(player);
+							npc.doCast(SkillData.getInstance().getSkill(SKILL_4220, 1));
+						}
 					}
 				}
 			}
 		}
 	}
 	
+	/**
+	 * Registers Zaken in the grand boss manager and initializes runtime state.
+	 * @param npc
+	 */
 	public void spawnBoss(GrandBoss npc)
 	{
-		if (npc == null)
+		synchronized (_stateLock)
 		{
-			LOGGER.warning("Zaken AI failed to load, missing Zaken in grandboss_data.sql");
-			return;
+			if (npc == null)
+			{
+				LOGGER.warning("Zaken AI failed to load: missing grand boss entry for npcId=" + ZAKEN_NPC_ID + " (Zaken) in grandboss_data.sql.");
+				return;
+			}
+			
+			GrandBossManager.getInstance().addBoss(npc);
+			_zakenBoss = npc;
+			
+			_pendingMinionRespawnIds.clear();
+			_minionRespawnData.clear();
+			
+			npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
+			_teleportInProgress = 0;
+			_teleportTargetX = npc.getX();
+			_teleportTargetY = npc.getY();
+			_teleportTargetZ = npc.getZ();
+			_minionSpawnCycle = 0;
+			_areaTeleportTrackedCount = 0;
+			_mostHatedTicks = 0;
+			_daytimeTeleportHpStage = 3;
+			_mostHatedTarget = null;
+			_areaTeleportPlayer1 = null;
+			_areaTeleportPlayer2 = null;
+			_areaTeleportPlayer3 = null;
+			_areaTeleportPlayer4 = null;
+			_areaTeleportPlayer5 = null;
+			
+			if (_zone == null)
+			{
+				LOGGER.warning("Zaken AI failed to load: missing BossZone for npcId=" + ZAKEN_NPC_ID + " at seed loc (55312,219168,-3223).");
+				return;
+			}
+			
+			if (_zone.isInsideZone(npc))
+			{
+				_minionSpawnCycle = 1;
+				startQuestTimer(TIMER_MINION_WAVES, (MILLIS_PER_SECOND * 17) / 10, npc, null, true);
+			}
+			
+			_firstMainTick = 1;
+			startQuestTimer(TIMER_MAIN, MILLIS_PER_SECOND, npc, null);
 		}
-		
-		GrandBossManager.getInstance().addBoss(npc);
-		
-		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
-		_ai0 = 0;
-		_ai1 = npc.getX();
-		_ai2 = npc.getY();
-		_ai3 = npc.getZ();
-		_quest0 = 0;
-		_quest1 = 0;
-		_quest2 = 3;
-		if (_zone == null)
-		{
-			LOGGER.warning("Zaken AI failed to load, missing zone for Zaken");
-			return;
-		}
-		
-		if (_zone.isInsideZone(npc))
-		{
-			_ai4 = 1;
-			startQuestTimer("1003", 1700, null, null);
-		}
-		
-		_1001 = 1;
-		startQuestTimer("1001", 1000, npc, null); // Buffs, random teleports.
 	}
 	
+	// Internal data containers.
+	private static final class MinionRespawnData
+	{
+		private final int _npcId;
+		private final int _x;
+		private final int _y;
+		private final int _z;
+		private final int _heading;
+		
+		public MinionRespawnData(int npcId, int x, int y, int z, int heading)
+		{
+			_npcId = npcId;
+			_x = x;
+			_y = y;
+			_z = z;
+			_heading = heading;
+		}
+		
+		public int getNpcId()
+		{
+			return _npcId;
+		}
+		
+		public int getX()
+		{
+			return _x;
+		}
+		
+		public int getY()
+		{
+			return _y;
+		}
+		
+		public int getZ()
+		{
+			return _z;
+		}
+		
+		public int getHeading()
+		{
+			return _heading;
+		}
+	}
+	
+	/**
+	 * Returns the current in-game hour.
+	 * @return Game hour.
+	 */
 	public int getTimeHour()
 	{
 		return (GameTimeTaskManager.getInstance().getGameTime() / 60) % 24;

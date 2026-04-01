@@ -33,7 +33,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Base64;
-import java.util.List;
+import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
@@ -160,7 +160,7 @@ public class LoginController
 	public int getTotalOnlinePlayerCount()
 	{
 		int playerCount = 0;
-		final List<GameServerThread> gslist = LoginServer.getGameServerListener().getGameServerThreads();
+		final Collection<GameServerThread> gslist = GameServerListener.getGameServers();
 		synchronized (gslist)
 		{
 			for (GameServerThread gs : gslist)
@@ -174,7 +174,7 @@ public class LoginController
 	
 	public int getOnlinePlayerCount(int serverId)
 	{
-		final List<GameServerThread> gslist = LoginServer.getGameServerListener().getGameServerThreads();
+		final Collection<GameServerThread> gslist = GameServerListener.getGameServers();
 		synchronized (gslist)
 		{
 			for (GameServerThread gs : gslist)
@@ -191,7 +191,7 @@ public class LoginController
 	
 	public int getMaxAllowedOnlinePlayers(int serverId)
 	{
-		final List<GameServerThread> gslist = LoginServer.getGameServerListener().getGameServerThreads();
+		final Collection<GameServerThread> gslist = GameServerListener.getGameServers();
 		synchronized (gslist)
 		{
 			for (GameServerThread gs : gslist)

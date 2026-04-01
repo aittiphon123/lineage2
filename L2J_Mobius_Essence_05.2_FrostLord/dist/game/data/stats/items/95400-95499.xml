@@ -327,7 +327,7 @@
 		<stats>
 			<stat type="pAtk">323</stat>
 			<stat type="mAtk">91</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
@@ -383,7 +383,7 @@
 			<stat type="pAtk">400</stat>
 			<stat type="mAtk">111</stat>
 			<stat type="pAtkSpd">293</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">400</stat>
@@ -415,7 +415,7 @@
 		<stats>
 			<stat type="pAtk">528</stat>
 			<stat type="mAtk">142</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
@@ -454,7 +454,7 @@
 		<stats>
 			<stat type="pAtk">570</stat>
 			<stat type="mAtk">151</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
@@ -522,7 +522,7 @@
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">400</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
@@ -765,7 +765,7 @@
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">19</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 		</stats>
 		<skills>
 			<skill id="50397" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
@@ -794,7 +794,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">80</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 		</stats>
 		<skills>
@@ -824,7 +824,7 @@
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">19</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 		</stats>
 		<skills>
@@ -854,7 +854,7 @@
 			<stat type="pAtkSpd">406</stat>
 			<stat type="randomDamage">19</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">8</stat>
 		</stats>
 		<skills>
@@ -884,7 +884,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">80</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
@@ -915,7 +915,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">19</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 		</stats>
 		<skills>
@@ -946,7 +946,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">19</stat>
 			<stat type="pAtkRange">80</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 		</stats>
 		<skills>
@@ -976,7 +976,7 @@
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">400</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
@@ -1006,7 +1006,7 @@
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
@@ -1036,7 +1036,7 @@
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">15</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">5</stat>
 		</stats>
 		<skills>
@@ -1066,7 +1066,7 @@
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 		</stats>
 		<skills>
 			<skill id="50392" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
@@ -1096,7 +1096,7 @@
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">500</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
@@ -1126,7 +1126,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 		</stats>
 		<skills>
 			<skill id="50403" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
@@ -1155,7 +1155,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 		</stats>
 		<skills>
 			<skill id="50395" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
@@ -1187,7 +1187,7 @@
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">19</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 		</stats>
 		<skills>
 			<skill id="50397" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
@@ -1218,7 +1218,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">80</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 		</stats>
 		<skills>
@@ -1250,7 +1250,7 @@
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">19</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 		</stats>
 		<skills>
@@ -1282,7 +1282,7 @@
 			<stat type="pAtkSpd">406</stat>
 			<stat type="randomDamage">19</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">8</stat>
 		</stats>
 		<skills>
@@ -1314,7 +1314,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">80</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
@@ -1347,7 +1347,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">19</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 		</stats>
 		<skills>
@@ -1380,7 +1380,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">19</stat>
 			<stat type="pAtkRange">80</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="accCombat">8</stat>
 		</stats>
 		<skills>
@@ -1412,7 +1412,7 @@
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">400</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
@@ -1444,7 +1444,7 @@
 			<stat type="pAtkSpd">433</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
@@ -1476,7 +1476,7 @@
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">15</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">10</stat>
+			<stat type="critRate">10</stat>
 			<stat type="accCombat">5</stat>
 		</stats>
 		<skills>
@@ -1508,7 +1508,7 @@
 			<stat type="pAtkSpd">379</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 		</stats>
 		<skills>
 			<skill id="50392" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
@@ -1540,7 +1540,7 @@
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">500</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 		</stats>
 		<skills>
@@ -1572,7 +1572,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 		</stats>
 		<skills>
 			<skill id="50403" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
@@ -1603,7 +1603,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<stat type="randomDamage">10</stat>
 			<stat type="pAtkRange">40</stat>
-			<stat type="rCrit">8</stat>
+			<stat type="critRate">8</stat>
 		</stats>
 		<skills>
 			<skill id="50395" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->

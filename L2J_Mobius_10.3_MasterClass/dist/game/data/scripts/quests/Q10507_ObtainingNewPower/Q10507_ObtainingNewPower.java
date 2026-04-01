@@ -414,9 +414,9 @@ public class Q10507_ObtainingNewPower extends Quest
 	
 	@RegisterEvent(EventType.ON_PLAYER_SUB_CHANGE)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void onSubChange(OnPlayerSubChange evt)
+	public void onSubChange(OnPlayerSubChange event)
 	{
-		final Player player = evt.getPlayer();
+		final Player player = event.getPlayer();
 		final QuestState qs = getQuestState(player, false);
 		if ((qs != null) && !player.isDualClassActive())
 		{

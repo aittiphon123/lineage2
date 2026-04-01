@@ -143,7 +143,7 @@
 			<value level="2">2</value>
 		</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
-		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
+		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<coolTime>300</coolTime>
 		<effectPoint>
 			<value level="1">687</value>
@@ -157,6 +157,7 @@
 		<icon>icon.skill11522</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
+		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<coolTime>300</coolTime>
 		<effectPoint>
 			<value level="1">687</value>
@@ -170,6 +171,7 @@
 		<icon>icon.skill11521</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
+		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
 		<coolTime>300</coolTime>
 		<effectPoint>
 			<value level="1">687</value>
@@ -183,6 +185,7 @@
 		<icon>icon.skill11518</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
+		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
 		<coolTime>300</coolTime>
 		<effectPoint>
 			<value level="1">687</value>
@@ -196,6 +199,7 @@
 		<icon>icon.skill11519</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
+		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
 		<coolTime>300</coolTime>
 		<effectPoint>
 			<value level="1">687</value>

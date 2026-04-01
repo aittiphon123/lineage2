@@ -28,11 +28,10 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.holders.ResurrectByPaymentHolder;
 import org.l2jmobius.gameserver.data.xml.ClanHallData;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.FortManager;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.SiegeClan;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.clan.Clan;
@@ -48,6 +47,7 @@ import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.Castle.CastleFunction;
 import org.l2jmobius.gameserver.model.siege.Fort;
 import org.l2jmobius.gameserver.model.siege.Fort.FortFunction;
+import org.l2jmobius.gameserver.model.siege.SiegeClan;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
@@ -164,7 +164,7 @@ public class RequestRestartPoint extends ClientPacket
 					return;
 				}
 				
-				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CLANHALL);
+				loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.CLANHALL);
 				final ClanHall residense = ClanHallData.getInstance().getClanHallByClan(player.getClan());
 				if ((residense != null) && (residense.hasFunction(ResidenceFunctionType.EXP_RESTORE)))
 				{
@@ -181,11 +181,11 @@ public class RequestRestartPoint extends ClientPacket
 					// Siege in progress
 					if (castle.getSiege().checkIsDefender(clan))
 					{
-						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
+						loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
 					}
 					else if (castle.getSiege().checkIsAttacker(clan))
 					{
-						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+						loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 					}
 					else
 					{
@@ -200,7 +200,7 @@ public class RequestRestartPoint extends ClientPacket
 						return;
 					}
 					
-					loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
+					loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
 				}
 				
 				if (clan != null)
@@ -226,7 +226,7 @@ public class RequestRestartPoint extends ClientPacket
 					return;
 				}
 				
-				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.FORTRESS);
+				loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.FORTRESS);
 				
 				final Fort fort = FortManager.getInstance().getFortByOwner(clan);
 				if (fort != null)
@@ -259,7 +259,7 @@ public class RequestRestartPoint extends ClientPacket
 					return;
 				}
 				
-				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.SIEGEFLAG);
+				loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.SIEGEFLAG);
 				break;
 			}
 			case 5: // Fixed or Player is a festival participant
@@ -308,7 +308,7 @@ public class RequestRestartPoint extends ClientPacket
 					{
 						player.getVariables().set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
 						player.doRevive(100.0);
-						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+						loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 						player.teleToLocation(loc, true, instance);
 						break;
 					}
@@ -363,7 +363,7 @@ public class RequestRestartPoint extends ClientPacket
 						player.getVariables().set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
 						player.destroyItem(ItemProcessType.FEE, item, fee, player, true);
 						player.doRevive(rbph.getResurrectPercent());
-						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+						loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 						player.teleToLocation(loc, true, instance);
 						break;
 					}
@@ -388,7 +388,7 @@ public class RequestRestartPoint extends ClientPacket
 				}
 				else
 				{
-					loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+					loc = MapRegionData.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 				}
 				break;
 			}

@@ -399,7 +399,7 @@
 			<item itemId="96939" /> <!-- Spear of Immortality -->
 			<item itemId="96940" /> <!-- Bow of Immortality -->
 			<item itemId="97088" /> <!-- Sword of Immortality -->
-			<item itemId="97089" /> <!-- Dual Swords of Immortality-->
+			<item itemId="97089" /> <!-- Dual Swords of Immortality -->
 		</enchantRate>
 	</enchantScrollGroup>
 	<!-- Rare Accessories scrolls enchanting route line -->
@@ -432,7 +432,7 @@
 			<item itemId="94642" /> <!-- Pet Earring -->
 			<item itemId="94643" /> <!-- Pet Ring -->
 			<item itemId="98991" /> <!-- Pet Earring -->
-			<item itemId="98992" /> <!-- Pet Ring-->
+			<item itemId="98992" /> <!-- Pet Ring -->
 		</enchantRate>
 	</enchantScrollGroup>
 </list>

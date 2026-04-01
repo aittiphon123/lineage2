@@ -349,7 +349,7 @@
 		<stats>
 			<stat type="pAtk">570</stat>
 			<stat type="mAtk">151</stat>
-			<stat type="rCrit">12</stat>
+			<stat type="critRate">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
 			<stat type="randomDamage">5</stat>

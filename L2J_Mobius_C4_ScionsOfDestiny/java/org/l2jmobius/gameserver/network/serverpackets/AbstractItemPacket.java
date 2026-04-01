@@ -17,9 +17,9 @@
 package org.l2jmobius.gameserver.network.serverpackets;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.gameserver.model.ItemInfo;
-import org.l2jmobius.gameserver.model.TradeItem;
+import org.l2jmobius.gameserver.model.item.holders.ItemInfo;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.network.holders.TradeItem;
 
 /**
  * @author UnAfraid

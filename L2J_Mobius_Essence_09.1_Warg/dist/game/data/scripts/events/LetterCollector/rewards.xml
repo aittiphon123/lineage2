@@ -27,7 +27,7 @@
 	</letters>
 	<!-- client id -->
 	<reward id="0">
-		<!-- split letter with ";" /  WOLF ->-->
+		<!-- split letter with ";" / WOLF -->
 		<word>W;O;L;F</word> <!-- WOLF -->
 		<!-- sumChances - sum item chances cumulatively -->
 		<rewards sumChances="true">

@@ -68,7 +68,7 @@
 	<teleport id="104" price="1500"> <!-- Cemetery -->
 		<location x="172204" y="20322" z="-3328" />
 		<location x="173668" y="9235" z="-2736" />
-		<location x="178863" y="20306" z="-3168" />
+		<location x="179544" y="20318" z="-3164" />
 	</teleport>
 	<teleport id="105" x="138012" y="81947" z="-3104" price="1800" /> <!-- Forest of Mirrors -->
 	<teleport id="115" price="3000"> <!-- Silent Valley -->

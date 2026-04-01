@@ -23,13 +23,13 @@ package org.l2jmobius.gameserver.model.item;
 import java.util.Collection;
 import java.util.Objects;
 
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
 import org.l2jmobius.gameserver.model.ensoul.EnsoulOption;
 import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
 import org.l2jmobius.gameserver.model.item.type.ItemType;
+import org.l2jmobius.gameserver.model.options.VariationInstance;
 
 /**
  * This class contains Item<br>

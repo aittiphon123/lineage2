@@ -202,7 +202,7 @@ public class ClanHallManager extends Script
 										{
 											if (!st.hasMoreTokens())
 											{
-												holder.showTeleportList(player, npc, "Quest ClanHallManager useFunctions teleport");
+												holder.showTeleportList(player, npc, "Script ClanHallManager useFunctions teleport");
 											}
 											else if (st.countTokens() >= 2)
 											{

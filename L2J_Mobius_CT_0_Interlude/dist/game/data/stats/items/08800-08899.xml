@@ -6,8 +6,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -18,16 +16,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<set name="item_skill" val="3051-2" /> <!-- Special Ability: Focus -->
 		<stats>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="121" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3051" level="2" /> <!-- Special Ability: Focus -->
+		</skills>
 	</item>
 	<item id="8801" type="Weapon" name="Naga Storm - Critical Damage">
 		<!-- <Soul Crystal Enhancement>. Increases P. Atk. by 200 during a critical attack. Increases damage inflicted during PvP. -->
@@ -35,8 +35,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -47,16 +45,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<set name="item_skill" val="3066-2" /> <!-- Special Ability: Critical Damage -->
 		<stats>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="121" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3066" level="2" /> <!-- Special Ability: Critical Damage -->
+		</skills>
 	</item>
 	<item id="8802" type="Weapon" name="Naga Storm - Back Blow">
 		<!-- <Soul Crystal Enhancement>. Increases the critical attack rate by 37 when attacking a target from behind. Increases damage inflicted during PvP. -->
@@ -64,8 +64,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -76,16 +74,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<set name="item_skill" val="3063-1" /> <!-- Special Ability: Back Blow -->
 		<stats>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="121" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3063" level="1" /> <!-- Special Ability: Back Blow -->
+		</skills>
 	</item>
 	<item id="8803" type="Weapon" name="Tiphon's Spear - Critical Stun">
 		<!-- <Soul Crystal Enhancement>. Increases the chance of stun effect by 25% during a critical attack. Increases damage inflicted during PvP. -->
@@ -93,8 +93,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -105,18 +103,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<set name="oncrit_chance" val="25" />
-		<set name="oncrit_skill" val="3070-3" />
-		<set name="item_skill" val="3552-2" /> <!-- Special Ability: PvP Damage -->
 		<stats>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
+		<skills>
+			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3070" level="3" type_chance="25" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Crt. Stun -->
+		</skills>
 	</item>
 	<item id="8804" type="Weapon" name="Tiphon's Spear - Towering Blow">
 		<!-- <Soul Crystal Enhancement>. Increases the possibility of increasing attack range. Increases damage inflicted during PvP. -->
@@ -124,8 +123,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;80;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -136,17 +133,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<set name="item_skill" val="3552-2" /> <!-- Special Ability: PvP Damage -->
 		<stats>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<set val="80" stat="pAtkRange" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="pAtkRange">80</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
+		<skills>
+			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
+		</skills>
 	</item>
 	<item id="8805" type="Weapon" name="Tiphon's Spear - Wild Blow">
 		<!-- <Soul Crystal Enhancement>. Increases the possibility of broadening the angle of attack. Increases damage inflicted during PvP. -->
@@ -154,8 +152,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;180" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -166,16 +162,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<set name="item_skill" val="3552-2" /> <!-- Special Ability: PvP Damage -->
 		<stats>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
+		<skills>
+			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
+		</skills>
 	</item>
 	<item id="8806" type="Weapon" name="Shyeed's Bow - Cheap Shot">
 		<!-- <Soul Crystal Enhancement>. Decreases MP consumption by 1 at a 30% probability during an ordinary attack. Increases damage inflicted during PvP. -->
@@ -183,8 +181,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -197,17 +193,19 @@
 		<set name="mp_consume" val="10" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
-		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
 		<set name="reduced_mp_consume" val="30,1" />
 		<stats>
-			<set stat="pAtk" val="570" />
-			<set stat="mAtk" val="133" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">570</stat>
+			<stat type="mAtk">133</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
 		</stats>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+		</skills>
 	</item>
 	<item id="8807" type="Weapon" name="Shyeed's Bow - Focus">
 		<!-- <Soul Crystal Enhancement> Increases Critical by 61. Increases damage inflicted during PvP. -->
@@ -215,8 +213,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -229,16 +225,18 @@
 		<set name="mp_consume" val="10" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
-		<set name="item_skill" val="3050-2" /> <!-- Special Ability: Focus -->
 		<stats>
-			<set stat="pAtk" val="570" />
-			<set stat="mAtk" val="133" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">570</stat>
+			<stat type="mAtk">133</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
 		</stats>
+		<skills>
+			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
+		</skills>
 	</item>
 	<item id="8808" type="Weapon" name="Shyeed's Bow - Quick Recovery">
 		<!-- <Soul Crystal Enhancement>. Decreases re-use delay by about 17%. Increases damage inflicted during PvP. -->
@@ -246,8 +244,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -260,16 +256,18 @@
 		<set name="mp_consume" val="10" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="639" />
-		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
 		<stats>
-			<set stat="pAtk" val="570" />
-			<set stat="mAtk" val="133" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">570</stat>
+			<stat type="mAtk">133</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
 		</stats>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+		</skills>
 	</item>
 	<item id="8809" type="Weapon" name="Sobekk's Hurricane - Rsk. Haste">
 		<!-- <Soul Crystal Enhancement>. Increases Atk. Spd. by 11% when HP falls below 60%. Increases damage inflicted during PvP. -->
@@ -277,8 +275,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -289,16 +285,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<set name="item_skill" val="3056-3" /> <!-- Special Ability: Rsk. Haste -->
 		<stats>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3056" level="3" /> <!-- Special Ability: Rsk. Haste -->
+		</skills>
 	</item>
 	<item id="8810" type="Weapon" name="Sobekk's Hurricane - Haste">
 		<!-- <Soul Crystal Enhancement>. Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP. -->
@@ -306,8 +304,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -318,16 +314,18 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<set name="item_skill" val="3068-3" /> <!-- Special Ability: Haste -->
 		<stats>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+		</skills>
 	</item>
 	<item id="8811" type="Weapon" name="Sobekk's Hurricane - Critical Drain">
 		<!-- <Soul Crystal Enhancement>. Increases the possibility of absorbing 14 HP during a critical attack. Increases damage inflicted during PvP. -->
@@ -335,8 +333,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -347,18 +343,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<set name="oncrit_chance" val="10" />
-		<set name="oncrit_skill" val="3039-7" />
-		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
 		<stats>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3039" level="7" type_chance="10" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Crt. Drain -->
+		</skills>
 	</item>
 	<item id="8812" type="Weapon" name="Themis' Tongue - Mana Up">
 		<!-- <Soul Crystal Enhancement>. Increases maximum MP by 30%. Increases damage inflicted during PvP. -->
@@ -366,8 +363,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -379,15 +374,17 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="item_skill" val="3014-3" /> <!-- Special Ability: Mana Up -->
 		<stats>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">202</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+		</skills>
 	</item>
 	<item id="8813" type="Weapon" name="Themis' Tongue - Mental Shield">
 		<!-- <Soul Crystal Enhancement>. Increases the chances of causing Mental Shield by 50% when using good magic upon a target. Increases damage inflicted during PvP. -->
@@ -395,8 +392,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -408,17 +403,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="50" />
-		<set name="onmagic_skill" val="1035-4" />
-		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
 		<stats>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">202</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="1035" level="4" type_chance="50" type="ON_MAGIC_SKILL" /> <!-- Mental Shield -->
+		</skills>
 	</item>
 	<item id="8814" type="Weapon" name="Themis' Tongue - Magic Focus">
 		<!-- <Soul Crystal Enhancement>. Increases the chances of causing Focus by 20% when using good magic upon a target. Increases damage inflicted during PvP. -->
@@ -426,8 +422,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -439,17 +433,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="20" />
-		<set name="onmagic_skill" val="1077-3" />
-		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
 		<stats>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">202</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="1077" level="3" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Focus -->
+		</skills>
 	</item>
 	<item id="8815" type="Weapon" name="Cabrio's Hand - Conversion">
 		<!-- <Soul Crystal Enhancement>. Increases maximum MP by 60% and decreases maximum HP by 40%. Increases damage inflicted during PvP. -->
@@ -457,8 +452,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -470,16 +463,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="item_skill" val="3048-3" /> <!-- Special Ability: Conversion -->
 		<stats>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">202</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3048" level="3" /> <!-- Special Ability: Conversion -->
+		</skills>
 	</item>
 	<item id="8816" type="Weapon" name="Cabrio's Hand - Mana Up">
 		<!-- <Soul Crystal Enhancement>. Increases maximum MP by 30%. Increases damage inflicted during PvP. -->
@@ -487,8 +482,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -500,16 +493,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="item_skill" val="3014-3" /> <!-- Special Ability: Mana Up -->
 		<stats>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">202</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+		</skills>
 	</item>
 	<item id="8817" type="Weapon" name="Cabrio's Hand - Magic Silence">
 		<!-- <Soul Crystal Enhancement>. Increases the chances of causing Sleep by 10% when using bad magic upon a target. Increases damage inflicted during PvP. -->
@@ -517,8 +512,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -530,18 +523,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="10" />
-		<set name="onmagic_skill" val="3074-2" />
-		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
 		<stats>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">202</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3074" level="2" type_chance="10" type="ON_MAGIC_SKILL" /> <!-- Special Ability: Magic Silence -->
+		</skills>
 	</item>
 	<item id="8818" type="Weapon" name="Daimon Crystal - Mana Up">
 		<!-- <Soul Crystal Enhancement>. Increases maximum MP by 30%. Increases damage inflicted during PvP. -->
@@ -549,8 +543,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -562,16 +554,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="item_skill" val="3014-3" /> <!-- Special Ability: Mana Up -->
 		<stats>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="161" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
+		</skills>
 	</item>
 	<item id="8819" type="Weapon" name="Daimon Crystal - Acumen">
 		<!-- <Soul Crystal Enhancement>. Increases casting speed by 15%. Increases damage inflicted during PvP. -->
@@ -579,8 +573,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -592,16 +584,18 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="item_skill" val="3047-3" /> <!-- Special Ability: Acumen -->
 		<stats>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="161" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
+		</skills>
 	</item>
 	<item id="8820" type="Weapon" name="Daimon Crystal - Mental Shield">
 		<!-- <Soul Crystal Enhancement>. Increases the chances of causing Mental Shield by 50% when using good magic upon a target. Increases damage inflicted during PvP. -->
@@ -609,8 +603,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2824" />
@@ -622,18 +614,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="50" />
-		<set name="onmagic_skill" val="1035-4" />
-		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
 		<stats>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="161" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
+		<skills>
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="1035" level="4" type_chance="50" type="ON_MAGIC_SKILL" /> <!-- Mental Shield -->
+		</skills>
 	</item>
 	<item id="8821" type="Weapon" name="Shadow Item: Two Handed Sword">
 		<!-- This Shadow Item contains the mirrored power of a Two-Handed Sword. It cannot be traded, dropped or given other functions. -->
@@ -641,8 +634,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -655,10 +646,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
 		<stats>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">78</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8822" type="Weapon" name="Shadow Item: Crimson Sword">
@@ -667,8 +660,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -681,10 +672,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
 		<stats>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="39" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8823" type="Weapon" name="Shadow Item: Spiked Club">
@@ -693,8 +686,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -707,11 +698,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
 		<stats>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="39" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8824" type="Weapon" name="Shadow Item: Staff of Magic">
@@ -720,8 +713,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -735,11 +726,13 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="90" />
 		<stats>
-			<set stat="pAtk" val="62" />
-			<set stat="mAtk" val="57" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">57</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8825" type="Weapon" name="Shadow Item: Kukuri">
@@ -748,8 +741,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -762,11 +753,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
 		<stats>
-			<set stat="pAtk" val="56" />
-			<set stat="mAtk" val="39" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+			<stat type="pAtk">56</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8826" type="Weapon" name="Shadow Item: Dagger of Mana">
@@ -775,8 +768,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -790,11 +781,13 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="90" />
 		<stats>
-			<set stat="pAtk" val="45" />
-			<set stat="mAtk" val="52" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+			<stat type="pAtk">45</stat>
+			<stat type="mAtk">52</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8827" type="Weapon" name="Shadow Item: Triple-Edged Jamadhr">
@@ -803,8 +796,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;32;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -817,11 +808,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
 		<stats>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">78</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8828" type="Weapon" name="Shadow Item: Gastraphetes">
@@ -830,8 +823,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -846,11 +837,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
 		<stats>
-			<set stat="pAtk" val="132" />
-			<set stat="mAtk" val="39" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+			<stat type="pAtk">132</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
 		</stats>
 	</item>
 	<item id="8829" type="Weapon" name="Shadow Item: War Hammer">
@@ -859,8 +852,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -871,15 +862,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="duration" val="90" />
 		<stats>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="39" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
 	</item>
 	<item id="8830" type="Weapon" name="Shadow Item: Katana">
 		<!-- This Shadow Item contains the mirrored power of a Katana. It cannot be traded, dropped or given other functions. -->
@@ -887,8 +882,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -901,10 +894,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8831" type="Weapon" name="Shadow Item: Bec de Corbin">
@@ -913,8 +908,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -925,15 +918,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
 	</item>
 	<item id="8832" type="Weapon" name="Shadow Item: Cursed Staff">
 		<!-- This Shadow Item contains the mirrored power of a Cursed Staff. It cannot be traded, dropped or given other functions. -->
@@ -941,8 +938,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -956,11 +951,13 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="119" />
-			<set stat="mAtk" val="100" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">119</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8833" type="Weapon" name="Shadow Item: Stiletto">
@@ -969,8 +966,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -983,11 +978,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="68" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8834" type="Weapon" name="Shadow Item: Soulfire Dirk">
@@ -996,8 +993,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1011,11 +1006,13 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="86" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+			<stat type="pAtk">86</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8835" type="Weapon" name="Shadow Item: Elemental Bow">
@@ -1024,8 +1021,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1040,11 +1035,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="277" />
-			<set stat="mAtk" val="75" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
+			<stat type="pAtk">277</stat>
+			<stat type="mAtk">75</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
 		</stats>
 	</item>
 	<item id="8836" type="Weapon" name="Shadow Item: Dwarven War Hammer">
@@ -1053,8 +1050,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1067,11 +1062,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8837" type="Weapon" name="Shadow Item: Sword of Revolution">
@@ -1080,8 +1077,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1094,10 +1089,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="148" />
-			<set stat="mAtk" val="68" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8838" type="Weapon" name="Shadow Item: Knuckle Duster">
@@ -1106,8 +1103,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;32;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1120,11 +1115,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="148" />
-			<set stat="mAtk" val="68" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8839" type="Weapon" name="Shadow Item: Sword of Delusion">
@@ -1133,8 +1130,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1147,10 +1142,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8840" type="Weapon" name="Shadow Item: Poleaxe">
@@ -1159,8 +1156,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1171,15 +1166,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
 	</item>
 	<item id="8841" type="Weapon" name="Shadow Item: Stick of Eternity">
 		<!-- This Shadow Item contains the mirrored power of a Stick of Eternity. It cannot be traded, dropped or given other functions. -->
@@ -1187,8 +1186,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1202,11 +1199,13 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="101" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8842" type="Weapon" name="Shadow Item: Inferno Staff">
@@ -1215,8 +1214,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1230,11 +1227,13 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="135" />
-			<set stat="mAtk" val="111" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8843" type="Weapon" name="Shadow Item: Pa'agrian Hammer">
@@ -1243,8 +1242,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1258,11 +1255,13 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="135" />
-			<set stat="mAtk" val="111" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8844" type="Weapon" name="Shadow Item: Dark Screamer">
@@ -1271,8 +1270,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1285,11 +1282,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="76" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8845" type="Weapon" name="Shadow Item: Akat Long Bow">
@@ -1298,8 +1297,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1314,11 +1311,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="316" />
-			<set stat="mAtk" val="84" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
+			<stat type="pAtk">316</stat>
+			<stat type="mAtk">84</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
 		</stats>
 	</item>
 	<item id="8846" type="Weapon" name="Shadow Item: Pa'agrian Sword">
@@ -1327,8 +1326,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1341,10 +1338,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="169" />
-			<set stat="mAtk" val="76" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">169</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8847" type="Weapon" name="Shadow Item: Fisted Blade">
@@ -1353,8 +1352,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;90" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1367,11 +1364,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="169" />
-			<set stat="mAtk" val="76" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">169</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8848" type="Weapon" name="Shadow Item: Stormbringer">
@@ -1380,8 +1379,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -1394,10 +1391,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="78" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">78</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8849" type="Weapon" name="Shadow Item: Great Sword">
@@ -1406,8 +1405,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
@@ -1420,10 +1417,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8850" type="Weapon" name="Shadow Item: Heavy War Axe">
@@ -1432,8 +1431,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
@@ -1446,11 +1443,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8851" type="Weapon" name="Shadow Item: Sprite's Staff">
@@ -1459,8 +1458,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
@@ -1474,11 +1471,13 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="134" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">134</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8852" type="Weapon" name="Shadow Item: Keshanberk">
@@ -1487,8 +1486,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
@@ -1501,10 +1498,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8853" type="Weapon" name="Shadow Item: Sword of Valhalla">
@@ -1513,8 +1512,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
@@ -1528,10 +1525,12 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="122" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8854" type="Weapon" name="Shadow Item: Kris">
@@ -1540,8 +1539,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
@@ -1554,11 +1551,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="153" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+			<stat type="pAtk">153</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8855" type="Weapon" name="Shadow Item: Arthro Nail">
@@ -1567,8 +1566,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;52;90" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
@@ -1581,11 +1578,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8856" type="Weapon" name="Shadow Item: Dark Elven Long Bow">
@@ -1594,8 +1593,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
@@ -1610,11 +1607,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="397" />
-			<set stat="mAtk" val="100" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
+			<stat type="pAtk">397</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
 		</stats>
 	</item>
 	<item id="8857" type="Weapon" name="Shadow Item: Sword of Delusion*Sword of Delusion">
@@ -1623,8 +1622,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
@@ -1637,10 +1634,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8858" type="Weapon" name="Shadow Item: Great Axe">
@@ -1649,8 +1648,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="B" />
@@ -1661,15 +1658,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="91" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
 	</item>
 	<item id="8859" type="Weapon" name="Shadow Item: Tallum Blade">
 		<!-- This Shadow Item contains the mirrored power of a Tallum Blade. It cannot be traded, dropped or given other functions. -->
@@ -1677,8 +1678,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1691,10 +1690,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8860" type="Weapon" name="Shadow Item: Halberd">
@@ -1703,8 +1704,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1715,15 +1714,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="critRate" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="critRate">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
 	</item>
 	<item id="8861" type="Weapon" name="Shadow Item: Dasparion's Staff">
 		<!-- This Shadow Item contains the mirrored power of a Dasparion's Staff. It cannot be traded, dropped or given other functions. -->
@@ -1731,8 +1734,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1746,11 +1747,13 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="207" />
-			<set stat="mAtk" val="157" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">207</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8862" type="Weapon" name="Shadow Item: Bloody Orchid">
@@ -1759,8 +1762,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1773,11 +1774,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="107" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8863" type="Weapon" name="Shadow Item: Blood Tornado">
@@ -1786,8 +1789,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;32;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1800,11 +1801,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8864" type="Weapon" name="Shadow Item: Carnage Bow">
@@ -1813,8 +1816,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1829,11 +1830,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="440" />
-			<set stat="mAtk" val="107" />
-			<set stat="critRate" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+			<stat type="pAtk">440</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="critRate">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
 		</stats>
 	</item>
 	<item id="8865" type="Weapon" name="Shadow Item: Keshanberk*Keshanberk">
@@ -1842,8 +1845,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1856,10 +1857,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8866" type="Weapon" name="Shadow Item: Meteor Shower">
@@ -1868,8 +1871,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1882,11 +1883,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="critRate" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="critRate">4</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8867" type="Weapon" name="Shadow Item: Inferno Master">
@@ -1895,8 +1898,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
@@ -1909,10 +1910,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<stats>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="critRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="critRate">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="8868" type="EtcItem" name="Ziggo's Gemstone">

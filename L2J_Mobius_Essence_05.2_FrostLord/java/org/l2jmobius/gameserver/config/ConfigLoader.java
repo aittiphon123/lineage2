@@ -24,6 +24,7 @@ import org.l2jmobius.gameserver.config.custom.AllowedPlayerRacesConfig;
 import org.l2jmobius.gameserver.config.custom.AutoPotionsConfig;
 import org.l2jmobius.gameserver.config.custom.BankingConfig;
 import org.l2jmobius.gameserver.config.custom.BossAnnouncementsConfig;
+import org.l2jmobius.gameserver.config.custom.CancelReturnConfig;
 import org.l2jmobius.gameserver.config.custom.CaptchaConfig;
 import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
 import org.l2jmobius.gameserver.config.custom.ChatModerationConfig;
@@ -102,6 +103,7 @@ public class ConfigLoader
 		AutoPotionsConfig.load();
 		BankingConfig.load();
 		BossAnnouncementsConfig.load();
+		CancelReturnConfig.load();
 		CaptchaConfig.load();
 		ChampionMonstersConfig.load();
 		ChatModerationConfig.load();

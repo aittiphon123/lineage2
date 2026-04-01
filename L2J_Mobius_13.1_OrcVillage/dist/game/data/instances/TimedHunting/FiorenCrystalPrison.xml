@@ -3147,7 +3147,7 @@
 			<npc id="24949" count="2" respawnTime="7sec" chaseRange="900" /> <!-- Furious Silaon Belle -->
 			<npc id="24950" count="2" respawnTime="7sec" chaseRange="900" /> <!-- Furious Ekzita Hairon -->
 		</group>
-		<group spawnByDefault="true"> <!-- Frost Isle-->
+		<group spawnByDefault="true"> <!-- Frost Isle -->
 			<territories>
 				<territory shape="Cylinder" minZ="-2300" maxZ="-2000" rad="200">
 					<node x="209722" y="171096" />

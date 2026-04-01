@@ -202,7 +202,7 @@
 			<stat type="mAtk">12</stat>
 			<stat type="pAtkSpd">325</stat>
 			<stat type="accCombat">8</stat>
-			<stat type="rCrit">6</stat>
+			<stat type="critRate">6</stat>
 			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>

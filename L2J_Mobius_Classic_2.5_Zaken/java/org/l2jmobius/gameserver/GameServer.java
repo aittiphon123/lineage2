@@ -34,9 +34,12 @@ import org.l2jmobius.commons.config.InterfaceConfig;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.network.ConnectionManager;
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.commons.time.TimeUtil;
 import org.l2jmobius.commons.util.DeadlockWatcher;
+import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.cache.HtmCache;
 import org.l2jmobius.gameserver.config.ConfigLoader;
+import org.l2jmobius.gameserver.config.DevelopmentConfig;
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.config.custom.CustomMailManagerConfig;
@@ -91,6 +94,7 @@ import org.l2jmobius.gameserver.data.xml.ItemCrystallizationData;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.data.xml.KarmaLossData;
 import org.l2jmobius.gameserver.data.xml.LuckyGameData;
+import org.l2jmobius.gameserver.data.xml.MapRegionData;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.NpcNameLocalisationData;
@@ -141,7 +145,6 @@ import org.l2jmobius.gameserver.managers.ItemAuctionManager;
 import org.l2jmobius.gameserver.managers.ItemCommissionManager;
 import org.l2jmobius.gameserver.managers.ItemsOnGroundManager;
 import org.l2jmobius.gameserver.managers.MailManager;
-import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.managers.MatchingRoomManager;
 import org.l2jmobius.gameserver.managers.MentorManager;
 import org.l2jmobius.gameserver.managers.PcCafePointsManager;
@@ -181,6 +184,8 @@ public class GameServer
 	private static final Logger LOGGER = Logger.getLogger(GameServer.class.getName());
 	
 	private static final long START_TIME = System.currentTimeMillis();
+	private long _sectionStartTime = START_TIME;
+	private String _previousSectionName = null;
 	
 	public GameServer() throws Exception
 	{
@@ -223,7 +228,7 @@ public class GameServer
 		
 		printSection("World");
 		World.getInstance();
-		MapRegionManager.getInstance();
+		MapRegionData.getInstance();
 		ZoneManager.getInstance();
 		DoorData.getInstance();
 		FenceData.getInstance();
@@ -469,9 +474,9 @@ public class GameServer
 		
 		System.gc();
 		final long totalMem = Runtime.getRuntime().maxMemory() / 1048576;
-		LOGGER.info(getClass().getSimpleName() + ": Started, using " + getUsedMemoryMB() + " of " + totalMem + " MB total memory.");
-		LOGGER.info(getClass().getSimpleName() + ": Maximum number of connected players is " + ServerConfig.MAXIMUM_ONLINE_USERS + ".");
-		LOGGER.info(getClass().getSimpleName() + ": Server loaded in " + ((System.currentTimeMillis() - START_TIME) / 1000) + " seconds.");
+		LOGGER.info(StringUtil.concat(getClass().getSimpleName(), ": Started, using ", getUsedMemoryMB(), " of ", totalMem, " MB total memory."));
+		LOGGER.info(StringUtil.concat(getClass().getSimpleName(), ": Maximum number of connected players is ", ServerConfig.MAXIMUM_ONLINE_USERS, "."));
+		LOGGER.info(StringUtil.concat(getClass().getSimpleName(), ": Server loaded in ", ((System.currentTimeMillis() - START_TIME) / 1000), " seconds."));
 		
 		new ConnectionManager<>(new InetSocketAddress(ServerConfig.PORT_GAME), GameClient::new, new GamePacketHandler());
 		
@@ -482,13 +487,31 @@ public class GameServer
 	
 	private void printSection(String section)
 	{
-		String s = "=[ " + section + " ]";
-		while (s.length() < 61)
+		if (DevelopmentConfig.LOG_SERVER_LOAD_TIMES)
 		{
-			s = "-" + s;
+			// Calculate elapsed time for previous section.
+			final long currentTime = System.currentTimeMillis();
+			final long sectionElapsed = currentTime - _sectionStartTime;
+			
+			// Log elapsed time for previous section if not the first section.
+			if (_previousSectionName != null)
+			{
+				LOGGER.info(StringUtil.concat("...section [ ", _previousSectionName, " ] loaded in ", TimeUtil.formatDuration(sectionElapsed), "."));
+			}
+			
+			// Update for next measurement.
+			_previousSectionName = section;
+			_sectionStartTime = currentTime;
 		}
 		
-		LOGGER.info(s);
+		// Build and log the new section header.
+		final StringBuilder sb = new StringBuilder(61);
+		sb.append("=[ ").append(section).append(" ]");
+		while (sb.length() < 61)
+		{
+			sb.insert(0, '-');
+		}
+		LOGGER.info(sb.toString());
 	}
 	
 	public long getUsedMemoryMB()

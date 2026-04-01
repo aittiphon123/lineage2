@@ -78,6 +78,11 @@ public class EnchantItemRequest extends AbstractRequest
 		return getPlayer().getInventory().getItemByObjectId(_enchantingItemObjectId);
 	}
 	
+	public int getEnchantingScrollObjectId()
+	{
+		return _enchantingItemObjectId;
+	}
+	
 	public void setEnchantingItem(int objectId)
 	{
 		_enchantingItemObjectId = objectId;

@@ -1550,6 +1550,17 @@ public class Skill
 	 */
 	public void activateSkill(Creature caster, WorldObject target)
 	{
+		activateSkill(caster, target, null);
+	}
+	
+	/**
+	 * Activates the skill to the target.
+	 * @param caster the caster
+	 * @param target the target WorldObject
+	 * @param item the item using this skill
+	 */
+	public void activateSkill(Creature caster, WorldObject target, Item item)
+	{
 		if (caster.isPlayer() && !isContinuous() && !isDebuff() && !isPassive())
 		{
 			caster.asPlayer().setLastSkillUsed(this);
@@ -1563,7 +1574,7 @@ public class Skill
 				// If skill is reflected instant effects should be casted on target and continuous effects on caster.
 				applyEffects(skillTarget, caster, false, 0);
 				
-				final BuffInfo info = new BuffInfo(caster, skillTarget, this, false, null, null);
+				final BuffInfo info = new BuffInfo(caster, skillTarget, this, false, item, null);
 				applyEffectScope(EffectScope.GENERAL, info, true, false);
 				
 				final EffectScope pvpOrPveEffectScope = caster.isPlayable() && skillTarget.isAttackable() ? EffectScope.PVE : caster.isPlayable() && skillTarget.isPlayable() ? EffectScope.PVP : null;
@@ -1571,7 +1582,7 @@ public class Skill
 			}
 			else
 			{
-				applyEffects(caster, skillTarget, null);
+				applyEffects(caster, skillTarget, item);
 			}
 		}
 		
@@ -1583,7 +1594,7 @@ public class Skill
 				caster.stopSkillEffects(SkillFinishType.REMOVED, _id);
 			}
 			
-			applyEffects(caster, caster, true, false, true, 0, null);
+			applyEffects(caster, caster, true, false, true, 0, item);
 		}
 		
 		if (!caster.isCubic())

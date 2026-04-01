@@ -279,7 +279,7 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 	@Id(HAYUK)
 	@Id(ELISE)
 	@Id(ELIYAH)
-	public final void onNpcMenuSelect(OnNpcMenuSelect event)
+	public void onNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final Player player = event.getTalker();
 		final QuestState qs = getQuestState(player, false);
@@ -417,9 +417,9 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 	
 	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public final void onLogin(OnPlayerLogin evt)
+	public void onLogin(OnPlayerLogin event)
 	{
-		final Player player = evt.getPlayer();
+		final Player player = event.getPlayer();
 		sendNpcLogList(player);
 	}
 }

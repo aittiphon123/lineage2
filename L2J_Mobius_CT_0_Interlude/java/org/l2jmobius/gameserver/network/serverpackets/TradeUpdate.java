@@ -23,12 +23,12 @@ package org.l2jmobius.gameserver.network.serverpackets;
 import java.util.Collection;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.gameserver.model.TradeItem;
-import org.l2jmobius.gameserver.model.TradeList;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
+import org.l2jmobius.gameserver.network.holders.TradeItem;
+import org.l2jmobius.gameserver.network.holders.TradeList;
 
 /**
  * @author Beetle

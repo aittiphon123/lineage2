@@ -39,10 +39,10 @@ import java.util.stream.Collectors;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.managers.MailManager;
-import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
+import org.l2jmobius.gameserver.network.holders.MailMessage;
 
 /**
  * @author Serenitty
@@ -162,7 +162,7 @@ public class LeonasDungeonManager
 	private void giveRewardToPlayer(int playerId, int item, int rewards)
 	{
 		final ItemHolder holder = new ItemHolder(item, rewards);
-		final Message message = new Message(-1, playerId, false, "Weekly Leona Dungeon Reward", "Congratulations! Here are your rewards.", 0);
+		final MailMessage message = new MailMessage(-1, playerId, false, "Weekly Leona Dungeon Reward", "Congratulations! Here are your rewards.", 0);
 		message.createAttachments();
 		message.getAttachments().addItem(ItemProcessType.REWARD, holder.getId(), holder.getCount(), null, null);
 		MailManager.getInstance().sendMessage(message);
