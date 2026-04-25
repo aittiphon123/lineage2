@@ -33,6 +33,20 @@ import org.l2jmobius.gameserver.model.script.State;
 
 public class Q00999_T0Tutorial extends Script
 {
+	// @formatter:off
+	// table for Quest Timer ( Ex == 3 ) [raceId, voice]
+	private static final String[][] QTEXPTHREE =
+	{
+		{"0", "tutorial_voice_010a"},  // human_fighter
+		{"10", "tutorial_voice_010b"}, // human_mage
+		{"18", "tutorial_voice_010c"}, // elven_fighter
+		{"25", "tutorial_voice_010c"}, // elven_mage
+		{"31", "tutorial_voice_010d"}, // delf_fighter
+		{"38", "tutorial_voice_010d"}, // delf_mage
+		{"44", "tutorial_voice_010e"}, // orc_fighter
+		{"49", "tutorial_voice_010e"}, // orc_mage
+		{"53", "tutorial_voice_010f"}, // dwarven_fighter
+	};
 	// Items
 	private static final int RECOMMENDATION_01 = 1067;
 	private static final int RECOMMENDATION_02 = 1068;
@@ -163,7 +177,11 @@ public class Q00999_T0Tutorial extends Script
 		{
 			if (Ex == 0)
 			{
-				if (player.getPlayerClass().isMage())
+				if (player.getPlayerClass().getId() == 49)
+                {
+                    st.playTutorialVoice("tutorial_voice_009c");
+                }
+				else if (player.getPlayerClass().isMage())
 				{
 					st.playTutorialVoice("tutorial_voice_009b");
 				}
@@ -171,12 +189,18 @@ public class Q00999_T0Tutorial extends Script
 				{
 					st.playTutorialVoice("tutorial_voice_009a");
 				}
-				
 				qs.set("Ex", "1");
 			}
 			else if (Ex == 3)
 			{
-				st.playTutorialVoice("tutorial_voice_010a");
+				for (String[] element : QTEXPTHREE)
+				{
+					if (player.getPlayerClass().getId() == Integer.parseInt(element[0]))
+					{
+                        st.playTutorialVoice(element[1]);
+                        break;
+					}
+				}
 				qs.set("Ex", "4");
 			}
 			
