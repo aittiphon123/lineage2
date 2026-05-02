@@ -49,21 +49,6 @@ public class Q00354_ConquestOfAlligatorIsland extends Quest
 		MOB2.put(20808, 14); // nos_lad
 		MOB2.put(20991, 69); // tribe_of_swamp
 	}
-	private static final int[][] ADDITIONAL_REWARDS =
-	{
-		// @formatter:off
-		{736, 15},	// SoE
-		{1061, 20},	// Healing Potion
-		{734, 15},	// Haste Potion
-		{735, 15},	// Alacrity Potion
-		{1878, 35},	// Braided Hemp
-		{1875, 15},	// Stone of Purity
-		{1879, 15},	// Cokes
-		{1880, 15},	// Steel
-		{956, 1},	// Enchant Armor D
-		{955, 1},	// Enchant Weapon D
-		// @formatter:on
-	};
 	
 	public Q00354_ConquestOfAlligatorIsland()
 	{
@@ -105,11 +90,10 @@ public class Q00354_ConquestOfAlligatorIsland extends Quest
 				final int amount = getQuestItemsCount(player, ALLIGATOR_TOOTH);
 				if (amount > 0)
 				{
-					int reward = amount * 300;
+					int reward = (amount * 220) + 3100;
 					if (amount >= 100)
 					{
-						final int[] add_reward = ADDITIONAL_REWARDS[amount >= ADDITIONAL_REWARDS.length ? ADDITIONAL_REWARDS.length - 1 : amount];
-						rewardItems(player, add_reward[0], add_reward[1]);
+						reward += 7600;
 						htmltext = "30895-05b.htm";
 					}
 					else
