@@ -1,23 +1,28 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package quests.Q10385_RedThreadOfFate;
 
 import java.util.Collection;
 
+import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -45,7 +50,7 @@ import instances.TalkingIslandPast.TalkingIslandPast;
 
 /**
  * Red Thread of Fate (10385)
- * @author Gladicek
+ * @author Gladicek, Trevor The Third
  */
 public class Q10385_RedThreadOfFate extends Quest
 {
@@ -110,15 +115,18 @@ public class Q10385_RedThreadOfFate extends Quest
 	private static final String ROXXY_VAR = "roxxy_npc_check";
 	private static final String DARIN_VAR = "darin_npc_check";
 	
+	// Rewards
+	private static final int DIAMONDS_REWARD = 40;
+	
 	public Q10385_RedThreadOfFate()
 	{
 		super(10385);
 		addStartNpc(RAINA);
-		addFirstTalkId(ALTAR_OF_SHILEN, MOTHER_TREE, PAAGRIO_TEMPLE, DESERTED_DWARVEN_HOUSE, CAVE_OF_SOULS);
-		addTalkId(RAINA, MORELYN, LANYA, LADY_OF_THE_LAKE, NERUPA, ENFEUX, INNOCENTIN, VULCAN, MIXING_URN, WESLEY, HEINE_WATER_SOURCE, MYSTERIOUS_DARK_KNIGHT, DARIN, ROXXY, BIOTIN);
+		addTalkId(RAINA, MORELYN, LANYA, LADY_OF_THE_LAKE, NERUPA, ENFEUX, INNOCENTIN, VULCAN, MIXING_URN, WESLEY, HEINE_WATER_SOURCE, ALTAR_OF_SHILEN, MOTHER_TREE, PAAGRIO_TEMPLE, DESERTED_DWARVEN_HOUSE, CAVE_OF_SOULS, MYSTERIOUS_DARK_KNIGHT, DARIN, ROXXY, BIOTIN);
 		addSkillSeeId(ALTAR_OF_SHILEN, MOTHER_TREE, PAAGRIO_TEMPLE, DESERTED_DWARVEN_HOUSE, CAVE_OF_SOULS);
 		addKillId(SHILEN_MESSENGER);
-		addCondMinLevel(MIN_LEVEL, "33491-08.html");
+		addCondMinLevel(MIN_LEVEL, "33491-08.htm");
+		addCondInCategory(CategoryType.SIXTH_CLASS_GROUP, "33491-08.htm");
 		addCondNotRace(Race.ERTHEIA, "33491-09.html");
 		addCreatureSeeId(INVISIBLE_ANGHEL_WATERFALL_NPC);
 		registerQuestItems(MYSTERIOUS_LETTER, HEINE_FROM_THE_GARDEN_OF_EVA, CLEAREST_WATER, BRIGHTEST_LIGHT, PUREST_SOUL, FIERCEST_FLAME, FONDEST_HEART, VULCUN_TRUE_GOLD, VULCUN_PURE_SILVER, VULCUN_BLOOD_FIRE, SCROLL_OF_ESCAPE_VALLEY_OF_SAINTS, SCROLL_OF_ESCAPE_FORGE_OF_THE_GODS, SCROLL_OF_ESCAPE_IVORY_TOWER, SCROLL_OF_ESCAPE_DWARVEN_VILLAGE);
@@ -158,6 +166,8 @@ public class Q10385_RedThreadOfFate extends Quest
 			case "33491-03.html":
 			{
 				qs.startQuest();
+				qs.setCond(2); // arrow hack
+				qs.setCond(1);
 				giveItems(player, MYSTERIOUS_LETTER, 1);
 				showOnScreenMsg(player, NpcStringId.READ_THE_MYSTERIOUS_LETTER_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
 				htmltext = event;
@@ -352,7 +362,7 @@ public class Q10385_RedThreadOfFate extends Quest
 				{
 					showOnScreenMsg(player, NpcStringId.CONGRATULATIONS_YOU_CAN_NOW_ACCESS_A_SUBCLASS, ExShowScreenMessage.TOP_CENTER, 5000);
 					player.doCast(SUB_PRESENTATION.getSkill());
-					giveItems(player, DIMENSIONAL_DIAMOND, 40);
+					giveItems(player, DIMENSIONAL_DIAMOND, DIAMONDS_REWARD);
 					qs.exitQuest(false, true);
 					htmltext = event;
 				}
@@ -608,6 +618,66 @@ public class Q10385_RedThreadOfFate extends Quest
 						}
 						break;
 					}
+					case DESERTED_DWARVEN_HOUSE:
+					{
+						if (qs.isCond(14))
+						{
+							showOnScreenMsg(player, NpcStringId.USE_THE_FONDEST_HEART_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
+							htmltext = "33788-01.html";
+						}
+						break;
+					}
+					case PAAGRIO_TEMPLE:
+					{
+						if (qs.isCond(15))
+						{
+							showOnScreenMsg(player, NpcStringId.USE_THE_FIERCEST_FLAME_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
+							htmltext = "33787-01.html";
+						}
+						break;
+					}
+					case ALTAR_OF_SHILEN:
+					{
+						if (qs.isCond(16))
+						{
+							showOnScreenMsg(player, NpcStringId.USE_THE_BRIGHTEST_LIGHT_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
+							htmltext = "33785-01.html";
+						}
+						break;
+					}
+					case CAVE_OF_SOULS:
+					{
+						if (qs.isCond(17))
+						{
+							showOnScreenMsg(player, NpcStringId.USE_THE_PUREST_SOUL_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
+							htmltext = "33789-01.html";
+						}
+						break;
+					}
+					case MOTHER_TREE:
+					{
+						switch (qs.getCond())
+						{
+							case 18:
+							{
+								showOnScreenMsg(player, NpcStringId.USE_THE_CLEAREST_WATER_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
+								htmltext = "33786-01.html";
+								break;
+							}
+							case 19:
+							case 20:
+							case 21:
+							{
+								final Quest instance = ScriptManager.getInstance().getScript(TalkingIslandPast.class.getSimpleName());
+								if (instance != null)
+								{
+									instance.onEvent("enterInstance", npc, player);
+								}
+								break;
+							}
+						}
+						break;
+					}
 					case DARIN:
 					{
 						if (qs.isCond(19))
@@ -768,104 +838,5 @@ public class Q10385_RedThreadOfFate extends Quest
 				}
 			}
 		}
-	}
-	
-	@Override
-	public String onFirstTalk(Npc npc, Player player)
-	{
-		String htmltext = null;
-		final QuestState qs = getQuestState(player, false);
-		if (qs != null)
-		{
-			switch (npc.getId())
-			{
-				case DESERTED_DWARVEN_HOUSE:
-				{
-					if (qs.isCond(14))
-					{
-						showOnScreenMsg(player, NpcStringId.USE_THE_FONDEST_HEART_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
-						htmltext = "33788-01.html";
-					}
-					else
-					{
-						npc.showChatWindow(player);
-					}
-					break;
-				}
-				case PAAGRIO_TEMPLE:
-				{
-					if (qs.isCond(15))
-					{
-						showOnScreenMsg(player, NpcStringId.USE_THE_FIERCEST_FLAME_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
-						htmltext = "33787-01.html";
-					}
-					else
-					{
-						npc.showChatWindow(player);
-					}
-					break;
-				}
-				case ALTAR_OF_SHILEN:
-				{
-					if (qs.isCond(16))
-					{
-						showOnScreenMsg(player, NpcStringId.USE_THE_BRIGHTEST_LIGHT_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
-						htmltext = "33785-01.html";
-					}
-					else
-					{
-						npc.showChatWindow(player);
-					}
-					break;
-				}
-				case CAVE_OF_SOULS:
-				{
-					if (qs.isCond(17))
-					{
-						showOnScreenMsg(player, NpcStringId.USE_THE_PUREST_SOUL_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
-						htmltext = "33789-01.html";
-					}
-					else
-					{
-						npc.showChatWindow(player);
-					}
-					break;
-				}
-				case MOTHER_TREE:
-				{
-					switch (qs.getCond())
-					{
-						case 18:
-						{
-							showOnScreenMsg(player, NpcStringId.USE_THE_CLEAREST_WATER_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 5000);
-							htmltext = "33786-01.html";
-							break;
-						}
-						case 19:
-						case 20:
-						case 21:
-						{
-							final Quest instance = ScriptManager.getInstance().getScript(TalkingIslandPast.class.getSimpleName());
-							if (instance != null)
-							{
-								instance.onEvent("enterInstance", npc, player);
-							}
-							break;
-						}
-						default:
-						{
-							npc.showChatWindow(player);
-						}
-					}
-					break;
-				}
-			}
-		}
-		else
-		{
-			npc.showChatWindow(player);
-		}
-		
-		return htmltext;
 	}
 }
