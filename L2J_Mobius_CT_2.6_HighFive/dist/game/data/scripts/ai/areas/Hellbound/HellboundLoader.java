@@ -26,6 +26,8 @@ import org.l2jmobius.gameserver.handler.VoicedCommandHandler;
 
 import ai.areas.Hellbound.AI.Amaskari;
 import ai.areas.Hellbound.AI.Chimeras;
+import ai.areas.Hellbound.AI.CryptsOfDisgrace.LegendOrcBuff;
+import ai.areas.Hellbound.AI.CryptsOfDisgrace.TurkaCommanderGhost;
 import ai.areas.Hellbound.AI.DemonPrince;
 import ai.areas.Hellbound.AI.HellboundCore;
 import ai.areas.Hellbound.AI.Keltas;
@@ -81,10 +83,12 @@ public class HellboundLoader
 		DemonPrince.class,
 		HellboundCore.class,
 		Keltas.class,
+		LegendOrcBuff.class,
 		NaiaLock.class,
 		OutpostCaptain.class,
 		Ranku.class,
 		Slaves.class,
+		TurkaCommanderGhost.class,
 		Typhoon.class,
 		
 		// NPCs
