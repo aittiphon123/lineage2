@@ -1244,7 +1244,7 @@ public class AttackableAI extends CreatureAI
 			{
 				final Skill shortRangeSkill = shortRangeSkills.get(Rnd.get(shortRangeSkills.size()));
 				final int castRange = shortRangeSkill.getCastRange();
-				if (((castRange < 1) || (npc.calculateDistance3D(mostHate) < castRange)) && checkSkillCastConditions(npc, shortRangeSkill))
+				if (((castRange < 1) || (npc.calculateDistance3D(mostHate) < castRange)) && checkSkillCastConditions(npc, shortRangeSkill) && ParameterizedSkillGates.allowsCast(npc, shortRangeSkill, mostHate))
 				{
 					clientStopMoving(null);
 					npc.setTarget(mostHate);
@@ -1259,7 +1259,7 @@ public class AttackableAI extends CreatureAI
 			{
 				final Skill longRangeSkill = longRangeSkills.get(Rnd.get(longRangeSkills.size()));
 				final int castRange = longRangeSkill.getCastRange();
-				if (((castRange < 1) || (npc.calculateDistance3D(mostHate) < castRange)) && checkSkillCastConditions(npc, longRangeSkill))
+				if (((castRange < 1) || (npc.calculateDistance3D(mostHate) < castRange)) && checkSkillCastConditions(npc, longRangeSkill) && ParameterizedSkillGates.allowsCast(npc, longRangeSkill, mostHate))
 				{
 					clientStopMoving(null);
 					npc.setTarget(mostHate);
@@ -1408,6 +1408,12 @@ public class AttackableAI extends CreatureAI
 		
 		final Attackable caster = getActiveChar();
 		if (!checkSkillCastConditions(caster, sk))
+		{
+			return false;
+		}
+		
+		// Honour retail PTS Skill0X parameter gates declared in NPC template.
+		if (!ParameterizedSkillGates.allowsCast(caster, sk, getAttackTarget()))
 		{
 			return false;
 		}
@@ -1932,6 +1938,12 @@ public class AttackableAI extends CreatureAI
 			}
 			
 			if (!GeoEngine.getInstance().canSeeTarget(npc, target))
+			{
+				continue;
+			}
+			
+			// Honour retail PTS Skill0X parameter gates declared in NPC template.
+			if (!ParameterizedSkillGates.allowsCast(npc, sk, target))
 			{
 				continue;
 			}
