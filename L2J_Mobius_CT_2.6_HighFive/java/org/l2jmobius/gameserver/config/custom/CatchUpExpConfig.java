@@ -141,6 +141,7 @@ public class CatchUpExpConfig
 			return false;
 		}
 		final long offlineSeconds = getOfflineSeconds(lastAccess);
+		final long offlineSeconds = Math.max(0, (System.currentTimeMillis() / 1000) - lastAccess);
 		return offlineSeconds >= (RESTED_MIN_OFFLINE_HOURS * 3600L);
 	}
 
