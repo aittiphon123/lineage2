@@ -76,7 +76,7 @@ public class CatchUpExpConfig
 
 	public static double getExpMultiplierForLevel(int level)
 	{
-		if (!ENABLE_CATCH_UP_EXP || (level < 1) || (level > CATCH_UP_MAX_LEVEL))
+		if (!ENABLE_CATCH_UP_EXP || (level > CATCH_UP_MAX_LEVEL))
 		{
 			return 1.0;
 		}
@@ -94,7 +94,7 @@ public class CatchUpExpConfig
 
 	public static double getSpMultiplierForLevel(int level)
 	{
-		if (!ENABLE_CATCH_UP_EXP || (level < 1) || (level > CATCH_UP_MAX_LEVEL))
+		if (!ENABLE_CATCH_UP_EXP || (level > CATCH_UP_MAX_LEVEL))
 		{
 			return 1.0;
 		}
@@ -140,12 +140,14 @@ public class CatchUpExpConfig
 		{
 			return false;
 		}
-		return getOfflineSeconds(lastAccess) >= (RESTED_MIN_OFFLINE_HOURS * 3600L);
+		final long offlineSeconds = getOfflineSeconds(lastAccess);
+		final long offlineSeconds = Math.max(0, (System.currentTimeMillis() / 1000) - lastAccess);
+		return offlineSeconds >= (RESTED_MIN_OFFLINE_HOURS * 3600L);
 	}
 
 	public static String getBracketForLevel(int level)
 	{
-		if (!ENABLE_CATCH_UP_EXP || (level < 1) || (level > CATCH_UP_MAX_LEVEL))
+		if (!ENABLE_CATCH_UP_EXP || (level > CATCH_UP_MAX_LEVEL))
 		{
 			return "none";
 		}
