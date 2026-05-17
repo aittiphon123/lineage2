@@ -187,10 +187,14 @@ public class AutoPlay implements IVoicedCommandHandler
 		{
 			case "play":
 			{
-				if (params != null)
-				{
-					final String[] paramArray = params.toLowerCase().split(" ");
-					COMMAND: switch (paramArray[0])
+					if (params != null)
+					{
+						final String[] paramArray = params.toLowerCase().trim().split("\\s+");
+						if (paramArray.length == 0)
+						{
+							break;
+						}
+						COMMAND: switch (paramArray[0])
 					{
 						case "attack":
 						{
