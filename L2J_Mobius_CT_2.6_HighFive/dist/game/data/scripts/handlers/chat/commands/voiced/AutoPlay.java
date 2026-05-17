@@ -295,14 +295,14 @@ public class AutoPlay implements IVoicedCommandHandler
 						}
 						case "profile":
 						{
-							if ((paramArray.length < 2) || paramArray[1].isBlank())
-							{
-								player.sendMessage("Usage: .play profile melee|mage|support|auto");
-								break COMMAND;
-							}
+									if ((paramArray.length < 2) || paramArray[1].isBlank())
+									{
+										player.sendMessage("Usage: .play profile melee|mage|support");
+										break COMMAND;
+									}
 
-							switch (paramArray[1])
-							{
+									switch (paramArray[1])
+									{
 										case "melee":
 										{
 											player.getAutoUseSettings().getAutoActions().add(AUTO_ATTACK_ACTION);
@@ -324,33 +324,15 @@ public class AutoPlay implements IVoicedCommandHandler
 											player.getAutoUseSettings().getAutoActions().remove(AUTO_ATTACK_ACTION);
 											player.getAutoPlaySettings().setPickup(true);
 											player.getAutoPlaySettings().setRespectfulHunting(true);
-									player.sendMessage("AutoPlay profile applied: support");
-									break;
-								}
-								case "auto":
-								{
-									if (player.isMageClass())
-									{
-										player.getAutoUseSettings().getAutoActions().remove(AUTO_ATTACK_ACTION);
-										player.getAutoPlaySettings().setShortRange(false);
-										player.getAutoPlaySettings().setRespectfulHunting(true);
-										player.sendMessage("AutoPlay profile applied: auto (mage).");
+											player.sendMessage("AutoPlay profile applied: support");
+											break;
+										}
+										default:
+										{
+											player.sendMessage("Unknown profile. Use melee|mage|support");
+											break;
+										}
 									}
-									else
-									{
-										player.getAutoUseSettings().getAutoActions().add(AUTO_ATTACK_ACTION);
-										player.getAutoPlaySettings().setShortRange(true);
-										player.getAutoPlaySettings().setRespectfulHunting(true);
-										player.sendMessage("AutoPlay profile applied: auto (melee).");
-									}
-									break;
-								}
-								default:
-								{
-									player.sendMessage("Unknown profile. Use melee|mage|support|auto");
-									break;
-								}
-							}
 
 									if (AutoPlayConfig.AUTO_PLAY_PVE_ONLY)
 									{
@@ -370,30 +352,7 @@ public class AutoPlay implements IVoicedCommandHandler
 								player.sendMessage("AutoPlay telemetry counters have been reset.");
 								break COMMAND;
 							}
-							if ((paramArray.length > 2) && "level".equals(paramArray[1]) && StringUtil.isNumeric(paramArray[2]))
-							{
-								final int level = Math.max(1, Integer.parseInt(paramArray[2]));
-								player.sendMessage("CatchUpExp level check: level=" + level + ", bracket=" + CatchUpExpConfig.getBracketForLevel(level) + ", exp_multiplier=" + CatchUpExpConfig.getExpMultiplierForLevel(level) + ", sp_multiplier=" + CatchUpExpConfig.getSpMultiplierForLevel(level));
-								break COMMAND;
-							}
-							if ((paramArray.length > 1) && "levels".equals(paramArray[1]))
-							{
-								final int low = CatchUpExpConfig.CATCH_UP_LOW_MAX_LEVEL;
-								final int mid = CatchUpExpConfig.CATCH_UP_MID_MAX_LEVEL;
-								final int max = CatchUpExpConfig.CATCH_UP_MAX_LEVEL;
-								player.sendMessage("CatchUpExp levels: L" + low + " => bracket=" + CatchUpExpConfig.getBracketForLevel(low) + ", exp=" + CatchUpExpConfig.getExpMultiplierForLevel(low) + ", sp=" + CatchUpExpConfig.getSpMultiplierForLevel(low));
-								player.sendMessage("CatchUpExp levels: L" + mid + " => bracket=" + CatchUpExpConfig.getBracketForLevel(mid) + ", exp=" + CatchUpExpConfig.getExpMultiplierForLevel(mid) + ", sp=" + CatchUpExpConfig.getSpMultiplierForLevel(mid));
-								player.sendMessage("CatchUpExp levels: L" + max + " => bracket=" + CatchUpExpConfig.getBracketForLevel(max) + ", exp=" + CatchUpExpConfig.getExpMultiplierForLevel(max) + ", sp=" + CatchUpExpConfig.getSpMultiplierForLevel(max));
-								break COMMAND;
-							}
-							if ((paramArray.length > 1) && "level".equals(paramArray[1]))
-							{
-								player.sendMessage("Usage: .play stats level <level> | .play stats levels");
-								break COMMAND;
-							}
 							player.sendMessage("AutoPlay stats: active_players=" + AutoPlayTaskManager.getInstance().getActiveAutoPlayPlayerCount() + ", blocked_by_zone=" + AutoPlayTaskManager.getInstance().getBlockedByZoneCount() + ", blocked_start_in_zone=" + AutoPlayTaskManager.getInstance().getBlockedStartInZoneCount() + ", blocked_mode_selection=" + AutoPlayTaskManager.getInstance().getBlockedModeSelectionCount());
-							player.sendMessage("CatchUpExp stats: enabled=" + CatchUpExpConfig.ENABLE_CATCH_UP_EXP + ", level=" + player.getLevel() + ", bracket=" + CatchUpExpConfig.getBracketForLevel(player.getLevel()) + ", exp_multiplier=" + CatchUpExpConfig.getExpMultiplierForLevel(player.getLevel()) + ", sp_multiplier=" + CatchUpExpConfig.getSpMultiplierForLevel(player.getLevel()) + ", rested_enabled=" + CatchUpExpConfig.ENABLE_RESTED_BONUS + ", rested_exp_multiplier=" + CatchUpExpConfig.getRestedExpMultiplier(player.getLastAccess()) + ", rested_sp_multiplier=" + CatchUpExpConfig.getRestedSpMultiplier(player.getLastAccess()));
-							player.sendMessage("CatchUpExp config: low<= " + CatchUpExpConfig.CATCH_UP_LOW_MAX_LEVEL + ", mid<= " + CatchUpExpConfig.CATCH_UP_MID_MAX_LEVEL + ", max<= " + CatchUpExpConfig.CATCH_UP_MAX_LEVEL + ", rested_min_hours=" + CatchUpExpConfig.RESTED_MIN_OFFLINE_HOURS);
 							break COMMAND;
 						}
 						case "stop":
