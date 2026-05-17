@@ -365,12 +365,20 @@ public class AutoPlay implements IVoicedCommandHandler
 								}
 								}
 
-								if (AutoPlayConfig.AUTO_PLAY_PVE_ONLY)
-								{
-									player.getAutoPlaySettings().setNextTargetMode(TARGET_MODE_MONSTER);
-								}
-								break COMMAND;
+							if (AutoPlayConfig.AUTO_PLAY_PVE_ONLY)
+							{
+								player.getAutoPlaySettings().setNextTargetMode(TARGET_MODE_MONSTER);
 							}
+							if (player.isAutoPlaying())
+							{
+								AutoPlayTaskManager.getInstance().stopAutoPlay(player);
+								AutoUseTaskManager.getInstance().stopAutoUseTask(player);
+								AutoPlayTaskManager.getInstance().startAutoPlay(player);
+								AutoUseTaskManager.getInstance().startAutoUseTask(player);
+								player.sendMessage("AutoPlay profile reapplied while running.");
+							}
+							break COMMAND;
+						}
 							case "stats":
 							{
 								if (!player.isGM())
