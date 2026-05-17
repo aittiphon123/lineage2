@@ -76,7 +76,7 @@ public class CatchUpExpConfig
 
 	public static double getExpMultiplierForLevel(int level)
 	{
-		if (!ENABLE_CATCH_UP_EXP || (level > CATCH_UP_MAX_LEVEL))
+		if (!ENABLE_CATCH_UP_EXP || (level < 1) || (level > CATCH_UP_MAX_LEVEL))
 		{
 			return 1.0;
 		}
@@ -94,7 +94,7 @@ public class CatchUpExpConfig
 
 	public static double getSpMultiplierForLevel(int level)
 	{
-		if (!ENABLE_CATCH_UP_EXP || (level > CATCH_UP_MAX_LEVEL))
+		if (!ENABLE_CATCH_UP_EXP || (level < 1) || (level > CATCH_UP_MAX_LEVEL))
 		{
 			return 1.0;
 		}
@@ -146,7 +146,7 @@ public class CatchUpExpConfig
 
 	public static String getBracketForLevel(int level)
 	{
-		if (!ENABLE_CATCH_UP_EXP || (level > CATCH_UP_MAX_LEVEL))
+		if (!ENABLE_CATCH_UP_EXP || (level < 1) || (level > CATCH_UP_MAX_LEVEL))
 		{
 			return "none";
 		}
