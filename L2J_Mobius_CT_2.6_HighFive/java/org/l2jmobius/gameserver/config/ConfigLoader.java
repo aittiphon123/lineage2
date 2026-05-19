@@ -101,9 +101,9 @@ public class ConfigLoader
 		AutoPotionsConfig.load();
 		BankingConfig.load();
 		BossAnnouncementsConfig.load();
-			CancelReturnConfig.load();
-			CatchUpExpConfig.load();
-			CaptchaConfig.load();
+		CancelReturnConfig.load();
+		CatchUpExpConfig.load();
+		CaptchaConfig.load();
 		ChampionMonstersConfig.load();
 		ChatModerationConfig.load();
 		ClassBalanceConfig.load();
@@ -137,9 +137,9 @@ public class ConfigLoader
 		StartingLocationConfig.load();
 		StartingTitleConfig.load();
 		TransmogConfig.load();
-			WalkerBotProtectionConfig.load();
-			WarehouseSortingConfig.load();
-			WeeklyMissionsConfig.load();
-			WeddingConfig.load();
-		}
+		WalkerBotProtectionConfig.load();
+		WarehouseSortingConfig.load();
+		WeeklyMissionsConfig.load();
+		WeddingConfig.load();
+	}
 }
