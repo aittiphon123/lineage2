@@ -26,6 +26,7 @@ import org.l2jmobius.gameserver.config.custom.AutoPotionsConfig;
 import org.l2jmobius.gameserver.config.custom.BankingConfig;
 import org.l2jmobius.gameserver.config.custom.BossAnnouncementsConfig;
 import org.l2jmobius.gameserver.config.custom.CancelReturnConfig;
+import org.l2jmobius.gameserver.config.custom.CatchUpExpConfig;
 import org.l2jmobius.gameserver.config.custom.CaptchaConfig;
 import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
 import org.l2jmobius.gameserver.config.custom.ChatModerationConfig;
@@ -62,6 +63,7 @@ import org.l2jmobius.gameserver.config.custom.StartingTitleConfig;
 import org.l2jmobius.gameserver.config.custom.TransmogConfig;
 import org.l2jmobius.gameserver.config.custom.WalkerBotProtectionConfig;
 import org.l2jmobius.gameserver.config.custom.WarehouseSortingConfig;
+import org.l2jmobius.gameserver.config.custom.WeeklyMissionsConfig;
 import org.l2jmobius.gameserver.config.custom.WeddingConfig;
 
 /**
@@ -100,6 +102,7 @@ public class ConfigLoader
 		BankingConfig.load();
 		BossAnnouncementsConfig.load();
 		CancelReturnConfig.load();
+		CatchUpExpConfig.load();
 		CaptchaConfig.load();
 		ChampionMonstersConfig.load();
 		ChatModerationConfig.load();
@@ -136,6 +139,7 @@ public class ConfigLoader
 		TransmogConfig.load();
 		WalkerBotProtectionConfig.load();
 		WarehouseSortingConfig.load();
+		WeeklyMissionsConfig.load();
 		WeddingConfig.load();
 	}
 }
