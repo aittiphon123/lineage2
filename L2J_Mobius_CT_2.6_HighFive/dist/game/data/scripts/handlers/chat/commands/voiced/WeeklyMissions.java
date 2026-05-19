@@ -45,6 +45,7 @@ public class WeeklyMissions implements IVoicedCommandHandler
 			progress = 0;
 		}
 		final int target = WeeklyMissionsConfig.WEEKLY_MISSION_MONSTER_KILL_TARGET;
+		progress = Math.min(progress, target);
 
 		if ((paramArray.length > 0) && "claim".equals(paramArray[0]))
 		{
@@ -67,13 +68,28 @@ public class WeeklyMissions implements IVoicedCommandHandler
 		{
 			try
 			{
-				progress = Math.max(0, Integer.parseInt(paramArray[1]));
+				progress = Math.min(target, Math.max(0, Integer.parseInt(paramArray[1])));
 				player.getVariables().set(PROGRESS_VAR, progress);
 				player.sendMessage("Weekly Mission progress set to " + progress + " (GM command).");
 			}
 			catch (NumberFormatException e)
 			{
 				player.sendMessage("Usage: .weekly setprogress <number>");
+			}
+			return true;
+		}
+		else if ((paramArray.length > 1) && "addkill".equals(paramArray[0]) && player.isGM())
+		{
+			try
+			{
+				final int add = Math.max(0, Integer.parseInt(paramArray[1]));
+				progress = Math.min(target, progress + add);
+				player.getVariables().set(PROGRESS_VAR, progress);
+				player.sendMessage("Weekly Mission progress increased to " + progress + "/" + target + " (GM command).");
+			}
+			catch (NumberFormatException e)
+			{
+				player.sendMessage("Usage: .weekly addkill <number>");
 			}
 			return true;
 		}
@@ -91,7 +107,7 @@ public class WeeklyMissions implements IVoicedCommandHandler
 		player.sendMessage("Commands: .weekly claim");
 		if (player.isGM())
 		{
-			player.sendMessage("GM Commands: .weekly setprogress <count> | .weekly reset");
+			player.sendMessage("GM Commands: .weekly setprogress <count> | .weekly addkill <count> | .weekly reset");
 		}
 		return true;
 	}
