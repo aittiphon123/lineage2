@@ -17,3 +17,8 @@ This addon scaffold allows you to iterate weekly mission features without rebuil
 ## Notes
 - Keep core (`java/org/l2jmobius/...`) unchanged whenever possible.
 - Prefer voiced handlers / script listeners for rapid updates.
+
+
+## Validation
+- Validate mission pack syntax before deploy:
+  - `addons/weekly_missions_ext/tools/validate-mission-pack.sh addons/weekly_missions_ext/mods/default_pack/missions.ini`
