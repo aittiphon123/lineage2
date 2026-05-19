@@ -299,29 +299,14 @@ public class AutoPlay implements IVoicedCommandHandler
 						}
 						case "profile":
 						{
-							if ((paramArray.length > 1) && "help".equals(paramArray[1]))
-							{
-								player.sendMessage("AutoPlay profile commands:");
-								player.sendMessage(".play profile melee");
-								player.sendMessage(".play profile mage");
-								player.sendMessage(".play profile support");
-								player.sendMessage(".play profile auto");
-								player.sendMessage(".play profile current");
-								break COMMAND;
-							}
 							if ((paramArray.length < 2) || paramArray[1].isBlank())
 							{
-								player.sendMessage("Usage: .play profile melee|mage|support|auto|current");
+								player.sendMessage("Usage: .play profile melee|mage|support|auto");
 								break COMMAND;
 							}
 
-							switch (paramArray[1])
-							{
-								case "current":
+								switch (paramArray[1])
 								{
-									player.sendMessage("AutoPlay profile state: autoAttack=" + player.getAutoUseSettings().getAutoActions().contains(AUTO_ATTACK_ACTION) + ", shortRange=" + player.getAutoPlaySettings().isShortRange() + ", pickup=" + player.getAutoPlaySettings().doPickup() + ", respectful=" + player.getAutoPlaySettings().isRespectfulHunting() + ", targetMode=" + player.getAutoPlaySettings().getNextTargetMode());
-									break;
-								}
 									case "melee":
 									{
 										player.getAutoUseSettings().getAutoActions().add(AUTO_ATTACK_ACTION);
@@ -364,47 +349,29 @@ public class AutoPlay implements IVoicedCommandHandler
 									}
 									break;
 								}
-									default:
-									{
-										player.sendMessage("Unknown profile. Use melee|mage|support|auto|current");
-										break;
-									}
+								default:
+								{
+									player.sendMessage("Unknown profile. Use melee|mage|support|auto");
+									break;
+								}
 								}
 
-							if (AutoPlayConfig.AUTO_PLAY_PVE_ONLY)
-							{
-								player.getAutoPlaySettings().setNextTargetMode(TARGET_MODE_MONSTER);
-							}
-							if (player.isAutoPlaying())
-							{
-								AutoPlayTaskManager.getInstance().stopAutoPlay(player);
-								AutoUseTaskManager.getInstance().stopAutoUseTask(player);
-								AutoPlayTaskManager.getInstance().startAutoPlay(player);
-								AutoUseTaskManager.getInstance().startAutoUseTask(player);
-								player.sendMessage("AutoPlay profile reapplied while running.");
-							}
-							break COMMAND;
-						}
-							case "stats":
-							{
-								if (!player.isGM())
+								if (AutoPlayConfig.AUTO_PLAY_PVE_ONLY)
 								{
-									break COMMAND;
+									player.getAutoPlaySettings().setNextTargetMode(TARGET_MODE_MONSTER);
 								}
-								if ((paramArray.length > 1) && "help".equals(paramArray[1]))
-								{
-									player.sendMessage("AutoPlay stats commands:");
-									player.sendMessage(".play stats");
-									player.sendMessage(".play stats reset");
-									player.sendMessage(".play stats level <level>");
-									player.sendMessage(".play stats levels");
-									player.sendMessage(".play stats rested <offline_hours>");
-									break COMMAND;
-								}
-								if ((paramArray.length > 1) && "reset".equals(paramArray[1]))
-								{
-									AutoPlayTaskManager.getInstance().resetTelemetryCounters();
-									player.sendMessage("AutoPlay telemetry counters have been reset.");
+								break COMMAND;
+							}
+						case "stats":
+						{
+							if (!player.isGM())
+							{
+								break COMMAND;
+							}
+							if ((paramArray.length > 1) && "reset".equals(paramArray[1]))
+							{
+								AutoPlayTaskManager.getInstance().resetTelemetryCounters();
+								player.sendMessage("AutoPlay telemetry counters have been reset.");
 								break COMMAND;
 							}
 							if ((paramArray.length > 2) && "level".equals(paramArray[1]) && StringUtil.isNumeric(paramArray[2]))
@@ -423,21 +390,9 @@ public class AutoPlay implements IVoicedCommandHandler
 								player.sendMessage("CatchUpExp levels: L" + max + " => bracket=" + CatchUpExpConfig.getBracketForLevel(max) + ", exp=" + CatchUpExpConfig.getExpMultiplierForLevel(max) + ", sp=" + CatchUpExpConfig.getSpMultiplierForLevel(max));
 								break COMMAND;
 							}
-							if ((paramArray.length > 2) && "rested".equals(paramArray[1]) && StringUtil.isNumeric(paramArray[2]))
-							{
-								final int hours = Math.max(0, Integer.parseInt(paramArray[2]));
-								final long simulatedLastAccess = (System.currentTimeMillis() / 1000) - (hours * 3600L);
-								player.sendMessage("CatchUpExp rested check: hours_offline=" + hours + ", rested_active=" + CatchUpExpConfig.isRestedBonusActive(simulatedLastAccess) + ", exp_multiplier=" + CatchUpExpConfig.getRestedExpMultiplier(simulatedLastAccess) + ", sp_multiplier=" + CatchUpExpConfig.getRestedSpMultiplier(simulatedLastAccess));
-								break COMMAND;
-							}
 							if ((paramArray.length > 1) && "level".equals(paramArray[1]))
 							{
 								player.sendMessage("Usage: .play stats level <level> | .play stats levels");
-								break COMMAND;
-							}
-							if ((paramArray.length > 1) && "rested".equals(paramArray[1]))
-							{
-								player.sendMessage("Usage: .play stats rested <offline_hours>");
 								break COMMAND;
 							}
 							player.sendMessage("AutoPlay stats: active_players=" + AutoPlayTaskManager.getInstance().getActiveAutoPlayPlayerCount() + ", blocked_by_zone=" + AutoPlayTaskManager.getInstance().getBlockedByZoneCount() + ", blocked_start_in_zone=" + AutoPlayTaskManager.getInstance().getBlockedStartInZoneCount() + ", blocked_mode_selection=" + AutoPlayTaskManager.getInstance().getBlockedModeSelectionCount());
