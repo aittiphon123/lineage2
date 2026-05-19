@@ -1,16 +1,16 @@
 /*
  * Copyright (c) 2013 L2jMobius
- *
+ * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * 
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- *
+ * 
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,23 +25,22 @@ import org.l2jmobius.commons.util.ConfigReader;
 public class CatchUpExpConfig
 {
 	private static final String CATCH_UP_EXP_CONFIG_FILE = "./config/Custom/CatchUpExp.ini";
-
+	
 	public static boolean ENABLE_CATCH_UP_EXP;
 	public static int CATCH_UP_MAX_LEVEL;
 	public static double CATCH_UP_EXP_MULTIPLIER;
 	public static double CATCH_UP_SP_MULTIPLIER;
-	public static int CATCH_UP_LOW_MAX_LEVEL;
 	public static double CATCH_UP_EXP_MULTIPLIER_LOW;
 	public static double CATCH_UP_SP_MULTIPLIER_LOW;
-	public static int CATCH_UP_MID_MAX_LEVEL;
+	public static int CATCH_UP_LOW_MAX_LEVEL;
 	public static double CATCH_UP_EXP_MULTIPLIER_MID;
 	public static double CATCH_UP_SP_MULTIPLIER_MID;
-
 	public static boolean ENABLE_RESTED_BONUS;
 	public static int RESTED_MIN_OFFLINE_HOURS;
 	public static double RESTED_EXP_MULTIPLIER;
 	public static double RESTED_SP_MULTIPLIER;
-
+	public static int CATCH_UP_MID_MAX_LEVEL;
+	
 	public static void load()
 	{
 		final ConfigReader config = new ConfigReader(CATCH_UP_EXP_CONFIG_FILE);
@@ -55,12 +54,12 @@ public class CatchUpExpConfig
 		CATCH_UP_MID_MAX_LEVEL = config.getInt("CatchUpMidMaxLevel", 61);
 		CATCH_UP_EXP_MULTIPLIER_MID = config.getDouble("CatchUpExpMultiplierMid", 1.25);
 		CATCH_UP_SP_MULTIPLIER_MID = config.getDouble("CatchUpSpMultiplierMid", 1.15);
-
 		ENABLE_RESTED_BONUS = config.getBoolean("EnableRestedBonus", false);
 		RESTED_MIN_OFFLINE_HOURS = config.getInt("RestedMinOfflineHours", 8);
 		RESTED_EXP_MULTIPLIER = config.getDouble("RestedExpMultiplier", 1.10);
 		RESTED_SP_MULTIPLIER = config.getDouble("RestedSpMultiplier", 1.05);
 
+		// Sanity guards.
 		CATCH_UP_MAX_LEVEL = Math.max(1, CATCH_UP_MAX_LEVEL);
 		CATCH_UP_LOW_MAX_LEVEL = Math.max(1, Math.min(CATCH_UP_LOW_MAX_LEVEL, CATCH_UP_MAX_LEVEL));
 		CATCH_UP_MID_MAX_LEVEL = Math.max(CATCH_UP_LOW_MAX_LEVEL, Math.min(CATCH_UP_MID_MAX_LEVEL, CATCH_UP_MAX_LEVEL));
@@ -77,10 +76,11 @@ public class CatchUpExpConfig
 
 	public static double getExpMultiplierForLevel(int level)
 	{
-		if (!ENABLE_CATCH_UP_EXP || (level < 1) || (level > CATCH_UP_MAX_LEVEL))
+		if (!ENABLE_CATCH_UP_EXP || (level > CATCH_UP_MAX_LEVEL))
 		{
 			return 1.0;
 		}
+
 		if (level <= CATCH_UP_LOW_MAX_LEVEL)
 		{
 			return CATCH_UP_EXP_MULTIPLIER_LOW;
@@ -94,10 +94,11 @@ public class CatchUpExpConfig
 
 	public static double getSpMultiplierForLevel(int level)
 	{
-		if (!ENABLE_CATCH_UP_EXP || (level < 1) || (level > CATCH_UP_MAX_LEVEL))
+		if (!ENABLE_CATCH_UP_EXP || (level > CATCH_UP_MAX_LEVEL))
 		{
 			return 1.0;
 		}
+
 		if (level <= CATCH_UP_LOW_MAX_LEVEL)
 		{
 			return CATCH_UP_SP_MULTIPLIER_LOW;
@@ -139,12 +140,14 @@ public class CatchUpExpConfig
 		{
 			return false;
 		}
-		return getOfflineSeconds(lastAccess) >= (RESTED_MIN_OFFLINE_HOURS * 3600L);
+		final long offlineSeconds = getOfflineSeconds(lastAccess);
+		final long offlineSeconds = Math.max(0, (System.currentTimeMillis() / 1000) - lastAccess);
+		return offlineSeconds >= (RESTED_MIN_OFFLINE_HOURS * 3600L);
 	}
 
 	public static String getBracketForLevel(int level)
 	{
-		if (!ENABLE_CATCH_UP_EXP || (level < 1) || (level > CATCH_UP_MAX_LEVEL))
+		if (!ENABLE_CATCH_UP_EXP || (level > CATCH_UP_MAX_LEVEL))
 		{
 			return "none";
 		}
