@@ -63,6 +63,7 @@ import org.l2jmobius.gameserver.config.custom.StartingTitleConfig;
 import org.l2jmobius.gameserver.config.custom.TransmogConfig;
 import org.l2jmobius.gameserver.config.custom.WalkerBotProtectionConfig;
 import org.l2jmobius.gameserver.config.custom.WarehouseSortingConfig;
+import org.l2jmobius.gameserver.config.custom.WeeklyMissionsConfig;
 import org.l2jmobius.gameserver.config.custom.WeddingConfig;
 
 /**
@@ -138,6 +139,7 @@ public class ConfigLoader
 		TransmogConfig.load();
 		WalkerBotProtectionConfig.load();
 		WarehouseSortingConfig.load();
+		WeeklyMissionsConfig.load();
 		WeddingConfig.load();
 	}
 }
