@@ -101,9 +101,9 @@ public class ConfigLoader
 		AutoPotionsConfig.load();
 		BankingConfig.load();
 		BossAnnouncementsConfig.load();
-			CancelReturnConfig.load();
-			CatchUpExpConfig.load();
-			CaptchaConfig.load();
+		CancelReturnConfig.load();
+		CatchUpExpConfig.load();
+		CaptchaConfig.load();
 		ChampionMonstersConfig.load();
 		ChatModerationConfig.load();
 		ClassBalanceConfig.load();
