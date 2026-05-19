@@ -18,6 +18,8 @@ public class WeeklyMissions implements IVoicedCommandHandler
 	private static final String PROGRESS_VAR = "WEEKLY_MISSION_KILL_PROGRESS";
 	private static final String PROGRESS_WEEK_VAR = "WEEKLY_MISSION_PROGRESS_WEEK";
 	private static final String CLAIMED_WEEK_VAR = "WEEKLY_MISSION_CLAIMED_WEEK";
+	private static final String ONLINE_MINUTES_VAR = "WEEKLY_MISSION_ONLINE_MINUTES";
+	private static final String ONLINE_LAST_UPDATE_VAR = "WEEKLY_MISSION_ONLINE_LAST_UPDATE";
 
 	private static final String[] VOICED_COMMANDS =
 	{
@@ -41,7 +43,7 @@ public class WeeklyMissions implements IVoicedCommandHandler
 
 		final String weekKey = getCurrentWeekKey();
 		ensureWeeklyState(player, weekKey);
-		int progress = player.getVariables().getInt(PROGRESS_VAR, 0);
+		int progress = getProgress(player);
 		if (progress < 0)
 		{
 			progress = 0;
@@ -114,6 +116,22 @@ public class WeeklyMissions implements IVoicedCommandHandler
 			}
 			return true;
 		}
+		else if ((paramArray.length > 1) && "addtime".equals(paramArray[0]) && player.isGM())
+		{
+			try
+			{
+				final int addMinutes = Math.max(0, Integer.parseInt(paramArray[1]));
+				final int current = player.getVariables().getInt(ONLINE_MINUTES_VAR, 0);
+				final int next = Math.min(effectiveTarget, current + addMinutes);
+				player.getVariables().set(ONLINE_MINUTES_VAR, next);
+				player.sendMessage("Weekly Mission online time increased to " + next + "/" + effectiveTarget + " minutes (GM command).");
+			}
+			catch (NumberFormatException e)
+			{
+				player.sendMessage("Usage: .weekly addtime <minutes>");
+			}
+			return true;
+		}
 		else if ((paramArray.length > 2) && "addkillmonster".equals(paramArray[0]) && player.isGM())
 		{
 			try
@@ -138,6 +156,8 @@ public class WeeklyMissions implements IVoicedCommandHandler
 		else if ((paramArray.length > 0) && "reset".equals(paramArray[0]) && player.isGM())
 		{
 			player.getVariables().set(PROGRESS_VAR, 0);
+			player.getVariables().set(ONLINE_MINUTES_VAR, 0);
+			player.getVariables().set(ONLINE_LAST_UPDATE_VAR, System.currentTimeMillis());
 			player.getVariables().remove(CLAIMED_WEEK_VAR);
 			player.sendMessage("Weekly Mission state reset for this character (GM command).");
 			return true;
@@ -162,7 +182,7 @@ public class WeeklyMissions implements IVoicedCommandHandler
 		}
 		if (player.isGM())
 		{
-			player.sendMessage("GM Commands: .weekly setprogress <count> | .weekly addkill <count> | .weekly addkillmonster <monsterId> <count> | .weekly reset");
+			player.sendMessage("GM Commands: .weekly setprogress <count> | .weekly addkill <count> | .weekly addkillmonster <monsterId> <count> | .weekly addtime <minutes> | .weekly reset");
 		}
 		return true;
 	}
@@ -181,6 +201,39 @@ public class WeeklyMissions implements IVoicedCommandHandler
 		{
 			player.getVariables().set(PROGRESS_WEEK_VAR, weekKey);
 			player.getVariables().set(PROGRESS_VAR, 0);
+			player.getVariables().set(ONLINE_MINUTES_VAR, 0);
+			player.getVariables().set(ONLINE_LAST_UPDATE_VAR, System.currentTimeMillis());
+		}
+	}
+
+	private int getProgress(Player player)
+	{
+		switch (WeeklyMissionsConfig.WEEKLY_MISSION_TYPE)
+		{
+			case ITEM_COLLECT:
+			{
+				if ((WeeklyMissionsConfig.WEEKLY_MISSION_REQUIRED_ITEM_ID < 1) || (WeeklyMissionsConfig.WEEKLY_MISSION_REQUIRED_ITEM_COUNT < 1))
+				{
+					return 0;
+				}
+				final Item item = player.getInventory().getItemByItemId(WeeklyMissionsConfig.WEEKLY_MISSION_REQUIRED_ITEM_ID);
+				return (item == null) ? 0 : (int) Math.min(Integer.MAX_VALUE, item.getCount());
+			}
+			case ONLINE_TIME:
+			{
+				final long now = System.currentTimeMillis();
+				final long last = player.getVariables().getLong(ONLINE_LAST_UPDATE_VAR, now);
+				final int current = player.getVariables().getInt(ONLINE_MINUTES_VAR, 0);
+				final long elapsedMinutes = Math.max(0, (now - last) / 60000L);
+				final int updated = (int) Math.min(Integer.MAX_VALUE, current + elapsedMinutes);
+				player.getVariables().set(ONLINE_MINUTES_VAR, updated);
+				player.getVariables().set(ONLINE_LAST_UPDATE_VAR, now);
+				return updated;
+			}
+			case PVP_KILL:
+			case MONSTER_KILL:
+			default:
+				return player.getVariables().getInt(PROGRESS_VAR, 0);
 		}
 	}
 
