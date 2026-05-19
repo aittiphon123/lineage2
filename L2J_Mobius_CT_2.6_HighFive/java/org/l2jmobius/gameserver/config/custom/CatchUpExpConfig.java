@@ -24,7 +24,7 @@ import org.l2jmobius.commons.util.ConfigReader;
 
 public class CatchUpExpConfig
 {
-	private static final java.lang.String CATCH_UP_EXP_CONFIG_FILE = "./config/Custom/CatchUpExp.ini";
+	private static final String CATCH_UP_EXP_CONFIG_FILE = "./config/Custom/CatchUpExp.ini";
 
 	public static boolean ENABLE_CATCH_UP_EXP;
 	public static int CATCH_UP_MAX_LEVEL;
@@ -142,7 +142,7 @@ public class CatchUpExpConfig
 		return getOfflineSeconds(lastAccess) >= (RESTED_MIN_OFFLINE_HOURS * 3600L);
 	}
 
-	public static java.lang.String getBracketForLevel(int level)
+	public static String getBracketForLevel(int level)
 	{
 		if (!ENABLE_CATCH_UP_EXP || (level < 1) || (level > CATCH_UP_MAX_LEVEL))
 		{
