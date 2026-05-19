@@ -17,3 +17,6 @@ cp -f "$ADDON_DIR/mods/default_pack/missions.ini" "$TARGET_DIST/config/Custom/We
 
 echo "[addon] Mission pack deployed to: $TARGET_DIST/config/Custom/WeeklyMissionsMod/missions.ini"
 echo "[addon] Next: wire script loader/reload command as needed."
+
+# Example: generate active weekly config from mod pack
+# "$ADDON_DIR/tools/generate-weekly-config.sh" "$ADDON_DIR/mods/default_pack/missions.ini" "hunt_wolfs"

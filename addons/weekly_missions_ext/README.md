@@ -22,3 +22,12 @@ This addon scaffold allows you to iterate weekly mission features without rebuil
 ## Validation
 - Validate mission pack syntax before deploy:
   - `addons/weekly_missions_ext/tools/validate-mission-pack.sh addons/weekly_missions_ext/mods/default_pack/missions.ini`
+
+## Build active mission from pack
+
+- Generate active server WeeklyMissions config from pack:
+  - `addons/weekly_missions_ext/tools/generate-weekly-config.sh addons/weekly_missions_ext/mods/default_pack/missions.ini hunt_wolfs`
+
+## Switch active mission (with backup)
+- `addons/weekly_missions_ext/tools/switch-mission.sh addons/weekly_missions_ext/mods/default_pack/missions.ini hunt_wolfs`
+- rollback: `addons/weekly_missions_ext/tools/rollback-mission.sh`
