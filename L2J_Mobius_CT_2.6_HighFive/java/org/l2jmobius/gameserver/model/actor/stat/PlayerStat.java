@@ -24,6 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.config.PlayerConfig;
+import org.l2jmobius.gameserver.config.custom.CatchUpExpConfig;
 import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.data.holders.PetLevelData;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
@@ -157,9 +158,14 @@ public class PlayerStat extends PlayableStat
 			player.getNevitSystem().startAdventTask();
 		}
 		
-		addToExp *= bonusExp;
-		addToSp *= bonusSp;
-		double ratioTakenByPlayer = 0;
+			addToExp *= bonusExp;
+			addToSp *= bonusSp;
+
+			addToExp *= CatchUpExpConfig.getExpMultiplierForLevel(player.getLevel());
+			addToSp *= CatchUpExpConfig.getSpMultiplierForLevel(player.getLevel());
+			addToExp *= CatchUpExpConfig.getRestedExpMultiplier(player.getLastAccess());
+			addToSp *= CatchUpExpConfig.getRestedSpMultiplier(player.getLastAccess());
+			double ratioTakenByPlayer = 0;
 		
 		// if this player has a pet and it is in his range he takes from the owner's Exp, give the pet Exp now
 		if (player.hasPet() && (player.calculateDistance3D(player.getSummon()) < PlayerConfig.ALT_PARTY_RANGE))

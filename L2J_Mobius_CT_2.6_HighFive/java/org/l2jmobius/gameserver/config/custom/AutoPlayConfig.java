@@ -44,6 +44,10 @@ public class AutoPlayConfig
 	public static int AUTO_PLAY_SHORT_RANGE;
 	public static int AUTO_PLAY_LONG_RANGE;
 	public static boolean AUTO_PLAY_PREMIUM;
+	public static boolean AUTO_PLAY_PVE_ONLY;
+	public static boolean AUTO_PLAY_BLOCK_START_IN_PVP_SIEGE;
+	public static boolean AUTO_PLAY_STOP_IN_PVP_SIEGE;
+	public static boolean AUTO_PLAY_NOTIFY_ON_ZONE_RESTRICTION;
 	public static Set<Integer> DISABLED_AUTO_SKILLS = new HashSet<>();
 	public static Set<Integer> DISABLED_AUTO_ITEMS = new HashSet<>();
 	public static Set<Integer> IGNORED_AUTO_PICK_ITEMS = new HashSet<>();
@@ -61,6 +65,10 @@ public class AutoPlayConfig
 		AUTO_PLAY_SHORT_RANGE = config.getInt("ShortRange", 600);
 		AUTO_PLAY_LONG_RANGE = config.getInt("LongRange", 1400);
 		AUTO_PLAY_PREMIUM = config.getBoolean("AutoPlayPremium", false);
+		AUTO_PLAY_PVE_ONLY = config.getBoolean("AutoPlayPveOnly", true);
+		AUTO_PLAY_BLOCK_START_IN_PVP_SIEGE = config.getBoolean("AutoPlayBlockStartInPvpSiege", true);
+		AUTO_PLAY_STOP_IN_PVP_SIEGE = config.getBoolean("AutoPlayStopInPvpSiege", true);
+		AUTO_PLAY_NOTIFY_ON_ZONE_RESTRICTION = config.getBoolean("AutoPlayNotifyOnZoneRestriction", true);
 		
 		DISABLED_AUTO_SKILLS.clear();
 		final String disabledSkills = config.getString("DisabledSkillIds", "");
