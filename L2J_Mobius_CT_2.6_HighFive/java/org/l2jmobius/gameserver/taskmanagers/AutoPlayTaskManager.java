@@ -23,6 +23,7 @@ package org.l2jmobius.gameserver.taskmanagers;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.LongAdder;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.ai.Intention;
@@ -53,6 +54,9 @@ public class AutoPlayTaskManager
 	private static final int POOL_SIZE = 200;
 	private static final int TASK_DELAY = 700;
 	private static final Integer AUTO_ATTACK_ACTION = 2;
+	private static final LongAdder BLOCKED_BY_ZONE_COUNT = new LongAdder();
+	private static final LongAdder BLOCKED_MODE_SELECTION_COUNT = new LongAdder();
+	private static final LongAdder BLOCKED_START_IN_ZONE_COUNT = new LongAdder();
 	
 	protected AutoPlayTaskManager()
 	{
@@ -82,6 +86,17 @@ public class AutoPlayTaskManager
 					stopAutoPlay(player);
 					continue PLAY;
 				}
+				if (AutoPlayConfig.AUTO_PLAY_PVE_ONLY && AutoPlayConfig.AUTO_PLAY_STOP_IN_PVP_SIEGE && (player.isInsideZone(ZoneId.PVP) || player.isInsideZone(ZoneId.SIEGE)))
+				{
+					BLOCKED_BY_ZONE_COUNT.increment();
+					stopAutoPlay(player);
+					AutoUseTaskManager.getInstance().stopAutoUseTask(player);
+					if (AutoPlayConfig.AUTO_PLAY_NOTIFY_ON_ZONE_RESTRICTION)
+					{
+						player.sendMessage("Auto Play PvE mode has been stopped in PvP/Siege zones.");
+					}
+					continue PLAY;
+				}
 				
 				if (player.isSitting() || player.isCastingNow() || (player.getQueuedSkill() != null))
 				{
@@ -89,7 +104,7 @@ public class AutoPlayTaskManager
 				}
 				
 				// Next target mode.
-				final int targetMode = player.getAutoPlaySettings().getNextTargetMode();
+				final int targetMode = AutoPlayConfig.AUTO_PLAY_PVE_ONLY ? 1 : player.getAutoPlaySettings().getNextTargetMode();
 				
 				// Skip thinking.
 				final WorldObject target = player.getTarget();
@@ -333,20 +348,24 @@ public class AutoPlayTaskManager
 				{
 					return creature.isMonster() && !creature.isRaid() && creature.isAutoAttackable(player);
 				}
-				case 2: // Characters
-				{
-					return creature.isPlayable() && creature.isAutoAttackable(player);
-				}
-				case 3: // NPC
-				{
-					return creature.isNpc() && !creature.isMonster() && !creature.isInsideZone(ZoneId.PEACE);
-				}
-				default: // Any Target
-				{
-					return (creature.isNpc() && !creature.isInsideZone(ZoneId.PEACE)) || (creature.isPlayable() && creature.isAutoAttackable(player));
+					case 2: // Characters
+					{
+						return !AutoPlayConfig.AUTO_PLAY_PVE_ONLY && creature.isPlayable() && creature.isAutoAttackable(player);
+					}
+					case 3: // NPC
+					{
+						return !AutoPlayConfig.AUTO_PLAY_PVE_ONLY && creature.isNpc() && !creature.isMonster() && !creature.isInsideZone(ZoneId.PEACE);
+					}
+					default: // Any Target
+					{
+						if (AutoPlayConfig.AUTO_PLAY_PVE_ONLY)
+						{
+							return creature.isMonster() && !creature.isRaid() && creature.isAutoAttackable(player);
+						}
+						return (creature.isNpc() && !creature.isInsideZone(ZoneId.PEACE)) || (creature.isPlayable() && creature.isAutoAttackable(player));
+					}
 				}
 			}
-		}
 	}
 	
 	public synchronized void startAutoPlay(Player player)
@@ -401,6 +420,48 @@ public class AutoPlayTaskManager
 	public static AutoPlayTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
+	}
+
+	public long getBlockedByZoneCount()
+	{
+		return BLOCKED_BY_ZONE_COUNT.longValue();
+	}
+
+	public long getBlockedModeSelectionCount()
+	{
+		return BLOCKED_MODE_SELECTION_COUNT.longValue();
+	}
+
+	public long getBlockedStartInZoneCount()
+	{
+		return BLOCKED_START_IN_ZONE_COUNT.longValue();
+	}
+
+	public int getActiveAutoPlayPlayerCount()
+	{
+		int total = 0;
+		for (Set<Player> pool : POOLS)
+		{
+			total += pool.size();
+		}
+		return total;
+	}
+
+	public void incrementBlockedModeSelectionCount()
+	{
+		BLOCKED_MODE_SELECTION_COUNT.increment();
+	}
+
+	public void incrementBlockedStartInZoneCount()
+	{
+		BLOCKED_START_IN_ZONE_COUNT.increment();
+	}
+
+	public void resetTelemetryCounters()
+	{
+		BLOCKED_BY_ZONE_COUNT.reset();
+		BLOCKED_MODE_SELECTION_COUNT.reset();
+		BLOCKED_START_IN_ZONE_COUNT.reset();
 	}
 	
 	private static class SingletonHolder
