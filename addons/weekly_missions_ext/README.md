@@ -31,3 +31,12 @@ This addon scaffold allows you to iterate weekly mission features without rebuil
 ## Switch active mission (with backup)
 - `addons/weekly_missions_ext/tools/switch-mission.sh addons/weekly_missions_ext/mods/default_pack/missions.ini hunt_wolfs`
 - rollback: `addons/weekly_missions_ext/tools/rollback-mission.sh`
+
+## Auto rotation
+- Rotate to next mission in pack (with persisted state):
+  - `addons/weekly_missions_ext/tools/rotate-mission.sh addons/weekly_missions_ext/mods/default_pack/missions.ini`
+- Suggested: run weekly via cron/task scheduler.
+
+## Scheduled rotation wrapper
+- Safe cron/task wrapper (lock + log):
+  - `addons/weekly_missions_ext/tools/schedule-weekly-rotation.sh addons/weekly_missions_ext/mods/default_pack/missions.ini`

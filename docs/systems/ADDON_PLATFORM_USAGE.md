@@ -23,3 +23,13 @@ Add/operate new event systems without rebuilding core source.
 
 ## New Event Template
 Copy `addons/event_template` to create new addon packs quickly.
+
+
+## Weekly auto-rotation (optional)
+- `addons/weekly_missions_ext/tools/rotate-mission.sh addons/weekly_missions_ext/mods/default_pack/missions.ini`
+- Run once per week using cron/Task Scheduler to switch to the next mission automatically.
+
+
+## Production scheduler wrapper
+- Use lock/log wrapper for cron or Task Scheduler:
+  - `addons/weekly_missions_ext/tools/schedule-weekly-rotation.sh addons/weekly_missions_ext/mods/default_pack/missions.ini`
