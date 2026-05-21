@@ -5,9 +5,22 @@ ROOT_DIR="$(cd "$(dirname "$0")/../../.." && pwd)"
 ADDON_DIR="$ROOT_DIR/addons/weekly_missions_ext"
 PACK_FILE="${1:-$ADDON_DIR/mods/default_pack/missions.ini}"
 STATE_FILE="${2:-$ADDON_DIR/.state/rotation.state}"
+LAST_ROTATION_FILE="$ADDON_DIR/.state/last_rotation.ts"
 TARGET_FILE="$ROOT_DIR/L2J_Mobius_CT_2.6_HighFive/dist/game/config/Custom/WeeklyMissions.ini"
 
 mkdir -p "$(dirname "$STATE_FILE")"
+
+# weekly guard: avoid multiple rotations within 6 days
+now=$(date +%s)
+if [[ -f "$LAST_ROTATION_FILE" ]]; then
+  last=$(cat "$LAST_ROTATION_FILE" 2>/dev/null || echo 0)
+  if [[ "$last" =~ ^[0-9]+$ ]]; then
+    if (( now - last < 518400 )); then
+      echo "[rotate] skipped by weekly guard"
+      exit 0
+    fi
+  fi
+fi
 
 "$ADDON_DIR/tools/validate-mission-pack.sh" "$PACK_FILE" >/dev/null
 
@@ -37,4 +50,5 @@ next_id="${ids[$next_index]}"
 echo "$next_id" > "$STATE_FILE"
 "$ADDON_DIR/tools/generate-weekly-config.sh" "$PACK_FILE" "$next_id" "$TARGET_FILE"
 
+echo "$now" > "$LAST_ROTATION_FILE"
 echo "[rotate] activated mission: $next_id"

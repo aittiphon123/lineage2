@@ -33,3 +33,22 @@ Copy `addons/event_template` to create new addon packs quickly.
 ## Production scheduler wrapper
 - Use lock/log wrapper for cron or Task Scheduler:
   - `addons/weekly_missions_ext/tools/schedule-weekly-rotation.sh addons/weekly_missions_ext/mods/default_pack/missions.ini`
+
+
+## Incident handling
+- See `docs/systems/INCIDENT_RUNBOOK.md` for recovery and rollback operations.
+
+
+## Production setup checklist
+1. Run preflight + manifest validation
+2. Validate mission pack
+3. Switch/Generate one active mission
+4. Deploy enabled addons
+5. Install weekly scheduler
+6. Run rollback drill once
+
+### Scheduler install helpers
+- Linux cron helper:
+  - `addons/shared/tools/install-cron-weekly-rotation.sh`
+- Windows Task Scheduler helper (PowerShell):
+  - `powershell -ExecutionPolicy Bypass -File addons/shared/tools/install-task-weekly-rotation.ps1 -RepoRoot "C:\lineage2"`

@@ -4,6 +4,9 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "$0")/../../.." && pwd)"
 MANIFEST="$ROOT_DIR/addons/manifest/addons.manifest.ini"
 
+"$ROOT_DIR/addons/shared/tools/preflight.sh"
+"$ROOT_DIR/addons/shared/tools/validate-manifest.sh" "$MANIFEST"
+
 if [[ ! -f "$MANIFEST" ]]; then
   echo "[addons] manifest not found: $MANIFEST"
   exit 1

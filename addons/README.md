@@ -34,3 +34,12 @@ addons/shared/tools/deploy-all-addons.sh
 - `docs/systems/CATCHUP_EXP_USAGE.md`
 - `docs/systems/WEEKLY_MISSIONS_USAGE.md`
 - `docs/systems/ADDON_PLATFORM_USAGE.md`
+
+
+## Scheduler helpers
+- Linux: `addons/shared/tools/install-cron-weekly-rotation.sh`
+- Windows: `addons/shared/tools/install-task-weekly-rotation.ps1`
+
+
+## New Custom Event Addon
+- `addons/auction_event_ext` provides external Auction Event packs and deployment tools.
