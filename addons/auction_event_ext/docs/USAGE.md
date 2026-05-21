@@ -20,3 +20,10 @@ Commands:
 - `addons/auction_event_ext/tools/validate-auction-pack.sh addons/auction_event_ext/mods/default_pack/auctions.ini`
 - `addons/auction_event_ext/tools/generate-auction-config.sh addons/auction_event_ext/mods/default_pack/auctions.ini starter_auction`
 - `addons/auction_event_ext/tools/deploy-addon.sh`
+
+
+## Rotation and rollback
+- `addons/auction_event_ext/tools/switch-auction.sh addons/auction_event_ext/mods/default_pack/auctions.ini starter_auction`
+- `addons/auction_event_ext/tools/rotate-auction.sh addons/auction_event_ext/mods/default_pack/auctions.ini`
+- `addons/auction_event_ext/tools/schedule-auction-rotation.sh addons/auction_event_ext/mods/default_pack/auctions.ini`
+- `addons/auction_event_ext/tools/rollback-auction.sh`

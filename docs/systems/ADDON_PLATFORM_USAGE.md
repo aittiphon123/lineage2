@@ -52,3 +52,10 @@ Copy `addons/event_template` to create new addon packs quickly.
   - `addons/shared/tools/install-cron-weekly-rotation.sh`
 - Windows Task Scheduler helper (PowerShell):
   - `powershell -ExecutionPolicy Bypass -File addons/shared/tools/install-task-weekly-rotation.ps1 -RepoRoot "C:\lineage2"`
+
+
+## Health & policy checks
+- Addon health summary:
+  - `addons/shared/tools/addon-health.sh`
+- Policy validation for packs:
+  - `addons/shared/tools/validate-policy.sh`
