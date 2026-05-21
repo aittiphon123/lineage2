@@ -59,3 +59,18 @@ Copy `addons/event_template` to create new addon packs quickly.
   - `addons/shared/tools/addon-health.sh`
 - Policy validation for packs:
   - `addons/shared/tools/validate-policy.sh`
+  - Strict schema guardrails: `POLICY_STRICT=1 addons/shared/tools/validate-policy.sh`
+
+
+## One-command validation
+- GitHub Actions CI workflow:
+  - `.github/workflows/addons-ops-validate.yml`
+- Negative regression fixture checks:
+  - `addons/shared/tools/check-invalid-fixtures.sh`
+- Run the full operator check pipeline before deploy:
+  - `addons/shared/tools/check-all.sh` (includes strict policy mode)
+- Optional explicit inputs:
+  - `addons/shared/tools/check-all.sh <manifest.ini> <missions.ini> <auctions.ini>`
+- JSON summary output for CI/automation:
+  - `CHECK_ALL_OUTPUT=json addons/shared/tools/check-all.sh`
+

@@ -36,3 +36,29 @@
   - claim flow smoke test
   - rollback mission
 - Keep screenshots/log snippets in ops notes.
+
+
+## 7) Server startup fails at script execution (core/scripts mismatch)
+Symptoms:
+- `Failed to execute script list` during GameServer startup.
+- Many compile errors such as missing classes/methods in script sources (for example `Config`, `Quest`, `addTalkId`, `addAttackId`, `startQuestTimer`).
+
+Root cause (common):
+- Mixed artifact set: `dist/game/data/scripts` copied from a different Mobius chronicle/branch than the running core jars.
+- Partial overwrite after update (old files remain from previous datapack build).
+
+Immediate recovery steps:
+1. Stop server process completely.
+2. Backup current `dist/game/data/scripts` directory.
+3. Replace script directory with a clean set from the exact same build/chronicle as the server core.
+4. Ensure runtime jars and script sources come from the same package snapshot.
+5. Start server again and verify there are no script compilation errors.
+
+Verification commands:
+- `addons/shared/tools/check-all.sh`
+- `addons/shared/tools/check-invalid-fixtures.sh`
+- `CHECK_ALL_OUTPUT=json addons/shared/tools/check-all.sh`
+
+Notes:
+- Warnings about `source value 8 is obsolete` are non-fatal compiler warnings.
+- The blocking issue is API mismatch between script code and core classes, not addon policy/pack validators.

@@ -16,9 +16,15 @@ echo "[health] addons manifest: ok"
 for addon in "${addons[@]}"; do
   [[ -z "$addon" ]] && continue
   base="$ROOT_DIR/addons/$addon"
-  status="ok"
-  [[ -d "$base/config" ]] || status="missing-config"
-  [[ -d "$base/tools" ]] || status="missing-tools"
-  [[ -x "$base/tools/deploy-addon.sh" ]] || status="missing-deploy-script"
-  echo "[health] $addon: $status"
+  issues=()
+  [[ -d "$base/config" ]] || issues+=("missing-config")
+  [[ -d "$base/tools" ]] || issues+=("missing-tools")
+  [[ -x "$base/tools/deploy-addon.sh" ]] || issues+=("missing-deploy-script")
+
+  if [[ ${#issues[@]} -eq 0 ]]; then
+    echo "[health] $addon: ok"
+  else
+    issue_csv=$(IFS=','; echo "${issues[*]}")
+    echo "[health] $addon: $issue_csv"
+  fi
 done
