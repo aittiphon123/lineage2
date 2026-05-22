@@ -1,0 +1,32 @@
+name: addons-ops-validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - work
+
+jobs:
+  validate-addons-ops:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+      - name: Lint addon shell scripts
+        run: |
+          set -euo pipefail
+          mapfile -t scripts < <(find addons -type f -name '*.sh' | sort)
+          shellcheck "${scripts[@]}"
+
+      - name: Validate positive addon pipeline
+        run: bash addons/shared/tools/check-all.sh
+
+      - name: Validate negative fixtures
+        run: bash addons/shared/tools/check-invalid-fixtures.sh
+
+      - name: Validate JSON output mode
+        run: CHECK_ALL_OUTPUT=json bash addons/shared/tools/check-all.sh
