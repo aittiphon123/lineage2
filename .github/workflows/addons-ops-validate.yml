@@ -16,14 +16,14 @@ jobs:
       - name: Install shellcheck
         run: sudo apt-get update && sudo apt-get install -y shellcheck
 
-      - name: Lint integrated event script
+      - name: Lint integrated event scripts
         run: |
           set -euo pipefail
-          mapfile -t scripts < <(printf '%s\n' tools/apply-integrated-events.sh)
+          mapfile -t scripts < <(printf '%s\n' tools/validate-integrated-events.sh tools/apply-integrated-events.sh tools/prepare-integrated-events.sh tools/run-integrated-events-ready.sh)
           shellcheck "${scripts[@]}"
 
-      - name: Generate integrated runtime configs
-        run: bash tools/apply-integrated-events.sh
+      - name: Run integrated ready pipeline
+        run: bash tools/run-integrated-events-ready.sh
 
       - name: Validate generated weekly config shape
         run: grep -E '^MissionId\s*=\s*' L2J_Mobius_CT_2.6_HighFive/dist/game/config/Custom/WeeklyMissions.ini
