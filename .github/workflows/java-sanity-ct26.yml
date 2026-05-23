@@ -1,0 +1,35 @@
+name: java-sanity-ct26
+
+on:
+  pull_request:
+  push:
+    branches:
+      - work
+
+jobs:
+  compile-ct26:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: L2J_Mobius_CT_2.6_HighFive
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Compile game/login sources
+        run: |
+          set -euo pipefail
+          if [[ -x ./gradlew ]]; then
+            ./gradlew --no-daemon classes
+          elif command -v gradle >/dev/null 2>&1; then
+            gradle --no-daemon classes
+          else
+            echo "No gradle wrapper or gradle binary found" >&2
+            exit 1
+          fi

@@ -1,0 +1,35 @@
+name: integrated-events-validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - work
+
+jobs:
+  validate-integrated-events:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+      - name: Lint integrated event scripts
+        run: |
+          set -euo pipefail
+          mapfile -t scripts < <(printf '%s\n' tools/validate-integrated-events.sh tools/apply-integrated-events.sh tools/prepare-integrated-events.sh tools/run-integrated-events-ready.sh tools/server-integrated-events-deploy.sh tools/server-integrated-events-rollback.sh tools/restart-game-profiles.sh tools/install-integrated-ready-cron.sh tools/guard-integrated-only.sh)
+          shellcheck "${scripts[@]}"
+
+      - name: Guard integrated-only production path
+        run: bash tools/guard-integrated-only.sh
+
+      - name: Run integrated ready pipeline
+        run: bash tools/run-integrated-events-ready.sh
+
+      - name: Validate generated weekly config shape
+        run: grep -E '^MissionId\s*=\s*' L2J_Mobius_CT_2.6_HighFive/dist/game/config/Custom/WeeklyMissions.ini
+
+      - name: Validate generated auction config shape
+        run: grep -E '^AuctionId\s*=\s*' L2J_Mobius_CT_2.6_HighFive/dist/game/config/Custom/AuctionEvent.ini
