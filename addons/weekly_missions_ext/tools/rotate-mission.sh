@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "$0")/../../.." && pwd)"
+ADDON_DIR="$ROOT_DIR/addons/weekly_missions_ext"
+PACK_FILE="${1:-$ADDON_DIR/mods/default_pack/missions.ini}"
+STATE_FILE="${2:-$ADDON_DIR/.state/rotation.state}"
+LAST_ROTATION_FILE="$ADDON_DIR/.state/last_rotation.ts"
+TARGET_FILE="$ROOT_DIR/L2J_Mobius_CT_2.6_HighFive/dist/game/config/Custom/WeeklyMissions.ini"
+
+mkdir -p "$(dirname "$STATE_FILE")"
+
+# weekly guard: avoid multiple rotations within 6 days
+now=$(date +%s)
+if [[ -f "$LAST_ROTATION_FILE" ]]; then
+  last=$(cat "$LAST_ROTATION_FILE" 2>/dev/null || echo 0)
+  if [[ "$last" =~ ^[0-9]+$ ]]; then
+    if (( now - last < 518400 )); then
+      echo "[rotate] skipped by weekly guard"
+      exit 0
+    fi
+  fi
+fi
+
+"$ADDON_DIR/tools/validate-mission-pack.sh" "$PACK_FILE" >/dev/null
+
+mapfile -t ids < <(grep -E '^\s*[a-zA-Z0-9_\-]+\|' "$PACK_FILE" | sed 's/^\s*//' | cut -d'|' -f1)
+if [[ ${#ids[@]} -eq 0 ]]; then
+  echo "[rotate] no mission ids found"
+  exit 1
+fi
+
+current_index=-1
+if [[ -f "$STATE_FILE" ]]; then
+  current_id=$(cat "$STATE_FILE" | tr -d '[:space:]')
+  for i in "${!ids[@]}"; do
+    if [[ "${ids[$i]}" == "$current_id" ]]; then
+      current_index=$i
+      break
+    fi
+  done
+fi
+
+next_index=$((current_index + 1))
+if (( next_index >= ${#ids[@]} )); then
+  next_index=0
+fi
+next_id="${ids[$next_index]}"
+
+echo "$next_id" > "$STATE_FILE"
+"$ADDON_DIR/tools/generate-weekly-config.sh" "$PACK_FILE" "$next_id" "$TARGET_FILE"
+
+echo "$now" > "$LAST_ROTATION_FILE"
+echo "[rotate] activated mission: $next_id"
