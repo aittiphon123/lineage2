@@ -16,10 +16,10 @@ Use built-in server configuration for Weekly Missions and Auction Event without 
    - Windows one-click: `tools/server-integrated-events-deploy.cmd`
    - Optional custom target and restart command:
      - `bash tools/server-integrated-events-deploy.sh /path/to/dist/game "systemctl restart l2j-game"`
-   - Restart command profile examples:
-     - Linux systemd: `"systemctl restart l2j-game"`
-     - Windows service wrapper: `"net stop L2JGame && net start L2JGame"`
-     - Screen/tmux script: `"/opt/l2/scripts/restart-game.sh"`
+   - Restart command profile examples (generate command):
+     - `bash tools/restart-game-profiles.sh linux-systemd`
+     - `bash tools/restart-game-profiles.sh windows-service`
+     - `bash tools/restart-game-profiles.sh script-local`
 4. Rollback latest snapshot (if needed):
    - `bash tools/server-integrated-events-rollback.sh`
    - Windows one-click: `tools/server-integrated-events-rollback.cmd`
@@ -32,6 +32,9 @@ Use built-in server configuration for Weekly Missions and Auction Event without 
    - `bash tools/apply-integrated-events.sh`
    - Windows one-click: `tools/apply-integrated-events.cmd`
 7. Restart server (or reload config path used by your deployment process).
+8. (Optional) Install readiness cron before maintenance window:
+   - `bash tools/install-integrated-ready-cron.sh`
+   - Custom cron expression example: `bash tools/install-integrated-ready-cron.sh "*/30 * * * *"`
 
 ## Output files
 - `L2J_Mobius_CT_2.6_HighFive/dist/game/config/Custom/WeeklyMissions.ini`
@@ -51,5 +54,6 @@ Use built-in server configuration for Weekly Missions and Auction Event without 
 - Keep `IntegratedEvents.ini` in version control and review diffs before applying.
 - Run post-deploy smoke checklist after every production rollout:
   - `docs/systems/POST_DEPLOY_SMOKE_CHECKLIST.md`
+  - `bash tools/post-deploy-smoke-template.sh`
 - Legacy addon stack is now deprecated for this server line:
   - `docs/systems/ADDON_DEPRECATION_PLAN.md`

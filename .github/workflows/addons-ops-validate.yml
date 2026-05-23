@@ -19,8 +19,11 @@ jobs:
       - name: Lint integrated event scripts
         run: |
           set -euo pipefail
-          mapfile -t scripts < <(printf '%s\n' tools/validate-integrated-events.sh tools/apply-integrated-events.sh tools/prepare-integrated-events.sh tools/run-integrated-events-ready.sh)
+          mapfile -t scripts < <(printf '%s\n' tools/validate-integrated-events.sh tools/apply-integrated-events.sh tools/prepare-integrated-events.sh tools/run-integrated-events-ready.sh tools/server-integrated-events-deploy.sh tools/server-integrated-events-rollback.sh tools/restart-game-profiles.sh tools/install-integrated-ready-cron.sh tools/guard-integrated-only.sh)
           shellcheck "${scripts[@]}"
+
+      - name: Guard integrated-only production path
+        run: bash tools/guard-integrated-only.sh
 
       - name: Run integrated ready pipeline
         run: bash tools/run-integrated-events-ready.sh

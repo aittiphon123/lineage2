@@ -25,4 +25,11 @@ jobs:
       - name: Compile game/login sources
         run: |
           set -euo pipefail
-          ./gradlew --no-daemon classes
+          if [[ -x ./gradlew ]]; then
+            ./gradlew --no-daemon classes
+          elif command -v gradle >/dev/null 2>&1; then
+            gradle --no-daemon classes
+          else
+            echo "No gradle wrapper or gradle binary found" >&2
+            exit 1
+          fi
