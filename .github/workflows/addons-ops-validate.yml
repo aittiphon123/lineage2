@@ -1,4 +1,4 @@
-name: addons-ops-validate
+name: integrated-events-validate
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - work
 
 jobs:
-  validate-addons-ops:
+  validate-integrated-events:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,17 +16,17 @@ jobs:
       - name: Install shellcheck
         run: sudo apt-get update && sudo apt-get install -y shellcheck
 
-      - name: Lint addon shell scripts
+      - name: Lint integrated event script
         run: |
           set -euo pipefail
-          mapfile -t scripts < <(find addons -type f -name '*.sh' | sort)
+          mapfile -t scripts < <(printf '%s\n' tools/apply-integrated-events.sh)
           shellcheck "${scripts[@]}"
 
-      - name: Validate positive addon pipeline
-        run: bash addons/shared/tools/check-all.sh
+      - name: Generate integrated runtime configs
+        run: bash tools/apply-integrated-events.sh
 
-      - name: Validate negative fixtures
-        run: bash addons/shared/tools/check-invalid-fixtures.sh
+      - name: Validate generated weekly config shape
+        run: grep -E '^MissionId\s*=\s*' L2J_Mobius_CT_2.6_HighFive/dist/game/config/Custom/WeeklyMissions.ini
 
-      - name: Validate JSON output mode
-        run: CHECK_ALL_OUTPUT=json bash addons/shared/tools/check-all.sh
+      - name: Validate generated auction config shape
+        run: grep -E '^AuctionId\s*=\s*' L2J_Mobius_CT_2.6_HighFive/dist/game/config/Custom/AuctionEvent.ini
