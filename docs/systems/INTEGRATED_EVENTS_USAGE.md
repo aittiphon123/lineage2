@@ -16,6 +16,10 @@ Use built-in server configuration for Weekly Missions and Auction Event without 
    - Windows one-click: `tools/server-integrated-events-deploy.cmd`
    - Optional custom target and restart command:
      - `bash tools/server-integrated-events-deploy.sh /path/to/dist/game "systemctl restart l2j-game"`
+   - Restart command profile examples:
+     - Linux systemd: `"systemctl restart l2j-game"`
+     - Windows service wrapper: `"net stop L2JGame && net start L2JGame"`
+     - Screen/tmux script: `"/opt/l2/scripts/restart-game.sh"`
 4. Rollback latest snapshot (if needed):
    - `bash tools/server-integrated-events-rollback.sh`
    - Windows one-click: `tools/server-integrated-events-rollback.cmd`
@@ -45,3 +49,7 @@ Use built-in server configuration for Weekly Missions and Auction Event without 
 - Prefer `server-integrated-events-deploy.sh` in operations so copy + readiness checks are always done together.
 - `server-integrated-events-deploy.sh` creates automatic snapshots in `config/Custom/.integrated-backups` for rollback.
 - Keep `IntegratedEvents.ini` in version control and review diffs before applying.
+- Run post-deploy smoke checklist after every production rollout:
+  - `docs/systems/POST_DEPLOY_SMOKE_CHECKLIST.md`
+- Legacy addon stack is now deprecated for this server line:
+  - `docs/systems/ADDON_DEPRECATION_PLAN.md`
