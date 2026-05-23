@@ -1,7 +1,8 @@
 param(
     [string]$RepoRoot = "",
     [switch]$SkipValidation,
-    [switch]$Overlay
+    [switch]$Overlay,
+    [switch]$DryRun
 )
 
 $ErrorActionPreference = "Stop"
@@ -28,12 +29,22 @@ if ($Overlay) {
     Write-Host "[oneclick] overlay mode enabled: deploy will overwrite target config files in-place."
 }
 
+if ($DryRun) {
+    Write-Host "[oneclick] dry-run mode enabled: no deployment changes will be applied."
+}
+
 if (-not $SkipValidation) {
     Write-Host "[oneclick] running validation pipeline..."
     & $bashExe.Source -lc "cd '$root' && bash addons/shared/tools/check-all.sh"
     if ($LASTEXITCODE -ne 0) {
         throw "Validation failed. Deployment aborted."
     }
+}
+
+if ($DryRun) {
+    Write-Host "[oneclick] would run: bash addons/shared/tools/deploy-all-addons.sh"
+    Write-Host "[oneclick] dry-run finished successfully."
+    exit 0
 }
 
 Write-Host "[oneclick] deploying enabled addons from manifest..."

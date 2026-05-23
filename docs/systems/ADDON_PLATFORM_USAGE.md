@@ -85,6 +85,8 @@ Copy `addons/event_template` to create new addon packs quickly.
   - `powershell -ExecutionPolicy Bypass -File addons/shared/tools/install-addons-oneclick.ps1 -RepoRoot "C:\lineage2" -SkipValidation`
 - Overlay (วางทับไฟล์ config ปลายทาง):
   - `powershell -ExecutionPolicy Bypass -File addons/shared/tools/install-addons-oneclick.ps1 -RepoRoot "C:\lineage2" -Overlay`
+- Dry-run (ตรวจอย่างเดียว ไม่ deploy):
+  - `powershell -ExecutionPolicy Bypass -File addons/shared/tools/install-addons-oneclick.ps1 -RepoRoot "C:\lineage2" -DryRun`
 
 > Note: This one-click installer requires `bash` in PATH (Git Bash or WSL), because existing addon validators/deploy scripts are Bash-based.
 > Overlay mode uses existing deploy scripts which already copy with overwrite behavior (`cp -f`) on target config files.
